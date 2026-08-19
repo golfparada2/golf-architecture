@@ -46,7 +46,7 @@
     "en": "Do you risk driving straight at a small, angled green ringed by bunkers, or lay up short and trust a precise wedge?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob().",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Opraveno 2026-08-19: dosavadní fairwayový bunker (rx=14) byl vůči greenu neúměrně velký a navíc uprostřed osy hry, přitom více zdrojů (Golf.com, Yardbarker) shodně popisuje jeden velký fairwayový bunker po LEVÉ straně přistávací zóny, ne uprostřed. Greenside bunkery jsou podle zdrojů (Yardbarker, Golf Digest/Shackelford) soustředěny hlavně vpravo od greenu (přední i zadní), proto přidán třetí, menší bunker vzadu vpravo; bunker vlevo od greenu ponechán jako menší, méně dominantní hazard.",
     "green": {
       "x": 4,
       "y": 270,
@@ -71,29 +71,42 @@
         }
       },
       {
-        "x": 16,
-        "y": 272,
+        "x": 15,
+        "y": 268,
         "rx": 5,
         "ry": 4,
         "rot": -0.3,
         "seed": 1903,
         "amp": 0.16,
         "label": {
-          "cs": "bunker vpravo od greenu",
-          "en": "bunker right of the green"
+          "cs": "bunker vpravo vpředu od greenu",
+          "en": "front-right bunker beside the green"
         }
       },
       {
-        "x": 2,
-        "y": 180,
-        "rx": 14,
-        "ry": 6,
-        "rot": 0.05,
+        "x": 13,
+        "y": 278,
+        "rx": 4,
+        "ry": 3,
+        "rot": -0.15,
+        "seed": 1905,
+        "amp": 0.15,
+        "label": {
+          "cs": "bunker vzadu vpravo od greenu",
+          "en": "back-right bunker behind the green"
+        }
+      },
+      {
+        "x": -9,
+        "y": 182,
+        "rx": 6,
+        "ry": 4,
+        "rot": 0.1,
         "seed": 1904,
         "amp": 0.14,
         "label": {
-          "cs": "příčný bunker v přistávací zóně",
-          "en": "cross bunker in the layup zone"
+          "cs": "velký fairwayový bunker vlevo v přistávací zóně",
+          "en": "large fairway bunker on the left side of the landing area"
         }
       }
     ],
@@ -122,12 +135,12 @@
     },
     {
       "nazev": {
-        "cs": "Příčný bunker v přistávací zóně",
-        "en": "A cross bunker in the layup zone"
+        "cs": "Velký fairwayový bunker vlevo",
+        "en": "A large fairway bunker on the left"
       },
       "popis": {
-        "cs": "Trestá i „bezpečnou“ variantu hry, takže žádná volba není zcela bez rizika.",
-        "en": "Punishes even the \"safe\" play, so no choice is entirely without risk."
+        "cs": "Trestá i „bezpečnou“ variantu hry vedenou vlevo, takže žádná volba není zcela bez rizika.",
+        "en": "Punishes even the \"safe\" play down the left side, so no choice is entirely without risk."
       }
     }
   ],
@@ -143,6 +156,29 @@
     {
       "titul": "Wikipedia — Riviera Country Club",
       "url": "https://en.wikipedia.org/wiki/Riviera_Country_Club"
+    },
+    {
+      "titul": "Yardbarker — The chaotic 10th hole at Riviera Country Club is the best drivable par 4 in golf",
+      "url": "https://www.yardbarker.com/golf/articles/the_chaotic_10th_hole_at_riviera_country_club_is_the_best_drivable_par_4_in_golf/s1_13132_39966289"
+    },
+    {
+      "titul": "AllGolfHoles — Riviera Country Club, The, Hole 10 strategy",
+      "url": "https://www.allgolfholes.com/courses/california/riviera-country-club-the/10th-hole"
     }
-  ]
+  ],
+  "foto": {
+    "soubor": "riviera-10.jpg",
+    "autor": "Dan Perry (golf_pictures)",
+    "licence": "CC BY 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "zdrojUrl": "https://commons.wikimedia.org/wiki/File:RivieraCountryClub9th.jpg",
+    "alt": {
+      "cs": "Riviera Country Club — bunkry před klubovnou (9. jamka, v sousedství 10.)",
+      "en": "Riviera Country Club — bunkers below the clubhouse (9th hole, next to the 10th)"
+    },
+    "poznamka": {
+      "cs": "ilustrační záběr sousední 9. jamky u klubovny — volně licencovanou fotku přímo z 10. jamky se nepodařilo dohledat",
+      "en": "illustrative view of the neighbouring 9th hole by the clubhouse — no freely licensed photo of the 10th hole itself could be found"
+    }
+  }
 }

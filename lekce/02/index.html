@@ -3,548 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ROUTING — Lekce 2</title>
-<meta name="description" content="Lekce 2: Čtení pozemku — vrstevnice, odtok vody, slunce, vítr a podloží v golfové architektuře.">
+<title>ROUTING — Lekce 2: Čtení pozemku</title>
+<meta name="description" content="Lekce 2: Čtení pozemku — vrstevnice, odtok vody, slunce, vítr a podloží v golfové architektuře. Sedm sekcí, každá na vlastní stránce.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F1E0'/%3E%3Ccircle cx='16' cy='14' r='9' fill='%23A9B983' stroke='%231E1B15' stroke-width='1.4'/%3E%3Ccircle cx='16' cy='14' r='1.6' fill='%231E1B15'/%3E%3Cpath d='M16 14 L16 5' stroke='%231E1B15' stroke-width='1.3'/%3E%3Cpath d='M16 5 L23 7.5 L16 10 Z' fill='%23B0452C' stroke='%231E1B15' stroke-width='.8'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="../../assets/styl.css">
-<style>
-  /* styly specifické pro lekci 2 — sdílené věci (karta, putt, slovníček,
-     přepínač vrstev, .zpet, .listMark) jsou teď v assets/styl.css, sekce 14 */
-
-  .zonyStav{margin-top:12px}
-  .zonaNalezena{
-    margin-top:12px;padding-left:13px;border-left:2px solid var(--good);
-    font-size:15px;line-height:1.4;
-  }
-  .zonaNalezena b{color:var(--olive);font-weight:500;display:block;margin-bottom:2px}
-
-  .fotoWrap{margin-top:16px}
-  .fotoBtn{
-    display:inline-block;font-family:'EB Garamond',serif;font-size:14px;letter-spacing:.14em;
-    text-transform:uppercase;border:1.5px solid var(--olive);color:var(--olive);
-    padding:9px 16px;cursor:pointer;background:none;min-height:32px;
-  }
-  .fotoBtn:focus-visible{outline:2px solid var(--flag);outline-offset:3px}
-  .fotoHint{font-size:13px;font-style:italic;color:var(--ink2);margin-top:8px;line-height:1.4}
-  .fotoPoznamka{font-size:12.5px;color:var(--ink2);opacity:.85;margin-top:8px;line-height:1.5}
-  .fotoPreview{margin-top:14px;max-width:100%;border:1.5px solid rgba(74,68,58,.35)}
-  .fotoPreview img{display:block;width:100%;height:auto}
-</style>
 </head>
 <body>
 
 <div class="topbar">
-  <div class="hr"><span data-t="meta.kicker"></span></div>
+  <div class="hr"><span data-t="toc.kicker"></span></div>
   <div class="lang" role="group" aria-label="Language">
     <button data-l="cs" aria-current="true">ČES</button><i>/</i><button data-l="en">ENG</button>
   </div>
 </div>
-<a class="zpet" href="../../index.html" data-t="meta.zpet"></a>
+<a class="zpet" href="../../prehled/index.html" data-t="toc.zpetNaPrehled"></a>
 
 <p class="eyebrow" data-t="meta.chapter"></p>
 <h1><em data-t="meta.over"></em><span data-t="meta.title"></span></h1>
 <div class="dashline"></div>
 <p class="lede" data-t="meta.lede"></p>
 
-<!-- ============================================================ TEE SHOT -->
-<section class="plat" id="secTeeShot">
-  <p class="eyebrow" data-t="teeShot.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="teeShot.over"></em><span data-t="teeShot.title"></span></h2>
-  <p class="lede" data-t="teeShot.lede"></p>
-  <div class="principBox"><b data-t="principLabel"></b><br><span data-t="teeShot.principle"></span></div>
+<div class="hr" style="margin-top:22px"><span data-t="toc.sekceHead"></span></div>
+<div class="tocList" id="tocList"></div>
 
-  <svg id="p1" viewBox="0 0 400 520" role="img" aria-label="Pozemek v pěti vrstvách"></svg>
-
-  <div class="toggle" id="teeShotToggle" role="group" aria-label="Vrstvy pozemku">
-    <button type="button" data-vrstva="vrstevnice" data-t="teeShot.toggle.vrstevnice" aria-pressed="true"></button>
-    <button type="button" data-vrstva="odtok" data-t="teeShot.toggle.odtok"></button>
-    <button type="button" data-vrstva="slunce" data-t="teeShot.toggle.slunce"></button>
-    <button type="button" data-vrstva="vitr" data-t="teeShot.toggle.vitr"></button>
-    <button type="button" data-vrstva="podlozi" data-t="teeShot.toggle.podlozi"></button>
-  </div>
-  <p class="popisFilozofie" id="teeShotPopis"></p>
-
-  <p class="listMark" data-t="teeShot.foot"></p>
-</section>
-
-<!-- ============================================================ FAIRWAY -->
-<section class="plat" id="secFairway">
-  <p class="eyebrow" data-t="fairway.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="fairway.over"></em><span data-t="fairway.title"></span></h2>
-  <p class="lede" data-t="fairway.lede"></p>
-  <div id="fairwayCards"></div>
-</section>
-
-<!-- ============================================================ ČESKÁ JAMKA -->
-<section class="plat" id="secCeska">
-  <p class="eyebrow" data-t="ceskaJamka.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="ceskaJamka.over"></em><span data-t="ceskaJamka.title"></span></h2>
-  <p class="lede" data-t="ceskaJamka.lede"></p>
-  <div id="ceskaKarta"></div>
-</section>
-
-<!-- ============================================================ APPROACH: ÚVOD -->
-<section class="plat" id="secApproachIntro">
-  <p class="eyebrow" data-t="approachNadpis.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="approachNadpis.over"></em><span data-t="approachNadpis.title"></span></h2>
-  <p class="lede" data-t="approachNadpis.lede"></p>
-</section>
-
-<!-- ============================================================ APPROACH 1: NESMÍ -->
-<section class="plat" id="secApproach1">
-  <p class="eyebrow" data-t="approach1.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="approach1.over"></em><span data-t="approach1.title"></span></h2>
-  <p class="lede" data-t="approach1.lede"></p>
-
-  <svg id="p2" class="plate-work" viewBox="0 0 400 520" role="img" aria-label="Pozemek — klepnutím hledej místa, kam green nepatří"></svg>
-
-  <div class="tools">
-    <button type="button" id="a1clear" class="quiet" data-t="approach1.tools.clear"></button>
-  </div>
-  <p class="state" id="a1state"></p>
-  <div class="zonyStav" id="a1zony"></div>
-
-  <p class="listMark" data-t="approach1.foot"></p>
-</section>
-
-<!-- ============================================================ APPROACH 2: V TERÉNU -->
-<section class="plat" id="secApproach2">
-  <p class="eyebrow" data-t="approach2.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="approach2.over"></em><span data-t="approach2.title"></span></h2>
-  <p class="lede" data-t="approach2.lede"></p>
-
-  <div class="fotoWrap">
-    <label class="fotoBtn" for="fotoInput" data-t="approach2.fotoLabel"></label>
-    <input type="file" id="fotoInput" accept="image/*" capture="environment" class="visually-hidden">
-    <p class="fotoHint" data-t="approach2.fotoHint"></p>
-    <p class="fotoPoznamka" data-t="approach2.fotoPoznamka"></p>
-    <div class="fotoPreview" id="fotoPreview" hidden><img id="fotoImg" alt=""></div>
-  </div>
-
-  <div id="terenniQuestions"></div>
-
-  <p class="listMark" data-t="approach2.foot"></p>
-</section>
-
-<!-- ============================================================ PUTT -->
-<section class="plat" id="secPutt">
-  <p class="eyebrow" data-t="putt.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="putt.over"></em><span data-t="putt.title"></span></h2>
-  <p class="lede" data-t="putt.lede"></p>
-  <div id="puttQuestions"></div>
-  <p class="listMark" data-t="putt.foot"></p>
-</section>
-
-<!-- ============================================================ SLOVNÍČEK -->
-<section class="plat" id="secSlovnicek">
-  <p class="eyebrow" data-t="slovnicek.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="slovnicek.over"></em><span data-t="slovnicek.title"></span></h2>
-  <p class="lede" data-t="slovnicek.lede"></p>
-  <dl class="pojmy" id="slovnicekList"></dl>
-</section>
-
-<!-- ============================================================ ZKOUŠKA -->
-<section class="plat" id="secZkouska">
-  <p class="eyebrow" data-t="zkouska.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="zkouska.over"></em><span data-t="zkouska.title"></span></h2>
-  <p class="lede" data-t="zkouska.lede"></p>
-
-  <div class="meter" id="zMeter"></div>
-  <div id="zQuiz"></div>
-  <div class="tools">
-    <button type="button" id="zSubmit" data-t="zkouska.submit" disabled></button>
-    <button type="button" id="zAgain" class="quiet" data-t="zkouska.again" hidden></button>
-  </div>
-  <p class="note" id="zNote"></p>
-  <div class="result" id="zResult" hidden></div>
-
-  <p class="listMark" data-t="zkouska.foot"></p>
-</section>
-
-<div class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="../../index.html" data-t="meta.zpet"></a></div>
+<div class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="../../prehled/index.html" data-t="toc.zpetNaPrehled"></a></div>
 
 <script type="module">
 import { vytvorJazyk, nactiSlovnik } from '../../js/jazyk.js';
-import { E, V, clear, blob, blobPts, hatch, radial, stipple, clipPath } from '../../js/platy.js';
-import { vytvorZkousku } from '../../js/zkouska.js';
-import { kartaJamky, vytvorPutt, renderSlovnicek } from '../../js/spolecne.js';
+import { sekceLekce } from '../../js/sekce-nav.js';
 
 const $ = (id) => document.getElementById(id);
+const LEKCE = 2;
 
-const [slovnik, kartaSandHills, kartaBallybunion, kartaDobrouc] = await Promise.all([
-  nactiSlovnik('../../data/preklady/lekce-02.json'),
-  nactiSlovnik('../../data/jamky/sand-hills-1.json'),
-  nactiSlovnik('../../data/jamky/ballybunion-old-11.json'),
-  nactiSlovnik('../../data/jamky/dobrouc-3.json'),
-]);
-
+const slovnik = await nactiSlovnik('../../data/preklady/lekce-02.json');
 const jazyk = vytvorJazyk(slovnik, {
   titul: (lang) => lang === 'cs' ? 'ROUTING — Lekce 2: Čtení pozemku' : 'ROUTING — Lesson 2: Reading the Land',
 });
 
-/* ============================================================================
- * SPOLEČNÝ POZEMEK — jeden obrys terénu, na kterém stojí tee shot i approach 1.
- * Souřadnice jsou čistě ilustrativní (ne reálná jamka), ale geograficky
- * konzistentní mezi pláty: potok/nejnižší bod vpravo dole, strmý svah vlevo
- * nahoře, stín vpravo nahoře — takže „Nesmí" v approach 1 doslova ukazuje na
- * stejná místa, která si student prohlédl ve vrstvách „Odtok"/„Slunce".
- * ==========================================================================*/
-const POZEMEK = blob(200, 270, 172, 220, 0.05, 707, 0.05, 60);
+function renderToc() {
+  const wrap = $('tocList');
+  wrap.innerHTML = '';
+  const sekce = sekceLekce(LEKCE);
 
-function kresliPozemek(svg, defs) {
-  const cid = 'pz-obrys';
-  clipPath(defs, cid, POZEMEK);
-  E(svg, 'path', { d: POZEMEK, fill: V('--turf-d', svg), opacity: 0.55 });
-  hatch(svg, cid, { x: 10, y: 20, w: 380, h: 500 }, 1.1, 4.2, { op: 0.22, seed: 9 });
-  E(svg, 'path', { d: POZEMEK, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.1, opacity: 0.8 });
-  return cid;
-}
+  sekce.forEach((s, i) => {
+    const a = document.createElement('a');
+    a.className = 'tocItem';
+    a.href = s.soubor;
 
-/* ============================================================================
- * TEE SHOT — „Pět věcí, které hledám". Čtyři vrstvy jsou půdorys (stejný
- * `POZEMEK`), pátá (podloží) je řez terénem — vizuálně úplně jiný diagram,
- * proto se pro ni `kresliPozemek` vůbec nevolá.
- * ==========================================================================*/
-let vrstva = 'vrstevnice';
+    const num = document.createElement('span');
+    num.className = 'num';
+    num.textContent = String(i + 1).padStart(2, '0');
 
-function kresliVrstevnice(svg, defs) {
-  kresliPozemek(svg, defs);
-  // hustě u sebe (strmé) vlevo nahoře, řídce (mírné) uprostřed
-  const stred = [[130, 400, 150, 40], [110, 330, 150, 40], [95, 260, 150, 40], [85, 190, 150, 40]];
-  stred.forEach(([x, y, w, seedBase]) => {
-    E(svg, 'path', {
-      d: `M${x} ${y} Q${x + w * 0.5} ${y - 18} ${x + w} ${y + 6} T${x + w * 2} ${y}`,
-      fill: 'none', stroke: V('--ink2', svg), 'stroke-width': 0.9, opacity: 0.6,
-    });
-  });
-  const strme = [[60, 120], [72, 100], [84, 82], [96, 66], [107, 52]];
-  let dprev = null;
-  strme.forEach(([x, y]) => {
-    E(svg, 'circle', { cx: x, cy: y, r: 1.1, fill: 'none' });
-  });
-  for (let i = 0; i < strme.length; i++) {
-    E(svg, 'path', {
-      d: `M40 ${strme[i][1] + 6} Q${strme[i][0]} ${strme[i][1] - 4} ${strme[i][0] + 90} ${strme[i][1] + 2}`,
-      fill: 'none', stroke: V('--ink2', svg), 'stroke-width': 0.9, opacity: 0.7,
-    });
-  }
-  const L = jazyk.t('teeShot.L');
-  E(svg, 'text', { x: 210, y: 300, class: 'lab sm', 'text-anchor': 'middle' }, L.prevyseni[0]);
-  E(svg, 'text', { x: 210, y: 316, class: 'lab sm', 'text-anchor': 'middle' }, L.prevyseni[1]);
-  E(svg, 'text', { x: 100, y: 90, class: 'lab sm', 'text-anchor': 'middle' }, L.strmy[0]);
-  E(svg, 'text', { x: 100, y: 106, class: 'lab sm', 'text-anchor': 'middle' }, L.strmy[1]);
-}
+    const meta = document.createElement('span');
+    meta.className = 'meta';
+    const nadpis = `${jazyk.t(s.klic + '.over')} ${jazyk.t(s.klic + '.title')}`;
+    const popis = jazyk.t(s.klic + '.lede');
+    meta.innerHTML = `<span class="t">${nadpis}</span><span class="p">${popis}</span>`;
 
-function kresliOdtok(svg, defs) {
-  kresliPozemek(svg, defs);
-  const potok = 'M310 130 C 300 220, 320 300, 290 420 C 280 455, 265 460, 250 462';
-  E(svg, 'path', { d: potok, fill: 'none', stroke: V('--water', svg), 'stroke-width': 6, opacity: 0.8, 'stroke-linecap': 'round' });
-  E(svg, 'path', { d: potok, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1, opacity: 0.55 });
-  const sipky = [
-    [120, 160, 250, 400], [90, 240, 240, 400], [150, 340, 260, 415],
-    [220, 150, 280, 360], [260, 200, 285, 380], [180, 420, 250, 445],
-  ];
-  const g = E(svg, 'g', { stroke: V('--ink', svg), 'stroke-width': 1, opacity: 0.7, fill: V('--ink', svg) });
-  sipky.forEach(([x1, y1, x2, y2]) => {
-    E(g, 'line', { x1, y1, x2, y2 });
-    const ang = Math.atan2(y2 - y1, x2 - x1);
-    const ax = x2 - Math.cos(ang - 0.4) * 9, ay = y2 - Math.sin(ang - 0.4) * 9;
-    const bx = x2 - Math.cos(ang + 0.4) * 9, by = y2 - Math.sin(ang + 0.4) * 9;
-    E(g, 'path', { d: `M${x2} ${y2} L${ax} ${ay} M${x2} ${y2} L${bx} ${by}` });
-  });
-  const L = jazyk.t('teeShot.L');
-  E(svg, 'text', { x: 335, y: 260, class: 'lab sm', 'text-anchor': 'middle' }, L.potok);
-  E(svg, 'text', { x: 255, y: 440, class: 'lab', 'text-anchor': 'middle' }, L.nejnizsi[0]);
-  E(svg, 'text', { x: 255, y: 456, class: 'lab', 'text-anchor': 'middle' }, L.nejnizsi[1]);
-}
-
-function kresliSlunce(svg, defs) {
-  kresliPozemek(svg, defs);
-  const stinTvar = blob(300, 160, 70, 60, 0.2, 808, 0.1, 40);
-  const cid = 'stin';
-  clipPath(defs, cid, stinTvar);
-  E(svg, 'path', { d: stinTvar, fill: V('--ink2', svg), opacity: 0.28 });
-  hatch(svg, cid, { x: 220, y: 90, w: 160, h: 140 }, 0.8, 4, { op: 0.35, seed: 21 });
-  E(svg, 'path', { d: stinTvar, fill: 'none', stroke: V('--ink2', svg), 'stroke-width': 0.8, opacity: 0.6 });
-  // sluníčko vlevo dole se čtyřmi paprsky přes zbytek pozemku
-  const sx = 90, sy = 440;
-  E(svg, 'circle', { cx: sx, cy: sy, r: 14, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.3 });
-  const rg = E(svg, 'g', { stroke: V('--ink', svg), 'stroke-width': 0.8, opacity: 0.55 });
-  for (let i = 0; i < 10; i++) {
-    const a = -Math.PI / 2 - 0.3 + (i / 9) * (Math.PI / 2 + 0.5);
-    E(rg, 'line', { x1: sx + Math.cos(a) * 20, y1: sy + Math.sin(a) * 20, x2: sx + Math.cos(a) * 230, y2: sy + Math.sin(a) * 230, 'stroke-dasharray': '2 5' });
-  }
-  const L = jazyk.t('teeShot.L');
-  E(svg, 'text', { x: 300, y: 150, class: 'lab sm', 'text-anchor': 'middle' }, L.stin[0]);
-  E(svg, 'text', { x: 300, y: 166, class: 'lab sm', 'text-anchor': 'middle' }, L.stin[1]);
-  E(svg, 'text', { x: 130, y: 400, class: 'lab', 'text-anchor': 'middle' }, L.ranniSlunce[0]);
-  E(svg, 'text', { x: 130, y: 416, class: 'lab', 'text-anchor': 'middle' }, L.ranniSlunce[1]);
-}
-
-function kresliVitr(svg, defs) {
-  kresliPozemek(svg, defs);
-  const cx = 200, cy = 270;
-  const g = E(svg, 'g', { stroke: V('--ink2', svg), 'stroke-width': 0.8, opacity: 0.5, fill: 'none' });
-  for (let i = 0; i < 16; i++) {
-    const a = (i / 16) * Math.PI * 2;
-    E(g, 'line', { x1: cx, y1: cy, x2: cx + Math.cos(a) * 150, y2: cy + Math.sin(a) * 150 });
-  }
-  // hlavní šipka od jihozápadu k severovýchodu (převládající vítr)
-  const a = Math.PI + Math.PI / 5; // směr odkud vane, šipka směřuje opačně přes pozemek
-  const fromX = cx - Math.cos(Math.PI / 5) * 160, fromY = cy + Math.sin(Math.PI / 5) * 160;
-  const toX = cx + Math.cos(Math.PI / 5) * 130, toY = cy - Math.sin(Math.PI / 5) * 130;
-  E(svg, 'line', { x1: fromX, y1: fromY, x2: toX, y2: toY, stroke: V('--ink', svg), 'stroke-width': 2.2 });
-  const ang = Math.atan2(toY - fromY, toX - fromX);
-  const ax = toX - Math.cos(ang - 0.4) * 16, ay = toY - Math.sin(ang - 0.4) * 16;
-  const bx = toX - Math.cos(ang + 0.4) * 16, by = toY - Math.sin(ang + 0.4) * 16;
-  E(svg, 'path', { d: `M${toX} ${toY} L${ax} ${ay} M${toX} ${toY} L${bx} ${by}`, stroke: V('--ink', svg), 'stroke-width': 2.2, fill: 'none' });
-  const L = jazyk.t('teeShot.L');
-  E(svg, 'text', { x: fromX - 6, y: fromY + 26, class: 'lab', 'text-anchor': 'middle' }, L.vitr[0]);
-  E(svg, 'text', { x: fromX - 6, y: fromY + 42, class: 'lab', 'text-anchor': 'middle' }, L.vitr[1]);
-}
-
-function kresliPodlozi(svg) {
-  const L = jazyk.t('teeShot.L');
-  const cols = [
-    { x: 55, vrstvy: [['pisek', 260]] },
-    { x: 178, vrstvy: [['pisek', 60], ['jil', 200]] },
-    { x: 301, vrstvy: [['pisek', 30], ['skala', 230]] },
-  ];
-  const barvy = { pisek: V('--sand', svg), jil: '#B7A98C', skala: V('--ink2', svg) };
-  const top = 90, w = 90, bottom = 470;
-  // pravítko hloubky
-  const ax = E(svg, 'g', { stroke: V('--ink2', svg), 'stroke-width': 0.8, opacity: 0.6, fill: 'none' });
-  for (let m = 0; m <= 4; m++) {
-    const y = top + (m / 4) * (bottom - top);
-    E(ax, 'line', { x1: 10, y1: y, x2: 22, y2: y });
-    E(svg, 'text', { x: 26, y: y + 4, class: 'lab sm' }, (m * 0.4).toFixed(1) + ' m');
-  }
-  cols.forEach((col) => {
-    let y = top;
-    col.vrstvy.forEach(([typ, h]) => {
-      const rectH = (h / 260) * (bottom - top);
-      E(svg, 'rect', { x: col.x, y, width: w, height: rectH, fill: barvy[typ], stroke: V('--ink', svg), 'stroke-width': 1 });
-      const label = L[typ];
-      E(svg, 'text', { x: col.x + w / 2, y: y + rectH / 2 + 4, class: 'lab sm', 'text-anchor': 'middle', fill: typ === 'skala' ? V('--paper', svg) : V('--ink', svg) }, label);
-      y += rectH;
-    });
-    E(svg, 'text', { x: col.x + w / 2, y: bottom + 22, class: 'lab sm', 'text-anchor': 'middle' }, L.povrch);
-    E(svg, 'line', { x1: col.x, y1: top, x2: col.x + w, y2: top, stroke: V('--ink', svg), 'stroke-width': 1.6 });
+    a.appendChild(num); a.appendChild(meta);
+    wrap.appendChild(a);
   });
 }
 
-function kresliTeeShot(svg, v) {
-  clear(svg);
-  const defs = E(svg, 'defs', {});
-  if (v === 'vrstevnice') kresliVrstevnice(svg, defs);
-  else if (v === 'odtok') kresliOdtok(svg, defs);
-  else if (v === 'slunce') kresliSlunce(svg, defs);
-  else if (v === 'vitr') kresliVitr(svg, defs);
-  else if (v === 'podlozi') kresliPodlozi(svg);
-}
-
-function renderTeeShot() {
-  kresliTeeShot($('p1'), vrstva);
-  $('teeShotPopis').innerHTML = jazyk.t('teeShot.popis.' + vrstva);
-  document.querySelectorAll('#teeShotToggle button').forEach((b) => {
-    b.setAttribute('aria-pressed', String(b.dataset.vrstva === vrstva));
-  });
-}
-document.querySelectorAll('#teeShotToggle button').forEach((b) => {
-  b.addEventListener('click', () => { vrstva = b.dataset.vrstva; renderTeeShot(); });
-});
-
-/* ============================================================================
- * FAIRWAY / ČESKÁ JAMKA — sdílený renderer z js/spolecne.js
- * ==========================================================================*/
-function renderKartyFairway() {
-  const c = $('fairwayCards');
-  c.innerHTML = '';
-  [kartaSandHills, kartaBallybunion].forEach((k) => kartaJamky(c, k, slovnik, jazyk.lang));
-}
-function renderKartaCeska() {
-  const c = $('ceskaKarta');
-  c.innerHTML = '';
-  kartaJamky(c, kartaDobrouc, slovnik, jazyk.lang);
-}
-
-/* ============================================================================
- * APPROACH 1 — „Nesmí". Tři pevné zóny na stejném `POZEMEK` obrysu jako
- * tee shot (viz komentář výše). Klepnutím student hledá, poloměr zásahu je
- * o něco větší než viditelný hazard, ať je to hratelné i na malém displeji.
- * ==========================================================================*/
-const A1_ZONY = {
-  odtok: { cx: 255, cy: 440, r: 55 },
-  svah: { cx: 95, cy: 90, r: 50 },
-  stin: { cx: 300, cy: 160, r: 55 },
-};
-let a1Nalezeno = new Set();
-
-function kresliApproach1(svg) {
-  clear(svg);
-  const defs = E(svg, 'defs', {});
-  kresliPozemek(svg, defs);
-  const potok = 'M310 130 C 300 220, 320 300, 290 420 C 280 455, 265 460, 250 462';
-  E(svg, 'path', { d: potok, fill: 'none', stroke: V('--water', svg), 'stroke-width': 6, opacity: 0.55, 'stroke-linecap': 'round' });
-
-  Object.entries(A1_ZONY).forEach(([klic, z]) => {
-    if (a1Nalezeno.has(klic)) {
-      E(svg, 'circle', { cx: z.cx, cy: z.cy, r: 10, fill: V('--flag', svg), opacity: 0.85, stroke: V('--paper', svg), 'stroke-width': 2 });
-      E(svg, 'path', { d: `M${z.cx - 4} ${z.cy} l4 5 l7 -10`, stroke: V('--paper', svg), 'stroke-width': 1.6, fill: 'none' });
-    }
-  });
-}
-
-function a1Render() {
-  kresliApproach1($('p2'));
-  const n = a1Nalezeno.size;
-  $('a1state').textContent = n === 0 ? jazyk.t('approach1.stavHledej')
-    : n === 3 ? jazyk.t('approach1.stavHotovo')
-    : jazyk.t('approach1.stavPokrok').replace('{n}', n);
-  const zonyWrap = $('a1zony');
-  zonyWrap.innerHTML = '';
-  ['odtok', 'svah', 'stin'].forEach((klic) => {
-    if (!a1Nalezeno.has(klic)) return;
-    const z = jazyk.t('approach1.zony.' + klic);
-    const div = document.createElement('div');
-    div.className = 'zonaNalezena';
-    div.innerHTML = `<b>${z.nazev}</b>${z.popis}`;
-    zonyWrap.appendChild(div);
-  });
-}
-$('p2').addEventListener('click', (ev) => {
-  const r = $('p2').getBoundingClientRect();
-  const x = (ev.clientX - r.left) / r.width * 400, y = (ev.clientY - r.top) / r.height * 520;
-  for (const [klic, z] of Object.entries(A1_ZONY)) {
-    if (Math.hypot(x - z.cx, y - z.cy) <= z.r) { a1Nalezeno.add(klic); break; }
-  }
-  a1Render();
-});
-$('a1clear').addEventListener('click', () => { a1Nalezeno = new Set(); a1Render(); });
-
-/* ============================================================================
- * APPROACH 2 — terénní úkol. Fotka jen jako dočasný náhled (object URL),
- * nikdy se neukládá ani nikam neodesílá — statický web nemá kam.
- * ==========================================================================*/
-$('fotoInput').addEventListener('change', () => {
-  const f = $('fotoInput').files[0];
-  if (!f) return;
-  $('fotoImg').src = URL.createObjectURL(f);
-  $('fotoPreview').hidden = false;
-});
-
-function renderTerenni() {
-  vytvorPutt({
-    container: $('terenniQuestions'), slovnik, jazyk,
-    klicOtazky: 'approach2.otazky', klicPlaceholder: 'putt.poznamkaPlaceholder',
-    klicUlozeno: 'approach2.ulozeno', ulozisteKlic: 'routing.terenni.lekce2',
-  });
-}
-
-/* ============================================================================
- * PUTT / SLOVNÍČEK — sdílené renderery
- * ==========================================================================*/
-function renderPuttSekce() {
-  vytvorPutt({
-    container: $('puttQuestions'), slovnik, jazyk,
-    klicOtazky: 'putt.otazky', klicPlaceholder: 'putt.poznamkaPlaceholder',
-    klicUlozeno: 'putt.ulozeno', ulozisteKlic: 'routing.poznamky.lekce2',
-  });
-}
-function renderSlovnicekSekce() {
-  renderSlovnicek($('slovnicekList'), jazyk, 'slovnicek.pojmy');
-}
-
-/* ============================================================================
- * ZKOUŠKA — miniatury pro Q1 (kam NEjmíň patří green) a Q4 (řez terénem).
- * ==========================================================================*/
-function kresliMiniTeren(svg, kind) {
-  const defs = E(svg, 'defs', {});
-  const sur = blob(60, 110, 52, 100, 0.1, 55, 0.05, 36);
-  const cs = 'mt' + kind + 's';
-  clipPath(defs, cs, sur);
-  E(svg, 'path', { d: sur, fill: V('--turf-d', svg), opacity: 0.45 });
-  hatch(svg, cs, { x: 4, y: 6, w: 112, h: 210 }, 1.1, 4, { op: 0.28, seed: 4 });
-  E(svg, 'path', { d: sur, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 0.9, opacity: 0.7 });
-  // potok vpravo dole
-  E(svg, 'path', { d: 'M96 40 C 92 90, 100 140, 84 190', fill: 'none', stroke: V('--water', svg), 'stroke-width': 3.5, opacity: 0.7, 'stroke-linecap': 'round' });
-  const P = { a: [42, 70], b: [80, 172], c: [46, 130] }[kind];
-  const gp = blob(P[0], P[1], 16, 12, 0, 60, 0.08, 30);
-  E(svg, 'path', { d: gp, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1.1 });
-  E(svg, 'circle', { cx: P[0], cy: P[1] - 2, r: 1.8, fill: V('--ink', svg) });
-}
-function kresliMiniRez(svg, kind) {
-  const barvy = { pisek: V('--sand', svg), jil: '#B7A98C', skala: V('--ink2', svg) };
-  const vrstvy = { a: [['pisek', 190]], b: [['pisek', 24], ['skala', 166]], c: [['pisek', 40], ['jil', 150]] }[kind];
-  let y = 12;
-  const x = 30, w = 60, bottom = 202;
-  vrstvy.forEach(([typ, h]) => {
-    const rectH = (h / 190) * (bottom - 12);
-    E(svg, 'rect', { x, y, width: w, height: rectH, fill: barvy[typ], stroke: V('--ink', svg), 'stroke-width': 1 });
-    y += rectH;
-  });
-  E(svg, 'line', { x1: x, y1: 12, x2: x + w, y2: 12, stroke: V('--ink', svg), 'stroke-width': 1.4 });
-}
-
-const zkouskaOtazky = [
-  {
-    typ: 'obrazek', body: 20, tema: 'cteni-terenu', textKlic: 'zkouska.q1.text', hintKlic: 'zkouska.q1.hint',
-    vysvetleniKlic: 'zkouska.q1.why', zpetKlic: 'zkouska.q1.back', spravna: 'b',
-    moznosti: ['a', 'b', 'c'].map((id) => ({ id, kresli: (svg) => kresliMiniTeren(svg, id) })),
-  },
-  {
-    typ: 'jedna', body: 15, tema: 'voda-odtok', textKlic: 'zkouska.q2.text',
-    vysvetleniKlic: 'zkouska.q2.why', zpetKlic: 'zkouska.q2.back', spravna: 'b',
-    moznosti: ['a', 'b', 'c', 'd'].map((id) => ({ id, textKlic: 'zkouska.q2.' + id })),
-  },
-  {
-    typ: 'jedna', body: 15, tema: 'vitr-slunce', textKlic: 'zkouska.q3.text',
-    vysvetleniKlic: 'zkouska.q3.why', zpetKlic: 'zkouska.q3.back', spravna: 'c',
-    moznosti: ['a', 'b', 'c', 'd'].map((id) => ({ id, textKlic: 'zkouska.q3.' + id })),
-  },
-  {
-    typ: 'obrazek', body: 20, tema: 'cteni-terenu', textKlic: 'zkouska.q4.text', hintKlic: 'zkouska.q4.hint',
-    vysvetleniKlic: 'zkouska.q4.why', zpetKlic: 'zkouska.q4.back', spravna: 'b',
-    moznosti: ['a', 'b', 'c'].map((id) => ({ id, kresli: (svg) => kresliMiniRez(svg, id) })),
-  },
-  {
-    typ: 'vice', body: 15, tema: 'cteni-terenu', textKlic: 'zkouska.q5.text', hintKlic: 'zkouska.q5.hint',
-    vysvetleniKlic: 'zkouska.q5.why', zpetKlic: 'zkouska.q5.back',
-    moznosti: [
-      { id: 'a', textKlic: 'zkouska.q5.a', ok: true },
-      { id: 'b', textKlic: 'zkouska.q5.b', ok: false },
-      { id: 'c', textKlic: 'zkouska.q5.c', ok: true },
-      { id: 'd', textKlic: 'zkouska.q5.d', ok: true },
-    ],
-  },
-  {
-    typ: 'jedna', body: 15, tema: 'vitr-slunce', textKlic: 'zkouska.q6.text',
-    vysvetleniKlic: 'zkouska.q6.why', zpetKlic: 'zkouska.q6.back', spravna: 'b',
-    moznosti: ['a', 'b', 'c', 'd'].map((id) => ({ id, textKlic: 'zkouska.q6.' + id })),
-  },
-];
-
-vytvorZkousku({
-  lekce: 2,
-  otazky: zkouskaOtazky,
-  slovnik,
-  jazyk,
-  el: { meter: $('zMeter'), quiz: $('zQuiz'), submit: $('zSubmit'), again: $('zAgain'), note: $('zNote'), result: $('zResult') },
-});
-
-/* ============================================================================
- * Jazykové přepnutí — celý plát vždy znovu, nikdy jen text (viz jazyk.js).
- * Zkouška se překresluje sama.
- * ==========================================================================*/
-jazyk.on(() => {
-  renderTeeShot();
-  renderKartyFairway();
-  renderKartaCeska();
-  a1Render();
-  renderTerenni();
-  renderPuttSekce();
-  renderSlovnicekSekce();
-});
+jazyk.on(() => { renderToc(); });
 </script>
 </body>
 </html>

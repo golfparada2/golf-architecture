@@ -1,6 +1,7 @@
 {
   "cs": {
     "kicker": "Golfová architektura",
+    "zpetNaUvod": "← Zpět na úvod kurzu",
     "eyebrow": "Kurz · 18 lekcí",
     "over": "Jak se staví",
     "title": "Routing",
@@ -49,6 +50,7 @@
   },
   "en": {
     "kicker": "Golf course architecture",
+    "zpetNaUvod": "← Back to the course introduction",
     "eyebrow": "Course · 18 lessons",
     "over": "How they are",
     "title": "Routed",

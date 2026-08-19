@@ -59,7 +59,7 @@
     }
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště jamky 7 (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Green je záměrně široký, aby naznačil dvojgreen se dvěma praporky. Kreslí se přes js/platy.js blob().",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště jamky 7 (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Green je záměrně široký, aby naznačil dvojgreen se dvěma praporky. Kreslí se přes js/platy.js blob(). Oprava (ověřeno webem, 2026): původní verze měla jen dva neoznačené bunkry těsně u greenu a chyběl slavný fairwayový Shell Bunker. Doplněn Shell Bunker jako fairwayová hrozba ~310 yd (283 m) od odpaliště, tedy zřetelně před greenem (podle The Open course guide a LINKS Magazine popsán jako 'dominantní prvek jamky' se stěnou drnu vysokou přes dva metry). Oba greenové bunkry přejmenovány na skutečné historické názvy — Cockle Bunker (strana jamky 7) a Strath Bunker (strana jamky 11) — a přiblíženy k sobě, aby odpovídaly popisu z Alister MacKenzie Institute: nájezd na green musí buď přeletět Cockle bunker, nebo proletět 'velmi úzkou mezerou' mezi ním a bunkerem Strath.",
     "green": {
       "x": 0,
       "y": 330,
@@ -71,29 +71,42 @@
     },
     "bunkry": [
       {
-        "x": -20,
-        "y": 320,
+        "x": 3,
+        "y": 283,
+        "rx": 6,
+        "ry": 4,
+        "rot": 0.1,
+        "seed": 2404,
+        "amp": 0.18,
+        "label": {
+          "cs": "Shell Bunker — obří fairwayový bunker asi 310 yardů od odpaliště, dominantní hrozba jamky (pozor s dřevem z odpaliště)",
+          "en": "Shell Bunker — a huge fairway bunker about 310 yards from the tee, the hole's dominant hazard (a warning against too much club off the tee)"
+        }
+      },
+      {
+        "x": -11,
+        "y": 313,
         "rx": 5,
         "ry": 4,
         "rot": 0.2,
         "seed": 2402,
         "amp": 0.16,
         "label": {
-          "cs": "bunker na straně jamky 7",
-          "en": "bunker on the 7th-hole side"
+          "cs": "Cockle Bunker — hlídá nájezd na green ze strany jamky 7",
+          "en": "Cockle Bunker — guards the approach to the green from the 7th-hole side"
         }
       },
       {
-        "x": 20,
-        "y": 340,
+        "x": 11,
+        "y": 313,
         "rx": 5,
         "ry": 4,
         "rot": -0.2,
         "seed": 2403,
         "amp": 0.16,
         "label": {
-          "cs": "bunker na straně jamky 11",
-          "en": "bunker on the 11th-hole side"
+          "cs": "Strath Bunker — hlídá green ze strany jamky 11; mezi ním a Cockle bunkerem je jen úzká mezera pro přesný nájezd",
+          "en": "Strath Bunker — guards the green from the 11th-hole side; only a narrow neck separates it from Cockle Bunker for a precise approach"
         }
       }
     ],
@@ -129,6 +142,26 @@
         "cs": "Hráči na 7. a 11. jamce často zažívají opačný směr větru na úplně stejném kusu pozemku — přímý důsledek trasy „tam a zpět“.",
         "en": "Players on the 7th and 11th often face opposite wind directions on the very same piece of land — a direct result of the out-and-back routing."
       }
+    },
+    {
+      "nazev": {
+        "cs": "Shell Bunker uprostřed fairwaye",
+        "en": "Shell Bunker in the middle of the fairway"
+      },
+      "popis": {
+        "cs": "Obrovský bunker asi 310 yardů od odpaliště je jediná vážná hrozba na jamce 7 — kdo do něj trefí, čeká ho rána přes stěnu drnu vysokou jako dospělý člověk. Fairway je v tomto místě sdílená s protijedoucí jamkou 11.",
+        "en": "A huge bunker about 310 yards from the tee is the hole's one serious threat — finding it means playing over a sod wall as tall as a person. The fairway here is shared with the oncoming 11th hole."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Úzká mezera mezi Cockle a Strath bunkerem",
+        "en": "The narrow neck between Cockle and Strath bunkers"
+      },
+      "popis": {
+        "cs": "Nájezd na green musí buď přeletět Cockle bunker, nebo proletět úzkou skulinou mezi ním a bunkerem Strath, který hlídá stranu jamky 11.",
+        "en": "The approach must either carry the Cockle bunker or thread the narrow gap between it and the Strath bunker, which guards the 11th-hole side."
+      }
     }
   ],
   "prameny": [
@@ -143,6 +176,25 @@
     {
       "titul": "Wikipedia — Old Course at St Andrews",
       "url": "https://en.wikipedia.org/wiki/Old_Course_at_St_Andrews"
+    },
+    {
+      "titul": "LINKS Magazine — The Old Course's Baddest Bunkers",
+      "url": "https://linksmagazine.com/the-old-courses-baddest-bunkers/"
+    },
+    {
+      "titul": "Alister MacKenzie Institute — St Andrews Old Course",
+      "url": "https://alistermackenzie.org/articles/oldcourse"
     }
-  ]
+  ],
+  "foto": {
+    "soubor": "st-andrews-old-7.jpg",
+    "autor": "Richard Webb",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "zdrojUrl": "https://commons.wikimedia.org/wiki/File:Old_Course,_St_Andrews_,_High_-_geograph.org.uk_-_2401295.jpg",
+    "alt": {
+      "cs": "7. jamka „High“, Old Course St Andrews",
+      "en": "The 7th hole, \"High\", Old Course at St Andrews"
+    }
+  }
 }

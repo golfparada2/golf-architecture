@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ROUTING — Lekce 1: Tee shot</title>
+<meta name="description" content="Lekce 1, sekce 1 z 7: tři filozofie jamky a trest úměrný chybě.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F1E0'/%3E%3Ccircle cx='16' cy='14' r='9' fill='%23A9B983' stroke='%231E1B15' stroke-width='1.4'/%3E%3Ccircle cx='16' cy='14' r='1.6' fill='%231E1B15'/%3E%3Cpath d='M16 14 L16 5' stroke='%231E1B15' stroke-width='1.3'/%3E%3Cpath d='M16 5 L23 7.5 L16 10 Z' fill='%23B0452C' stroke='%231E1B15' stroke-width='.8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/styl.css">
+<style>
+  /* styly specifické pro tuto sekci — sdílené věci jsou v assets/styl.css, sekce 14 a 15 */
+  .popisFilozofie{margin-top:11px;font-size:15.5px;line-height:1.42;color:var(--ink2);min-height:2.8em}
+  .lanes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+  .laneNadpis{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);text-align:center;margin-top:6px}
+  .laneOpis{font-size:12.5px;color:var(--ink2);text-align:center;opacity:.8;margin-top:2px;line-height:1.32}
+  .radek{margin-top:10px;font-size:15px;line-height:1.4}
+  .radek b{color:var(--olive)}
+  @media (max-width:400px){ .lanes{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="hr"><span data-t="meta.kicker"></span></div>
+  <div class="lang" role="group" aria-label="Language">
+    <button data-l="cs" aria-current="true">ČES</button><i>/</i><button data-l="en">ENG</button>
+  </div>
+</div>
+<a class="zpet" href="index.html" data-t="nav.prehled"></a>
+<p class="krokLabel" id="krokLabel"></p>
+
+<!-- ============================================================ TEE SHOT 1 -->
+<section class="plat" id="secTeeShot1">
+  <p class="eyebrow" data-t="teeShot1.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="teeShot1.over"></em><span data-t="teeShot1.title"></span></h2>
+  <p class="lede" data-t="teeShot1.lede"></p>
+  <div class="principBox"><b data-t="principLabel"></b><br><span data-t="teeShot1.principle"></span></div>
+
+  <svg id="p1" viewBox="0 0 400 640" role="img" aria-label="Tři filozofie jamky"></svg>
+
+  <div class="toggle" id="teeShot1Toggle" role="group" aria-label="Filozofie jamky">
+    <button type="button" data-mode="trest" data-t="teeShot1.toggle.trest"></button>
+    <button type="button" data-mode="strategie" data-t="teeShot1.toggle.strategie" aria-pressed="true"></button>
+    <button type="button" data-mode="heroika" data-t="teeShot1.toggle.heroika"></button>
+  </div>
+  <p class="popisFilozofie" id="teeShot1Popis"></p>
+
+  <p class="listMark" data-t="teeShot1.foot"></p>
+</section>
+
+<!-- ============================================================ TEE SHOT 2 -->
+<section class="plat" id="secTeeShot2">
+  <p class="eyebrow" data-t="teeShot2.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="teeShot2.over"></em><span data-t="teeShot2.title"></span></h2>
+  <p class="lede" data-t="teeShot2.lede"></p>
+  <div class="principBox"><b data-t="principLabel"></b><br><span data-t="teeShot2.principle"></span></div>
+
+  <svg id="p2" viewBox="0 0 400 460" role="img" aria-label="Trest úměrný chybě na dvou jamkách"></svg>
+
+  <div class="posuvnik-wrap">
+    <label for="teeShot2Slider"><span data-t="teeShot2.sliderLabel"></span><output id="teeShot2Out">0 m</output></label>
+    <input type="range" class="posuvnik" id="teeShot2Slider" min="0" max="20" step="1" value="0">
+  </div>
+  <div class="lanes">
+    <p class="radek" id="teeShot2RadekA"></p>
+    <p class="radek" id="teeShot2RadekB"></p>
+  </div>
+
+  <p class="listMark" data-t="teeShot2.foot"></p>
+</section>
+
+<div class="sekceNav" id="sekceNav"></div>
+<div class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="index.html" data-t="nav.prehled"></a></div>
+
+<script type="module">
+import { vytvorJazyk, nactiSlovnik } from '../../js/jazyk.js';
+import { E, V, clear, blob, blobPts, hatch, radial, stipple, pin, clipPath } from '../../js/platy.js';
+import { vykresliNavSekci } from '../../js/sekce-nav.js';
+
+const $ = (id) => document.getElementById(id);
+
+const slovnik = await nactiSlovnik('../../data/preklady/lekce-01.json');
+const jazyk = vytvorJazyk(slovnik, {
+  titul: (lang) => lang === 'cs' ? 'ROUTING — Lekce 1: Tee shot' : 'ROUTING — Lesson 1: Tee shot',
+});
+
+/* ============================================================================
+ * TEE SHOT 1 — „Tři otázky“. Tři filozofie na stejném kusu země. Geometrie
+ * cest a hazardů je čistě ilustrativní (ne vázaná na simulaci) — jde o
+ * princip, ne o čísla.
+ * ==========================================================================*/
+const F1 = {
+  trest: 'M150 580 L143 260 L162 118 L238 118 L257 260 L250 580 Z',
+  strategie: 'M120 580 L98 280 L140 128 L260 128 L302 280 L280 580 Z',
+  heroika: 'M120 580 L98 280 L140 128 L260 128 L302 280 L280 580 Z',
+};
+let teeShot1Mode = 'strategie';
+
+function kresliTeeShot1(svg, mode) {
+  clear(svg);
+  const defs = E(svg, 'defs', {});
+
+  const sur = blob(200, 330, 178, 300, 0, 101, 0.04);
+  const cSur = 't1sur';
+  clipPath(defs, cSur, sur);
+  E(svg, 'path', { d: sur, fill: V('--turf-d', svg), opacity: 0.42 });
+  hatch(svg, cSur, { x: 15, y: 20, w: 370, h: 620 }, 1.15, 3.6, { op: 0.3, seed: 5 });
+  E(svg, 'path', { d: sur, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1, opacity: 0.7 });
+
+  if (mode === 'trest') {
+    const wL = blob(75, 320, 68, 260, 0, 111, 0.05, 44);
+    const wR = blob(325, 320, 68, 260, 0, 112, 0.05, 44);
+    [wL, wR].forEach((d) => E(svg, 'path', { d, fill: V('--water', svg), opacity: 0.72, stroke: V('--ink', svg), 'stroke-width': 0.9 }));
+  }
+
+  const fd = F1[mode];
+  const cf = 't1fw';
+  clipPath(defs, cf, fd);
+  E(svg, 'path', { d: fd, fill: V('--turf', svg), opacity: 0.96 });
+  hatch(svg, cf, { x: 90, y: 120, w: 220, h: 470 }, Math.PI / 2, 5, { op: 0.1, seed: 12 });
+  E(svg, 'path', { d: fd, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.1 });
+
+  if (mode === 'strategie') {
+    const bx = 150, by = 300, brx = 42, bry = 78;
+    const bd = blob(bx, by, brx, bry, 0.12, 131, 0.16, 40);
+    const cb = 't1bunk';
+    clipPath(defs, cb, bd);
+    E(svg, 'path', { d: bd, fill: V('--sand', svg) });
+    stipple(svg, cb, { x: bx - brx, y: by - bry, w: brx * 2, h: bry * 2 }, 40, 132, { op: 0.5 });
+    E(svg, 'path', { d: bd, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.1 });
+    radial(svg, blobPts(bx, by, brx, bry, 0.12, 131, 0.16, 40), 133, { len: 10, w: 0.55, op: 0.65 });
+  } else if (mode === 'heroika') {
+    const hd = blob(190, 430, 118, 52, -0.5, 141, 0.08, 40);
+    const ch = 't1water';
+    clipPath(defs, ch, hd);
+    E(svg, 'path', { d: hd, fill: V('--water', svg), opacity: 0.75, stroke: V('--ink', svg), 'stroke-width': 0.9 });
+    const wg = E(svg, 'g', { 'clip-path': `url(#${ch})`, stroke: V('--ink', svg), 'stroke-width': 0.6, opacity: 0.45, fill: 'none' });
+    for (let i = 0; i < 5; i++) {
+      E(wg, 'path', { d: `M${190 - 130 + i * 10} ${430 - 24 + i * 10} q10 -4 20 0 t20 0 t20 0 t20 0 t20 0 t20 0` });
+    }
+    E(svg, 'path', { d: hd, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.1 });
+  }
+
+  const gd = blob(200, 88, 46, 34, 0, 202, 0.07, 46);
+  const cg = 't1green';
+  clipPath(defs, cg, gd);
+  E(svg, 'path', { d: gd, fill: V('--turf', svg) });
+  hatch(svg, cg, { x: 150, y: 50, w: 100, h: 76 }, 0.4, 4, { op: 0.16, seed: 22 });
+  E(svg, 'path', { d: gd, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.2 });
+  radial(svg, blobPts(200, 88, 52, 40, 0, 202, 0.07, 46), 77, { len: 7, w: 0.5, op: 0.5 });
+  pin(svg, 200, 88, { h: 30 });
+  E(svg, 'text', { x: 200, y: 40, class: 'lab', 'text-anchor': 'middle' }, jazyk.t('teeShot1.L.green'));
+
+  E(svg, 'rect', { x: 182, y: 585, width: 36, height: 18, rx: 3, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1.2 });
+  E(svg, 'text', { x: 200, y: 626, class: 'lab', 'text-anchor': 'middle' }, jazyk.t('teeShot1.L.odpaliste'));
+
+  const L = mode === 'trest' ? jazyk.t('teeShot1.L.trest')
+    : mode === 'strategie' ? jazyk.t('teeShot1.L.strategieAgresivni')
+    : jazyk.t('teeShot1.L.heroikaSkala');
+  const lx = mode === 'trest' ? 200 : mode === 'strategie' ? 150 : 190;
+  const ly = mode === 'trest' ? 300 : mode === 'strategie' ? 300 : 430;
+  E(svg, 'text', { x: lx, y: ly - 6, class: 'lab sm', 'text-anchor': 'middle' }, L[0]);
+  E(svg, 'text', { x: lx, y: ly + 10, class: 'lab sm', 'text-anchor': 'middle' }, L[1]);
+
+  if (mode === 'strategie') {
+    E(svg, 'text', { x: 280, y: 300, class: 'lab sm', 'text-anchor': 'middle' }, jazyk.t('teeShot1.L.strategieBezpecna')[0]);
+    E(svg, 'text', { x: 280, y: 316, class: 'lab sm', 'text-anchor': 'middle' }, jazyk.t('teeShot1.L.strategieBezpecna')[1]);
+  }
+}
+
+function renderTeeShot1() {
+  kresliTeeShot1($('p1'), teeShot1Mode);
+  $('teeShot1Popis').textContent = jazyk.t('teeShot1.popis.' + teeShot1Mode);
+  document.querySelectorAll('#teeShot1Toggle button').forEach((b) => {
+    b.setAttribute('aria-pressed', String(b.dataset.mode === teeShot1Mode));
+  });
+}
+document.querySelectorAll('#teeShot1Toggle button').forEach((b) => {
+  b.addEventListener('click', () => { teeShot1Mode = b.dataset.mode; renderTeeShot1(); });
+});
+
+/* ============================================================================
+ * TEE SHOT 2 — „Trest úměrný chybě“. Dvě jamky, stejná odchylka od linie
+ * (0–20 m), jiná reakce návrhu. Prahy a přírůstky ran jsou ilustrativní
+ * konstanty (ne ze `simulace.js`), zdokumentované v `poznamky.md`, krok 4.
+ * ==========================================================================*/
+const T2_HRANICE = 8;
+const T2_HRANICE_B = 14;
+const T2_TREST_ROUGH = 0.4;
+const T2_TREST_BUNKR = 0.9;
+const T2_SCALE = 4.2;
+
+function zonaT2(lane, v) {
+  const av = Math.abs(v);
+  if (av <= T2_HRANICE) return 'fairway';
+  if (lane === 'B' && av <= T2_HRANICE_B) return 'rough';
+  return 'bunkr';
+}
+function trestT2(lane, v) {
+  const z = zonaT2(lane, v);
+  return z === 'fairway' ? 0 : z === 'rough' ? T2_TREST_ROUGH : T2_TREST_BUNKR;
+}
+const fmt = (n, lang, d = 2) => {
+  const s = n.toFixed(d);
+  return lang === 'cs' ? s.replace('.', ',') : s;
+};
+
+function kresliLane(svg, cx, lane, v) {
+  const defs = svg.querySelector('defs') || E(svg, 'defs', {});
+  const top = 60, bot = 400, halfW = 90;
+
+  const outerD = `M${cx - halfW} ${top} L${cx - halfW} ${bot} L${cx + halfW} ${bot} L${cx + halfW} ${top} Z`;
+  E(svg, 'path', { d: outerD, fill: V('--sand', svg), opacity: lane === 'A' ? 0.9 : 0.85 });
+
+  if (lane === 'B') {
+    const roughHalf = T2_HRANICE_B * T2_SCALE;
+    const roughD = `M${cx - roughHalf} ${top} L${cx - roughHalf} ${bot} L${cx + roughHalf} ${bot} L${cx + roughHalf} ${top} Z`;
+    E(svg, 'path', { d: roughD, fill: V('--turf-d', svg) });
+  }
+  const fwHalf = T2_HRANICE * T2_SCALE;
+  const fwD = `M${cx - fwHalf} ${top} L${cx - fwHalf} ${bot} L${cx + fwHalf} ${bot} L${cx + fwHalf} ${top} Z`;
+  const cf = 'lane' + lane + 'fw';
+  clipPath(defs, cf, fwD);
+  E(svg, 'path', { d: fwD, fill: V('--turf', svg) });
+  hatch(svg, cf, { x: cx - fwHalf, y: top, w: fwHalf * 2, h: bot - top }, Math.PI / 2, 5, { op: 0.12, seed: lane === 'A' ? 31 : 32 });
+  E(svg, 'path', { d: fwD, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1 });
+  E(svg, 'path', { d: outerD, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1 });
+
+  E(svg, 'rect', { x: cx - 16, y: bot + 6, width: 32, height: 15, rx: 2.5, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1 });
+  const gd = blob(cx, top - 30, 30, 20, 0, 500 + (lane === 'A' ? 1 : 2), 0.06, 36);
+  const cg = 'lane' + lane + 'g';
+  clipPath(defs, cg, gd);
+  E(svg, 'path', { d: gd, fill: V('--turf', svg) });
+  E(svg, 'path', { d: gd, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1 });
+  pin(svg, cx, top - 30, { h: 18, flagW: 12, flagH: 4 });
+
+  const zone = zonaT2(lane, v);
+  const mx = cx + Math.min(v, 20) * T2_SCALE;
+  const my = 220;
+  E(svg, 'circle', { cx: mx, cy: my, r: 5, fill: V('--ink', svg), stroke: V('--paper', svg), 'stroke-width': 1.4 });
+
+  E(svg, 'text', { x: cx, y: bot + 40, class: 'lab sm', 'text-anchor': 'middle' }, jazyk.t('teeShot2.L.' + (lane === 'A' ? 'jamkaA' : 'jamkaB')));
+}
+
+function kresliTeeShot2(svg, v) {
+  clear(svg);
+  E(svg, 'defs', {});
+  kresliLane(svg, 110, 'A', v);
+  kresliLane(svg, 290, 'B', v);
+  E(svg, 'line', { x1: 200, y1: 20, x2: 200, y2: 440, stroke: V('--ink2', svg), 'stroke-width': 0.8, opacity: 0.35, 'stroke-dasharray': '3 4' });
+}
+
+function renderTeeShot2() {
+  const v = Number($('teeShot2Slider').value);
+  $('teeShot2Out').textContent = v + ' m';
+  kresliTeeShot2($('p2'), v);
+  const radek = jazyk.t('teeShot2.radek');
+  const fill = (lane, nadpisKlic) => radek
+    .replace('{jamka}', jazyk.t('teeShot2.' + nadpisKlic + '.nadpis'))
+    .replace('{stav}', jazyk.t('teeShot2.stav.' + zonaT2(lane, v)))
+    .replace('{cost}', fmt(trestT2(lane, v), jazyk.lang, 1));
+  $('teeShot2RadekA').innerHTML = fill('A', 'jamkaA');
+  $('teeShot2RadekB').innerHTML = fill('B', 'jamkaB');
+}
+$('teeShot2Slider').addEventListener('input', renderTeeShot2);
+
+jazyk.on(() => {
+  renderTeeShot1();
+  renderTeeShot2();
+  vykresliNavSekci({ lekce: 1, index: 0, jazyk, krokEl: $('krokLabel'), navEl: $('sekceNav') });
+});
+</script>
+</body>
+</html>

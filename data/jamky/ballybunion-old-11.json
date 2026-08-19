@@ -48,13 +48,13 @@
     "en": "Where does the cliff edge run, and where do natural hollows in the dunes punish a bad shot on their own — so the architect doesn't need to build a single bunker?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Jamka záměrně nemá žádný bunkr — hazardem je terén samotný, viz pole hazardy.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Jamka záměrně nemá žádný bunkr — hazardem je terén samotný, viz pole hazardy. Strana útesu/OB opravena na pravou (viz poznámka v kroku ověřování) podle popisu hry podél pobřeží ve zdrojích golfcoursegurus.com a thegolfarchitects.com.",
     "green": {
-      "x": -10,
+      "x": 10,
       "y": 380,
       "rx": 10,
       "ry": 8,
-      "rot": 0.3,
+      "rot": -0.3,
       "seed": 2201,
       "amp": 0.09
     },
@@ -62,11 +62,11 @@
     "hazardy": [
       {
         "typ": "duny",
-        "x": -22,
+        "x": 22,
         "y": 200,
         "rx": 16,
         "ry": 60,
-        "rot": 0.15,
+        "rot": -0.15,
         "seed": 2202,
         "amp": 0.22,
         "label": {
@@ -76,7 +76,7 @@
       },
       {
         "typ": "OB",
-        "x": -55,
+        "x": 55,
         "y": 250,
         "rx": 8,
         "ry": 220,
@@ -135,5 +135,20 @@
       "titul": "Golf Club Atlas — Ballybunion Golf Club, Old Course",
       "url": "https://golfclubatlas.com/countries/ballybunion-golf-club-old-course/"
     }
-  ]
+  ],
+  "foto": {
+    "soubor": "ballybunion-old-11.jpg",
+    "autor": "Bernard Gagnon",
+    "licence": "CC BY-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "zdrojUrl": "https://commons.wikimedia.org/wiki/File:Ballybunion_Golf_Club_-_10th_hole.jpg",
+    "alt": {
+      "cs": "Ballybunion Old Course — green na útesu nad pláží (10. jamka, v sousedství 11.)",
+      "en": "Ballybunion Old Course — a clifftop green above the beach (10th hole, next to the 11th)"
+    },
+    "poznamka": {
+      "cs": "ilustrační záběr sousední 10. jamky — volně licencovanou fotku přímo z 11. jamky se nepodařilo dohledat",
+      "en": "illustrative view of the neighbouring 10th hole — no freely licensed photo of the 11th hole itself could be found"
+    }
+  }
 }

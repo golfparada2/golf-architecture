@@ -55,28 +55,28 @@
     "en": "How do you hit a small island green with a short club when the only safe line is dead center, and a miss in any direction means a ball in the water?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob().",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(); pořadí vykreslení je hazardy → bunkry → green (js/platy.js:442-462), takže voda soustředěná kolem greenu a jen mírně větší než green se automaticky ukáže jako prstenec obklopující ostrůvek ze všech stran. OPRAVA (2026-08-19): původní návrh měl vodní hazard rx:34/ry:30 vystředěný mimo green (0,118) — to je stejná chyba jako u jiné jamky dřív (obří jezero přes celou kartu, šířka bounding boxu by vyšla přes 90 m). Green podle Golf News Net (3 912 sq ft, 78×81 ft ≈ skoro kruhový) měl navíc být méně zploštělý (ry blíž rx) a bunker je podle stejného zdroje vpředu vlevo, ne vzadu. Přepsáno: voda je teď soustředěná na stejné x,y jako green a jen o pár metrů větší na každou stranu (rx 18 / ry 15 vs. green rx 12 / ry 11) — pořád obklopuje ostrůvek ze všech stran, ale nedominuje kartě.",
     "green": {
       "x": 0,
       "y": 121,
       "rx": 12,
-      "ry": 9,
+      "ry": 11,
       "rot": 0.1,
       "seed": 1701,
       "amp": 0.07
     },
     "bunkry": [
       {
-        "x": -3,
-        "y": 128,
-        "rx": 3,
-        "ry": 2,
+        "x": -8,
+        "y": 113,
+        "rx": 2.2,
+        "ry": 1.6,
         "rot": 0.2,
         "seed": 1702,
         "amp": 0.16,
         "label": {
-          "cs": "malý bunker vzadu",
-          "en": "small back bunker"
+          "cs": "malý pot bunker vpředu vlevo",
+          "en": "small pot bunker front-left"
         }
       }
     ],
@@ -84,15 +84,15 @@
       {
         "typ": "voda",
         "x": 0,
-        "y": 118,
-        "rx": 34,
-        "ry": 30,
+        "y": 121,
+        "rx": 18,
+        "ry": 15,
         "rot": 0,
         "seed": 1703,
         "amp": 0.05,
         "label": {
-          "cs": "jezero obklopující celý green",
-          "en": "lake surrounding the entire green"
+          "cs": "jezero obklopující green ze všech stran",
+          "en": "lake surrounding the green on every side"
         }
       }
     ]
@@ -141,6 +141,22 @@
     {
       "titul": "Wikipedia — TPC at Sawgrass",
       "url": "https://en.wikipedia.org/wiki/TPC_at_Sawgrass"
+    },
+    {
+      "titul": "Golf News Net — What is the size of the island green par-3 17th hole at TPC Sawgrass and The Players?",
+      "url": "https://thegolfnewsnet.com/golfnewsnetteam/2022/03/12/what-is-the-size-of-the-island-green-par-3-17th-hole-at-tpc-sawgrass-and-the-players-125558/",
+      "poznamka": "zdroj rozměrů greenu (3 912 sq ft, 78×81 stop) a polohy bunkeru (pot bunker vpředu vlevo) použitých k opravě pole tvary"
     }
-  ]
+  ],
+  "foto": {
+    "soubor": "tpc-sawgrass-17.jpg",
+    "autor": "Craig ONeal",
+    "licence": "CC BY-SA 2.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "zdrojUrl": "https://commons.wikimedia.org/wiki/File:TPC_Sawgrass_17.jpg",
+    "alt": {
+      "cs": "Slavná 17. jamka, TPC Sawgrass — ostrůvkový green obklopený vodou",
+      "en": "The famous 17th hole, TPC Sawgrass — island green surrounded by water"
+    }
+  }
 }

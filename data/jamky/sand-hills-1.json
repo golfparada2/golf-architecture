@@ -46,12 +46,12 @@
     "en": "Which way does the wind cross the dunes, and where does a natural hollow appear that a green can simply sit in, without moving any earth?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob().",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). OPRAVENO 2026-08-19: podle All Golf Holes (samostatná stránka jamky 1) má green plochu cca 3966 sq ft ve tvaru spíš úzkého a hlubokého oválu (cca 18×33 yardů, tj. přibližně rx≈8 m, ry≈11 m) — původní tvar byl širší než hluboký, což neodpovídalo realitě. Zásadnější chyba byla u bunkrů: hřiště má na jamce 1 celkem 6 bunkrů a několik zdrojů (Golf Club Atlas, GolfCourseGurus, All Golf Holes) nezávisle popisuje, že green je „perched between artistic and challenging bunkers“ a bunkry se koncentrují až u greenu (All Golf Holes uvádí bunkry na 529 yardech z 549 — tedy těsně před greenem, ohrožují druhý/třetí úder). Původní tvary měly OBA bunkry jen v prostoru dojezdu prvního úderu (y=300–340 m) a u greenu nebyl žádný — doplněny 2 menší bunkry lemující green, velikost bunkrů v dojezdové zóně zároveň zmenšena na doporučený rozsah (rx 3–6), protože rx=9 bylo nepřiměřeně velké. Zdroje: allgolfholes.com/courses/nebraska/sand-hills-golf-club/1st-hole, golfclubatlas.com/countries/sand-hills, golfcoursegurus.com/reviews/sand-hills-golf-club.",
     "green": {
       "x": 2,
       "y": 460,
-      "rx": 13,
-      "ry": 10,
+      "rx": 8,
+      "ry": 11,
       "rot": 0.1,
       "seed": 2101,
       "amp": 0.08
@@ -60,27 +60,53 @@
       {
         "x": -18,
         "y": 300,
-        "rx": 9,
-        "ry": 5,
+        "rx": 6,
+        "ry": 4,
         "rot": 0.5,
         "seed": 2102,
         "amp": 0.26,
         "label": {
-          "cs": "roztřepený bunker vzniklý větrnou erozí",
-          "en": "jagged, wind-eroded bunker"
+          "cs": "roztřepený fairwayový bunker vzniklý větrnou erozí (hlídá levou stranu dojezdu prvního úderu)",
+          "en": "jagged, wind-eroded fairway bunker (guards the left side of the layup zone)"
         }
       },
       {
         "x": 20,
         "y": 340,
-        "rx": 7,
-        "ry": 4,
+        "rx": 5,
+        "ry": 3.5,
         "rot": -0.4,
         "seed": 2103,
         "amp": 0.25,
         "label": {
-          "cs": "roztřepený bunker vzniklý větrnou erozí",
-          "en": "jagged, wind-eroded bunker"
+          "cs": "roztřepený fairwayový bunker vzniklý větrnou erozí",
+          "en": "jagged, wind-eroded fairway bunker"
+        }
+      },
+      {
+        "x": -13,
+        "y": 440,
+        "rx": 5,
+        "ry": 3.5,
+        "rot": 0.3,
+        "seed": 2104,
+        "amp": 0.27,
+        "label": {
+          "cs": "bunker lemující green zleva — hlídá přístup ke zúženému greenu",
+          "en": "bunker framing the green on the left — guards the approach to the narrow green"
+        }
+      },
+      {
+        "x": 15,
+        "y": 448,
+        "rx": 4.5,
+        "ry": 3,
+        "rot": -0.35,
+        "seed": 2105,
+        "amp": 0.26,
+        "label": {
+          "cs": "bunker lemující green zprava",
+          "en": "bunker framing the green on the right"
         }
       }
     ],
@@ -109,6 +135,16 @@
     },
     {
       "nazev": {
+        "cs": "Šest bunkrů, nejvíc u greenu",
+        "en": "Six bunkers, most of them by the green"
+      },
+      "popis": {
+        "cs": "Na jamce je celkem 6 bunkrů. Nejsou rozeseté jen v dojezdu prvního úderu — hlavní shluk lemuje malý, úzký a hluboký green a hlídá druhý/třetí úder těsně před jamkou.",
+        "en": "The hole carries six bunkers in total. They aren't just scattered around the layup zone — the main cluster frames the small, narrow, deep green and threatens the second or third shot right in front of the putting surface."
+      }
+    },
+    {
+      "nazev": {
         "cs": "Minimální zemní práce",
         "en": "Minimal earthmoving"
       },
@@ -130,6 +166,14 @@
     {
       "titul": "All Golf Holes — Sand Hills Golf Club scorecard",
       "url": "https://www.allgolfholes.com/courses/nebraska/sand-hills-golf-club"
+    },
+    {
+      "titul": "All Golf Holes — Sand Hills Golf Club, Hole 1 (par 5, 549 yds, strategie a bunkry)",
+      "url": "https://www.allgolfholes.com/courses/nebraska/sand-hills-golf-club/1st-hole"
+    },
+    {
+      "titul": "GolfCourseGurus — Sand Hills Golf Club review",
+      "url": "https://golfcoursegurus.com/reviews/sand-hills-golf-club/"
     }
   ]
 }

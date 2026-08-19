@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ROUTING — Lekce 1: Approach</title>
+<meta name="description" content="Lekce 1, sekce 4 z 7: dva interaktivní úkoly — kam patří bunkr, kde je rovnováha rizika a zisku.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F1E0'/%3E%3Ccircle cx='16' cy='14' r='9' fill='%23A9B983' stroke='%231E1B15' stroke-width='1.4'/%3E%3Ccircle cx='16' cy='14' r='1.6' fill='%231E1B15'/%3E%3Cpath d='M16 14 L16 5' stroke='%231E1B15' stroke-width='1.3'/%3E%3Cpath d='M16 5 L23 7.5 L16 10 Z' fill='%23B0452C' stroke='%231E1B15' stroke-width='.8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/styl.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="hr"><span data-t="meta.kicker"></span></div>
+  <div class="lang" role="group" aria-label="Language">
+    <button data-l="cs" aria-current="true">ČES</button><i>/</i><button data-l="en">ENG</button>
+  </div>
+</div>
+<a class="zpet" href="index.html" data-t="nav.prehled"></a>
+<p class="krokLabel" id="krokLabel"></p>
+
+<!-- ============================================================ APPROACH: ÚVOD -->
+<section class="plat" id="secApproachIntro">
+  <p class="eyebrow" data-t="approachNadpis.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="approachNadpis.over"></em><span data-t="approachNadpis.title"></span></h2>
+  <p class="lede" data-t="approachNadpis.lede"></p>
+</section>
+
+<!-- ============================================================ APPROACH 1: KAM PATŘÍ BUNKR -->
+<section class="plat" id="secApproach1">
+  <p class="eyebrow" data-t="approach1.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="approach1.over"></em><span data-t="approach1.title"></span></h2>
+  <p class="lede" data-t="approach1.lede"></p>
+
+  <svg id="p3" class="plate-work" viewBox="0 0 400 900" role="img" aria-label="Půdorys jamky, klepnutím umístíš bunkr"></svg>
+
+  <div class="tools">
+    <button type="button" id="a1run" data-t="approach1.tools.run"></button>
+    <button type="button" id="a1clear" class="quiet" data-t="approach1.tools.clear"></button>
+  </div>
+  <p class="state" id="a1state"></p>
+
+  <div id="a1results" hidden>
+    <div class="hr" style="margin-top:18px"><span data-t="approach1.vysledky.caption"></span></div>
+    <table>
+      <thead><tr>
+        <th data-t="approach1.vysledky.theadHrac"></th>
+        <th data-t="approach1.vysledky.theadFairway"></th>
+        <th data-t="approach1.vysledky.theadPisek"></th>
+        <th data-t="approach1.vysledky.theadVoda"></th>
+        <th data-t="approach1.vysledky.theadPrumer"></th>
+      </tr></thead>
+      <tbody id="a1tb"></tbody>
+    </table>
+    <p class="verdict" id="a1verdict"></p>
+  </div>
+
+  <p class="listMark" data-t="approach1.foot"></p>
+</section>
+
+<!-- ============================================================ APPROACH 2: KDE JE ROVNOVÁHA -->
+<section class="plat" id="secApproach2">
+  <p class="eyebrow" data-t="approach2.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="approach2.over"></em><span data-t="approach2.title"></span></h2>
+  <p class="lede" data-t="approach2.lede"></p>
+
+  <svg id="p4" viewBox="0 0 400 300" role="img" aria-label="Křivky zisku a rizika podle těsnosti kolem hazardu"></svg>
+  <div class="legenda">
+    <span><i style="background:var(--olive)"></i><span data-t="approach2.legenda.zisk"></span></span>
+    <span><i style="background:var(--flag)"></i><span data-t="approach2.legenda.riziko"></span></span>
+  </div>
+
+  <div class="posuvnik-wrap">
+    <label for="a2Slider"><span data-t="approach2.sliderLabel"></span><output id="a2Out">50 %</output></label>
+    <input type="range" class="posuvnik" id="a2Slider" min="0" max="100" step="1" value="50">
+  </div>
+
+  <div class="ctenka">
+    <div data-t="approach2.ctenka.tesnost"></div>
+    <div data-t="approach2.ctenka.zisk"></div>
+    <div data-t="approach2.ctenka.riziko"></div>
+    <div data-t="approach2.ctenka.cistyZisk"></div>
+  </div>
+  <div class="ctenka" style="margin-top:2px">
+    <div><b id="a2Tesnost"></b></div>
+    <div><b id="a2Zisk"></b></div>
+    <div><b id="a2Riziko"></b></div>
+    <div><b id="a2Cisty"></b></div>
+  </div>
+
+  <p class="verdict" id="a2vyrok" style="margin-top:16px"></p>
+  <p class="src" data-t="approach2.vysvetleni"></p>
+
+  <p class="listMark" data-t="approach2.foot"></p>
+</section>
+
+<div class="sekceNav" id="sekceNav"></div>
+<div class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="index.html" data-t="nav.prehled"></a></div>
+
+<script type="module">
+import { vytvorJazyk, nactiSlovnik } from '../../js/jazyk.js';
+import { E, V, clear, blob, blobPts, hatch, radial, stipple, pin, clipPath } from '../../js/platy.js';
+import { HRACI, odehrajKolo, bocniChyba, puttyPlynule, normCdf } from '../../js/simulace.js';
+import { vykresliNavSekci } from '../../js/sekce-nav.js';
+
+const $ = (id) => document.getElementById(id);
+const fmt = (n, lang, d = 2) => {
+  const s = n.toFixed(d);
+  return lang === 'cs' ? s.replace('.', ',') : s;
+};
+
+const slovnik = await nactiSlovnik('../../data/preklady/lekce-01.json');
+const jazyk = vytvorJazyk(slovnik, {
+  titul: (lang) => lang === 'cs' ? 'ROUTING — Lekce 1: Approach' : 'ROUTING — Lesson 1: Approach',
+});
+
+/* ============================================================================
+ * APPROACH 1 — „Kam patří bunkr“.
+ * ==========================================================================*/
+const A1_WX = [-46, 46], A1_WY = [-25, 375];
+const A1_SX = 400 / (A1_WX[1] - A1_WX[0]), A1_SY = 900 / (A1_WY[1] - A1_WY[0]);
+const a1px = (x) => (x - A1_WX[0]) * A1_SX;
+const a1py = (y) => 900 - (y - A1_WY[0]) * A1_SY;
+
+const A1_GREEN = { x: 18, y: 345, rx: 16, ry: 13 };
+const A1_PIN = { x: 20, y: 349 };
+const A1_WATER = { x: 31, y: 314, rx: 17, ry: 12 };
+const A1_OB = 44;
+const A1_EDGES = [
+  { y: 35, L: -20, R: 22 }, { y: 120, L: -22, R: 26 }, { y: 200, L: -20, R: 24 },
+  { y: 260, L: -24, R: 16 }, { y: 302, L: -24, R: 2 },
+];
+function a1EdgesAt(y) {
+  if (y < A1_EDGES[0].y || y > A1_EDGES[A1_EDGES.length - 1].y) return null;
+  for (let i = 0; i < A1_EDGES.length - 1; i++) {
+    const a = A1_EDGES[i], b = A1_EDGES[i + 1];
+    if (y >= a.y && y <= b.y) { const t = (y - a.y) / (b.y - a.y); return { L: a.L + (b.L - a.L) * t, R: a.R + (b.R - a.R) * t }; }
+  }
+  return null;
+}
+const a1InEll = (x, y, e) => ((x - e.x) ** 2) / (e.rx ** 2) + ((y - e.y) ** 2) / (e.ry ** 2) <= 1;
+const a1InFw = (x, y) => { const e = a1EdgesAt(y); return !!e && x >= e.L && x <= e.R; };
+
+let a1Bunkers = [];
+const A1_BR = 9;
+const a1InBunker = (x, y) => a1Bunkers.some((b) => Math.hypot(x - b.x, y - b.y) <= b.r);
+
+function a1ResolveLie(x, y) {
+  if (Math.abs(x) > A1_OB) return { trest: true, x: Math.sign(x) * (A1_OB - 3), y };
+  if (a1InEll(x, y, A1_WATER)) return { trest: true, x: A1_WATER.x - A1_WATER.rx - 7, y: A1_WATER.y - 5 };
+  if (a1InEll(x, y, A1_GREEN)) return { typ: 'green' };
+  if (a1InBunker(x, y)) return { typ: 'bunkr' };
+  if (a1InFw(x, y)) return { typ: 'fairway' };
+  return { typ: 'rough' };
+}
+function a1Aim(hrac) {
+  const e = a1EdgesAt(Math.min(hrac.drive, 300)) || { L: -22, R: 12 };
+  return { x: (e.L + e.R) / 2, y: hrac.drive };
+}
+function a1Hraj(hrac, n) {
+  return odehrajKolo(hrac, { pin: A1_PIN, aim: a1Aim(hrac), resolveLie: a1ResolveLie }, n);
+}
+
+let a1Shots = null;
+let a1Base = null;
+
+function kresliApproach1(svg) {
+  clear(svg);
+  const defs = E(svg, 'defs', {});
+
+  const sur = blob(200, 450, 182, 432, 0, 101, 0.03);
+  const cS = 'a1sur';
+  clipPath(defs, cS, sur);
+  E(svg, 'path', { d: sur, fill: V('--turf-d', svg), opacity: 0.42 });
+  hatch(svg, cS, { x: 10, y: 10, w: 380, h: 880 }, 1.15, 3.6, { op: 0.3, seed: 5 });
+  hatch(svg, cS, { x: 10, y: 10, w: 380, h: 880 }, -0.5, 9, { op: 0.14, seed: 6 });
+  E(svg, 'path', { d: sur, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1, opacity: 0.7 });
+
+  let d = '';
+  A1_EDGES.forEach((e, i) => { d += (i ? 'L' : 'M') + a1px(e.L).toFixed(1) + ' ' + a1py(e.y).toFixed(1) + ' '; });
+  for (let i = A1_EDGES.length - 1; i >= 0; i--) d += 'L' + a1px(A1_EDGES[i].R).toFixed(1) + ' ' + a1py(A1_EDGES[i].y).toFixed(1) + ' ';
+  d += 'Z';
+  const cF = 'a1fw';
+  clipPath(defs, cF, d);
+  E(svg, 'path', { d, fill: V('--turf', svg), opacity: 0.95 });
+  hatch(svg, cF, { x: 60, y: 180, w: 280, h: 700 }, Math.PI / 2, 5, { op: 0.1, seed: 12 });
+  E(svg, 'path', { d, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.1 });
+
+  const wd = blob(a1px(A1_WATER.x), a1py(A1_WATER.y), A1_WATER.rx * A1_SX, A1_WATER.ry * A1_SY, 0, 404, 0.08, 44);
+  const cW = 'a1water';
+  clipPath(defs, cW, wd);
+  E(svg, 'path', { d: wd, fill: V('--water', svg), opacity: 0.75 });
+  const wg = E(svg, 'g', { 'clip-path': `url(#${cW})`, stroke: V('--ink', svg), 'stroke-width': 0.7, opacity: 0.5, fill: 'none' });
+  for (let i = 0; i < 7; i++) {
+    E(wg, 'path', { d: `M${a1px(A1_WATER.x) - 70} ${a1py(A1_WATER.y) - 24 + i * 8} q10 -4 20 0 t20 0 t20 0 t20 0 t20 0 t20 0` });
+  }
+  E(svg, 'path', { d: wd, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.1 });
+
+  const gd = blob(a1px(A1_GREEN.x), a1py(A1_GREEN.y), A1_GREEN.rx * A1_SX, A1_GREEN.ry * A1_SY, 0, 202, 0.07, 50);
+  const cG = 'a1green';
+  clipPath(defs, cG, gd);
+  E(svg, 'path', { d: gd, fill: V('--turf', svg) });
+  hatch(svg, cG, { x: a1px(A1_GREEN.x) - 80, y: a1py(A1_GREEN.y) - 40, w: 160, h: 80 }, 0.4, 4, { op: 0.16, seed: 22 });
+  E(svg, 'path', { d: gd, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.3 });
+  radial(svg, blobPts(a1px(A1_GREEN.x), a1py(A1_GREEN.y), A1_GREEN.rx * A1_SX + 7, A1_GREEN.ry * A1_SY + 5, 0, 202, 0.07, 50), 77, { len: 7, w: 0.5, op: 0.45 });
+
+  a1Bunkers.forEach((b, i) => {
+    const cx = a1px(b.x), cy = a1py(b.y), rx = b.r * A1_SX, ry = b.r * A1_SY;
+    const bd = blob(cx, cy, rx, ry, 0.3 + i, 303 + i * 111, 0.17, 40);
+    const id = 'a1b' + i;
+    clipPath(defs, id, bd);
+    E(svg, 'path', { d: bd, fill: V('--sand', svg) });
+    stipple(svg, id, { x: cx - rx * 1.3, y: cy - ry * 1.3, w: rx * 2.6, h: ry * 2.6 }, 70, 333 + i * 97);
+    E(svg, 'path', { d: bd, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.2 });
+    radial(svg, blobPts(cx, cy, rx, ry, 0.3 + i, 303 + i * 111, 0.17, 40), 808 + i * 13, { len: 11, w: 0.6, op: 0.65 });
+  });
+
+  if (a1Shots) {
+    const g24 = E(svg, 'g', { stroke: V('--ink2', svg), 'stroke-width': 0.9, opacity: 0.55, fill: 'none' });
+    a1Shots.p24.forEach((p) => {
+      const X = a1px(p.x), Y = a1py(p.y);
+      E(g24, 'path', { d: `M${(X - 2.6).toFixed(1)} ${(Y - 2.6).toFixed(1)} l5.2 5.2 M${(X + 2.6).toFixed(1)} ${(Y - 2.6).toFixed(1)} l-5.2 5.2` });
+    });
+    const g0 = E(svg, 'g', { fill: V('--ink', svg), opacity: 0.85 });
+    a1Shots.p0.forEach((p) => E(g0, 'circle', { cx: a1px(p.x).toFixed(1), cy: a1py(p.y).toFixed(1), r: 2.1 }));
+  }
+
+  pin(svg, a1px(A1_PIN.x), a1py(A1_PIN.y), { h: 26 });
+  E(svg, 'rect', { x: a1px(0) - 18, y: a1py(0) - 9, width: 36, height: 18, rx: 3, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1.2 });
+
+  const ax = E(svg, 'g', { stroke: V('--ink2', svg), 'stroke-width': 0.9, opacity: 0.65, fill: 'none' });
+  [100, 200, 300].forEach((m) => {
+    E(ax, 'line', { x1: 6, y1: a1py(m), x2: 20, y2: a1py(m) });
+    E(svg, 'text', { x: 24, y: a1py(m) + 5, class: 'lab sm' }, m + ' m');
+  });
+  E(svg, 'text', { x: a1px(A1_GREEN.x), y: a1py(A1_GREEN.y) - 42, class: 'lab', 'text-anchor': 'middle' }, jazyk.t('approach1.L.green'));
+  E(svg, 'text', { x: a1px(A1_WATER.x), y: a1py(A1_WATER.y) + 6, class: 'lab sm', 'text-anchor': 'middle' }, jazyk.t('approach1.L.rybnik'));
+  E(svg, 'text', { x: a1px(0), y: a1py(0) + 34, class: 'lab', 'text-anchor': 'middle' }, jazyk.t('approach1.L.odpaliste'));
+
+  E(svg, 'path', { d: `M300 ${a1py(288)} L${a1px(6).toFixed(0)} ${a1py(276)}`, class: 'lead' });
+  const fs = jazyk.t('approach1.L.fairwaySmer');
+  E(svg, 'text', { x: 396, y: a1py(292), class: 'lab sm', 'text-anchor': 'end' }, fs[0]);
+  E(svg, 'text', { x: 396, y: a1py(292) + 18, class: 'lab sm', 'text-anchor': 'end' }, fs[1]);
+}
+
+function a1StateText() {
+  const n = a1Bunkers.length;
+  if (!n) return jazyk.t('approach1.stavPrazdno');
+  const slovo = jazyk.t('approach1.slovoBunkr.' + (n === 1 ? 'jeden' : n < 5 ? 'malo' : 'hodne'));
+  return jazyk.t('approach1.stavPocet').replace('{n}', n).replace('{slovo}', slovo);
+}
+
+function a1Verdict(r0, r24) {
+  const lang = jazyk.lang;
+  const sp = r24.prumer - r0.prumer;
+  if (!a1Bunkers.length) {
+    return jazyk.t('approach1.verdict.prazdna').replace('{spread}', fmt(sp, lang));
+  }
+  const d0 = r0.prumer - a1Base.r0.prumer, d24 = r24.prumer - a1Base.r24.prumer;
+  let t;
+  if (d24 > d0 + 0.15) t = jazyk.t('approach1.verdict.trest').replace('{d24}', fmt(d24, lang)).replace('{d0}', fmt(d0, lang));
+  else if (d0 > d24 + 0.1) t = jazyk.t('approach1.verdict.strategie').replace('{d0}', fmt(d0, lang)).replace('{d24}', fmt(d24, lang));
+  else if (Math.abs(d0) < 0.06 && Math.abs(d24) < 0.06) t = jazyk.t('approach1.verdict.dekorace').replace('{d0}', fmt(d0, lang)).replace('{d24}', fmt(d24, lang));
+  else t = jazyk.t('approach1.verdict.oba').replace('{d0}', fmt(d0, lang)).replace('{d24}', fmt(d24, lang));
+  if (sp > 3.4) t += jazyk.t('approach1.verdict.spreadVarovani').replace('{spread}', fmt(sp, lang));
+  return t;
+}
+
+function a1UpdateResults() {
+  if (!a1Shots) return;
+  const lang = jazyk.lang;
+  const rows = [
+    ['HCP 0', a1Shots.r0, a1Base && a1Base.r0],
+    ['HCP 24', a1Shots.r24, a1Base && a1Base.r24],
+  ];
+  $('a1tb').innerHTML = rows.map(([name, r, base]) => {
+    let dl = '';
+    if (base && a1Bunkers.length) {
+      const dv = r.prumer - base.prumer;
+      dl = `<small class="${Math.abs(dv) < 0.06 ? 'flat' : ''}">${dv >= 0 ? '+' : '−'}${fmt(Math.abs(dv), lang)}</small>`;
+    }
+    return `<tr><td>${name}</td><td>${Math.round(r.fairwayPct)} %</td><td>${Math.round(r.bunkrPct)} %</td>` +
+      `<td>${Math.round(r.trestPct)} %</td><td class="score">${fmt(r.prumer, lang)}${dl}</td></tr>`;
+  }).join('');
+  $('a1verdict').innerHTML = a1Verdict(a1Shots.r0, a1Shots.r24);
+}
+
+function renderApproach1() {
+  kresliApproach1($('p3'));
+  $('a1state').textContent = a1StateText();
+  if (a1Shots) a1UpdateResults();
+}
+
+$('p3').addEventListener('click', (ev) => {
+  const r = $('p3').getBoundingClientRect();
+  const sx = (ev.clientX - r.left) / r.width * 400, sy = (ev.clientY - r.top) / r.height * 900;
+  const wx = sx / A1_SX + A1_WX[0], wy = (900 - sy) / A1_SY + A1_WY[0];
+  const hit = a1Bunkers.findIndex((b) => Math.hypot(wx - b.x, wy - b.y) <= b.r + 3);
+  if (hit >= 0) a1Bunkers.splice(hit, 1);
+  else if (a1Bunkers.length < 4) a1Bunkers.push({ x: wx, y: wy, r: A1_BR });
+  a1Shots = null;
+  $('a1results').hidden = true;
+  renderApproach1();
+});
+$('a1run').addEventListener('click', () => {
+  const r0 = a1Hraj(HRACI[0], 100), r24 = a1Hraj(HRACI[24], 100);
+  a1Shots = { p0: r0.dopady, p24: r24.dopady, r0, r24 };
+  renderApproach1();
+  $('a1results').hidden = false;
+  a1UpdateResults();
+});
+a1Base = { r0: a1Hraj(HRACI[0], 300), r24: a1Hraj(HRACI[24], 300) };
+$('a1clear').addEventListener('click', () => {
+  a1Bunkers = []; a1Shots = null;
+  $('a1results').hidden = true;
+  renderApproach1();
+});
+
+/* ============================================================================
+ * APPROACH 2 — „Kde je rovnováha“.
+ * ==========================================================================*/
+const A2_D0 = 150, A2_HCP = 18;
+const a2SafeMargin = (t) => 40 - (t / 100) * 37;
+const a2MetersSaved = (t) => (t / 100) * 50;
+const a2Remaining = (t) => A2_D0 - a2MetersSaved(t);
+const a2ApproachStrokes = (d) => 1 + puttyPlynule(d * bocniChyba(A2_HCP));
+const a2Gain = (t) => a2ApproachStrokes(A2_D0) - a2ApproachStrokes(a2Remaining(t));
+const a2Sigma = (t) => a2Remaining(t) * bocniChyba(A2_HCP);
+const a2PHazard = (t) => 1 - normCdf(a2SafeMargin(t) / a2Sigma(t));
+const a2Risk = (t) => a2PHazard(t);
+
+function kresliApproach2(svg, t) {
+  clear(svg);
+  const padL = 34, padR = 12, padT = 14, padB = 26;
+  const w = 400 - padL - padR, h = 300 - padT - padB;
+  const N = 40;
+  let maxV = 0.1;
+  const gains = [], risks = [];
+  for (let i = 0; i <= N; i++) { const tt = i / N * 100; const g = a2Gain(tt), r = a2Risk(tt); gains.push(g); risks.push(r); maxV = Math.max(maxV, g, r); }
+  maxV *= 1.12;
+  const X = (tt) => padL + (tt / 100) * w;
+  const Y = (v) => padT + h - (v / maxV) * h;
+
+  E(svg, 'line', { x1: padL, y1: padT, x2: padL, y2: padT + h, stroke: V('--ink2', svg), 'stroke-width': 1, opacity: 0.6 });
+  E(svg, 'line', { x1: padL, y1: padT + h, x2: padL + w, y2: padT + h, stroke: V('--ink2', svg), 'stroke-width': 1, opacity: 0.6 });
+  [0, 25, 50, 75, 100].forEach((tt) => {
+    E(svg, 'text', { x: X(tt), y: padT + h + 16, class: 'lab sm', 'text-anchor': 'middle' }, tt + '%');
+  });
+
+  const ptsG = gains.map((g, i) => `${X(i / N * 100).toFixed(1)},${Y(g).toFixed(1)}`).join(' ');
+  const ptsR = risks.map((r, i) => `${X(i / N * 100).toFixed(1)},${Y(r).toFixed(1)}`).join(' ');
+  E(svg, 'polyline', { points: ptsG, fill: 'none', stroke: V('--olive', svg), 'stroke-width': 2 });
+  E(svg, 'polyline', { points: ptsR, fill: 'none', stroke: V('--flag', svg), 'stroke-width': 2 });
+
+  E(svg, 'line', { x1: X(t), y1: padT, x2: X(t), y2: padT + h, stroke: V('--ink', svg), 'stroke-width': 1, 'stroke-dasharray': '3 4', opacity: 0.6 });
+  E(svg, 'circle', { cx: X(t), cy: Y(a2Gain(t)), r: 3.6, fill: V('--olive', svg) });
+  E(svg, 'circle', { cx: X(t), cy: Y(a2Risk(t)), r: 3.6, fill: V('--flag', svg) });
+}
+
+function renderApproach2() {
+  const t = Number($('a2Slider').value);
+  const lang = jazyk.lang;
+  kresliApproach2($('p4'), t);
+  $('a2Out').textContent = t + ' %';
+  $('a2Tesnost').textContent = t + ' %';
+  const jednotka = jazyk.t('approach2.jednotka');
+  const g = a2Gain(t), r = a2Risk(t);
+  $('a2Zisk').textContent = fmt(g, lang) + ' ' + jednotka;
+  $('a2Riziko').textContent = fmt(r, lang) + ' ' + jednotka;
+  $('a2Cisty').textContent = fmt(g - r, lang) + ' ' + jednotka;
+  const klic = Math.abs(g - r) < 0.01 ? 'vyrokVyrovnano' : g > r ? 'vyrokPresahuje' : 'vyrokZaostava';
+  $('a2vyrok').innerHTML = jazyk.t('approach2.' + klic).replace('{t}', t).replace('{zisk}', fmt(g, lang)).replace('{riziko}', fmt(r, lang));
+}
+$('a2Slider').addEventListener('input', renderApproach2);
+
+jazyk.on(() => {
+  renderApproach1();
+  renderApproach2();
+  vykresliNavSekci({ lekce: 1, index: 3, jazyk, krokEl: $('krokLabel'), navEl: $('sekceNav') });
+});
+</script>
+</body>
+</html>

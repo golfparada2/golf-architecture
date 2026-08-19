@@ -9,14 +9,17 @@
       "zpet": "← Zpět na rozcestník"
     },
     "principLabel": "Principy k zapamatování",
-
     "teeShot1": {
       "eyebrow": "Tee shot",
       "over": "Tři",
       "title": "otázky",
       "lede": "Stejný kus země, tři různé jamky. Přepínej mezi filozofiemi a sleduj, jak se mění cesta od odpaliště ke greenu — to je celá podstata návrhu.",
       "principle": "Dobrá jamka se neptá „umíš to?“, ale „kolik si troufneš?“",
-      "toggle": { "trest": "Trestající", "strategie": "Strategická", "heroika": "Heroická" },
+      "toggle": {
+        "trest": "Trestající",
+        "strategie": "Strategická",
+        "heroika": "Heroická"
+      },
       "popis": {
         "trest": "Jedna cesta. Kdo netrefí úzký koridor mezi hazardy, platí — bez ohledu na to, jak dobrý je hráč.",
         "strategie": "Dvě rozumné cesty. Bezpečná delší, nebo kratší kolem hazardu — obě dávají smysl, volba záleží na hráči.",
@@ -25,14 +28,25 @@
       "L": {
         "odpaliste": "ODPALIŠTĚ",
         "green": "GREEN",
-        "trest": ["JEDINÁ", "CESTA"],
-        "strategieBezpecna": ["BEZPEČNÁ", "CESTA"],
-        "strategieAgresivni": ["AGRESIVNÍ", "CESTA"],
-        "heroikaSkala": ["ŠKÁLA", "ODVAHY"]
+        "trest": [
+          "JEDINÁ",
+          "CESTA"
+        ],
+        "strategieBezpecna": [
+          "BEZPEČNÁ",
+          "CESTA"
+        ],
+        "strategieAgresivni": [
+          "AGRESIVNÍ",
+          "CESTA"
+        ],
+        "heroikaSkala": [
+          "ŠKÁLA",
+          "ODVAHY"
+        ]
       },
       "foot": "list 1 · Tee shot"
     },
-
     "teeShot2": {
       "eyebrow": "Tee shot · druhý princip",
       "over": "Trest úměrný",
@@ -40,14 +54,27 @@
       "lede": "Chyba o dva metry nesmí stát stejně jako chyba o dvacet. Posuň jezdcem a sleduj, jak stejná odchylka dopadá na dvou různě navržených jamkách.",
       "principle": "Skokový trest hned za okrajem fairwaye je nejčastější chyba amatérských návrhů.",
       "sliderLabel": "Odchylka od ideální linie",
-      "jamkaA": { "nadpis": "Jamka A", "popis": "Bunkr hned u okraje fairwaye — bez přechodu." },
-      "jamkaB": { "nadpis": "Jamka B", "popis": "Mezi fairwayí a bunkrem je pás vyšší trávy — trest roste postupně." },
-      "stav": { "fairway": "fairway, bez trestu", "rough": "vyšší tráva, lehký trest", "bunkr": "bunkr, plný trest" },
+      "jamkaA": {
+        "nadpis": "Jamka A",
+        "popis": "Bunkr hned u okraje fairwaye — bez přechodu."
+      },
+      "jamkaB": {
+        "nadpis": "Jamka B",
+        "popis": "Mezi fairwayí a bunkrem je pás vyšší trávy — trest roste postupně."
+      },
+      "stav": {
+        "fairway": "fairway, bez trestu",
+        "rough": "vyšší tráva, lehký trest",
+        "bunkr": "bunkr, plný trest"
+      },
       "radek": "{jamka} — {stav}: +{cost} rány",
-      "L": { "odpaliste": "ODPALIŠTĚ", "jamkaA": "JAMKA A", "jamkaB": "JAMKA B" },
+      "L": {
+        "odpaliste": "ODPALIŠTĚ",
+        "jamkaA": "JAMKA A",
+        "jamkaB": "JAMKA B"
+      },
       "foot": "list 2 · Tee shot"
     },
-
     "spolecneKarty": {
       "specsHead": "Tři prvky",
       "parLabel": "Par",
@@ -55,43 +82,50 @@
       "architektLabel": "Architekt",
       "vznikLabel": "Rok",
       "prameny": "Prameny",
-      "otazkaLabel": "Otázka jamky"
+      "otazkaLabel": "Otázka jamky",
+      "fotoLabel": "Foto"
     },
-
     "fairway": {
       "eyebrow": "Fairway",
       "over": "Tři",
       "title": "reálné jamky",
       "lede": "Trestající, heroická a strategická filozofie na skutečných hřištích — stejné tři otázky jako na prvním plátu, tentokrát na jamkách, které existují."
     },
-
     "ceskaJamka": {
       "eyebrow": "Fairway · doma",
       "over": "Jedna",
       "title": "česká jamka",
       "lede": "Stejná otázka blíž domovu: kde je volba mezi bezpečnou a agresivní cestou skutečná, ne jen na papíře."
     },
-
     "approachNadpis": {
       "eyebrow": "Approach",
       "over": "Dva",
       "title": "úkoly",
       "lede": "Teorie končí tady. Oba pracovní pláty jsou interaktivní — klepej, táhni jezdcem, dívej se, co se stane s čísly."
     },
-
     "approach1": {
       "eyebrow": "Approach · úkol I",
       "over": "Rozhodni,",
       "title": "kam patří bunkr",
       "lede": "Fairway se blíž ke greenu stáčí doleva, vpravo před greenem leží rybník. Polož bunkr tam, kde zdrží dobrého hráče, a ne toho slabého.",
-      "tools": { "run": "Odehrát 100 hráčů", "clear": "Smazat" },
+      "tools": {
+        "run": "Odehrát 100 hráčů",
+        "clear": "Smazat"
+      },
       "stavPrazdno": "Klepni do plánu. Klepnutím na hotový bunkr ho odebereš.",
       "stavPocet": "Na plánu {n} {slovo}. Teď je nech odehrát.",
-      "slovoBunkr": { "jeden": "bunkr", "malo": "bunkry", "hodne": "bunkrů" },
+      "slovoBunkr": {
+        "jeden": "bunkr",
+        "malo": "bunkry",
+        "hodne": "bunkrů"
+      },
       "vysledky": {
         "caption": "Sto kol na hráče · plné body scratch, křížky hendikep 24",
-        "theadHrac": "Hráč", "theadFairway": "Fairway", "theadPisek": "Písek",
-        "theadVoda": "Voda / out", "theadPrumer": "Průměr"
+        "theadHrac": "Hráč",
+        "theadFairway": "Fairway",
+        "theadPisek": "Písek",
+        "theadVoda": "Voda / out",
+        "theadPrumer": "Průměr"
       },
       "verdict": {
         "prazdna": "Prázdná jamka. Rozdíl mezi hráči je {spread} rány — to je tvoje výchozí hodnota. Teď zkus bunkr položit tak, aby zdržel scratche víc než hendikepáře.",
@@ -102,29 +136,45 @@
         "spreadVarovani": " Rozdíl mezi hráči je {spread} rány; jamka se rozjíždí do nespravedlivosti."
       },
       "L": {
-        "bunkr": "BUNKR", "green": "GREEN", "rybnik": "RYBNÍK", "odpaliste": "ODPALIŠTĚ",
-        "fairwaySmer": ["FAIRWAY SE", "STÁČÍ DOLEVA"]
+        "bunkr": "BUNKR",
+        "green": "GREEN",
+        "rybnik": "RYBNÍK",
+        "odpaliste": "ODPALIŠTĚ",
+        "fairwaySmer": [
+          "FAIRWAY SE",
+          "STÁČÍ DOLEVA"
+        ]
       },
       "foot": "list 3 · Approach"
     },
-
     "approach2": {
       "eyebrow": "Approach · úkol II",
       "over": "Kde je",
       "title": "rovnováha",
       "lede": "Čím blíž k hazardu hraješ, tím kratší máš přístup na green — ale tím větší je šance, že v hazardu skončíš. Posuň jezdcem a najdi bod, kde se to ještě vyplácí.",
       "sliderLabel": "Jak těsně kolem hazardu",
-      "legenda": { "zisk": "Zisk — kratší přístup", "riziko": "Riziko — trestná rána" },
-      "ctenka": { "tesnost": "Těsnost", "zisk": "Zisk", "riziko": "Riziko", "cistyZisk": "Čistý rozdíl" },
+      "legenda": {
+        "zisk": "Zisk — kratší přístup",
+        "riziko": "Riziko — trestná rána"
+      },
+      "ctenka": {
+        "tesnost": "Těsnost",
+        "zisk": "Zisk",
+        "riziko": "Riziko",
+        "cistyZisk": "Čistý rozdíl"
+      },
       "jednotka": "rány",
       "vysvetleni": "Model počítá s průměrným hráčem (HCP 18) stejnými vzorci jako cvičení „Kam patří bunkr“ v <code>js/simulace.js</code>: kratší rána je přesnější, ale menší bezpečná marže kolem hazardu zvyšuje pravděpodobnost, že tam míč skončí.",
       "vyrokPresahuje": "Při těsnosti {t} % zisk ({zisk} rány) přesahuje riziko ({riziko} rány) — agresivita se tady ještě vyplácí.",
       "vyrokVyrovnano": "Při těsnosti {t} % je zisk ({zisk} rány) zhruba vyrovnaný s rizikem ({riziko} rány) — přesně tady leží průsečík obou křivek.",
       "vyrokZaostava": "Při těsnosti {t} % riziko ({riziko} rány) přesahuje zisk ({zisk} rány) — odtud se agresivita už nevyplácí.",
-      "L": { "odpaliste": "ODPALIŠTĚ", "green": "GREEN", "hazard": "HAZARD" },
+      "L": {
+        "odpaliste": "ODPALIŠTĚ",
+        "green": "GREEN",
+        "hazard": "HAZARD"
+      },
       "foot": "list 4 · Approach"
     },
-
     "putt": {
       "eyebrow": "Putt",
       "over": "Tři otázky",
@@ -139,35 +189,61 @@
       "ulozeno": "Uloženo v tomto prohlížeči.",
       "foot": "list 5 · Putt"
     },
-
     "slovnicek": {
       "eyebrow": "Slovníček",
       "over": "Sedm",
       "title": "pojmů",
       "lede": "Odborné názvy zůstávají anglicky i v české sazbě — je to jazyk, kterým golfová architektura mluví ve všech pramenech.",
       "pojmy": [
-        { "pojem": "Trestající jamka", "popis": "Jamka s jedinou rozumnou cestou ke greenu; chyba se platí bez ohledu na úroveň hráče." },
-        { "pojem": "Strategická jamka", "popis": "Jamka se dvěma nebo více rozumnými cestami; hráč si vybírá riziko podle sebe." },
-        { "pojem": "Heroická jamka", "popis": "Zvláštní případ strategické jamky s plynulou škálou odvahy místo dvou pevných cest." },
-        { "pojem": "Riziko a odměna", "popis": "Návrhový princip: čím víc si hráč troufne, tím větší má být odměna — a naopak." },
-        { "pojem": "Layup", "popis": "Vědomě kratší, bezpečnější rána místo pokusu doletět blíž k jamce nebo na green." },
-        { "pojem": "Dogleg", "popis": "Jamka, jejíž fairway se v polovině lomí doleva nebo doprava." },
-        { "pojem": "Rozptyl", "popis": "Jak moc se od sebe liší dopady stejné rány opakované víckrát — u lepších hráčů menší, u slabších větší." }
+        {
+          "pojem": "Trestající jamka",
+          "popis": "Jamka s jedinou rozumnou cestou ke greenu; chyba se platí bez ohledu na úroveň hráče."
+        },
+        {
+          "pojem": "Strategická jamka",
+          "popis": "Jamka se dvěma nebo více rozumnými cestami; hráč si vybírá riziko podle sebe."
+        },
+        {
+          "pojem": "Heroická jamka",
+          "popis": "Zvláštní případ strategické jamky s plynulou škálou odvahy místo dvou pevných cest."
+        },
+        {
+          "pojem": "Riziko a odměna",
+          "popis": "Návrhový princip: čím víc si hráč troufne, tím větší má být odměna — a naopak."
+        },
+        {
+          "pojem": "Layup",
+          "popis": "Vědomě kratší, bezpečnější rána místo pokusu doletět blíž k jamce nebo na green."
+        },
+        {
+          "pojem": "Dogleg",
+          "popis": "Jamka, jejíž fairway se v polovině lomí doleva nebo doprava."
+        },
+        {
+          "pojem": "Rozptyl",
+          "popis": "Jak moc se od sebe liší dopady stejné rány opakované víckrát — u lepších hráčů menší, u slabších větší."
+        }
       ]
     },
-
     "zkouska": {
       "eyebrow": "Po lekci",
       "over": "Šest otázek za",
       "title": "100 bodů",
       "lede": "Odpověz na všech šest, teprve pak uvidíš správná řešení. Do celkového hodnocení kurzu se počítá první pokus.",
       "spolecne": {
-        "otazka": "Otázka", "bodu": "bodů", "zbyva": "Zbývá odpovědět:",
+        "otazka": "Otázka",
+        "bodu": "bodů",
+        "zbyva": "Zbývá odpovědět:",
         "hotovoMuzesOdevzdat": "Hotovo. Můžeš odevzdat.",
-        "spravne": "správně", "tvojeVolba": "tvoje volba", "nicNevybrano": "nic nevybráno",
-        "moznost": "Jamka", "zkratkaBodu": "b", "reseniUKazdeOtazky": "Správná řešení jsou u každé otázky."
+        "spravne": "správně",
+        "tvojeVolba": "tvoje volba",
+        "nicNevybrano": "nic nevybráno",
+        "moznost": "Jamka",
+        "zkratkaBodu": "b",
+        "reseniUKazdeOtazky": "Správná řešení jsou u každé otázky."
       },
-      "submit": "Odevzdat", "again": "Zkusit znovu",
+      "submit": "Odevzdat",
+      "again": "Zkusit znovu",
       "q1": {
         "text": "Která z těchto tří jamek je strategická?",
         "hint": "Sleduj, kolik rozumných cest vede k jamce.",
@@ -210,36 +286,75 @@
       },
       "q6": {
         "text": "Doplň: trest má být úměrný…",
-        "a": "délce jamky", "b": "hendikepu hráče", "c": "velikosti chyby", "d": "síle větru",
+        "a": "délce jamky",
+        "b": "hendikepu hráče",
+        "c": "velikosti chyby",
+        "d": "síle větru",
         "why": "<b>C.</b> Rána mimo o dva metry nesmí stát stejně jako rána mimo o dvacet. Skokový trest hned za okrajem fairwaye je nejčastější chyba amatérských návrhů.",
         "back": "Vrať se na plát „Trest úměrný chybě“."
       },
       "pasmo": {
-        "vyborne": { "nadpis": "Výborně", "text": "Principy z první lekce máš zvládnuté. Pokračuj na lekci 2." },
-        "dobre": { "nadpis": "Dobré", "text": "Základ sedí. Projdi si pláty u otázek, kde ses spletl, a jdi dál." },
-        "projdes": { "nadpis": "Projdeš", "text": "Rozdíl mezi trestem a strategií ještě není pevný. Vrať se ke cvičení s bunkrem, než začneš lekci 2." },
-        "zopakuj": { "nadpis": "Zopakuj", "text": "Vrať se na začátek lekce. Bez rozdílu mezi trestem a volbou nedává zbytek kurzu smysl." }
+        "vyborne": {
+          "nadpis": "Výborně",
+          "text": "Principy z první lekce máš zvládnuté. Pokračuj na lekci 2."
+        },
+        "dobre": {
+          "nadpis": "Dobré",
+          "text": "Základ sedí. Projdi si pláty u otázek, kde ses spletl, a jdi dál."
+        },
+        "projdes": {
+          "nadpis": "Projdeš",
+          "text": "Rozdíl mezi trestem a strategií ještě není pevný. Vrať se ke cvičení s bunkrem, než začneš lekci 2."
+        },
+        "zopakuj": {
+          "nadpis": "Zopakuj",
+          "text": "Vrať se na začátek lekce. Bez rozdílu mezi trestem a volbou nedává zbytek kurzu smysl."
+        }
       },
       "souhrn": {
         "nadpis": "Výsledek",
         "procentBodu": "procenta · {body} ze {max} bodů",
-        "spravne": "správně", "chybneCastecne": "chybně nebo částečně", "zcelaMimo": "zcela mimo",
-        "rozpis": "Rozpis odpovědí", "tvojeOdpoved": "Tvoje odpověď", "spravneReseni": "Správně",
+        "spravne": "správně",
+        "chybneCastecne": "chybně nebo částečně",
+        "zcelaMimo": "zcela mimo",
+        "rozpis": "Rozpis odpovědí",
+        "tvojeOdpoved": "Tvoje odpověď",
+        "spravneReseni": "Správně",
         "pata": "Podrobné vysvětlení je u každé otázky výše. Výsledek se ukládá do přehledu kurzu; po deváté lekci z něj vznikne rozbor, která témata ti sedí a která si zopakovat."
       },
       "foot": "list 6 · Zkouška"
     },
-
     "temata": {
-      "strategie": "Strategie", "trest": "Trest", "riziko-odmena": "Riziko a odměna",
-      "umisteni-hazardu": "Umístění hazardu", "cteni-terenu": "Čtení terénu",
-      "voda-odtok": "Voda a odtok", "vitr-slunce": "Vítr a slunce", "routing": "Routing",
-      "bezpecnost": "Bezpečnost", "rytmus-hriste": "Rytmus hřiště"
+      "strategie": "Strategie",
+      "trest": "Trest",
+      "riziko-odmena": "Riziko a odměna",
+      "umisteni-hazardu": "Umístění hazardu",
+      "cteni-terenu": "Čtení terénu",
+      "voda-odtok": "Voda a odtok",
+      "vitr-slunce": "Vítr a slunce",
+      "routing": "Routing",
+      "bezpecnost": "Bezpečnost",
+      "rytmus-hriste": "Rytmus hřiště"
     },
-
-    "foot": { "lekce": "ROUTING · Lekce 1" }
+    "foot": {
+      "lekce": "ROUTING · Lekce 1"
+    },
+    "nav": {
+      "predchozi": "Předchozí",
+      "dalsi": "Další",
+      "prehled": "Přehled lekce",
+      "krok": "Krok {n} z 7",
+      "dalsiLekce": "Pokračovat další lekcí",
+      "konecKurzu": "Zatím poslední hotová lekce"
+    },
+    "toc": {
+      "kicker": "Přehled lekce",
+      "sekceHead": "Co tě čeká",
+      "pokracovat": "Pokračovat",
+      "zacit": "Začít lekci",
+      "zpetNaPrehled": "← Zpět na přehled kurzu"
+    }
   },
-
   "en": {
     "meta": {
       "kicker": "Golf course architecture",
@@ -250,14 +365,17 @@
       "zpet": "← Back to the hub"
     },
     "principLabel": "Principles to remember",
-
     "teeShot1": {
       "eyebrow": "Tee shot",
       "over": "Three",
       "title": "questions",
       "lede": "The same piece of land, three different holes. Switch between philosophies and watch how the path from tee to green changes — that's the whole point of design.",
       "principle": "A good hole doesn't ask \"can you do it?\" — it asks \"how much do you dare?\"",
-      "toggle": { "trest": "Punishing", "strategie": "Strategic", "heroika": "Heroic" },
+      "toggle": {
+        "trest": "Punishing",
+        "strategie": "Strategic",
+        "heroika": "Heroic"
+      },
       "popis": {
         "trest": "One path. Miss the narrow corridor between hazards and you pay — no matter how good you are.",
         "strategie": "Two reasonable paths. Safe and longer, or short around the hazard — both make sense, the choice is yours.",
@@ -266,14 +384,25 @@
       "L": {
         "odpaliste": "TEE",
         "green": "GREEN",
-        "trest": ["SINGLE", "PATH"],
-        "strategieBezpecna": ["SAFE", "PATH"],
-        "strategieAgresivni": ["AGGRESSIVE", "PATH"],
-        "heroikaSkala": ["SCALE OF", "DARING"]
+        "trest": [
+          "SINGLE",
+          "PATH"
+        ],
+        "strategieBezpecna": [
+          "SAFE",
+          "PATH"
+        ],
+        "strategieAgresivni": [
+          "AGGRESSIVE",
+          "PATH"
+        ],
+        "heroikaSkala": [
+          "SCALE OF",
+          "DARING"
+        ]
       },
       "foot": "sheet 1 · Tee shot"
     },
-
     "teeShot2": {
       "eyebrow": "Tee shot · second principle",
       "over": "Punishment fitting",
@@ -281,14 +410,27 @@
       "lede": "A mistake of two metres must not cost the same as one of twenty. Drag the slider and watch the same deviation land on two differently designed holes.",
       "principle": "A cliff-edge penalty right at the fairway's border is the most common mistake in amateur designs.",
       "sliderLabel": "Deviation from the ideal line",
-      "jamkaA": { "nadpis": "Hole A", "popis": "A bunker right at the fairway's edge — no transition." },
-      "jamkaB": { "nadpis": "Hole B", "popis": "A band of longer grass sits between fairway and bunker — the penalty grows gradually." },
-      "stav": { "fairway": "fairway, no penalty", "rough": "longer grass, light penalty", "bunkr": "bunker, full penalty" },
+      "jamkaA": {
+        "nadpis": "Hole A",
+        "popis": "A bunker right at the fairway's edge — no transition."
+      },
+      "jamkaB": {
+        "nadpis": "Hole B",
+        "popis": "A band of longer grass sits between fairway and bunker — the penalty grows gradually."
+      },
+      "stav": {
+        "fairway": "fairway, no penalty",
+        "rough": "longer grass, light penalty",
+        "bunkr": "bunker, full penalty"
+      },
       "radek": "{jamka} — {stav}: +{cost} strokes",
-      "L": { "odpaliste": "TEE", "jamkaA": "HOLE A", "jamkaB": "HOLE B" },
+      "L": {
+        "odpaliste": "TEE",
+        "jamkaA": "HOLE A",
+        "jamkaB": "HOLE B"
+      },
       "foot": "sheet 2 · Tee shot"
     },
-
     "spolecneKarty": {
       "specsHead": "Three elements",
       "parLabel": "Par",
@@ -296,43 +438,50 @@
       "architektLabel": "Architect",
       "vznikLabel": "Year",
       "prameny": "Sources",
-      "otazkaLabel": "The hole's question"
+      "otazkaLabel": "The hole's question",
+      "fotoLabel": "Photo"
     },
-
     "fairway": {
       "eyebrow": "Fairway",
       "over": "Three",
       "title": "real holes",
       "lede": "Punishing, heroic, and strategic philosophy on real courses — the same three questions as the first plate, this time on holes that actually exist."
     },
-
     "ceskaJamka": {
       "eyebrow": "Fairway · closer to home",
       "over": "One",
       "title": "Czech hole",
       "lede": "The same question closer to home: where the choice between a safe and an aggressive line is real, not just on paper."
     },
-
     "approachNadpis": {
       "eyebrow": "Approach",
       "over": "Two",
       "title": "tasks",
       "lede": "Theory ends here. Both working plates are interactive — click, drag the slider, watch what happens to the numbers."
     },
-
     "approach1": {
       "eyebrow": "Approach · task I",
       "over": "Decide",
       "title": "where the bunker goes",
       "lede": "The fairway bends left closer to the green, and a pond sits front-right of the green. Place the bunker where it slows down the good player, not the weak one.",
-      "tools": { "run": "Play 100 rounds", "clear": "Clear" },
+      "tools": {
+        "run": "Play 100 rounds",
+        "clear": "Clear"
+      },
       "stavPrazdno": "Click on the plan. Click a finished bunker to remove it.",
       "stavPocet": "{n} {slovo} on the plan. Now let them play.",
-      "slovoBunkr": { "jeden": "bunker", "malo": "bunkers", "hodne": "bunkers" },
+      "slovoBunkr": {
+        "jeden": "bunker",
+        "malo": "bunkers",
+        "hodne": "bunkers"
+      },
       "vysledky": {
         "caption": "A hundred rounds per player · solid dots scratch, crosses 24-handicap",
-        "theadHrac": "Player", "theadFairway": "Fairway", "theadPisek": "Sand",
-        "theadVoda": "Water / out", "theadPrumer": "Average"
+        "theadHrac": "Player",
+        "theadFairway": "Fairway",
+        "theadPisek": "Sand",
+        "theadVoda": "Water / out",
+        "theadPrumer": "Average"
       },
       "verdict": {
         "prazdna": "An empty hole. The gap between players is {spread} strokes — that's your baseline. Now try placing the bunker so it slows the scratch golfer more than the higher handicap.",
@@ -343,29 +492,45 @@
         "spreadVarovani": " The gap between players is {spread} strokes; the hole is drifting into unfairness."
       },
       "L": {
-        "bunkr": "BUNKER", "green": "GREEN", "rybnik": "POND", "odpaliste": "TEE",
-        "fairwaySmer": ["FAIRWAY BENDS", "LEFT"]
+        "bunkr": "BUNKER",
+        "green": "GREEN",
+        "rybnik": "POND",
+        "odpaliste": "TEE",
+        "fairwaySmer": [
+          "FAIRWAY BENDS",
+          "LEFT"
+        ]
       },
       "foot": "sheet 3 · Approach"
     },
-
     "approach2": {
       "eyebrow": "Approach · task II",
       "over": "Where's the",
       "title": "balance",
       "lede": "The closer you play to the hazard, the shorter your approach to the green — but the greater the chance you end up in it. Drag the slider and find the point where it's still worth it.",
       "sliderLabel": "How tight around the hazard",
-      "legenda": { "zisk": "Gain — shorter approach", "riziko": "Risk — penalty stroke" },
-      "ctenka": { "tesnost": "Tightness", "zisk": "Gain", "riziko": "Risk", "cistyZisk": "Net difference" },
+      "legenda": {
+        "zisk": "Gain — shorter approach",
+        "riziko": "Risk — penalty stroke"
+      },
+      "ctenka": {
+        "tesnost": "Tightness",
+        "zisk": "Gain",
+        "riziko": "Risk",
+        "cistyZisk": "Net difference"
+      },
       "jednotka": "strokes",
       "vysvetleni": "The model uses an average player (HCP 18) with the same formulas as the \"Where Does the Bunker Go\" exercise in <code>js/simulace.js</code>: a shorter shot is more accurate, but a smaller safe margin around the hazard raises the odds the ball ends up in it.",
       "vyrokPresahuje": "At {t}% tightness, the gain ({zisk} strokes) exceeds the risk ({riziko} strokes) — aggression still pays off here.",
       "vyrokVyrovnano": "At {t}% tightness, the gain ({zisk} strokes) roughly matches the risk ({riziko} strokes) — this is exactly where the two curves cross.",
       "vyrokZaostava": "At {t}% tightness, the risk ({riziko} strokes) exceeds the gain ({zisk} strokes) — beyond here, aggression no longer pays off.",
-      "L": { "odpaliste": "TEE", "green": "GREEN", "hazard": "HAZARD" },
+      "L": {
+        "odpaliste": "TEE",
+        "green": "GREEN",
+        "hazard": "HAZARD"
+      },
       "foot": "sheet 4 · Approach"
     },
-
     "putt": {
       "eyebrow": "Putt",
       "over": "Three questions to",
@@ -380,35 +545,61 @@
       "ulozeno": "Saved in this browser.",
       "foot": "sheet 5 · Putt"
     },
-
     "slovnicek": {
       "eyebrow": "Glossary",
       "over": "Seven",
       "title": "terms",
       "lede": "Technical terms stay in English even in the Czech edition — it's the language golf architecture speaks in every source.",
       "pojmy": [
-        { "pojem": "Punishing hole", "popis": "A hole with a single reasonable path to the green; a mistake is charged regardless of skill level." },
-        { "pojem": "Strategic hole", "popis": "A hole with two or more reasonable paths; the player chooses their own risk." },
-        { "pojem": "Heroic hole", "popis": "A special case of the strategic hole with a smooth scale of daring instead of two fixed paths." },
-        { "pojem": "Risk and reward", "popis": "A design principle: the more a player dares, the greater the reward should be — and vice versa." },
-        { "pojem": "Layup", "popis": "A deliberately shorter, safer shot instead of trying to reach closer to the hole or the green." },
-        { "pojem": "Dogleg", "popis": "A hole whose fairway bends left or right partway along." },
-        { "pojem": "Dispersion", "popis": "How much the results of the same shot, repeated many times, differ from each other — smaller for better players, larger for weaker ones." }
+        {
+          "pojem": "Punishing hole",
+          "popis": "A hole with a single reasonable path to the green; a mistake is charged regardless of skill level."
+        },
+        {
+          "pojem": "Strategic hole",
+          "popis": "A hole with two or more reasonable paths; the player chooses their own risk."
+        },
+        {
+          "pojem": "Heroic hole",
+          "popis": "A special case of the strategic hole with a smooth scale of daring instead of two fixed paths."
+        },
+        {
+          "pojem": "Risk and reward",
+          "popis": "A design principle: the more a player dares, the greater the reward should be — and vice versa."
+        },
+        {
+          "pojem": "Layup",
+          "popis": "A deliberately shorter, safer shot instead of trying to reach closer to the hole or the green."
+        },
+        {
+          "pojem": "Dogleg",
+          "popis": "A hole whose fairway bends left or right partway along."
+        },
+        {
+          "pojem": "Dispersion",
+          "popis": "How much the results of the same shot, repeated many times, differ from each other — smaller for better players, larger for weaker ones."
+        }
       ]
     },
-
     "zkouska": {
       "eyebrow": "After the lesson",
       "over": "Six questions for",
       "title": "100 points",
       "lede": "Answer all six, then you'll see the correct answers. Only the first attempt counts toward your overall course grade.",
       "spolecne": {
-        "otazka": "Question", "bodu": "points", "zbyva": "Still need to answer:",
+        "otazka": "Question",
+        "bodu": "points",
+        "zbyva": "Still need to answer:",
         "hotovoMuzesOdevzdat": "Done. You can submit.",
-        "spravne": "correct", "tvojeVolba": "your choice", "nicNevybrano": "nothing selected",
-        "moznost": "Hole", "zkratkaBodu": "pts", "reseniUKazdeOtazky": "Correct answers are shown with each question."
+        "spravne": "correct",
+        "tvojeVolba": "your choice",
+        "nicNevybrano": "nothing selected",
+        "moznost": "Hole",
+        "zkratkaBodu": "pts",
+        "reseniUKazdeOtazky": "Correct answers are shown with each question."
       },
-      "submit": "Submit", "again": "Try again",
+      "submit": "Submit",
+      "again": "Try again",
       "q1": {
         "text": "Which of these three holes is strategic?",
         "hint": "Look at how many reasonable paths lead to the hole.",
@@ -451,33 +642,73 @@
       },
       "q6": {
         "text": "Complete: punishment should be proportional to…",
-        "a": "the length of the hole", "b": "the player's handicap", "c": "the size of the mistake", "d": "the strength of the wind",
+        "a": "the length of the hole",
+        "b": "the player's handicap",
+        "c": "the size of the mistake",
+        "d": "the strength of the wind",
         "why": "<b>C.</b> A shot two metres off line must not cost the same as one twenty metres off. A cliff-edge penalty right at the fairway's edge is the most common mistake in amateur designs.",
         "back": "Go back to the \"Punishment Fitting the Mistake\" plate."
       },
       "pasmo": {
-        "vyborne": { "nadpis": "Excellent", "text": "You've got the principles from the first lesson down. Move on to lesson 2." },
-        "dobre": { "nadpis": "Good", "text": "The basics are solid. Review the plates for the questions you missed, then move on." },
-        "projdes": { "nadpis": "You'll pass", "text": "The line between punishment and strategy isn't solid yet. Go back to the bunker exercise before starting lesson 2." },
-        "zopakuj": { "nadpis": "Repeat it", "text": "Go back to the start of the lesson. Without the difference between punishment and choice, the rest of the course won't make sense." }
+        "vyborne": {
+          "nadpis": "Excellent",
+          "text": "You've got the principles from the first lesson down. Move on to lesson 2."
+        },
+        "dobre": {
+          "nadpis": "Good",
+          "text": "The basics are solid. Review the plates for the questions you missed, then move on."
+        },
+        "projdes": {
+          "nadpis": "You'll pass",
+          "text": "The line between punishment and strategy isn't solid yet. Go back to the bunker exercise before starting lesson 2."
+        },
+        "zopakuj": {
+          "nadpis": "Repeat it",
+          "text": "Go back to the start of the lesson. Without the difference between punishment and choice, the rest of the course won't make sense."
+        }
       },
       "souhrn": {
         "nadpis": "Result",
         "procentBodu": "percent · {body} of {max} points",
-        "spravne": "correct", "chybneCastecne": "wrong or partial", "zcelaMimo": "completely off",
-        "rozpis": "Answer breakdown", "tvojeOdpoved": "Your answer", "spravneReseni": "Correct",
+        "spravne": "correct",
+        "chybneCastecne": "wrong or partial",
+        "zcelaMimo": "completely off",
+        "rozpis": "Answer breakdown",
+        "tvojeOdpoved": "Your answer",
+        "spravneReseni": "Correct",
         "pata": "Detailed explanations are above with each question. The result is saved to the course overview; after the ninth lesson it becomes an analysis of which topics suit you and which to revisit."
       },
       "foot": "sheet 6 · Exam"
     },
-
     "temata": {
-      "strategie": "Strategy", "trest": "Punishment", "riziko-odmena": "Risk and reward",
-      "umisteni-hazardu": "Hazard placement", "cteni-terenu": "Reading the land",
-      "voda-odtok": "Water and drainage", "vitr-slunce": "Wind and sun", "routing": "Routing",
-      "bezpecnost": "Safety", "rytmus-hriste": "Course rhythm"
+      "strategie": "Strategy",
+      "trest": "Punishment",
+      "riziko-odmena": "Risk and reward",
+      "umisteni-hazardu": "Hazard placement",
+      "cteni-terenu": "Reading the land",
+      "voda-odtok": "Water and drainage",
+      "vitr-slunce": "Wind and sun",
+      "routing": "Routing",
+      "bezpecnost": "Safety",
+      "rytmus-hriste": "Course rhythm"
     },
-
-    "foot": { "lekce": "ROUTING · Lesson 1" }
+    "foot": {
+      "lekce": "ROUTING · Lesson 1"
+    },
+    "nav": {
+      "predchozi": "Previous",
+      "dalsi": "Next",
+      "prehled": "Lesson overview",
+      "krok": "Step {n} of 7",
+      "dalsiLekce": "Continue to the next lesson",
+      "konecKurzu": "Last finished lesson for now"
+    },
+    "toc": {
+      "kicker": "Lesson overview",
+      "sekceHead": "What's ahead",
+      "pokracovat": "Continue",
+      "zacit": "Start the lesson",
+      "zpetNaPrehled": "← Back to the course overview"
+    }
   }
 }

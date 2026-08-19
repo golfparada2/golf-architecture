@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ROUTING — Lekce 3: Tee shot</title>
+<meta name="description" content="Lekce 3, sekce 1 z 7: nejdřív najdi greeny — šest míst na pozemku a pravidla jejich propojení.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F1E0'/%3E%3Ccircle cx='16' cy='14' r='9' fill='%23A9B983' stroke='%231E1B15' stroke-width='1.4'/%3E%3Ccircle cx='16' cy='14' r='1.6' fill='%231E1B15'/%3E%3Cpath d='M16 14 L16 5' stroke='%231E1B15' stroke-width='1.3'/%3E%3Cpath d='M16 5 L23 7.5 L16 10 Z' fill='%23B0452C' stroke='%231E1B15' stroke-width='.8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/styl.css">
+<style>
+  /* styly specifické pro tuto sekci — sdílené věci jsou v assets/styl.css, sekce 14 a 15 */
+  .pravidla{margin-top:16px}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="hr"><span data-t="meta.kicker"></span></div>
+  <div class="lang" role="group" aria-label="Language">
+    <button data-l="cs" aria-current="true">ČES</button><i>/</i><button data-l="en">ENG</button>
+  </div>
+</div>
+<a class="zpet" href="index.html" data-t="nav.prehled"></a>
+<p class="krokLabel" id="krokLabel"></p>
+
+<section class="plat" id="secTeeShot">
+  <p class="eyebrow" data-t="teeShot.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="teeShot.over"></em><span data-t="teeShot.title"></span></h2>
+  <p class="lede" data-t="teeShot.lede"></p>
+  <div class="principBox"><b data-t="principLabel"></b><br><span data-t="teeShot.principle"></span></div>
+
+  <svg id="p1" viewBox="0 0 400 520" role="img" aria-label="Pozemek se šesti místy pro greeny"></svg>
+
+  <div class="toggle" id="teeShotToggle" role="group" aria-label="Krok">
+    <button type="button" data-krok="body" data-t="teeShot.toggle.body" aria-pressed="true"></button>
+    <button type="button" data-krok="jamky" data-t="teeShot.toggle.jamky"></button>
+  </div>
+  <p class="popisFilozofie" id="teeShotPopis"></p>
+
+  <div class="hr" style="margin-top:22px"><span data-t="teeShot.pravidlaHead"></span></div>
+  <div class="specs pravidla" id="pravidlaList"></div>
+
+  <p class="listMark" data-t="teeShot.foot"></p>
+</section>
+
+<div class="sekceNav" id="sekceNav"></div>
+<div class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="index.html" data-t="nav.prehled"></a></div>
+
+<script type="module">
+import { vytvorJazyk, nactiSlovnik } from '../../js/jazyk.js';
+import { E, V, clear, blob, hatch, clipPath } from '../../js/platy.js';
+import { vykresliNavSekci } from '../../js/sekce-nav.js';
+
+const $ = (id) => document.getElementById(id);
+
+const slovnik = await nactiSlovnik('../../data/preklady/lekce-03.json');
+const jazyk = vytvorJazyk(slovnik, {
+  titul: (lang) => lang === 'cs' ? 'ROUTING — Lekce 3: Tee shot' : 'ROUTING — Lesson 3: Tee shot',
+});
+
+/* ============================================================================
+ * SPOLEČNÝ POZEMEK — obrys, klubovna, potok a příjezdová cesta, na kterých
+ * stojí tee shot i approach 1 (stejná shodná kopie v `4-approach.html`).
+ * ==========================================================================*/
+const POZEMEK = blob(205, 265, 178, 228, 0.08, 303, 0.045, 60);
+const KLUBOVNA = { x: 55, y: 470 };
+
+function kresliPozemek(svg, defs) {
+  const cid = 'r3-obrys';
+  clipPath(defs, cid, POZEMEK);
+  E(svg, 'path', { d: POZEMEK, fill: V('--turf-d', svg), opacity: 0.55 });
+  hatch(svg, cid, { x: 10, y: 20, w: 390, h: 500 }, 0.7, 4.4, { op: 0.2, seed: 11 });
+  E(svg, 'path', { d: POZEMEK, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.1, opacity: 0.8 });
+  return cid;
+}
+
+function kresliZaklad(svg, defs, L) {
+  kresliPozemek(svg, defs);
+  const potok = 'M355 90 C 320 160, 330 230, 270 300 C 220 355, 190 380, 150 440';
+  E(svg, 'path', { d: potok, fill: 'none', stroke: V('--water', svg), 'stroke-width': 6, opacity: 0.7, 'stroke-linecap': 'round' });
+  E(svg, 'path', { d: potok, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1, opacity: 0.5 });
+  E(svg, 'path', {
+    d: `M20 518 L${KLUBOVNA.x - 4} ${KLUBOVNA.y + 30} L${KLUBOVNA.x} ${KLUBOVNA.y + 14}`,
+    fill: 'none', stroke: V('--ink2', svg), 'stroke-width': 3, opacity: 0.5, 'stroke-dasharray': '1 5', 'stroke-linecap': 'round',
+  });
+  E(svg, 'rect', { x: KLUBOVNA.x - 12, y: KLUBOVNA.y - 8, width: 24, height: 16, fill: V('--paper', svg), stroke: V('--ink', svg), 'stroke-width': 1.3 });
+  E(svg, 'path', { d: `M${KLUBOVNA.x - 15} ${KLUBOVNA.y - 8} L${KLUBOVNA.x} ${KLUBOVNA.y - 20} L${KLUBOVNA.x + 15} ${KLUBOVNA.y - 8} Z`, fill: V('--ink', svg), opacity: 0.85 });
+  E(svg, 'text', { x: KLUBOVNA.x, y: KLUBOVNA.y + 34, class: 'lab sm', 'text-anchor': 'middle' }, L.klubovna);
+}
+
+/* ============================================================================
+ * TEE SHOT — „Nejdřív najdi greeny". Krok 1: šest pevných, ilustrativních
+ * míst (jen body). Krok 2: tatáž místa spojená v pořadí, jak by je architekt
+ * propojil — od klubovny po jamku 6.
+ * ==========================================================================*/
+const TS_BODY = [
+  [125, 430], [215, 460], [305, 400], [335, 250], [250, 130], [120, 105],
+];
+let krok = 'body';
+
+function kresliTeeShot(svg, k) {
+  clear(svg);
+  const defs = E(svg, 'defs', {});
+  const L = jazyk.t('teeShot.L');
+  kresliZaklad(svg, defs, L);
+
+  if (k === 'jamky') {
+    const body = [[KLUBOVNA.x, KLUBOVNA.y], ...TS_BODY];
+    let d = `M${body[0][0]} ${body[0][1]}`;
+    for (let i = 1; i < body.length; i++) d += ` L${body[i][0]} ${body[i][1]}`;
+    E(svg, 'path', { d, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.3, opacity: 0.6, 'stroke-dasharray': '3 4' });
+  }
+
+  TS_BODY.forEach(([x, y], i) => {
+    E(svg, 'circle', { cx: x, cy: y, r: 9, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1.4 });
+    if (k === 'jamky') {
+      E(svg, 'text', { x, y: y + 4, class: 'lab sm', 'text-anchor': 'middle', fill: V('--ink', svg) }, String(i + 1));
+    } else {
+      E(svg, 'text', { x, y: y - 14, class: 'lab sm', 'text-anchor': 'middle' }, L.bod);
+    }
+  });
+}
+
+function renderTeeShot() {
+  kresliTeeShot($('p1'), krok);
+  $('teeShotPopis').innerHTML = jazyk.t('teeShot.popis.' + krok);
+  document.querySelectorAll('#teeShotToggle button').forEach((b) => {
+    b.setAttribute('aria-pressed', String(b.dataset.krok === krok));
+  });
+}
+document.querySelectorAll('#teeShotToggle button').forEach((b) => {
+  b.addEventListener('click', () => { krok = b.dataset.krok; renderTeeShot(); });
+});
+
+function renderPravidla() {
+  const c = $('pravidlaList');
+  c.innerHTML = '';
+  (jazyk.t('teeShot.pravidla') || []).forEach((p) => {
+    const d = document.createElement('div');
+    d.className = 'spec';
+    d.innerHTML = `<h3>${p.nazev}</h3><div class="bar"></div><p>${p.popis}</p>`;
+    c.appendChild(d);
+  });
+}
+
+jazyk.on(() => {
+  renderTeeShot();
+  renderPravidla();
+  vykresliNavSekci({ lekce: 3, index: 0, jazyk, krokEl: $('krokLabel'), navEl: $('sekceNav') });
+});
+</script>
+</body>
+</html>

@@ -46,7 +46,7 @@
     "en": "Why subordinate an entire course's routing to one dramatic stretch of coastline, instead of spreading difficulty evenly across the land?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob().",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). OPRAVA (2026-08-19): vodní hazard byl původně nereálně dominantní (rx 45, symetricky přes celou šířku karty, tj. i větší než dřívější chybný příklad rx 34 u jiné jamky) a úplně blokoval prostor, kde ve skutečnosti existuje MacKenzieho bezpečnější levá trasa podél útesu (tzv. „chicken run“ — sám MacKenzie psal o „třech alternativních cestách“, přímé přes ~200 yardů oceánu, střední přes ~100 yardů a ještě kratší vlevo, kde povinný carry nikdy nepřesahuje ~80 yardů). Hazard proto zmenšen a posunut mírně doprava, aby vlevo zůstal volný pruh pro tuto bail-out trasu. Zdroj: golfcoursewiki.substack.com/p/the-16th-at-cypress-point-with-a; walkingwithtom.wordpress.com/2012/07/03/cypress-point-notes-holes-16-18.",
     "green": {
       "x": 0,
       "y": 205,
@@ -87,16 +87,16 @@
     "hazardy": [
       {
         "typ": "voda",
-        "x": 0,
+        "x": 16,
         "y": 100,
-        "rx": 45,
-        "ry": 100,
+        "rx": 15,
+        "ry": 80,
         "rot": 0,
         "seed": 2504,
-        "amp": 0.05,
+        "amp": 0.08,
         "label": {
-          "cs": "oceánská zátoku mezi odpalištěm a greenem",
-          "en": "the ocean bay between tee and green"
+          "cs": "oceánská zátoka mezi odpalištěm a greenem (přímá linie carry) — vlevo od ní zůstává volný pruh pro bezpečnější trasu podél útesu",
+          "en": "the ocean bay between tee and green (the direct carry line) — a strip to the left stays open for the safer cliffside route"
         }
       }
     ]
@@ -104,12 +104,12 @@
   "prvky": [
     {
       "nazev": {
-        "cs": "Přímý carry přes oceánskou zátoku",
-        "en": "A direct carry over an ocean bay"
+        "cs": "Přímý carry přes oceánskou zátoku — nebo bezpečnější cesta vlevo",
+        "en": "A direct carry over an ocean bay — or a safer route to the left"
       },
       "popis": {
-        "cs": "Mezi odpalištěm a greenem není nic než voda a skály — žádná mezilehlá plocha, kam by šlo bezpečně dohrát.",
-        "en": "Between tee and green there is nothing but water and rock — no intermediate ground to lay up onto."
+        "cs": "Odvážná linie vede přímo přes ~200 yardů oceánu ke greenu. MacKenzie ale sám popisoval tři alternativní cesty — přímou, střední (carry ~100 yardů) a ještě kratší podél levého útesu, kde povinný carry nikdy nepřesáhne ~80 yardů. Tahle levá trasa (tzv. „chicken run“) není snadný layup — sráz doleva je stále nebezpečný — ale existuje jako záchranná varianta pro opatrnější hráče.",
+        "en": "The bold line plays directly over roughly 200 yards of ocean to the green. But MacKenzie himself described three alternative routes — the direct line, a middle option (about a 100-yard carry), and a still shorter route along the left-hand cliffs where the compulsory carry never exceeds about 80 yards. That left-side route (the so-called \"chicken run\") is no easy layup — the drop to the left is still dangerous — but it exists as an escape valve for more cautious players."
       }
     },
     {
@@ -145,6 +145,14 @@
     {
       "titul": "The Alister MacKenzie Society — Cypress Point",
       "url": "https://alistermackenzie.org/articles/cypresspoint"
+    },
+    {
+      "titul": "Golf Course Wiki (Substack) — The 16th at Cypress Point With a Putter (cituje MacKenzieho popis tří alternativních tras)",
+      "url": "https://golfcoursewiki.substack.com/p/the-16th-at-cypress-point-with-a"
+    },
+    {
+      "titul": "Walking with Tom — Cypress Point Notes (Holes 16–18)",
+      "url": "https://walkingwithtom.wordpress.com/2012/07/03/cypress-point-notes-holes-16-18/"
     }
   ]
 }
