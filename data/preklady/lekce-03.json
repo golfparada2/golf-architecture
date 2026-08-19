@@ -1,0 +1,594 @@
+{
+  "cs": {
+    "meta": {
+      "kicker": "Golfová architektura",
+      "chapter": "Lekce 3 z 18",
+      "over": "Co rozhoduje víc než bunkry —",
+      "title": "Routing",
+      "lede": "Bunkry jsou to, co je vidět na fotkách. Routing — pořadí a propojení všech osmnácti jamek — je to, co rozhodne, jestli je hřiště dobré. A rozhoduje víc než všechno ostatní dohromady.",
+      "zpet": "← Zpět na rozcestník"
+    },
+    "principLabel": "Princip k zapamatování",
+    "teeShot": {
+      "eyebrow": "Tee shot",
+      "over": "Plát —",
+      "title": "Nejdřív najdi greeny",
+      "lede": "Většina architektů nezačíná první jamkou. Nejdřív najdou osmnáct skvělých míst pro greeny — a teprve pak mezi nimi vedou cesty.",
+      "principle": "Jamky se nekreslí jedna po druhé od první do osmnácté. Nejdřív se najdou místa, pak se spojí.",
+      "toggle": {
+        "body": "Krok 1 · jen body",
+        "jamky": "Krok 2 · jamky"
+      },
+      "popis": {
+        "body": "Tohle je pozemek, jak ho architekt vidí po týdnech chození: šest míst, která by sama o sobě udělala skvělý green. Zatím žádná jamka, žádné pořadí — jen potenciál.",
+        "jamky": "Teprve teď se body spojí do cesty. Pořadí, kterým je architekt propojí, rozhodne o délce přechodů, směrech proti větru i o tom, kde se koridory dvou jamek přiblíží až moc."
+      },
+      "pravidlaHead": "Pravidla, která se skládají zároveň",
+      "pravidla": [
+        {
+          "nazev": "Krátké přechody",
+          "popis": "Od greenu na další odpaliště ideálně do 50 metrů — jinak hráč tráví víc času chůzí než hrou."
+        },
+        {
+          "nazev": "Střídání směrů",
+          "popis": "Kvůli větru i slunci. Nikdy čtyři jamky za sebou stejným směrem."
+        },
+        {
+          "nazev": "Večerní jamky ne proti slunci",
+          "popis": "Na posledních jamkách kola hráč nesmí mířit přímo do zapadajícího slunce."
+        },
+        {
+          "nazev": "Nekřížit koridory",
+          "popis": "Minimální rozestup os sousedních jamek zhruba 60–70 metrů — jinak hrozí zásah odjinud přiletěvším míčem."
+        },
+        {
+          "nazev": "Rovnováha parů",
+          "popis": "Čtyři par 3, čtyři par 5, deset par 4 je zvyk, ne zákon — ale úplná absence rozmanitosti je varovné znamení."
+        },
+        {
+          "nazev": "Dramaturgie kola",
+          "popis": "Klidný začátek, vrchol obtížnosti kolem 12.–13. jamky, silný závěr, který se dá zapamatovat."
+        }
+      ],
+      "L": {
+        "klubovna": "KLUBOVNA",
+        "bod": "MÍSTO PRO GREEN"
+      },
+      "foot": "list 1 · Tee shot"
+    },
+    "spolecneKarty": {
+      "specsHead": "Tři prvky",
+      "parLabel": "Par",
+      "delkaLabel": "Délka",
+      "architektLabel": "Architekt",
+      "vznikLabel": "Rok",
+      "prameny": "Prameny",
+      "otazkaLabel": "Otázka jamky"
+    },
+    "fairway": {
+      "eyebrow": "Fairway",
+      "over": "Dva routingy, dvě filozofie —",
+      "title": "Celek, ne jamka",
+      "lede": "St Andrews je routing formovaný staletími — cesta tam a zpět stejným koridorem, dvojgreeny, pravidla porušená tak dávno, že se z nich stala pravidla nová. Cypress Point je pravý opak: routing obětovaný jedinému, krátkému a naprosto dramatickému úseku pobřeží."
+    },
+    "ceskaJamka": {
+      "eyebrow": "Fairway · Česko",
+      "over": "Celé hřiště, ne jamka —",
+      "title": "Prague City Golf Zbraslav",
+      "lede": "Co uděláš s routingem osmnácti jamek, když se klubovna přesune o víc než dva kilometry jinam? Zbraslav na tuhle otázku odpovídala doopravdy, ne jako cvičení."
+    },
+    "approachNadpis": {
+      "eyebrow": "Approach",
+      "over": "Pracovní plát —",
+      "title": "Šest jamek",
+      "lede": "Toto je nejtěžší úkol v celém kurzu — a je záměrně hned na začátku. Chceme, aby ses od první lekce naučil/a myslet v celku, ne v jednotlivé jamce."
+    },
+    "approach1": {
+      "eyebrow": "Šest jamek",
+      "over": "Nejdřív greeny, pak cesty —",
+      "title": "Postav routing",
+      "lede": "Pozemek má zhruba 60 hektarů, potok a příjezdovou cestu ke klubovně. Klepáním umísti šest greenů v pořadí, v jakém by se hrály — od klubovny (jamka 1) po jamku 6. Klepnutím na už umístěný bod ho i se všemi pozdějšími smažeš.",
+      "tools": {
+        "clear": "Začít znovu"
+      },
+      "stav": {
+        "prazdno": "Klepni do plánu — první klepnutí umístí green jamky 1.",
+        "pokrok": "Umístěno {n} ze 6. Klepni pro jamku {dalsi}.",
+        "hotovo": "Routing hotový. Podívej se na vyhodnocení níž."
+      },
+      "metriky": {
+        "prechody": "Celková délka koridorů",
+        "smery": "Opakující se směr",
+        "krizeni": "Křížení koridorů",
+        "zadneOpakovani": "Žádný směr se neopakuje třikrát za sebou.",
+        "zadneKrizeni": "Žádné dva koridory se nekříží."
+      },
+      "varovani": {
+        "smerOpakovani": "Jamky {seznam} vedou stejným směrem ({smer}) — v jednosměrném větru z toho bude nejtěžší (nebo nejsnazší) část hřiště, podle toho, odkud zrovna fouká. Zvaž otočení jedné z nich.",
+        "krizeni": "Koridory jamek {a} a {b} se kříží. Hráč na jedné čeká, než druhý dohraje, nebo riskuje zásah odjinud přiletěvším míčem — v reálném návrhu by se tohle muselo přepracovat."
+      },
+      "L": {
+        "klubovna": "KLUBOVNA / JAMKA 1",
+        "potok": "POTOK",
+        "cesta": "PŘÍJEZDOVÁ CESTA"
+      },
+      "foot": "list 5 · Approach"
+    },
+    "putt": {
+      "eyebrow": "Putt",
+      "over": "Tři otázky, žádné body —",
+      "title": "K zamyšlení",
+      "lede": "Piš vlastními slovy. Je to tu proto, aby sis to promyslel/a, ne abys to odříkal/a.",
+      "otazky": [
+        "Proč je „najít 18 skvělých míst pro greeny“ jiný postup než „nakreslit 18 jamek popořadě“? Co se tím získá?",
+        "Představ si, že už máš routing hotový a klub ti oznámí, že se klubovna přesune jinam (jako ve Zbraslavi). O čem všem to rozhoduje znovu?",
+        "Který z principů z plátu „Pravidla, která se skládají zároveň“ je podle tebe nejtěžší dodržet zároveň se všemi ostatními? Proč zrovna ten?"
+      ],
+      "poznamkaPlaceholder": "Piš sem…",
+      "ulozeno": "Uloženo v tomto prohlížeči.",
+      "foot": "list 6 · Putt"
+    },
+    "slovnicek": {
+      "eyebrow": "Slovníček",
+      "over": "Pojmy z téhle lekce —",
+      "title": "Sedm slov",
+      "lede": "Odborné názvy zůstávají anglicky i v české větě.",
+      "pojmy": [
+        {
+          "pojem": "Routing",
+          "popis": "Pořadí a propojení všech osmnácti jamek na pozemku — to, o čem je celá tahle lekce."
+        },
+        {
+          "pojem": "Koridor",
+          "popis": "Pruh terénu vyhrazený jedné jamce, od odpaliště po green, včetně bezpečného okraje."
+        },
+        {
+          "pojem": "Přechod",
+          "popis": "Cesta, kterou hráč jde pěšky od greenu jedné jamky k odpališti další."
+        },
+        {
+          "pojem": "Dvojgreen",
+          "popis": "Jeden fyzický green sloužící dvěma různým jamkám — typicky jdoucím opačným směrem, jako na St Andrews."
+        },
+        {
+          "pojem": "Dramaturgie kola",
+          "popis": "Záměrné rozvržení obtížnosti a nálady jamek v průběhu celého kola, ne jen jamku po jamce."
+        },
+        {
+          "pojem": "Corridor crossing",
+          "popis": "Situace, kdy se koridory dvou jamek přiblíží nebo protnou natolik, že hrozí zásah míčem odjinud."
+        },
+        {
+          "pojem": "Clubhouse loop",
+          "popis": "Routing vedený tak, že se hřiště kolem poloviny kola vrátí zpátky ke klubovně (typicky po deváté jamce)."
+        }
+      ]
+    },
+    "zkouska": {
+      "eyebrow": "Zkouška",
+      "over": "Šest otázek za —",
+      "title": "100 bodů",
+      "lede": "Odpověz na všech šest, teprve pak uvidíš správná řešení. Do celkového hodnocení kurzu se počítá první pokus.",
+      "spolecne": {
+        "otazka": "Otázka",
+        "bodu": "bodů",
+        "zbyva": "Zbývá odpovědět na",
+        "hotovoMuzesOdevzdat": "Hotovo. Můžeš odevzdat.",
+        "spravne": "správně",
+        "tvojeVolba": "tvoje volba",
+        "nicNevybrano": "nic nevybráno",
+        "moznost": "Možnost",
+        "zkratkaBodu": "b",
+        "reseniUKazdeOtazky": "Správná řešení jsou u každé otázky."
+      },
+      "submit": "Odevzdat",
+      "again": "Zkusit znovu",
+      "q1": {
+        "text": "Který ze tří routingů nemá žádné křížící se koridory?",
+        "hint": "Sleduj, jestli se čáry mezi jamkami nikde nepřekrývají.",
+        "a": "Routing A",
+        "b": "Routing B",
+        "c": "Routing C",
+        "why": "<b>B.</b> Žádné dvě čáry se v B nikde nekříží. A má zjevné křížení uprostřed pozemku, C vede dvě jamky těsně vedle sebe stejným směrem — riziko zásahu i bez doslovného křížení.",
+        "back": "Vrať se na úkol „Šest jamek“."
+      },
+      "q2": {
+        "text": "Proč by přechod z greenu na další odpaliště měl být ideálně do 50 metrů?",
+        "a": "Protože delší chůze unaví hráče na příští úder",
+        "b": "Protože hráč tráví víc času chůzí mezi jamkami než samotnou hrou",
+        "c": "Protože golfové vozíky mají omezený dojezd",
+        "d": "Protože to vyžadují pravidla golfu",
+        "why": "<b>B.</b> Dlouhé přechody nejsou o únavě ani o technických limitech vozíků — jde o poměr: kolo golfu má trvat přiměřeně dlouho, a zbytečná chůze mezi jamkami ten čas jen natahuje bez jediné odehrané rány.",
+        "back": "Vrať se na pravidlo „Krátké přechody“."
+      },
+      "q3": {
+        "text": "Proč se vrchol obtížnosti kola typicky umísťuje kolem 12.–13. jamky, ne na první?",
+        "a": "Protože hráči jsou tou dobou už unavení a chtějí výzvu",
+        "b": "Protože se tam vejde nejvíc bunkrů",
+        "c": "Protože kolo potřebuje klidný začátek, vrchol uprostřed až ke konci a zapamatovatelný závěr — ne vyčerpat hráče hned na první jamce",
+        "d": "Protože první jamka musí být nejkratší na hřišti",
+        "why": "<b>C.</b> Stejná logika jako u skladby koncertu nebo filmu: rozjezd, který hráče naladí, vrchol, který si zapamatuje, a závěr, který ho pošle domů se silným dojmem — ne vrchol hned na úvod, po kterém všechno ostatní působí jako sestup.",
+        "back": "Vrať se na plát „Nejdřív najdi greeny“."
+      },
+      "q4": {
+        "text": "Ve kterém routingu vedou tři jamky za sebou stejným směrem?",
+        "hint": "Sleduj úhel jednotlivých koridorů, ne jen jejich polohu.",
+        "a": "Routing A",
+        "b": "Routing B",
+        "c": "Routing C",
+        "why": "<b>A.</b> Jamky 3, 4 a 5 v routingu A míří všechny stejným směrem — proti stejnému větru by to byla nejtěžší (nebo nejsnazší) třetina hřiště podle počasí, ne podle návrhu. B a C směry střídají.",
+        "back": "Vrať se na úkol „Šest jamek“."
+      },
+      "q5": {
+        "text": "Co platí o skládání pravidel routingu dohromady? Vyber všechna správná tvrzení.",
+        "hint": "Za každou správnou volbu body, za každou špatnou se odečítají.",
+        "a": "Krátké přechody a nekřížení koridorů se dají navrhnout současně, ne po jednom",
+        "b": "Rovnováha čtyř par 3 a čtyř par 5 je závazné pravidlo golfu",
+        "c": "Dvě sousední jamky mířící téměř stejným směrem zvyšují riziko zásahu odjinud přiletěvším míčem",
+        "d": "Dramaturgie kola znamená, že se obtížnost mění v průběhu osmnácti jamek záměrně, ne náhodně",
+        "why": "<b>A, C, D.</b> Routing je úloha, kde se všechna pravidla skládají naráz — proto je nejtěžší úkol v kurzu. Rozestup koridorů je fyzická bezpečnost, dramaturgie je záměr, ne náhoda. Rovnováha parů je ale zvyk, ne pravidlo — B neplatí, spousta uznávaných hřišť ho poruší.",
+        "back": "Vrať se na plát „Pravidla, která se skládají zároveň“."
+      },
+      "q6": {
+        "text": "Proč se doporučuje minimální rozestup os sousedních jamek zhruba 60–70 metrů?",
+        "a": "Aby hřiště vypadalo na fotkách prostorněji",
+        "b": "Aby se snížilo riziko, že hráče na jedné jamce zasáhne špatně odbitý míč ze sousední",
+        "c": "Aby se vešlo víc golfových vozíků najednou",
+        "d": "Aby travní směsi na sousedních fairwayích měly různé zavlažování",
+        "why": "<b>B.</b> Golfový míč umí uletět stovky metrů úplně jiným směrem, než hráč zamýšlel. Bezpečný rozestup koridorů není estetika ani provoz — je to ochrana lidí na sousední jamce.",
+        "back": "Vrať se na pravidlo „Nekřížit koridory“."
+      },
+      "pasmo": {
+        "vyborne": {
+          "nadpis": "Výborně",
+          "text": "Routing máš zvládnutý. Pokračuj na lekci 4."
+        },
+        "dobre": {
+          "nadpis": "Dobré",
+          "text": "Základ sedí. Projdi si pravidla u otázek, kde ses spletl/a, a jdi dál."
+        },
+        "projdes": {
+          "nadpis": "Projdeš",
+          "text": "Vrať se k úkolu „Šest jamek“ a zkus routing, který nemá ani opakující se směr, ani křížení."
+        },
+        "zopakuj": {
+          "nadpis": "Zopakuj",
+          "text": "Vrať se na plát „Pravidla, která se skládají zároveň“ a projdi si všech šest pravidel znovu."
+        }
+      },
+      "souhrn": {
+        "nadpis": "Výsledek",
+        "procentBodu": "procent · {body} ze {max} bodů",
+        "spravne": "správně",
+        "chybneCastecne": "chybně nebo částečně",
+        "zcelaMimo": "zcela mimo",
+        "rozpis": "Rozpis odpovědí",
+        "tvojeOdpoved": "Tvoje odpověď",
+        "spravneReseni": "Správně",
+        "pata": "Podrobné vysvětlení je u každé otázky výše. Výsledek se ukládá do přehledu kurzu."
+      },
+      "foot": "list 7 · Zkouška"
+    },
+    "temata": {
+      "strategie": "strategie",
+      "trest": "trest",
+      "riziko-odmena": "riziko a odměna",
+      "umisteni-hazardu": "umístění hazardu",
+      "cteni-terenu": "čtení terénu",
+      "voda-odtok": "voda a odtok",
+      "vitr-slunce": "vítr a slunce",
+      "routing": "routing",
+      "bezpecnost": "bezpečnost",
+      "rytmus-hriste": "rytmus hřiště"
+    },
+    "foot": {
+      "lekce": "ROUTING · lekce 3"
+    },
+    "smery": {
+      "S": "sever",
+      "J": "jih",
+      "V": "východ",
+      "Z": "západ",
+      "SV": "severovýchod",
+      "SZ": "severozápad",
+      "JV": "jihovýchod",
+      "JZ": "jihozápad"
+    }
+  },
+  "en": {
+    "meta": {
+      "kicker": "Golf course architecture",
+      "chapter": "Lesson 3 of 18",
+      "over": "What matters more than bunkers —",
+      "title": "Routing",
+      "lede": "Bunkers are what you see in photos. Routing — the sequence and connection of all eighteen holes — is what decides whether a course is good. And it matters more than everything else combined.",
+      "zpet": "← Back to the hub"
+    },
+    "principLabel": "Principle to remember",
+    "teeShot": {
+      "eyebrow": "Tee shot",
+      "over": "The plate —",
+      "title": "Find the greens first",
+      "lede": "Most architects don't start with the first hole. They first find eighteen great spots for greens — and only then route paths between them.",
+      "principle": "Holes aren't drawn one after another from the first to the eighteenth. Spots get found first, then connected.",
+      "toggle": {
+        "body": "Step 1 · just points",
+        "jamky": "Step 2 · holes"
+      },
+      "popis": {
+        "body": "This is the land as an architect sees it after weeks of walking: six spots that would each make a great green on their own. No hole yet, no order — just potential.",
+        "jamky": "Only now do the points connect into a path. The order the architect links them in decides transition length, directions into the wind, and where two corridors get too close."
+      },
+      "pravidlaHead": "Rules that compose at the same time",
+      "pravidla": [
+        {
+          "nazev": "Short transitions",
+          "popis": "Ideally under 50 metres from a green to the next tee — otherwise the player spends more time walking than playing."
+        },
+        {
+          "nazev": "Alternating directions",
+          "popis": "For both wind and sun. Never four holes in a row in the same direction."
+        },
+        {
+          "nazev": "No evening holes into the sun",
+          "popis": "On the last holes of a round, a player must not be aiming straight into the setting sun."
+        },
+        {
+          "nazev": "Don't cross corridors",
+          "popis": "Minimum spacing between neighbouring hole axes of roughly 60–70 metres — otherwise there's a risk of being hit by a ball from elsewhere."
+        },
+        {
+          "nazev": "Par balance",
+          "popis": "Four par 3s, four par 5s, ten par 4s is a habit, not a law — but a total absence of variety is a warning sign."
+        },
+        {
+          "nazev": "Round dramaturgy",
+          "popis": "A calm start, a peak in difficulty around holes 12–13, and a strong, memorable finish."
+        }
+      ],
+      "L": {
+        "klubovna": "CLUBHOUSE",
+        "bod": "GREEN SITE"
+      },
+      "foot": "sheet 1 · Tee shot"
+    },
+    "spolecneKarty": {
+      "specsHead": "Three elements",
+      "parLabel": "Par",
+      "delkaLabel": "Length",
+      "architektLabel": "Architect",
+      "vznikLabel": "Year",
+      "prameny": "Sources",
+      "otazkaLabel": "The hole's question"
+    },
+    "fairway": {
+      "eyebrow": "Fairway",
+      "over": "Two routings, two philosophies —",
+      "title": "The whole, not a hole",
+      "lede": "St Andrews is a routing shaped by centuries — an out-and-back path down the same corridor, shared double greens, rules broken so long ago they became new rules. Cypress Point is the opposite: a routing sacrificed entirely to one short, dramatic stretch of coastline."
+    },
+    "ceskaJamka": {
+      "eyebrow": "Fairway · Czechia",
+      "over": "A whole course, not a hole —",
+      "title": "Prague City Golf Zbraslav",
+      "lede": "What do you do with an eighteen-hole routing when the clubhouse moves more than two kilometres away? Zbraslav answered that question for real, not as an exercise."
+    },
+    "approachNadpis": {
+      "eyebrow": "Approach",
+      "over": "The work plate —",
+      "title": "Six Holes",
+      "lede": "This is the hardest task in the whole course — and it's deliberately placed early. We want you thinking about the whole from lesson one, not hole by hole."
+    },
+    "approach1": {
+      "eyebrow": "Six Holes",
+      "over": "Greens first, paths second —",
+      "title": "Build the routing",
+      "lede": "The site is roughly 60 hectares, with a stream and an access road to the clubhouse. Tap to place six greens in the order you'd play them — from the clubhouse (hole 1) to hole 6. Tapping an already-placed point deletes it and everything placed after it.",
+      "tools": {
+        "clear": "Start over"
+      },
+      "stav": {
+        "prazdno": "Tap the plan — the first tap places the green for hole 1.",
+        "pokrok": "Placed {n} of 6. Tap for hole {dalsi}.",
+        "hotovo": "Routing complete. See the evaluation below."
+      },
+      "metriky": {
+        "prechody": "Total corridor length",
+        "smery": "Repeated direction",
+        "krizeni": "Corridor crossings",
+        "zadneOpakovani": "No direction repeats three times in a row.",
+        "zadneKrizeni": "No two corridors cross."
+      },
+      "varovani": {
+        "smerOpakovani": "Holes {seznam} all run the same direction ({smer}) — in a one-directional wind, that becomes the hardest (or easiest) third of the course, decided by weather rather than design. Consider turning one of them.",
+        "krizeni": "Corridors {a} and {b} cross. A player on one waits for the other to finish, or risks being hit by a ball from elsewhere — in a real design this would need reworking."
+      },
+      "L": {
+        "klubovna": "CLUBHOUSE / HOLE 1",
+        "potok": "STREAM",
+        "cesta": "ACCESS ROAD"
+      },
+      "foot": "sheet 5 · Approach"
+    },
+    "putt": {
+      "eyebrow": "Putt",
+      "over": "Three questions, no points —",
+      "title": "Something to think about",
+      "lede": "Write in your own words. It's here to make you think it through, not recite it back.",
+      "otazky": [
+        "Why is \"find 18 great green sites\" a different process than \"draw 18 holes in order\"? What does it actually gain you?",
+        "Imagine your routing is already finished and the club tells you the clubhouse is moving elsewhere (like at Zbraslav). What all does that decide again?",
+        "Which principle from the \"Rules that compose at the same time\" plate do you think is hardest to satisfy alongside all the others? Why that one?"
+      ],
+      "poznamkaPlaceholder": "Write here…",
+      "ulozeno": "Saved in this browser.",
+      "foot": "sheet 6 · Putt"
+    },
+    "slovnicek": {
+      "eyebrow": "Glossary",
+      "over": "Terms from this lesson —",
+      "title": "Seven words",
+      "lede": "Technical terms stay in English even in the Czech sentence.",
+      "pojmy": [
+        {
+          "pojem": "Routing",
+          "popis": "The sequence and connection of all eighteen holes on a site — the subject of this whole lesson."
+        },
+        {
+          "pojem": "Corridor",
+          "popis": "The strip of land reserved for one hole, from tee to green, including its safety margin."
+        },
+        {
+          "pojem": "Transition",
+          "popis": "The walk a player takes from one hole's green to the next hole's tee."
+        },
+        {
+          "pojem": "Double green",
+          "popis": "One physical green serving two different holes — typically running in opposite directions, as at St Andrews."
+        },
+        {
+          "pojem": "Round dramaturgy",
+          "popis": "The deliberate shaping of difficulty and mood across an entire round, not just hole by hole."
+        },
+        {
+          "pojem": "Corridor crossing",
+          "popis": "When two holes' corridors come close enough, or intersect, to risk a player being hit by a ball from elsewhere."
+        },
+        {
+          "pojem": "Clubhouse loop",
+          "popis": "A routing designed so the course returns to the clubhouse around the halfway point (typically after the ninth hole)."
+        }
+      ]
+    },
+    "zkouska": {
+      "eyebrow": "Exam",
+      "over": "Six questions for —",
+      "title": "100 points",
+      "lede": "Answer all six, then you'll see the correct solutions. Only your first attempt counts toward your course grade.",
+      "spolecne": {
+        "otazka": "Question",
+        "bodu": "points",
+        "zbyva": "Still to answer:",
+        "hotovoMuzesOdevzdat": "Done. You can submit.",
+        "spravne": "correct",
+        "tvojeVolba": "your pick",
+        "nicNevybrano": "nothing selected",
+        "moznost": "Option",
+        "zkratkaBodu": "pts",
+        "reseniUKazdeOtazky": "The correct solutions are shown with each question."
+      },
+      "submit": "Submit",
+      "again": "Try again",
+      "q1": {
+        "text": "Which of these three routings has no crossing corridors?",
+        "hint": "Check whether any of the lines between holes overlap.",
+        "a": "Routing A",
+        "b": "Routing B",
+        "c": "Routing C",
+        "why": "<b>B.</b> No two lines cross anywhere in B. A has an obvious crossing in the middle of the site, and C runs two holes right next to each other in the same direction — a hit risk even without a literal crossing.",
+        "back": "Go back to the \"Six Holes\" task."
+      },
+      "q2": {
+        "text": "Why should a transition from a green to the next tee ideally be under 50 metres?",
+        "a": "Because a longer walk tires the player out for the next shot",
+        "b": "Because the player spends more time walking between holes than actually playing",
+        "c": "Because golf carts have limited range",
+        "d": "Because the rules of golf require it",
+        "why": "<b>B.</b> Long transitions aren't about fatigue or cart range — it's about ratio: a round of golf should take a reasonable amount of time, and unnecessary walking between holes stretches that time without a single shot being played.",
+        "back": "Go back to the \"Short transitions\" rule."
+      },
+      "q3": {
+        "text": "Why is the peak difficulty of a round typically placed around holes 12–13, not the first?",
+        "a": "Because players are tired by then and want a challenge",
+        "b": "Because that's where the most bunkers fit",
+        "c": "Because a round needs a calm start, a peak toward the middle-to-end, and a memorable finish — not to exhaust the player on the very first hole",
+        "d": "Because the first hole must be the shortest on the course",
+        "why": "<b>C.</b> Same logic as the structure of a concert or a film: an opening that settles the player in, a peak they'll remember, and a finish that sends them home with a strong impression — not a peak right at the start, after which everything else feels like a comedown.",
+        "back": "Go back to the \"Find the greens first\" plate."
+      },
+      "q4": {
+        "text": "In which routing do three holes in a row run the same direction?",
+        "hint": "Track the angle of each corridor, not just its position.",
+        "a": "Routing A",
+        "b": "Routing B",
+        "c": "Routing C",
+        "why": "<b>A.</b> Holes 3, 4 and 5 in routing A all point the same direction — against the same wind, that would be the hardest (or easiest) third of the course, decided by weather instead of design. B and C alternate direction.",
+        "back": "Go back to the \"Six Holes\" task."
+      },
+      "q5": {
+        "text": "What's true about composing routing rules together? Select all correct statements.",
+        "hint": "Points are added for each correct choice and subtracted for each wrong one.",
+        "a": "Short transitions and not crossing corridors can be designed for at the same time, not one after another",
+        "b": "Balancing four par 3s and four par 5s is a binding rule of golf",
+        "c": "Two neighbouring holes running nearly the same direction raise the risk of being hit by a ball from elsewhere",
+        "d": "Round dramaturgy means difficulty changes across eighteen holes on purpose, not at random",
+        "why": "<b>A, C, D.</b> Routing is a problem where every rule has to be satisfied at once — that's exactly why it's the hardest task in the course. Corridor spacing is physical safety; dramaturgy is intent, not chance. Par balance, though, is a habit, not a rule — B is false, plenty of respected courses break it.",
+        "back": "Go back to the \"Rules that compose at the same time\" plate."
+      },
+      "q6": {
+        "text": "Why is a minimum spacing of roughly 60–70 metres recommended between neighbouring hole axes?",
+        "a": "So the course looks more spacious in photos",
+        "b": "To reduce the risk of a player on one hole being hit by a mishit ball from the hole next door",
+        "c": "So more golf carts fit at once",
+        "d": "So neighbouring fairways can use different irrigation zones",
+        "why": "<b>B.</b> A golf ball can fly hundreds of metres in a completely different direction than the player intended. Safe corridor spacing isn't aesthetics or logistics — it's protecting the people on the hole next door.",
+        "back": "Go back to the \"Don't cross corridors\" rule."
+      },
+      "pasmo": {
+        "vyborne": {
+          "nadpis": "Excellent",
+          "text": "You've got routing down. Move on to lesson 4."
+        },
+        "dobre": {
+          "nadpis": "Good",
+          "text": "The basics hold. Review the rules behind the questions you missed, then move on."
+        },
+        "projdes": {
+          "nadpis": "You pass",
+          "text": "Go back to the \"Six Holes\" task and try a routing with neither a repeated direction nor a crossing."
+        },
+        "zopakuj": {
+          "nadpis": "Repeat this one",
+          "text": "Go back to the \"Rules that compose at the same time\" plate and work through all six rules again."
+        }
+      },
+      "souhrn": {
+        "nadpis": "Result",
+        "procentBodu": "percent · {body} of {max} points",
+        "spravne": "correct",
+        "chybneCastecne": "wrong or partial",
+        "zcelaMimo": "completely off",
+        "rozpis": "Answer breakdown",
+        "tvojeOdpoved": "Your answer",
+        "spravneReseni": "Correct answer",
+        "pata": "Detailed explanations are above with each question. The result is saved to the course overview."
+      },
+      "foot": "sheet 7 · Exam"
+    },
+    "temata": {
+      "strategie": "strategy",
+      "trest": "punishment",
+      "riziko-odmena": "risk and reward",
+      "umisteni-hazardu": "hazard placement",
+      "cteni-terenu": "reading the land",
+      "voda-odtok": "water and drainage",
+      "vitr-slunce": "wind and sun",
+      "routing": "routing",
+      "bezpecnost": "safety",
+      "rytmus-hriste": "course rhythm"
+    },
+    "foot": {
+      "lekce": "ROUTING · lesson 3"
+    },
+    "smery": {
+      "S": "north",
+      "J": "south",
+      "V": "east",
+      "Z": "west",
+      "SV": "northeast",
+      "SZ": "northwest",
+      "JV": "southeast",
+      "JZ": "southwest"
+    }
+  }
+}

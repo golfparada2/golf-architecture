@@ -1,0 +1,154 @@
+{
+  "verze": 1,
+  "id": "pebble-beach-18",
+  "hriste": "Pebble Beach Golf Links",
+  "zeme": "US-CA",
+  "jamka": 18,
+  "nazev": null,
+  "par": 5,
+  "delky": [
+    {
+      "odpaliste": "otevření hřiště",
+      "m": 315,
+      "yd": 345,
+      "rok": 1919,
+      "poznamka": "tehdy par 4, ne par 5"
+    },
+    {
+      "odpaliste": "po přestavbě",
+      "m": 501,
+      "yd": 548,
+      "rok": 1922
+    },
+    {
+      "odpaliste": "US Open (aktuální)",
+      "m": 497,
+      "yd": 543,
+      "rok": null,
+      "poznamka": "aktuálně platná turnajová vzdálenost, přesný rok měření není v pramenu uveden"
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "Jack Neville a Douglas Grant (původní hřiště, 1919); přestavba na dnešní par 5: William Herbert Fowler s Arthurem Vincentem a Markem Danielsem",
+      "en": "Jack Neville and Douglas Grant (original course, 1919); rebuilt into today's par 5 by William Herbert Fowler with Arthur Vincent and Mark Daniels"
+    },
+    "jistota": "jistá, s drobnou neshodou v přesném roce přestavby (prameny uvádí 1921 i 1922)",
+    "poznamka": {
+      "cs": "Neville a Grant byli amatérští návrháři bez předchozí zkušenosti. Před US Amateur 1929 hřiště dál upravovali Robert Hunter a H. Chandler Egan (pravděpodobně konzultoval i Alister MacKenzie); před US Open 2010 dohlížel na přestavbu greenu a bunkerů Arnold Palmer.",
+      "en": "Neville and Grant were amateur designers with no prior experience. Ahead of the 1929 US Amateur, Robert Hunter and H. Chandler Egan reworked the course further (Alister MacKenzie likely consulted); Arnold Palmer oversaw green and bunker rebuilding before the 2010 US Open."
+    }
+  },
+  "vznik": 1919,
+  "gps": {
+    "tee": [
+      36.5676,
+      -121.9406
+    ],
+    "green": [
+      36.5676,
+      -121.9406
+    ],
+    "presnost": {
+      "cs": "přibližné, úroveň areálu — přesná poloha odpaliště a greenu jamky 18 není ve veřejných pramenech uvedena",
+      "en": "approximate, resort-level — precise tee/green coordinates for hole 18 are not published in available sources"
+    }
+  },
+  "otazka": {
+    "cs": "Jak si rozvrhnout tři rány podél oceánu tak, aby žádná nezabloudila doleva do vody, když je právě levá strana nejkratší a nejlákavější cesta ke greenu?",
+    "en": "How do you plan three shots along the ocean so none strays left into the water, when the left side is exactly the shortest, most tempting line to the green?"
+  },
+  "tvary": {
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob().",
+    "green": {
+      "x": 8,
+      "y": 490,
+      "rx": 14,
+      "ry": 11,
+      "rot": -0.1,
+      "seed": 1801,
+      "amp": 0.08
+    },
+    "bunkry": [
+      {
+        "x": 20,
+        "y": 480,
+        "rx": 6,
+        "ry": 5,
+        "rot": 0.3,
+        "seed": 1802,
+        "amp": 0.17,
+        "label": {
+          "cs": "hluboký bunker vpravo od greenu",
+          "en": "deep bunker right of the green"
+        }
+      }
+    ],
+    "hazardy": [
+      {
+        "typ": "voda",
+        "x": -55,
+        "y": 250,
+        "rx": 40,
+        "ry": 260,
+        "rot": 0,
+        "seed": 1803,
+        "amp": 0.06,
+        "label": {
+          "cs": "Tichý oceán po celé levé straně",
+          "en": "the Pacific Ocean along the whole left side"
+        }
+      }
+    ]
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Oceán po celé levé straně",
+        "en": "Ocean down the entire left side"
+      },
+      "popis": {
+        "cs": "Trestá jakoukoli ránu, která se snaží zkrátit jamku po levé, nejpřímější linii.",
+        "en": "Punishes any shot trying to shortcut the hole along the most direct, left-hand line."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Bunker a strom u greenu",
+        "en": "A bunker and tree by the green"
+      },
+      "popis": {
+        "cs": "Hluboký bunker vpravo a vysoká borovice tlačí hráče blíž k oceánu, čímž vzniká klasické rozhodování o riziku a odměně na poslední ráně.",
+        "en": "A deep bunker on the right and a tall pine push the player closer to the ocean, creating a classic risk-reward decision on the final shot."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Extrémní délka jako par 5",
+        "en": "Extreme length as a par 5"
+      },
+      "popis": {
+        "cs": "Dřív se na green ve dvou ranách téměř nedosahovalo — jamka byla spíš tříúderová, „manažerská“, než birdie příležitost.",
+        "en": "The green was once almost unreachable in two — more a three-shot, risk-management hole than a birdie chance."
+      }
+    }
+  ],
+  "prameny": [
+    {
+      "titul": "Pebble Beach — Course Changes (oficiální web)",
+      "url": "https://www.pebblebeach.com/golf/pebble-beach-golf-links/course-history/course-changes/"
+    },
+    {
+      "titul": "Pebble Beach — Course Architects (oficiální web)",
+      "url": "https://www.pebblebeach.com/golf/pebble-beach-golf-links/course-history/course-architects/"
+    },
+    {
+      "titul": "Golf Channel — US Open hole-by-hole look at Pebble Beach",
+      "url": "https://www.golfchannel.com/news/us-open-hole-hole-look-pebble-beach"
+    },
+    {
+      "titul": "Wikipedia — Pebble Beach Golf Links",
+      "url": "https://en.wikipedia.org/wiki/Pebble_Beach_Golf_Links"
+    }
+  ]
+}

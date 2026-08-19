@@ -1,0 +1,488 @@
+/* ==========================================================================
+   ROUTING — sdílený styl kurzu
+   ==========================================================================
+   Perokresba se šrafováním, redakční sazba, dvojjazyčnost.
+   Používá každá stránka kurzu (rozcestník, studijní pláty, pracovní pláty,
+   zkoušky). Cesty jsou vždy relativní — stránka běží na GitHub Pages
+   v podadresáři (uzivatel.github.io/routing/).
+
+   Obsah souboru:
+     1. Písma (self-hosted, @font-face)
+     2. Proměnné — paleta, rozestupy
+     3. Reset a základ
+     4. Záhlaví stránky — drobek, přepínač jazyka
+     5. Redakční sazba — nadpisy, podtitul, úvodní text
+     6. Kresba (SVG) — obecná pravidla a popisky
+     7. Trojice "tří prvků" (specs grid)
+     8. Nástrojová lišta (tlačítka pod pracovním plátem)
+     9. Tabulky (zápis z kola, výsledky)
+    10. Zkouška — otázky, volby, obrázkové volby, vysvětlení, souhrn
+    11. Patička
+    12. Responzivita — dotykové cíle, úzké displeje
+    13. Utility
+   ========================================================================== */
+
+
+/* ---------- 1. Písma ------------------------------------------------------
+   Playfair Display a EB Garamond, self-hostováno pod SIL Open Font License
+   (viz assets/fonts/LICENSE-*.txt). Žádné volání na Google Fonts — odesílání
+   IP adresy nezletilého návštěvníka třetí straně je u vzdělávacího projektu
+   zbytečné riziko. Jen řezy, které se v kurzu skutečně používají,
+   woff2, znaková sada latin + latin-ext (kvůli češtině). ------------------ */
+
+@font-face{
+  font-family:'Playfair Display';
+  src:url('fonts/playfair-display-latin-900-normal.woff2') format('woff2'),
+      url('fonts/playfair-display-latin-ext-900-normal.woff2') format('woff2');
+  font-weight:900;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'Playfair Display';
+  src:url('fonts/playfair-display-latin-700-italic.woff2') format('woff2'),
+      url('fonts/playfair-display-latin-ext-700-italic.woff2') format('woff2');
+  font-weight:700;font-style:italic;font-display:swap;
+}
+@font-face{
+  font-family:'EB Garamond';
+  src:url('fonts/eb-garamond-latin-400-normal.woff2') format('woff2'),
+      url('fonts/eb-garamond-latin-ext-400-normal.woff2') format('woff2');
+  font-weight:400;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'EB Garamond';
+  src:url('fonts/eb-garamond-latin-500-normal.woff2') format('woff2'),
+      url('fonts/eb-garamond-latin-ext-500-normal.woff2') format('woff2');
+  font-weight:500;font-style:normal;font-display:swap;
+}
+@font-face{
+  font-family:'EB Garamond';
+  src:url('fonts/eb-garamond-latin-400-italic.woff2') format('woff2'),
+      url('fonts/eb-garamond-latin-ext-400-italic.woff2') format('woff2');
+  font-weight:400;font-style:italic;font-display:swap;
+}
+
+
+/* ---------- 2. Proměnné ---------------------------------------------------
+   Paleta je pevná napříč celým kurzem — viz zadání, část 5. Neměň barvy
+   lokálně ve stránkách, jen tady. ------------------------------------------ */
+
+:root{
+  /* paleta */
+  --paper:#F7F1E0;   /* podklad, také obrys popisků */
+  --ink:  #1E1B15;   /* perokresba, hlavní text */
+  --ink2: #4A443A;   /* vedlejší text, vodicí linky, štítky */
+  --olive:#3B4A2A;   /* nadpisy, tlačítka */
+  --turf: #A9B983;   /* green a fairway */
+  --turf-d:#8B9C64;  /* okolní trávník */
+  --sand: #F1E5C8;   /* bunkry */
+  --water:#9DB6C2;   /* voda */
+  --flag: #B0452C;   /* praporek, důraz, chybná odpověď */
+  --good: #3F6B45;   /* správná odpověď */
+
+  /* rozestupy — responzivní, viz oddíl 12 */
+  --pad:  clamp(14px,4.5vw,20px);
+  --plate-max: 560px; /* max. šířka sloupce s obsahem */
+}
+
+/* na pracovním plátu (interaktivní, s dopady a čísly) jde šrafura na
+   zhruba třetinu hustoty studijního plátu — viz zadání, pravidlo 1.
+   Kreslicí funkce v js/platy.js čtou tuto proměnnou jako násobič opacity. */
+:root{ --hatch-density: 1; }
+.plate-work{ --hatch-density: .33; }
+
+
+/* ---------- 3. Reset a základ --------------------------------------------- */
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:'EB Garamond',Georgia,serif;
+  -webkit-font-smoothing:antialiased;
+  padding:18px var(--pad) 44px;
+  max-width:var(--plate-max);margin:0 auto;
+}
+img,svg{max-width:100%}
+a{color:inherit}
+
+/* žádné bezpatkové písmo nikde v kurzu — i prvky, které by ho jinak
+   dědily ze systémového UI (button, input), se vrací k sazbě kurzu */
+button,input,select,textarea{font-family:inherit}
+
+
+/* ---------- 4. Záhlaví stránky -------------------------------------------- */
+
+.hr{display:flex;align-items:center;gap:12px;color:var(--ink2);flex:1;min-width:0}
+.hr::before,.hr::after{content:'';flex:1;height:1px;background:currentColor;opacity:.45}
+.hr span{
+  font-size:clamp(9.5px,2.6vw,11px);letter-spacing:.2em;text-transform:uppercase;
+  white-space:nowrap;
+}
+
+.topbar{display:flex;align-items:center;gap:12px}
+
+/* přepínač jazyka — drž se datového atributu data-l, jazyk.js na něj váže
+   posluchače. aria-current signalizuje aktivní jazyk asistivním technologiím. */
+.lang{display:flex;align-items:center;gap:5px;flex:0 0 auto}
+.lang button{
+  font-family:'EB Garamond',serif;font-size:12px;letter-spacing:.14em;
+  background:none;border:0;padding:5px 3px;color:var(--ink2);cursor:pointer;
+  border-bottom:1.5px solid transparent;min-height:32px;min-width:32px;
+}
+.lang button[aria-current="true"]{color:var(--olive);border-color:var(--olive)}
+.lang button:focus-visible{outline:2px solid var(--flag);outline-offset:2px}
+.lang i{font-style:normal;color:var(--ink2);opacity:.4}
+
+
+/* ---------- 5. Redakční sazba ---------------------------------------------
+   eyebrow → h1 (s dvouřádkovým podtitulem v <em>) → dashline → lede.
+   Velikosti přes clamp(), nikdy pevné px — viz zadání, část 7. -------------- */
+
+.eyebrow{
+  font-size:clamp(10.5px,3vw,12px);letter-spacing:.24em;text-transform:uppercase;
+  color:var(--olive);font-weight:500;margin-top:20px;
+}
+h1{
+  font-family:'Playfair Display',serif;font-weight:900;
+  font-size:clamp(42px,15vw,62px);line-height:.86;letter-spacing:-.015em;
+  color:var(--olive);margin:6px 0 0;
+}
+h1 em{
+  font-style:italic;font-weight:700;font-size:clamp(22px,7vw,32px);display:block;
+  color:var(--ink2);letter-spacing:0;margin-bottom:-2px;
+}
+.dashline{width:74px;height:1.5px;background:var(--olive);margin:14px 0 12px}
+.lede{font-size:clamp(15.5px,4.3vw,17px);line-height:1.44;max-width:38ch}
+.lede b{font-weight:500}
+.lede em{font-style:italic}
+
+/* Nadpis PLÁTU/podsekce — menší sourozenec h1. Stránka má jeden velký h1
+   nahoře (název lekce) a pak řadu těchto skromnějších nadpisů, jeden na
+   každý plát/úkol — stejná hierarchie jako v redakční sazbě časopisu:
+   jeden titulek, hodně podtitulků. */
+.plat{margin-top:34px}
+.platNadpis{
+  font-family:'Playfair Display',serif;font-weight:700;
+  font-size:clamp(23px,7vw,29px);line-height:1.02;color:var(--olive);margin:4px 0 0;
+}
+.platNadpis em{
+  font-style:italic;font-weight:700;color:var(--ink2);display:block;
+  font-size:clamp(13.5px,3.8vw,15px);letter-spacing:0;margin-bottom:1px;
+}
+.principBox{
+  margin-top:14px;padding:10px 14px;border-left:2px solid var(--olive);
+  background:rgba(59,74,42,.06);font-size:15.5px;line-height:1.4;
+}
+.principBox b{font-weight:500;color:var(--olive)}
+
+
+/* ---------- 6. Kresba (SVG) ------------------------------------------------
+   Kresba je vždy width:100%; height:auto s pevným viewBox — nikdy pevné
+   rozměry, jinak se nepřizpůsobí šířce telefonu.
+
+   Popisky uvnitř kresby (.lab):
+   - obrys v barvě papíru (paint-order:stroke), jinak zanikají ve šrafuře
+   - nejméně 15 jednotek viewBoxu (na 320px displeji vyjde cca 12px, minimum)
+   - prostrkání nejvýš 0,08em — kapitálky s velkým prostrkáním jsou v malé
+     velikosti nečitelné
+   ---------------------------------------------------------------------- */
+
+svg{display:block;width:100%;height:auto}
+#plate,.plate{touch-action:manipulation}
+
+.lab{
+  font-family:'EB Garamond',serif;letter-spacing:.07em;fill:var(--ink);
+  text-transform:uppercase;font-weight:500;font-size:16px;
+  paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round;
+}
+.lab.sm{font-size:13.5px;fill:var(--ink2);stroke-width:3.5px}
+.lead{stroke:var(--ink2);stroke-width:.9;fill:none;opacity:.75} /* vodicí linka k popisku */
+
+
+/* ---------- 7. Trojice "tří prvků" ----------------------------------------
+   Pod 360px se tři sloupce rozpadají do tří řádků: kresba vlevo, text
+   vpravo — viz oddíl 12. --------------------------------------------------- */
+
+.specs{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,3vw,14px);margin-top:14px}
+.spec h3{
+  font-size:clamp(11.5px,3.2vw,13px);font-weight:500;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--olive);text-align:center;margin-top:4px;
+}
+.spec .sub{
+  font-size:clamp(9px,2.6vw,10px);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink2);text-align:center;opacity:.75;margin-top:1px;
+}
+.spec .bar{height:1px;background:var(--ink2);opacity:.4;margin:6px 4px}
+.spec p{font-size:clamp(12.5px,3.4vw,13.5px);line-height:1.34;text-align:center;color:var(--ink2)}
+
+
+/* ---------- 8. Nástrojová lišta -------------------------------------------- */
+
+.tools{display:flex;gap:18px;align-items:baseline;margin-top:14px;flex-wrap:wrap}
+.tools button{
+  font-family:'EB Garamond',serif;font-size:14px;letter-spacing:.2em;
+  text-transform:uppercase;background:none;border:0;color:var(--olive);cursor:pointer;
+  padding:9px 0 10px;border-bottom:1.5px solid var(--olive);min-height:32px;
+}
+.tools button.quiet{color:var(--ink2);border-color:var(--ink2);opacity:.75}
+.tools button:disabled{opacity:.35;cursor:default}
+.tools button:focus-visible{outline:2px solid var(--flag);outline-offset:3px}
+.state,.note{margin-top:10px;font-size:14px;font-style:italic;color:var(--ink2);min-height:1.4em}
+
+
+/* ---------- 8b. Posuvník ----------------------------------------------------
+   Sdílený vzhled pro <input type="range"> — používá se v několika lekcích
+   (např. „trest úměrný chybě“, „křivka rovnováhy“), proto tady, ne v CSS
+   jednotlivé lekce. Dotykový cíl (palec) má výšku přes 32 px. --------------- */
+
+.posuvnik-wrap{margin-top:16px}
+.posuvnik-wrap label{
+  display:flex;justify-content:space-between;gap:10px;font-size:13px;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin-bottom:8px;
+}
+.posuvnik-wrap output{font-family:'Playfair Display',serif;font-weight:700;color:var(--olive);letter-spacing:0;text-transform:none}
+input[type="range"].posuvnik{
+  -webkit-appearance:none;appearance:none;width:100%;height:32px;background:none;cursor:pointer;
+}
+input[type="range"].posuvnik::-webkit-slider-runnable-track{
+  height:3px;background:var(--ink2);opacity:.4;border-radius:2px;
+}
+input[type="range"].posuvnik::-moz-range-track{
+  height:3px;background:var(--ink2);opacity:.4;border-radius:2px;
+}
+input[type="range"].posuvnik::-webkit-slider-thumb{
+  -webkit-appearance:none;margin-top:-13px;width:28px;height:28px;border-radius:50%;
+  background:var(--paper);border:2px solid var(--olive);box-shadow:0 1px 2px rgba(30,27,21,.3);
+}
+input[type="range"].posuvnik::-moz-range-thumb{
+  width:28px;height:28px;border-radius:50%;background:var(--paper);border:2px solid var(--olive);
+  box-shadow:0 1px 2px rgba(30,27,21,.3);
+}
+input[type="range"].posuvnik:focus-visible{outline:2px solid var(--flag);outline-offset:4px}
+
+
+/* ---------- 9. Tabulky ------------------------------------------------------ */
+
+table{width:100%;border-collapse:collapse;margin-top:8px}
+caption{
+  caption-side:top;font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink2);text-align:left;padding-bottom:6px;
+}
+th,td{padding:8px 4px;text-align:right;font-size:15px;border-bottom:1px solid rgba(74,68,58,.28)}
+th:first-child,td:first-child{text-align:left}
+thead th{
+  font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2);
+  border-bottom:1.5px solid var(--ink2);font-weight:400;
+}
+tbody tr:last-child td{border-bottom:1.5px solid var(--ink2)}
+td.score{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--olive)}
+td.score small{
+  display:block;font-family:'EB Garamond',serif;font-size:11px;font-weight:400;
+  letter-spacing:.1em;color:var(--flag);margin-top:-2px;
+}
+td.score small.flat{color:var(--ink2);opacity:.7}
+.verdict{margin-top:14px;padding-left:14px;border-left:2px solid var(--flag);font-size:16px;line-height:1.42}
+.verdict b{font-weight:500}
+
+
+/* ---------- 10. Zkouška ----------------------------------------------------- */
+
+.meter{display:flex;gap:5px;margin-top:16px}
+.meter i{flex:1;height:5px;background:rgba(74,68,58,.22);border-radius:1px}
+.meter i.done{background:var(--olive)}
+.meter i.now{background:var(--flag)}
+
+.q{margin-top:26px;padding-top:14px;border-top:1px solid rgba(74,68,58,.3)}
+.qhead{
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink2);
+}
+.qtext{
+  font-family:'Playfair Display',serif;font-size:clamp(19px,5.6vw,23px);font-weight:700;
+  line-height:1.16;color:var(--olive);margin:7px 0 4px;
+}
+.qhint{font-size:14px;font-style:italic;color:var(--ink2);margin-bottom:10px}
+
+.opts{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.opt{
+  display:flex;gap:11px;align-items:flex-start;text-align:left;width:100%;
+  background:none;border:1.5px solid rgba(74,68,58,.35);border-radius:2px;
+  padding:11px 13px;font-family:'EB Garamond',serif;font-size:16.5px;line-height:1.32;
+  color:var(--ink);cursor:pointer;min-height:32px;
+}
+.opt .mk{
+  flex:0 0 22px;height:22px;border:1.5px solid var(--ink2);border-radius:50%;
+  font-size:12px;letter-spacing:0;display:grid;place-items:center;color:var(--ink2);
+  margin-top:1px;
+}
+.opt[aria-pressed="true"]{border-color:var(--olive);background:rgba(59,74,42,.07)}
+.opt[aria-pressed="true"] .mk{background:var(--olive);color:var(--paper);border-color:var(--olive)}
+.opt:focus-visible{outline:2px solid var(--flag);outline-offset:2px}
+.opt.right{border-color:var(--good);background:rgba(63,107,69,.1)}
+.opt.wrong{border-color:var(--flag);background:rgba(176,69,44,.08)}
+.opt .tag{
+  margin-left:auto;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;
+  align-self:center;white-space:nowrap;
+}
+.opt.right .tag{color:var(--good)}
+.opt.wrong .tag{color:var(--flag)}
+
+/* obrázkové volby — nejméně dvě otázky v každé lekci musí tento typ použít */
+.picks{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px;margin-top:10px}
+.pick{
+  border:1.5px solid rgba(74,68,58,.35);background:none;padding:4px 4px 7px;
+  cursor:pointer;min-height:32px;
+}
+.pick svg{display:block;width:100%;height:auto}
+.pick span{
+  display:block;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  text-align:center;color:var(--ink2);margin-top:3px;
+}
+.pick[aria-pressed="true"]{border-color:var(--olive);background:rgba(59,74,42,.07)}
+.pick.right{border-color:var(--good);background:rgba(63,107,69,.1)}
+.pick.wrong{border-color:var(--flag);opacity:.55}
+.pick:focus-visible{outline:2px solid var(--flag);outline-offset:2px}
+
+/* vysvětlení odpovědi — tři části: co je správně, proč, proč ostatní
+   ne. Zakonči odkazem na plát, viz .back. */
+.why{margin-top:11px;padding-left:13px;border-left:2px solid var(--good);font-size:15.5px;line-height:1.4;color:var(--ink2)}
+.why b{color:var(--ink);font-weight:500}
+.why.miss{border-color:var(--flag)}
+.why .back{display:block;margin-top:5px;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+
+/* souhrn */
+.result{margin-top:26px;border-top:1.5px solid var(--ink2);padding-top:16px}
+.score{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.score .big{font-family:'Playfair Display',serif;font-size:clamp(52px,16vw,76px);font-weight:900;line-height:.8;color:var(--olive)}
+.score .of{font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+.band{font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:var(--flag);margin-top:12px}
+.result p{font-size:16px;line-height:1.42;margin-top:8px;max-width:40ch}
+
+.tally{display:flex;gap:20px;margin-top:16px;flex-wrap:wrap}
+.tally div{display:flex;align-items:baseline;gap:7px}
+.tally b{font-family:'Playfair Display',serif;font-size:30px;font-weight:900;line-height:1}
+.tally .ok b{color:var(--good)}
+.tally .no b{color:var(--flag)}
+.tally span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+
+.review{margin-top:14px;border-top:1.5px solid var(--ink2)}
+.rw{padding:11px 0 11px 30px;border-bottom:1px solid rgba(74,68,58,.25);position:relative}
+.rw::before{position:absolute;left:0;top:11px;font-size:17px;line-height:1.2}
+.rw.ok::before{content:'✓';color:var(--good)}
+.rw.no::before{content:'✕';color:var(--flag)}
+.rw.part::before{content:'±';color:var(--flag)}
+.rw .top{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.rw .topic{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2)}
+.rw .pts{font-size:12.5px;color:var(--ink2);white-space:nowrap}
+.rw .qq{font-size:16px;line-height:1.3;margin-top:3px}
+.rw dl{margin-top:6px;font-size:14.5px;line-height:1.36}
+.rw dt{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);margin-top:4px}
+.rw dd{color:var(--ink)}
+.rw dd.bad{color:var(--flag)}
+.rw dd.good{color:var(--good)}
+
+
+/* ---------- 11. Patička ----------------------------------------------------- */
+
+.foot{
+  margin-top:24px;font-size:clamp(9.5px,2.6vw,11px);letter-spacing:.18em;
+  text-transform:uppercase;color:var(--ink2);display:flex;justify-content:space-between;
+  gap:10px;opacity:.75;
+}
+.src{margin-top:16px;font-size:clamp(12px,3.3vw,12.5px);font-style:italic;color:var(--ink2);line-height:1.42;opacity:.9}
+
+
+/* ---------- 12. Responzivita ------------------------------------------------
+   Ověřuj na 320, 375 a 768 px v obou jazycích — viz zadání, část 7. --------- */
+
+@media (max-width:360px){
+  .specs{grid-template-columns:1fr;gap:4px}
+  .spec{
+    display:grid;grid-template-columns:78px 1fr;column-gap:12px;align-items:center;
+    padding:9px 0;border-bottom:1px solid rgba(74,68,58,.22);
+  }
+  .spec svg{grid-row:span 4}
+  .spec h3,.spec .sub,.spec p{text-align:left}
+  .spec .bar{display:none}
+  .spec h3{margin-top:0}
+  .spec p{margin-top:4px}
+  .picks{grid-template-columns:1fr;gap:8px}
+  .pick{display:grid;grid-template-columns:64px 1fr;column-gap:12px;align-items:center;padding:6px}
+  .pick span{text-align:left;margin-top:0}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+}
+
+
+/* ---------- 13. Utility ------------------------------------------------------ */
+
+[hidden]{display:none!important}
+.visually-hidden{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+
+/* ---------- 14. Sdílené vzorce lekcí (karta jamky, přepínač vrstev, putt,
+   slovníček) ------------------------------------------------------------------
+   Vytaženo v kroku 5 (js/spolecne.js) z toho, co se v lekci 1 psalo natvrdo
+   do lokálního <style> každé stránky. Lekce 1 má tahle pravidla i dál i ve
+   svém vlastním <style> (duplicitní, ale identické — neriskuju úpravou
+   dodaného kódu), lekce 2+ je berou už jen odsud. --------------------------- */
+
+.zpet{
+  display:inline-block;margin-top:10px;font-size:13px;letter-spacing:.1em;
+  color:var(--ink2);text-decoration:none;border-bottom:1px solid rgba(74,68,58,.4);
+  padding-bottom:1px;
+}
+.zpet:focus-visible{outline:2px solid var(--flag);outline-offset:3px}
+
+.listMark{
+  margin-top:16px;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--ink2);opacity:.65;
+}
+
+.toggle{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
+.toggle button{
+  font-family:'EB Garamond',serif;font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;
+  background:none;border:1.5px solid rgba(74,68,58,.35);border-radius:2px;color:var(--ink2);
+  cursor:pointer;padding:8px 13px;min-height:32px;
+}
+.toggle button[aria-pressed="true"]{border-color:var(--olive);color:var(--olive);background:rgba(59,74,42,.07)}
+.toggle button:focus-visible{outline:2px solid var(--flag);outline-offset:2px}
+
+.karta{margin-top:22px}
+.karta + .karta{margin-top:36px;padding-top:22px;border-top:1px solid rgba(74,68,58,.25)}
+.kartaHlava{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2);margin-top:14px}
+.kartaNazev{font-family:'Playfair Display',serif;font-weight:700;font-size:20px;color:var(--olive);margin-top:2px}
+.kartaMeta{font-size:14px;color:var(--ink2);margin-top:8px;line-height:1.55}
+.kartaOtazka{margin-top:9px;font-size:15.5px;line-height:1.42}
+.kartaOtazka b{color:var(--olive);font-weight:500}
+.kartaPrvky{margin-top:14px}
+.kartaPrameny{margin-top:10px;font-size:12px;color:var(--ink2);opacity:.82;line-height:1.7}
+.kartaPrameny a{color:var(--ink2)}
+
+.legenda{display:flex;gap:18px;margin-top:12px;font-size:12.5px;color:var(--ink2);flex-wrap:wrap}
+.legenda span{display:inline-flex;align-items:center;gap:6px}
+.legenda i{width:14px;height:2.6px;display:inline-block;border-radius:2px}
+.ctenka{display:flex;gap:22px;margin-top:14px;flex-wrap:wrap}
+.ctenka div{font-size:12.5px;color:var(--ink2);letter-spacing:.04em}
+.ctenka b{display:block;font-family:'Playfair Display',serif;font-size:21px;color:var(--olive);font-weight:700;letter-spacing:0}
+
+.puttQ{margin-top:24px}
+.puttQ p.otazka{font-size:16px;line-height:1.4;margin-bottom:9px;color:var(--ink)}
+.puttQ textarea{
+  width:100%;min-height:92px;font-family:'EB Garamond',serif;font-size:15px;line-height:1.42;
+  padding:11px;border:1.5px solid rgba(74,68,58,.35);background:rgba(255,255,255,.28);
+  color:var(--ink);resize:vertical;
+}
+.puttQ textarea:focus-visible{outline:2px solid var(--flag);outline-offset:2px}
+.puttSaved{font-size:12px;font-style:italic;color:var(--ink2);margin-top:5px;min-height:1.4em;opacity:.8}
+
+.pojmy{margin-top:16px}
+.pojem{padding:12px 0;border-bottom:1px solid rgba(74,68,58,.22)}
+.pojem dt{font-family:'Playfair Display',serif;font-weight:700;font-size:16.5px;color:var(--olive)}
+.pojem dd{font-size:14.5px;color:var(--ink2);line-height:1.42;margin-top:3px}

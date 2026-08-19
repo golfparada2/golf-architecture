@@ -1,0 +1,98 @@
+{
+  "cs": {
+    "kicker": "Golfová architektura",
+    "eyebrow": "Kurz · 18 lekcí",
+    "over": "Jak se staví",
+    "title": "Routing",
+    "lede": "Kurz o navrhování golfových hřišť pro hráče, kteří hru znají a chtějí pochopit, proč jamky vypadají, jak vypadají. Méně čtení, víc dívání — každý princip je na obrázku.",
+    "progres": "Připraveno {hotovo} z {celkem} lekcí. Zbytek přibývá postupně.",
+    "lessonsHead": "Lekce",
+    "soonLabel": "Připravuje se",
+    "stavNezahajeno": "Zatím nezahájeno",
+    "stavPokus": "Pokus 1 · {proc} % · {pasmo}",
+    "stavPocetPokusu2_4": "{n} pokusy celkem",
+    "stavPocetPokusu5plus": "{n} pokusů celkem",
+    "resultsHead": "Výsledky",
+    "privacy": "Výsledky testů se ukládají jen v tomto prohlížeči (localStorage) a nikam se neodesílají. Když si prohlížeč vyčistíš nebo přejdeš na jiné zařízení, o výsledky přijdeš — proto je dobré si je čas od času stáhnout jako JSON.",
+    "exportBtn": "Stáhnout výsledky",
+    "importBtn": "Načíst výsledky",
+    "importOk": "Výsledky načteny.",
+    "importErr": "Soubor se nepodařilo přečíst — zkontroluj, že je to JSON stažený z tohoto kurzu.",
+    "souhrnZadne": "Zatím žádný zaznamenaný pokus. Projdi si zkoušku v některé lekci a vrať se sem.",
+    "souhrnText": "První pokus zaznamenán u {n} ze 3 lekcí · průměr {prumer} %",
+    "souhrnPoznamka": "Celkový rozbor podle témat (silné a slabé okruhy) se odemkne až po deváté lekci, jak popisuje zadání — tady je to jen průběžný přehled prvních tří.",
+    "pasmo": {
+      "vyborne": "Výborně",
+      "dobre": "Dobré",
+      "projdes": "Projdeš",
+      "zopakuj": "Zopakuj"
+    },
+    "lekce": [
+      {
+        "num": 1,
+        "title": "Proč jamka vypadá, jak vypadá",
+        "popis": "Trestající, strategická a heroická filozofie — a proč stejná chyba nesmí všude stát stejně."
+      },
+      {
+        "num": 2,
+        "title": "Čtení pozemku",
+        "popis": "Vrstevnice, odtok vody, slunce, vítr a podloží — pět věcí, které architekt hledá dřív, než nakreslí první jamku."
+      },
+      {
+        "num": 3,
+        "title": "Routing",
+        "popis": "Pořadí a propojení osmnácti jamek — víc rozhodne o kvalitě hřiště než jakýkoli jednotlivý bunkr."
+      }
+    ],
+    "foot1": "ROUTING · rozcestník",
+    "foot2": "krok 6 · lekce 1–3"
+  },
+  "en": {
+    "kicker": "Golf course architecture",
+    "eyebrow": "Course · 18 lessons",
+    "over": "How they are",
+    "title": "Routed",
+    "lede": "A course on golf design for players who know the game and want to understand why holes look the way they do. Less reading, more looking — every principle sits on a drawing.",
+    "progres": "{hotovo} of {celkem} lessons ready. The rest arrives gradually.",
+    "lessonsHead": "Lessons",
+    "soonLabel": "Coming soon",
+    "stavNezahajeno": "Not started yet",
+    "stavPokus": "Attempt 1 · {proc}% · {pasmo}",
+    "stavPocetPokusu2_4": "{n} attempts total",
+    "stavPocetPokusu5plus": "{n} attempts total",
+    "resultsHead": "Results",
+    "privacy": "Quiz results are stored only in this browser (localStorage) and never sent anywhere. Clear the browser or switch device and they are gone — download them as JSON now and then.",
+    "exportBtn": "Download results",
+    "importBtn": "Load results",
+    "importOk": "Results loaded.",
+    "importErr": "Could not read the file — check that it's a JSON export from this course.",
+    "souhrnZadne": "No attempts recorded yet. Take a quiz in one of the lessons and come back here.",
+    "souhrnText": "{n} lessons with a first attempt · average {prumer}%",
+    "souhrnPoznamka": "The full topic-based breakdown (strong vs. weak areas) unlocks after lesson nine, as the brief describes — this is just a running overview of the first three.",
+    "pasmo": {
+      "vyborne": "Excellent",
+      "dobre": "Good",
+      "projdes": "You pass",
+      "zopakuj": "Repeat this one"
+    },
+    "lekce": [
+      {
+        "num": 1,
+        "title": "Why a hole looks the way it looks",
+        "popis": "Penal, strategic, and heroic philosophy — and why the same mistake can't cost the same everywhere."
+      },
+      {
+        "num": 2,
+        "title": "Reading the Land",
+        "popis": "Contours, drainage, sun, wind, and subsoil — five things an architect checks before drawing the first hole."
+      },
+      {
+        "num": 3,
+        "title": "Routing",
+        "popis": "The order and connection of all eighteen holes — it decides a course's quality more than any single bunker."
+      }
+    ],
+    "foot1": "ROUTING · hub",
+    "foot2": "step 6 · lessons 1–3"
+  }
+}

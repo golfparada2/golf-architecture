@@ -1,0 +1,139 @@
+{
+  "verze": 1,
+  "id": "zbraslav-1",
+  "hriste": "Prague City Golf Zbraslav",
+  "zeme": "CZ",
+  "jamka": 1,
+  "nazev": null,
+  "par": 5,
+  "delky": [
+    {
+      "odpaliste": "zadní (černé)",
+      "m": 475,
+      "yd": 520,
+      "rok": 2023,
+      "poznamka": "metrická hodnota je přepočet z yardů (520 yd) — klubový scorecard v metrech byl dostupný jen jako obrázek, ne jako text"
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "Jeremy Ford a Alex Čejka (původní hřiště, 2009); kompletní přeuspořádání routingu Jakub Červenka (2023)",
+      "en": "Jeremy Ford and Alex Čejka (original course, 2009); complete routing rework by Jakub Červenka (2023)"
+    },
+    "jistota": "jistá",
+    "poznamka": {
+      "cs": "Klub přesunul klubovnu ze Zbraslavi do sousedních Lipenců (cca 2,5 km). To si vynutilo nové umístění odpaliště i greenu klíčové jamky a kompletní přepracování routingu: šest starých jamek (č. 9, 10, 11, 16, 17, 18) bylo vyřazeno ze hry, pět zcela nových vzniklo a jedna starší jamka byla rozdělena na dvě. Hřiště se od sezóny 2024 hraje v jiném pořadí a číslování než dřív.",
+      "en": "The club moved its clubhouse from Zbraslav to neighbouring Lipence (about 2.5 km away). This forced a new location for the tee and green of the key finishing hole and a complete rework of the routing: six old holes (9, 10, 11, 16, 17, 18) were retired, five entirely new holes were built, and one older hole was split into two. Since the 2024 season the course plays in a different order and numbering than before."
+    }
+  },
+  "vznik": 2009,
+  "gps": {
+    "tee": [
+      49.99,
+      14.34
+    ],
+    "green": [
+      49.99,
+      14.34
+    ],
+    "presnost": {
+      "cs": "odhad z adresy (Oddechová 886, Praha-Lipence), ne ověřená hodnota z primárního zdroje s přesnými souřadnicemi",
+      "en": "estimated from the street address (Oddechová 886, Prague-Lipence), not a verified value from a primary source with exact coordinates"
+    }
+  },
+  "otazka": {
+    "cs": "Co uděláš s routingem osmnácti jamek, když se klubovna přesune o víc než dva kilometry jinam?",
+    "en": "What do you do to an eighteen-hole routing when the clubhouse moves more than two kilometres away?"
+  },
+  "tvary": {
+    "poznamka": "schematické a ilustrativní, ne ověřený půdorys jamky 1 — konkrétní rozestavění hazardů této jamky nebylo v dostupných pramenech popsáno. Tvar níže jen naznačuje obecný linksový charakter hřiště (modelované greeny, pískové plochy, pot bunkery), viz prvky. Souřadnice v metrech od odpaliště, kreslí se přes js/platy.js blob().",
+    "green": {
+      "x": 4,
+      "y": 430,
+      "rx": 12,
+      "ry": 9,
+      "rot": 0.1,
+      "seed": 2601,
+      "amp": 0.09
+    },
+    "bunkry": [
+      {
+        "x": -14,
+        "y": 420,
+        "rx": 4,
+        "ry": 4,
+        "rot": 0.2,
+        "seed": 2602,
+        "amp": 0.18,
+        "label": {
+          "cs": "pot bunker vlevo od greenu",
+          "en": "pot bunker left of the green"
+        }
+      },
+      {
+        "x": 14,
+        "y": 425,
+        "rx": 4,
+        "ry": 4,
+        "rot": -0.2,
+        "seed": 2603,
+        "amp": 0.18,
+        "label": {
+          "cs": "pot bunker vpravo od greenu",
+          "en": "pot bunker right of the green"
+        }
+      }
+    ],
+    "hazardy": []
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Klubovna určila routing",
+        "en": "The clubhouse dictated the routing"
+      },
+      "popis": {
+        "cs": "Ne tvar pozemku, ale poloha nové klubovny v Lipencích vynutila, kudy dnes hřiště vede.",
+        "en": "Not the shape of the land, but the new clubhouse location in Lipence forced today's routing."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Šest jamek pryč, pět nových",
+        "en": "Six holes gone, five new"
+      },
+      "popis": {
+        "cs": "Šest starých jamek bylo vyřazeno (ponechány stranou pro případné druhé hřiště), pět zcela nových vzniklo a jedna byla rozdělena na dvě.",
+        "en": "Six old holes were retired (kept aside for a possible second course), five entirely new ones were built, and one was split into two."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Linksový charakter",
+        "en": "A links character"
+      },
+      "popis": {
+        "cs": "Modelované greeny se stékajícími svahy do divoké trávy, rozsáhlé plochy s červeným pískem a klasické pot bunkery — inspirace skotskými links hřišti.",
+        "en": "Contoured greens with spill-off slopes into wild grass, broad expanses of red sand, and classic pot bunkers — inspired by Scottish links courses."
+      }
+    }
+  ],
+  "prameny": [
+    {
+      "titul": "golf1.cz — Nová klubovna a nové jamky na zbraslavském hřišti Prague City Golf",
+      "url": "https://golf1.cz/zahranici/nova-klubovna-a-nove-jamky-na-zbraslavskem-hristi-prague-city-golf/"
+    },
+    {
+      "titul": "Hole19 — Prague City Golf Zbraslav (scorecard)",
+      "url": "https://www.hole19golf.com/courses/prague-city-golf-zbraslav"
+    },
+    {
+      "titul": "Create Golf — Prague City Golf Club (historie, architekti)",
+      "url": "https://creategolf.com/portfolio/prague-city-golf-club/"
+    },
+    {
+      "titul": "Prague City Golf — oficiální stránka Zbraslav",
+      "url": "https://www.pcg.cz/en/zbraslav/"
+    }
+  ]
+}

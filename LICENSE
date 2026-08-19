@@ -1,0 +1,64 @@
+ROUTING — kurz golfové architektury
+Licence kódu a obsahu
+
+Repozitář obsahuje dvě věci s různou povahou, proto i dvě licence.
+Návrh (výchozí, k odsouhlasení objednatelem — viz poznamky.md):
+
+────────────────────────────────────────────────────────────────────
+1. KÓD
+────────────────────────────────────────────────────────────────────
+Veškerý zdrojový kód v tomto repozitáři (HTML, CSS, JavaScript v
+assets/, js/, a strukturální části *.html a *.json) je licencován
+pod licencí MIT:
+
+MIT License
+
+Copyright (c) 2026 [doplní objednatel]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to
+deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+
+────────────────────────────────────────────────────────────────────
+2. OBSAH LEKCÍ (texty, karty jamek, otázky zkoušek, slovníčky)
+────────────────────────────────────────────────────────────────────
+Vzdělávací obsah — texty v data/preklady/*.json, karty jamek v
+data/jamky/*.json (kromě samotných faktografických údajů, které
+nejsou předmětem autorské ochrany), otázky a vysvětlení ve
+zkouškách — je licencován pod:
+
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
+(CC BY-NC-SA 4.0)
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+Důvod: obsah smí učitel/škola volně sdílet a upravovat pro výuku, ale
+ne prodávat jako komerční produkt třetí strany; odvozená díla musí
+zůstat pod stejnou licencí, aby zůstala otevřená.
+
+────────────────────────────────────────────────────────────────────
+3. PÍSMA
+────────────────────────────────────────────────────────────────────
+Playfair Display a EB Garamond jsou pod SIL Open Font License 1.1.
+Plné znění viz assets/fonts/LICENSE-playfair-display.txt a
+assets/fonts/LICENSE-eb-garamond.txt. Licence písem se touto hlavičkou
+nemění.
+
+────────────────────────────────────────────────────────────────────
+Toto je návrh licenčního rozdělení z kroku 1 (kostra repozitáře).
+Volba MIT / CC BY-NC-SA je rozumný výchozí pár pro vzdělávací
+open-source projekt, ale je to rozhodnutí objednatele — potvrď nebo
+uprav, viz poznamky.md.

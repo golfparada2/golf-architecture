@@ -1,0 +1,154 @@
+{
+  "verze": 1,
+  "id": "karlstejn-15",
+  "hriste": "Golf Resort Karlštejn",
+  "zeme": "CZ",
+  "jamka": 15,
+  "nazev": null,
+  "par": 4,
+  "delky": [
+    {
+      "odpaliste": "bílé",
+      "m": 335,
+      "yd": 366,
+      "rok": null,
+      "poznamka": "hodnota z agregátoru GolfPass, ne přímo z klubového scorecardu — doporučeno ověřit u klubu"
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "Les Furber a Jim Eremko",
+      "en": "Les Furber and Jim Eremko"
+    },
+    "jistota": "jistá",
+    "poznamka": {
+      "cs": "Nezávisle potvrzeno webem klubu i více golfovými katalogy. Areál má 27 jamek; jamka 15 je součástí druhé devítky (jamky 10–18).",
+      "en": "Independently confirmed by the club's own site and several golf directories. The resort has 27 holes; hole 15 belongs to the second nine (holes 10–18)."
+    }
+  },
+  "vznik": 1993,
+  "gps": {
+    "tee": [
+      49.933,
+      14.19
+    ],
+    "green": [
+      49.933,
+      14.19
+    ],
+    "presnost": {
+      "cs": "přibližné, úroveň areálu (Liteň u Karlštejna) — přesná poloha odpaliště a greenu jamky 15 není veřejně publikována",
+      "en": "approximate, resort-level (Liteň near Karlštejn) — precise tee/green coordinates for hole 15 are not publicly published"
+    }
+  },
+  "otazka": {
+    "cs": "Riskneš odpal přes vodu na kratší a jistější druhou ránu, nebo zahraješ jistě mimo vodu a přijmeš delší, těžší příhoz do kopce mezi bunkery?",
+    "en": "Do you risk driving across the water for a shorter, safer second shot, or play safely away from the water and accept a longer, harder approach uphill between bunkers?"
+  },
+  "tvary": {
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob().",
+    "green": {
+      "x": -6,
+      "y": 300,
+      "rx": 11,
+      "ry": 8,
+      "rot": 0.2,
+      "seed": 2001,
+      "amp": 0.07
+    },
+    "bunkry": [
+      {
+        "x": -16,
+        "y": 294,
+        "rx": 5,
+        "ry": 4,
+        "rot": 0.3,
+        "seed": 2002,
+        "amp": 0.17,
+        "label": {
+          "cs": "bunker vlevo od greenu",
+          "en": "bunker left of the green"
+        }
+      },
+      {
+        "x": 4,
+        "y": 306,
+        "rx": 5,
+        "ry": 4,
+        "rot": -0.2,
+        "seed": 2003,
+        "amp": 0.16,
+        "label": {
+          "cs": "bunker vpravo od greenu",
+          "en": "bunker right of the green"
+        }
+      }
+    ],
+    "hazardy": [
+      {
+        "typ": "voda",
+        "x": -20,
+        "y": 175,
+        "rx": 22,
+        "ry": 20,
+        "rot": 0,
+        "seed": 2004,
+        "amp": 0.08,
+        "label": {
+          "cs": "voda v rohu doglegu",
+          "en": "water at the dogleg corner"
+        }
+      }
+    ]
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Dogleg doleva s vodou v bodě rozhodnutí",
+        "en": "A left dogleg with water at the decision point"
+      },
+      "popis": {
+        "cs": "Voda leží přesně v rohu doglegu — tam, kde se hráč rozhoduje, jak moc si troufne zkrátit.",
+        "en": "The water sits exactly at the dogleg's corner — precisely where the player decides how much to cut off."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Green na vyvýšenině mezi bunkery",
+        "en": "An elevated green between bunkers"
+      },
+      "popis": {
+        "cs": "Cesta ke greenu vede do kopce mezi bunkery po obou stranách — trestá i špatně zahranou agresivní volbu.",
+        "en": "The approach climbs uphill between bunkers on both sides — punishing a poorly executed aggressive line too."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Vítr mění správnou volbu",
+        "en": "Wind changes the right choice"
+      },
+      "popis": {
+        "cs": "Klubový průvodce jamkou sám radí hrát konzervativně při protivětru — volba tedy není fixní podle úrovně hráče, ale mění se den ode dne.",
+        "en": "The club's own hole guide advises playing conservatively into a headwind — so the choice isn't fixed by skill level, it shifts day to day."
+      }
+    }
+  ],
+  "prameny": [
+    {
+      "titul": "Golf Resort Karlštejn — Course Map (oficiální popis jamky 15)",
+      "url": "https://karlstejn-golf.cz/en/course-map/"
+    },
+    {
+      "titul": "GolfPass — Golf Resort Karlstejn, 19-9 Course (scorecard)",
+      "url": "https://www.golfpass.com/travel-advisor/courses/32272-golf-resort-karlstejn-19-9-course"
+    },
+    {
+      "titul": "AllSquareGolf — Golf Resort Karlstejn",
+      "url": "https://www.allsquaregolf.com/golf-courses/czech-republic/golf-resort-karlstejn"
+    },
+    {
+      "titul": "GolfEurope.cz — Golf Resort Karlštejn",
+      "url": "https://www.golfeurope.cz/golf-hriste/Golf-Resort-Karlstejn.html"
+    }
+  ]
+}

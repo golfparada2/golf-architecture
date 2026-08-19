@@ -1,0 +1,618 @@
+{
+  "cs": {
+    "meta": {
+      "kicker": "Golfová architektura",
+      "chapter": "Lekce 2 z 18",
+      "over": "Než padne první čára —",
+      "title": "Čtení pozemku",
+      "lede": "Architekt nezačíná kreslením. Začíná tím, že po pozemku několik dní chodí — a hledá pět konkrétních věcí, dřív než nakreslí jedinou jamku.",
+      "zpet": "← Zpět na rozcestník"
+    },
+    "principLabel": "Princip k zapamatování",
+    "teeShot": {
+      "eyebrow": "Tee shot",
+      "over": "Plát —",
+      "title": "Pět věcí, které hledám",
+      "lede": "Jeden pozemek, pět vrstev. Přepínej mezi nimi — je to přesně to, co architekt v hlavě dělá při první obchůzce.",
+      "principle": "Dobrý pozemek se nekreslí. Čte se — a teprve pak se na něj kreslí.",
+      "toggle": {
+        "vrstevnice": "Vrstevnice",
+        "odtok": "Odtok vody",
+        "slunce": "Slunce",
+        "vitr": "Vítr",
+        "podlozi": "Podloží"
+      },
+      "popis": {
+        "vrstevnice": "Nejcennější je střední převýšení. Plochý pozemek je levný, ale nudný — každá jamka vypadá stejně. Strmý je dramatický, ale nehratelný a zemní práce ho prodraží o miliony.",
+        "odtok": "Nejpodceňovanější věc na celém pozemku. Voda po dešti stéká po spádnicích do nejnižšího bodu — a green tam **nikdy** nesmí být, i kdyby to bylo scénicky nejhezčí místo.",
+        "slunce": "Green, který je celý den ve stínu, nikdy nebude fungovat — tráva potřebuje ranní slunce, aby oschla rosa. Bez toho tu roky bojuješ s houbovými chorobami.",
+        "vitr": "V Česku převažuje vítr od západu až severozápadu. Tři dlouhé par 4 proti němu za sebou nejsou výzva — jsou trest, který nerozlišuje mezi dobrým a špatným úderem.",
+        "podlozi": "Písek pod povrchem je drenáž zdarma. Jíl je noční můra — drží vodu, kde nemá. Skála 40 cm pod povrchem znamená, že tam nikdy nevykopeš jezírko, ať chceš sebevíc."
+      },
+      "L": {
+        "prevyseni": [
+          "STŘEDNÍ",
+          "PŘEVÝŠENÍ"
+        ],
+        "strmy": [
+          "PŘÍLIŠ",
+          "STRMÉ"
+        ],
+        "potok": "POTOK",
+        "nejnizsi": [
+          "NEJNIŽŠÍ",
+          "BOD"
+        ],
+        "stin": [
+          "STÍN",
+          "CELÝ DEN"
+        ],
+        "ranniSlunce": [
+          "RANNÍ",
+          "SLUNCE"
+        ],
+        "vitr": [
+          "PŘEVLÁDAJÍCÍ",
+          "VÍTR"
+        ],
+        "pisek": "PÍSEK",
+        "jil": "JÍL",
+        "skala": "SKÁLA",
+        "povrch": "POVRCH"
+      },
+      "foot": "list 1 · Tee shot"
+    },
+    "spolecneKarty": {
+      "specsHead": "Tři prvky",
+      "parLabel": "Par",
+      "delkaLabel": "Délka",
+      "architektLabel": "Architekt",
+      "vznikLabel": "Rok",
+      "prameny": "Prameny",
+      "otazkaLabel": "Otázka jamky"
+    },
+    "fairway": {
+      "eyebrow": "Fairway",
+      "over": "Pozemek, ne rýsovací prkno —",
+      "title": "Dvě jamky nalezené, ne postavené",
+      "lede": "Sand Hills v Nebrasce a Ballybunion na irském pobřeží mají společné jedno: architekt na nich přemístil minimum zeminy. Pozemek dělal většinu práce sám."
+    },
+    "ceskaJamka": {
+      "eyebrow": "Fairway · Česko",
+      "over": "Kde terén rozhodl —",
+      "title": "Golf Dobrouč",
+      "lede": "Úzké údolí a potok, které architekt nemohl ignorovat, i kdyby chtěl. Osa jamky jde tam, kam ji terén pustí."
+    },
+    "approachNadpis": {
+      "eyebrow": "Approach",
+      "over": "Dva úkoly —",
+      "title": "Jeden na plátu, jeden venku",
+      "lede": "Nejdřív si to zkusíš na kresbě s vrstevnicemi a potokem. Pak si vezmeš telefon a jdeš to samé udělat doopravdy — na hřišti, v parku, na louce."
+    },
+    "approach1": {
+      "eyebrow": "Úkol I · na plátu",
+      "over": "Najdi tři místa, kam green —",
+      "title": "Nesmí",
+      "lede": "Na tomhle pozemku jsou tři konkrétní místa, kde green nikdy nepostavíš. Klepej po ploše, dokud všechna tři nenajdeš — u každého se dozvíš proč.",
+      "tools": {
+        "clear": "Začít znovu"
+      },
+      "stavHledej": "Klepej po pozemku a hledej místa, kam green nepatří.",
+      "stavPokrok": "Nalezeno {n} ze 3.",
+      "stavHotovo": "Všechna tři nalezena. Přečti si zdůvodnění u každého a jdi na druhý úkol.",
+      "zony": {
+        "odtok": {
+          "nazev": "Nejnižší bod odtoku",
+          "popis": "Po dešti sem stéká voda z celého okolí. Green by měl trvale mokrou spodinu — hráči by čekali, až superintendant vyžene vodu, místo aby hráli."
+        },
+        "svah": {
+          "nazev": "Příliš strmý svah",
+          "popis": "Sklon, který neudrží ani sekačka, natož odražený míč — cokoli sem dopadne, skutálí se pryč z plochy greenu."
+        },
+        "stin": {
+          "nazev": "Trvalý stín",
+          "popis": "Sem slunce nedosáhne skoro nikdy. Tráva na greenu bez světla časem uhyne, ať ji zaléváš a hnojíš sebepoctivěji."
+        }
+      },
+      "foot": "list 4 · Approach I"
+    },
+    "approach2": {
+      "eyebrow": "Úkol II · v terénu",
+      "over": "Zavři notebook —",
+      "title": "Jdi se podívat ven",
+      "lede": "Tohle je jediný úkol v kurzu, který tě dostane z pokoje. Jdi na hřiště, do parku nebo na louku a udělej přesně to, co dělá architekt první den na pozemku.",
+      "otazky": [
+        "Kudy podle tebe poteče voda po pořádném dešti?",
+        "Kde je v tuhle roční dobu ráno stín — a kde slunce?",
+        "Odkud momentálně vane vítr a jak často se to tu podle tebe mění?"
+      ],
+      "fotoLabel": "Nahraj fotku toho místa",
+      "fotoHint": "Na telefonu se ti nabídne rovnou fotoaparát. Fotka zůstane jen v tomhle okně prohlížeče.",
+      "fotoPoznamka": "Statický web nemá kam fotku poslat, a tak to ani nezkouší — nikam se neodesílá, a po obnovení stránky zmizí. Pokud si ji chceš uchovat, ulož si ji sám do telefonu.",
+      "ulozeno": "Poznámky uloženy v tomto prohlížeči.",
+      "foot": "list 5 · Approach II"
+    },
+    "putt": {
+      "eyebrow": "Putt",
+      "over": "Tři otázky, žádné body —",
+      "title": "K zamyšlení",
+      "lede": "Piš vlastními slovy. Nikdo to nebude opravovat — je to tu proto, aby sis to promyslel/a, ne abys to odříkal/a.",
+      "otazky": [
+        "Proč nemá smysl umístit skvělý green na místo, kam nikdy nedosáhne ranní slunce?",
+        "Architekt může nechat zavézt skálu, jílovité bahno vykopat a nahradit pískem, spád usměrnit drenáží. Kdy se to vyplatí a kdy je levnější najít jiné místo?",
+        "Napadá tě pozemek (u vás doma, na dovolené, kdekoli), kde by podle tebe šla postavit dobrá jamka? Co konkrétně by ji dělalo dobrou?"
+      ],
+      "poznamkaPlaceholder": "Piš sem…",
+      "ulozeno": "Uloženo v tomto prohlížeči.",
+      "foot": "list 6 · Putt"
+    },
+    "slovnicek": {
+      "eyebrow": "Slovníček",
+      "over": "Pojmy z téhle lekce —",
+      "title": "Osm slov",
+      "lede": "Odborné názvy zůstávají anglicky i v české větě — je to jazyk, kterým se o architektuře píše všude na světě.",
+      "pojmy": [
+        {
+          "pojem": "Routing",
+          "popis": "Pořadí a propojení všech osmnácti jamek na pozemku — téma celé třetí lekce."
+        },
+        {
+          "pojem": "Spádnice",
+          "popis": "Čára nejstrmějšího klesání terénu — cesta, kudy se dá voda vždy vydá jako první."
+        },
+        {
+          "pojem": "Drenáž",
+          "popis": "Odvod přebytečné vody z povrchu i podloží; buď přirozený (písek, spád), nebo umělý (trubky pod trávníkem)."
+        },
+        {
+          "pojem": "Vrstevnice",
+          "popis": "Čára spojující místa se stejnou nadmořskou výškou — základní nástroj čtení terénu na mapě."
+        },
+        {
+          "pojem": "Green speed",
+          "popis": "Rychlost greenu měřená stimpmetrem; se sklonem terénu roste riziko, že green bude nehratelně rychlý."
+        },
+        {
+          "pojem": "Shaping",
+          "popis": "Tvarování terénu stavební technikou — čím míň shapingu, tím víc pozemek „mluví“ sám za sebe."
+        },
+        {
+          "pojem": "Mikroklima",
+          "popis": "Místní rozdíly ve slunci, větru a vlhkosti napříč jedním pozemkem — dvě jamky vedle sebe mohou schnout úplně jinak rychle."
+        },
+        {
+          "pojem": "Links",
+          "popis": "Přímořský typ hřiště na písčitých dunách s minimem stromů — původní prostředí, kde se golf zrodil."
+        }
+      ]
+    },
+    "zkouska": {
+      "eyebrow": "Zkouška",
+      "over": "Šest otázek za —",
+      "title": "100 bodů",
+      "lede": "Odpověz na všech šest, teprve pak uvidíš správná řešení. Do celkového hodnocení kurzu se počítá první pokus.",
+      "spolecne": {
+        "otazka": "Otázka",
+        "bodu": "bodů",
+        "zbyva": "Zbývá odpovědět na",
+        "hotovoMuzesOdevzdat": "Hotovo. Můžeš odevzdat.",
+        "spravne": "správně",
+        "tvojeVolba": "tvoje volba",
+        "nicNevybrano": "nic nevybráno",
+        "moznost": "Možnost",
+        "zkratkaBodu": "b",
+        "reseniUKazdeOtazky": "Správná řešení jsou u každé otázky."
+      },
+      "submit": "Odevzdat",
+      "again": "Zkusit znovu",
+      "q1": {
+        "text": "Kam z těchhle tří míst NEJMÍŇ patří green?",
+        "hint": "Sleduj, kam by po dešti stekla voda.",
+        "a": "Místo A",
+        "b": "Místo B",
+        "c": "Místo C",
+        "why": "<b>B.</b> Leží přesně v nejnižším bodě odtoku — po každém dešti by tu green měl mokrou spodinu. A a C jsou na mírném svahu se sklonem k odtoku pryč, ne do místa.",
+        "back": "Vrať se na úkol „Nesmí“."
+      },
+      "q2": {
+        "text": "Proč green nikdy neumísťuj do nejnižšího bodu pozemku?",
+        "a": "Protože je odtud nejhorší výhled na okolí",
+        "b": "Protože se tam drží voda a green nikdy pořádně neoschne",
+        "c": "Protože je tam nejvíc stromů",
+        "d": "Protože je to nejdál od odpaliště",
+        "why": "<b>B.</b> Nejnižší bod je tam, kam stéká voda z celého okolí — trvale vlhká spodina znamená nemocnou trávu a hráče čekající, až se to vysuší.",
+        "back": "Vrať se na vrstvu „Odtok vody“."
+      },
+      "q3": {
+        "text": "Proč green potřebuje hlavně RANNÍ slunce, ne odpolední?",
+        "a": "Aby hráči neoslňovalo slunce při puttování",
+        "b": "Protože ráno je tráva chladnější a roste pomaleji",
+        "c": "Aby oschla ranní rosa dřív, než se na trávě chytnou houbové choroby",
+        "d": "Protože greenkeepeři sekají jen ráno",
+        "why": "<b>C.</b> Tráva držící vlhkost celé dopoledne je živná půda pro houbové choroby. Ranní slunce osuší rosu rychle; odpolední slunce na to přijde pozdě.",
+        "back": "Vrať se na vrstvu „Slunce“."
+      },
+      "q4": {
+        "text": "Ve kterém z těchhle řezů terénem NEJDE vykopat jezírko?",
+        "hint": "Hledej skálu blízko povrchu.",
+        "a": "Řez A",
+        "b": "Řez B",
+        "c": "Řez C",
+        "why": "<b>B.</b> Skála leží jen pár desítek centimetrů pod povrchem — dál se prostě nedá kopat. A má hluboký písek, C hlubokou vrstvu jílu; oboje se dá (s různou náročností) vytěžit.",
+        "back": "Vrať se na vrstvu „Podloží“."
+      },
+      "q5": {
+        "text": "Co platí o čtení pozemku? Vyber všechna správná tvrzení.",
+        "hint": "Za každou správnou volbu body, za každou špatnou se odečítají.",
+        "a": "Střední převýšení je hodnotnější než dokonale rovný pozemek",
+        "b": "Green ve stínu celý den funguje stejně dobře jako green na slunci",
+        "c": "Skála blízko povrchu omezuje, kam se dá umístit vodní hazard",
+        "d": "Opakující se dlouhé jamky proti převládajícímu větru trestají i dobrý úder",
+        "why": "<b>A, C, D.</b> Mírné převýšení dělá jamky rozmanité, skála pod povrchem fyzicky brání kopání, a vítr dlouhodobě trestá i technicky čistý úder víc než chybu. Green bez slunce naopak dřív nebo později prohraje s houbovými chorobami — B neplatí.",
+        "back": "Vrať se na plát „Pět věcí, které hledám“."
+      },
+      "q6": {
+        "text": "Tři dlouhé par 4 za sebou proti převládajícímu větru. Co je na tom špatně?",
+        "a": "Nic, jamky mají být co nejtěžší",
+        "b": "Trestá to i hráče, kteří odehráli technicky správný úder — vítr rozhoduje víc než dovednost",
+        "c": "Je to moc dlouhé na jedno kolo",
+        "d": "Hráči budou hrát pomaleji",
+        "why": "<b>B.</b> Stejný princip jako u trestajícího bunkru z lekce 1: když těžkost nerozlišuje mezi dobrým a špatným úderem, přestala být architekturou a stala se loterií.",
+        "back": "Vrať se na vrstvu „Vítr“."
+      },
+      "pasmo": {
+        "vyborne": {
+          "nadpis": "Výborně",
+          "text": "Čtení pozemku máš zvládnuté. Pokračuj na lekci 3."
+        },
+        "dobre": {
+          "nadpis": "Dobré",
+          "text": "Základ sedí. Projdi si vrstvy u otázek, kde ses spletl/a, a jdi dál."
+        },
+        "projdes": {
+          "nadpis": "Projdeš",
+          "text": "Vrať se k úkolu „Nesmí“, než začneš lekci 3 — odtok a slunce se tam ještě vrátí."
+        },
+        "zopakuj": {
+          "nadpis": "Zopakuj",
+          "text": "Vrať se na začátek lekce a projdi si všech pět vrstev znovu, jednu po druhé."
+        }
+      },
+      "souhrn": {
+        "nadpis": "Výsledek",
+        "procentBodu": "procent · {body} ze {max} bodů",
+        "spravne": "správně",
+        "chybneCastecne": "chybně nebo částečně",
+        "zcelaMimo": "zcela mimo",
+        "rozpis": "Rozpis odpovědí",
+        "tvojeOdpoved": "Tvoje odpověď",
+        "spravneReseni": "Správně",
+        "pata": "Podrobné vysvětlení je u každé otázky výše. Výsledek se ukládá do přehledu kurzu."
+      },
+      "foot": "list 7 · Zkouška"
+    },
+    "temata": {
+      "strategie": "strategie",
+      "trest": "trest",
+      "riziko-odmena": "riziko a odměna",
+      "umisteni-hazardu": "umístění hazardu",
+      "cteni-terenu": "čtení terénu",
+      "voda-odtok": "voda a odtok",
+      "vitr-slunce": "vítr a slunce",
+      "routing": "routing",
+      "bezpecnost": "bezpečnost",
+      "rytmus-hriste": "rytmus hřiště"
+    },
+    "foot": {
+      "lekce": "ROUTING · lekce 2"
+    }
+  },
+  "en": {
+    "meta": {
+      "kicker": "Golf course architecture",
+      "chapter": "Lesson 2 of 18",
+      "over": "Before the first line —",
+      "title": "Reading the Land",
+      "lede": "An architect doesn't start by drawing. They start by walking the land for days — looking for five specific things before a single hole gets sketched.",
+      "zpet": "← Back to the hub"
+    },
+    "principLabel": "Principle to remember",
+    "teeShot": {
+      "eyebrow": "Tee shot",
+      "over": "The plate —",
+      "title": "Five things I look for",
+      "lede": "One piece of land, five layers. Switch between them — this is exactly what an architect does mentally on the first walk.",
+      "principle": "A good site isn't drawn. It's read — and only then drawn on.",
+      "toggle": {
+        "vrstevnice": "Contours",
+        "odtok": "Drainage",
+        "slunce": "Sun",
+        "vitr": "Wind",
+        "podlozi": "Subsoil"
+      },
+      "popis": {
+        "vrstevnice": "Moderate elevation change is the most valuable thing a site can offer. Flat land is cheap but boring — every hole ends up looking the same. Steep land is dramatic but unplayable, and earthworks blow the budget by millions.",
+        "odtok": "The most underrated thing on any site. Rain runs downhill along the fall lines to the lowest point — and a green must **never** sit there, even if it's the prettiest spot on the property.",
+        "slunce": "A green in shade all day will never work — turf needs morning sun to dry the dew. Without it, you fight fungal disease for years.",
+        "vitr": "In the Czech Republic, wind prevails from the west to northwest. Three long par 4s in a row into it aren't a challenge — they're a punishment that doesn't distinguish a good shot from a bad one.",
+        "podlozi": "Sand under the surface is free drainage. Clay is a nightmare — it holds water where it shouldn't. Rock 40 cm below the surface means you will never dig a pond there, no matter how much you want to."
+      },
+      "L": {
+        "prevyseni": [
+          "MODERATE",
+          "RELIEF"
+        ],
+        "strmy": [
+          "TOO",
+          "STEEP"
+        ],
+        "potok": "STREAM",
+        "nejnizsi": [
+          "LOWEST",
+          "POINT"
+        ],
+        "stin": [
+          "SHADE",
+          "ALL DAY"
+        ],
+        "ranniSlunce": [
+          "MORNING",
+          "SUN"
+        ],
+        "vitr": [
+          "PREVAILING",
+          "WIND"
+        ],
+        "pisek": "SAND",
+        "jil": "CLAY",
+        "skala": "ROCK",
+        "povrch": "SURFACE"
+      },
+      "foot": "sheet 1 · Tee shot"
+    },
+    "spolecneKarty": {
+      "specsHead": "Three elements",
+      "parLabel": "Par",
+      "delkaLabel": "Length",
+      "architektLabel": "Architect",
+      "vznikLabel": "Year",
+      "prameny": "Sources",
+      "otazkaLabel": "The hole's question"
+    },
+    "fairway": {
+      "eyebrow": "Fairway",
+      "over": "Land, not a drafting table —",
+      "title": "Two holes found, not built",
+      "lede": "Sand Hills in Nebraska and Ballybunion on the Irish coast share one thing: the architect moved almost no earth on either. The land did most of the work itself."
+    },
+    "ceskaJamka": {
+      "eyebrow": "Fairway · Czechia",
+      "over": "Where the terrain decided —",
+      "title": "Golf Dobrouč",
+      "lede": "A narrow valley and a stream the architect couldn't ignore even if they wanted to. The hole's axis goes wherever the land lets it."
+    },
+    "approachNadpis": {
+      "eyebrow": "Approach",
+      "over": "Two tasks —",
+      "title": "One on the plate, one outside",
+      "lede": "First you try it on a drawing with contours and a stream. Then you take your phone and go do the same thing for real — on a course, in a park, in a field."
+    },
+    "approach1": {
+      "eyebrow": "Task I · on the plate",
+      "over": "Find the three spots where a green —",
+      "title": "Must not go",
+      "lede": "There are three specific spots on this land where a green can never sit. Tap around the plate until you find all three — each one tells you why.",
+      "tools": {
+        "clear": "Start over"
+      },
+      "stavHledej": "Tap around the land and look for spots where a green doesn't belong.",
+      "stavPokrok": "Found {n} of 3.",
+      "stavHotovo": "All three found. Read the reason for each, then move to the second task.",
+      "zony": {
+        "odtok": {
+          "nazev": "The lowest drainage point",
+          "popis": "Water from the whole surrounding area runs here after rain. A green would have a permanently wet subgrade — players would wait for the superintendent to pump it dry instead of playing."
+        },
+        "svah": {
+          "nazev": "A slope that's too steep",
+          "popis": "A grade a mower can barely hold, let alone a bounced ball — anything landing here rolls straight off the putting surface."
+        },
+        "stin": {
+          "nazev": "Permanent shade",
+          "popis": "Sunlight almost never reaches here. Turf on a green with no light eventually dies, no matter how carefully you water and feed it."
+        }
+      },
+      "foot": "sheet 4 · Approach I"
+    },
+    "approach2": {
+      "eyebrow": "Task II · in the field",
+      "over": "Close the laptop —",
+      "title": "Go outside and look",
+      "lede": "This is the only task in the course that gets you out of your room. Go to a course, a park, or a field, and do exactly what an architect does on day one on the land.",
+      "otazky": [
+        "Where do you think water would run after a heavy rain?",
+        "Where is the shade this time of day, in the morning — and where is the sun?",
+        "Which way is the wind blowing right now, and how often do you think it changes here?"
+      ],
+      "fotoLabel": "Upload a photo of the spot",
+      "fotoHint": "On a phone this opens the camera directly. The photo stays only in this browser tab.",
+      "fotoPoznamka": "A static site has nowhere to send a photo, so it doesn't try — nothing leaves your device, and it disappears when you reload the page. Save your own copy on your phone if you want to keep it.",
+      "ulozeno": "Notes saved in this browser.",
+      "foot": "sheet 5 · Approach II"
+    },
+    "putt": {
+      "eyebrow": "Putt",
+      "over": "Three questions, no points —",
+      "title": "Something to think about",
+      "lede": "Write in your own words. Nobody is grading this — it's here to make you think it through, not recite it back.",
+      "otazky": [
+        "Why is it pointless to put a great green somewhere morning sun will never reach?",
+        "An architect can truck in rock, dig out clay mud and replace it with sand, redirect a slope with drainage. When is that worth it, and when is it cheaper to just find a different spot?",
+        "Can you think of a piece of land — at home, on holiday, anywhere — where you think a good hole could be built? What specifically would make it good?"
+      ],
+      "poznamkaPlaceholder": "Write here…",
+      "ulozeno": "Saved in this browser.",
+      "foot": "sheet 6 · Putt"
+    },
+    "slovnicek": {
+      "eyebrow": "Glossary",
+      "over": "Terms from this lesson —",
+      "title": "Eight words",
+      "lede": "Technical terms stay in English even in the Czech sentence — it's the language architecture is written in everywhere.",
+      "pojmy": [
+        {
+          "pojem": "Routing",
+          "popis": "The sequence and connection of all eighteen holes on a site — the subject of the whole third lesson."
+        },
+        {
+          "pojem": "Fall line",
+          "popis": "The line of steepest descent across terrain — the path water always takes first."
+        },
+        {
+          "pojem": "Drainage",
+          "popis": "Removing excess water from the surface and subsoil; either natural (sand, slope) or built (pipes under the turf)."
+        },
+        {
+          "pojem": "Contour line",
+          "popis": "A line connecting points of equal elevation — the basic tool for reading terrain on a map."
+        },
+        {
+          "pojem": "Green speed",
+          "popis": "A green's speed as measured by a stimpmeter; the steeper the terrain, the higher the risk a green becomes unplayably fast."
+        },
+        {
+          "pojem": "Shaping",
+          "popis": "Reworking terrain with earth-moving equipment — the less shaping, the more the land \"speaks\" for itself."
+        },
+        {
+          "pojem": "Microclimate",
+          "popis": "Local differences in sun, wind and moisture across a single site — two neighboring holes can dry at completely different rates."
+        },
+        {
+          "pojem": "Links",
+          "popis": "A seaside course type on sandy dunes with almost no trees — the original setting where golf was born."
+        }
+      ]
+    },
+    "zkouska": {
+      "eyebrow": "Exam",
+      "over": "Six questions for —",
+      "title": "100 points",
+      "lede": "Answer all six, then you'll see the correct solutions. Only your first attempt counts toward your course grade.",
+      "spolecne": {
+        "otazka": "Question",
+        "bodu": "points",
+        "zbyva": "Still to answer:",
+        "hotovoMuzesOdevzdat": "Done. You can submit.",
+        "spravne": "correct",
+        "tvojeVolba": "your pick",
+        "nicNevybrano": "nothing selected",
+        "moznost": "Option",
+        "zkratkaBodu": "pts",
+        "reseniUKazdeOtazky": "The correct solutions are shown with each question."
+      },
+      "submit": "Submit",
+      "again": "Try again",
+      "q1": {
+        "text": "Which of these three spots is the WORST place for a green?",
+        "hint": "Track where water would run after rain.",
+        "a": "Spot A",
+        "b": "Spot B",
+        "c": "Spot C",
+        "why": "<b>B.</b> It sits exactly at the lowest drainage point — after every rain, a green here would have a permanently wet subgrade. A and C sit on a mild slope draining away from the spot, not into it.",
+        "back": "Go back to the \"Must not go\" task."
+      },
+      "q2": {
+        "text": "Why should a green never sit at the lowest point of a site?",
+        "a": "Because it has the worst view of the surroundings",
+        "b": "Because water collects there and the green never properly dries out",
+        "c": "Because that's where most of the trees are",
+        "d": "Because it's furthest from the tee",
+        "why": "<b>B.</b> The lowest point is where water from the whole surrounding area collects — a permanently damp subgrade means sick turf and players waiting for it to dry.",
+        "back": "Go back to the \"Drainage\" layer."
+      },
+      "q3": {
+        "text": "Why does a green need MORNING sun above all, not afternoon?",
+        "a": "So the sun doesn't blind players while putting",
+        "b": "Because turf grows more slowly when it's cooler in the morning",
+        "c": "So morning dew dries before fungal disease can take hold",
+        "d": "Because greenkeepers only mow in the morning",
+        "why": "<b>C.</b> Turf holding moisture all morning is a breeding ground for fungal disease. Morning sun dries dew quickly; afternoon sun arrives too late for that.",
+        "back": "Go back to the \"Sun\" layer."
+      },
+      "q4": {
+        "text": "In which of these cross-sections is a pond IMPOSSIBLE to dig?",
+        "hint": "Look for rock close to the surface.",
+        "a": "Section A",
+        "b": "Section B",
+        "c": "Section C",
+        "why": "<b>B.</b> Rock sits just a few tens of centimetres below the surface — you simply can't dig past it. A has deep sand, C a deep clay layer; both can be excavated, at varying cost.",
+        "back": "Go back to the \"Subsoil\" layer."
+      },
+      "q5": {
+        "text": "What's true about reading a site? Select all correct statements.",
+        "hint": "Points are added for each correct choice and subtracted for each wrong one.",
+        "a": "Moderate elevation change is worth more than perfectly flat land",
+        "b": "A green in shade all day works just as well as one in the sun",
+        "c": "Rock close to the surface limits where a water hazard can go",
+        "d": "Repeated long holes into the prevailing wind punish even a good shot",
+        "why": "<b>A, C, D.</b> Gentle elevation change makes holes varied, rock underground physically blocks digging, and wind punishes even a technically clean shot more over time than it punishes a mistake. A green with no sun, on the other hand, loses to fungal disease sooner or later — B is false.",
+        "back": "Go back to the \"Five things I look for\" plate."
+      },
+      "q6": {
+        "text": "Three long par 4s in a row into the prevailing wind. What's wrong with that?",
+        "a": "Nothing, holes should be as hard as possible",
+        "b": "It punishes even players who hit a technically correct shot — wind decides more than skill does",
+        "c": "It's too long for one round",
+        "d": "Players will play more slowly",
+        "why": "<b>B.</b> Same principle as the punishing bunker from lesson 1: when difficulty stops distinguishing a good shot from a bad one, it has stopped being architecture and become a lottery.",
+        "back": "Go back to the \"Wind\" layer."
+      },
+      "pasmo": {
+        "vyborne": {
+          "nadpis": "Excellent",
+          "text": "You've got reading the land down. Move on to lesson 3."
+        },
+        "dobre": {
+          "nadpis": "Good",
+          "text": "The basics hold. Review the layers behind the questions you missed, then move on."
+        },
+        "projdes": {
+          "nadpis": "You pass",
+          "text": "Go back to the \"Must not go\" task before starting lesson 3 — drainage and sun come back there."
+        },
+        "zopakuj": {
+          "nadpis": "Repeat this one",
+          "text": "Go back to the start of the lesson and work through all five layers again, one at a time."
+        }
+      },
+      "souhrn": {
+        "nadpis": "Result",
+        "procentBodu": "percent · {body} of {max} points",
+        "spravne": "correct",
+        "chybneCastecne": "wrong or partial",
+        "zcelaMimo": "completely off",
+        "rozpis": "Answer breakdown",
+        "tvojeOdpoved": "Your answer",
+        "spravneReseni": "Correct answer",
+        "pata": "Detailed explanations are above with each question. The result is saved to the course overview."
+      },
+      "foot": "sheet 7 · Exam"
+    },
+    "temata": {
+      "strategie": "strategy",
+      "trest": "punishment",
+      "riziko-odmena": "risk and reward",
+      "umisteni-hazardu": "hazard placement",
+      "cteni-terenu": "reading the land",
+      "voda-odtok": "water and drainage",
+      "vitr-slunce": "wind and sun",
+      "routing": "routing",
+      "bezpecnost": "safety",
+      "rytmus-hriste": "course rhythm"
+    },
+    "foot": {
+      "lekce": "ROUTING · lesson 2"
+    }
+  }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Náhled karet jamek — data/jamky/*.json</title>
+<link rel="stylesheet" href="../assets/styl.css">
+<style>
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:18px}
+  .card{border:1px solid rgba(74,68,58,.25);padding:10px}
+  .card svg{border:1px solid rgba(74,68,58,.15)}
+  .card h3{font-size:14px;margin-top:6px}
+  .card p{font-size:12px;color:var(--ink2);margin-top:2px}
+  .badge{display:inline-block;margin-top:16px;padding:4px 10px;font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--flag);border:1px solid var(--flag);border-radius:2px}
+</style>
+</head>
+<body>
+<div class="hr"><span>Interní · krok 3 z postupu</span></div>
+<p class="eyebrow">data/jamky/*.json</p>
+<h1><em>Deset karet,</em>jeden pohled</h1>
+<div class="dashline"></div>
+<p class="lede">Rychlý vizuální průkaz, že se každá karta dá vykreslit přes <code>platy.js</code> beze změny —
+  schematicky, ne jako přesný půdorys (viz zadání, zákaz satelitních snímků).</p>
+<span class="badge">dev / neposílat na Pages</span>
+<div class="grid" id="grid"></div>
+
+<script type="module">
+import { E, V, clear, blob, blobPts, radial, hatch, clipPath } from '../js/platy.js';
+
+const files = [
+  'tpc-sawgrass-17','pebble-beach-18','riviera-10','karlstejn-15',
+  'sand-hills-1','ballybunion-old-11','dobrouc-3',
+  'st-andrews-old-7','cypress-point-16','zbraslav-1',
+];
+
+const grid = document.getElementById('grid');
+
+for (const id of files) {
+  const j = await (await fetch(`../data/jamky/${id}.json`)).json();
+  const card = document.createElement('div');
+  card.className = 'card';
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('viewBox', '-70 0 140 520');
+  card.appendChild(svg);
+  const h3 = document.createElement('h3'); h3.textContent = `${j.hriste} · ${j.jamka}`;
+  const p = document.createElement('p'); p.textContent = `${j.otazka.cs}`;
+  card.appendChild(h3); card.appendChild(p);
+  grid.appendChild(card);
+  draw(svg, j);
+}
+
+function draw(svg, j) {
+  clear(svg);
+  const defs = E(svg, 'defs', {});
+  const t = j.tvary;
+
+  // okolní trávník naznačený jednoduchým obdélníkem
+  E(svg, 'rect', { x: -70, y: 0, width: 140, height: 520, fill: V('--turf-d', svg), opacity: .25 });
+
+  // hazardy (voda, duny, OB) — pod vším ostatním
+  (t.hazardy || []).forEach((h, i) => {
+    const d = blob(h.x, 520 - h.y, h.rx, h.ry, h.rot, h.seed, h.amp, 40);
+    const color = h.typ === 'voda' ? V('--water', svg) : V('--turf-d', svg);
+    E(svg, 'path', { d, fill: color, opacity: .7, stroke: V('--ink', svg), 'stroke-width': .6 });
+  });
+
+  // bunkry
+  (t.bunkry || []).forEach((b, i) => {
+    const d = blob(b.x, 520 - b.y, b.rx, b.ry, b.rot, b.seed, b.amp, 40);
+    const id = 'bk' + i + Math.round(b.seed);
+    clipPath(defs, id, d);
+    E(svg, 'path', { d, fill: V('--sand', svg) });
+    E(svg, 'path', { d, fill: 'none', stroke: V('--ink', svg), 'stroke-width': .8 });
+  });
+
+  // green
+  if (t.green) {
+    const g = t.green;
+    const d = blob(g.x, 520 - g.y, g.rx, g.ry, g.rot, g.seed, g.amp, 50);
+    const id = 'gr' + Math.round(g.seed);
+    clipPath(defs, id, d);
+    E(svg, 'path', { d, fill: V('--turf', svg) });
+    hatch(svg, id, { x: g.x - g.rx, y: 520 - g.y - g.ry, w: g.rx * 2, h: g.ry * 2 }, 1, 3, { op: .18, seed: g.seed + 1 });
+    E(svg, 'path', { d, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1 });
+    radial(svg, blobPts(g.x, 520 - g.y, g.rx, g.ry, g.rot, g.seed, g.amp, 50), g.seed + 2, { len: 5, w: .4, op: .5 });
+  }
+
+  // odpaliště jako referenční bod
+  E(svg, 'rect', { x: -6, y: 512, width: 12, height: 8, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': .8 });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+{
+  "verze": 1,
+  "id": "tpc-sawgrass-17",
+  "hriste": "TPC Sawgrass — Stadium Course",
+  "zeme": "US-FL",
+  "jamka": 17,
+  "nazev": {
+    "cs": "Ostrovní green",
+    "en": "Island Green"
+  },
+  "par": 3,
+  "delky": [
+    {
+      "odpaliste": "The Players Championship 2025",
+      "m": 129,
+      "yd": 141,
+      "rok": 2025
+    },
+    {
+      "odpaliste": "tradiční turnajová hodnota",
+      "m": 125,
+      "yd": 137,
+      "rok": 2024,
+      "poznamka": "u par 3 s posunutelným odpalištěm se délka mění turnaj od turnaje; 137 yardů je nejčastěji citovaná „ikonická“ hodnota"
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "Pete Dye (spoluautorka Alice Dye)",
+      "en": "Pete Dye (co-designer Alice Dye)"
+    },
+    "jistota": "jistá",
+    "poznamka": {
+      "cs": "Podle vyprávění Alice Dye vznikl ostrovní tvar improvizovaně: z výkopu bahna a písku na okolní tribuny nezbylo dost materiálu na klasickou fairway u jamky 17, tak navrhla ostrov. Pete Dye pak zvýšil zadní část greenu, aby jamka nebyla příliš snadná.",
+      "en": "By Alice Dye's own account, the island shape was improvised: dredging fill for the surrounding grandstands left too little material for a conventional fairway at 17, so she proposed an island. Pete Dye then raised the back of the green so the hole wouldn't play too easy."
+    }
+  },
+  "vznik": 1980,
+  "gps": {
+    "tee": [
+      30.1913,
+      -81.3895
+    ],
+    "green": [
+      30.1913,
+      -81.3895
+    ],
+    "presnost": {
+      "cs": "přibližné, úroveň areálu — přesná poloha odpaliště a greenu jamky 17 není ve veřejných pramenech uvedena",
+      "en": "approximate, resort-level — precise tee/green coordinates for hole 17 are not published in available sources"
+    }
+  },
+  "otazka": {
+    "cs": "Jak trefit malý ostrovní green krátkým klubem, když jediná bezpečná cesta je přímo do středu a odchylka na kteroukoli stranu znamená míč ve vodě?",
+    "en": "How do you hit a small island green with a short club when the only safe line is dead center, and a miss in any direction means a ball in the water?"
+  },
+  "tvary": {
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob().",
+    "green": {
+      "x": 0,
+      "y": 121,
+      "rx": 12,
+      "ry": 9,
+      "rot": 0.1,
+      "seed": 1701,
+      "amp": 0.07
+    },
+    "bunkry": [
+      {
+        "x": -3,
+        "y": 128,
+        "rx": 3,
+        "ry": 2,
+        "rot": 0.2,
+        "seed": 1702,
+        "amp": 0.16,
+        "label": {
+          "cs": "malý bunker vzadu",
+          "en": "small back bunker"
+        }
+      }
+    ],
+    "hazardy": [
+      {
+        "typ": "voda",
+        "x": 0,
+        "y": 118,
+        "rx": 34,
+        "ry": 30,
+        "rot": 0,
+        "seed": 1703,
+        "amp": 0.05,
+        "label": {
+          "cs": "jezero obklopující celý green",
+          "en": "lake surrounding the entire green"
+        }
+      }
+    ]
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Ostrov bez úniku",
+        "en": "An island with no escape"
+      },
+      "popis": {
+        "cs": "Green je obklopený vodou ze všech stran — žádná zóna, kam by šlo minout a přesto zůstat na suchu.",
+        "en": "The green is surrounded by water on every side — there is no zone to miss into and still stay dry."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Vyšší zadní část greenu",
+        "en": "A raised back"
+      },
+      "popis": {
+        "cs": "Green je nakloněný a vzadu vyšší, takže i drobná nepřesnost směrem k okraji se skutálí do vody.",
+        "en": "The green tilts and rises toward the back, so even a small miss toward an edge rolls into the water."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Krátká vzdálenost, obrovský tlak",
+        "en": "Short distance, huge pressure"
+      },
+      "popis": {
+        "cs": "I přes pouhých zhruba 130–140 metrů hrozí double nebo triple bogey — ročně se z jezera vyloví přes 100 000 míčků.",
+        "en": "Even at only about 130–140 metres, double or triple bogey looms — over 100,000 balls are fished from the lake each year."
+      }
+    }
+  ],
+  "prameny": [
+    {
+      "titul": "CBS Sports — TPC Sawgrass 17th hole: what to know",
+      "url": "https://www.cbssports.com/golf/news/tpc-sawgrass-17th-hole-what-to-know-about-the-famous-island-green-at-the-2024-players-championship"
+    },
+    {
+      "titul": "Golf Digest — Course drawings: Pete Dye's island green",
+      "url": "https://www.golfdigest.com/story/course-drawings-pete-dye-island-green-17th-the-hole-at-players2024"
+    },
+    {
+      "titul": "Wikipedia — TPC at Sawgrass",
+      "url": "https://en.wikipedia.org/wiki/TPC_at_Sawgrass"
+    }
+  ]
+}

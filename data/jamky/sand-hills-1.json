@@ -1,0 +1,135 @@
+{
+  "verze": 1,
+  "id": "sand-hills-1",
+  "hriste": "Sand Hills Golf Club",
+  "zeme": "US-NE",
+  "jamka": 1,
+  "nazev": null,
+  "par": 5,
+  "delky": [
+    {
+      "odpaliste": "zadní (černé)",
+      "m": 502,
+      "yd": 549,
+      "rok": null,
+      "poznamka": "aktuální scorecard, přesný rok měření není u zdrojů uveden"
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "Bill Coore a Ben Crenshaw",
+      "en": "Bill Coore and Ben Crenshaw"
+    },
+    "jistota": "jistá",
+    "poznamka": {
+      "cs": "Hřiště bylo otevřeno 1995 (výstavba 1993–94). Architekti strávili téměř dva roky procházením 8000 akrů dun a napočítali přes 130 potenciálních přirozených jamek, ze kterých vybrali finálních 18.",
+      "en": "The course opened in 1995 (built 1993–94). The architects spent nearly two years walking 8,000 acres of dunes and identified more than 130 potential natural holes, from which they selected the final 18."
+    }
+  },
+  "vznik": 1995,
+  "gps": {
+    "tee": [
+      41.8688,
+      -101.0996
+    ],
+    "green": [
+      41.8688,
+      -101.0996
+    ],
+    "presnost": {
+      "cs": "přibližné, úroveň areálu (Mullen, Nebraska) — přesná poloha odpaliště a greenu jamky 1 není veřejně publikována",
+      "en": "approximate, resort-level (Mullen, Nebraska) — precise tee/green coordinates for hole 1 are not publicly published"
+    }
+  },
+  "otazka": {
+    "cs": "Kudy fouká vítr přes duny a kde vzniká přirozená prohlubeň, do které se dá posadit green, aniž by bylo nutné cokoli navážet?",
+    "en": "Which way does the wind cross the dunes, and where does a natural hollow appear that a green can simply sit in, without moving any earth?"
+  },
+  "tvary": {
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob().",
+    "green": {
+      "x": 2,
+      "y": 460,
+      "rx": 13,
+      "ry": 10,
+      "rot": 0.1,
+      "seed": 2101,
+      "amp": 0.08
+    },
+    "bunkry": [
+      {
+        "x": -18,
+        "y": 300,
+        "rx": 9,
+        "ry": 5,
+        "rot": 0.5,
+        "seed": 2102,
+        "amp": 0.26,
+        "label": {
+          "cs": "roztřepený bunker vzniklý větrnou erozí",
+          "en": "jagged, wind-eroded bunker"
+        }
+      },
+      {
+        "x": 20,
+        "y": 340,
+        "rx": 7,
+        "ry": 4,
+        "rot": -0.4,
+        "seed": 2103,
+        "amp": 0.25,
+        "label": {
+          "cs": "roztřepený bunker vzniklý větrnou erozí",
+          "en": "jagged, wind-eroded bunker"
+        }
+      }
+    ],
+    "hazardy": []
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Green v přirozené prohlubni",
+        "en": "A green in a natural hollow"
+      },
+      "popis": {
+        "cs": "Amfiteátrovitě zapuštěný mezi dunami — architekti popisují, že tuhle jamku „okamžitě uviděli“, aniž by cokoli museli upravovat.",
+        "en": "Set amphitheater-like among the dunes — the architects describe \"seeing\" this hole immediately, without needing to shape anything."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Bunkry tvarované větrem, ne strojem",
+        "en": "Bunkers shaped by wind, not machine"
+      },
+      "popis": {
+        "cs": "Roztřepené okraje vznikly větrnou erozí — nejde o pravidelné, buldozerem vymodelované tvary.",
+        "en": "Their jagged edges came from wind erosion — not the regular shapes a bulldozer would produce."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Minimální zemní práce",
+        "en": "Minimal earthmoving"
+      },
+      "popis": {
+        "cs": "Na celém osmnáctijamkovém hřišti se přesunulo jen zhruba 4000 m³ zeminy — naprosté minimum.",
+        "en": "Across all eighteen holes, only about 4,000 cubic metres of earth were moved — an absolute minimum."
+      }
+    }
+  ],
+  "prameny": [
+    {
+      "titul": "Golf Club Atlas — Sand Hills review",
+      "url": "https://golfclubatlas.com/countries/sand-hills/"
+    },
+    {
+      "titul": "The Fried Egg — Sand Hills course review",
+      "url": "https://thefriedegg.com/sand-hills-course-review/"
+    },
+    {
+      "titul": "All Golf Holes — Sand Hills Golf Club scorecard",
+      "url": "https://www.allgolfholes.com/courses/nebraska/sand-hills-golf-club"
+    }
+  ]
+}

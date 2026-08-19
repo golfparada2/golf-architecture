@@ -1,0 +1,148 @@
+{
+  "verze": 1,
+  "id": "st-andrews-old-7",
+  "hriste": "St Andrews Links — Old Course",
+  "zeme": "GB-SCT",
+  "jamka": 7,
+  "nazev": {
+    "cs": "Vysoká (tam)",
+    "en": "High (Out)"
+  },
+  "par": 4,
+  "delky": [
+    {
+      "odpaliste": "The Open Championship 2022",
+      "m": 339,
+      "yd": 371,
+      "rok": 2022
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "bez jednoho autora — routing se formoval staletí přirozeným vývojem",
+      "en": "no single author — the routing took shape over centuries of natural evolution"
+    },
+    "jistota": "částečně ověřeno",
+    "poznamka": {
+      "cs": "Klíčové zásahy: kolem roku 1764 William St Clair z Roslinu prosadil sloučení prvních a posledních čtyř jamek na dnešní standard osmnácti. Old Tom Morris, „Keeper of the Green“ od 1864 do své smrti 1908, kolem roku 1863 rozšířil greeny tak, aby pojaly dva praporky najednou — takto vznikly dnešní dvojgreeny, mimo jiné ten sdílený jamkami 7 a 11. Přesný rok, kdy Morris rozšířil právě tento konkrétní green, prameny neuvádí na den přesně.",
+      "en": "Key interventions: around 1764 William St Clair of Roslin pushed through the merger of the first and last four holes into today's standard eighteen. Old Tom Morris, Keeper of the Green from 1864 until his death in 1908, widened greens around 1863 to hold two flags at once — creating today's double greens, including the one shared by holes 7 and 11. Sources do not give an exact date for when Morris widened this specific green."
+    }
+  },
+  "vznik": 1863,
+  "gps": {
+    "tee": [
+      56.3515,
+      -2.8161
+    ],
+    "green": [
+      56.3515,
+      -2.8161
+    ],
+    "presnost": {
+      "cs": "přibližné, úroveň areálu (Old Course, St Andrews) — přesná poloha dvojgreenu 7/11 není v tomto zdroji uvedena samostatně",
+      "en": "approximate, resort-level (Old Course, St Andrews) — the precise position of the 7th/11th double green is not separately published in this source"
+    }
+  },
+  "otazka": {
+    "cs": "Jak se dá jeden kus země — jeden green — využít dvakrát pro dvě jamky jdoucí opačným směrem, a co to udělá se hrou?",
+    "en": "How can one piece of ground — one green — serve two holes running in opposite directions, and what does that do to the game?"
+  },
+  "sdilena_jamka": {
+    "cislo": 11,
+    "nazev": {
+      "cs": "Vysoká (zpět)",
+      "en": "High (In)"
+    },
+    "poznamka": {
+      "cs": "Jamky 7 a 11 sdílejí jeden fyzický green se dvěma praporky — hráč na 7. jamce (cesta „tam“) a hráč na 11. (cesta „zpět“) míří na tutéž plochu z opačných směrů.",
+      "en": "Holes 7 and 11 share one physical green with two flags — a player on the 7th (outward) and a player on the 11th (inward) aim at the same surface from opposite directions."
+    }
+  },
+  "tvary": {
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště jamky 7 (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Green je záměrně široký, aby naznačil dvojgreen se dvěma praporky. Kreslí se přes js/platy.js blob().",
+    "green": {
+      "x": 0,
+      "y": 330,
+      "rx": 26,
+      "ry": 14,
+      "rot": 0.05,
+      "seed": 2401,
+      "amp": 0.05
+    },
+    "bunkry": [
+      {
+        "x": -20,
+        "y": 320,
+        "rx": 5,
+        "ry": 4,
+        "rot": 0.2,
+        "seed": 2402,
+        "amp": 0.16,
+        "label": {
+          "cs": "bunker na straně jamky 7",
+          "en": "bunker on the 7th-hole side"
+        }
+      },
+      {
+        "x": 20,
+        "y": 340,
+        "rx": 5,
+        "ry": 4,
+        "rot": -0.2,
+        "seed": 2403,
+        "amp": 0.16,
+        "label": {
+          "cs": "bunker na straně jamky 11",
+          "en": "bunker on the 11th-hole side"
+        }
+      }
+    ],
+    "hazardy": []
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Double green sdílený dvěma jamkami",
+        "en": "A double green shared by two holes"
+      },
+      "popis": {
+        "cs": "Jedna obrovská greenová plocha nese dva praporky — jeden pro jamku 7, druhý pro jamku 11.",
+        "en": "One huge green surface carries two flags — one for the 7th, one for the 11th."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Cesta tam a zpět stejným koridorem",
+        "en": "Outward and inward along the same corridor"
+      },
+      "popis": {
+        "cs": "Old Course se vrací k městu St Andrews prakticky stejnou trasou, jakou šla směrem ven — jamky 7–11 leží přesně v bodě obratu.",
+        "en": "The Old Course returns to the town of St Andrews along almost the same route it went out — holes 7–11 sit exactly at the turning point."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Opačný vítr na témže úseku",
+        "en": "Opposite wind on the same stretch"
+      },
+      "popis": {
+        "cs": "Hráči na 7. a 11. jamce často zažívají opačný směr větru na úplně stejném kusu pozemku — přímý důsledek trasy „tam a zpět“.",
+        "en": "Players on the 7th and 11th often face opposite wind directions on the very same piece of land — a direct result of the out-and-back routing."
+      }
+    }
+  ],
+  "prameny": [
+    {
+      "titul": "The Open — 150th Open Course Guide, St Andrews",
+      "url": "https://www.theopen.com/st-andrews-150th-open/course-guide"
+    },
+    {
+      "titul": "The Fried Egg — The Old Course, St Andrews",
+      "url": "https://www.thefriedegg.com/courses/the-old-course---st-andrews"
+    },
+    {
+      "titul": "Wikipedia — Old Course at St Andrews",
+      "url": "https://en.wikipedia.org/wiki/Old_Course_at_St_Andrews"
+    }
+  ]
+}

@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ROUTING — Lekce 1</title>
+<meta name="description" content="Lekce 1: Proč jamka vypadá, jak vypadá — trest, strategie a heroika v golfové architektuře.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F1E0'/%3E%3Ccircle cx='16' cy='14' r='9' fill='%23A9B983' stroke='%231E1B15' stroke-width='1.4'/%3E%3Ccircle cx='16' cy='14' r='1.6' fill='%231E1B15'/%3E%3Cpath d='M16 14 L16 5' stroke='%231E1B15' stroke-width='1.3'/%3E%3Cpath d='M16 5 L23 7.5 L16 10 Z' fill='%23B0452C' stroke='%231E1B15' stroke-width='.8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/styl.css">
+<style>
+  /* styly specifické pro lekci 1 — sdílené věci jsou v assets/styl.css */
+  .zpet{
+    display:inline-block;margin-top:10px;font-size:13px;letter-spacing:.1em;
+    color:var(--ink2);text-decoration:none;border-bottom:1px solid rgba(74,68,58,.4);
+    padding-bottom:1px;
+  }
+  .zpet:focus-visible{outline:2px solid var(--flag);outline-offset:3px}
+
+  .listMark{
+    margin-top:16px;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--ink2);opacity:.65;
+  }
+
+  .toggle{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
+  .toggle button{
+    font-family:'EB Garamond',serif;font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;
+    background:none;border:1.5px solid rgba(74,68,58,.35);border-radius:2px;color:var(--ink2);
+    cursor:pointer;padding:8px 13px;min-height:32px;
+  }
+  .toggle button[aria-pressed="true"]{border-color:var(--olive);color:var(--olive);background:rgba(59,74,42,.07)}
+  .toggle button:focus-visible{outline:2px solid var(--flag);outline-offset:2px}
+  .popisFilozofie{margin-top:11px;font-size:15.5px;line-height:1.42;color:var(--ink2);min-height:2.8em}
+
+  .lanes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+  .laneNadpis{
+    font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);
+    text-align:center;margin-top:6px;
+  }
+  .laneOpis{font-size:12.5px;color:var(--ink2);text-align:center;opacity:.8;margin-top:2px;line-height:1.32}
+  .radek{margin-top:10px;font-size:15px;line-height:1.4}
+  .radek b{color:var(--olive)}
+
+  .karta{margin-top:22px}
+  .karta + .karta{margin-top:36px;padding-top:22px;border-top:1px solid rgba(74,68,58,.25)}
+  .kartaHlava{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2);margin-top:14px}
+  .kartaNazev{font-family:'Playfair Display',serif;font-weight:700;font-size:20px;color:var(--olive);margin-top:2px}
+  .kartaMeta{font-size:14px;color:var(--ink2);margin-top:8px;line-height:1.55}
+  .kartaOtazka{margin-top:9px;font-size:15.5px;line-height:1.42}
+  .kartaOtazka b{color:var(--olive);font-weight:500}
+  .kartaPrvky{margin-top:14px}
+  .kartaPrameny{margin-top:10px;font-size:12px;color:var(--ink2);opacity:.82;line-height:1.7}
+  .kartaPrameny a{color:var(--ink2)}
+
+  .legenda{display:flex;gap:18px;margin-top:12px;font-size:12.5px;color:var(--ink2);flex-wrap:wrap}
+  .legenda span{display:inline-flex;align-items:center;gap:6px}
+  .legenda i{width:14px;height:2.6px;display:inline-block;border-radius:2px}
+  .ctenka{display:flex;gap:22px;margin-top:14px;flex-wrap:wrap}
+  .ctenka div{font-size:12.5px;color:var(--ink2);letter-spacing:.04em}
+  .ctenka b{display:block;font-family:'Playfair Display',serif;font-size:21px;color:var(--olive);font-weight:700;letter-spacing:0}
+
+  .puttQ{margin-top:24px}
+  .puttQ p.otazka{font-size:16px;line-height:1.4;margin-bottom:9px;color:var(--ink)}
+  .puttQ textarea{
+    width:100%;min-height:92px;font-family:'EB Garamond',serif;font-size:15px;line-height:1.42;
+    padding:11px;border:1.5px solid rgba(74,68,58,.35);background:rgba(255,255,255,.28);
+    color:var(--ink);resize:vertical;
+  }
+  .puttQ textarea:focus-visible{outline:2px solid var(--flag);outline-offset:2px}
+  .puttSaved{font-size:12px;font-style:italic;color:var(--ink2);margin-top:5px;min-height:1.4em;opacity:.8}
+
+  .pojmy{margin-top:16px}
+  .pojem{padding:12px 0;border-bottom:1px solid rgba(74,68,58,.22)}
+  .pojem dt{font-family:'Playfair Display',serif;font-weight:700;font-size:16.5px;color:var(--olive)}
+  .pojem dd{font-size:14.5px;color:var(--ink2);line-height:1.42;margin-top:3px}
+
+  @media (max-width:400px){ .lanes{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="hr"><span data-t="meta.kicker"></span></div>
+  <div class="lang" role="group" aria-label="Language">
+    <button data-l="cs" aria-current="true">ČES</button><i>/</i><button data-l="en">ENG</button>
+  </div>
+</div>
+<a class="zpet" href="../../index.html" data-t="meta.zpet"></a>
+
+<p class="eyebrow" data-t="meta.chapter"></p>
+<h1><em data-t="meta.over"></em><span data-t="meta.title"></span></h1>
+<div class="dashline"></div>
+<p class="lede" data-t="meta.lede"></p>
+
+<!-- ============================================================ TEE SHOT 1 -->
+<section class="plat" id="secTeeShot1">
+  <p class="eyebrow" data-t="teeShot1.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="teeShot1.over"></em><span data-t="teeShot1.title"></span></h2>
+  <p class="lede" data-t="teeShot1.lede"></p>
+  <div class="principBox"><b data-t="principLabel"></b><br><span data-t="teeShot1.principle"></span></div>
+
+  <svg id="p1" viewBox="0 0 400 640" role="img" aria-label="Tři filozofie jamky"></svg>
+
+  <div class="toggle" id="teeShot1Toggle" role="group" aria-label="Filozofie jamky">
+    <button type="button" data-mode="trest" data-t="teeShot1.toggle.trest"></button>
+    <button type="button" data-mode="strategie" data-t="teeShot1.toggle.strategie" aria-pressed="true"></button>
+    <button type="button" data-mode="heroika" data-t="teeShot1.toggle.heroika"></button>
+  </div>
+  <p class="popisFilozofie" id="teeShot1Popis"></p>
+
+  <p class="listMark" data-t="teeShot1.foot"></p>
+</section>
+
+<!-- ============================================================ TEE SHOT 2 -->
+<section class="plat" id="secTeeShot2">
+  <p class="eyebrow" data-t="teeShot2.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="teeShot2.over"></em><span data-t="teeShot2.title"></span></h2>
+  <p class="lede" data-t="teeShot2.lede"></p>
+  <div class="principBox"><b data-t="principLabel"></b><br><span data-t="teeShot2.principle"></span></div>
+
+  <svg id="p2" viewBox="0 0 400 460" role="img" aria-label="Trest úměrný chybě na dvou jamkách"></svg>
+
+  <div class="posuvnik-wrap">
+    <label for="teeShot2Slider"><span data-t="teeShot2.sliderLabel"></span><output id="teeShot2Out">0 m</output></label>
+    <input type="range" class="posuvnik" id="teeShot2Slider" min="0" max="20" step="1" value="0">
+  </div>
+  <div class="lanes">
+    <p class="radek" id="teeShot2RadekA"></p>
+    <p class="radek" id="teeShot2RadekB"></p>
+  </div>
+
+  <p class="listMark" data-t="teeShot2.foot"></p>
+</section>
+
+<!-- ============================================================ FAIRWAY: TŘI REÁLNÉ JAMKY -->
+<section class="plat" id="secFairway">
+  <p class="eyebrow" data-t="fairway.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="fairway.over"></em><span data-t="fairway.title"></span></h2>
+  <p class="lede" data-t="fairway.lede"></p>
+  <div id="fairwayCards"></div>
+</section>
+
+<!-- ============================================================ FAIRWAY: ČESKÁ JAMKA -->
+<section class="plat" id="secCeska">
+  <p class="eyebrow" data-t="ceskaJamka.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="ceskaJamka.over"></em><span data-t="ceskaJamka.title"></span></h2>
+  <p class="lede" data-t="ceskaJamka.lede"></p>
+  <div id="ceskaKarta"></div>
+</section>
+
+<!-- ============================================================ APPROACH: ÚVOD -->
+<section class="plat" id="secApproachIntro">
+  <p class="eyebrow" data-t="approachNadpis.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="approachNadpis.over"></em><span data-t="approachNadpis.title"></span></h2>
+  <p class="lede" data-t="approachNadpis.lede"></p>
+</section>
+
+<!-- ============================================================ APPROACH 1: KAM PATŘÍ BUNKR -->
+<section class="plat" id="secApproach1">
+  <p class="eyebrow" data-t="approach1.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="approach1.over"></em><span data-t="approach1.title"></span></h2>
+  <p class="lede" data-t="approach1.lede"></p>
+
+  <svg id="p3" class="plate-work" viewBox="0 0 400 900" role="img" aria-label="Půdorys jamky, klepnutím umístíš bunkr"></svg>
+
+  <div class="tools">
+    <button type="button" id="a1run" data-t="approach1.tools.run"></button>
+    <button type="button" id="a1clear" class="quiet" data-t="approach1.tools.clear"></button>
+  </div>
+  <p class="state" id="a1state"></p>
+
+  <div id="a1results" hidden>
+    <div class="hr" style="margin-top:18px"><span data-t="approach1.vysledky.caption"></span></div>
+    <table>
+      <thead><tr>
+        <th data-t="approach1.vysledky.theadHrac"></th>
+        <th data-t="approach1.vysledky.theadFairway"></th>
+        <th data-t="approach1.vysledky.theadPisek"></th>
+        <th data-t="approach1.vysledky.theadVoda"></th>
+        <th data-t="approach1.vysledky.theadPrumer"></th>
+      </tr></thead>
+      <tbody id="a1tb"></tbody>
+    </table>
+    <p class="verdict" id="a1verdict"></p>
+  </div>
+
+  <p class="listMark" data-t="approach1.foot"></p>
+</section>
+
+<!-- ============================================================ APPROACH 2: KDE JE ROVNOVÁHA -->
+<section class="plat" id="secApproach2">
+  <p class="eyebrow" data-t="approach2.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="approach2.over"></em><span data-t="approach2.title"></span></h2>
+  <p class="lede" data-t="approach2.lede"></p>
+
+  <svg id="p4" viewBox="0 0 400 300" role="img" aria-label="Křivky zisku a rizika podle těsnosti kolem hazardu"></svg>
+  <div class="legenda">
+    <span><i style="background:var(--olive)"></i><span data-t="approach2.legenda.zisk"></span></span>
+    <span><i style="background:var(--flag)"></i><span data-t="approach2.legenda.riziko"></span></span>
+  </div>
+
+  <div class="posuvnik-wrap">
+    <label for="a2Slider"><span data-t="approach2.sliderLabel"></span><output id="a2Out">50 %</output></label>
+    <input type="range" class="posuvnik" id="a2Slider" min="0" max="100" step="1" value="50">
+  </div>
+
+  <div class="ctenka">
+    <div data-t="approach2.ctenka.tesnost"></div>
+    <div data-t="approach2.ctenka.zisk"></div>
+    <div data-t="approach2.ctenka.riziko"></div>
+    <div data-t="approach2.ctenka.cistyZisk"></div>
+  </div>
+  <div class="ctenka" style="margin-top:2px">
+    <div><b id="a2Tesnost"></b></div>
+    <div><b id="a2Zisk"></b></div>
+    <div><b id="a2Riziko"></b></div>
+    <div><b id="a2Cisty"></b></div>
+  </div>
+
+  <p class="verdict" id="a2vyrok" style="margin-top:16px"></p>
+  <p class="src" data-t="approach2.vysvetleni"></p>
+
+  <p class="listMark" data-t="approach2.foot"></p>
+</section>
+
+<!-- ============================================================ PUTT -->
+<section class="plat" id="secPutt">
+  <p class="eyebrow" data-t="putt.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="putt.over"></em><span data-t="putt.title"></span></h2>
+  <p class="lede" data-t="putt.lede"></p>
+  <div id="puttQuestions"></div>
+  <p class="listMark" data-t="putt.foot"></p>
+</section>
+
+<!-- ============================================================ SLOVNÍČEK -->
+<section class="plat" id="secSlovnicek">
+  <p class="eyebrow" data-t="slovnicek.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="slovnicek.over"></em><span data-t="slovnicek.title"></span></h2>
+  <p class="lede" data-t="slovnicek.lede"></p>
+  <dl class="pojmy" id="slovnicekList"></dl>
+</section>
+
+<!-- ============================================================ ZKOUŠKA -->
+<section class="plat" id="secZkouska">
+  <p class="eyebrow" data-t="zkouska.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="zkouska.over"></em><span data-t="zkouska.title"></span></h2>
+  <p class="lede" data-t="zkouska.lede"></p>
+
+  <div class="meter" id="zMeter"></div>
+  <div id="zQuiz"></div>
+  <div class="tools">
+    <button type="button" id="zSubmit" data-t="zkouska.submit" disabled></button>
+    <button type="button" id="zAgain" class="quiet" data-t="zkouska.again" hidden></button>
+  </div>
+  <p class="note" id="zNote"></p>
+  <div class="result" id="zResult" hidden></div>
+
+  <p class="listMark" data-t="zkouska.foot"></p>
+</section>
+
+<div class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="../../index.html" data-t="meta.zpet"></a></div>
+
+<script type="module">
+import { vytvorJazyk, nactiSlovnik } from '../../js/jazyk.js';
+import { E, V, clear, rng, blob, blobPts, hatch, radial, stipple, pin, clipPath, vykresliJamku } from '../../js/platy.js';
+import { HRACI, odehrajKolo, bocniChyba, puttyPlynule, normCdf } from '../../js/simulace.js';
+import { vytvorZkousku } from '../../js/zkouska.js';
+
+const $ = (id) => document.getElementById(id);
+const fmt = (n, lang, d = 2) => {
+  const s = n.toFixed(d);
+  return lang === 'cs' ? s.replace('.', ',') : s;
+};
+
+const [slovnik, kartaSawgrass, kartaPebble, kartaRiviera, kartaKarlstejn] = await Promise.all([
+  nactiSlovnik('../../data/preklady/lekce-01.json'),
+  nactiSlovnik('../../data/jamky/tpc-sawgrass-17.json'),
+  nactiSlovnik('../../data/jamky/pebble-beach-18.json'),
+  nactiSlovnik('../../data/jamky/riviera-10.json'),
+  nactiSlovnik('../../data/jamky/karlstejn-15.json'),
+]);
+
+const jazyk = vytvorJazyk(slovnik, {
+  titul: (lang) => lang === 'cs' ? 'ROUTING — Lekce 1: Proč jamka vypadá, jak vypadá' : 'ROUTING — Lesson 1: Why a hole looks the way it does',
+});
+
+/* ============================================================================
+ * TEE SHOT 1 — „Tři otázky“. Tři filozofie na stejném kusu země. Geometrie
+ * cest a hazardů je čistě ilustrativní (ne vázaná na simulaci) — jde o
+ * princip, ne o čísla. Tvary vycházejí ze stejné myšlenky jako miniatury
+ * v `test-lekce-01.html` (viz `kresliMiniFilozofie` níže), jen ve velkém.
+ * ==========================================================================*/
+const F1 = {
+  trest: 'M150 580 L143 260 L162 118 L238 118 L257 260 L250 580 Z',
+  strategie: 'M120 580 L98 280 L140 128 L260 128 L302 280 L280 580 Z',
+  heroika: 'M120 580 L98 280 L140 128 L260 128 L302 280 L280 580 Z',
+};
+let teeShot1Mode = 'strategie';
+
+function kresliTeeShot1(svg, mode, lang) {
+  clear(svg);
+  const defs = E(svg, 'defs', {});
+
+  const sur = blob(200, 330, 178, 300, 0, 101, 0.04);
+  const cSur = 't1sur';
+  clipPath(defs, cSur, sur);
+  E(svg, 'path', { d: sur, fill: V('--turf-d', svg), opacity: 0.42 });
+  hatch(svg, cSur, { x: 15, y: 20, w: 370, h: 620 }, 1.15, 3.6, { op: 0.3, seed: 5 });
+  E(svg, 'path', { d: sur, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1, opacity: 0.7 });
+
+  // vodní hazard u trestající jamky leží zcela mimo fairway, takže na
+  // pořadí kreslení nezáleží — ale bunkr a diagonální hazard u strategické
+  // a heroické jamky zasahují DO plochy fairwaye, takže musí být nakreslené
+  // AŽ PO fairwayi, jinak by je fairway přemaloval (viz poznamky.md, krok 4).
+  if (mode === 'trest') {
+    const wL = blob(75, 320, 68, 260, 0, 111, 0.05, 44);
+    const wR = blob(325, 320, 68, 260, 0, 112, 0.05, 44);
+    [wL, wR].forEach((d) => E(svg, 'path', { d, fill: V('--water', svg), opacity: 0.72, stroke: V('--ink', svg), 'stroke-width': 0.9 }));
+  }
+
+  const fd = F1[mode];
+  const cf = 't1fw';
+  clipPath(defs, cf, fd);
+  E(svg, 'path', { d: fd, fill: V('--turf', svg), opacity: 0.96 });
+  hatch(svg, cf, { x: 90, y: 120, w: 220, h: 470 }, Math.PI / 2, 5, { op: 0.1, seed: 12 });
+  E(svg, 'path', { d: fd, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.1 });
+
+  if (mode === 'strategie') {
+    const bx = 150, by = 300, brx = 42, bry = 78;
+    const bd = blob(bx, by, brx, bry, 0.12, 131, 0.16, 40);
+    const cb = 't1bunk';
+    clipPath(defs, cb, bd);
+    E(svg, 'path', { d: bd, fill: V('--sand', svg) });
+    stipple(svg, cb, { x: bx - brx, y: by - bry, w: brx * 2, h: bry * 2 }, 40, 132, { op: 0.5 });
+    E(svg, 'path', { d: bd, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.1 });
+    radial(svg, blobPts(bx, by, brx, bry, 0.12, 131, 0.16, 40), 133, { len: 10, w: 0.55, op: 0.65 });
+  } else if (mode === 'heroika') {
+    const hd = blob(190, 430, 118, 52, -0.5, 141, 0.08, 40);
+    const ch = 't1water';
+    clipPath(defs, ch, hd);
+    E(svg, 'path', { d: hd, fill: V('--water', svg), opacity: 0.75, stroke: V('--ink', svg), 'stroke-width': 0.9 });
+    const wg = E(svg, 'g', { 'clip-path': `url(#${ch})`, stroke: V('--ink', svg), 'stroke-width': 0.6, opacity: 0.45, fill: 'none' });
+    for (let i = 0; i < 5; i++) {
+      E(wg, 'path', { d: `M${190 - 130 + i * 10} ${430 - 24 + i * 10} q10 -4 20 0 t20 0 t20 0 t20 0 t20 0 t20 0` });
+    }
+    E(svg, 'path', { d: hd, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.1 });
+  }
+
+  const gd = blob(200, 88, 46, 34, 0, 202, 0.07, 46);
+  const cg = 't1green';
+  clipPath(defs, cg, gd);
+  E(svg, 'path', { d: gd, fill: V('--turf', svg) });
+  hatch(svg, cg, { x: 150, y: 50, w: 100, h: 76 }, 0.4, 4, { op: 0.16, seed: 22 });
+  E(svg, 'path', { d: gd, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.2 });
+  radial(svg, blobPts(200, 88, 52, 40, 0, 202, 0.07, 46), 77, { len: 7, w: 0.5, op: 0.5 });
+  pin(svg, 200, 88, { h: 30 });
+  E(svg, 'text', { x: 200, y: 40, class: 'lab', 'text-anchor': 'middle' }, jazyk.t('teeShot1.L.green'));
+
+  E(svg, 'rect', { x: 182, y: 585, width: 36, height: 18, rx: 3, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1.2 });
+  E(svg, 'text', { x: 200, y: 626, class: 'lab', 'text-anchor': 'middle' }, jazyk.t('teeShot1.L.odpaliste'));
+
+  const L = mode === 'trest' ? jazyk.t('teeShot1.L.trest')
+    : mode === 'strategie' ? jazyk.t('teeShot1.L.strategieAgresivni')
+    : jazyk.t('teeShot1.L.heroikaSkala');
+  const lx = mode === 'trest' ? 200 : mode === 'strategie' ? 150 : 190;
+  const ly = mode === 'trest' ? 300 : mode === 'strategie' ? 300 : 430;
+  E(svg, 'text', { x: lx, y: ly - 6, class: 'lab sm', 'text-anchor': 'middle' }, L[0]);
+  E(svg, 'text', { x: lx, y: ly + 10, class: 'lab sm', 'text-anchor': 'middle' }, L[1]);
+
+  if (mode === 'strategie') {
+    E(svg, 'text', { x: 280, y: 300, class: 'lab sm', 'text-anchor': 'middle' }, jazyk.t('teeShot1.L.strategieBezpecna')[0]);
+    E(svg, 'text', { x: 280, y: 316, class: 'lab sm', 'text-anchor': 'middle' }, jazyk.t('teeShot1.L.strategieBezpecna')[1]);
+  }
+}
+
+function renderTeeShot1() {
+  kresliTeeShot1($('p1'), teeShot1Mode, jazyk.lang);
+  $('teeShot1Popis').textContent = jazyk.t('teeShot1.popis.' + teeShot1Mode);
+  document.querySelectorAll('#teeShot1Toggle button').forEach((b) => {
+    b.setAttribute('aria-pressed', String(b.dataset.mode === teeShot1Mode));
+  });
+}
+document.querySelectorAll('#teeShot1Toggle button').forEach((b) => {
+  b.addEventListener('click', () => { teeShot1Mode = b.dataset.mode; renderTeeShot1(); });
+});
+
+/* ============================================================================
+ * TEE SHOT 2 — „Trest úměrný chybě“. Dvě jamky, stejná odchylka od linie
+ * (0–20 m), jiná reakce návrhu. Prahy a přírůstky ran jsou ilustrativní
+ * konstanty (ne ze `simulace.js` — ten model je pro approach, ne tee shot),
+ * zdokumentované v `poznamky.md`, krok 4.
+ * ==========================================================================*/
+const T2_HRANICE = 8;   // m od osy — kde končí fairway na obou jamkách
+const T2_HRANICE_B = 14; // m — jamka B: kde končí přechodová tráva a začíná bunkr
+const T2_TREST_ROUGH = 0.4;
+const T2_TREST_BUNKR = 0.9;
+const T2_SCALE = 4.2; // px na metr uvnitř laně
+
+function zonaT2(lane, v) {
+  const av = Math.abs(v);
+  if (av <= T2_HRANICE) return 'fairway';
+  if (lane === 'B' && av <= T2_HRANICE_B) return 'rough';
+  return 'bunkr';
+}
+function trestT2(lane, v) {
+  const z = zonaT2(lane, v);
+  return z === 'fairway' ? 0 : z === 'rough' ? T2_TREST_ROUGH : T2_TREST_BUNKR;
+}
+
+function kresliLane(svg, cx, lane, v, lang) {
+  const defs = svg.querySelector('defs') || E(svg, 'defs', {});
+  const top = 60, bot = 400, halfW = 90;
+
+  // pás fairway/rough/bunkr — zvenku dovnitř
+  const outerD = `M${cx - halfW} ${top} L${cx - halfW} ${bot} L${cx + halfW} ${bot} L${cx + halfW} ${top} Z`;
+  E(svg, 'path', { d: outerD, fill: V('--sand', svg), opacity: lane === 'A' ? 0.9 : 0.85 });
+
+  if (lane === 'B') {
+    const roughHalf = T2_HRANICE_B * T2_SCALE;
+    const roughD = `M${cx - roughHalf} ${top} L${cx - roughHalf} ${bot} L${cx + roughHalf} ${bot} L${cx + roughHalf} ${top} Z`;
+    E(svg, 'path', { d: roughD, fill: V('--turf-d', svg) });
+  }
+  const fwHalf = T2_HRANICE * T2_SCALE;
+  const fwD = `M${cx - fwHalf} ${top} L${cx - fwHalf} ${bot} L${cx + fwHalf} ${bot} L${cx + fwHalf} ${top} Z`;
+  const cf = 'lane' + lane + 'fw';
+  clipPath(defs, cf, fwD);
+  E(svg, 'path', { d: fwD, fill: V('--turf', svg) });
+  hatch(svg, cf, { x: cx - fwHalf, y: top, w: fwHalf * 2, h: bot - top }, Math.PI / 2, 5, { op: 0.12, seed: lane === 'A' ? 31 : 32 });
+  E(svg, 'path', { d: fwD, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1 });
+  E(svg, 'path', { d: outerD, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1 });
+
+  // odpaliště + green markery
+  E(svg, 'rect', { x: cx - 16, y: bot + 6, width: 32, height: 15, rx: 2.5, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1 });
+  const gd = blob(cx, top - 30, 30, 20, 0, 500 + (lane === 'A' ? 1 : 2), 0.06, 36);
+  const cg = 'lane' + lane + 'g';
+  clipPath(defs, cg, gd);
+  E(svg, 'path', { d: gd, fill: V('--turf', svg) });
+  E(svg, 'path', { d: gd, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1 });
+  pin(svg, cx, top - 30, { h: 18, flagW: 12, flagH: 4 });
+
+  // míček
+  const zone = zonaT2(lane, v);
+  const mx = cx + Math.min(v, 20) * T2_SCALE;
+  const my = 220;
+  E(svg, 'circle', { cx: mx, cy: my, r: 5, fill: V('--ink', svg), stroke: V('--paper', svg), 'stroke-width': 1.4 });
+
+  E(svg, 'text', { x: cx, y: bot + 40, class: 'lab sm', 'text-anchor': 'middle' }, jazyk.t('teeShot2.L.' + (lane === 'A' ? 'jamkaA' : 'jamkaB')));
+}
+
+function kresliTeeShot2(svg, v, lang) {
+  clear(svg);
+  E(svg, 'defs', {});
+  kresliLane(svg, 110, 'A', v, lang);
+  kresliLane(svg, 290, 'B', v, lang);
+  E(svg, 'line', { x1: 200, y1: 20, x2: 200, y2: 440, stroke: V('--ink2', svg), 'stroke-width': 0.8, opacity: 0.35, 'stroke-dasharray': '3 4' });
+}
+
+function renderTeeShot2() {
+  const v = Number($('teeShot2Slider').value);
+  $('teeShot2Out').textContent = v + ' m';
+  kresliTeeShot2($('p2'), v, jazyk.lang);
+  const radek = jazyk.t('teeShot2.radek');
+  const fill = (lane, nadpisKlic) => radek
+    .replace('{jamka}', jazyk.t('teeShot2.' + nadpisKlic + '.nadpis'))
+    .replace('{stav}', jazyk.t('teeShot2.stav.' + zonaT2(lane, v)))
+    .replace('{cost}', fmt(trestT2(lane, v), jazyk.lang, 1));
+  $('teeShot2RadekA').innerHTML = fill('A', 'jamkaA');
+  $('teeShot2RadekB').innerHTML = fill('B', 'jamkaB');
+}
+$('teeShot2Slider').addEventListener('input', renderTeeShot2);
+
+/* ============================================================================
+ * FAIRWAY — karty reálných jamek. Jedna funkce vykreslí libovolnou kartu
+ * (viz `vykresliJamku` v `js/platy.js`), tenhle modul jen doplní textový
+ * panel kolem plátu.
+ * ==========================================================================*/
+function kartaJamky(container, karta, lang) {
+  const wrap = document.createElement('div');
+  wrap.className = 'karta';
+  // Připoj plát do živého dokumentu DŘÍV, než do něj kreslíš — `vykresliJamku`
+  // čte barvy přes `getComputedStyle` (viz `V()` v `js/platy.js`), a na
+  // odpojeném uzlu vrací počítaný styl prázdné hodnoty. Proto container.append
+  // hned teď, ne až s celou hotovou kartou na konci (past, kterou tenhle
+  // krok objevil — viz poznamky.md, krok 4).
+  container.appendChild(wrap);
+  const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+  svg.setAttribute('role', 'img');
+  wrap.appendChild(svg);
+  vykresliJamku(svg, karta);
+
+  const K = slovnik[lang].spolecneKarty;
+  const nazev = karta.nazev && karta.nazev[lang] ? `${karta.hriste} — ${karta.nazev[lang]}` : `${karta.hriste} · #${karta.jamka}`;
+  const dl = karta.delky[0];
+  const architekt = karta.architekt.uvadeny[lang];
+
+  const hlava = document.createElement('p');
+  hlava.className = 'kartaHlava';
+  hlava.textContent = karta.zeme + ' · #' + karta.jamka;
+  wrap.appendChild(hlava);
+
+  const h3 = document.createElement('p');
+  h3.className = 'kartaNazev';
+  h3.textContent = nazev;
+  wrap.appendChild(h3);
+
+  const meta = document.createElement('p');
+  meta.className = 'kartaMeta';
+  meta.innerHTML = `<b>${K.parLabel}</b> ${karta.par} &nbsp;·&nbsp; <b>${K.delkaLabel}</b> ${dl.m} m / ${dl.yd} yd &nbsp;·&nbsp; <b>${K.architektLabel}</b> ${architekt} &nbsp;·&nbsp; <b>${K.vznikLabel}</b> ${karta.vznik}`;
+  wrap.appendChild(meta);
+
+  const otazka = document.createElement('p');
+  otazka.className = 'kartaOtazka';
+  otazka.innerHTML = `<b>${K.otazkaLabel}:</b> ${karta.otazka[lang]}`;
+  wrap.appendChild(otazka);
+
+  const specsHead = document.createElement('div');
+  specsHead.className = 'hr';
+  specsHead.style.marginTop = '16px';
+  specsHead.innerHTML = `<span>${K.specsHead}</span>`;
+  wrap.appendChild(specsHead);
+
+  const specs = document.createElement('div');
+  specs.className = 'specs kartaPrvky';
+  karta.prvky.forEach((p) => {
+    const d = document.createElement('div');
+    d.className = 'spec';
+    d.innerHTML = `<h3>${p.nazev[lang]}</h3><div class="bar"></div><p>${p.popis[lang]}</p>`;
+    specs.appendChild(d);
+  });
+  wrap.appendChild(specs);
+
+  const prameny = document.createElement('p');
+  prameny.className = 'kartaPrameny';
+  prameny.innerHTML = `<b>${K.prameny}:</b> ` + karta.prameny.map((p) => `<a href="${p.url}" target="_blank" rel="noopener">${p.titul}</a>`).join(' · ');
+  wrap.appendChild(prameny);
+
+  return wrap;
+}
+
+function renderKartyFairway() {
+  const c = $('fairwayCards');
+  c.innerHTML = '';
+  [kartaSawgrass, kartaPebble, kartaRiviera].forEach((k) => kartaJamky(c, k, jazyk.lang));
+}
+function renderKartaCeska() {
+  const c = $('ceskaKarta');
+  c.innerHTML = '';
+  kartaJamky(c, kartaKarlstejn, jazyk.lang);
+}
+
+/* ============================================================================
+ * APPROACH 1 — „Kam patří bunkr“. Adaptace `cviceni-bunkr-perokresba.html`
+ * na `js/platy.js` a `js/simulace.js`. Souřadnice v metrech, stejná
+ * geometrie jako v prototypu.
+ * ==========================================================================*/
+const A1_WX = [-46, 46], A1_WY = [-25, 375];
+const A1_SX = 400 / (A1_WX[1] - A1_WX[0]), A1_SY = 900 / (A1_WY[1] - A1_WY[0]);
+const a1px = (x) => (x - A1_WX[0]) * A1_SX;
+const a1py = (y) => 900 - (y - A1_WY[0]) * A1_SY;
+
+const A1_GREEN = { x: 18, y: 345, rx: 16, ry: 13 };
+const A1_PIN = { x: 20, y: 349 };
+const A1_WATER = { x: 31, y: 314, rx: 17, ry: 12 };
+const A1_OB = 44;
+const A1_EDGES = [
+  { y: 35, L: -20, R: 22 }, { y: 120, L: -22, R: 26 }, { y: 200, L: -20, R: 24 },
+  { y: 260, L: -24, R: 16 }, { y: 302, L: -24, R: 2 },
+];
+function a1EdgesAt(y) {
+  if (y < A1_EDGES[0].y || y > A1_EDGES[A1_EDGES.length - 1].y) return null;
+  for (let i = 0; i < A1_EDGES.length - 1; i++) {
+    const a = A1_EDGES[i], b = A1_EDGES[i + 1];
+    if (y >= a.y && y <= b.y) { const t = (y - a.y) / (b.y - a.y); return { L: a.L + (b.L - a.L) * t, R: a.R + (b.R - a.R) * t }; }
+  }
+  return null;
+}
+const a1InEll = (x, y, e) => ((x - e.x) ** 2) / (e.rx ** 2) + ((y - e.y) ** 2) / (e.ry ** 2) <= 1;
+const a1InFw = (x, y) => { const e = a1EdgesAt(y); return !!e && x >= e.L && x <= e.R; };
+
+let a1Bunkers = [];
+const A1_BR = 9;
+const a1InBunker = (x, y) => a1Bunkers.some((b) => Math.hypot(x - b.x, y - b.y) <= b.r);
+
+function a1ResolveLie(x, y) {
+  if (Math.abs(x) > A1_OB) return { trest: true, x: Math.sign(x) * (A1_OB - 3), y };
+  if (a1InEll(x, y, A1_WATER)) return { trest: true, x: A1_WATER.x - A1_WATER.rx - 7, y: A1_WATER.y - 5 };
+  if (a1InEll(x, y, A1_GREEN)) return { typ: 'green' };
+  if (a1InBunker(x, y)) return { typ: 'bunkr' };
+  if (a1InFw(x, y)) return { typ: 'fairway' };
+  return { typ: 'rough' };
+}
+function a1Aim(hrac) {
+  const e = a1EdgesAt(Math.min(hrac.drive, 300)) || { L: -22, R: 12 };
+  return { x: (e.L + e.R) / 2, y: hrac.drive };
+}
+function a1Hraj(hrac, n) {
+  return odehrajKolo(hrac, { pin: A1_PIN, aim: a1Aim(hrac), resolveLie: a1ResolveLie }, n);
+}
+
+let a1Shots = null;
+let a1Base = null;
+
+function kresliApproach1(svg) {
+  clear(svg);
+  const defs = E(svg, 'defs', {});
+
+  const sur = blob(200, 450, 182, 432, 0, 101, 0.03);
+  const cS = 'a1sur';
+  clipPath(defs, cS, sur);
+  E(svg, 'path', { d: sur, fill: V('--turf-d', svg), opacity: 0.42 });
+  hatch(svg, cS, { x: 10, y: 10, w: 380, h: 880 }, 1.15, 3.6, { op: 0.3, seed: 5 });
+  hatch(svg, cS, { x: 10, y: 10, w: 380, h: 880 }, -0.5, 9, { op: 0.14, seed: 6 });
+  E(svg, 'path', { d: sur, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1, opacity: 0.7 });
+
+  let d = '';
+  A1_EDGES.forEach((e, i) => { d += (i ? 'L' : 'M') + a1px(e.L).toFixed(1) + ' ' + a1py(e.y).toFixed(1) + ' '; });
+  for (let i = A1_EDGES.length - 1; i >= 0; i--) d += 'L' + a1px(A1_EDGES[i].R).toFixed(1) + ' ' + a1py(A1_EDGES[i].y).toFixed(1) + ' ';
+  d += 'Z';
+  const cF = 'a1fw';
+  clipPath(defs, cF, d);
+  E(svg, 'path', { d, fill: V('--turf', svg), opacity: 0.95 });
+  hatch(svg, cF, { x: 60, y: 180, w: 280, h: 700 }, Math.PI / 2, 5, { op: 0.1, seed: 12 });
+  E(svg, 'path', { d, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.1 });
+
+  const wd = blob(a1px(A1_WATER.x), a1py(A1_WATER.y), A1_WATER.rx * A1_SX, A1_WATER.ry * A1_SY, 0, 404, 0.08, 44);
+  const cW = 'a1water';
+  clipPath(defs, cW, wd);
+  E(svg, 'path', { d: wd, fill: V('--water', svg), opacity: 0.75 });
+  const wg = E(svg, 'g', { 'clip-path': `url(#${cW})`, stroke: V('--ink', svg), 'stroke-width': 0.7, opacity: 0.5, fill: 'none' });
+  for (let i = 0; i < 7; i++) {
+    E(wg, 'path', { d: `M${a1px(A1_WATER.x) - 70} ${a1py(A1_WATER.y) - 24 + i * 8} q10 -4 20 0 t20 0 t20 0 t20 0 t20 0 t20 0` });
+  }
+  E(svg, 'path', { d: wd, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.1 });
+
+  const gd = blob(a1px(A1_GREEN.x), a1py(A1_GREEN.y), A1_GREEN.rx * A1_SX, A1_GREEN.ry * A1_SY, 0, 202, 0.07, 50);
+  const cG = 'a1green';
+  clipPath(defs, cG, gd);
+  E(svg, 'path', { d: gd, fill: V('--turf', svg) });
+  hatch(svg, cG, { x: a1px(A1_GREEN.x) - 80, y: a1py(A1_GREEN.y) - 40, w: 160, h: 80 }, 0.4, 4, { op: 0.16, seed: 22 });
+  E(svg, 'path', { d: gd, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.3 });
+  radial(svg, blobPts(a1px(A1_GREEN.x), a1py(A1_GREEN.y), A1_GREEN.rx * A1_SX + 7, A1_GREEN.ry * A1_SY + 5, 0, 202, 0.07, 50), 77, { len: 7, w: 0.5, op: 0.45 });
+
+  a1Bunkers.forEach((b, i) => {
+    const cx = a1px(b.x), cy = a1py(b.y), rx = b.r * A1_SX, ry = b.r * A1_SY;
+    const bd = blob(cx, cy, rx, ry, 0.3 + i, 303 + i * 111, 0.17, 40);
+    const id = 'a1b' + i;
+    clipPath(defs, id, bd);
+    E(svg, 'path', { d: bd, fill: V('--sand', svg) });
+    stipple(svg, id, { x: cx - rx * 1.3, y: cy - ry * 1.3, w: rx * 2.6, h: ry * 2.6 }, 70, 333 + i * 97);
+    E(svg, 'path', { d: bd, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.2 });
+    radial(svg, blobPts(cx, cy, rx, ry, 0.3 + i, 303 + i * 111, 0.17, 40), 808 + i * 13, { len: 11, w: 0.6, op: 0.65 });
+  });
+
+  if (a1Shots) {
+    const g24 = E(svg, 'g', { stroke: V('--ink2', svg), 'stroke-width': 0.9, opacity: 0.55, fill: 'none' });
+    a1Shots.p24.forEach((p) => {
+      const X = a1px(p.x), Y = a1py(p.y);
+      E(g24, 'path', { d: `M${(X - 2.6).toFixed(1)} ${(Y - 2.6).toFixed(1)} l5.2 5.2 M${(X + 2.6).toFixed(1)} ${(Y - 2.6).toFixed(1)} l-5.2 5.2` });
+    });
+    const g0 = E(svg, 'g', { fill: V('--ink', svg), opacity: 0.85 });
+    a1Shots.p0.forEach((p) => E(g0, 'circle', { cx: a1px(p.x).toFixed(1), cy: a1py(p.y).toFixed(1), r: 2.1 }));
+  }
+
+  pin(svg, a1px(A1_PIN.x), a1py(A1_PIN.y), { h: 26 });
+  E(svg, 'rect', { x: a1px(0) - 18, y: a1py(0) - 9, width: 36, height: 18, rx: 3, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1.2 });
+
+  const ax = E(svg, 'g', { stroke: V('--ink2', svg), 'stroke-width': 0.9, opacity: 0.65, fill: 'none' });
+  [100, 200, 300].forEach((m) => {
+    E(ax, 'line', { x1: 6, y1: a1py(m), x2: 20, y2: a1py(m) });
+    E(svg, 'text', { x: 24, y: a1py(m) + 5, class: 'lab sm' }, m + ' m');
+  });
+  E(svg, 'text', { x: a1px(A1_GREEN.x), y: a1py(A1_GREEN.y) - 42, class: 'lab', 'text-anchor': 'middle' }, jazyk.t('approach1.L.green'));
+  E(svg, 'text', { x: a1px(A1_WATER.x), y: a1py(A1_WATER.y) + 6, class: 'lab sm', 'text-anchor': 'middle' }, jazyk.t('approach1.L.rybnik'));
+  E(svg, 'text', { x: a1px(0), y: a1py(0) + 34, class: 'lab', 'text-anchor': 'middle' }, jazyk.t('approach1.L.odpaliste'));
+
+  E(svg, 'path', { d: `M300 ${a1py(288)} L${a1px(6).toFixed(0)} ${a1py(276)}`, class: 'lead' });
+  const fs = jazyk.t('approach1.L.fairwaySmer');
+  E(svg, 'text', { x: 396, y: a1py(292), class: 'lab sm', 'text-anchor': 'end' }, fs[0]);
+  E(svg, 'text', { x: 396, y: a1py(292) + 18, class: 'lab sm', 'text-anchor': 'end' }, fs[1]);
+}
+
+function a1StateText() {
+  const n = a1Bunkers.length;
+  if (!n) return jazyk.t('approach1.stavPrazdno');
+  const slovo = jazyk.t('approach1.slovoBunkr.' + (n === 1 ? 'jeden' : n < 5 ? 'malo' : 'hodne'));
+  return jazyk.t('approach1.stavPocet').replace('{n}', n).replace('{slovo}', slovo);
+}
+
+function a1Verdict(r0, r24) {
+  const lang = jazyk.lang;
+  const sp = r24.prumer - r0.prumer;
+  if (!a1Bunkers.length) {
+    return jazyk.t('approach1.verdict.prazdna').replace('{spread}', fmt(sp, lang));
+  }
+  const d0 = r0.prumer - a1Base.r0.prumer, d24 = r24.prumer - a1Base.r24.prumer;
+  let t;
+  if (d24 > d0 + 0.15) t = jazyk.t('approach1.verdict.trest').replace('{d24}', fmt(d24, lang)).replace('{d0}', fmt(d0, lang));
+  else if (d0 > d24 + 0.1) t = jazyk.t('approach1.verdict.strategie').replace('{d0}', fmt(d0, lang)).replace('{d24}', fmt(d24, lang));
+  else if (Math.abs(d0) < 0.06 && Math.abs(d24) < 0.06) t = jazyk.t('approach1.verdict.dekorace').replace('{d0}', fmt(d0, lang)).replace('{d24}', fmt(d24, lang));
+  else t = jazyk.t('approach1.verdict.oba').replace('{d0}', fmt(d0, lang)).replace('{d24}', fmt(d24, lang));
+  if (sp > 3.4) t += jazyk.t('approach1.verdict.spreadVarovani').replace('{spread}', fmt(sp, lang));
+  return t;
+}
+
+function a1UpdateResults() {
+  if (!a1Shots) return;
+  const lang = jazyk.lang;
+  const rows = [
+    ['HCP 0', a1Shots.r0, a1Base && a1Base.r0],
+    ['HCP 24', a1Shots.r24, a1Base && a1Base.r24],
+  ];
+  $('a1tb').innerHTML = rows.map(([name, r, base]) => {
+    let dl = '';
+    if (base && a1Bunkers.length) {
+      const dv = r.prumer - base.prumer;
+      dl = `<small class="${Math.abs(dv) < 0.06 ? 'flat' : ''}">${dv >= 0 ? '+' : '−'}${fmt(Math.abs(dv), lang)}</small>`;
+    }
+    return `<tr><td>${name}</td><td>${Math.round(r.fairwayPct)} %</td><td>${Math.round(r.bunkrPct)} %</td>` +
+      `<td>${Math.round(r.trestPct)} %</td><td class="score">${fmt(r.prumer, lang)}${dl}</td></tr>`;
+  }).join('');
+  $('a1verdict').innerHTML = a1Verdict(a1Shots.r0, a1Shots.r24);
+}
+
+function renderApproach1() {
+  kresliApproach1($('p3'));
+  $('a1state').textContent = a1StateText();
+  if (a1Shots) a1UpdateResults();
+}
+
+$('p3').addEventListener('click', (ev) => {
+  const r = $('p3').getBoundingClientRect();
+  const sx = (ev.clientX - r.left) / r.width * 400, sy = (ev.clientY - r.top) / r.height * 900;
+  const wx = sx / A1_SX + A1_WX[0], wy = (900 - sy) / A1_SY + A1_WY[0];
+  const hit = a1Bunkers.findIndex((b) => Math.hypot(wx - b.x, wy - b.y) <= b.r + 3);
+  if (hit >= 0) a1Bunkers.splice(hit, 1);
+  else if (a1Bunkers.length < 4) a1Bunkers.push({ x: wx, y: wy, r: A1_BR });
+  a1Shots = null;
+  $('a1results').hidden = true;
+  renderApproach1();
+});
+$('a1run').addEventListener('click', () => {
+  const r0 = a1Hraj(HRACI[0], 100), r24 = a1Hraj(HRACI[24], 100);
+  a1Shots = { p0: r0.dopady, p24: r24.dopady, r0, r24 };
+  renderApproach1();
+  $('a1results').hidden = false;
+  a1UpdateResults();
+});
+// Základní hodnota (prázdná jamka, bez bunkru) se počítá jednou při načtení
+// stránky, ne až při prvním klepnutí na „Odehrát“ — jinak by `a1Base` zůstal
+// `null`, kdyby student položil bunkr ještě před prvním odehráním (viz
+// poznamky.md, krok 4). Vyšší `n` (300) kvůli stabilitě základní hodnoty.
+a1Base = { r0: a1Hraj(HRACI[0], 300), r24: a1Hraj(HRACI[24], 300) };
+$('a1clear').addEventListener('click', () => {
+  a1Bunkers = []; a1Shots = null;
+  $('a1results').hidden = true;
+  renderApproach1();
+});
+
+/* ============================================================================
+ * APPROACH 2 — „Kde je rovnováha“. Model podle poznámek ke kroku 4: hráč
+ * HCP 18, referenční vzdálenost přiblížení 140 m, jezdec 0–100 % těsnosti
+ * lineárně mění bezpečnou marži (24 → 2 m) i zkrácení přístupu (0 → 30 m).
+ * Zisk počítá `puttyPlynule()` (plynulá verze `putty()` ze `simulace.js`) —
+ * obyčejná `putty()` má jen pět schodů po 2/5/10/20 m, takže by na tomhle
+ * rozsahu vzdáleností (přiblížení kolem 110–140 m, boční chyba ~10 %,
+ * tedy 11–15 m od jamky) zůstala celou dobu v jednom pásmu a jezdec by
+ * nedělal vůbec nic — viz poznamky.md, krok 4.
+ *
+ * Konstanty (D0, bezpečná marže, zkrácení) jsou zvolené tak, aby se křivky
+ * na posuvníku 0–100 % skutečně PROTNULY (kolem 60 %) — s původními
+ * hodnotami z prvního návrhu (D0 140 m, marže 24→2 m, zkrácení 30 m) riziko
+ * převyšovalo zisk už od nuly a průsečík by nikdy nenastal. Vyladěno
+ * numerickým hledáním, viz poznamky.md, krok 4.
+ * ==========================================================================*/
+const A2_D0 = 150, A2_HCP = 18;
+const a2SafeMargin = (t) => 40 - (t / 100) * 37;
+const a2MetersSaved = (t) => (t / 100) * 50;
+const a2Remaining = (t) => A2_D0 - a2MetersSaved(t);
+const a2ApproachStrokes = (d) => 1 + puttyPlynule(d * bocniChyba(A2_HCP));
+const a2Gain = (t) => a2ApproachStrokes(A2_D0) - a2ApproachStrokes(a2Remaining(t));
+const a2Sigma = (t) => a2Remaining(t) * bocniChyba(A2_HCP);
+const a2PHazard = (t) => 1 - normCdf(a2SafeMargin(t) / a2Sigma(t));
+const a2Risk = (t) => a2PHazard(t);
+
+function kresliApproach2(svg, t) {
+  clear(svg);
+  const padL = 34, padR = 12, padT = 14, padB = 26;
+  const w = 400 - padL - padR, h = 300 - padT - padB;
+  const N = 40;
+  let maxV = 0.1;
+  const gains = [], risks = [];
+  for (let i = 0; i <= N; i++) { const tt = i / N * 100; const g = a2Gain(tt), r = a2Risk(tt); gains.push(g); risks.push(r); maxV = Math.max(maxV, g, r); }
+  maxV *= 1.12;
+  const X = (tt) => padL + (tt / 100) * w;
+  const Y = (v) => padT + h - (v / maxV) * h;
+
+  E(svg, 'line', { x1: padL, y1: padT, x2: padL, y2: padT + h, stroke: V('--ink2', svg), 'stroke-width': 1, opacity: 0.6 });
+  E(svg, 'line', { x1: padL, y1: padT + h, x2: padL + w, y2: padT + h, stroke: V('--ink2', svg), 'stroke-width': 1, opacity: 0.6 });
+  [0, 25, 50, 75, 100].forEach((tt) => {
+    E(svg, 'text', { x: X(tt), y: padT + h + 16, class: 'lab sm', 'text-anchor': 'middle' }, tt + '%');
+  });
+
+  const ptsG = gains.map((g, i) => `${X(i / N * 100).toFixed(1)},${Y(g).toFixed(1)}`).join(' ');
+  const ptsR = risks.map((r, i) => `${X(i / N * 100).toFixed(1)},${Y(r).toFixed(1)}`).join(' ');
+  E(svg, 'polyline', { points: ptsG, fill: 'none', stroke: V('--olive', svg), 'stroke-width': 2 });
+  E(svg, 'polyline', { points: ptsR, fill: 'none', stroke: V('--flag', svg), 'stroke-width': 2 });
+
+  E(svg, 'line', { x1: X(t), y1: padT, x2: X(t), y2: padT + h, stroke: V('--ink', svg), 'stroke-width': 1, 'stroke-dasharray': '3 4', opacity: 0.6 });
+  E(svg, 'circle', { cx: X(t), cy: Y(a2Gain(t)), r: 3.6, fill: V('--olive', svg) });
+  E(svg, 'circle', { cx: X(t), cy: Y(a2Risk(t)), r: 3.6, fill: V('--flag', svg) });
+}
+
+function renderApproach2() {
+  const t = Number($('a2Slider').value);
+  const lang = jazyk.lang;
+  kresliApproach2($('p4'), t);
+  $('a2Out').textContent = t + ' %';
+  $('a2Tesnost').textContent = t + ' %';
+  const jednotka = jazyk.t('approach2.jednotka');
+  const g = a2Gain(t), r = a2Risk(t);
+  $('a2Zisk').textContent = fmt(g, lang) + ' ' + jednotka;
+  $('a2Riziko').textContent = fmt(r, lang) + ' ' + jednotka;
+  $('a2Cisty').textContent = fmt(g - r, lang) + ' ' + jednotka;
+  const klic = Math.abs(g - r) < 0.01 ? 'vyrokVyrovnano' : g > r ? 'vyrokPresahuje' : 'vyrokZaostava';
+  $('a2vyrok').innerHTML = jazyk.t('approach2.' + klic).replace('{t}', t).replace('{zisk}', fmt(g, lang)).replace('{riziko}', fmt(r, lang));
+}
+$('a2Slider').addEventListener('input', renderApproach2);
+
+/* ============================================================================
+ * PUTT — tři otevřené otázky, ukládané do localStorage (bez bodování).
+ * ==========================================================================*/
+const PUTT_KLIC = 'routing.poznamky.lekce1';
+function puttNacti() {
+  try { const a = JSON.parse(localStorage.getItem(PUTT_KLIC) || '[]'); return Array.isArray(a) ? a : []; } catch { return []; }
+}
+function puttUloz(i, text) {
+  const a = puttNacti();
+  a[i] = text;
+  localStorage.setItem(PUTT_KLIC, JSON.stringify(a));
+}
+function renderPutt() {
+  const c = $('puttQuestions');
+  c.innerHTML = '';
+  const otazky = jazyk.t('putt.otazky');
+  const ulozene = puttNacti();
+  otazky.forEach((text, i) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'puttQ';
+    const p = document.createElement('p');
+    p.className = 'otazka';
+    p.textContent = text;
+    const ta = document.createElement('textarea');
+    ta.placeholder = jazyk.t('putt.poznamkaPlaceholder');
+    ta.value = ulozene[i] || '';
+    const saved = document.createElement('p');
+    saved.className = 'puttSaved';
+    saved.textContent = ta.value ? jazyk.t('putt.ulozeno') : '';
+    ta.addEventListener('input', () => {
+      puttUloz(i, ta.value);
+      saved.textContent = jazyk.t('putt.ulozeno');
+    });
+    wrap.appendChild(p); wrap.appendChild(ta); wrap.appendChild(saved);
+    c.appendChild(wrap);
+  });
+}
+
+/* ============================================================================
+ * SLOVNÍČEK
+ * ==========================================================================*/
+function renderSlovnicek() {
+  const c = $('slovnicekList');
+  c.innerHTML = '';
+  jazyk.t('slovnicek.pojmy').forEach((p) => {
+    const dt = document.createElement('dt'); dt.textContent = p.pojem;
+    const dd = document.createElement('dd'); dd.textContent = p.popis;
+    const div = document.createElement('div'); div.className = 'pojem';
+    div.appendChild(dt); div.appendChild(dd);
+    c.appendChild(div);
+  });
+}
+
+/* ============================================================================
+ * ZKOUŠKA — miniatury pro obrázkové otázky (Q1, Q4), adaptované z
+ * `test-lekce-01.html` na `js/platy.js`. Viewbox `0 0 120 220` nastavuje
+ * `zkouska.js` sám.
+ * ==========================================================================*/
+function hatchRectMini(svg, clipId, box, angle, gap, op, seed) {
+  hatch(svg, clipId, box, angle, gap, { w: 0.45, op, seed });
+}
+
+function kresliMiniFilozofie(svg, kind) {
+  const defs = E(svg, 'defs', {});
+  const sur = blob(60, 110, 52, 102, 0, 7, 0.04, 40);
+  const cs = 'mf' + kind + 's';
+  clipPath(defs, cs, sur);
+  E(svg, 'path', { d: sur, fill: V('--turf-d', svg), opacity: 0.4 });
+  hatchRectMini(svg, cs, { x: 0, y: 0, w: 120, h: 220 }, 1.1, 3.4, 0.3, 4);
+  E(svg, 'path', { d: sur, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 0.9, opacity: 0.7 });
+
+  const F = { a: 'M44 186 L42 62 L78 62 L76 186 Z', b: 'M34 190 L28 84 L92 78 L96 190 Z', c: 'M30 188 L26 60 L96 60 L92 188 Z' }[kind];
+  E(svg, 'path', { d: F, fill: V('--turf', svg) });
+  E(svg, 'path', { d: F, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1 });
+
+  if (kind === 'a') {
+    ['M10 62 L42 62 L44 186 L10 186 Z', 'M76 62 L110 62 L110 186 L78 186 Z'].forEach((d) =>
+      E(svg, 'path', { d, fill: V('--water', svg), opacity: 0.75, stroke: V('--ink', svg), 'stroke-width': 0.9 }));
+  }
+  if (kind === 'b') {
+    const bd = blob(40, 100, 15, 20, 0, 11, 0.18, 30);
+    E(svg, 'path', { d: bd, fill: V('--sand', svg), stroke: V('--ink', svg), 'stroke-width': 1 });
+    const wd = blob(88, 64, 17, 10, 0, 13, 0.15, 30);
+    E(svg, 'path', { d: wd, fill: V('--water', svg), opacity: 0.8, stroke: V('--ink', svg), 'stroke-width': 0.9 });
+  }
+  if (kind === 'c') {
+    E(svg, 'path', { d: 'M26 156 L104 74 L104 112 L36 178 Z', fill: V('--water', svg), opacity: 0.75, stroke: V('--ink', svg), 'stroke-width': 0.9 });
+  }
+  const gp = blob(60, 46, 24, 16, 0, 21, 0.08, 34);
+  E(svg, 'path', { d: gp, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1.1 });
+  pin(svg, 60, 44, { h: 16, r: 2, flagW: 12, flagH: 4 });
+  E(svg, 'rect', { x: 52, y: 192, width: 18, height: 7, rx: 2, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1 });
+}
+
+function kresliMiniBunkr(svg, pos) {
+  const defs = E(svg, 'defs', {});
+  const sur = blob(60, 110, 52, 102, 0, 31, 0.04, 40);
+  const cs = 'mb' + pos + 's';
+  clipPath(defs, cs, sur);
+  E(svg, 'path', { d: sur, fill: V('--turf-d', svg), opacity: 0.4 });
+  hatchRectMini(svg, cs, { x: 0, y: 0, w: 120, h: 220 }, 1.1, 3.6, 0.26, 8);
+  E(svg, 'path', { d: sur, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 0.9, opacity: 0.7 });
+
+  const F = 'M34 190 L28 88 L90 78 L98 190 Z';
+  E(svg, 'path', { d: F, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1 });
+  const wd = blob(90, 64, 17, 10, 0, 33, 0.15, 30);
+  E(svg, 'path', { d: wd, fill: V('--water', svg), opacity: 0.8, stroke: V('--ink', svg), 'stroke-width': 0.9 });
+  const gp = blob(54, 46, 23, 15, 0, 35, 0.08, 34);
+  E(svg, 'path', { d: gp, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1.1 });
+  pin(svg, 56, 44, { h: 16, r: 2, flagW: 12, flagH: 4 });
+  E(svg, 'rect', { x: 56, y: 192, width: 18, height: 7, rx: 2, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1 });
+
+  const P = { a: [62, 160], b: [38, 104], c: [96, 118] }[pos];
+  const bd = blob(P[0], P[1], 14, 9, 0.3, 41, 0.18, 30);
+  E(svg, 'path', { d: bd, fill: V('--sand', svg), stroke: V('--ink', svg), 'stroke-width': 1.1 });
+}
+
+const zkouskaOtazky = [
+  {
+    typ: 'obrazek', body: 20, tema: 'strategie', textKlic: 'zkouska.q1.text', hintKlic: 'zkouska.q1.hint',
+    vysvetleniKlic: 'zkouska.q1.why', zpetKlic: 'zkouska.q1.back', spravna: 'b',
+    moznosti: ['a', 'b', 'c'].map((id) => ({ id, kresli: (svg) => kresliMiniFilozofie(svg, id) })),
+  },
+  {
+    typ: 'jedna', body: 15, tema: 'trest', textKlic: 'zkouska.q2.text',
+    vysvetleniKlic: 'zkouska.q2.why', zpetKlic: 'zkouska.q2.back', spravna: 'b',
+    moznosti: ['a', 'b', 'c', 'd'].map((id) => ({ id, textKlic: 'zkouska.q2.' + id })),
+  },
+  {
+    typ: 'jedna', body: 15, tema: 'riziko-odmena', textKlic: 'zkouska.q3.text',
+    vysvetleniKlic: 'zkouska.q3.why', zpetKlic: 'zkouska.q3.back', spravna: 'b',
+    moznosti: ['a', 'b', 'c', 'd'].map((id) => ({ id, textKlic: 'zkouska.q3.' + id })),
+  },
+  {
+    typ: 'obrazek', body: 20, tema: 'umisteni-hazardu', textKlic: 'zkouska.q4.text', hintKlic: 'zkouska.q4.hint',
+    vysvetleniKlic: 'zkouska.q4.why', zpetKlic: 'zkouska.q4.back', spravna: 'b',
+    moznosti: ['a', 'b', 'c'].map((id) => ({ id, kresli: (svg) => kresliMiniBunkr(svg, id) })),
+  },
+  {
+    typ: 'vice', body: 15, tema: 'strategie', textKlic: 'zkouska.q5.text', hintKlic: 'zkouska.q5.hint',
+    vysvetleniKlic: 'zkouska.q5.why', zpetKlic: 'zkouska.q5.back',
+    moznosti: [
+      { id: 'a', textKlic: 'zkouska.q5.a', ok: true },
+      { id: 'b', textKlic: 'zkouska.q5.b', ok: true },
+      { id: 'c', textKlic: 'zkouska.q5.c', ok: false },
+      { id: 'd', textKlic: 'zkouska.q5.d', ok: true },
+    ],
+  },
+  {
+    typ: 'jedna', body: 15, tema: 'trest', textKlic: 'zkouska.q6.text',
+    vysvetleniKlic: 'zkouska.q6.why', zpetKlic: 'zkouska.q6.back', spravna: 'c',
+    moznosti: ['a', 'b', 'c', 'd'].map((id) => ({ id, textKlic: 'zkouska.q6.' + id })),
+  },
+];
+
+vytvorZkousku({
+  lekce: 1,
+  otazky: zkouskaOtazky,
+  slovnik,
+  jazyk,
+  el: { meter: $('zMeter'), quiz: $('zQuiz'), submit: $('zSubmit'), again: $('zAgain'), note: $('zNote'), result: $('zResult') },
+});
+
+/* ============================================================================
+ * Jazykové přepnutí musí překreslit KAŽDÝ plát celý (ne jen text) — viz
+ * `js/jazyk.js`. Zkouška se překresluje sama (`vytvorZkousku` volá vlastní
+ * `jazyk.on`), tady jsou jen zbylé pláty.
+ * ==========================================================================*/
+jazyk.on(() => {
+  renderTeeShot1();
+  renderTeeShot2();
+  renderKartyFairway();
+  renderKartaCeska();
+  renderApproach1();
+  renderApproach2();
+  renderPutt();
+  renderSlovnicek();
+});
+</script>
+</body>
+</html>

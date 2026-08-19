@@ -1,0 +1,148 @@
+{
+  "verze": 1,
+  "id": "riviera-10",
+  "hriste": "Riviera Country Club",
+  "zeme": "US-CA",
+  "jamka": 10,
+  "nazev": null,
+  "par": 4,
+  "delky": [
+    {
+      "odpaliste": "Genesis Invitational (aktuální)",
+      "m": 288,
+      "yd": 315,
+      "rok": null,
+      "poznamka": "aktuálně platná turnajová vzdálenost citovaná v článcích 2024–2026, přesný rok měření není u zdrojů uveden"
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "George C. Thomas Jr. (spoluautor William P. „Billy“ Bell)",
+      "en": "George C. Thomas Jr. (co-designer William P. \"Billy\" Bell)"
+    },
+    "jistota": "jistá",
+    "poznamka": {
+      "cs": "Hřiště otevřeno 1926. V roce 1992 Ben Crenshaw a Bill Coore přestavěli bunkery zpět do podoby blízké Thomasovu původnímu návrhu. V posledních letech bylo okolí greenu zúženo/oholeno (přesný rok nedohledán), takže míče, které dřív u greenu držely, dnes odbíhají.",
+      "en": "The course opened in 1926. In 1992, Ben Crenshaw and Bill Coore rebuilt the bunkers close to Thomas's original design. In recent years the green surrounds have been shaved down (exact year not found), so shots that once held now run off."
+    }
+  },
+  "vznik": 1926,
+  "gps": {
+    "tee": [
+      34.0459,
+      -118.5024
+    ],
+    "green": [
+      34.0459,
+      -118.5024
+    ],
+    "presnost": {
+      "cs": "přibližné, úroveň areálu — přesná poloha odpaliště a greenu jamky 10 není ve veřejných pramenech uvedena",
+      "en": "approximate, resort-level — precise tee/green coordinates for hole 10 are not published in available sources"
+    }
+  },
+  "otazka": {
+    "cs": "Riskneš odpal přímo na malý, šikmo postavený green obklopený bunkery, nebo zahraješ bezpečně kratší ranou a spolehneš se na přesný wedge?",
+    "en": "Do you risk driving straight at a small, angled green ringed by bunkers, or lay up short and trust a precise wedge?"
+  },
+  "tvary": {
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob().",
+    "green": {
+      "x": 4,
+      "y": 270,
+      "rx": 10,
+      "ry": 7,
+      "rot": 0.6,
+      "seed": 1901,
+      "amp": 0.07
+    },
+    "bunkry": [
+      {
+        "x": -8,
+        "y": 265,
+        "rx": 5,
+        "ry": 4,
+        "rot": 0.4,
+        "seed": 1902,
+        "amp": 0.17,
+        "label": {
+          "cs": "bunker vlevo od greenu",
+          "en": "bunker left of the green"
+        }
+      },
+      {
+        "x": 16,
+        "y": 272,
+        "rx": 5,
+        "ry": 4,
+        "rot": -0.3,
+        "seed": 1903,
+        "amp": 0.16,
+        "label": {
+          "cs": "bunker vpravo od greenu",
+          "en": "bunker right of the green"
+        }
+      },
+      {
+        "x": 2,
+        "y": 180,
+        "rx": 14,
+        "ry": 6,
+        "rot": 0.05,
+        "seed": 1904,
+        "amp": 0.14,
+        "label": {
+          "cs": "příčný bunker v přistávací zóně",
+          "en": "cross bunker in the layup zone"
+        }
+      }
+    ],
+    "hazardy": []
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Šikmo postavený, malý green",
+        "en": "A small, angled green"
+      },
+      "popis": {
+        "cs": "I krátká odchylka od ideální linie znamená těžký pitch, nebo rovnou bunker.",
+        "en": "Even a short miss from the ideal line means a hard pitch, or a bunker."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Tři strategie z odpaliště",
+        "en": "Three strategies off the tee"
+      },
+      "popis": {
+        "cs": "Bezpečně před bunker, na jeho hranu pro kratší přístup, nebo přímo na green — každá volba má jinou cenu.",
+        "en": "Safe short of the bunker, tight to its edge for a shorter approach, or straight at the green — each choice has a different price."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Příčný bunker v přistávací zóně",
+        "en": "A cross bunker in the layup zone"
+      },
+      "popis": {
+        "cs": "Trestá i „bezpečnou“ variantu hry, takže žádná volba není zcela bez rizika.",
+        "en": "Punishes even the \"safe\" play, so no choice is entirely without risk."
+      }
+    }
+  ],
+  "prameny": [
+    {
+      "titul": "GOLF.com — Riviera's 10th: the greatest short par 4 in the world?",
+      "url": "https://golf.com/travel/riviera-10th-hole-greatest-short-par-4-world/"
+    },
+    {
+      "titul": "Golf Digest — Justin Thomas on Riviera's 10th hole",
+      "url": "https://www.golfdigest.com/story/justin-thomas-riviera-country-club-10th-hole-layup"
+    },
+    {
+      "titul": "Wikipedia — Riviera Country Club",
+      "url": "https://en.wikipedia.org/wiki/Riviera_Country_Club"
+    }
+  ]
+}

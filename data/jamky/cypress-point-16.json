@@ -1,0 +1,150 @@
+{
+  "verze": 1,
+  "id": "cypress-point-16",
+  "hriste": "Cypress Point Club",
+  "zeme": "US-CA",
+  "jamka": 16,
+  "nazev": null,
+  "par": 3,
+  "delky": [
+    {
+      "odpaliste": "zadní",
+      "m": 211,
+      "yd": 231,
+      "rok": null,
+      "poznamka": "yardáž kolísá mezi prameny (zhruba 210–235 yardů) podle roku a přesné polohy odpaliště; historicky se hrálo i kratší carry, dnešní odpaliště jsou dál"
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "Alister MacKenzie s Robertem Hunterem",
+      "en": "Alister MacKenzie with Robert Hunter"
+    },
+    "jistota": "jistá",
+    "poznamka": {
+      "cs": "MacKenzie byl k čistě vodnímu carry původně skeptický — sám napsal, že je jako Skot „přirozeně proti nezředěné vodě“. Hlavní zásluhu na prosazení dnešní podoby měla Marion Hollins, zakladatelka klubu; MacKenzie o ní napsal, že šlo „převážně o její vizi“.",
+      "en": "MacKenzie was initially wary of an all-water carry — he wrote that, being a Scotsman, he was \"naturally opposed to undiluted water.\" Credit for pushing through today's design goes largely to Marion Hollins, the club's founder; MacKenzie wrote that it was \"largely due to the vision of Miss Marion Hollins.\""
+    }
+  },
+  "vznik": 1929,
+  "gps": {
+    "tee": [
+      36.58,
+      -121.974
+    ],
+    "green": [
+      36.58,
+      -121.974
+    ],
+    "presnost": {
+      "cs": "přibližné, úroveň areálu — přesná poloha odpaliště a greenu jamky 16 není veřejně publikována",
+      "en": "approximate, resort-level — precise tee/green coordinates for hole 16 are not publicly published"
+    }
+  },
+  "otazka": {
+    "cs": "Proč podřídit routing celého hřiště jednomu dramatickému úseku pobřeží, místo aby se obtížnost rozložila rovnoměrně po celém pozemku?",
+    "en": "Why subordinate an entire course's routing to one dramatic stretch of coastline, instead of spreading difficulty evenly across the land?"
+  },
+  "tvary": {
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob().",
+    "green": {
+      "x": 0,
+      "y": 205,
+      "rx": 13,
+      "ry": 10,
+      "rot": 0,
+      "seed": 2501,
+      "amp": 0.07
+    },
+    "bunkry": [
+      {
+        "x": -14,
+        "y": 200,
+        "rx": 5,
+        "ry": 4,
+        "rot": 0.2,
+        "seed": 2502,
+        "amp": 0.16,
+        "label": {
+          "cs": "bunker vlevo od greenu",
+          "en": "bunker left of the green"
+        }
+      },
+      {
+        "x": 14,
+        "y": 210,
+        "rx": 5,
+        "ry": 4,
+        "rot": -0.2,
+        "seed": 2503,
+        "amp": 0.16,
+        "label": {
+          "cs": "bunker vpravo od greenu",
+          "en": "bunker right of the green"
+        }
+      }
+    ],
+    "hazardy": [
+      {
+        "typ": "voda",
+        "x": 0,
+        "y": 100,
+        "rx": 45,
+        "ry": 100,
+        "rot": 0,
+        "seed": 2504,
+        "amp": 0.05,
+        "label": {
+          "cs": "oceánská zátoku mezi odpalištěm a greenem",
+          "en": "the ocean bay between tee and green"
+        }
+      }
+    ]
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Přímý carry přes oceánskou zátoku",
+        "en": "A direct carry over an ocean bay"
+      },
+      "popis": {
+        "cs": "Mezi odpalištěm a greenem není nic než voda a skály — žádná mezilehlá plocha, kam by šlo bezpečně dohrát.",
+        "en": "Between tee and green there is nothing but water and rock — no intermediate ground to lay up onto."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Green obklopený vodou a skálami",
+        "en": "A green ringed by water and rock"
+      },
+      "popis": {
+        "cs": "Green je chráněný mořem a skalnatými výběžky ze tří stran, navíc hlídaný bunkery.",
+        "en": "The green is guarded by the sea and rocky outcrops on three sides, plus bunkers."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Routing obětovaný jednomu úseku",
+        "en": "A routing sacrificed to one stretch"
+      },
+      "popis": {
+        "cs": "Kvůli tomuto úseku pobřeží bylo pokáceno 15 akrů lesa navíc, jen aby vynikl výhled na oceán a duny.",
+        "en": "An extra 15 acres of forest were cleared for this stretch alone, purely to open up views of the ocean and dunes."
+      }
+    }
+  ],
+  "prameny": [
+    {
+      "titul": "Wikipedia — Cypress Point Club",
+      "url": "https://en.wikipedia.org/wiki/Cypress_Point_Club"
+    },
+    {
+      "titul": "Quadrilateral — MacKenzie's careful embrace of Cypress Point",
+      "url": "https://quadrilateral.substack.com/p/mackenzies-careful-embrace-of-cypress"
+    },
+    {
+      "titul": "The Alister MacKenzie Society — Cypress Point",
+      "url": "https://alistermackenzie.org/articles/cypresspoint"
+    }
+  ]
+}

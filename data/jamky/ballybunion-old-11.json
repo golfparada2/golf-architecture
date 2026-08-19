@@ -1,0 +1,139 @@
+{
+  "verze": 1,
+  "id": "ballybunion-old-11",
+  "hriste": "Ballybunion Golf Club — Old Course",
+  "zeme": "IE",
+  "jamka": 11,
+  "nazev": {
+    "cs": "Watsonova",
+    "en": "Watson's"
+  },
+  "par": 4,
+  "delky": [
+    {
+      "odpaliste": "zadní",
+      "m": 432,
+      "yd": 473,
+      "rok": null
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "neuveden jednotně",
+      "en": "not attributed consistently"
+    },
+    "jistota": "sporné / neúplné",
+    "poznamka": {
+      "cs": "Old Course se formoval přirozeným vývojem linksového terénu od založení klubu roku 1893, s pozdějšími úpravami (mj. Tom Simpson, 1936). Pro konkrétně jamku 11 se nepodařilo dohledat jednoznačně uvedeného autora — přisuzovat ji jedné osobě by bylo spekulativní. Jméno jamky odkazuje na Toma Watsona (pětinásobného vítěze British Open), který na Ballybunionu trénoval a hřiště veřejně chválil, ne na architekta.",
+      "en": "The Old Course evolved naturally on its links terrain from the club's 1893 founding, with later work (including Tom Simpson, 1936). No single documented author for hole 11 specifically could be found — attributing it to one person would be speculative. The hole's name honours Tom Watson (five-time Open champion), who trained here and publicly praised the course — not an architect."
+    }
+  },
+  "vznik": 1893,
+  "gps": {
+    "tee": [
+      52.502,
+      -9.677
+    ],
+    "green": [
+      52.502,
+      -9.677
+    ],
+    "presnost": {
+      "cs": "přibližné, úroveň areálu (Co. Kerry) — přesná poloha odpaliště a greenu jamky 11 není veřejně publikována",
+      "en": "approximate, resort-level (Co. Kerry) — precise tee/green coordinates for hole 11 are not publicly published"
+    }
+  },
+  "otazka": {
+    "cs": "Kudy vede hrana útesu a kde přirozené prohlubně v dunách samy o sobě trestají špatný úder, takže architekt nemusí stavět jediný bunker?",
+    "en": "Where does the cliff edge run, and where do natural hollows in the dunes punish a bad shot on their own — so the architect doesn't need to build a single bunker?"
+  },
+  "tvary": {
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Jamka záměrně nemá žádný bunkr — hazardem je terén samotný, viz pole hazardy.",
+    "green": {
+      "x": -10,
+      "y": 380,
+      "rx": 10,
+      "ry": 8,
+      "rot": 0.3,
+      "seed": 2201,
+      "amp": 0.09
+    },
+    "bunkry": [],
+    "hazardy": [
+      {
+        "typ": "duny",
+        "x": -22,
+        "y": 200,
+        "rx": 16,
+        "ry": 60,
+        "rot": 0.15,
+        "seed": 2202,
+        "amp": 0.22,
+        "label": {
+          "cs": "přirozené terasy a prohlubně v dunách podél útesu",
+          "en": "natural dune terraces and hollows along the cliff"
+        }
+      },
+      {
+        "typ": "OB",
+        "x": -55,
+        "y": 250,
+        "rx": 8,
+        "ry": 220,
+        "rot": 0,
+        "seed": 2203,
+        "amp": 0.1,
+        "label": {
+          "cs": "hrana pobřežního útesu",
+          "en": "the coastal cliff edge"
+        }
+      }
+    ]
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Green bez jediného bunkru",
+        "en": "A green with not a single bunker"
+      },
+      "popis": {
+        "cs": "Terén — duny a jejich přirozené prohlubně — je sám o sobě dostatečnou překážkou.",
+        "en": "The terrain itself — the dunes and their natural hollows — is hazard enough."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Úzký vstup mezi přírodními terasami",
+        "en": "A narrow entry between natural terraces"
+      },
+      "popis": {
+        "cs": "Jamka se klikatí po sérii přírodních polic v dunách, které chrání přístup ke greenu.",
+        "en": "The hole winds along a series of natural shelves in the dunes that guard the approach to the green."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Hra podél hrany útesu",
+        "en": "Play along the cliff edge"
+      },
+      "popis": {
+        "cs": "Jamka vede podél pobřežního útesu — poloha koridoru, ne umělý hazard, určuje bezpečnou stranu.",
+        "en": "The hole runs along the coastal cliff — the corridor's position, not an artificial hazard, decides the safe side."
+      }
+    }
+  ],
+  "prameny": [
+    {
+      "titul": "GOLF.com — Top 100 Courses: Ballybunion Old",
+      "url": "https://golf.com/courses/ballybunion-old-golf-top-100-courses/"
+    },
+    {
+      "titul": "Golf Monthly — Ballybunion Golf Club, Old Course review",
+      "url": "https://www.golfmonthly.com/courses/top-100-courses/ballybunion-golf-club-old-course-review-60482"
+    },
+    {
+      "titul": "Golf Club Atlas — Ballybunion Golf Club, Old Course",
+      "url": "https://golfclubatlas.com/countries/ballybunion-golf-club-old-course/"
+    }
+  ]
+}

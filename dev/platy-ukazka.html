@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>platy.js — ukázka na dvou tvarech</title>
+<link rel="stylesheet" href="../assets/styl.css">
+<style>
+  /* jen pro tuhle vývojářskou stránku — mimo sdílený styl.css záměrně,
+     protože není součástí dodávané struktury z části 4 zadání */
+  .badge{
+    display:inline-block;margin-top:16px;padding:4px 10px;font-size:11px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--flag);
+    border:1px solid var(--flag);border-radius:2px;
+  }
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:14px}
+  .pair figure svg{border:1px solid rgba(74,68,58,.25)}
+  .pair figcaption{
+    font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);
+    text-align:center;margin-top:6px;
+  }
+  @media (max-width:420px){ .pair{grid-template-columns:1fr} }
+  .stack{margin-top:26px}
+  .code{
+    font-family:ui-monospace,'SF Mono',Consolas,monospace;font-size:12.5px;
+    background:rgba(74,68,58,.08);padding:10px 12px;border-radius:2px;
+    color:var(--ink2);line-height:1.5;overflow-x:auto;margin-top:8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="hr"><span>Interní · krok 2 z postupu</span></div>
+<p class="eyebrow">js/platy.js</p>
+<h1><em>Dva tvary z</em>jedné knihovny</h1>
+<div class="dashline"></div>
+<p class="lede">Tahle stránka není součástí kurzu (viz zadání, část 4) — je to
+  průkaz, že <code>platy.js</code> skutečně dělá to, co má, na dvou různých
+  tvarech: greenu a bunkru. Smaž ji nebo přesuň, jakmile krok 2 schválíš.</p>
+<span class="badge">dev / neposílat na Pages</span>
+
+<div class="stack">
+  <div class="hr"><span>1 · Green a bunkr</span></div>
+  <p class="lede" style="margin-top:8px">
+    Green: <code>filledShape()</code> (výplň + vnitřní šrafura + obrys) a
+    navrch <code>radial()</code> po obvodu. Bunkr: výplň, <code>stipple()</code>
+    tečkování písku, obrys, <code>radial()</code> po obvodu. Obě kresby čtou
+    barvy živě z <code>assets/styl.css</code> — nic není zapsané v JS.
+  </p>
+  <div class="pair">
+    <figure><svg id="green" viewBox="0 0 200 200" role="img" aria-label="Green"></svg>
+      <figcaption>green · filledShape + radial</figcaption></figure>
+    <figure><svg id="bunker" viewBox="0 0 200 200" role="img" aria-label="Bunkr"></svg>
+      <figcaption>bunkr · stipple + radial</figcaption></figure>
+  </div>
+</div>
+
+<div class="stack">
+  <div class="hr"><span>2 · Pravidlo 1 — hustota šrafury</span></div>
+  <p class="lede" style="margin-top:8px">
+    Stejná funkce, stejná semínka. Vpravo má <code>&lt;svg&gt;</code> navíc
+    <code>class="plate-work"</code> — <code>hatch()</code>, <code>radial()</code>
+    a <code>stipple()</code> si samy přečtou <code>--hatch-density</code> a
+    ztlumí se na třetinu, jak žádá zadání pro pracovní pláty. Nikde v kódu
+    níže není zapsaná jiná konstanta.
+  </p>
+  <div class="pair">
+    <figure><svg id="study" viewBox="0 0 200 200" role="img" aria-label="Studijní hustota"></svg>
+      <figcaption>studijní plát · hustota 1</figcaption></figure>
+    <figure><svg id="work" class="plate-work" viewBox="0 0 200 200" role="img" aria-label="Pracovní hustota"></svg>
+      <figcaption>pracovní plát · hustota .33</figcaption></figure>
+  </div>
+</div>
+
+<div class="stack">
+  <div class="hr"><span>3 · Semínko náhody</span></div>
+  <p class="lede" style="margin-top:8px" id="seedLede">
+    Semínko <b id="seedVal">303</b>. „Překreslit&nbsp;stejné" volá tu samou
+    funkci se stejným číslem — tvar musí vyjít pixel na pixel stejně, protože
+    <code>rng()</code> je deterministický. „Nové semínko" dá bunkru jiné číslo
+    a tvar se změní, ale styl kresby zůstane stejný.
+  </p>
+  <svg id="seedDemo" viewBox="0 0 200 200" role="img" aria-label="Ukázka semínka" style="max-width:260px"></svg>
+  <div class="tools">
+    <button id="redraw">Překreslit stejné</button>
+    <button id="reseed" class="quiet">Nové semínko</button>
+  </div>
+</div>
+
+<div class="foot"><span>ROUTING · dev</span><span>platy.js · krok 2</span></div>
+
+<script type="module">
+import { E, V, clear, blob, blobPts, radial, stipple, clipPath, filledShape }
+  from '../js/platy.js';
+
+function drawGreen(svg, seed = 202) {
+  clear(svg);
+  const defs = E(svg, 'defs', {});
+  const d = blob(100, 100, 70, 46, -0.3, seed, 0.06);
+  filledShape(svg, defs, 'demoGreen' + seed, d, {
+    fill: V('--turf', svg), hatchAngle: 1.6, hatchGap: 5, hatchOp: 0.18,
+    hatchSeed: seed + 1, strokeW: 1.3,
+  });
+  radial(svg, blobPts(100, 100, 70, 46, -0.3, seed, 0.06), seed + 2, { len: 9, w: 0.55, op: 0.5 });
+  E(svg, 'text', { x: 100, y: 104, class: 'lab', 'text-anchor': 'middle' }, 'GREEN');
+}
+
+function drawBunker(svg, seed = 303) {
+  clear(svg);
+  const defs = E(svg, 'defs', {});
+  const d = blob(100, 100, 55, 38, 0.4, seed, 0.17);
+  const id = 'demoBunker' + seed;
+  clipPath(defs, id, d);
+  E(svg, 'path', { d, fill: V('--sand', svg) });
+  stipple(svg, id, { x: 30, y: 45, w: 140, h: 110 }, 70, seed + 5);
+  E(svg, 'path', { d, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.2 });
+  radial(svg, blobPts(100, 100, 55, 38, 0.4, seed, 0.17), seed + 6, { len: 12, w: 0.6, op: 0.65 });
+  E(svg, 'text', { x: 100, y: 104, class: 'lab sm', 'text-anchor': 'middle' }, 'BUNKR');
+}
+
+drawGreen(document.getElementById('green'));
+drawBunker(document.getElementById('bunker'));
+drawBunker(document.getElementById('study'));
+drawBunker(document.getElementById('work'));
+
+let seed = 303;
+const seedSvg = document.getElementById('seedDemo');
+const seedVal = document.getElementById('seedVal');
+drawBunker(seedSvg, seed);
+
+document.getElementById('redraw').onclick = () => drawBunker(seedSvg, seed);
+document.getElementById('reseed').onclick = () => {
+  // Math.random() je tady jen pro tlačítko demo stránky — uvnitř platy.js
+  // se nikdy nepoužívá, kresba je vždy deterministická podle seedu.
+  seed = Math.floor(Math.random() * 90000) + 1000;
+  seedVal.textContent = seed;
+  drawBunker(seedSvg, seed);
+};
+</script>
+</body>
+</html>

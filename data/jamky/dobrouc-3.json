@@ -1,0 +1,136 @@
+{
+  "verze": 1,
+  "id": "dobrouc-3",
+  "hriste": "Golf Dobrouč",
+  "zeme": "CZ",
+  "jamka": 3,
+  "nazev": null,
+  "par": 4,
+  "delky": [
+    {
+      "odpaliste": "základní",
+      "m": null,
+      "yd": null,
+      "poznamka": "přesná délka jamky 3 nebyla v dostupných pramenech dohledána — ověř přímo u klubu, než se použije v tisknuté kartě"
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "MgA. Jakub Červenka (EIGCA Associate)",
+      "en": "MgA. Jakub Červenka (EIGCA Associate)"
+    },
+    "jistota": "jistá",
+    "poznamka": {
+      "cs": "Architekt sám popisuje, že řešil „členitý a strmý terén s velkým převýšením“ a bunkry použil jako konstrukční prvek, který strmými a vysokými stěnami pomáhá zvládnout výškové rozdíly, místo aby se terén srovnal buldozerem.",
+      "en": "The architect describes working with \"broken, steep terrain with large elevation changes\" and using bunkers as a structural element whose steep, tall walls absorb the grade changes, rather than bulldozing the land flat."
+    }
+  },
+  "vznik": 2020,
+  "gps": {
+    "tee": [
+      49.99993,
+      16.502
+    ],
+    "green": [
+      49.99993,
+      16.502
+    ],
+    "presnost": {
+      "cs": "přibližné, úroveň areálu (Dolní Dobrouč, Orlické hory) — přesná poloha odpaliště a greenu jamky 3 není veřejně publikována",
+      "en": "approximate, resort-level (Dolní Dobrouč, Orlické hory foothills) — precise tee/green coordinates for hole 3 are not publicly published"
+    }
+  },
+  "otazka": {
+    "cs": "Kudy steče voda po dešti z prudkého svahu do potoka, a kde tím pádem musí fairway nebo green uhnout, aby hráč nemusel hrát z nevýhodného úhlu přes vodu?",
+    "en": "Which way does rainwater run off the steep slope into the stream, and where must the fairway or green give way so the player isn't left playing across water from a bad angle?"
+  },
+  "tvary": {
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob().",
+    "green": {
+      "x": 6,
+      "y": 280,
+      "rx": 10,
+      "ry": 8,
+      "rot": -0.2,
+      "seed": 2301,
+      "amp": 0.08
+    },
+    "bunkry": [
+      {
+        "x": 14,
+        "y": 270,
+        "rx": 7,
+        "ry": 9,
+        "rot": 0.1,
+        "seed": 2302,
+        "amp": 0.15,
+        "label": {
+          "cs": "bunker jako opěrná stěna svahu",
+          "en": "bunker acting as a retaining wall on the slope"
+        }
+      }
+    ],
+    "hazardy": [
+      {
+        "typ": "voda",
+        "x": -18,
+        "y": 180,
+        "rx": 6,
+        "ry": 150,
+        "rot": 0.05,
+        "seed": 2303,
+        "amp": 0.1,
+        "label": {
+          "cs": "potok podél levé strany údolí",
+          "en": "a stream along the left side of the valley"
+        }
+      }
+    ]
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Úzké údolí určuje osu jamky",
+        "en": "A narrow valley sets the hole's axis"
+      },
+      "popis": {
+        "cs": "Jamka je posazená do zúženého údolí — terén, ne architekt, rozhodl, kudy hra povede.",
+        "en": "The hole sits in a narrowing valley — the terrain, not the architect, decided which way play would run."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Potok jako přirozený hazard",
+        "en": "A stream as a natural hazard"
+      },
+      "popis": {
+        "cs": "Potok podél levé strany chrání jamku bez toho, aby bylo nutné stavět umělou vodní překážku.",
+        "en": "A stream along the left protects the hole without the need to build an artificial water hazard."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Bunkr jako konstrukční prvek",
+        "en": "A bunker as a structural element"
+      },
+      "popis": {
+        "cs": "Strmé a vysoké stěny bunkru pomáhají zvládnout velké převýšení terénu — bunkr tu není jen hazard, ale i technické řešení svahu.",
+        "en": "The bunker's steep, tall walls help absorb a large change in elevation — here the bunker is not just a hazard but an engineering answer to the slope."
+      }
+    }
+  ],
+  "prameny": [
+    {
+      "titul": "Golf Dobrouč — Slovo architekta",
+      "url": "https://www.golfdobrouc.cz/slovo-architekta/"
+    },
+    {
+      "titul": "Golf Dobrouč — Kontakt (adresa, poloha areálu)",
+      "url": "https://www.golfdobrouc.cz/kontakt/"
+    },
+    {
+      "titul": "GolfExtra.cz — Golf Dobrouč: český golf našel nové hřiště v Orlických horách",
+      "url": "https://www.golfextra.cz/rubriky/zahranici/golf-dobrouc-cesky-golf-nasel-nove-hriste-v-orlickych-horach_7344.html"
+    }
+  ]
+}
