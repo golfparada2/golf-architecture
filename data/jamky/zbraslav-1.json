@@ -46,7 +46,7 @@
     "en": "What do you do to an eighteen-hole routing when the clubhouse moves more than two kilometres away?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Opraveno 2026-08-19: dosavadní pár bočních pot bunkerů u greenu (vlevo i vpravo) nahrazen jedním velkým bunkerem před greenem — oficiální stránka klubu (pcg.cz, popis jamky 1 pro současný routing) výslovně říká, že fairway bunkery vůbec neobklopují (jen tráva okolo) a že green je „v přední části dobře chráněn velkým bunkerem“. Stejný zdroj zmiňuje doglegový ohyb v závěrečné části jamky, ale směr ohybu (vlevo/vpravo) neuvádí, takže zůstal jen mírný, směrově neutrální posun greenu od osy (nebyl vymýšlen naslano). Vodní překážka za greenem zmiňovaná ve starších popisech (19jamka.cz, 2018) se týkala PŮVODNÍHO routingu před přesunem klubovny v roce 2023/2024, ne dnešní jamky 1 — proto zde není použita.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Opraveno 2026-08-19: dosavadní pár bočních pot bunkerů u greenu (vlevo i vpravo) nahrazen jedním velkým bunkerem před greenem — oficiální stránka klubu (pcg.cz, popis jamky 1 pro současný routing) výslovně říká, že fairway bunkery vůbec neobklopují (jen tráva okolo) a že green je „v přední části dobře chráněn velkým bunkerem“. Stejný zdroj zmiňuje doglegový ohyb v závěrečné části jamky, ale směr ohybu (vlevo/vpravo) neuvádí, takže zůstal jen mírný, směrově neutrální posun greenu od osy (nebyl vymýšlen naslano). Vodní překážka za greenem zmiňovaná ve starších popisech (19jamka.cz, 2018) se týkala PŮVODNÍHO routingu před přesunem klubovny v roce 2023/2024, ne dnešní jamky 1 — proto zde není použita. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením.",
     "green": {
       "x": 4,
       "y": 430,
@@ -68,10 +68,25 @@
         "label": {
           "cs": "velký bunker chránící přední část greenu (fairway bunkery nejsou — jen tráva okolo)",
           "en": "large bunker guarding the front of the green (no fairway bunkers — just grass around it)"
+        },
+        "zkratka": {
+          "cs": "BUNKR PŘED GREENEM",
+          "en": "FRONT BUNKER"
         }
       }
     ],
-    "hazardy": []
+    "hazardy": [],
+    "fairway": {
+      "ohyb": -14,
+      "sirkaTee": 36,
+      "sirkaGreen": 30,
+      "zacatek": 25,
+      "seed": 4107
+    },
+    "dopadovaZona": {
+      "od": 230,
+      "do": 280
+    }
   },
   "prvky": [
     {
@@ -140,5 +155,13 @@
       "titul": "GolfPass — Prague City Golf Club (scorecard, jamka 1 = par 5, HCP 9)",
       "url": "https://www.golfpass.com/travel-advisor/courses/22742-prague-city-golf-club"
     }
-  ]
+  ],
+  "naCoSeDivat": {
+    "cs": "Na pěti stech dvaceti metrech je jediný bunker — a leží před greenem. Obranu téhle jamky nedělají hazardy, ale její délka.",
+    "en": "Across five hundred and twenty metres there is a single bunker, and it sits in front of the green. This hole is defended by its length, not by hazards."
+  },
+  "lekce": {
+    "cs": "Délka je nejlacinější obrana. Zajímavou jamku z ní udělá teprve rozhodnutí, které nabídne.",
+    "en": "Length is the cheapest defence. Only the decision a hole offers makes it interesting."
+  }
 }

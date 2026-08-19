@@ -48,7 +48,7 @@
     "en": "Where does the cliff edge run, and where do natural hollows in the dunes punish a bad shot on their own — so the architect doesn't need to build a single bunker?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Jamka záměrně nemá žádný bunkr — hazardem je terén samotný, viz pole hazardy. Strana útesu/OB opravena na pravou (viz poznámka v kroku ověřování) podle popisu hry podél pobřeží ve zdrojích golfcoursegurus.com a thegolfarchitects.com.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Jamka záměrně nemá žádný bunkr — hazardem je terén samotný, viz pole hazardy. Strana útesu/OB opravena na pravou (viz poznámka v kroku ověřování) podle popisu hry podél pobřeží ve zdrojích golfcoursegurus.com a thegolfarchitects.com. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením.",
     "green": {
       "x": 10,
       "y": 380,
@@ -72,6 +72,10 @@
         "label": {
           "cs": "přirozené terasy a prohlubně v dunách podél útesu",
           "en": "natural dune terraces and hollows along the cliff"
+        },
+        "zkratka": {
+          "cs": "DUNY",
+          "en": "DUNES"
         }
       },
       {
@@ -86,9 +90,24 @@
         "label": {
           "cs": "hrana pobřežního útesu",
           "en": "the coastal cliff edge"
+        },
+        "zkratka": {
+          "cs": "ÚTES",
+          "en": "CLIFF"
         }
       }
-    ]
+    ],
+    "fairway": {
+      "ohyb": -14,
+      "sirkaTee": 34,
+      "sirkaGreen": 26,
+      "zacatek": 30,
+      "seed": 4101
+    },
+    "dopadovaZona": {
+      "od": 200,
+      "do": 250
+    }
   },
   "prvky": [
     {
@@ -149,6 +168,16 @@
     "poznamka": {
       "cs": "ilustrační záběr sousední 10. jamky — volně licencovanou fotku přímo z 11. jamky se nepodařilo dohledat",
       "en": "illustrative view of the neighbouring 10th hole — no freely licensed photo of the 11th hole itself could be found"
-    }
+    },
+    "sirka": 1028,
+    "vyska": 670
+  },
+  "naCoSeDivat": {
+    "cs": "Sleduj, jak se fairway ke greenu zužuje a jak blízko vpravo běží hrana útesu. Prostor mizí přesně tam, kde na hráče roste tlak.",
+    "en": "Watch the fairway narrow towards the green and see how close the cliff edge runs on the right. The room disappears exactly where the pressure rises."
+  },
+  "lekce": {
+    "cs": "Zúžení na konci jamky trestá jinak než hazard na začátku — hráč už nemá jak couvnout.",
+    "en": "A squeeze at the end of a hole punishes differently from a hazard at the start — there is no backing out left."
   }
 }

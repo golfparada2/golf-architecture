@@ -46,7 +46,13 @@
       }
     ],
     "foot1": "ROUTING · rozcestník",
-    "foot2": "krok 6 · lekce 1–3"
+    "foot2": "Lekce 1–3 z 18",
+    "pripravujeme": "Lekce 4 až 18 se připravují. Přibývají postupně — každá projde stejnou kontrolou jako první tři, než se sem dostane.",
+    "daleHead": "Kdykoli po ruce",
+    "slovnicekPopis": "Všech 38 pojmů kurzu na jednom místě, abecedně a dvojjazyčně.",
+    "sbirkaPopis": "Deset rozebraných jamek v jednotném formátu — otázka, plán, tři prvky, lekce.",
+    "importHotovo": "Výsledky načteny.",
+    "importChyba": "Soubor se nepodařilo přečíst. Zkontroluj, že je to JSON stažený z tohoto kurzu."
   },
   "en": {
     "kicker": "Golf course architecture",
@@ -95,6 +101,12 @@
       }
     ],
     "foot1": "ROUTING · hub",
-    "foot2": "step 6 · lessons 1–3"
+    "foot2": "Lessons 1–3 of 18",
+    "pripravujeme": "Lessons 4 to 18 are in preparation. They arrive one at a time — each goes through the same checks as the first three before it lands here.",
+    "daleHead": "Always at hand",
+    "slovnicekPopis": "All 38 course terms in one place, alphabetical and bilingual.",
+    "sbirkaPopis": "Ten holes analysed in one format — question, plan, three elements, lesson.",
+    "importHotovo": "Results loaded.",
+    "importChyba": "The file could not be read. Check that it is JSON downloaded from this course."
   }
 }

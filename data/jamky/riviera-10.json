@@ -46,7 +46,7 @@
     "en": "Do you risk driving straight at a small, angled green ringed by bunkers, or lay up short and trust a precise wedge?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Opraveno 2026-08-19: dosavadní fairwayový bunker (rx=14) byl vůči greenu neúměrně velký a navíc uprostřed osy hry, přitom více zdrojů (Golf.com, Yardbarker) shodně popisuje jeden velký fairwayový bunker po LEVÉ straně přistávací zóny, ne uprostřed. Greenside bunkery jsou podle zdrojů (Yardbarker, Golf Digest/Shackelford) soustředěny hlavně vpravo od greenu (přední i zadní), proto přidán třetí, menší bunker vzadu vpravo; bunker vlevo od greenu ponechán jako menší, méně dominantní hazard.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Opraveno 2026-08-19: dosavadní fairwayový bunker (rx=14) byl vůči greenu neúměrně velký a navíc uprostřed osy hry, přitom více zdrojů (Golf.com, Yardbarker) shodně popisuje jeden velký fairwayový bunker po LEVÉ straně přistávací zóny, ne uprostřed. Greenside bunkery jsou podle zdrojů (Yardbarker, Golf Digest/Shackelford) soustředěny hlavně vpravo od greenu (přední i zadní), proto přidán třetí, menší bunker vzadu vpravo; bunker vlevo od greenu ponechán jako menší, méně dominantní hazard. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením.",
     "green": {
       "x": 4,
       "y": 270,
@@ -68,6 +68,10 @@
         "label": {
           "cs": "bunker vlevo od greenu",
           "en": "bunker left of the green"
+        },
+        "zkratka": {
+          "cs": "BUNKR VLEVO",
+          "en": "LEFT BUNKER"
         }
       },
       {
@@ -81,6 +85,10 @@
         "label": {
           "cs": "bunker vpravo vpředu od greenu",
           "en": "front-right bunker beside the green"
+        },
+        "zkratka": {
+          "cs": "VPŘEDU VPRAVO",
+          "en": "FRONT RIGHT"
         }
       },
       {
@@ -94,6 +102,10 @@
         "label": {
           "cs": "bunker vzadu vpravo od greenu",
           "en": "back-right bunker behind the green"
+        },
+        "zkratka": {
+          "cs": "VZADU VPRAVO",
+          "en": "BACK RIGHT"
         }
       },
       {
@@ -107,10 +119,25 @@
         "label": {
           "cs": "velký fairwayový bunker vlevo v přistávací zóně",
           "en": "large fairway bunker on the left side of the landing area"
+        },
+        "zkratka": {
+          "cs": "FAIRWAY BUNKR",
+          "en": "FAIRWAY BUNKER"
         }
       }
     ],
-    "hazardy": []
+    "hazardy": [],
+    "fairway": {
+      "ohyb": 10,
+      "sirkaTee": 34,
+      "sirkaGreen": 30,
+      "zacatek": 20,
+      "seed": 4104
+    },
+    "dopadovaZona": {
+      "od": 180,
+      "do": 225
+    }
   },
   "prvky": [
     {
@@ -179,6 +206,16 @@
     "poznamka": {
       "cs": "ilustrační záběr sousední 9. jamky u klubovny — volně licencovanou fotku přímo z 10. jamky se nepodařilo dohledat",
       "en": "illustrative view of the neighbouring 9th hole by the clubhouse — no freely licensed photo of the 10th hole itself could be found"
-    }
+    },
+    "sirka": 516,
+    "vyska": 377
+  },
+  "naCoSeDivat": {
+    "cs": "Všimni si, jak je green natočený šikmo k linii hry a jak blízko dopadové zóně leží fairwayový bunker vlevo. Kdo si vybere „bezpečnou“ cestu vlevo, míří skoro na něj.",
+    "en": "Notice how the green sits at an angle to the line of play, and how close the left fairway bunker is to the landing zone. Choosing the \"safe\" left route aims almost straight at it."
+  },
+  "lekce": {
+    "cs": "Krátká jamka je nejtěžší tehdy, když je zatížená i ta bezpečná cesta. Bez toho z ní je jen snadný birdie.",
+    "en": "A short hole is hardest when even the safe route carries a price. Without that it is just an easy birdie."
   }
 }

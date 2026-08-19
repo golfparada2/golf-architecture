@@ -140,11 +140,19 @@ export function vytvorZkousku(cfg) {
         wrap.appendChild(b);
         const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         svg.setAttribute('viewBox', '0 0 120 220');
+        /* Miniatura je uvnitř tlačítka, které už má vlastní jméno („Jamka A"),
+           takže se pro čtečku označí jako dekorativní — jinak by ji čtečka
+           ohlásila jako druhý, bezejmenný obrázek. Že se obrázková otázka
+           nedá zodpovědět bez zraku, je vlastnost typu otázky, ne značkování;
+           je to zapsané v `poznamky.md`. */
+        svg.setAttribute('aria-hidden', 'true');
+        svg.setAttribute('focusable', 'false');
         b.appendChild(svg);
         m.kresli(svg, jazyk.lang);
         const span = document.createElement('span');
         span.textContent = m.id.toUpperCase();
         b.appendChild(span);
+        b.setAttribute('aria-label', `${jazyk.t('zkouska.spolecne.moznost')} ${m.id.toUpperCase()}`);
         if (hotovo) {
           const trida = m.id === q.spravna ? 'right' : (odpovedi[i] === m.id ? 'wrong' : '');
           if (trida) b.classList.add(trida);
@@ -224,8 +232,14 @@ export function vytvorZkousku(cfg) {
     ulozPokus(lekce, otazkyZaznam, { body: zisk, maximum: CELKEM });
 
     el.result.hidden = false;
+    /* Výsledek je pro čtečku novinka, kterou musí ohlásit sama — jinak
+       klávesnicový uživatel po odevzdání netuší, že se něco stalo
+       (AUDIT.md, bod 3.9). */
+    el.result.setAttribute('tabindex', '-1');
+    el.result.setAttribute('role', 'region');
+    el.result.setAttribute('aria-label', jazyk.t('zkouska.souhrn.nadpis'));
     el.result.innerHTML = `
-      <div class="hr"><span>${jazyk.t('zkouska.souhrn.nadpis')}</span></div>
+      <h2 class="hr"><span>${jazyk.t('zkouska.souhrn.nadpis')}</span></h2>
       <div class="score" style="margin-top:14px">
         <span class="big">${procenta}</span><span class="of">${jazyk.t('zkouska.souhrn.procentBodu').replace('{body}', zisk).replace('{max}', CELKEM)}</span>
       </div>
@@ -236,7 +250,7 @@ export function vytvorZkousku(cfg) {
         <div class="no"><b>${otazky.length - plnychBodu}</b><span>${jazyk.t('zkouska.souhrn.chybneCastecne')}</span></div>
         <div><b style="color:var(--ink2)">${nulovych}</b><span>${jazyk.t('zkouska.souhrn.zcelaMimo')}</span></div>
       </div>
-      <div class="hr" style="margin-top:20px"><span>${jazyk.t('zkouska.souhrn.rozpis')}</span></div>
+      <h3 class="hr" style="margin-top:20px"><span>${jazyk.t('zkouska.souhrn.rozpis')}</span></h3>
       <div class="review">${otazky.map((q, i) => {
         const p = body(i);
         const trida = p === q.body ? 'ok' : (p === 0 ? 'no' : 'part');
@@ -254,6 +268,7 @@ export function vytvorZkousku(cfg) {
     el.note.textContent = jazyk.t('zkouska.spolecne.reseniUKazdeOtazky');
     el.again.hidden = false;
     el.result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    el.result.focus({ preventScroll: true });
   }
 
   function vykresli() {

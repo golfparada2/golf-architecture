@@ -45,7 +45,7 @@
     "en": "Which way does rainwater run off the steep slope into the stream, and where must the fairway or green give way so the player isn't left playing across water from a bad angle?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob().",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením.",
     "green": {
       "x": 6,
       "y": 280,
@@ -67,6 +67,10 @@
         "label": {
           "cs": "bunker jako opěrná stěna svahu",
           "en": "bunker acting as a retaining wall on the slope"
+        },
+        "zkratka": {
+          "cs": "OPĚRNÝ BUNKR",
+          "en": "BUTTRESS BUNKER"
         }
       }
     ],
@@ -83,9 +87,24 @@
         "label": {
           "cs": "potok podél levé strany údolí",
           "en": "a stream along the left side of the valley"
+        },
+        "zkratka": {
+          "cs": "POTOK",
+          "en": "CREEK"
         }
       }
-    ]
+    ],
+    "fairway": {
+      "ohyb": 12,
+      "sirkaTee": 32,
+      "sirkaGreen": 28,
+      "zacatek": 25,
+      "seed": 4102
+    },
+    "dopadovaZona": {
+      "od": 170,
+      "do": 215
+    }
   },
   "prvky": [
     {
@@ -132,5 +151,13 @@
       "titul": "GolfExtra.cz — Golf Dobrouč: český golf našel nové hřiště v Orlických horách",
       "url": "https://www.golfextra.cz/rubriky/zahranici/golf-dobrouc-cesky-golf-nasel-nove-hriste-v-orlickych-horach_7344.html"
     }
-  ]
+  ],
+  "naCoSeDivat": {
+    "cs": "Potok drží levou stranu po celé délce a fairway se od něj odklání doprava. Bunkr u greenu zároveň podpírá svah — je to stavební prvek, ne jen past.",
+    "en": "The creek holds the left side for the whole length and the fairway leans away to the right. The greenside bunker also buttresses the slope — it is a piece of construction, not just a trap."
+  },
+  "lekce": {
+    "cs": "Terén rozhoduje dřív než architekt. Tady určil potok, kudy jamka vůbec může vést.",
+    "en": "The land decides before the architect does. Here the creek determined where the hole could go at all."
+  }
 }

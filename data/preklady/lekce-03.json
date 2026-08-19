@@ -8,7 +8,7 @@
       "lede": "Bunkry jsou to, co je vidět na fotkách. Routing — pořadí a propojení všech osmnácti jamek — je to, co rozhodne, jestli je hřiště dobré. A rozhoduje víc než všechno ostatní dohromady.",
       "zpet": "← Zpět na rozcestník"
     },
-    "principLabel": "Princip k zapamatování",
+    "principLabel": "Princip",
     "teeShot": {
       "eyebrow": "Tee shot",
       "over": "Plát —",
@@ -54,7 +54,17 @@
         "klubovna": "KLUBOVNA",
         "bod": "MÍSTO PRO GREEN"
       },
-      "foot": "list 1 · Tee shot"
+      "foot": "list 1 · Tee shot",
+      "cile": [
+        "Popíšu, v jakém pořadí architekt hledá jamky na pozemku.",
+        "Vysvětlím, proč routing rozhoduje o kvalitě hřiště víc než jednotlivé bunkry."
+      ],
+      "zapamatuj": [
+        "Nejdřív se najde osmnáct skvělých míst pro greeny, teprve pak se mezi nimi vedou jamky.",
+        "Routing je jediné rozhodnutí, které se později nedá opravit — bunkr se přestaví, koridor ne.",
+        "Přechod od greenu na další odpaliště ideálně do 50 metrů.",
+        "Nikdy čtyři jamky za sebou stejným směrem a na závěr nehrát přímo do zapadajícího slunce."
+      ]
     },
     "spolecneKarty": {
       "specsHead": "Tři prvky",
@@ -70,19 +80,53 @@
       "eyebrow": "Fairway",
       "over": "Dva routingy, dvě filozofie —",
       "title": "Celek, ne jamka",
-      "lede": "St Andrews je routing formovaný staletími — cesta tam a zpět stejným koridorem, dvojgreeny, pravidla porušená tak dávno, že se z nich stala pravidla nová. Cypress Point je pravý opak: routing obětovaný jedinému, krátkému a naprosto dramatickému úseku pobřeží."
+      "lede": "St Andrews je routing formovaný staletími — cesta tam a zpět stejným koridorem, dvojgreeny, pravidla porušená tak dávno, že se z nich stala pravidla nová. Cypress Point je pravý opak: routing obětovaný jedinému, krátkému a naprosto dramatickému úseku pobřeží.",
+      "cile": [
+        "Porovnám dva routingy, které vznikly úplně jinak, a řeknu, co je na každém dobré."
+      ],
+      "zapamatuj": [
+        "St Andrews: cesta tam a zpět jedním koridorem a dvojgreeny — pravidla porušená tak dávno, že se z nich stala pravidla nová.",
+        "Cypress Point: routing podřízený jednomu úseku pobřeží; celek slouží několika jamkám.",
+        "Pravidla routingu jsou zvyk, ne zákon — porušit je smíš jen tehdy, když víš, co za to dostaneš."
+      ],
+      "vyzkousej": {
+        "otazka": "St Andrews porušuje pravidla routingu a funguje. Napiš jedno pravidlo, které by podle tebe porušit nešlo — a proč.",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
     },
     "ceskaJamka": {
       "eyebrow": "Fairway · Česko",
       "over": "Celé hřiště, ne jamka —",
       "title": "Prague City Golf Zbraslav",
-      "lede": "Co uděláš s routingem osmnácti jamek, když se klubovna přesune o víc než dva kilometry jinam? Zbraslav na tuhle otázku odpovídala doopravdy, ne jako cvičení."
+      "lede": "Co uděláš s routingem osmnácti jamek, když se klubovna přesune o víc než dva kilometry jinam? Zbraslav na tuhle otázku odpovídala doopravdy, ne jako cvičení.",
+      "cile": [
+        "Rozeberu routing celého českého hřiště, ne jen jednu jamku."
+      ],
+      "zapamatuj": [
+        "Přesun klubovny mění routing celého hřiště — pořadí jamek není dekorace.",
+        "Kompromis vůči pozemku není chyba. Chyba je předstírat, že žádný nebyl.",
+        "Na hřišti, které znáš, se routing čte nejlíp — projdi si ho jednou bez holí."
+      ],
+      "vyzkousej": {
+        "otazka": "Projdi si v hlavě hřiště, které znáš. Který přechod mezi greenem a dalším odpalištěm je nejdelší? Co se tím pokazí?",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
     },
     "approachNadpis": {
       "eyebrow": "Approach",
       "over": "Pracovní plát —",
       "title": "Šest jamek",
-      "lede": "Toto je nejtěžší úkol v celém kurzu — a je záměrně hned na začátku. Chceme, aby ses od první lekce naučil/a myslet v celku, ne v jednotlivé jamce."
+      "lede": "Toto je nejtěžší úkol v celém kurzu — a je záměrně hned na začátku. Chceme, aby ses od první lekce naučil/a myslet v celku, ne v jednotlivé jamce.",
+      "cile": [
+        "Postavím routing šesti jamek na skutečném pozemku a nechám si změřit, co jsem způsobil/a.",
+        "Poznám podle měření, kdy mám moc dlouhé přechody, moc jamek jedním směrem nebo křížící se koridory."
+      ],
+      "zapamatuj": [
+        "Součet přechodů je nejrychlejší měřítko toho, jestli routing drží pohromadě.",
+        "Tři jamky za sebou stejným směrem udělají v odpoledním větru z části hřiště nejtěžší úsek kola.",
+        "Křížící se koridory jsou bezpečnostní problém, ne otázka vkusu.",
+        "Nejtěžší úkol kurzu přichází záměrně brzy: architekt musí myslet v celku od začátku."
+      ]
     },
     "approach1": {
       "eyebrow": "Šest jamek",
@@ -113,7 +157,8 @@
         "potok": "POTOK",
         "cesta": "PŘÍJEZDOVÁ CESTA"
       },
-      "foot": "list 5 · Approach"
+      "foot": "list 5 · Approach",
+      "planLabel": "Pozemek asi 60 hektarů — umísti šest greenů v pořadí, v jakém by se hrály"
     },
     "putt": {
       "eyebrow": "Putt",
@@ -127,7 +172,15 @@
       ],
       "poznamkaPlaceholder": "Piš sem…",
       "ulozeno": "Uloženo v tomto prohlížeči.",
-      "foot": "list 6 · Putt"
+      "foot": "list 6 · Putt",
+      "cile": [
+        "Zformuluju vlastními slovy, co v routingu rozhoduje a co je jen zvyk."
+      ],
+      "zapamatuj": [
+        "Rytmus kola je návrhové rozhodnutí: klidný začátek, vrchol kolem dvanácté až třinácté, silný závěr.",
+        "Rovnováha parů — čtyři par 3, čtyři par 5, deset par 4 — je zvyk, ne zákon.",
+        "Poznámky si nech, k routingu se v pozdějších lekcích vrátíš."
+      ]
     },
     "slovnicek": {
       "eyebrow": "Slovníček",
@@ -163,7 +216,19 @@
           "pojem": "Clubhouse loop",
           "popis": "Routing vedený tak, že se hřiště kolem poloviny kola vrátí zpátky ke klubovně (typicky po deváté jamce)."
         }
-      ]
+      ],
+      "cile": [
+        "Budu rozumět sedmi pojmům, které popisují hřiště jako celek."
+      ],
+      "zapamatuj": [
+        "Koridor, přechod a dvojgreen jsou slova, kterými se routing vůbec dá popsat.",
+        "Corridor crossing je bezpečnostní pojem, ne architektonický vkus.",
+        "Clubhouse loop je organizační rozhodnutí, které ovlivní každou jamku na hřišti."
+      ],
+      "vyzkousej": {
+        "otazka": "Popiš routing hřiště, které znáš, třemi pojmy z tohohle slovníčku.",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
     },
     "zkouska": {
       "eyebrow": "Zkouška",
@@ -268,7 +333,15 @@
         "spravneReseni": "Správně",
         "pata": "Podrobné vysvětlení je u každé otázky výše. Výsledek se ukládá do přehledu kurzu."
       },
-      "foot": "list 7 · Zkouška"
+      "foot": "list 7 · Zkouška",
+      "cile": [
+        "Ověřím si, jestli o hřišti umím uvažovat jako o celku, ne jako o osmnácti obrázcích."
+      ],
+      "zapamatuj": [
+        "Do celkového hodnocení kurzu se počítá jen první pokus.",
+        "U chybných odpovědí je napsáno, ke kterému plátu nebo úkolu se vrátit.",
+        "Tady kurz zatím končí — lekce 4 až 18 přibývají postupně."
+      ]
     },
     "temata": {
       "strategie": "strategie",
@@ -301,14 +374,30 @@
       "prehled": "Přehled lekce",
       "krok": "Krok {n} z 7",
       "dalsiLekce": "Pokračovat další lekcí",
-      "konecKurzu": "Zatím poslední hotová lekce"
+      "konecKurzu": "Zatím poslední hotová lekce — pokračuj sbírkou jamek",
+      "preskocit": "Přeskočit na obsah",
+      "sekceNavLabel": "Navigace mezi částmi lekce",
+      "jazykLabel": "Volba jazyka",
+      "sekceNazvy": [
+        "Nejdřív greeny",
+        "Dva routingy",
+        "České hřiště",
+        "Úkol",
+        "K zamyšlení",
+        "Slovníček",
+        "Zkouška"
+      ],
+      "klavesniNapoveda": "Plán se dá ovládat i klávesnicí: tabulátorem na něj přejdi, šipkami posouvej zaměřovač, Enterem potvrď."
     },
     "toc": {
       "kicker": "Přehled lekce",
       "sekceHead": "Co tě čeká",
       "pokracovat": "Pokračovat",
       "zacit": "Začít lekci",
-      "zpetNaPrehled": "← Zpět na přehled kurzu"
+      "zpetNaPrehled": "← Zpět na přehled kurzu",
+      "daleHead": "Kam dál",
+      "slovnicekPopis": "Všechny pojmy kurzu na jednom místě, abecedně a dvojjazyčně.",
+      "sbirkaPopis": "Deset rozebraných jamek z celého světa i z Česka, v jednotném formátu."
     }
   },
   "en": {
@@ -320,7 +409,7 @@
       "lede": "Bunkers are what you see in photos. Routing — the sequence and connection of all eighteen holes — is what decides whether a course is good. And it matters more than everything else combined.",
       "zpet": "← Back to the hub"
     },
-    "principLabel": "Principle to remember",
+    "principLabel": "The principle",
     "teeShot": {
       "eyebrow": "Tee shot",
       "over": "The plate —",
@@ -366,7 +455,17 @@
         "klubovna": "CLUBHOUSE",
         "bod": "GREEN SITE"
       },
-      "foot": "sheet 1 · Tee shot"
+      "foot": "sheet 1 · Tee shot",
+      "cile": [
+        "Describe the order in which an architect finds holes on a site.",
+        "Explain why routing decides a course's quality more than any individual bunker."
+      ],
+      "zapamatuj": [
+        "First find eighteen great green sites, only then route holes between them.",
+        "Routing is the one decision that can't be fixed later — a bunker can be rebuilt, a corridor can't.",
+        "The walk from a green to the next tee should ideally be under 50 metres.",
+        "Never four holes in a row in the same direction, and don't finish playing straight into the setting sun."
+      ]
     },
     "spolecneKarty": {
       "specsHead": "Three elements",
@@ -382,19 +481,53 @@
       "eyebrow": "Fairway",
       "over": "Two routings, two philosophies —",
       "title": "The whole, not a hole",
-      "lede": "St Andrews is a routing shaped by centuries — an out-and-back path down the same corridor, shared double greens, rules broken so long ago they became new rules. Cypress Point is the opposite: a routing sacrificed entirely to one short, dramatic stretch of coastline."
+      "lede": "St Andrews is a routing shaped by centuries — an out-and-back path down the same corridor, shared double greens, rules broken so long ago they became new rules. Cypress Point is the opposite: a routing sacrificed entirely to one short, dramatic stretch of coastline.",
+      "cile": [
+        "Compare two routings that came about in completely different ways and say what is good about each."
+      ],
+      "zapamatuj": [
+        "St Andrews: out and back through one corridor, with double greens — rules broken so long ago that they became new rules.",
+        "Cypress Point: a routing subordinated to one stretch of coast; the whole serves a few holes.",
+        "Routing rules are custom, not law — you may break them only when you know what you get in return."
+      ],
+      "vyzkousej": {
+        "otazka": "St Andrews breaks the routing rules and works. Write down one rule you think could not be broken — and why.",
+        "placeholder": "Write in your own words — nobody is marking this."
+      }
     },
     "ceskaJamka": {
       "eyebrow": "Fairway · Czechia",
       "over": "A whole course, not a hole —",
       "title": "Prague City Golf Zbraslav",
-      "lede": "What do you do with an eighteen-hole routing when the clubhouse moves more than two kilometres away? Zbraslav answered that question for real, not as an exercise."
+      "lede": "What do you do with an eighteen-hole routing when the clubhouse moves more than two kilometres away? Zbraslav answered that question for real, not as an exercise.",
+      "cile": [
+        "Analyse the routing of an entire Czech course, not just one hole."
+      ],
+      "zapamatuj": [
+        "Moving the clubhouse changes the routing of a whole course — hole order is not decoration.",
+        "A compromise with the land is not a failure. Pretending there wasn't one is.",
+        "Routing reads best on a course you know — walk it once without clubs."
+      ],
+      "vyzkousej": {
+        "otazka": "Walk a course you know in your head. Which walk from a green to the next tee is the longest? What does that spoil?",
+        "placeholder": "Write in your own words — nobody is marking this."
+      }
     },
     "approachNadpis": {
       "eyebrow": "Approach",
       "over": "The work plate —",
       "title": "Six Holes",
-      "lede": "This is the hardest task in the whole course — and it's deliberately placed early. We want you thinking about the whole from lesson one, not hole by hole."
+      "lede": "This is the hardest task in the whole course — and it's deliberately placed early. We want you thinking about the whole from lesson one, not hole by hole.",
+      "cile": [
+        "Route six holes on a real site and have the result measured for me.",
+        "Read from the measurements when my transitions are too long, too many holes run one way, or corridors cross."
+      ],
+      "zapamatuj": [
+        "The total length of the transitions is the fastest measure of whether a routing holds together.",
+        "Three holes in a row in the same direction turn part of the course into the hardest stretch of the round in an afternoon wind.",
+        "Crossing corridors are a safety problem, not a matter of taste.",
+        "The hardest task of the course comes deliberately early: an architect has to think in wholes from the start."
+      ]
     },
     "approach1": {
       "eyebrow": "Six Holes",
@@ -425,7 +558,8 @@
         "potok": "STREAM",
         "cesta": "ACCESS ROAD"
       },
-      "foot": "sheet 5 · Approach"
+      "foot": "sheet 5 · Approach",
+      "planLabel": "A site of about 60 hectares — place six greens in the order they would be played"
     },
     "putt": {
       "eyebrow": "Putt",
@@ -439,7 +573,15 @@
       ],
       "poznamkaPlaceholder": "Write here…",
       "ulozeno": "Saved in this browser.",
-      "foot": "sheet 6 · Putt"
+      "foot": "sheet 6 · Putt",
+      "cile": [
+        "Put into my own words what really decides a routing and what is merely custom."
+      ],
+      "zapamatuj": [
+        "The rhythm of a round is a design decision: a calm start, a peak around the 12th or 13th, a strong finish.",
+        "The balance of pars — four par 3s, four par 5s, ten par 4s — is custom, not law.",
+        "Keep your notes; you will return to routing in later lessons."
+      ]
     },
     "slovnicek": {
       "eyebrow": "Glossary",
@@ -475,7 +617,19 @@
           "pojem": "Clubhouse loop",
           "popis": "A routing designed so the course returns to the clubhouse around the halfway point (typically after the ninth hole)."
         }
-      ]
+      ],
+      "cile": [
+        "Understand the seven terms that describe a course as a whole."
+      ],
+      "zapamatuj": [
+        "Corridor, transition and double green are the words that make it possible to describe a routing at all.",
+        "Corridor crossing is a safety term, not an architectural taste.",
+        "The clubhouse loop is an organisational decision that affects every hole on the course."
+      ],
+      "vyzkousej": {
+        "otazka": "Describe the routing of a course you know using three terms from this glossary.",
+        "placeholder": "Write in your own words — nobody is marking this."
+      }
     },
     "zkouska": {
       "eyebrow": "Exam",
@@ -580,7 +734,15 @@
         "spravneReseni": "Correct answer",
         "pata": "Detailed explanations are above with each question. The result is saved to the course overview."
       },
-      "foot": "sheet 7 · Exam"
+      "foot": "sheet 7 · Exam",
+      "cile": [
+        "Check whether I can think about a course as a whole rather than as eighteen pictures."
+      ],
+      "zapamatuj": [
+        "Only the first attempt counts towards your overall course grade.",
+        "Wrong answers tell you which plate or exercise to go back to.",
+        "This is where the course currently ends — lessons 4 to 18 are being added step by step."
+      ]
     },
     "temata": {
       "strategie": "strategy",
@@ -613,14 +775,30 @@
       "prehled": "Lesson overview",
       "krok": "Step {n} of 7",
       "dalsiLekce": "Continue to the next lesson",
-      "konecKurzu": "Last finished lesson for now"
+      "konecKurzu": "The last finished lesson for now — continue with the hole collection",
+      "preskocit": "Skip to content",
+      "sekceNavLabel": "Navigation between lesson parts",
+      "jazykLabel": "Language",
+      "sekceNazvy": [
+        "Greens first",
+        "Two routings",
+        "Czech course",
+        "Exercise",
+        "To think about",
+        "Glossary",
+        "Exam"
+      ],
+      "klavesniNapoveda": "The plan works from the keyboard too: tab to it, move the crosshair with the arrow keys, confirm with Enter."
     },
     "toc": {
       "kicker": "Lesson overview",
       "sekceHead": "What's ahead",
       "pokracovat": "Continue",
       "zacit": "Start the lesson",
-      "zpetNaPrehled": "← Back to the course overview"
+      "zpetNaPrehled": "← Back to the course overview",
+      "daleHead": "Where next",
+      "slovnicekPopis": "Every term in the course in one place, alphabetical and bilingual.",
+      "sbirkaPopis": "Ten holes analysed, from around the world and from Czechia, in one format."
     }
   }
 }

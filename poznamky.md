@@ -2,6 +2,85 @@
 
 Průběžný soubor podle části 15 zadání. Kroky 1–7 hotové.
 
+## Redesign 8/2026 — z webu učebnice
+
+Zadání: „proměň stávající web v mimořádně srozumitelnou, vizuálně
+kultivovanou a pedagogicky silnou digitální učebnici“. Audit stavu před
+zásahem je v `AUDIT.md`; tady je jen to, co jsem musel rozhodnout, co se
+nepovedlo ověřit a kde vidím slabá místa.
+
+### Rozhodnutí, která padla s objednatelem
+
+- **Patkové písmo zůstává.** Nové zadání žádalo „neutrální sans-serif pro
+  navigaci a delší text“, původní zadání (`zadani.md`, část 5) bezpatkové
+  písmo výslovně zakazuje. Uživatel rozhodl pro patkové — Fraunces
+  a Literata zůstávají všude, včetně navigace a tlačítek.
+- **Rozsah**: nutné (N1–N6) i doporučené (D1–D7) změny z auditu.
+
+### Co se změnilo v kódu
+
+**`js/platy.js` — přepsané `vykresliJamku()`.** Původní verze kreslila jen
+podklad, hazardy, bunkry, green a odpaliště. Nekreslila fairway, linii hry
+ani popisky, přestože `tvary.bunkry[].label` byly v datech od začátku.
+Nová verze kreslí fairway jako stuhu podél kvadratické Bézierovy křivky
+(skutečný dogleg), linii hry po ose stuhy, dopadovou zónu, popisky
+s vodicí linkou, vlnky na vodě — a bunkry až NAD greenem, aby greenside
+bunkr nezmizel pod ním (past, kterou tenhle soubor popisuje od kroku 4).
+
+**Nová data v kartách jamek.** `tvary.fairway` (`ohyb` v metrech,
+`sirkaTee`, `sirkaGreen`, `zacatek`, `seed`), `tvary.dopadovaZona`
+(`od`, `do`), `zkratka` u bunkrů a hazardů (krátké jméno do kresby, dlouhý
+`label` zůstává a používá se pro `<desc>` pro čtečky), `naCoSeDivat`
+a `lekce` u karty, `foto.sirka`/`foto.vyska`.
+
+**`js/ucebnice.js` (nový).** Rám kapitoly, drobečky, ukazatel kroků,
+„pokračuj kde jsi skončil“, kontextová nápověda ke slovníčku a ovládání
+pracovního plátu klávesnicí.
+
+**Nové stránky.** `slovnicek/` a `jamky/`.
+
+### Co jsem NEMOHL ověřit / kde jsem si dovolil odhad
+
+1. **Hodnoty `fairway.ohyb`** jsou zvolené heuristicky podle charakteru
+   jamky popsaného v pramenech, ne podle zaměření. Je to schéma, ne
+   půdorys — přiznává to `tvary.poznamka` u každé karty i text pod
+   kresbou. Pokud se někdy podaří získat přesnější podklad, mění se jedno
+   číslo v JSONu, ne kód.
+2. **`naCoSeDivat` a `lekce`** jsou moje formulace odvozené z už ověřených
+   `prvky` a `otazka` téže karty. Netvrdí žádný nový fakt o jamce; kdyby
+   ti přesto některá věta zněla jako tvrzení navíc, škrtni ji — nic se
+   nerozbije.
+3. **Krátké názvy bunkrů (`zkratka`)** jsou u St Andrews historické
+   (SHELL, COCKLE, STRATH) a u Sand Hills odborné (BLOWOUT). Jinde jsou
+   popisné podle polohy (BUNKR VLEVO, FAIRWAY BUNKR) — žádné jméno jsem
+   si nevymyslel.
+4. **Chybná délka u Pebble Beach 18.** Karta ukazovala `delky[0]`, což je
+   315 m z roku 1919 (tehdy par 4), ne dnešních 497 m. Opraveno:
+   `kartaJamky()` bere poslední záznam a starší ukazuje jako poznámku
+   „Dřívější délky“. Stálo by za to projít i `knihovna-jamek.md`, jestli
+   tam stejná chyba není.
+
+### Slabá místa, o kterých vím
+
+- **Obrázkové otázky ve zkoušce nejsou přístupné bez zraku.** Miniatury
+  jsou teď `aria-hidden` a tlačítko má jméno („Jamka A“), takže čtečka
+  aspoň nehlásí bezejmenný obrázek. Ale principiálně: otázka „která z těch
+  tří jamek je strategická?“ se bez vidění obrázku zodpovědět nedá. Zadání
+  přitom obrázkové otázky vyžaduje (nejméně dvě v každé lekci). Řešením by
+  byla textová varianta téže otázky, ne popisek obrázku — to je ale
+  rozhodnutí o obsahu zkoušky, ne o značkování.
+- **Kontextová nápověda hledá tvary slov seznamem, ne morfologicky.**
+  U češtiny to znamená, že některý pád pojmu nemusí být zachycen. Rozšíření
+  je otázka doplnění `hledat` v `data/preklady/slovnik-pojmu.json`.
+- **`dev/` zůstává na produkci.** Neodkazované, ale veřejné. Odstranění
+  bylo v auditu jako volitelné a neprovedl jsem ho, aby zůstal náhled
+  kreslicí knihovny po ruce.
+- **Fotky jsou pořád JPEG bez `srcset`.** Rozměry mají (žádné poskočení
+  sazby), ale úspora ~60 % dat převodem do webp čeká.
+- **Sekce „Zapamatuj si“ existuje na všech 21 stránkách**, ale u sekcí
+  „Slovníček“ a „K zamyšlení“ jsou její body spíš organizační než odborné.
+  Až přibudou lekce 4–18, stojí za úvahu, jestli tam patří vůbec.
+
 ## Krok 7 — Úpravy po nasazení: víc stránek, úvodní stránka, nová písma,
 fotky, opravy schémat jamek
 

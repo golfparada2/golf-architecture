@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ROUTING — sbírka jamek</title>
+<meta name="description" content="Deset rozebraných golfových jamek v jednotném formátu: otázka jamky, plán, tři prvky a lekce k přenesení do vlastního návrhu.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F1E0'/%3E%3Ccircle cx='16' cy='14' r='9' fill='%23A9B983' stroke='%231E1B15' stroke-width='1.4'/%3E%3Ccircle cx='16' cy='14' r='1.6' fill='%231E1B15'/%3E%3Cpath d='M16 14 L16 5' stroke='%231E1B15' stroke-width='1.3'/%3E%3Cpath d='M16 5 L23 7.5 L16 10 Z' fill='%23B0452C' stroke='%231E1B15' stroke-width='.8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/styl.css">
+</head>
+<body>
+
+<a class="preskocit" href="#obsah">Přeskočit na obsah</a>
+
+<header class="hlavicka">
+<div class="topbar">
+  <div class="hr"><span data-t="meta.kicker"></span></div>
+  <div class="lang" role="group" aria-label="Language">
+    <button data-l="cs" aria-current="true">ČES</button><i>/</i><button data-l="en">ENG</button>
+  </div>
+</div>
+<nav class="drobky" id="drobky"></nav>
+</header>
+
+<main id="obsah">
+<p class="eyebrow" data-t="meta.kicker"></p>
+<h1><em data-t="meta.over"></em><span data-t="meta.title"></span></h1>
+<div class="dashline"></div>
+<p class="lede" data-t="meta.lede"></p>
+<p class="src" data-t="meta.poznamka"></p>
+
+<div class="hr" style="margin-top:24px"><span data-t="meta.seznamHead"></span></div>
+<nav class="sbirka" id="seznam" data-t="meta.naSkok" data-t-attr="aria-label"></nav>
+
+<div class="hr" style="margin-top:34px"><span data-t="meta.kdeHead"></span></div>
+<div id="karty"></div>
+</main>
+
+<footer class="foot"><span>ROUTING · SBÍRKA JAMEK</span><a class="zpet" style="margin-top:0" href="../prehled/index.html" data-t="meta.zpet"></a></footer>
+
+<script type="module">
+import { vytvorJazyk, nactiSlovnik } from '../js/jazyk.js';
+import { kartaJamky } from '../js/spolecne.js';
+import { nactiUI, u } from '../js/ucebnice.js';
+
+const $ = (id) => document.getElementById(id);
+
+/* Pořadí je výukové, ne abecední — jde od filozofie jamky (lekce 1) přes
+   práci s pozemkem (lekce 2) k routingu celku (lekce 3). */
+const ID = [
+  'tpc-sawgrass-17', 'pebble-beach-18', 'riviera-10', 'karlstejn-15',
+  'sand-hills-1', 'ballybunion-old-11', 'dobrouc-3',
+  'st-andrews-old-7', 'cypress-point-16', 'zbraslav-1',
+];
+
+const [slovnik, ...karty] = await Promise.all([
+  nactiSlovnik('../data/preklady/jamky.json'),
+  ...ID.map((id) => nactiSlovnik(`../data/jamky/${id}.json`)),
+]);
+await nactiUI('../');
+
+const jazyk = vytvorJazyk(slovnik, {
+  titul: (lang) => lang === 'cs' ? 'ROUTING — sbírka jamek' : 'ROUTING — hole collection',
+});
+
+function renderDrobky() {
+  const el = $('drobky');
+  el.setAttribute('aria-label', u(jazyk.lang, 'drobkyLabel'));
+  el.innerHTML = `<ol><li><a href="../prehled/index.html">${u(jazyk.lang, 'prehled')}</a></li>`
+    + `<li><span aria-current="page">${u(jazyk.lang, 'sbirkaJamek')}</span></li></ol>`;
+}
+
+function renderSeznam() {
+  const el = $('seznam');
+  el.innerHTML = '';
+  karty.forEach((k) => {
+    const a = document.createElement('a');
+    a.className = 'sbirkaPolozka';
+    a.href = '#' + k.id;
+    const nazev = k.nazev && k.nazev[jazyk.lang] ? ` — ${k.nazev[jazyk.lang]}` : '';
+    a.innerHTML = `<span class="zeme">${k.zeme}</span>`
+      + `<span class="jm"><b>${k.hriste}${nazev}</b><span>${k.otazka[jazyk.lang]}</span></span>`
+      + `<span class="par">#${k.jamka} · par ${k.par}</span>`;
+    el.appendChild(a);
+  });
+}
+
+function renderKarty() {
+  const c = $('karty');
+  c.innerHTML = '';
+  karty.forEach((k) => {
+    const kotva = document.createElement('div');
+    kotva.id = k.id;
+    kotva.style.scrollMarginTop = '18px';
+    c.appendChild(kotva);
+    kartaJamky(kotva, k, slovnik, jazyk.lang, { zaklad: '../' });
+  });
+}
+
+jazyk.on(() => { renderDrobky(); renderSeznam(); renderKarty(); });
+</script>
+</body>
+</html>

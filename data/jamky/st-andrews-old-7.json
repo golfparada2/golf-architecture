@@ -59,7 +59,7 @@
     }
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště jamky 7 (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Green je záměrně široký, aby naznačil dvojgreen se dvěma praporky. Kreslí se přes js/platy.js blob(). Oprava (ověřeno webem, 2026): původní verze měla jen dva neoznačené bunkry těsně u greenu a chyběl slavný fairwayový Shell Bunker. Doplněn Shell Bunker jako fairwayová hrozba ~310 yd (283 m) od odpaliště, tedy zřetelně před greenem (podle The Open course guide a LINKS Magazine popsán jako 'dominantní prvek jamky' se stěnou drnu vysokou přes dva metry). Oba greenové bunkry přejmenovány na skutečné historické názvy — Cockle Bunker (strana jamky 7) a Strath Bunker (strana jamky 11) — a přiblíženy k sobě, aby odpovídaly popisu z Alister MacKenzie Institute: nájezd na green musí buď přeletět Cockle bunker, nebo proletět 'velmi úzkou mezerou' mezi ním a bunkerem Strath.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště jamky 7 (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Green je záměrně široký, aby naznačil dvojgreen se dvěma praporky. Kreslí se přes js/platy.js blob(). Oprava (ověřeno webem, 2026): původní verze měla jen dva neoznačené bunkry těsně u greenu a chyběl slavný fairwayový Shell Bunker. Doplněn Shell Bunker jako fairwayová hrozba ~310 yd (283 m) od odpaliště, tedy zřetelně před greenem (podle The Open course guide a LINKS Magazine popsán jako 'dominantní prvek jamky' se stěnou drnu vysokou přes dva metry). Oba greenové bunkry přejmenovány na skutečné historické názvy — Cockle Bunker (strana jamky 7) a Strath Bunker (strana jamky 11) — a přiblíženy k sobě, aby odpovídaly popisu z Alister MacKenzie Institute: nájezd na green musí buď přeletět Cockle bunker, nebo proletět 'velmi úzkou mezerou' mezi ním a bunkerem Strath. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením.",
     "green": {
       "x": 0,
       "y": 330,
@@ -81,6 +81,10 @@
         "label": {
           "cs": "Shell Bunker — obří fairwayový bunker asi 310 yardů od odpaliště, dominantní hrozba jamky (pozor s dřevem z odpaliště)",
           "en": "Shell Bunker — a huge fairway bunker about 310 yards from the tee, the hole's dominant hazard (a warning against too much club off the tee)"
+        },
+        "zkratka": {
+          "cs": "SHELL",
+          "en": "SHELL"
         }
       },
       {
@@ -94,6 +98,10 @@
         "label": {
           "cs": "Cockle Bunker — hlídá nájezd na green ze strany jamky 7",
           "en": "Cockle Bunker — guards the approach to the green from the 7th-hole side"
+        },
+        "zkratka": {
+          "cs": "COCKLE",
+          "en": "COCKLE"
         }
       },
       {
@@ -107,10 +115,25 @@
         "label": {
           "cs": "Strath Bunker — hlídá green ze strany jamky 11; mezi ním a Cockle bunkerem je jen úzká mezera pro přesný nájezd",
           "en": "Strath Bunker — guards the green from the 11th-hole side; only a narrow neck separates it from Cockle Bunker for a precise approach"
+        },
+        "zkratka": {
+          "cs": "STRATH",
+          "en": "STRATH"
         }
       }
     ],
-    "hazardy": []
+    "hazardy": [],
+    "fairway": {
+      "ohyb": 18,
+      "sirkaTee": 46,
+      "sirkaGreen": 40,
+      "zacatek": 20,
+      "seed": 4106
+    },
+    "dopadovaZona": {
+      "od": 230,
+      "do": 275
+    }
   },
   "prvky": [
     {
@@ -195,6 +218,16 @@
     "alt": {
       "cs": "7. jamka „High“, Old Course St Andrews",
       "en": "The 7th hole, \"High\", Old Course at St Andrews"
-    }
+    },
+    "sirka": 507,
+    "vyska": 269
+  },
+  "naCoSeDivat": {
+    "cs": "Podívej se na velikost greenu a pak na úzkou mezeru mezi bunkery Cockle a Strath. Green je obrovský, ale vejít se do něj dá jen jedním koridorem.",
+    "en": "Look at the size of the green, then at the narrow gap between the Cockle and Strath bunkers. The green is huge, but there is only one way in."
+  },
+  "lekce": {
+    "cs": "Velký green ještě neznamená snadný green. Rozhoduje šířka vstupu do něj, ne jeho plocha.",
+    "en": "A big green is not an easy green. What matters is the width of the entrance, not the area."
   }
 }

@@ -8,7 +8,7 @@
       "lede": "Architekt nezačíná kreslením. Začíná tím, že po pozemku několik dní chodí — a hledá pět konkrétních věcí, dřív než nakreslí jedinou jamku.",
       "zpet": "← Zpět na rozcestník"
     },
-    "principLabel": "Princip k zapamatování",
+    "principLabel": "Princip",
     "teeShot": {
       "eyebrow": "Tee shot",
       "over": "Plát —",
@@ -60,7 +60,19 @@
         "skala": "SKÁLA",
         "povrch": "POVRCH"
       },
-      "foot": "list 1 · Tee shot"
+      "foot": "list 1 · Tee shot",
+      "cile": [
+        "Vyjmenuju pět věcí, které architekt na pozemku hledá dřív, než nakreslí čáru.",
+        "Přečtu z vrstevnic, kde je terén použitelný a kde je moc plochý nebo moc strmý.",
+        "Řeknu, proč se green nikdy nestaví do nejnižšího bodu."
+      ],
+      "zapamatuj": [
+        "Dobrý pozemek se nekreslí. Čte se — a teprve pak se na něj kreslí.",
+        "Nejcennější je střední převýšení: plochý pozemek je nudný, strmý nehratelný a drahý.",
+        "Odtok vody je nejpodceňovanější věc na hřišti. Green nikdy do nejnižšího bodu.",
+        "Green celý den ve stínu nikdy nebude fungovat — tráva potřebuje ranní slunce, aby oschla rosa.",
+        "Podloží rozhodne o rozpočtu: písek je drenáž zdarma, jíl noční můra, skála 40 cm pod povrchem znamená, že tam nikdy nevykopeš rybník."
+      ]
     },
     "spolecneKarty": {
       "specsHead": "Tři prvky",
@@ -76,19 +88,53 @@
       "eyebrow": "Fairway",
       "over": "Pozemek, ne rýsovací prkno —",
       "title": "Dvě jamky nalezené, ne postavené",
-      "lede": "Sand Hills v Nebrasce a Ballybunion na irském pobřeží mají společné jedno: architekt na nich přemístil minimum zeminy. Pozemek dělal většinu práce sám."
+      "lede": "Sand Hills v Nebrasce a Ballybunion na irském pobřeží mají společné jedno: architekt na nich přemístil minimum zeminy. Pozemek dělal většinu práce sám.",
+      "cile": [
+        "Ukážu na dvou hřištích, co znamená „jamka nalezená, ne postavená“.",
+        "Poznám na plánu, kdy tvar jamky diktoval terén a kdy architekt."
+      ],
+      "zapamatuj": [
+        "Sand Hills: bunkry vyfoukal vítr, architekt je jen spojil fairwayí.",
+        "Ballybunion: duny určily koridor a jamka se zužuje přesně tam, kde na hráče roste tlak.",
+        "Čím míň shapingu, tím víc pozemek mluví sám za sebe — a tím levnější je stavba."
+      ],
+      "vyzkousej": {
+        "otazka": "Kdybys dostal/a pozemek jako Sand Hills, čím bys začal/a — a co bys naopak nechal/a úplně být?",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
     },
     "ceskaJamka": {
       "eyebrow": "Fairway · Česko",
       "over": "Kde terén rozhodl —",
       "title": "Golf Dobrouč",
-      "lede": "Úzké údolí a potok, které architekt nemohl ignorovat, i kdyby chtěl. Osa jamky jde tam, kam ji terén pustí."
+      "lede": "Úzké údolí a potok, které architekt nemohl ignorovat, i kdyby chtěl. Osa jamky jde tam, kam ji terén pustí.",
+      "cile": [
+        "Najdu na české jamce stopu po tom, jak terén rozhodl dřív než architekt."
+      ],
+      "zapamatuj": [
+        "Potok v údolí určil osu jamky dřív, než kdokoli vzal tužku.",
+        "Bunkr může být zároveň stavební prvek — opora svahu, ne jen past.",
+        "U českých hřišť piš poctivě, co je záměr a co kompromis vůči pozemku a rozpočtu."
+      ],
+      "vyzkousej": {
+        "otazka": "Najdi na hřišti, které znáš, jednu jamku, kterou zjevně určil terén. Napiš konkrétně co: svah, potok, skála, stín?",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
     },
     "approachNadpis": {
       "eyebrow": "Approach",
       "over": "Dva úkoly —",
       "title": "Jeden na plátu, jeden venku",
-      "lede": "Nejdřív si to zkusíš na kresbě s vrstevnicemi a potokem. Pak si vezmeš telefon a jdeš to samé udělat doopravdy — na hřišti, v parku, na louce."
+      "lede": "Nejdřív si to zkusíš na kresbě s vrstevnicemi a potokem. Pak si vezmeš telefon a jdeš to samé udělat doopravdy — na hřišti, v parku, na louce.",
+      "cile": [
+        "Najdu na pozemku tři místa, kam green nepatří, a každé zdůvodním jednou větou.",
+        "Zopakuju první den architekta doopravdy: půjdu ven a popíšu vodu, stín a vítr na konkrétním místě."
+      ],
+      "zapamatuj": [
+        "Nejnižší bod, trvalý stín a záplavová zóna jsou tři nejčastější důvody, proč green nesmí být zrovna tady.",
+        "Zákaz je v návrhu často cennější než nápad — zúží pole, ve kterém se hledá.",
+        "Terénní úkol není bonus. Bez chození po pozemku je čtení terénu jen teorie."
+      ]
     },
     "approach1": {
       "eyebrow": "Úkol I · na plátu",
@@ -115,7 +161,8 @@
           "popis": "Sem slunce nedosáhne skoro nikdy. Tráva na greenu bez světla časem uhyne, ať ji zaléváš a hnojíš sebepoctivěji."
         }
       },
-      "foot": "list 4 · Approach I"
+      "foot": "list 4 · Approach I",
+      "planLabel": "Pozemek s vrstevnicemi a potokem — hledej tři místa, kam green nepatří"
     },
     "approach2": {
       "eyebrow": "Úkol II · v terénu",
@@ -145,7 +192,15 @@
       ],
       "poznamkaPlaceholder": "Piš sem…",
       "ulozeno": "Uloženo v tomto prohlížeči.",
-      "foot": "list 6 · Putt"
+      "foot": "list 6 · Putt",
+      "cile": [
+        "Převedu pět vrstev pozemku do vlastních slov na místě, které znám."
+      ],
+      "zapamatuj": [
+        "Vrstvy se skládají zároveň, ne po sobě — voda, slunce, vítr a podloží mluví najednou.",
+        "Když ti u vlastního hřiště některá vrstva chybí, je to nejrychlejší způsob, jak si všimnout, čeho sis nevšímal/a.",
+        "Poznámky si nech — vrátíš se k nim v lekci o routingu."
+      ]
     },
     "slovnicek": {
       "eyebrow": "Slovníček",
@@ -185,7 +240,19 @@
           "pojem": "Links",
           "popis": "Přímořský typ hřiště na písčitých dunách s minimem stromů — původní prostředí, kde se golf zrodil."
         }
-      ]
+      ],
+      "cile": [
+        "Budu rozumět osmi pojmům, kterými se popisuje terén a jeho čtení."
+      ],
+      "zapamatuj": [
+        "Vrstevnice a spádnice jsou dva pohledy na tentýž terén: kde je stejně vysoko a kudy poteče voda.",
+        "Drenáž se řeší dřív než tvar. Spravovat ji dodatečně je nejdražší chyba na hřišti.",
+        "Links není styl kresby ani značka kvality — je to typ pozemku."
+      ],
+      "vyzkousej": {
+        "otazka": "Vysvětli vlastními slovy rozdíl mezi vrstevnicí a spádnicí, jako bys to říkal/a kamarádovi na hřišti.",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
     },
     "zkouska": {
       "eyebrow": "Zkouška",
@@ -290,7 +357,15 @@
         "spravneReseni": "Správně",
         "pata": "Podrobné vysvětlení je u každé otázky výše. Výsledek se ukládá do přehledu kurzu."
       },
-      "foot": "list 7 · Zkouška"
+      "foot": "list 7 · Zkouška",
+      "cile": [
+        "Ověřím si, jestli terén přečtu i na pozemku, který vidím poprvé."
+      ],
+      "zapamatuj": [
+        "Do celkového hodnocení kurzu se počítá jen první pokus.",
+        "U chybných odpovědí je napsáno, na kterou vrstvu plátu se vrátit.",
+        "Výsledky žijí jen v tvém prohlížeči — stáhni si je, než přejdeš na jiné zařízení."
+      ]
     },
     "temata": {
       "strategie": "strategie",
@@ -313,14 +388,30 @@
       "prehled": "Přehled lekce",
       "krok": "Krok {n} z 7",
       "dalsiLekce": "Pokračovat další lekcí",
-      "konecKurzu": "Zatím poslední hotová lekce"
+      "konecKurzu": "Zatím poslední hotová lekce — pokračuj sbírkou jamek",
+      "preskocit": "Přeskočit na obsah",
+      "sekceNavLabel": "Navigace mezi částmi lekce",
+      "jazykLabel": "Volba jazyka",
+      "sekceNazvy": [
+        "Čtení pozemku",
+        "Nalezené jamky",
+        "Česká jamka",
+        "Úkoly",
+        "K zamyšlení",
+        "Slovníček",
+        "Zkouška"
+      ],
+      "klavesniNapoveda": "Plán se dá ovládat i klávesnicí: tabulátorem na něj přejdi, šipkami posouvej zaměřovač, Enterem potvrď."
     },
     "toc": {
       "kicker": "Přehled lekce",
       "sekceHead": "Co tě čeká",
       "pokracovat": "Pokračovat",
       "zacit": "Začít lekci",
-      "zpetNaPrehled": "← Zpět na přehled kurzu"
+      "zpetNaPrehled": "← Zpět na přehled kurzu",
+      "daleHead": "Kam dál",
+      "slovnicekPopis": "Všechny pojmy kurzu na jednom místě, abecedně a dvojjazyčně.",
+      "sbirkaPopis": "Deset rozebraných jamek z celého světa i z Česka, v jednotném formátu."
     }
   },
   "en": {
@@ -332,7 +423,7 @@
       "lede": "An architect doesn't start by drawing. They start by walking the land for days — looking for five specific things before a single hole gets sketched.",
       "zpet": "← Back to the hub"
     },
-    "principLabel": "Principle to remember",
+    "principLabel": "The principle",
     "teeShot": {
       "eyebrow": "Tee shot",
       "over": "The plate —",
@@ -384,7 +475,19 @@
         "skala": "ROCK",
         "povrch": "SURFACE"
       },
-      "foot": "sheet 1 · Tee shot"
+      "foot": "sheet 1 · Tee shot",
+      "cile": [
+        "Name the five things an architect looks for on a site before drawing a single line.",
+        "Read from contour lines where the ground is usable and where it is too flat or too steep.",
+        "Say why a green is never built at the lowest point."
+      ],
+      "zapamatuj": [
+        "A good site isn't drawn. It's read — and only then drawn on.",
+        "Moderate elevation change is the most valuable: flat land is dull, steep land unplayable and expensive.",
+        "Drainage is the most underrated thing on a course. Never put a green at the lowest point.",
+        "A green in shade all day will never work — turf needs morning sun to dry the dew.",
+        "The subsoil decides the budget: sand is free drainage, clay a nightmare, and rock 40 cm down means you will never dig a pond there."
+      ]
     },
     "spolecneKarty": {
       "specsHead": "Three elements",
@@ -400,19 +503,53 @@
       "eyebrow": "Fairway",
       "over": "Land, not a drafting table —",
       "title": "Two holes found, not built",
-      "lede": "Sand Hills in Nebraska and Ballybunion on the Irish coast share one thing: the architect moved almost no earth on either. The land did most of the work itself."
+      "lede": "Sand Hills in Nebraska and Ballybunion on the Irish coast share one thing: the architect moved almost no earth on either. The land did most of the work itself.",
+      "cile": [
+        "Show on two courses what \"a hole found, not built\" means.",
+        "Tell from a plan when the land dictated a hole's shape and when the architect did."
+      ],
+      "zapamatuj": [
+        "Sand Hills: the wind dug the bunkers; the architect only linked them with a fairway.",
+        "Ballybunion: the dunes set the corridor, and the hole narrows exactly where the pressure rises.",
+        "The less shaping, the more the land speaks for itself — and the cheaper the build."
+      ],
+      "vyzkousej": {
+        "otazka": "If you were handed a site like Sand Hills, what would you start with — and what would you leave completely alone?",
+        "placeholder": "Write in your own words — nobody is marking this."
+      }
     },
     "ceskaJamka": {
       "eyebrow": "Fairway · Czechia",
       "over": "Where the terrain decided —",
       "title": "Golf Dobrouč",
-      "lede": "A narrow valley and a stream the architect couldn't ignore even if they wanted to. The hole's axis goes wherever the land lets it."
+      "lede": "A narrow valley and a stream the architect couldn't ignore even if they wanted to. The hole's axis goes wherever the land lets it.",
+      "cile": [
+        "Find, on a Czech hole, the mark of the land deciding before the architect did."
+      ],
+      "zapamatuj": [
+        "The creek in the valley set the hole's axis before anyone picked up a pencil.",
+        "A bunker can also be a piece of construction — a buttress for a slope, not just a trap.",
+        "Write honestly about Czech courses: what was intended and what was a compromise with the land and the budget."
+      ],
+      "vyzkousej": {
+        "otazka": "Find one hole on a course you know that the land clearly dictated. Write down exactly what did it: a slope, a creek, rock, shade?",
+        "placeholder": "Write in your own words — nobody is marking this."
+      }
     },
     "approachNadpis": {
       "eyebrow": "Approach",
       "over": "Two tasks —",
       "title": "One on the plate, one outside",
-      "lede": "First you try it on a drawing with contours and a stream. Then you take your phone and go do the same thing for real — on a course, in a park, in a field."
+      "lede": "First you try it on a drawing with contours and a stream. Then you take your phone and go do the same thing for real — on a course, in a park, in a field.",
+      "cile": [
+        "Find three places on a site where a green does not belong and justify each in one sentence.",
+        "Repeat an architect's first day for real: go outside and describe water, shade and wind on an actual spot."
+      ],
+      "zapamatuj": [
+        "The lowest point, permanent shade and a flood zone are the three commonest reasons a green must not go here.",
+        "A prohibition is often worth more than an idea — it narrows the field you are searching.",
+        "The outdoor task is not a bonus. Without walking a site, reading terrain stays theory."
+      ]
     },
     "approach1": {
       "eyebrow": "Task I · on the plate",
@@ -439,7 +576,8 @@
           "popis": "Sunlight almost never reaches here. Turf on a green with no light eventually dies, no matter how carefully you water and feed it."
         }
       },
-      "foot": "sheet 4 · Approach I"
+      "foot": "sheet 4 · Approach I",
+      "planLabel": "A site with contours and a creek — find three places where a green does not belong"
     },
     "approach2": {
       "eyebrow": "Task II · in the field",
@@ -469,7 +607,15 @@
       ],
       "poznamkaPlaceholder": "Write here…",
       "ulozeno": "Saved in this browser.",
-      "foot": "sheet 6 · Putt"
+      "foot": "sheet 6 · Putt",
+      "cile": [
+        "Translate the five layers of a site into my own words, on ground I know."
+      ],
+      "zapamatuj": [
+        "The layers stack at the same time, not one after another — water, sun, wind and subsoil all speak at once.",
+        "If one layer is missing when you look at your own course, that's the fastest way to notice what you had been ignoring.",
+        "Keep your notes — you will come back to them in the routing lesson."
+      ]
     },
     "slovnicek": {
       "eyebrow": "Glossary",
@@ -509,7 +655,19 @@
           "pojem": "Links",
           "popis": "A seaside course type on sandy dunes with almost no trees — the original setting where golf was born."
         }
-      ]
+      ],
+      "cile": [
+        "Understand the eight terms used to describe terrain and how to read it."
+      ],
+      "zapamatuj": [
+        "Contour lines and fall lines are two views of the same ground: where it is level and where water will run.",
+        "Drainage is settled before shape. Fixing it afterwards is the most expensive mistake on a course.",
+        "Links is not a drawing style or a quality label — it is a type of land."
+      ],
+      "vyzkousej": {
+        "otazka": "Explain in your own words the difference between a contour line and a fall line, as if you were telling a friend on the course.",
+        "placeholder": "Write in your own words — nobody is marking this."
+      }
     },
     "zkouska": {
       "eyebrow": "Exam",
@@ -614,7 +772,15 @@
         "spravneReseni": "Correct answer",
         "pata": "Detailed explanations are above with each question. The result is saved to the course overview."
       },
-      "foot": "sheet 7 · Exam"
+      "foot": "sheet 7 · Exam",
+      "cile": [
+        "Check whether I can read a site I am seeing for the first time."
+      ],
+      "zapamatuj": [
+        "Only the first attempt counts towards your overall course grade.",
+        "Wrong answers tell you which layer of the plate to go back to.",
+        "Results live only in this browser — download them before you switch device."
+      ]
     },
     "temata": {
       "strategie": "strategy",
@@ -637,14 +803,30 @@
       "prehled": "Lesson overview",
       "krok": "Step {n} of 7",
       "dalsiLekce": "Continue to the next lesson",
-      "konecKurzu": "Last finished lesson for now"
+      "konecKurzu": "The last finished lesson for now — continue with the hole collection",
+      "preskocit": "Skip to content",
+      "sekceNavLabel": "Navigation between lesson parts",
+      "jazykLabel": "Language",
+      "sekceNazvy": [
+        "Reading the land",
+        "Found holes",
+        "Czech hole",
+        "Exercises",
+        "To think about",
+        "Glossary",
+        "Exam"
+      ],
+      "klavesniNapoveda": "The plan works from the keyboard too: tab to it, move the crosshair with the arrow keys, confirm with Enter."
     },
     "toc": {
       "kicker": "Lesson overview",
       "sekceHead": "What's ahead",
       "pokracovat": "Continue",
       "zacit": "Start the lesson",
-      "zpetNaPrehled": "← Back to the course overview"
+      "zpetNaPrehled": "← Back to the course overview",
+      "daleHead": "Where next",
+      "slovnicekPopis": "Every term in the course in one place, alphabetical and bilingual.",
+      "sbirkaPopis": "Ten holes analysed, from around the world and from Czechia, in one format."
     }
   }
 }

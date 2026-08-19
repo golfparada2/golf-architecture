@@ -59,7 +59,7 @@
     "en": "How do you plan three shots along the ocean so none strays left into the water, when the left side is exactly the shortest, most tempting line to the green?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Oprava 2026-08-19: původní oceánský hazard měl rx:40 (šířka pruhu 80 m), což na kartě vypadalo jako by oceán zabíral skoro celou hrací plochu a přesahoval doprostřed fairwaye. Zúženo na rx:22 a posunuto blíž k levému okraji, aby zůstal realisticky úzký pruh podél levé strany (Stillwater Cove), ne dominantní plocha přes celou kartu. Ostatní prvky (délka, par, bunker vpravo/před greenem, strom ve fairwayi) ověřeny jako správné přes GolfPass a PebbleBeach.com — offcourse.co nebyl použit.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Oprava 2026-08-19: původní oceánský hazard měl rx:40 (šířka pruhu 80 m), což na kartě vypadalo jako by oceán zabíral skoro celou hrací plochu a přesahoval doprostřed fairwaye. Zúženo na rx:22 a posunuto blíž k levému okraji, aby zůstal realisticky úzký pruh podél levé strany (Stillwater Cove), ne dominantní plocha přes celou kartu. Ostatní prvky (délka, par, bunker vpravo/před greenem, strom ve fairwayi) ověřeny jako správné přes GolfPass a PebbleBeach.com — offcourse.co nebyl použit. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením.",
     "green": {
       "x": 8,
       "y": 490,
@@ -81,6 +81,10 @@
         "label": {
           "cs": "hluboký bunker vpravo před greenem (funguje jako „zeď z písku“ na dojezdové ráně)",
           "en": "deep bunker front-right of the green (acts as a 'wall of sand' on the approach)"
+        },
+        "zkratka": {
+          "cs": "BUNKR U GREENU",
+          "en": "GREENSIDE BUNKER"
         }
       }
     ],
@@ -97,9 +101,24 @@
         "label": {
           "cs": "Stillwater Cove / Tichý oceán po celé levé straně jamky — vpravo od něj zůstává hratelná fairway",
           "en": "Stillwater Cove / the Pacific Ocean along the whole left side of the hole — a playable fairway remains to its right"
+        },
+        "zkratka": {
+          "cs": "STILLWATER COVE",
+          "en": "STILLWATER COVE"
         }
       }
-    ]
+    ],
+    "fairway": {
+      "ohyb": 30,
+      "sirkaTee": 40,
+      "sirkaGreen": 34,
+      "zacatek": 20,
+      "seed": 4103
+    },
+    "dopadovaZona": {
+      "od": 220,
+      "do": 275
+    }
   },
   "prvky": [
     {
@@ -165,6 +184,16 @@
     "alt": {
       "cs": "18. jamka Pebble Beach podél zátoky Stillwater Cove",
       "en": "Pebble Beach's 18th hole along Stillwater Cove"
-    }
+    },
+    "sirka": 1028,
+    "vyska": 670
+  },
+  "naCoSeDivat": {
+    "cs": "Sleduj, jak se stuha fairwaye nejdřív odklání od vody a u greenu se k ní zase vrací. Čím větší kus zátoky vlevo ukrojíš, tím kratší zbytek jamky ti zůstane.",
+    "en": "Watch how the fairway ribbon first swings away from the water and comes back to it at the green. The more of the cove you bite off on the left, the less hole is left."
+  },
+  "lekce": {
+    "cs": "Hazard vedený podél celé jamky nabízí rozhodnutí na každou ránu, ne jen na jednu.",
+    "en": "A hazard running the length of a hole offers a decision on every shot, not just one."
   }
 }
