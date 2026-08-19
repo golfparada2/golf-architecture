@@ -69,7 +69,8 @@
       "architektLabel": "Architekt",
       "vznikLabel": "Rok",
       "prameny": "Prameny",
-      "otazkaLabel": "Otázka jamky"
+      "otazkaLabel": "Otázka jamky",
+      "fotoLabel": "Foto"
     },
     "fairway": {
       "eyebrow": "Fairway",
@@ -305,6 +306,21 @@
     },
     "foot": {
       "lekce": "ROUTING · lekce 2"
+    },
+    "nav": {
+      "predchozi": "Předchozí",
+      "dalsi": "Další",
+      "prehled": "Přehled lekce",
+      "krok": "Krok {n} z 7",
+      "dalsiLekce": "Pokračovat další lekcí",
+      "konecKurzu": "Zatím poslední hotová lekce"
+    },
+    "toc": {
+      "kicker": "Přehled lekce",
+      "sekceHead": "Co tě čeká",
+      "pokracovat": "Pokračovat",
+      "zacit": "Začít lekci",
+      "zpetNaPrehled": "← Zpět na přehled kurzu"
     }
   },
   "en": {
@@ -377,7 +393,8 @@
       "architektLabel": "Architect",
       "vznikLabel": "Year",
       "prameny": "Sources",
-      "otazkaLabel": "The hole's question"
+      "otazkaLabel": "The hole's question",
+      "fotoLabel": "Photo"
     },
     "fairway": {
       "eyebrow": "Fairway",
@@ -613,6 +630,21 @@
     },
     "foot": {
       "lekce": "ROUTING · lesson 2"
+    },
+    "nav": {
+      "predchozi": "Previous",
+      "dalsi": "Next",
+      "prehled": "Lesson overview",
+      "krok": "Step {n} of 7",
+      "dalsiLekce": "Continue to the next lesson",
+      "konecKurzu": "Last finished lesson for now"
+    },
+    "toc": {
+      "kicker": "Lesson overview",
+      "sekceHead": "What's ahead",
+      "pokracovat": "Continue",
+      "zacit": "Start the lesson",
+      "zpetNaPrehled": "← Back to the course overview"
     }
   }
 }

@@ -1,6 +1,132 @@
 # Poznámky — co jsem musel rozhodnout, co ověřit, co bys měl zkontrolovat
 
-Průběžný soubor podle části 15 zadání. Kroky 1–6 hotové.
+Průběžný soubor podle části 15 zadání. Kroky 1–7 hotové.
+
+## Krok 7 — Úpravy po nasazení: víc stránek, úvodní stránka, nová písma,
+fotky, opravy schémat jamek
+
+Tenhle krok nebyl v původním postupu (část 14) — vznikl z dávky zpětné
+vazby po prvním nasazení na GitHub Pages. Osm požadavků, shrnuto: (1) víc
+skutečných HTML stránek místo SPA, (2) hezčí úvodní stránka kurzu s
+fotkou, (3) čitelnější písmo s pořádnou českou diakritikou, (4) rozdělit
+každou lekci na víc stránek, (5) fotka u každé reálné jamky, (6) opravit
+schéma Karlštejn #15 (neodpovídalo realitě), (7) přiblížit schémata
+reálných jamek realitě obecně, (8) nasadit rovnou na GitHub.
+
+### Co vzniklo
+
+**Písma.** Playfair Display + EB Garamond nahrazeny za Fraunces (nadpisy)
+a Literata (běžný text) — obě s plnou podporou Latin Extended-A (české
+znaky), self-hosted přes `@fontsource` balíčky z npm (přímý přístup na
+`fonts.googleapis.com` je z tohohle prostředí blokovaný, ale
+`registry.npmjs.org` ne). Skutečný důvod výměny nebyl jen vkus: **našel
+jsem a opravil reálnou chybu** v původním nasazení — `@font-face` pravidla
+kombinovala `latin` a `latin-ext` řezy v jednom `src:` seznamu bez
+`unicode-range`, takže prohlížeč vždy načetl jen první soubor a českou
+diakritiku (č, ř, š, ě, ď, ť, ň, ů…) tiše nahradil systémovým fontem. Nové
+`@font-face` sekce v `styl.css` mají pro každý řez dvě samostatná pravidla
+s vlastním `unicode-range`, přesně podle konvence, kterou generuje sám
+Fontsource/Google Fonts.
+
+**Vícestránkové lekce.** Každá lekce (01–03) byla jedna dlouhá stránka,
+teď je to sedm samostatných HTML stránek (`1-tee-shot.html` …
+`7-zkouska.html`) plus `index.html` jako mini-rozcestník lekce se seznamem
+sekcí. Nová sdílená navigace mezi sekcemi žije v `js/sekce-nav.js`
+(`sekceLekce()`, `vykresliNavSekci()`) — vykresluje dole na každé stránce
+lištu „← Předchozí / Další →" se jmény sousedních sekcí, na poslední
+sekci nabídne odkaz na další lekci. Nové CSS třídy pro tohle (`.krokLabel`,
+`.sekceNav`, `.navBtn`, `.tocList`, `.tocItem`) přibyly v `styl.css`.
+Vedlejší efekt: lekce 1 (do teď jediná, co nepoužívala `js/spolecne.js` —
+schválně, jak byla původně dodaná) teď taky běží přes sdílené vzorce
+(`kartaJamky`, `vytvorPutt`, `renderSlovnicek`), protože se stejně
+přepisovala celá — všechny tři lekce jsou teď stavěné stejně.
+
+**Úvodní stránka a rozcestník.** Kořenová `index.html` byla dřív funkční
+rozcestník (seznam lekcí + výsledky) — tenhle obsah se přestěhoval na
+`prehled/index.html` beze změny funkce (jen upravené relativní cesty o
+úroveň hlouběji). Kořenová `index.html` je teď nová marketingová/úvodní
+stránka: velká fotka (`.hero`), úvodní text o kurzu (`.academyIntro`),
+čtyři body „co tě čeká" (`.academyPoints`) a tlačítko na otevření kurzu
+(`.ctaRow`/`a.cta`), vedoucí na `prehled/index.html`. Text v novém
+`data/preklady/uvod.json`.
+
+**Fotky.** Sedm z deseti karet reálných jamek dostalo skutečnou fotku
+(dřív jen schématický nákres). Zdroj: Wikimedia Commons, jen snímky s
+jasnou volnou licencí (CC BY, CC BY-SA, nebo public domain) — každá fotka
+má v `data/jamky/<id>.json` klíč `foto` s autorem, licencí a odkazem na
+zdroj, který se zobrazuje jako popisek pod fotkou (`kartaJamky()` v
+`js/spolecne.js`, nová CSS třída `.kartaFoto`). Fotky jsou uložené v
+`assets/foto/`.
+
+Konkrétně:
+- **TPC Sawgrass #17, Pebble Beach #18, St Andrews #7 „High"** — fotky
+  přímo dané jamky, jasně popsané jako takové v metadatech na Commons.
+- **Riviera #10, Ballybunion Old #11** — pro tyhle dvě konkrétní jamky se
+  nepodařilo najít volně licencovaný snímek. Použil jsem fotku sousední
+  jamky (Riviera #9 u klubovny, Ballybunion #10) se stejným charakterem
+  terénu a poctivě to přiznal v `foto.poznamka` i v popisku pod fotkou —
+  radši přiznaná náhrada než tvářit se, že je to přesně ta jamka.
+- **Karlštejn #15** — žádná fotka konkrétně z 15. jamky na Commons není,
+  použil jsem letecký pohled na celý areál (opět přiznáno v poznámce).
+- **Cypress Point #16, Sand Hills #1, Golf Zbraslav #1, Golf Dobrouč #3**
+  — u těchhle čtyř karet žádnou volně licencovanou fotku nemám. Cypress
+  Point a Sand Hills jsou extrémně soukromé kluby bez veřejné fotodokumentace
+  na Commons; Zbraslav a Dobrouč jsou malá česká hřiště, která na Commons
+  vůbec nejsou. Nechal jsem karty bez `foto` klíče — `kartaJamky()` fotoblok
+  v tom případě jednoduše vynechá, žádná chybová hláška ani prázdné místo.
+
+**Technická poznámka k získávání fotek**: sandbox, ve kterém běžím, nemá
+přímý síťový přístup na `upload.wikimedia.org` ani na `commons.wikimedia.org`
+(blokováno proxy). Fotky jsem získal přes prohlížeč (Claude in Chrome) —
+navigace na `Special:FilePath/File:...` (přímé zobrazení souboru), pak
+screenshot a oříznutí přes Python/Pillow (odstranění černého orámování
+prohlížeče kolem obrázku). Každou licenci jsem před stažením ověřil ručně
+na stránce souboru na Commons.
+
+**Opravy schémat reálných jamek.** Zbylých sedm karet (kromě už dřív
+opravených Karlštejn #15 a Ballybunion #11) prošlo revizí přes paralelní
+subagenty s vlastním výzkumem + moje vizuální QA (grid všech deseti karet
+vykreslený a vyfocený přes Playwright):
+- **Cypress Point #16** — vodní hazard byl nejdřív příliš dominantní
+  (blokoval celou šířku karty), i po první opravě subagentem pořád moc
+  velký. Zmenšil a posunul jsem ho ručně, ať zůstane volný pruh vlevo pro
+  bezpečnější „chicken run" trasu, kterou MacKenzie sám popisoval.
+- **Pebble Beach #18** — stejný problém a stejná oprava (zátoka Stillwater
+  Cove zúžená a posunutá, ať nezabírá celou šířku).
+- **St Andrews Old #7** — subagent přidal chybějící „Shell Bunker" a
+  přejmenoval/přemístil dva greenside bunkry na „Cockle" a „Strath", ale
+  jejich střed vyšel geometricky UVNITŘ greenu — protože `vykresliJamku()`
+  kreslí green jako poslední (nahoře), byly bunkry úplně schované. Opravil
+  jsem to přesunutím obou těsně mimo hranici greenu.
+- **Riviera #10** — fairway bunkr přesunutý ze středu doleva, přidaný
+  třetí greenside bunkr vpravo vzadu.
+- **Sand Hills #1** — přidané dva chybějící greenside bunkry, zmenšené
+  předimenzované fairway bunkry, užší a hlubší green.
+- **Zbraslav #1** — dva fiktivní boční bunkry nahrazené jedním velkým
+  předním bunkrem podle popisu na webu klubu; opravena i chyba v datech
+  (yardáž `520` byla omylem zapsaná jako metry — GolfPass uvádí 569 yd ≈
+  520 m).
+
+Všechny karty ověřené jako platný JSON a vizuálně zkontrolované přes
+Playwright (grid screenshot + zoom na sporné případy).
+
+### Ověřeno
+- Všech 26 HTML stránek (úvodní, `prehled/`, 3× 8 stránek lekcí) prošlo
+  bez chyby v konzoli i bez selhaného síťového požadavku — automatizovaný
+  průchod přes Playwright s lokálním serverem.
+- Kliknutí skrz navigaci funguje: úvodní stránka → tlačítko „Otevřít kurz"
+  → `prehled/index.html` → lekce → jednotlivé sekce → zpět.
+- Všechny nové/upravené JSON soubory (`data/jamky/*.json`,
+  `data/preklady/*.json`) ověřené jako platný JSON.
+- Fotky se zobrazují a mají fungující odkazy na licenci i zdroj na
+  Wikimedia Commons.
+
+### Otevřené resty
+- Fotky chybí u čtyř z deseti karet reálných jamek (viz výše) — bez volně
+  licencovaného zdroje jsem je nechtěl nahradit fotkou odjinud nebo
+  fotkou, která by mohla porušovat autorská práva.
+- `LICENSE`/copyright holder — pořád nevyřešeno, viz otevřené otázky na
+  konci souboru.
 
 ## Krok 6 — Rozcestník a přehled výsledků (`index.html`,
 `data/preklady/rozcestnik.json`)

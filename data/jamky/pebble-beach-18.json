@@ -59,7 +59,7 @@
     "en": "How do you plan three shots along the ocean so none strays left into the water, when the left side is exactly the shortest, most tempting line to the green?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob().",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Oprava 2026-08-19: původní oceánský hazard měl rx:40 (šířka pruhu 80 m), což na kartě vypadalo jako by oceán zabíral skoro celou hrací plochu a přesahoval doprostřed fairwaye. Zúženo na rx:22 a posunuto blíž k levému okraji, aby zůstal realisticky úzký pruh podél levé strany (Stillwater Cove), ne dominantní plocha přes celou kartu. Ostatní prvky (délka, par, bunker vpravo/před greenem, strom ve fairwayi) ověřeny jako správné přes GolfPass a PebbleBeach.com — offcourse.co nebyl použit.",
     "green": {
       "x": 8,
       "y": 490,
@@ -79,24 +79,24 @@
         "seed": 1802,
         "amp": 0.17,
         "label": {
-          "cs": "hluboký bunker vpravo od greenu",
-          "en": "deep bunker right of the green"
+          "cs": "hluboký bunker vpravo před greenem (funguje jako „zeď z písku“ na dojezdové ráně)",
+          "en": "deep bunker front-right of the green (acts as a 'wall of sand' on the approach)"
         }
       }
     ],
     "hazardy": [
       {
         "typ": "voda",
-        "x": -55,
+        "x": -46,
         "y": 250,
-        "rx": 40,
-        "ry": 260,
+        "rx": 15,
+        "ry": 235,
         "rot": 0,
         "seed": 1803,
         "amp": 0.06,
         "label": {
-          "cs": "Tichý oceán po celé levé straně",
-          "en": "the Pacific Ocean along the whole left side"
+          "cs": "Stillwater Cove / Tichý oceán po celé levé straně jamky — vpravo od něj zůstává hratelná fairway",
+          "en": "Stillwater Cove / the Pacific Ocean along the whole left side of the hole — a playable fairway remains to its right"
         }
       }
     ]
@@ -149,6 +149,22 @@
     {
       "titul": "Wikipedia — Pebble Beach Golf Links",
       "url": "https://en.wikipedia.org/wiki/Pebble_Beach_Golf_Links"
+    },
+    {
+      "titul": "GolfPass — Pebble Beach Golf Links: A hole-by-hole guide (2023 U.S. Women's Open)",
+      "url": "https://www.golfpass.com/travel-advisor/articles/pebble-beach-golf-links-hole-by-hole-guide-2023-us-womens-open",
+      "poznamka": "použito k ověření geometrie jamky 18 (bunker vpravo/před greenem, oceán/Stillwater Cove podél celé levé strany, strom ve fairwayi, dvě fairwayové bunkry vpravo od dráhy letu) — offcourse.co záměrně nepoužit kvůli nedůvěryhodným datům"
     }
-  ]
+  ],
+  "foto": {
+    "soubor": "pebble-beach-18.jpg",
+    "autor": "Bernard Gagnon",
+    "licence": "CC BY-SA 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "zdrojUrl": "https://commons.wikimedia.org/wiki/File:Pebble_Beach_18th_hole.jpg",
+    "alt": {
+      "cs": "18. jamka Pebble Beach podél zátoky Stillwater Cove",
+      "en": "Pebble Beach's 18th hole along Stillwater Cove"
+    }
+  }
 }

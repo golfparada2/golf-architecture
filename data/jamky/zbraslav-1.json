@@ -9,10 +9,10 @@
   "delky": [
     {
       "odpaliste": "zadní (černé)",
-      "m": 475,
-      "yd": 520,
+      "m": 520,
+      "yd": 569,
       "rok": 2023,
-      "poznamka": "metrická hodnota je přepočet z yardů (520 yd) — klubový scorecard v metrech byl dostupný jen jako obrázek, ne jako text"
+      "poznamka": "opraveno podle GolfPass scorecardu (569 yd ≈ 520 m) — dřívější verze měla omylem prohozené jednotky (520 zapsáno jako yardy místo metrů)"
     }
   ],
   "architekt": {
@@ -46,7 +46,7 @@
     "en": "What do you do to an eighteen-hole routing when the clubhouse moves more than two kilometres away?"
   },
   "tvary": {
-    "poznamka": "schematické a ilustrativní, ne ověřený půdorys jamky 1 — konkrétní rozestavění hazardů této jamky nebylo v dostupných pramenech popsáno. Tvar níže jen naznačuje obecný linksový charakter hřiště (modelované greeny, pískové plochy, pot bunkery), viz prvky. Souřadnice v metrech od odpaliště, kreslí se přes js/platy.js blob().",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Opraveno 2026-08-19: dosavadní pár bočních pot bunkerů u greenu (vlevo i vpravo) nahrazen jedním velkým bunkerem před greenem — oficiální stránka klubu (pcg.cz, popis jamky 1 pro současný routing) výslovně říká, že fairway bunkery vůbec neobklopují (jen tráva okolo) a že green je „v přední části dobře chráněn velkým bunkerem“. Stejný zdroj zmiňuje doglegový ohyb v závěrečné části jamky, ale směr ohybu (vlevo/vpravo) neuvádí, takže zůstal jen mírný, směrově neutrální posun greenu od osy (nebyl vymýšlen naslano). Vodní překážka za greenem zmiňovaná ve starších popisech (19jamka.cz, 2018) se týkala PŮVODNÍHO routingu před přesunem klubovny v roce 2023/2024, ne dnešní jamky 1 — proto zde není použita.",
     "green": {
       "x": 4,
       "y": 430,
@@ -58,29 +58,16 @@
     },
     "bunkry": [
       {
-        "x": -14,
-        "y": 420,
-        "rx": 4,
-        "ry": 4,
-        "rot": 0.2,
+        "x": 4,
+        "y": 419,
+        "rx": 6,
+        "ry": 5,
+        "rot": 0,
         "seed": 2602,
-        "amp": 0.18,
+        "amp": 0.17,
         "label": {
-          "cs": "pot bunker vlevo od greenu",
-          "en": "pot bunker left of the green"
-        }
-      },
-      {
-        "x": 14,
-        "y": 425,
-        "rx": 4,
-        "ry": 4,
-        "rot": -0.2,
-        "seed": 2603,
-        "amp": 0.18,
-        "label": {
-          "cs": "pot bunker vpravo od greenu",
-          "en": "pot bunker right of the green"
+          "cs": "velký bunker chránící přední část greenu (fairway bunkery nejsou — jen tráva okolo)",
+          "en": "large bunker guarding the front of the green (no fairway bunkers — just grass around it)"
         }
       }
     ],
@@ -113,8 +100,18 @@
         "en": "A links character"
       },
       "popis": {
-        "cs": "Modelované greeny se stékajícími svahy do divoké trávy, rozsáhlé plochy s červeným pískem a klasické pot bunkery — inspirace skotskými links hřišti.",
-        "en": "Contoured greens with spill-off slopes into wild grass, broad expanses of red sand, and classic pot bunkers — inspired by Scottish links courses."
+        "cs": "Modelované greeny se stékajícími svahy do divoké trávy, rozsáhlé plochy s červeným pískem a klasické pot bunkery — inspirace skotskými links hřišti (obecný charakter hřiště, ne nutně specifika každé jednotlivé jamky).",
+        "en": "Contoured greens with spill-off slopes into wild grass, broad expanses of red sand, and classic pot bunkers — inspired by Scottish links courses (a course-wide character, not necessarily every individual hole's specifics)."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Snadný začátek s pastí na konci",
+        "en": "An easy start with a trap at the end"
+      },
+      "popis": {
+        "cs": "Podle oficiálního popisu klubu jamka 1 „na úvod není těžká“ a fairway vůbec neobklopují bunkery — jen tráva. Past přichází až v závěrečné části: doglegový ohyb a jeden velký bunker, který dobře chrání přední část greenu.",
+        "en": "Per the club's own description, hole 1 'isn't hard to start with' and no bunkers line the fairway at all — just grass. The trap comes only in the final section: a dogleg bend and one large bunker that well protects the front of the green."
       }
     }
   ],
@@ -134,6 +131,14 @@
     {
       "titul": "Prague City Golf — oficiální stránka Zbraslav",
       "url": "https://www.pcg.cz/en/zbraslav/"
+    },
+    {
+      "titul": "Prague City Golf — oficiální popis jamky 1 (aktuální routing: par 5, HCP 9, dogleg v závěru, žádné fairway bunkery, jeden velký bunker před greenem)",
+      "url": "https://www.pcg.cz/zbraslav/mapa-hriste/jamka-1/"
+    },
+    {
+      "titul": "GolfPass — Prague City Golf Club (scorecard, jamka 1 = par 5, HCP 9)",
+      "url": "https://www.golfpass.com/travel-advisor/courses/22742-prague-city-golf-club"
     }
   ]
 }

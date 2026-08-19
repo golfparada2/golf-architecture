@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ROUTING — Lekce 2: Zkouška</title>
+<meta name="description" content="Lekce 2, sekce 7 z 7: šest otázek za 100 bodů.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F1E0'/%3E%3Ccircle cx='16' cy='14' r='9' fill='%23A9B983' stroke='%231E1B15' stroke-width='1.4'/%3E%3Ccircle cx='16' cy='14' r='1.6' fill='%231E1B15'/%3E%3Cpath d='M16 14 L16 5' stroke='%231E1B15' stroke-width='1.3'/%3E%3Cpath d='M16 5 L23 7.5 L16 10 Z' fill='%23B0452C' stroke='%231E1B15' stroke-width='.8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/styl.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="hr"><span data-t="meta.kicker"></span></div>
+  <div class="lang" role="group" aria-label="Language">
+    <button data-l="cs" aria-current="true">ČES</button><i>/</i><button data-l="en">ENG</button>
+  </div>
+</div>
+<a class="zpet" href="index.html" data-t="nav.prehled"></a>
+<p class="krokLabel" id="krokLabel"></p>
+
+<section class="plat" id="secZkouska">
+  <p class="eyebrow" data-t="zkouska.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="zkouska.over"></em><span data-t="zkouska.title"></span></h2>
+  <p class="lede" data-t="zkouska.lede"></p>
+
+  <div class="meter" id="zMeter"></div>
+  <div id="zQuiz"></div>
+  <div class="tools">
+    <button type="button" id="zSubmit" data-t="zkouska.submit" disabled></button>
+    <button type="button" id="zAgain" class="quiet" data-t="zkouska.again" hidden></button>
+  </div>
+  <p class="note" id="zNote"></p>
+  <div class="result" id="zResult" hidden></div>
+
+  <p class="listMark" data-t="zkouska.foot"></p>
+</section>
+
+<div class="sekceNav" id="sekceNav"></div>
+<div class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="index.html" data-t="nav.prehled"></a></div>
+
+<script type="module">
+import { vytvorJazyk, nactiSlovnik } from '../../js/jazyk.js';
+import { E, V, blob, hatch, clipPath } from '../../js/platy.js';
+import { vytvorZkousku } from '../../js/zkouska.js';
+import { vykresliNavSekci } from '../../js/sekce-nav.js';
+
+const $ = (id) => document.getElementById(id);
+
+const slovnik = await nactiSlovnik('../../data/preklady/lekce-02.json');
+const jazyk = vytvorJazyk(slovnik, {
+  titul: (lang) => lang === 'cs' ? 'ROUTING — Lekce 2: Zkouška' : 'ROUTING — Lesson 2: Exam',
+});
+
+/* ============================================================================
+ * ZKOUŠKA — miniatury pro Q1 (kam NEjmíň patří green) a Q4 (řez terénem).
+ * ==========================================================================*/
+function kresliMiniTeren(svg, kind) {
+  const defs = E(svg, 'defs', {});
+  const sur = blob(60, 110, 52, 100, 0.1, 55, 0.05, 36);
+  const cs = 'mt' + kind + 's';
+  clipPath(defs, cs, sur);
+  E(svg, 'path', { d: sur, fill: V('--turf-d', svg), opacity: 0.45 });
+  hatch(svg, cs, { x: 4, y: 6, w: 112, h: 210 }, 1.1, 4, { op: 0.28, seed: 4 });
+  E(svg, 'path', { d: sur, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 0.9, opacity: 0.7 });
+  E(svg, 'path', { d: 'M96 40 C 92 90, 100 140, 84 190', fill: 'none', stroke: V('--water', svg), 'stroke-width': 3.5, opacity: 0.7, 'stroke-linecap': 'round' });
+  const P = { a: [42, 70], b: [80, 172], c: [46, 130] }[kind];
+  const gp = blob(P[0], P[1], 16, 12, 0, 60, 0.08, 30);
+  E(svg, 'path', { d: gp, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1.1 });
+  E(svg, 'circle', { cx: P[0], cy: P[1] - 2, r: 1.8, fill: V('--ink', svg) });
+}
+function kresliMiniRez(svg, kind) {
+  const barvy = { pisek: V('--sand', svg), jil: '#B7A98C', skala: V('--ink2', svg) };
+  const vrstvy = { a: [['pisek', 190]], b: [['pisek', 24], ['skala', 166]], c: [['pisek', 40], ['jil', 150]] }[kind];
+  let y = 12;
+  const x = 30, w = 60, bottom = 202;
+  vrstvy.forEach(([typ, h]) => {
+    const rectH = (h / 190) * (bottom - 12);
+    E(svg, 'rect', { x, y, width: w, height: rectH, fill: barvy[typ], stroke: V('--ink', svg), 'stroke-width': 1 });
+    y += rectH;
+  });
+  E(svg, 'line', { x1: x, y1: 12, x2: x + w, y2: 12, stroke: V('--ink', svg), 'stroke-width': 1.4 });
+}
+
+const zkouskaOtazky = [
+  {
+    typ: 'obrazek', body: 20, tema: 'cteni-terenu', textKlic: 'zkouska.q1.text', hintKlic: 'zkouska.q1.hint',
+    vysvetleniKlic: 'zkouska.q1.why', zpetKlic: 'zkouska.q1.back', spravna: 'b',
+    moznosti: ['a', 'b', 'c'].map((id) => ({ id, kresli: (svg) => kresliMiniTeren(svg, id) })),
+  },
+  {
+    typ: 'jedna', body: 15, tema: 'voda-odtok', textKlic: 'zkouska.q2.text',
+    vysvetleniKlic: 'zkouska.q2.why', zpetKlic: 'zkouska.q2.back', spravna: 'b',
+    moznosti: ['a', 'b', 'c', 'd'].map((id) => ({ id, textKlic: 'zkouska.q2.' + id })),
+  },
+  {
+    typ: 'jedna', body: 15, tema: 'vitr-slunce', textKlic: 'zkouska.q3.text',
+    vysvetleniKlic: 'zkouska.q3.why', zpetKlic: 'zkouska.q3.back', spravna: 'c',
+    moznosti: ['a', 'b', 'c', 'd'].map((id) => ({ id, textKlic: 'zkouska.q3.' + id })),
+  },
+  {
+    typ: 'obrazek', body: 20, tema: 'cteni-terenu', textKlic: 'zkouska.q4.text', hintKlic: 'zkouska.q4.hint',
+    vysvetleniKlic: 'zkouska.q4.why', zpetKlic: 'zkouska.q4.back', spravna: 'b',
+    moznosti: ['a', 'b', 'c'].map((id) => ({ id, kresli: (svg) => kresliMiniRez(svg, id) })),
+  },
+  {
+    typ: 'vice', body: 15, tema: 'cteni-terenu', textKlic: 'zkouska.q5.text', hintKlic: 'zkouska.q5.hint',
+    vysvetleniKlic: 'zkouska.q5.why', zpetKlic: 'zkouska.q5.back',
+    moznosti: [
+      { id: 'a', textKlic: 'zkouska.q5.a', ok: true },
+      { id: 'b', textKlic: 'zkouska.q5.b', ok: false },
+      { id: 'c', textKlic: 'zkouska.q5.c', ok: true },
+      { id: 'd', textKlic: 'zkouska.q5.d', ok: true },
+    ],
+  },
+  {
+    typ: 'jedna', body: 15, tema: 'vitr-slunce', textKlic: 'zkouska.q6.text',
+    vysvetleniKlic: 'zkouska.q6.why', zpetKlic: 'zkouska.q6.back', spravna: 'b',
+    moznosti: ['a', 'b', 'c', 'd'].map((id) => ({ id, textKlic: 'zkouska.q6.' + id })),
+  },
+];
+
+vytvorZkousku({
+  lekce: 2,
+  otazky: zkouskaOtazky,
+  slovnik,
+  jazyk,
+  el: { meter: $('zMeter'), quiz: $('zQuiz'), submit: $('zSubmit'), again: $('zAgain'), note: $('zNote'), result: $('zResult') },
+});
+
+jazyk.on(() => {
+  vykresliNavSekci({ lekce: 2, index: 6, jazyk, krokEl: $('krokLabel'), navEl: $('sekceNav') });
+});
+</script>
+</body>
+</html>

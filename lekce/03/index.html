@@ -3,531 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>ROUTING — Lekce 3</title>
-<meta name="description" content="Lekce 3: Routing — jak se skládá pořadí a propojení osmnácti jamek na pozemku.">
+<title>ROUTING — Lekce 3: Routing</title>
+<meta name="description" content="Lekce 3: Routing — jak se skládá pořadí a propojení osmnácti jamek na pozemku. Sedm sekcí, každá na vlastní stránce.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F1E0'/%3E%3Ccircle cx='16' cy='14' r='9' fill='%23A9B983' stroke='%231E1B15' stroke-width='1.4'/%3E%3Ccircle cx='16' cy='14' r='1.6' fill='%231E1B15'/%3E%3Cpath d='M16 14 L16 5' stroke='%231E1B15' stroke-width='1.3'/%3E%3Cpath d='M16 5 L23 7.5 L16 10 Z' fill='%23B0452C' stroke='%231E1B15' stroke-width='.8'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="../../assets/styl.css">
-<style>
-  /* styly specifické pro lekci 3 — sdílené věci (karta, putt, slovníček,
-     přepínač vrstev, .zpet, .listMark) jsou v assets/styl.css, sekce 14 */
-
-  .pravidla{margin-top:16px}
-
-  .a1Stav{margin-top:12px}
-  .a1Metriky{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(8px,3vw,14px);margin-top:18px}
-  .a1Metrik{padding:12px 10px;border:1px solid rgba(74,68,58,.22)}
-  .a1Metrik h4{
-    font-family:'EB Garamond',serif;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
-    color:var(--ink2);font-weight:500;margin:0 0 6px;
-  }
-  .a1Metrik p{font-size:14.5px;line-height:1.4;margin:0}
-  .a1Metrik.dobre{border-left:3px solid var(--good)}
-  .a1Metrik.dobre p{color:var(--good)}
-  .a1Metrik.spatne{border-left:3px solid var(--flag)}
-  .a1Metrik.spatne p{color:var(--flag)}
-  @media (max-width:520px){ .a1Metriky{grid-template-columns:1fr} }
-</style>
 </head>
 <body>
 
 <div class="topbar">
-  <div class="hr"><span data-t="meta.kicker"></span></div>
+  <div class="hr"><span data-t="toc.kicker"></span></div>
   <div class="lang" role="group" aria-label="Language">
     <button data-l="cs" aria-current="true">ČES</button><i>/</i><button data-l="en">ENG</button>
   </div>
 </div>
-<a class="zpet" href="../../index.html" data-t="meta.zpet"></a>
+<a class="zpet" href="../../prehled/index.html" data-t="toc.zpetNaPrehled"></a>
 
 <p class="eyebrow" data-t="meta.chapter"></p>
 <h1><em data-t="meta.over"></em><span data-t="meta.title"></span></h1>
 <div class="dashline"></div>
 <p class="lede" data-t="meta.lede"></p>
 
-<!-- ============================================================ TEE SHOT -->
-<section class="plat" id="secTeeShot">
-  <p class="eyebrow" data-t="teeShot.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="teeShot.over"></em><span data-t="teeShot.title"></span></h2>
-  <p class="lede" data-t="teeShot.lede"></p>
-  <div class="principBox"><b data-t="principLabel"></b><br><span data-t="teeShot.principle"></span></div>
+<div class="hr" style="margin-top:22px"><span data-t="toc.sekceHead"></span></div>
+<div class="tocList" id="tocList"></div>
 
-  <svg id="p1" viewBox="0 0 400 520" role="img" aria-label="Pozemek se šesti místy pro greeny"></svg>
-
-  <div class="toggle" id="teeShotToggle" role="group" aria-label="Krok">
-    <button type="button" data-krok="body" data-t="teeShot.toggle.body" aria-pressed="true"></button>
-    <button type="button" data-krok="jamky" data-t="teeShot.toggle.jamky"></button>
-  </div>
-  <p class="popisFilozofie" id="teeShotPopis"></p>
-
-  <div class="hr" style="margin-top:22px"><span data-t="teeShot.pravidlaHead"></span></div>
-  <div class="specs pravidla" id="pravidlaList"></div>
-
-  <p class="listMark" data-t="teeShot.foot"></p>
-</section>
-
-<!-- ============================================================ FAIRWAY -->
-<section class="plat" id="secFairway">
-  <p class="eyebrow" data-t="fairway.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="fairway.over"></em><span data-t="fairway.title"></span></h2>
-  <p class="lede" data-t="fairway.lede"></p>
-  <div id="fairwayCards"></div>
-</section>
-
-<!-- ============================================================ ČESKÁ JAMKA -->
-<section class="plat" id="secCeska">
-  <p class="eyebrow" data-t="ceskaJamka.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="ceskaJamka.over"></em><span data-t="ceskaJamka.title"></span></h2>
-  <p class="lede" data-t="ceskaJamka.lede"></p>
-  <div id="ceskaKarta"></div>
-</section>
-
-<!-- ============================================================ APPROACH: ÚVOD -->
-<section class="plat" id="secApproachIntro">
-  <p class="eyebrow" data-t="approachNadpis.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="approachNadpis.over"></em><span data-t="approachNadpis.title"></span></h2>
-  <p class="lede" data-t="approachNadpis.lede"></p>
-</section>
-
-<!-- ============================================================ APPROACH 1: ŠEST JAMEK -->
-<section class="plat" id="secApproach1">
-  <p class="eyebrow" data-t="approach1.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="approach1.over"></em><span data-t="approach1.title"></span></h2>
-  <p class="lede" data-t="approach1.lede"></p>
-
-  <svg id="p2" class="plate-work" viewBox="0 0 400 520" role="img" aria-label="Pozemek — klepáním umísti šest greenů v pořadí"></svg>
-
-  <div class="tools">
-    <button type="button" id="a1clear" class="quiet" data-t="approach1.tools.clear"></button>
-  </div>
-  <p class="state a1Stav" id="a1state"></p>
-  <div class="a1Metriky" id="a1metriky" hidden></div>
-
-  <p class="listMark" data-t="approach1.foot"></p>
-</section>
-
-<!-- ============================================================ PUTT -->
-<section class="plat" id="secPutt">
-  <p class="eyebrow" data-t="putt.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="putt.over"></em><span data-t="putt.title"></span></h2>
-  <p class="lede" data-t="putt.lede"></p>
-  <div id="puttQuestions"></div>
-  <p class="listMark" data-t="putt.foot"></p>
-</section>
-
-<!-- ============================================================ SLOVNÍČEK -->
-<section class="plat" id="secSlovnicek">
-  <p class="eyebrow" data-t="slovnicek.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="slovnicek.over"></em><span data-t="slovnicek.title"></span></h2>
-  <p class="lede" data-t="slovnicek.lede"></p>
-  <dl class="pojmy" id="slovnicekList"></dl>
-</section>
-
-<!-- ============================================================ ZKOUŠKA -->
-<section class="plat" id="secZkouska">
-  <p class="eyebrow" data-t="zkouska.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="zkouska.over"></em><span data-t="zkouska.title"></span></h2>
-  <p class="lede" data-t="zkouska.lede"></p>
-
-  <div class="meter" id="zMeter"></div>
-  <div id="zQuiz"></div>
-  <div class="tools">
-    <button type="button" id="zSubmit" data-t="zkouska.submit" disabled></button>
-    <button type="button" id="zAgain" class="quiet" data-t="zkouska.again" hidden></button>
-  </div>
-  <p class="note" id="zNote"></p>
-  <div class="result" id="zResult" hidden></div>
-
-  <p class="listMark" data-t="zkouska.foot"></p>
-</section>
-
-<div class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="../../index.html" data-t="meta.zpet"></a></div>
+<div class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="../../prehled/index.html" data-t="toc.zpetNaPrehled"></a></div>
 
 <script type="module">
 import { vytvorJazyk, nactiSlovnik } from '../../js/jazyk.js';
-import { E, V, clear, blob, hatch, clipPath } from '../../js/platy.js';
-import { vytvorZkousku } from '../../js/zkouska.js';
-import { kartaJamky, vytvorPutt, renderSlovnicek } from '../../js/spolecne.js';
+import { sekceLekce } from '../../js/sekce-nav.js';
 
 const $ = (id) => document.getElementById(id);
+const LEKCE = 3;
 
-const [slovnik, kartaStAndrews, kartaCypress, kartaZbraslav] = await Promise.all([
-  nactiSlovnik('../../data/preklady/lekce-03.json'),
-  nactiSlovnik('../../data/jamky/st-andrews-old-7.json'),
-  nactiSlovnik('../../data/jamky/cypress-point-16.json'),
-  nactiSlovnik('../../data/jamky/zbraslav-1.json'),
-]);
-
+const slovnik = await nactiSlovnik('../../data/preklady/lekce-03.json');
 const jazyk = vytvorJazyk(slovnik, {
   titul: (lang) => lang === 'cs' ? 'ROUTING — Lekce 3: Routing' : 'ROUTING — Lesson 3: Routing',
 });
 
-/* ============================================================================
- * SPOLEČNÝ POZEMEK — jeden obrys, klubovna, potok a příjezdová cesta, na
- * kterých stojí tee shot i approach 1 (stejná logika jako v lekci 2 — viz
- * `POZEMEK` tam). Souřadnice jsou čistě ilustrativní. Klubovna je vlevo dole
- * u příjezdové cesty; potok probíhá napříč pozemkem od severovýchodu k
- * jihozápadu, takže routing v obou plátech na něj musí brát ohled stejně.
- * ==========================================================================*/
-const POZEMEK = blob(205, 265, 178, 228, 0.08, 303, 0.045, 60);
-const KLUBOVNA = { x: 55, y: 470 };
-
-function kresliPozemek(svg, defs) {
-  const cid = 'r3-obrys';
-  clipPath(defs, cid, POZEMEK);
-  E(svg, 'path', { d: POZEMEK, fill: V('--turf-d', svg), opacity: 0.55 });
-  hatch(svg, cid, { x: 10, y: 20, w: 390, h: 500 }, 0.7, 4.4, { op: 0.2, seed: 11 });
-  E(svg, 'path', { d: POZEMEK, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.1, opacity: 0.8 });
-  return cid;
-}
-
-function kresliZaklad(svg, defs, L) {
-  kresliPozemek(svg, defs);
-  // potok — od severovýchodu k jihozápadu, mimo klubovnu
-  const potok = 'M355 90 C 320 160, 330 230, 270 300 C 220 355, 190 380, 150 440';
-  E(svg, 'path', { d: potok, fill: 'none', stroke: V('--water', svg), 'stroke-width': 6, opacity: 0.7, 'stroke-linecap': 'round' });
-  E(svg, 'path', { d: potok, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1, opacity: 0.5 });
-  // příjezdová cesta — od dolního okraje ke klubovně
-  E(svg, 'path', {
-    d: `M20 518 L${KLUBOVNA.x - 4} ${KLUBOVNA.y + 30} L${KLUBOVNA.x} ${KLUBOVNA.y + 14}`,
-    fill: 'none', stroke: V('--ink2', svg), 'stroke-width': 3, opacity: 0.5, 'stroke-dasharray': '1 5', 'stroke-linecap': 'round',
-  });
-  // klubovna — malý domeček
-  E(svg, 'rect', { x: KLUBOVNA.x - 12, y: KLUBOVNA.y - 8, width: 24, height: 16, fill: V('--paper', svg), stroke: V('--ink', svg), 'stroke-width': 1.3 });
-  E(svg, 'path', { d: `M${KLUBOVNA.x - 15} ${KLUBOVNA.y - 8} L${KLUBOVNA.x} ${KLUBOVNA.y - 20} L${KLUBOVNA.x + 15} ${KLUBOVNA.y - 8} Z`, fill: V('--ink', svg), opacity: 0.85 });
-  E(svg, 'text', { x: KLUBOVNA.x, y: KLUBOVNA.y + 34, class: 'lab sm', 'text-anchor': 'middle' }, L.klubovna);
-}
-
-/* ============================================================================
- * TEE SHOT — „Nejdřív najdi greeny". Krok 1: šest pevných, ilustrativních
- * míst (jen body). Krok 2: tatáž místa spojená v pořadí, jak by je architekt
- * propojil — od klubovny po jamku 6.
- * ==========================================================================*/
-const TS_BODY = [
-  [125, 430], [215, 460], [305, 400], [335, 250], [250, 130], [120, 105],
-];
-let krok = 'body';
-
-function kresliTeeShot(svg, k) {
-  clear(svg);
-  const defs = E(svg, 'defs', {});
-  const L = jazyk.t('teeShot.L');
-  kresliZaklad(svg, defs, L);
-
-  if (k === 'jamky') {
-    const body = [[KLUBOVNA.x, KLUBOVNA.y], ...TS_BODY];
-    let d = `M${body[0][0]} ${body[0][1]}`;
-    for (let i = 1; i < body.length; i++) d += ` L${body[i][0]} ${body[i][1]}`;
-    E(svg, 'path', { d, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.3, opacity: 0.6, 'stroke-dasharray': '3 4' });
-  }
-
-  TS_BODY.forEach(([x, y], i) => {
-    E(svg, 'circle', { cx: x, cy: y, r: 9, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1.4 });
-    if (k === 'jamky') {
-      E(svg, 'text', { x, y: y + 4, class: 'lab sm', 'text-anchor': 'middle', fill: V('--ink', svg) }, String(i + 1));
-    } else {
-      E(svg, 'text', { x, y: y - 14, class: 'lab sm', 'text-anchor': 'middle' }, L.bod);
-    }
-  });
-}
-
-function renderTeeShot() {
-  kresliTeeShot($('p1'), krok);
-  $('teeShotPopis').innerHTML = jazyk.t('teeShot.popis.' + krok);
-  document.querySelectorAll('#teeShotToggle button').forEach((b) => {
-    b.setAttribute('aria-pressed', String(b.dataset.krok === krok));
-  });
-}
-document.querySelectorAll('#teeShotToggle button').forEach((b) => {
-  b.addEventListener('click', () => { krok = b.dataset.krok; renderTeeShot(); });
-});
-
-function renderPravidla() {
-  const c = $('pravidlaList');
-  c.innerHTML = '';
-  (jazyk.t('teeShot.pravidla') || []).forEach((p) => {
-    const d = document.createElement('div');
-    d.className = 'spec';
-    d.innerHTML = `<h3>${p.nazev}</h3><div class="bar"></div><p>${p.popis}</p>`;
-    c.appendChild(d);
-  });
-}
-
-/* ============================================================================
- * FAIRWAY / ČESKÁ JAMKA — sdílený renderer z js/spolecne.js
- * ==========================================================================*/
-function renderKartyFairway() {
-  const c = $('fairwayCards');
-  c.innerHTML = '';
-  [kartaStAndrews, kartaCypress].forEach((k) => kartaJamky(c, k, slovnik, jazyk.lang));
-}
-function renderKartaCeska() {
-  const c = $('ceskaKarta');
-  c.innerHTML = '';
-  kartaJamky(c, kartaZbraslav, slovnik, jazyk.lang);
-}
-
-/* ============================================================================
- * APPROACH 1 — „Šest jamek". Student klepáním umisťuje šest greenů v
- * pořadí, ve kterém by se hrály; klepnutí na existující bod ho smaže i se
- * všemi pozdějšími (viz `approach1.lede`). Jakmile jsou umístěné všechny,
- * spočítají se tři metriky: celková délka koridorů, opakující se směr
- * (běh ≥3 koridorů ve stejném z osmi kompasových oktantů) a křížení
- * (standardní test průsečíku úseček mezi nesousedícími koridory).
- *
- * MĚŘÍTKO: pozemek je popsaný jako cca 60 ha. Při viewBoxu 400×520 a
- * měřítku 1,7 m/jednotka vychází plocha cca 680×884 m ≈ 60 ha — konstanta
- * `SCALE` níže je tenhle odhad, ne přesný přepočet (zaznamenáno v
- * poznamky.md jako zjednodušení kroku 5).
- *
- * ZJEDNODUŠENÍ: kontrola minimálního rozestupu koridorů (60–70 m, viz
- * pravidlo v tee shotu) se v interaktivním nástroji nekontroluje zvlášť —
- * pokrývají ji dohromady kontrola křížení a kontrola opakujícího se směru,
- * což jsou konkrétní, dobře měřitelné případy ze zadání. Zaznamenáno v
- * poznamky.md.
- * ==========================================================================*/
-const SCALE = 1.7; // m na jednotku viewBoxu
-const KOMPAS = ['V', 'JV', 'J', 'JZ', 'Z', 'SZ', 'S', 'SV'];
-let a1body = [];
-
-function kresliApproach1(svg) {
-  clear(svg);
-  const defs = E(svg, 'defs', {});
-  const L = jazyk.t('approach1.L');
-  kresliZaklad(svg, defs, L);
-
-  const body = [[KLUBOVNA.x, KLUBOVNA.y], ...a1body.map((b) => [b.x, b.y])];
-  if (body.length > 1) {
-    let d = `M${body[0][0]} ${body[0][1]}`;
-    for (let i = 1; i < body.length; i++) d += ` L${body[i][0]} ${body[i][1]}`;
-    E(svg, 'path', { d, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.5, opacity: 0.75 });
-  }
-  a1body.forEach((b, i) => {
-    E(svg, 'circle', { cx: b.x, cy: b.y, r: 10, fill: V('--flag', svg), opacity: 0.9, stroke: V('--paper', svg), 'stroke-width': 2 });
-    E(svg, 'text', { x: b.x, y: b.y + 4, class: 'lab sm', 'text-anchor': 'middle', fill: V('--paper', svg) }, String(i + 1));
-  });
-}
-
-function segIntersect(p1, p2, p3, p4) {
-  function ccw(a, b, c) { return (c.y - a.y) * (b.x - a.x) > (b.y - a.y) * (c.x - a.x); }
-  return ccw(p1, p3, p4) !== ccw(p2, p3, p4) && ccw(p1, p2, p3) !== ccw(p1, p2, p4);
-}
-
-function formatM(n, lang) {
-  const cele = Math.round(n);
-  const s = String(cele);
-  const oddel = lang === 'cs' ? ' ' : ',';
-  const skupiny = [];
-  let zbytek = s;
-  while (zbytek.length > 3) {
-    skupiny.unshift(zbytek.slice(-3));
-    zbytek = zbytek.slice(0, -3);
-  }
-  skupiny.unshift(zbytek);
-  return skupiny.join(oddel) + ' m';
-}
-
-function a1Metriky() {
-  const body = [KLUBOVNA, ...a1body];
-  const segmenty = [];
-  for (let i = 0; i < body.length - 1; i++) segmenty.push([body[i], body[i + 1]]);
-
-  const delkaCelkem = segmenty.reduce((s, [a, b]) => s + Math.hypot(b.x - a.x, b.y - a.y), 0) * SCALE;
-
-  const oktanty = segmenty.map(([a, b]) => {
-    const deg = (Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI + 360) % 360;
-    return KOMPAS[Math.round(deg / 45) % 8];
-  });
-  let opakBeh = null;
-  for (let i = 0; i < oktanty.length; i++) {
-    let j = i;
-    while (j + 1 < oktanty.length && oktanty[j + 1] === oktanty[i]) j++;
-    if (j - i + 1 >= 3) { opakBeh = { od: i, do: j, smer: oktanty[i] }; break; }
-  }
-
-  let krizeni = null;
-  outer:
-  for (let i = 0; i < segmenty.length; i++) {
-    for (let j = i + 2; j < segmenty.length; j++) {
-      if (segIntersect(segmenty[i][0], segmenty[i][1], segmenty[j][0], segmenty[j][1])) {
-        krizeni = { a: i + 1, b: j + 1 };
-        break outer;
-      }
-    }
-  }
-
-  return { delkaCelkem, opakBeh, krizeni };
-}
-
-function a1Render() {
-  kresliApproach1($('p2'));
-  const n = a1body.length;
-  if (n === 0) $('a1state').textContent = jazyk.t('approach1.stav.prazdno');
-  else if (n === 6) $('a1state').textContent = jazyk.t('approach1.stav.hotovo');
-  else $('a1state').textContent = jazyk.t('approach1.stav.pokrok').replace('{n}', n).replace('{dalsi}', n + 1);
-
-  const wrap = $('a1metriky');
-  if (n < 6) { wrap.hidden = true; wrap.innerHTML = ''; return; }
-  wrap.hidden = false;
+function renderToc() {
+  const wrap = $('tocList');
   wrap.innerHTML = '';
-  const m = a1Metriky();
-  const M = jazyk.t('approach1.metriky');
-  const smery = jazyk.t('smery');
+  const sekce = sekceLekce(LEKCE);
 
-  const kDelka = document.createElement('div');
-  kDelka.className = 'a1Metrik';
-  kDelka.innerHTML = `<h4>${M.prechody}</h4><p>${formatM(m.delkaCelkem, jazyk.lang)}</p>`;
-  wrap.appendChild(kDelka);
+  sekce.forEach((s, i) => {
+    const a = document.createElement('a');
+    a.className = 'tocItem';
+    a.href = s.soubor;
 
-  const kSmer = document.createElement('div');
-  if (m.opakBeh) {
-    kSmer.className = 'a1Metrik spatne';
-    const seznam = [];
-    for (let i = m.opakBeh.od; i <= m.opakBeh.do; i++) seznam.push(i + 1);
-    const text = jazyk.t('approach1.varovani.smerOpakovani')
-      .replace('{seznam}', seznam.join(', '))
-      .replace('{smer}', smery[m.opakBeh.smer]);
-    kSmer.innerHTML = `<h4>${M.smery}</h4><p>${text}</p>`;
-  } else {
-    kSmer.className = 'a1Metrik dobre';
-    kSmer.innerHTML = `<h4>${M.smery}</h4><p>${M.zadneOpakovani}</p>`;
-  }
-  wrap.appendChild(kSmer);
+    const num = document.createElement('span');
+    num.className = 'num';
+    num.textContent = String(i + 1).padStart(2, '0');
 
-  const kKriz = document.createElement('div');
-  if (m.krizeni) {
-    kKriz.className = 'a1Metrik spatne';
-    const text = jazyk.t('approach1.varovani.krizeni')
-      .replace('{a}', m.krizeni.a).replace('{b}', m.krizeni.b);
-    kKriz.innerHTML = `<h4>${M.krizeni}</h4><p>${text}</p>`;
-  } else {
-    kKriz.className = 'a1Metrik dobre';
-    kKriz.innerHTML = `<h4>${M.krizeni}</h4><p>${M.zadneKrizeni}</p>`;
-  }
-  wrap.appendChild(kKriz);
-}
+    const meta = document.createElement('span');
+    meta.className = 'meta';
+    const nadpis = `${jazyk.t(s.klic + '.over')} ${jazyk.t(s.klic + '.title')}`;
+    const popis = jazyk.t(s.klic + '.lede');
+    meta.innerHTML = `<span class="t">${nadpis}</span><span class="p">${popis}</span>`;
 
-$('p2').addEventListener('click', (ev) => {
-  const r = $('p2').getBoundingClientRect();
-  const x = (ev.clientX - r.left) / r.width * 400, y = (ev.clientY - r.top) / r.height * 520;
-
-  for (let i = 0; i < a1body.length; i++) {
-    if (Math.hypot(x - a1body[i].x, y - a1body[i].y) <= 16) {
-      a1body = a1body.slice(0, i);
-      a1Render();
-      return;
-    }
-  }
-  if (a1body.length < 6) {
-    a1body.push({ x, y });
-    a1Render();
-  }
-});
-$('a1clear').addEventListener('click', () => { a1body = []; a1Render(); });
-
-/* ============================================================================
- * PUTT / SLOVNÍČEK — sdílené renderery
- * ==========================================================================*/
-function renderPuttSekce() {
-  vytvorPutt({
-    container: $('puttQuestions'), slovnik, jazyk,
-    klicOtazky: 'putt.otazky', klicPlaceholder: 'putt.poznamkaPlaceholder',
-    klicUlozeno: 'putt.ulozeno', ulozisteKlic: 'routing.poznamky.lekce3',
+    a.appendChild(num); a.appendChild(meta);
+    wrap.appendChild(a);
   });
 }
-function renderSlovnicekSekce() {
-  renderSlovnicek($('slovnicekList'), jazyk, 'slovnicek.pojmy');
-}
 
-/* ============================================================================
- * ZKOUŠKA — miniatury pro Q1 (které tři routingy nemají křížení) a Q4
- * (které tři jamky za sebou vedou stejným směrem).
- * ==========================================================================*/
-function kresliMiniRouting(svg, kind) {
-  const defs = E(svg, 'defs', {});
-  const sur = blob(60, 105, 52, 95, 0.1, 40, 0.05, 36);
-  const cs = 'mr' + kind + 's';
-  clipPath(defs, cs, sur);
-  E(svg, 'path', { d: sur, fill: V('--turf-d', svg), opacity: 0.4 });
-  hatch(svg, cs, { x: 4, y: 6, w: 112, h: 200 }, 0.9, 4.2, { op: 0.24, seed: 6 });
-  E(svg, 'path', { d: sur, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 0.9, opacity: 0.65 });
-
-  // sady bodů pro Q1 (bez/s křížením) a Q4 (bez/se stejným směrem)
-  const KLUB = { x: 22, y: 190 };
-  const SADY = {
-    // Q1: A = křížení uprostřed, B = bez křížení, C = dva koridory těsně vedle sebe
-    a: [[95, 170], [30, 130], [90, 90], [30, 55], [95, 30], [40, 15]],
-    b: [[30, 165], [90, 150], [35, 115], [95, 95], [40, 55], [90, 25]],
-    c: [[30, 165], [95, 165], [30, 125], [95, 125], [40, 30], [90, 15]],
-  }[kind];
-
-  const body = [[KLUB.x, KLUB.y], ...SADY];
-  let d = `M${body[0][0]} ${body[0][1]}`;
-  for (let i = 1; i < body.length; i++) d += ` L${body[i][0]} ${body[i][1]}`;
-  E(svg, 'path', { d, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.3, opacity: 0.75 });
-  SADY.forEach(([x, y]) => {
-    E(svg, 'circle', { cx: x, cy: y, r: 4, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1 });
-  });
-  E(svg, 'rect', { x: KLUB.x - 6, y: KLUB.y - 4, width: 12, height: 8, fill: V('--paper', svg), stroke: V('--ink', svg), 'stroke-width': 1 });
-}
-
-const zkouskaOtazky = [
-  {
-    typ: 'obrazek', body: 20, tema: 'routing', textKlic: 'zkouska.q1.text', hintKlic: 'zkouska.q1.hint',
-    vysvetleniKlic: 'zkouska.q1.why', zpetKlic: 'zkouska.q1.back', spravna: 'b',
-    moznosti: ['a', 'b', 'c'].map((id) => ({ id, kresli: (svg) => kresliMiniRouting(svg, id) })),
-  },
-  {
-    typ: 'jedna', body: 15, tema: 'rytmus-hriste', textKlic: 'zkouska.q2.text',
-    vysvetleniKlic: 'zkouska.q2.why', zpetKlic: 'zkouska.q2.back', spravna: 'b',
-    moznosti: ['a', 'b', 'c', 'd'].map((id) => ({ id, textKlic: 'zkouska.q2.' + id })),
-  },
-  {
-    typ: 'jedna', body: 15, tema: 'rytmus-hriste', textKlic: 'zkouska.q3.text',
-    vysvetleniKlic: 'zkouska.q3.why', zpetKlic: 'zkouska.q3.back', spravna: 'c',
-    moznosti: ['a', 'b', 'c', 'd'].map((id) => ({ id, textKlic: 'zkouska.q3.' + id })),
-  },
-  {
-    typ: 'obrazek', body: 20, tema: 'routing', textKlic: 'zkouska.q4.text', hintKlic: 'zkouska.q4.hint',
-    vysvetleniKlic: 'zkouska.q4.why', zpetKlic: 'zkouska.q4.back', spravna: 'a',
-    moznosti: ['a', 'b', 'c'].map((id) => ({ id, kresli: (svg) => kresliMiniRouting(svg, id) })),
-  },
-  {
-    typ: 'vice', body: 15, tema: 'routing', textKlic: 'zkouska.q5.text', hintKlic: 'zkouska.q5.hint',
-    vysvetleniKlic: 'zkouska.q5.why', zpetKlic: 'zkouska.q5.back',
-    moznosti: [
-      { id: 'a', textKlic: 'zkouska.q5.a', ok: true },
-      { id: 'b', textKlic: 'zkouska.q5.b', ok: false },
-      { id: 'c', textKlic: 'zkouska.q5.c', ok: true },
-      { id: 'd', textKlic: 'zkouska.q5.d', ok: true },
-    ],
-  },
-  {
-    typ: 'jedna', body: 15, tema: 'bezpecnost', textKlic: 'zkouska.q6.text',
-    vysvetleniKlic: 'zkouska.q6.why', zpetKlic: 'zkouska.q6.back', spravna: 'b',
-    moznosti: ['a', 'b', 'c', 'd'].map((id) => ({ id, textKlic: 'zkouska.q6.' + id })),
-  },
-];
-
-vytvorZkousku({
-  lekce: 3,
-  otazky: zkouskaOtazky,
-  slovnik,
-  jazyk,
-  el: { meter: $('zMeter'), quiz: $('zQuiz'), submit: $('zSubmit'), again: $('zAgain'), note: $('zNote'), result: $('zResult') },
-});
-
-/* ============================================================================
- * Jazykové přepnutí — celý plát vždy znovu, nikdy jen text (viz jazyk.js).
- * Zkouška se překresluje sama.
- * ==========================================================================*/
-jazyk.on(() => {
-  renderTeeShot();
-  renderPravidla();
-  renderKartyFairway();
-  renderKartaCeska();
-  a1Render();
-  renderPuttSekce();
-  renderSlovnicekSekce();
-});
+jazyk.on(() => { renderToc(); });
 </script>
 </body>
 </html>

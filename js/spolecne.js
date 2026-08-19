@@ -38,6 +38,26 @@ export function kartaJamky(container, karta, slovnik, lang) {
   vykresliJamku(svg, karta);
 
   const K = slovnik[lang].spolecneKarty;
+
+  /* Reálná fotka jamky (pokud existuje) — schéma nahoře, fotka hned pod
+     ním, ať je vidět srovnání „nákres vs. realita“. Karta bez `karta.foto`
+     (typicky velmi soukromé kluby bez volně licencovaných snímků) tenhle
+     blok jednoduše vynechá. */
+  if (karta.foto) {
+    const f = karta.foto;
+    const fotoWrap = document.createElement('figure');
+    fotoWrap.className = 'kartaFoto';
+    const img = document.createElement('img');
+    img.src = `../../assets/foto/${f.soubor}`;
+    img.alt = (f.alt && f.alt[lang]) || `${karta.hriste} #${karta.jamka}`;
+    img.loading = 'lazy';
+    fotoWrap.appendChild(img);
+    const cap = document.createElement('figcaption');
+    const poznamka = f.poznamka && f.poznamka[lang] ? ` — ${f.poznamka[lang]}` : '';
+    cap.innerHTML = `${K.fotoLabel || 'Foto'}${poznamka} · ${f.autor}, <a href="${f.licenceUrl}" target="_blank" rel="noopener">${f.licence}</a>, <a href="${f.zdrojUrl}" target="_blank" rel="noopener">Wikimedia Commons</a>`;
+    fotoWrap.appendChild(cap);
+    wrap.appendChild(fotoWrap);
+  }
   const nazev = karta.nazev && karta.nazev[lang] ? `${karta.hriste} — ${karta.nazev[lang]}` : `${karta.hriste} · #${karta.jamka}`;
   const dl = karta.delky[0];
   const architekt = karta.architekt.uvadeny[lang];

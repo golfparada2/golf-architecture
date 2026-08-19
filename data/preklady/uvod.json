@@ -1,0 +1,74 @@
+{
+  "cs": {
+    "kicker": "Golfová architektura",
+    "heroCaption": "18. fairway, Old Course St Andrews — kolébka golfové architektury. Foto: Bahnfrend, CC BY-SA 4.0, Wikimedia Commons.",
+    "eyebrow": "Kurz pro budoucí architekty",
+    "over": "Jak vzniká",
+    "title": "golfové hřiště",
+    "lede": "Za každou jamkou, kterou hraješ, stojí rozhodnutí — kam umístit green, kudy vést fairway, kde nechat hráče riskovat a kde ho ochránit. Tenhle kurz tě naučí ta rozhodnutí číst a časem i sám dělat.",
+    "academyIntro": "ROUTING je bezplatný online kurz golfové architektury určený středoškolákům, kteří golf hrají a chtějí pochopit, proč hřiště vypadají a hrají se, jak se hrají. Žádné přijímačky, žádné školné — jen 18 lekcí, jedna za každou jamku hřiště, které společně projdeš od prvního rozhodnutí architekta až po poslední jamku.",
+    "pointsHead": "Co tě čeká",
+    "points": [
+      {
+        "cislo": "01",
+        "nadpis": "Skutečné jamky, ne jen teorie",
+        "text": "Každá lekce rozebírá slavné jamky ze skutečných hřišť — od St Andrews po Pebble Beach — i jamky z českých hřišť, kam se můžeš rozjet a zahrát si je sám."
+      },
+      {
+        "cislo": "02",
+        "nadpis": "Interaktivní pláty místo textu",
+        "text": "Míň čtení, víc dívání. Každý princip je nakreslený jako plát se schématem, který si osaháš — posouváš, přepínáš, klikáš, kreslíš."
+      },
+      {
+        "cislo": "03",
+        "nadpis": "Vlastní pozorování v terénu",
+        "text": "Některé úkoly tě pošlou ven — na hřiště, do parku, na louku — abys architektovo uvažování zkusil na skutečné zemi, ne jen na obrazovce."
+      },
+      {
+        "cislo": "04",
+        "nadpis": "Zkoušky, které si pamatuješ",
+        "text": "Každá lekce končí bodovanou zkouškou. Výsledky se ukládají jen v tvém prohlížeči — nikam se neposílají, a stáhneš si je jako soubor, kdykoli budeš chtít."
+      }
+    ],
+    "ctaPrimary": "Otevřít kurz",
+    "ctaSecondary": "Přehled všech lekcí →",
+    "foot1": "ROUTING · úvod",
+    "foot2": "kurz golfové architektury"
+  },
+  "en": {
+    "kicker": "Golf course architecture",
+    "heroCaption": "The 18th fairway, Old Course at St Andrews — the cradle of golf architecture. Photo: Bahnfrend, CC BY-SA 4.0, Wikimedia Commons.",
+    "eyebrow": "A course for future architects",
+    "over": "How a golf course",
+    "title": "comes to be",
+    "lede": "Behind every hole you play sits a decision — where to put the green, where to route the fairway, where to let a player take a risk and where to protect them from one. This course teaches you to read those decisions, and in time, to make them yourself.",
+    "academyIntro": "ROUTING is a free online course in golf course architecture, built for high-school students who play golf and want to understand why courses look and play the way they do. No admissions, no tuition — just 18 lessons, one for each hole of a course, walking you from an architect's first decision to the very last hole.",
+    "pointsHead": "What's ahead",
+    "points": [
+      {
+        "cislo": "01",
+        "nadpis": "Real holes, not just theory",
+        "text": "Every lesson breaks down famous holes from real courses — from St Andrews to Pebble Beach — alongside holes from Czech courses you can actually drive to and play."
+      },
+      {
+        "cislo": "02",
+        "nadpis": "Interactive plates instead of text",
+        "text": "Less reading, more looking. Every principle sits on a drawn plate you can handle yourself — drag it, toggle it, click it, sketch on it."
+      },
+      {
+        "cislo": "03",
+        "nadpis": "Your own observations outdoors",
+        "text": "Some tasks send you outside — to a course, a park, a field — to try an architect's thinking on real ground, not just a screen."
+      },
+      {
+        "cislo": "04",
+        "nadpis": "Exams you'll actually remember",
+        "text": "Every lesson ends with a scored quiz. Results are stored only in your browser — never sent anywhere — and you can download them as a file whenever you like."
+      }
+    ],
+    "ctaPrimary": "Open the course",
+    "ctaSecondary": "Overview of all lessons →",
+    "foot1": "ROUTING · introduction",
+    "foot2": "a course in golf architecture"
+  }
+}
