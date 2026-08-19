@@ -10,29 +10,44 @@
 </head>
 <body>
 
+<a class="preskocit" href="#obsah" data-t="nav.preskocit">Přeskočit na obsah</a>
+
+<header class="hlavicka">
 <div class="topbar">
   <div class="hr"><span data-t="meta.kicker"></span></div>
-  <div class="lang" role="group" aria-label="Language">
+  <div class="lang" role="group" aria-label="Language" data-t="nav.jazykLabel" data-t-attr="aria-label">
     <button data-l="cs" aria-current="true">ČES</button><i>/</i><button data-l="en">ENG</button>
   </div>
 </div>
-<a class="zpet" href="index.html" data-t="nav.prehled"></a>
+<nav class="drobky" id="drobky"></nav>
 <p class="krokLabel" id="krokLabel"></p>
+<nav class="kroky" id="kroky"></nav>
+</header>
+
+<main id="obsah">
 
 <section class="plat" id="secFairway">
   <p class="eyebrow" data-t="fairway.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="fairway.over"></em><span data-t="fairway.title"></span></h2>
+  <h1 class="platNadpis"><em data-t="fairway.over"></em><span data-t="fairway.title"></span></h1>
   <p class="lede" data-t="fairway.lede"></p>
+  <div class="cileBox" id="cileBox" hidden></div>
   <div id="fairwayCards"></div>
 </section>
 
-<div class="sekceNav" id="sekceNav"></div>
-<div class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="index.html" data-t="nav.prehled"></a></div>
+<div class="vyzkousejBox" id="vyzkousejBox" hidden></div>
+
+<div class="zapamatujBox" id="zapamatujBox" hidden></div>
+
+<nav class="sekceNav" id="sekceNav" data-t="nav.sekceNavLabel" data-t-attr="aria-label"></nav>
+</main>
+
+<footer class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="index.html" data-t="nav.prehled"></a></footer>
 
 <script type="module">
 import { vytvorJazyk, nactiSlovnik } from '../../js/jazyk.js';
 import { kartaJamky } from '../../js/spolecne.js';
 import { vykresliNavSekci } from '../../js/sekce-nav.js';
+import { nactiUI, vykresliRamec } from '../../js/ucebnice.js';
 
 const $ = (id) => document.getElementById(id);
 
@@ -41,6 +56,9 @@ const [slovnik, kartaSandHills, kartaBallybunion] = await Promise.all([
   nactiSlovnik('../../data/jamky/sand-hills-1.json'),
   nactiSlovnik('../../data/jamky/ballybunion-old-11.json'),
 ]);
+
+await nactiUI('../../');
+const slovnikPojmu = await nactiSlovnik('../../data/preklady/slovnik-pojmu.json');
 
 const jazyk = vytvorJazyk(slovnik, {
   titul: (lang) => lang === 'cs' ? 'ROUTING — Lekce 2: Fairway' : 'ROUTING — Lesson 2: Fairway',
@@ -55,6 +73,7 @@ function renderKartyFairway() {
 jazyk.on(() => {
   renderKartyFairway();
   vykresliNavSekci({ lekce: 2, index: 1, jazyk, krokEl: $('krokLabel'), navEl: $('sekceNav') });
+  vykresliRamec({ lekce: 2, index: 1, jazyk, slovnikPojmu });
 });
 </script>
 </body>

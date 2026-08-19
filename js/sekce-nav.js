@@ -34,6 +34,21 @@ export function sekceLekce(lekce) {
   ];
 }
 
+/**
+ * Krátký název sekce pro navigaci. Nadpis plátu je rozdělený na `over`
+ * a `title` („Šest otázek za" + „100 bodů") — v drobečcích ani v ukazateli
+ * kroků se to nedá použít, protože samotné „100 bodů" nic neříká. Proto má
+ * každá lekce ve slovníku `nav.sekceNazvy`: sedm krátkých, srovnatelných
+ * jmen. Když chybí, poskládá se náhrada z `over` + `title`.
+ */
+export function nazevSekce(jazyk, sekce, index) {
+  const nazvy = jazyk.t('nav.sekceNazvy');
+  if (Array.isArray(nazvy) && nazvy[index]) return nazvy[index];
+  const over = jazyk.t(sekce.klic + '.over') || '';
+  const title = jazyk.t(sekce.klic + '.title') || '';
+  return (over + ' ' + title).trim();
+}
+
 function lekce2(n) { return String(n).padStart(2, '0'); }
 
 /**
@@ -58,7 +73,7 @@ export function vykresliNavSekci({ lekce, index, jazyk, krokEl, navEl }) {
   } else {
     const s = sekce[index - 1];
     pred.href = s.soubor;
-    pred.innerHTML = `<span class="k">← ${jazyk.t('nav.predchozi')}</span><span class="n">${jazyk.t(s.klic + '.title')}</span>`;
+    pred.innerHTML = `<span class="k">← ${jazyk.t('nav.predchozi')}</span><span class="n">${nazevSekce(jazyk, s, index - 1)}</span>`;
   }
   navEl.appendChild(pred);
 
@@ -72,15 +87,16 @@ export function vykresliNavSekci({ lekce, index, jazyk, krokEl, navEl }) {
       dalsi.href = `../${lekce2(lekce + 1)}/index.html`;
       dalsi.innerHTML = `<span class="k">${jazyk.t('nav.dalsiLekce')} →</span>`;
     } else {
-      dalsi.href = '#';
-      dalsi.className += ' disabled';
-      dalsi.setAttribute('aria-disabled', 'true');
-      dalsi.innerHTML = `<span class="k">${jazyk.t('nav.konecKurzu')}</span>`;
+      /* Konec poslední hotové lekce byl do redesignu slepý — zneaktivněné
+         tlačítko a nic dál (AUDIT.md, bod 2.6). Teď vede do sbírky jamek,
+         která je hotová a dá se v ní pokračovat. */
+      dalsi.href = '../../jamky/index.html';
+      dalsi.innerHTML = `<span class="k">${jazyk.t('nav.konecKurzu')} →</span>`;
     }
   } else {
     const s = sekce[index + 1];
     dalsi.href = s.soubor;
-    dalsi.innerHTML = `<span class="k">${jazyk.t('nav.dalsi')} →</span><span class="n">${jazyk.t(s.klic + '.title')}</span>`;
+    dalsi.innerHTML = `<span class="k">${jazyk.t('nav.dalsi')} →</span><span class="n">${nazevSekce(jazyk, s, index + 1)}</span>`;
   }
   navEl.appendChild(dalsi);
 }

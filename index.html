@@ -10,15 +10,21 @@
 </head>
 <body>
 
+<a class="preskocit" href="#obsah">Přeskočit na obsah</a>
+
+<header class="hlavicka">
 <div class="topbar">
   <div class="hr"><span data-t="kicker"></span></div>
-  <div class="lang" role="group" aria-label="Language">
+  <div class="lang" role="group" aria-label="Language" data-t="nav.jazykLabel" data-t-attr="aria-label">
     <button data-l="cs" aria-current="true">ČES</button><i>/</i><button data-l="en">ENG</button>
   </div>
 </div>
+</header>
+
+<main id="obsah">
 
 <figure class="hero">
-  <img src="assets/foto/hero-st-andrews.jpg" alt="">
+  <img src="assets/foto/hero-st-andrews.jpg" alt="" width="1220" height="670" fetchpriority="high" decoding="async">
   <figcaption class="heroCaption" data-t="heroCaption"></figcaption>
 </figure>
 
@@ -32,19 +38,32 @@
 <div class="hr" style="margin-top:26px"><span data-t="pointsHead"></span></div>
 <div class="academyPoints" id="academyPoints"></div>
 
+<div class="hr" style="margin-top:30px"><span data-t="startHead"></span></div>
+<p class="academyIntro" data-t="startText"></p>
+
+<!-- Pokračovat tam, kde student skončil (AUDIT.md, bod 1.6) -->
+<a class="pokracovat" id="pokracovat" hidden></a>
+
 <div class="ctaRow">
-  <a class="cta" href="prehled/index.html" data-t="ctaPrimary"></a>
+  <a class="cta" href="lekce/01/index.html" data-t="ctaPrimary"></a>
   <a class="cta quiet" href="prehled/index.html" data-t="ctaSecondary"></a>
 </div>
 
-<div class="foot"><span data-t="foot1"></span><span data-t="foot2"></span></div>
+<p class="src" style="margin-top:18px"><span data-t="kdyzZnas"></span>
+  <a href="slovnicek/index.html" id="odkazSlovnicek"></a> ·
+  <a href="jamky/index.html" id="odkazJamky"></a></p>
+</main>
+
+<footer class="foot"><span data-t="foot1"></span><span data-t="foot2"></span></footer>
 
 <script type="module">
 import { vytvorJazyk, nactiSlovnik } from './js/jazyk.js';
+import { nactiUI, u, vykresliPokracovat, nactiPostup } from './js/ucebnice.js';
 
 const $ = (id) => document.getElementById(id);
 
 const slovnik = await nactiSlovnik('data/preklady/uvod.json');
+await nactiUI('');
 const jazyk = vytvorJazyk(slovnik, {
   titul: (lang) => lang === 'cs' ? 'ROUTING — kurz golfové architektury' : 'ROUTING — a course in golf course architecture',
 });
@@ -72,7 +91,22 @@ function renderHeroAlt() {
   if (img) img.alt = jazyk.t('heroCaption');
 }
 
-jazyk.on(() => { renderPoints(); renderHeroAlt(); });
+function renderPokracovat() {
+  const p = nactiPostup();
+  if (!p) { $('pokracovat').hidden = true; return; }
+  vykresliPokracovat($('pokracovat'), {
+    lang: jazyk.lang, zaklad: '',
+    nazevSekce: u(jazyk.lang, 'lekceN').replace('{n}', p.lekce),
+    popis: u(jazyk.lang, 'krokZ').replace('{n}', p.index + 1),
+  });
+}
+
+function renderOdkazy() {
+  $('odkazSlovnicek').textContent = u(jazyk.lang, 'slovnicek');
+  $('odkazJamky').textContent = u(jazyk.lang, 'sbirkaJamek');
+}
+
+jazyk.on(() => { renderPoints(); renderHeroAlt(); renderPokracovat(); renderOdkazy(); });
 </script>
 </body>
 </html>

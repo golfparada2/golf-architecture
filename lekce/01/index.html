@@ -10,13 +10,19 @@
 </head>
 <body>
 
+<a class="preskocit" href="#obsah" data-t="nav.preskocit">Přeskočit na obsah</a>
+
+<header class="hlavicka">
 <div class="topbar">
   <div class="hr"><span data-t="toc.kicker"></span></div>
-  <div class="lang" role="group" aria-label="Language">
+  <div class="lang" role="group" aria-label="Language" data-t="nav.jazykLabel" data-t-attr="aria-label">
     <button data-l="cs" aria-current="true">ČES</button><i>/</i><button data-l="en">ENG</button>
   </div>
 </div>
-<a class="zpet" href="../../prehled/index.html" data-t="toc.zpetNaPrehled"></a>
+<nav class="drobky" id="drobky"></nav>
+</header>
+
+<main id="obsah">
 
 <p class="eyebrow" data-t="meta.chapter"></p>
 <h1><em data-t="meta.over"></em><span data-t="meta.title"></span></h1>
@@ -26,16 +32,22 @@
 <div class="hr" style="margin-top:22px"><span data-t="toc.sekceHead"></span></div>
 <div class="tocList" id="tocList"></div>
 
-<div class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="../../prehled/index.html" data-t="toc.zpetNaPrehled"></a></div>
+<div class="hr" style="margin-top:26px"><span data-t="toc.daleHead"></span></div>
+<div class="sbirka" id="odkazy"></div>
+</main>
+
+<footer class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="../../prehled/index.html" data-t="toc.zpetNaPrehled"></a></footer>
 
 <script type="module">
 import { vytvorJazyk, nactiSlovnik } from '../../js/jazyk.js';
-import { sekceLekce } from '../../js/sekce-nav.js';
+import { sekceLekce, nazevSekce } from '../../js/sekce-nav.js';
+import { nactiUI, u, vykresliPokracovat } from '../../js/ucebnice.js';
 
 const $ = (id) => document.getElementById(id);
 const LEKCE = 1;
 
 const slovnik = await nactiSlovnik('../../data/preklady/lekce-01.json');
+await nactiUI('../../');
 const jazyk = vytvorJazyk(slovnik, {
   titul: (lang) => lang === 'cs' ? 'ROUTING — Lekce 1: Proč jamka vypadá, jak vypadá' : 'ROUTING — Lesson 1: Why a Hole Looks the Way It Looks',
 });
@@ -65,7 +77,32 @@ function renderToc() {
   });
 }
 
-jazyk.on(() => { renderToc(); });
+function renderDrobky() {
+  const el = $('drobky');
+  el.setAttribute('aria-label', u(jazyk.lang, 'drobkyLabel'));
+  el.innerHTML = `<ol><li><a href="../../prehled/index.html">${u(jazyk.lang, 'prehled')}</a></li>`
+    + `<li><span aria-current="page">${u(jazyk.lang, 'lekceN').replace('{n}', LEKCE)}</span></li></ol>`;
+}
+
+/* Odkazy „kam dál" — slovníček a sbírka jamek byly do teď dostupné jen
+   uvnitř lekce, takže se k nim student z rozcestníku vůbec nedostal
+   (AUDIT.md, bod 1.5 a 1.7). */
+function renderOdkazy() {
+  const el = $('odkazy');
+  el.innerHTML = '';
+  [
+    { href: '../../slovnicek/index.html', jm: u(jazyk.lang, 'slovnicek'), po: jazyk.t('toc.slovnicekPopis') },
+    { href: '../../jamky/index.html', jm: u(jazyk.lang, 'sbirkaJamek'), po: jazyk.t('toc.sbirkaPopis') },
+  ].forEach((o) => {
+    const a = document.createElement('a');
+    a.className = 'sbirkaPolozka';
+    a.href = o.href;
+    a.innerHTML = `<span class="jm"><b>${o.jm}</b><span>${o.po || ''}</span></span>`;
+    el.appendChild(a);
+  });
+}
+
+jazyk.on(() => { renderToc(); renderDrobky(); renderOdkazy(); });
 </script>
 </body>
 </html>

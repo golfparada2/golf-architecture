@@ -9,9 +9,11 @@ vypadá / Čtení pozemku / Routing) i rozcestník s přehledem výsledků.
 Lekce 4–18 přibudou v dalších krocích podle stejného vzoru.
 
 Web je vícestránkový (ne SPA) — každá lekce je rozdělená na 7 samostatných
-HTML stránek + mini-rozcestník lekce, kořenová `index.html` je marketingová
-úvodní stránka kurzu a funkční rozcestník lekcí/výsledků žije na
-`prehled/index.html`. 7 z 10 karet reálných jamek má i skutečnou fotku
+HTML stránek + mini-rozcestník lekce, kořenová `index.html` je úvodní
+stránka kurzu a funkční rozcestník lekcí/výsledků žije na
+`prehled/index.html`. Navíc jsou tu dvě samostatné referenční stránky:
+`slovnicek/` (všech 38 pojmů kurzu abecedně a dvojjazyčně) a `jamky/`
+(sbírka deseti rozebraných jamek v jednotném formátu). 7 z 10 karet reálných jamek má i skutečnou fotku
 (volně licencované snímky z Wikimedia Commons); zbylé čtyři (Cypress Point,
 Sand Hills, Zbraslav, Dobrouč) žádnou volně licencovanou fotku nemají — viz
 `poznamky.md`.
@@ -49,10 +51,17 @@ a otevři `http://localhost:8000/`.
 │  ├─ jazyk.js             přepínač jazyka a slovníky
 │  ├─ vysledky.js          ukládání výsledků a přehled
 │  ├─ spolecne.js          sdílené vzorce lekcí (karta jamky, otevřené otázky, slovníček)
-│  └─ sekce-nav.js         navigace mezi sekcemi vícestránkové lekce
+│  ├─ sekce-nav.js         navigace mezi sekcemi vícestránkové lekce
+│  └─ ucebnice.js          kostra učebnice — drobečky, ukazatel kroků, „Co se naučím“,
+│                          „Zapamatuj si“, „pokračuj kde jsi skončil“, kontextová
+│                          nápověda ke slovníčku, ovládání pracovního plátu klávesnicí
 ├─ data/
 │  ├─ jamky/*.json       karty jamek včetně tvarových dat (a `foto`, pokud existuje)
-│  └─ preklady/*.json     slovníky cs/en (`uvod.json` = úvodní stránka, `rozcestnik.json` = `prehled/`, `lekce-NN.json` = lekce)
+│  └─ preklady/*.json     slovníky cs/en:
+│                          `uvod.json` = úvodní stránka · `rozcestnik.json` = `prehled/`
+│                          `lekce-NN.json` = lekce · `ui.json` = sdílené texty rozhraní
+│                          `slovnik-pojmu.json` = globální slovníček
+│                          `jamky.json` = sbírka jamek
 └─ lekce/
    ├─ 01/
    │  ├─ index.html       mini-rozcestník lekce (přehled sedmi sekcí)
@@ -141,3 +150,59 @@ nebo přechodu na jiné zařízení.
 
 Kód: viz `LICENSE`. Obsah lekcí (texty, karty jamek) podléhá stejné licenci
 jako kód, pokud `LICENSE` neuvádí jinak.
+
+
+## Kostra učebnice (`js/ucebnice.js`)
+
+Redesign z 8/2026 (viz `AUDIT.md`) zavedl na každou sekční stránku stejný
+rám. Stránka si o něj řekne jedním voláním:
+
+```js
+import { nactiUI, vykresliRamec } from '../../js/ucebnice.js';
+
+await nactiUI('../../');
+const slovnikPojmu = await nactiSlovnik('../../data/preklady/slovnik-pojmu.json');
+
+jazyk.on(() => {
+  // …vlastní obsah stránky…
+  vykresliNavSekci({ lekce: 1, index: 0, jazyk, krokEl: $('krokLabel'), navEl: $('sekceNav') });
+  vykresliRamec({ lekce: 1, index: 0, jazyk, slovnikPojmu });
+});
+```
+
+Stránka k tomu potřebuje ve značkách jen prázdné schránky:
+
+```html
+<nav class="drobky" id="drobky"></nav>
+<nav class="kroky" id="kroky"></nav>
+<div class="cileBox" id="cileBox" hidden></div>
+<div class="zapamatujBox" id="zapamatujBox" hidden></div>
+```
+
+Obsah rámu žije ve slovníku lekce pod klíčem sekce:
+
+```json
+"teeShot": {
+  "cile":      ["Vyjmenuju pět věcí, které architekt na pozemku hledá…"],
+  "zapamatuj": ["Dobrý pozemek se nekreslí. Čte se…", "…"]
+}
+```
+
+`nav.sekceNazvy` v témž slovníku drží sedm krátkých názvů sekcí — používají
+je drobečky, ukazatel kroků i navigace „Předchozí / Další“.
+
+## Jak přidat pojem do slovníčku
+
+`data/preklady/slovnik-pojmu.json` je sbírka pojmů z jednotlivých lekcí plus
+doplňky. Každý pojem má:
+
+```json
+{ "pojem": "Dogleg", "popis": "Jamka, jejíž fairway se v polovině lomí…",
+  "hledat": ["dogleg", "doglegu", "doglegem"], "kde": [1] }
+```
+
+`hledat` jsou tvary, které se hledají v textu stránek — čeština skloňuje,
+takže tvarů bývá víc. `kde` je seznam lekcí, kde je pojem vysvětlený
+(prázdné = doplňkový pojem kurzu). Kontextová nápověda označí na stránce
+**jen první výskyt** každého pojmu a nejvýš devět pojmů celkem — učebnice,
+ve které je podtržené každé druhé slovo, se nedá číst.

@@ -46,7 +46,7 @@
     "en": "Do you fire straight at the flag across the corner of that huge water hazard, or leave yourself more margin left — on the narrow strip of grass where missing the green left is still forgiving?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Geometrie vychází z přímého popisu hráče, který jamku hrál (viz poznámka u délky) — voda dominuje pravé straně, na levé zbývá jen úzký pruh.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Geometrie vychází z přímého popisu hráče, který jamku hrál (viz poznámka u délky) — voda dominuje pravé straně, na levé zbývá jen úzký pruh. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením.",
     "green": {
       "x": -18,
       "y": 190,
@@ -68,6 +68,10 @@
         "label": {
           "cs": "bunker vlevo od greenu",
           "en": "bunker left of the green"
+        },
+        "zkratka": {
+          "cs": "BUNKR VLEVO",
+          "en": "LEFT BUNKER"
         }
       }
     ],
@@ -84,9 +88,14 @@
         "label": {
           "cs": "voda přes celou pravou stranu",
           "en": "water covering the whole right side"
+        },
+        "zkratka": {
+          "cs": "VODA",
+          "en": "WATER"
         }
       }
-    ]
+    ],
+    "fairway": null
   },
   "prvky": [
     {
@@ -151,6 +160,16 @@
     "poznamka": {
       "cs": "letecký pohled na celý areál hřiště — volně licencovanou fotku přímo z 15. jamky se nepodařilo dohledat",
       "en": "aerial view of the whole course grounds — no freely licensed photo of the 15th hole itself could be found"
-    }
+    },
+    "sirka": 1028,
+    "vyska": 670
+  },
+  "naCoSeDivat": {
+    "cs": "Voda zabírá celou pravou stranu a green leží vlevo od osy hry. Kdo se vody bojí, míří doleva — a tam čeká bunkr.",
+    "en": "Water takes the whole right side and the green sits left of the line of play. Whoever fears the water aims left — and a bunker is waiting there."
+  },
+  "lekce": {
+    "cs": "Hazard nemusí ležet před greenem, aby rozhodoval. Stačí, když jamce sebere jednu stranu.",
+    "en": "A hazard does not have to sit in front of the green to matter. Taking one side away is enough."
   }
 }

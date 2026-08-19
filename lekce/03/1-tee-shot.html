@@ -14,19 +14,27 @@
 </head>
 <body>
 
+<a class="preskocit" href="#obsah" data-t="nav.preskocit">Přeskočit na obsah</a>
+
+<header class="hlavicka">
 <div class="topbar">
   <div class="hr"><span data-t="meta.kicker"></span></div>
-  <div class="lang" role="group" aria-label="Language">
+  <div class="lang" role="group" aria-label="Language" data-t="nav.jazykLabel" data-t-attr="aria-label">
     <button data-l="cs" aria-current="true">ČES</button><i>/</i><button data-l="en">ENG</button>
   </div>
 </div>
-<a class="zpet" href="index.html" data-t="nav.prehled"></a>
+<nav class="drobky" id="drobky"></nav>
 <p class="krokLabel" id="krokLabel"></p>
+<nav class="kroky" id="kroky"></nav>
+</header>
+
+<main id="obsah">
 
 <section class="plat" id="secTeeShot">
   <p class="eyebrow" data-t="teeShot.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="teeShot.over"></em><span data-t="teeShot.title"></span></h2>
+  <h1 class="platNadpis"><em data-t="teeShot.over"></em><span data-t="teeShot.title"></span></h1>
   <p class="lede" data-t="teeShot.lede"></p>
+  <div class="cileBox" id="cileBox" hidden></div>
   <div class="principBox"><b data-t="principLabel"></b><br><span data-t="teeShot.principle"></span></div>
 
   <svg id="p1" viewBox="0 0 400 520" role="img" aria-label="Pozemek se šesti místy pro greeny"></svg>
@@ -43,17 +51,24 @@
   <p class="listMark" data-t="teeShot.foot"></p>
 </section>
 
-<div class="sekceNav" id="sekceNav"></div>
-<div class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="index.html" data-t="nav.prehled"></a></div>
+<div class="zapamatujBox" id="zapamatujBox" hidden></div>
+
+<nav class="sekceNav" id="sekceNav" data-t="nav.sekceNavLabel" data-t-attr="aria-label"></nav>
+</main>
+
+<footer class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="index.html" data-t="nav.prehled"></a></footer>
 
 <script type="module">
 import { vytvorJazyk, nactiSlovnik } from '../../js/jazyk.js';
 import { E, V, clear, blob, hatch, clipPath } from '../../js/platy.js';
 import { vykresliNavSekci } from '../../js/sekce-nav.js';
+import { nactiUI, vykresliRamec } from '../../js/ucebnice.js';
 
 const $ = (id) => document.getElementById(id);
 
 const slovnik = await nactiSlovnik('../../data/preklady/lekce-03.json');
+await nactiUI('../../');
+const slovnikPojmu = await nactiSlovnik('../../data/preklady/slovnik-pojmu.json');
 const jazyk = vytvorJazyk(slovnik, {
   titul: (lang) => lang === 'cs' ? 'ROUTING — Lekce 3: Tee shot' : 'ROUTING — Lesson 3: Tee shot',
 });
@@ -147,6 +162,7 @@ jazyk.on(() => {
   renderTeeShot();
   renderPravidla();
   vykresliNavSekci({ lekce: 3, index: 0, jazyk, krokEl: $('krokLabel'), navEl: $('sekceNav') });
+  vykresliRamec({ lekce: 3, index: 0, jazyk, slovnikPojmu });
 });
 </script>
 </body>

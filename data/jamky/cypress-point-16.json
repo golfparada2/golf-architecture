@@ -46,7 +46,7 @@
     "en": "Why subordinate an entire course's routing to one dramatic stretch of coastline, instead of spreading difficulty evenly across the land?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). OPRAVA (2026-08-19): vodní hazard byl původně nereálně dominantní (rx 45, symetricky přes celou šířku karty, tj. i větší než dřívější chybný příklad rx 34 u jiné jamky) a úplně blokoval prostor, kde ve skutečnosti existuje MacKenzieho bezpečnější levá trasa podél útesu (tzv. „chicken run“ — sám MacKenzie psal o „třech alternativních cestách“, přímé přes ~200 yardů oceánu, střední přes ~100 yardů a ještě kratší vlevo, kde povinný carry nikdy nepřesahuje ~80 yardů). Hazard proto zmenšen a posunut mírně doprava, aby vlevo zůstal volný pruh pro tuto bail-out trasu. Zdroj: golfcoursewiki.substack.com/p/the-16th-at-cypress-point-with-a; walkingwithtom.wordpress.com/2012/07/03/cypress-point-notes-holes-16-18.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). OPRAVA (2026-08-19): vodní hazard byl původně nereálně dominantní (rx 45, symetricky přes celou šířku karty, tj. i větší než dřívější chybný příklad rx 34 u jiné jamky) a úplně blokoval prostor, kde ve skutečnosti existuje MacKenzieho bezpečnější levá trasa podél útesu (tzv. „chicken run“ — sám MacKenzie psal o „třech alternativních cestách“, přímé přes ~200 yardů oceánu, střední přes ~100 yardů a ještě kratší vlevo, kde povinný carry nikdy nepřesahuje ~80 yardů). Hazard proto zmenšen a posunut mírně doprava, aby vlevo zůstal volný pruh pro tuto bail-out trasu. Zdroj: golfcoursewiki.substack.com/p/the-16th-at-cypress-point-with-a; walkingwithtom.wordpress.com/2012/07/03/cypress-point-notes-holes-16-18. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením.",
     "green": {
       "x": 0,
       "y": 205,
@@ -68,6 +68,10 @@
         "label": {
           "cs": "bunker vlevo od greenu",
           "en": "bunker left of the green"
+        },
+        "zkratka": {
+          "cs": "BUNKR VLEVO",
+          "en": "LEFT BUNKER"
         }
       },
       {
@@ -81,6 +85,10 @@
         "label": {
           "cs": "bunker vpravo od greenu",
           "en": "bunker right of the green"
+        },
+        "zkratka": {
+          "cs": "BUNKR VPRAVO",
+          "en": "RIGHT BUNKER"
         }
       }
     ],
@@ -97,9 +105,14 @@
         "label": {
           "cs": "oceánská zátoka mezi odpalištěm a greenem (přímá linie carry) — vlevo od ní zůstává volný pruh pro bezpečnější trasu podél útesu",
           "en": "the ocean bay between tee and green (the direct carry line) — a strip to the left stays open for the safer cliffside route"
+        },
+        "zkratka": {
+          "cs": "OCEÁN",
+          "en": "OCEAN"
         }
       }
-    ]
+    ],
+    "fairway": null
   },
   "prvky": [
     {
@@ -154,5 +167,13 @@
       "titul": "Walking with Tom — Cypress Point Notes (Holes 16–18)",
       "url": "https://walkingwithtom.wordpress.com/2012/07/03/cypress-point-notes-holes-16-18/"
     }
-  ]
+  ],
+  "naCoSeDivat": {
+    "cs": "Podívej se, kolik místa zbývá vlevo od zátoky. Právě ten pruh dělá z jamky rozhodnutí, a ne jen zkoušku síly.",
+    "en": "Look at how much room is left to the left of the cove. That strip is what turns the hole into a decision rather than a test of strength."
+  },
+  "lekce": {
+    "cs": "I extrémně dlouhá par 3 může být strategická — pokud má poctivou náhradní cestu.",
+    "en": "Even an extremely long par 3 can be strategic — as long as it offers an honest alternative route."
+  }
 }

@@ -170,6 +170,9 @@ button,input,select,textarea{font-family:inherit}
 /* ---------- 4. Záhlaví stránky -------------------------------------------- */
 
 .hr{display:flex;align-items:center;gap:12px;color:var(--ink2);flex:1;min-width:0}
+/* `.hr` se používá i jako <h2>/<h3> (souhrn zkoušky) — sazbu si nese sám,
+   ať nadpis nezdědí obří výchozí velikost prohlížeče */
+h2.hr,h3.hr{font-size:inherit;font-weight:400;font-family:'Literata',serif}
 .hr::before,.hr::after{content:'';flex:1;height:1px;background:currentColor;opacity:.45}
 .hr span{
   font-size:clamp(9.5px,2.6vw,11px);letter-spacing:.2em;text-transform:uppercase;
@@ -253,6 +256,7 @@ svg{display:block;width:100%;height:auto}
   paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round;
 }
 .lab.sm{font-size:13.5px;fill:var(--ink2);stroke-width:3.5px}
+.lab.meritko{text-transform:none;letter-spacing:.02em} /* „300 m“, ne „300 M“ */
 .lead{stroke:var(--ink2);stroke-width:.9;fill:none;opacity:.75} /* vodicí linka k popisku */
 
 
@@ -619,3 +623,274 @@ a.cta.quiet{background:none;color:var(--olive)}
   .hero{margin:0 calc(var(--pad) * -1) 0}
   .sekceNav{gap:8px}
 }
+
+
+/* ==========================================================================
+   16. REDESIGN 2026-08 — sazba na dvě šířky, rám kapitoly, orientace
+   ==========================================================================
+   Vzniklo z auditu (viz AUDIT.md). Tři věci, které učebnici chyběly:
+
+   a) DVĚ ŠÍŘKY. Do teď platilo `max-width:560px` na celém `<body>`, takže
+      na monitoru 1440 px byl obsah v úzkém proužku a 880 px zůstalo
+      prázdných — a schémata jamek se kreslila do 560 px, tedy nečitelně
+      malá. Teď je stránka široká jako publikace, ale SOUVISLÝ TEXT drží
+      čtecí šířku (~66 znaků). Obraz smí být širší než text.
+
+   b) RÁM KAPITOLY. „Co se naučím" nahoře a „Zapamatuj si" dole — student
+      do deseti sekund ví, co ho čeká, a po dočtení ví, co si má odnést.
+
+   c) ORIENTACE. Drobečky a ukazatel sedmi kroků lekce, aby bylo vidět
+      „kde jsem" a „kolik zbývá" bez čtení.
+   ========================================================================== */
+
+:root{
+  --text-max: 66ch;    /* čtecí šířka souvislého textu */
+  --plate-max: 1080px; /* šířka celé stránky (dřív 560 px na všechno) */
+  --obraz-max: 560px;  /* strop pro samostatnou kresbu, ať se nenafoukne */
+}
+
+body{ max-width:var(--plate-max); }
+
+/* --- čtecí šířka -------------------------------------------------------- */
+.lede,.principBox,.popisFilozofie,.kartaOtazka,.kartaMeta,.pojem dd,
+.privacy,.souhrn,.result p,.why,.vysvetleni,.state,.note,.puttQ p.otazka,
+.cileBox,.zapamatujBox,.kartaDivat,.kartaLekce,.src,.radek{
+  max-width:var(--text-max);
+}
+.puttQ textarea{max-width:var(--text-max)}
+
+/* Samostatná kresba (studijní/pracovní plát) se na širokém displeji
+   nenafukuje přes celou stránku — v tisku by taky nebyla přes dvě strany. */
+.plat > svg{max-width:var(--obraz-max);margin-left:auto;margin-right:auto}
+.plat > .toggle,.plat > .tools,.plat > .posuvnik-wrap{max-width:var(--obraz-max)}
+
+/* --- přeskočit na obsah --------------------------------------------------- */
+.preskocit{
+  position:absolute;left:-9999px;top:0;z-index:20;background:var(--olive);color:var(--paper);
+  padding:10px 16px;font-size:14px;letter-spacing:.08em;text-decoration:none;
+}
+.preskocit:focus{left:var(--pad);top:8px}
+
+/* --- drobečková navigace -------------------------------------------------- */
+.drobky{margin-top:10px;font-size:12.5px;color:var(--ink2);line-height:1.5}
+.drobky ol{list-style:none;display:flex;flex-wrap:wrap;gap:0 6px;padding:0;margin:0}
+.drobky li::after{content:'›';margin-left:6px;opacity:.55}
+.drobky li:last-child::after{content:''}
+.drobky a{color:var(--ink2);text-decoration:none;border-bottom:1px solid rgba(74,68,58,.35)}
+.drobky a:hover{color:var(--olive);border-color:var(--olive)}
+.drobky a:focus-visible{outline:2px solid var(--flag);outline-offset:2px}
+.drobky [aria-current="page"]{color:var(--ink)}
+
+/* --- ukazatel kroků lekce -------------------------------------------------
+   Sedm teček s číslem. Tiché, ne dashboardové: žádné barevné karty, jen
+   linka a číslo. Hotové kroky mají plnou linku, aktuální je zvýrazněný. */
+.kroky{display:flex;gap:6px;margin-top:14px;align-items:flex-start;flex-wrap:wrap}
+.krok{
+  flex:1 1 0;min-width:26px;text-decoration:none;color:var(--ink2);
+  display:block;padding-top:7px;border-top:2px solid rgba(74,68,58,.28);
+  font-size:10.5px;letter-spacing:.14em;
+}
+.krok:hover{border-color:var(--olive);color:var(--olive)}
+.krok:focus-visible{outline:2px solid var(--flag);outline-offset:3px}
+.krok[aria-current="step"]{border-color:var(--flag);color:var(--ink)}
+.krok .kc{display:block;font-family:'Fraunces',serif;font-weight:700;font-size:13px;line-height:1.1}
+.krok .kn{display:none}
+@media (min-width:700px){
+  .krok .kn{display:block;margin-top:2px;font-size:10.5px;line-height:1.25;letter-spacing:.06em}
+}
+
+/* --- rám kapitoly: Co se naučím / Zapamatuj si ---------------------------- */
+.cileBox{
+  margin-top:18px;padding:14px 0 2px;border-top:1px solid rgba(74,68,58,.3);
+  border-bottom:1px solid rgba(74,68,58,.3);padding-bottom:14px;
+}
+.cileBox h2,.zapamatujBox h2{
+  font-family:'Literata',serif;font-size:10.5px;font-weight:500;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--olive);margin-bottom:9px;
+}
+.cileBox ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px}
+.cileBox li{font-size:15.5px;line-height:1.42;padding-left:19px;position:relative}
+.cileBox li::before{
+  content:'';position:absolute;left:0;top:.62em;width:9px;height:1.5px;background:var(--olive);
+}
+.zapamatujBox{
+  margin-top:34px;padding:18px 20px;border:1px solid rgba(74,68,58,.32);
+  background:rgba(59,74,42,.045);
+}
+.zapamatujBox ol{list-style:none;padding:0;margin:0;counter-reset:z;display:flex;flex-direction:column;gap:10px}
+.zapamatujBox li{
+  counter-increment:z;font-size:15.5px;line-height:1.42;padding-left:26px;position:relative;
+}
+.zapamatujBox li::before{
+  content:counter(z);position:absolute;left:0;top:.06em;
+  font-family:'Fraunces',serif;font-weight:700;font-size:14px;color:var(--olive);
+}
+
+/* --- karta jamky: obraz vlevo, rozbor vpravo ------------------------------ */
+.kartaObraz{margin-top:4px}
+.kartaObraz > svg{max-width:var(--obraz-max);margin-left:auto;margin-right:auto}
+.kartaDivat{
+  margin-top:8px;font-size:13.5px;line-height:1.5;color:var(--ink2);
+  padding-left:13px;border-left:2px solid rgba(59,74,42,.45);
+}
+.kartaDivat b{color:var(--olive);font-weight:500}
+.kartaLekce{
+  margin-top:16px;padding:12px 15px;border-left:2px solid var(--flag);
+  background:rgba(176,69,44,.05);font-size:15px;line-height:1.42;
+}
+.kartaLekce b{color:var(--flag);font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;font-size:10.5px;display:block;margin-bottom:4px}
+.kartaDelky{font-size:12.5px;color:var(--ink2);margin-top:5px;line-height:1.5}
+details.prameny{margin-top:16px;font-size:12.5px;color:var(--ink2);line-height:1.7}
+details.prameny summary{
+  cursor:pointer;letter-spacing:.16em;text-transform:uppercase;font-size:10.5px;
+  color:var(--ink2);padding:5px 0;min-height:32px;display:flex;align-items:center;
+}
+details.prameny summary:focus-visible{outline:2px solid var(--flag);outline-offset:2px}
+details.prameny a{color:var(--ink2)}
+
+.karta .spec h3,.karta .spec h4{
+  font-size:clamp(11.5px,3.2vw,13px);font-weight:500;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--olive);text-align:center;margin-top:4px;
+}
+
+/* Na mobilu se karta čte shora dolů: kdo a co → obraz → rozbor.
+   Na širokém displeji sedí obraz vlevo přes obě řady a text vpravo —
+   student má kresbu před očima, zatímco čte rozbor. */
+.kartaHlavicka{margin-top:2px}
+.kartaRozbor{margin-top:20px}
+@media (min-width:880px){
+  .karta{
+    display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,1fr);
+    grid-template-rows:auto 1fr;gap:6px 38px;align-items:start;
+  }
+  .karta .kartaObraz{grid-column:1;grid-row:1 / span 2;position:sticky;top:18px;margin-top:0}
+  .karta .kartaHlavicka{grid-column:2;grid-row:1}
+  .karta .kartaRozbor{grid-column:2;grid-row:2;margin-top:16px}
+  .karta .kartaObraz > svg{max-width:none}
+  .karta + .karta{margin-top:48px;padding-top:32px}
+  .karta .specs{grid-template-columns:1fr;gap:0;margin-top:6px}
+  .karta .spec{padding:11px 0;border-bottom:1px solid rgba(74,68,58,.2)}
+  .karta .spec h3,.karta .spec h4,.karta .spec .sub,.karta .spec p{text-align:left}
+  .karta .spec .bar{display:none}
+  .karta .spec p{margin-top:3px}
+}
+
+/* --- kontextová nápověda ke slovníčku --------------------------------------
+   Odborný pojem v textu se podtrhne tečkovaně; po klepnutí (nebo Enterem)
+   se pod ním rozbalí vysvětlení. Žádné hover-only řešení — na telefonu
+   by nefungovalo. */
+button.pojemRef{
+  font:inherit;color:inherit;background:none;border:0;padding:0;cursor:help;
+  border-bottom:1.5px dotted var(--olive);
+}
+button.pojemRef:hover{color:var(--olive)}
+button.pojemRef:focus-visible{outline:2px solid var(--flag);outline-offset:2px}
+.pojemBublina{
+  display:block;margin:8px 0;padding:11px 14px;border-left:2px solid var(--olive);
+  background:rgba(59,74,42,.06);font-size:14px;line-height:1.45;color:var(--ink2);
+  max-width:var(--text-max);
+}
+.pojemBublina b{color:var(--olive);font-weight:500}
+.pojemBublina .en{font-style:italic;opacity:.85}
+
+/* --- studijní mapa na rozcestníku ------------------------------------------ */
+.mapa{margin-top:18px;display:flex;flex-direction:column;gap:2px}
+.pripravujeme{
+  margin-top:16px;padding:12px 0;border-top:1px solid rgba(74,68,58,.28);
+  font-size:13px;color:var(--ink2);line-height:1.5;max-width:var(--text-max);
+}
+.pokracovat{
+  margin-top:20px;padding:15px 18px;border:1.5px solid var(--olive);
+  display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;
+  max-width:var(--text-max);text-decoration:none;color:inherit;
+}
+.pokracovat:hover{background:rgba(59,74,42,.06)}
+.pokracovat:focus-visible{outline:2px solid var(--flag);outline-offset:3px}
+.pokracovat .k{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);flex:1 0 100%}
+.pokracovat .n{font-family:'Fraunces',serif;font-weight:700;font-size:18px;color:var(--olive)}
+.pokracovat .s{font-size:13px;color:var(--ink2)}
+
+/* --- sbírka jamek --------------------------------------------------------- */
+.sbirka{margin-top:18px;display:grid;gap:2px}
+.sbirkaPolozka{
+  display:flex;gap:16px;align-items:baseline;padding:15px 2px;text-decoration:none;color:inherit;
+  border-bottom:1px solid rgba(74,68,58,.25);min-height:32px;
+}
+.sbirkaPolozka:hover{background:rgba(59,74,42,.05)}
+.sbirkaPolozka:focus-visible{outline:2px solid var(--flag);outline-offset:-2px}
+.sbirkaPolozka .zeme{
+  font-size:10.5px;letter-spacing:.16em;color:var(--ink2);flex:0 0 4.4em;
+}
+.sbirkaPolozka .jm{flex:1;min-width:0}
+.sbirkaPolozka .jm b{font-family:'Fraunces',serif;font-weight:700;font-size:16.5px;color:var(--olive);display:block}
+.sbirkaPolozka .jm span{font-size:13px;color:var(--ink2);font-style:italic;display:block;margin-top:2px;line-height:1.4}
+.sbirkaPolozka .par{font-size:12.5px;color:var(--ink2);white-space:nowrap}
+
+/* --- abecední slovníček --------------------------------------------------- */
+.abeceda{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:14px}
+.abeceda a{
+  font-family:'Fraunces',serif;font-weight:700;font-size:15px;color:var(--olive);
+  text-decoration:none;padding:4px 3px;min-width:22px;text-align:center;
+}
+.abeceda a:hover{border-bottom:1.5px solid var(--olive)}
+.abeceda a:focus-visible{outline:2px solid var(--flag);outline-offset:2px}
+.abeceda span{color:var(--ink2);opacity:.35;padding:4px 3px;min-width:22px;text-align:center;font-family:'Fraunces',serif;font-size:15px}
+.pismenoHlava{
+  font-family:'Fraunces',serif;font-weight:900;font-size:22px;color:var(--olive);
+  margin-top:26px;padding-bottom:4px;border-bottom:1.5px solid rgba(74,68,58,.3);
+}
+.pojem .kde{font-size:11.5px;color:var(--ink2);opacity:.9;margin-top:4px;display:block;letter-spacing:.04em}
+.pojem .kde a{color:var(--ink2)}
+
+/* --- opravy kontrastu (audit 3.5) -----------------------------------------
+   `.listMark` mělo 3,43 : 1 a `.foot`/`.spec .sub` 4,42 : 1 — norma AA žádá
+   u drobného textu 4,5 : 1. Krytí se zvedá, barva zůstává. */
+.listMark{opacity:1;color:var(--ink2)}
+.foot{opacity:1}
+.spec .sub{opacity:1}
+.kartaFoto figcaption{opacity:1}
+.puttSaved{opacity:1}
+.src{opacity:1}
+
+/* --- landmarky ------------------------------------------------------------ */
+main{display:block}
+header.hlavicka{display:block}
+
+/* --- responzivita redesignu ------------------------------------------------ */
+@media (max-width:520px){
+  .zapamatujBox{padding:15px 15px}
+  .kroky{gap:4px}
+}
+
+/* Seznamy na rozcestníku nemají být přes celou šířku publikace — na
+   monitoru by mezi názvem lekce a jejím stavem zůstala dvacet centimetrů
+   prázdna. Obraz smí být široký, seznam ne. */
+.mapa,.sbirka,.pripravujeme,.privacy,.datatools,.lessons{max-width:840px}
+
+/* Doměřený kontrast po redesignu — tyhle tři drobné texty zůstávaly pod
+   normou AA (3,89 : 1 a 4,40 : 1 proti požadovaným 4,5 : 1). Krytí jde
+   nahoru, barva zůstává; tichost drží velikost a prostrkání, ne bledost. */
+.krokLabel{opacity:1}
+.hero .heroCaption{opacity:1}
+.tools button.quiet{opacity:1}
+/* Zneaktivněné tlačítko je z požadavku na kontrast vyjmuté (WCAG 1.4.3),
+   ale při 0,35 se skoro nedalo přečíst, co se po studentovi vlastně chce. */
+.tools button:disabled{opacity:.5}
+
+/* --- „Vyzkoušej" — krátký úkol na konci kapitoly --------------------------- */
+.vyzkousejBox{
+  margin-top:32px;padding:18px 20px;border-left:2px solid var(--flag);
+  background:rgba(176,69,44,.045);max-width:var(--text-max);
+}
+.vyzkousejBox h2{
+  font-family:'Literata',serif;font-size:10.5px;font-weight:500;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--flag);margin-bottom:9px;
+}
+.vyzkousejBox p.otazka{font-size:15.5px;line-height:1.44;margin-bottom:10px}
+.vyzkousejBox textarea{
+  width:100%;min-height:84px;font-family:'Literata',serif;font-size:15px;line-height:1.42;
+  padding:11px;border:1.5px solid rgba(74,68,58,.35);background:rgba(255,255,255,.35);
+  color:var(--ink);resize:vertical;
+}
+.vyzkousejBox textarea:focus-visible{outline:2px solid var(--flag);outline-offset:2px}

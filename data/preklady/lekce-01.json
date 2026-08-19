@@ -8,7 +8,7 @@
       "lede": "Jedna zásada táhne celou lekci: dobrá jamka se neptá „umíš to?“, ale „kolik si troufneš?“. Uvidíš ji na třech plátech, na čtyřech reálných jamkách a nakonec si ji sám vyzkoušíš na cvičeních.",
       "zpet": "← Zpět na rozcestník"
     },
-    "principLabel": "Principy k zapamatování",
+    "principLabel": "Princip",
     "teeShot1": {
       "eyebrow": "Tee shot",
       "over": "Tři",
@@ -45,7 +45,18 @@
           "ODVAHY"
         ]
       },
-      "foot": "list 1 · Tee shot"
+      "foot": "list 1 · Tee shot",
+      "cile": [
+        "Rozeznám na první pohled, jestli jamka trestá, nabízí volbu, nebo láká k odvaze.",
+        "Vysvětlím, proč dvě rozumné cesty dělají jamku zajímavější než jedna úzká.",
+        "Poznám, kdy je trest za chybu neúměrný — a čím to na kresbě je."
+      ],
+      "zapamatuj": [
+        "Dobrá jamka se neptá „umíš to?“, ale „kolik si troufneš?“.",
+        "Trestající jamka má jednu rozumnou cestu, strategická dvě, heroická plynulou škálu odvahy.",
+        "Trest má růst s velikostí chyby. Skokový trest hned za okrajem fairwaye je nejčastější chyba amatérských návrhů.",
+        "Pás vyšší trávy mezi fairwayí a bunkrem není měkkost — je to způsob, jak chybu ocenit spravedlivě."
+      ]
     },
     "teeShot2": {
       "eyebrow": "Tee shot · druhý princip",
@@ -89,19 +100,56 @@
       "eyebrow": "Fairway",
       "over": "Tři",
       "title": "reálné jamky",
-      "lede": "Trestající, heroická a strategická filozofie na skutečných hřištích — stejné tři otázky jako na prvním plátu, tentokrát na jamkách, které existují."
+      "lede": "Trestající, heroická a strategická filozofie na skutečných hřištích — stejné tři otázky jako na prvním plátu, tentokrát na jamkách, které existují.",
+      "cile": [
+        "Přiřadím ke každé ze tří filozofií skutečnou jamku a doložím to tím, co je na plánu vidět.",
+        "Popíšu, jaké rozhodnutí každá z těch jamek hráče nutí udělat."
+      ],
+      "zapamatuj": [
+        "TPC Sawgrass 17 je trestající: bez bezpečné strany není co rozhodovat.",
+        "Pebble Beach 18 je heroická: hazard běží podél celé jamky, takže rozhodnutí padá na každou ránu.",
+        "Riviera 10 je strategická: i „bezpečná“ cesta má svou cenu, proto je krátká jamka těžká.",
+        "Filozofii jamky nepoznáš z fotky, ale z toho, kolik rozumných cest na plánu vidíš."
+      ],
+      "vyzkousej": {
+        "otazka": "Vyber si z těch tří jamek jednu, kterou bys chtěl/a mít na vlastním hřišti — a napiš jednou větou, co by na ní hráč musel umět.",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
     },
     "ceskaJamka": {
       "eyebrow": "Fairway · doma",
       "over": "Jedna",
       "title": "česká jamka",
-      "lede": "Stejná otázka blíž domovu: kde je volba mezi bezpečnou a agresivní cestou skutečná, ne jen na papíře."
+      "lede": "Stejná otázka blíž domovu: kde je volba mezi bezpečnou a agresivní cestou skutečná, ne jen na papíře.",
+      "cile": [
+        "Najdu stejné rozhodnutí, jaké dělají hráči na světových jamkách, na hřišti, kam se dá zajet.",
+        "Vysvětlím, jak hazard po jedné straně mění celou jamku, i když neleží před greenem."
+      ],
+      "zapamatuj": [
+        "Hazard nemusí ležet před greenem, aby rozhodoval — stačí, když jamce sebere jednu stranu.",
+        "Bezpečná strana bývá zaplacená horším úhlem na praporek.",
+        "Nejlepší učební materiál je hřiště, na které si můžeš zajet a ověřit si to na vlastní oči."
+      ],
+      "vyzkousej": {
+        "otazka": "Vzpomeň si na jamku z hřiště, které znáš, kde máš skutečnou volbu mezi bezpečnou a agresivní cestou. Čím je ta bezpečná cesta zaplacená?",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
     },
     "approachNadpis": {
       "eyebrow": "Approach",
       "over": "Dva",
       "title": "úkoly",
-      "lede": "Teorie končí tady. Oba pracovní pláty jsou interaktivní — klepej, táhni jezdcem, dívej se, co se stane s čísly."
+      "lede": "Teorie končí tady. Oba pracovní pláty jsou interaktivní — klepej, táhni jezdcem, dívej se, co se stane s čísly.",
+      "cile": [
+        "Umístím bunkr tak, aby hlídal odměnu, ne cestu — a poznám podle čísel, jestli se to povedlo.",
+        "Najdu bod, kde se zisk z těsnější linie vyrovná riziku, a řeknu, proč leží zrovna tam."
+      ],
+      "zapamatuj": [
+        "Bunkr, který zdrží slabšího hráče výrazně víc než dobrého, je trest, ne strategie.",
+        "Bunkr, který neovlivní nikoho, je dekorace — leží mimo dopadovou zónu.",
+        "Zajímavá jamka nezvyšuje skóre všem stejně; zvyšuje ho tomu, kdo si špatně vybral.",
+        "Zisk a riziko se musí protnout uvnitř hratelného rozsahu, ne až za ním."
+      ]
     },
     "approach1": {
       "eyebrow": "Approach · úkol I",
@@ -145,7 +193,8 @@
           "STÁČÍ DOLEVA"
         ]
       },
-      "foot": "list 3 · Approach"
+      "foot": "list 3 · Approach",
+      "planLabel": "Půdorys jamky — klepnutím nebo Enterem umístíš bunkr, dalším klepnutím ho odebereš"
     },
     "approach2": {
       "eyebrow": "Approach · úkol II",
@@ -187,7 +236,15 @@
       ],
       "poznamkaPlaceholder": "Tvoje poznámka…",
       "ulozeno": "Uloženo v tomto prohlížeči.",
-      "foot": "list 5 · Putt"
+      "foot": "list 5 · Putt",
+      "cile": [
+        "Přeložím tři principy lekce do vlastních slov a vlastních příkladů."
+      ],
+      "zapamatuj": [
+        "Otázka bez bodování je tu proto, že architekt nemá test — má rozhodnutí.",
+        "Když neumíš princip vysvětlit vlastní větou, ještě ti nesedl.",
+        "Poznámky zůstávají v tvém prohlížeči. Vrať se k nim, až budeš dělat vlastní návrh."
+      ]
     },
     "slovnicek": {
       "eyebrow": "Slovníček",
@@ -223,7 +280,19 @@
           "pojem": "Rozptyl",
           "popis": "Jak moc se od sebe liší dopady stejné rány opakované víckrát — u lepších hráčů menší, u slabších větší."
         }
-      ]
+      ],
+      "cile": [
+        "Budu rozumět sedmi pojmům, které kurz od teď používá bez vysvětlování."
+      ],
+      "zapamatuj": [
+        "Odborné názvy zůstávají anglicky — veškerá literatura je anglicky a překlad by tě od ní odřízl.",
+        "Trestající, strategická a heroická jamka jsou tři odpovědi na tutéž otázku: kolik cest nabídnout.",
+        "Kterýkoli pojem si můžeš kdykoli otevřít v celém slovníčku kurzu."
+      ],
+      "vyzkousej": {
+        "otazka": "Popiš jednu jamku, kterou znáš, pomocí tří pojmů z tohohle slovníčku.",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
     },
     "zkouska": {
       "eyebrow": "Po lekci",
@@ -322,7 +391,15 @@
         "spravneReseni": "Správně",
         "pata": "Podrobné vysvětlení je u každé otázky výše. Výsledek se ukládá do přehledu kurzu; po deváté lekci z něj vznikne rozbor, která témata ti sedí a která si zopakovat."
       },
-      "foot": "list 6 · Zkouška"
+      "foot": "list 6 · Zkouška",
+      "cile": [
+        "Ověřím si na šesti otázkách, jestli principy lekce poznám i na jamce, kterou jsem neviděl/a."
+      ],
+      "zapamatuj": [
+        "Do celkového hodnocení kurzu se počítá jen první pokus — opakovat se smí a má, ale původní výsledek zůstává.",
+        "U každé chybné odpovědi je napsáno, na který plát se vrátit. Nepřeskakuj to.",
+        "Výsledky se ukládají jen v tvém prohlížeči. Stáhni si je, než přejdeš na jiné zařízení."
+      ]
     },
     "temata": {
       "strategie": "Strategie",
@@ -345,14 +422,30 @@
       "prehled": "Přehled lekce",
       "krok": "Krok {n} z 7",
       "dalsiLekce": "Pokračovat další lekcí",
-      "konecKurzu": "Zatím poslední hotová lekce"
+      "konecKurzu": "Zatím poslední hotová lekce — pokračuj sbírkou jamek",
+      "preskocit": "Přeskočit na obsah",
+      "sekceNavLabel": "Navigace mezi částmi lekce",
+      "jazykLabel": "Volba jazyka",
+      "sekceNazvy": [
+        "Tee shot",
+        "Reálné jamky",
+        "Česká jamka",
+        "Úkoly",
+        "K zamyšlení",
+        "Slovníček",
+        "Zkouška"
+      ],
+      "klavesniNapoveda": "Plán se dá ovládat i klávesnicí: tabulátorem na něj přejdi, šipkami posouvej zaměřovač, Enterem potvrď."
     },
     "toc": {
       "kicker": "Přehled lekce",
       "sekceHead": "Co tě čeká",
       "pokracovat": "Pokračovat",
       "zacit": "Začít lekci",
-      "zpetNaPrehled": "← Zpět na přehled kurzu"
+      "zpetNaPrehled": "← Zpět na přehled kurzu",
+      "daleHead": "Kam dál",
+      "slovnicekPopis": "Všechny pojmy kurzu na jednom místě, abecedně a dvojjazyčně.",
+      "sbirkaPopis": "Deset rozebraných jamek z celého světa i z Česka, v jednotném formátu."
     }
   },
   "en": {
@@ -364,7 +457,7 @@
       "lede": "One idea carries the whole lesson: a good hole doesn't ask \"can you do it?\" — it asks \"how much do you dare?\" You'll see it on three plates, on four real holes, and finally try it yourself in the exercises.",
       "zpet": "← Back to the hub"
     },
-    "principLabel": "Principles to remember",
+    "principLabel": "The principle",
     "teeShot1": {
       "eyebrow": "Tee shot",
       "over": "Three",
@@ -401,7 +494,18 @@
           "DARING"
         ]
       },
-      "foot": "sheet 1 · Tee shot"
+      "foot": "sheet 1 · Tee shot",
+      "cile": [
+        "Tell at a glance whether a hole punishes, offers a choice, or tempts you into daring.",
+        "Explain why two reasonable routes make a hole more interesting than one narrow one.",
+        "Spot when a penalty is out of proportion to the mistake — and see it in the drawing."
+      ],
+      "zapamatuj": [
+        "A good hole doesn't ask \"can you do it?\" — it asks \"how much do you dare?\".",
+        "A punishing hole has one reasonable route, a strategic hole two, a heroic hole a smooth scale of daring.",
+        "The penalty should grow with the size of the mistake. A cliff-edge penalty right at the fairway's border is the commonest amateur design error.",
+        "A band of longer grass between fairway and bunker is not softness — it is how a mistake gets priced fairly."
+      ]
     },
     "teeShot2": {
       "eyebrow": "Tee shot · second principle",
@@ -445,19 +549,56 @@
       "eyebrow": "Fairway",
       "over": "Three",
       "title": "real holes",
-      "lede": "Punishing, heroic, and strategic philosophy on real courses — the same three questions as the first plate, this time on holes that actually exist."
+      "lede": "Punishing, heroic, and strategic philosophy on real courses — the same three questions as the first plate, this time on holes that actually exist.",
+      "cile": [
+        "Match each of the three philosophies to a real hole and back it up with what the plan shows.",
+        "Describe the decision each of those holes forces a player to make."
+      ],
+      "zapamatuj": [
+        "TPC Sawgrass 17 is punishing: with no safe side there is nothing to decide.",
+        "Pebble Beach 18 is heroic: the hazard runs the whole length, so a decision falls on every shot.",
+        "Riviera 10 is strategic: even the \"safe\" route carries a price, which is what makes a short hole hard.",
+        "You don't read a hole's philosophy off a photograph — you read it off how many reasonable routes the plan shows."
+      ],
+      "vyzkousej": {
+        "otazka": "Pick one of the three holes you would want on your own course — and write one sentence about what a player would have to be able to do there.",
+        "placeholder": "Write in your own words — nobody is marking this."
+      }
     },
     "ceskaJamka": {
       "eyebrow": "Fairway · closer to home",
       "over": "One",
       "title": "Czech hole",
-      "lede": "The same question closer to home: where the choice between a safe and an aggressive line is real, not just on paper."
+      "lede": "The same question closer to home: where the choice between a safe and an aggressive line is real, not just on paper.",
+      "cile": [
+        "Find the same decision the world's famous holes demand, on a course you can actually drive to.",
+        "Explain how a hazard down one side changes a whole hole even when it isn't in front of the green."
+      ],
+      "zapamatuj": [
+        "A hazard doesn't have to sit in front of the green to matter — taking one side away is enough.",
+        "The safe side is usually paid for with a worse angle to the flag.",
+        "The best teaching material is a course you can drive to and check with your own eyes."
+      ],
+      "vyzkousej": {
+        "otazka": "Think of a hole on a course you know where you really do choose between a safe and an aggressive line. What does the safe line cost you?",
+        "placeholder": "Write in your own words — nobody is marking this."
+      }
     },
     "approachNadpis": {
       "eyebrow": "Approach",
       "over": "Two",
       "title": "tasks",
-      "lede": "Theory ends here. Both working plates are interactive — click, drag the slider, watch what happens to the numbers."
+      "lede": "Theory ends here. Both working plates are interactive — click, drag the slider, watch what happens to the numbers.",
+      "cile": [
+        "Place a bunker so it guards the reward rather than the route — and read from the numbers whether it worked.",
+        "Find the point where the gain from a tighter line balances the risk, and say why it sits there."
+      ],
+      "zapamatuj": [
+        "A bunker that costs the weaker player far more than the good one is punishment, not strategy.",
+        "A bunker that affects nobody is decoration — it lies outside the landing zone.",
+        "An interesting hole doesn't raise everyone's score equally; it raises the score of whoever chose badly.",
+        "Gain and risk have to cross inside the playable range, not beyond it."
+      ]
     },
     "approach1": {
       "eyebrow": "Approach · task I",
@@ -501,7 +642,8 @@
           "LEFT"
         ]
       },
-      "foot": "sheet 3 · Approach"
+      "foot": "sheet 3 · Approach",
+      "planLabel": "Hole plan — click or press Enter to place a bunker, click it again to remove it"
     },
     "approach2": {
       "eyebrow": "Approach · task II",
@@ -543,7 +685,15 @@
       ],
       "poznamkaPlaceholder": "Your note…",
       "ulozeno": "Saved in this browser.",
-      "foot": "sheet 5 · Putt"
+      "foot": "sheet 5 · Putt",
+      "cile": [
+        "Put the lesson's three principles into my own words and my own examples."
+      ],
+      "zapamatuj": [
+        "An unscored question is here because an architect doesn't face a test — they face a decision.",
+        "If you can't explain a principle in a sentence of your own, it hasn't landed yet.",
+        "Your notes stay in this browser. Come back to them when you make your own design."
+      ]
     },
     "slovnicek": {
       "eyebrow": "Glossary",
@@ -579,7 +729,19 @@
           "pojem": "Dispersion",
           "popis": "How much the results of the same shot, repeated many times, differ from each other — smaller for better players, larger for weaker ones."
         }
-      ]
+      ],
+      "cile": [
+        "Understand the seven terms the course will use from now on without explaining them."
+      ],
+      "zapamatuj": [
+        "Technical names stay in English — the whole literature is in English and translating would cut you off from it.",
+        "Punishing, strategic and heroic are three answers to one question: how many routes to offer.",
+        "Any term can be opened at any time in the full course glossary."
+      ],
+      "vyzkousej": {
+        "otazka": "Describe one hole you know using three terms from this glossary.",
+        "placeholder": "Write in your own words — nobody is marking this."
+      }
     },
     "zkouska": {
       "eyebrow": "After the lesson",
@@ -678,7 +840,15 @@
         "spravneReseni": "Correct",
         "pata": "Detailed explanations are above with each question. The result is saved to the course overview; after the ninth lesson it becomes an analysis of which topics suit you and which to revisit."
       },
-      "foot": "sheet 6 · Exam"
+      "foot": "sheet 6 · Exam",
+      "cile": [
+        "Check across six questions whether I can spot the lesson's principles on a hole I have never seen."
+      ],
+      "zapamatuj": [
+        "Only the first attempt counts towards your overall course grade — repeating is allowed and encouraged, but the original result stands.",
+        "Every wrong answer tells you which plate to go back to. Don't skip that.",
+        "Results are stored only in this browser. Download them before you switch device."
+      ]
     },
     "temata": {
       "strategie": "Strategy",
@@ -701,14 +871,30 @@
       "prehled": "Lesson overview",
       "krok": "Step {n} of 7",
       "dalsiLekce": "Continue to the next lesson",
-      "konecKurzu": "Last finished lesson for now"
+      "konecKurzu": "The last finished lesson for now — continue with the hole collection",
+      "preskocit": "Skip to content",
+      "sekceNavLabel": "Navigation between lesson parts",
+      "jazykLabel": "Language",
+      "sekceNazvy": [
+        "Tee shot",
+        "Real holes",
+        "Czech hole",
+        "Exercises",
+        "To think about",
+        "Glossary",
+        "Exam"
+      ],
+      "klavesniNapoveda": "The plan works from the keyboard too: tab to it, move the crosshair with the arrow keys, confirm with Enter."
     },
     "toc": {
       "kicker": "Lesson overview",
       "sekceHead": "What's ahead",
       "pokracovat": "Continue",
       "zacit": "Start the lesson",
-      "zpetNaPrehled": "← Back to the course overview"
+      "zpetNaPrehled": "← Back to the course overview",
+      "daleHead": "Where next",
+      "slovnicekPopis": "Every term in the course in one place, alphabetical and bilingual.",
+      "sbirkaPopis": "Ten holes analysed, from around the world and from Czechia, in one format."
     }
   }
 }

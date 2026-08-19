@@ -1,0 +1,783 @@
+{
+  "cs": {
+    "meta": {
+      "kicker": "Slovníček kurzu",
+      "over": "Všechny",
+      "title": "pojmy",
+      "lede": "Odborné názvy zůstávají anglicky i v české sazbě — je to jazyk, kterým golfová architektura mluví ve všech pramenech. Tady je najdeš na jednom místě, abecedně.",
+      "kdeLabel": "Vysvětleno v lekci",
+      "kdeZadna": "Doplňkový pojem kurzu",
+      "zpet": "← Zpět na přehled kurzu",
+      "hledatLabel": "Filtrovat pojmy",
+      "nicNenalezeno": "Žádný pojem tomu neodpovídá.",
+      "pocet": "{n} pojmů"
+    },
+    "pojmy": [
+      {
+        "pojem": "Approach",
+        "popis": "Rána mířená na green — druhá na par 4, třetí na par 5. Úhel, ze kterého se hraje, je často důležitější než délka.",
+        "hledat": [
+          "approach",
+          "approachu"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Bailout",
+        "popis": "Bezpečná strana jamky, kam se dá zahrát, když si hráč netroufne na ideální linii. Jamka bez bailoutu je zkouška, ne rozhodnutí.",
+        "hledat": [
+          "bailout",
+          "bailoutu"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Blowout",
+        "popis": "Bunkr, který nevykopal stroj, ale vítr — písek se vyfouká z porostu duny. Typický pro Sand Hills v Nebrasce.",
+        "hledat": [
+          "blowout",
+          "blowoutu",
+          "blowouty"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Bunkr",
+        "popis": "Prohlubeň vyplněná pískem. V perokresbě kurzu se kreslí tečkováním a krátkými čárkami po okraji, které naznačují hloubku.",
+        "hledat": [
+          "bunkr",
+          "bunkru",
+          "bunkry",
+          "bunkrů",
+          "bunker",
+          "bunkeru",
+          "bunkery"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Carry",
+        "popis": "Vzdálenost, kterou míč urazí vzduchem, než poprvé dopadne. U přeletu přes hazard rozhoduje právě carry, ne celková délka rány.",
+        "hledat": [
+          "carry"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Clubhouse loop",
+        "popis": "Routing vedený tak, že se hřiště kolem poloviny kola vrátí zpátky ke klubovně (typicky po deváté jamce).",
+        "hledat": [
+          "clubhouse loop"
+        ],
+        "kde": [
+          3
+        ]
+      },
+      {
+        "pojem": "Corridor crossing",
+        "popis": "Situace, kdy se koridory dvou jamek přiblíží nebo protnou natolik, že hrozí zásah míčem odjinud.",
+        "hledat": [
+          "corridor crossing"
+        ],
+        "kde": [
+          3
+        ]
+      },
+      {
+        "pojem": "Dogleg",
+        "popis": "Jamka, jejíž fairway se v polovině lomí doleva nebo doprava.",
+        "hledat": [
+          "dogleg",
+          "doglegu",
+          "doglegem"
+        ],
+        "kde": [
+          1
+        ]
+      },
+      {
+        "pojem": "Dopadová zóna",
+        "popis": "Místo, kam po ráně z odpaliště dopadne většina hráčů. Hazard mimo dopadovou zónu je dekorace — proto se kreslí i do schémat v tomhle kurzu.",
+        "hledat": [
+          "dopadová zóna",
+          "dopadové zón",
+          "dopadovou zónu"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Dramaturgie kola",
+        "popis": "Záměrné rozvržení obtížnosti a nálady jamek v průběhu celého kola, ne jen jamku po jamce.",
+        "hledat": [
+          "dramaturgie kola",
+          "dramaturgii kola"
+        ],
+        "kde": [
+          3
+        ]
+      },
+      {
+        "pojem": "Drenáž",
+        "popis": "Odvod přebytečné vody z povrchu i podloží; buď přirozený (písek, spád), nebo umělý (trubky pod trávníkem).",
+        "hledat": [
+          "drenáž"
+        ],
+        "kde": [
+          2
+        ]
+      },
+      {
+        "pojem": "Dvojgreen",
+        "popis": "Jeden fyzický green sloužící dvěma různým jamkám — typicky jdoucím opačným směrem, jako na St Andrews.",
+        "hledat": [
+          "dvojgreen"
+        ],
+        "kde": [
+          3
+        ]
+      },
+      {
+        "pojem": "Fairway",
+        "popis": "Sečená dráha mezi odpalištěm a greenem, kde míč leží nejlíp. Kudy povede a jak bude široká, rozhoduje o obtížnosti celé jamky.",
+        "hledat": [
+          "fairway",
+          "fairwaye",
+          "fairwayi",
+          "fairwayí"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Green",
+        "popis": "Nejkratší sečená plocha s jamkou, kde se patuje. Jeho tvar, sklon a šířka vstupu určují, odkud se na něj dá bezpečně hrát.",
+        "hledat": [
+          "green",
+          "greenu",
+          "greeny",
+          "greenem"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Green speed",
+        "popis": "Rychlost greenu měřená stimpmetrem; se sklonem terénu roste riziko, že green bude nehratelně rychlý.",
+        "hledat": [
+          "green speed"
+        ],
+        "kde": [
+          2
+        ]
+      },
+      {
+        "pojem": "Hazard",
+        "popis": "Voda, bunkr nebo jiná plocha, kde se za chybu platí ranou navíc nebo horším ležením.",
+        "hledat": [
+          "hazard",
+          "hazardu",
+          "hazardy",
+          "hazardů"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Heroická jamka",
+        "popis": "Zvláštní případ strategické jamky s plynulou škálou odvahy místo dvou pevných cest.",
+        "hledat": [
+          "heroická jamka",
+          "heroické jamk",
+          "heroickou jamku"
+        ],
+        "kde": [
+          1
+        ]
+      },
+      {
+        "pojem": "Koridor",
+        "popis": "Pruh terénu vyhrazený jedné jamce, od odpaliště po green, včetně bezpečného okraje.",
+        "hledat": [
+          "koridor"
+        ],
+        "kde": [
+          3
+        ]
+      },
+      {
+        "pojem": "Layup",
+        "popis": "Vědomě kratší, bezpečnější rána místo pokusu doletět blíž k jamce nebo na green.",
+        "hledat": [
+          "layup",
+          "lay-up",
+          "layupu"
+        ],
+        "kde": [
+          1
+        ]
+      },
+      {
+        "pojem": "Links",
+        "popis": "Přímořský typ hřiště na písčitých dunách s minimem stromů — původní prostředí, kde se golf zrodil.",
+        "hledat": [
+          "links"
+        ],
+        "kde": [
+          2
+        ]
+      },
+      {
+        "pojem": "Mikroklima",
+        "popis": "Místní rozdíly ve slunci, větru a vlhkosti napříč jedním pozemkem — dvě jamky vedle sebe mohou schnout úplně jinak rychle.",
+        "hledat": [
+          "mikroklima",
+          "mikroklimat"
+        ],
+        "kde": [
+          2
+        ]
+      },
+      {
+        "pojem": "Odpaliště",
+        "popis": "Místo, odkud se hraje první rána jamky. Posunem odpaliště se mění délka i úhel na hazard, aniž by se cokoliv přestavovalo.",
+        "hledat": [
+          "odpaliště",
+          "odpališť"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Out of bounds",
+        "popis": "Hranice hřiště. Míč za ní stojí trestnou ránu a hraje se znovu z původního místa — nejtvrdší trest v golfu.",
+        "hledat": [
+          "out of bounds"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Přechod",
+        "popis": "Cesta, kterou hráč jde pěšky od greenu jedné jamky k odpališti další.",
+        "hledat": [
+          "přechod"
+        ],
+        "kde": [
+          3
+        ]
+      },
+      {
+        "pojem": "Punchbowl",
+        "popis": "Green položený do prohlubně; svahy kolem něj svádějí míč dovnitř, takže nepřesná rána může skončit líp, než si zaslouží.",
+        "hledat": [
+          "punchbowl"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Redan",
+        "popis": "Šikmý plošinový green natočený od hráče, s hlubokým bunkrem u kratší strany. Původ: North Berwick, jamka 15.",
+        "hledat": [
+          "redan",
+          "redanu"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Riziko a odměna",
+        "popis": "Návrhový princip: čím víc si hráč troufne, tím větší má být odměna — a naopak.",
+        "hledat": [
+          "riziko a odměn",
+          "rizika a odměny"
+        ],
+        "kde": [
+          1
+        ]
+      },
+      {
+        "pojem": "Rough",
+        "popis": "Vyšší tráva kolem fairwaye. Trest je mírnější než v bunkru nebo ve vodě, ale míč se z ní hůř kontroluje.",
+        "hledat": [
+          "rough",
+          "roughu"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Routing",
+        "popis": "Pořadí a propojení všech osmnácti jamek na pozemku — téma celé třetí lekce.",
+        "hledat": [
+          "routing",
+          "routingu",
+          "routingem"
+        ],
+        "kde": [
+          2,
+          3
+        ]
+      },
+      {
+        "pojem": "Rozptyl",
+        "popis": "Jak moc se od sebe liší dopady stejné rány opakované víckrát — u lepších hráčů menší, u slabších větší.",
+        "hledat": [
+          "rozptyl",
+          "rozptylu",
+          "rozptylem"
+        ],
+        "kde": [
+          1
+        ]
+      },
+      {
+        "pojem": "Shaping",
+        "popis": "Tvarování terénu stavební technikou — čím míň shapingu, tím víc pozemek „mluví“ sám za sebe.",
+        "hledat": [
+          "shaping"
+        ],
+        "kde": [
+          2
+        ]
+      },
+      {
+        "pojem": "Spádnice",
+        "popis": "Čára nejstrmějšího klesání terénu — cesta, kudy se dá voda vždy vydá jako první.",
+        "hledat": [
+          "spádnic"
+        ],
+        "kde": [
+          2
+        ]
+      },
+      {
+        "pojem": "Šrafura",
+        "popis": "Kreslířská technika krátkých rovnoběžných čar. V tomhle kurzu nahrazuje stín i barvu — proto jsou pláty čitelné i černobíle.",
+        "hledat": [
+          "šrafur"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Stimpmetr",
+        "popis": "Nakloněná kolejnička, kterou se měří rychlost greenu. Číslo ze stimpmetru je vzdálenost, kterou míč dokutálí.",
+        "hledat": [
+          "stimpmetr",
+          "stimpmetru"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Strategická jamka",
+        "popis": "Jamka se dvěma nebo více rozumnými cestami; hráč si vybírá riziko podle sebe.",
+        "hledat": [
+          "strategická jamka",
+          "strategické jamk",
+          "strategickou jamku"
+        ],
+        "kde": [
+          1
+        ]
+      },
+      {
+        "pojem": "Template hole",
+        "popis": "Osvědčené schéma jamky (Redan, Eden, Punchbowl), které architekti opakují na různých pozemcích. Téma pozdější lekce kurzu.",
+        "hledat": [
+          "template hole",
+          "šablonová jamka",
+          "šablonové jamk"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Trestající jamka",
+        "popis": "Jamka s jedinou rozumnou cestou ke greenu; chyba se platí bez ohledu na úroveň hráče.",
+        "hledat": [
+          "trestající jamk"
+        ],
+        "kde": [
+          1
+        ]
+      },
+      {
+        "pojem": "Vrstevnice",
+        "popis": "Čára spojující místa se stejnou nadmořskou výškou — základní nástroj čtení terénu na mapě.",
+        "hledat": [
+          "vrstevnic"
+        ],
+        "kde": [
+          2
+        ]
+      }
+    ]
+  },
+  "en": {
+    "meta": {
+      "kicker": "Course glossary",
+      "over": "All the",
+      "title": "terms",
+      "lede": "Technical names stay in English throughout the course — it is the language golf architecture speaks in every source. Here they are in one place, alphabetically.",
+      "kdeLabel": "Explained in lesson",
+      "kdeZadna": "Supplementary course term",
+      "zpet": "← Back to the course overview",
+      "hledatLabel": "Filter terms",
+      "nicNenalezeno": "No term matches that.",
+      "pocet": "{n} terms"
+    },
+    "pojmy": [
+      {
+        "pojem": "Approach",
+        "popis": "The shot played at the green — the second on a par 4, the third on a par 5. The angle it comes from often matters more than the length.",
+        "hledat": [
+          "approach",
+          "approach shot"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Bailout",
+        "popis": "The safe side of a hole for a player who will not take on the ideal line. A hole without a bailout is a test, not a decision.",
+        "hledat": [
+          "bailout"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Blowout",
+        "popis": "A bunker dug by wind rather than machine — sand blown out of a dune’s cover. Typical of Sand Hills in Nebraska.",
+        "hledat": [
+          "blowout",
+          "blowouts"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Bunker",
+        "popis": "A hollow filled with sand. In this course’s pen drawings it is shown by stippling plus short edge strokes that suggest depth.",
+        "hledat": [
+          "bunker",
+          "bunkers"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Carry",
+        "popis": "The distance a ball flies before it first lands. On a forced carry it is this number that matters, not the total shot length.",
+        "hledat": [
+          "carry"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Clubhouse loop",
+        "popis": "A routing designed so the course returns to the clubhouse around the halfway point (typically after the ninth hole).",
+        "hledat": [
+          "clubhouse loop"
+        ],
+        "kde": [
+          3
+        ]
+      },
+      {
+        "pojem": "Contour line",
+        "popis": "A line connecting points of equal elevation — the basic tool for reading terrain on a map.",
+        "hledat": [
+          "contour line"
+        ],
+        "kde": [
+          2
+        ]
+      },
+      {
+        "pojem": "Corridor",
+        "popis": "The strip of land reserved for one hole, from tee to green, including its safety margin.",
+        "hledat": [
+          "corridor"
+        ],
+        "kde": [
+          3
+        ]
+      },
+      {
+        "pojem": "Corridor crossing",
+        "popis": "When two holes' corridors come close enough, or intersect, to risk a player being hit by a ball from elsewhere.",
+        "hledat": [
+          "corridor crossing"
+        ],
+        "kde": [
+          3
+        ]
+      },
+      {
+        "pojem": "Dispersion",
+        "popis": "How much the results of the same shot, repeated many times, differ from each other — smaller for better players, larger for weaker ones.",
+        "hledat": [
+          "dispersion"
+        ],
+        "kde": [
+          1
+        ]
+      },
+      {
+        "pojem": "Dogleg",
+        "popis": "A hole whose fairway bends left or right partway along.",
+        "hledat": [
+          "dogleg",
+          "doglegu",
+          "doglegem"
+        ],
+        "kde": [
+          1
+        ]
+      },
+      {
+        "pojem": "Double green",
+        "popis": "One physical green serving two different holes — typically running in opposite directions, as at St Andrews.",
+        "hledat": [
+          "double green"
+        ],
+        "kde": [
+          3
+        ]
+      },
+      {
+        "pojem": "Drainage",
+        "popis": "Removing excess water from the surface and subsoil; either natural (sand, slope) or built (pipes under the turf).",
+        "hledat": [
+          "drainage"
+        ],
+        "kde": [
+          2
+        ]
+      },
+      {
+        "pojem": "Fairway",
+        "popis": "The mown corridor between tee and green where the ball sits best. Where it runs and how wide it is decides the difficulty of the whole hole.",
+        "hledat": [
+          "fairway"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Fall line",
+        "popis": "The line of steepest descent across terrain — the path water always takes first.",
+        "hledat": [
+          "fall line"
+        ],
+        "kde": [
+          2
+        ]
+      },
+      {
+        "pojem": "Green",
+        "popis": "The shortest-mown surface holding the cup, where you putt. Its shape, slope and entrance width decide where you can safely play from.",
+        "hledat": [
+          "green"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Green speed",
+        "popis": "A green's speed as measured by a stimpmeter; the steeper the terrain, the higher the risk a green becomes unplayably fast.",
+        "hledat": [
+          "green speed"
+        ],
+        "kde": [
+          2
+        ]
+      },
+      {
+        "pojem": "Hatching",
+        "popis": "A drawing technique of short parallel strokes. Here it stands in for both shadow and colour, which is why the plans read in black and white too.",
+        "hledat": [
+          "hatching"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Hazard",
+        "popis": "Water, sand or any area where a miss costs a stroke or a worse lie.",
+        "hledat": [
+          "hazard",
+          "hazards"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Heroic hole",
+        "popis": "A special case of the strategic hole with a smooth scale of daring instead of two fixed paths.",
+        "hledat": [
+          "heroic hole"
+        ],
+        "kde": [
+          1
+        ]
+      },
+      {
+        "pojem": "Landing zone",
+        "popis": "Where most players’ tee shots come down. A hazard outside the landing zone is decoration — which is why the zone is drawn on the plans here.",
+        "hledat": [
+          "landing zone",
+          "landing area"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Layup",
+        "popis": "A deliberately shorter, safer shot instead of trying to reach closer to the hole or the green.",
+        "hledat": [
+          "layup",
+          "lay-up",
+          "layupu"
+        ],
+        "kde": [
+          1
+        ]
+      },
+      {
+        "pojem": "Links",
+        "popis": "A seaside course type on sandy dunes with almost no trees — the original setting where golf was born.",
+        "hledat": [
+          "links"
+        ],
+        "kde": [
+          2
+        ]
+      },
+      {
+        "pojem": "Microclimate",
+        "popis": "Local differences in sun, wind and moisture across a single site — two neighboring holes can dry at completely different rates.",
+        "hledat": [
+          "microclimate"
+        ],
+        "kde": [
+          2
+        ]
+      },
+      {
+        "pojem": "Out of bounds",
+        "popis": "The boundary of the course. A ball beyond it costs a penalty stroke and a replay from the original spot — the harshest penalty in golf.",
+        "hledat": [
+          "out of bounds"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Punchbowl",
+        "popis": "A green set in a hollow; the surrounding slopes feed balls in, so an imprecise shot can finish better than it deserves.",
+        "hledat": [
+          "punchbowl"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Punishing hole",
+        "popis": "A hole with a single reasonable path to the green; a mistake is charged regardless of skill level.",
+        "hledat": [
+          "punishing hole"
+        ],
+        "kde": [
+          1
+        ]
+      },
+      {
+        "pojem": "Redan",
+        "popis": "An angled plateau green running away from the player with a deep bunker at the short side. Origin: North Berwick, hole 15.",
+        "hledat": [
+          "redan"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Risk and reward",
+        "popis": "A design principle: the more a player dares, the greater the reward should be — and vice versa.",
+        "hledat": [
+          "risk and reward"
+        ],
+        "kde": [
+          1
+        ]
+      },
+      {
+        "pojem": "Rough",
+        "popis": "The longer grass beside the fairway. A milder penalty than sand or water, but the ball is harder to control from it.",
+        "hledat": [
+          "rough"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Round dramaturgy",
+        "popis": "The deliberate shaping of difficulty and mood across an entire round, not just hole by hole.",
+        "hledat": [
+          "round dramaturgy"
+        ],
+        "kde": [
+          3
+        ]
+      },
+      {
+        "pojem": "Routing",
+        "popis": "The sequence and connection of all eighteen holes on a site — the subject of the whole third lesson.",
+        "hledat": [
+          "routing",
+          "routingu",
+          "routingem"
+        ],
+        "kde": [
+          2,
+          3
+        ]
+      },
+      {
+        "pojem": "Shaping",
+        "popis": "Reworking terrain with earth-moving equipment — the less shaping, the more the land \"speaks\" for itself.",
+        "hledat": [
+          "shaping"
+        ],
+        "kde": [
+          2
+        ]
+      },
+      {
+        "pojem": "Stimpmeter",
+        "popis": "A sloped rail used to measure green speed. The stimpmeter number is how far the ball rolls out.",
+        "hledat": [
+          "stimpmeter"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Strategic hole",
+        "popis": "A hole with two or more reasonable paths; the player chooses their own risk.",
+        "hledat": [
+          "strategic hole"
+        ],
+        "kde": [
+          1
+        ]
+      },
+      {
+        "pojem": "Tee",
+        "popis": "The place the first shot of a hole is played from. Moving it changes both length and the angle to a hazard without rebuilding anything.",
+        "hledat": [
+          "tee",
+          "tees"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Template hole",
+        "popis": "A proven hole pattern (Redan, Eden, Punchbowl) architects repeat on different sites. The subject of a later lesson.",
+        "hledat": [
+          "template hole",
+          "template holes"
+        ],
+        "kde": []
+      },
+      {
+        "pojem": "Transition",
+        "popis": "The walk a player takes from one hole's green to the next hole's tee.",
+        "hledat": [
+          "transition"
+        ],
+        "kde": [
+          3
+        ]
+      }
+    ]
+  }
+}

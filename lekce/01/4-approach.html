@@ -10,20 +10,28 @@
 </head>
 <body>
 
+<a class="preskocit" href="#obsah" data-t="nav.preskocit">Přeskočit na obsah</a>
+
+<header class="hlavicka">
 <div class="topbar">
   <div class="hr"><span data-t="meta.kicker"></span></div>
-  <div class="lang" role="group" aria-label="Language">
+  <div class="lang" role="group" aria-label="Language" data-t="nav.jazykLabel" data-t-attr="aria-label">
     <button data-l="cs" aria-current="true">ČES</button><i>/</i><button data-l="en">ENG</button>
   </div>
 </div>
-<a class="zpet" href="index.html" data-t="nav.prehled"></a>
+<nav class="drobky" id="drobky"></nav>
 <p class="krokLabel" id="krokLabel"></p>
+<nav class="kroky" id="kroky"></nav>
+</header>
+
+<main id="obsah">
 
 <!-- ============================================================ APPROACH: ÚVOD -->
 <section class="plat" id="secApproachIntro">
   <p class="eyebrow" data-t="approachNadpis.eyebrow"></p>
-  <h2 class="platNadpis"><em data-t="approachNadpis.over"></em><span data-t="approachNadpis.title"></span></h2>
+  <h1 class="platNadpis"><em data-t="approachNadpis.over"></em><span data-t="approachNadpis.title"></span></h1>
   <p class="lede" data-t="approachNadpis.lede"></p>
+  <div class="cileBox" id="cileBox" hidden></div>
 </section>
 
 <!-- ============================================================ APPROACH 1: KAM PATŘÍ BUNKR -->
@@ -32,7 +40,9 @@
   <h2 class="platNadpis"><em data-t="approach1.over"></em><span data-t="approach1.title"></span></h2>
   <p class="lede" data-t="approach1.lede"></p>
 
-  <svg id="p3" class="plate-work" viewBox="0 0 400 900" role="img" aria-label="Půdorys jamky, klepnutím umístíš bunkr"></svg>
+  <svg id="p3" class="plate-work" viewBox="0 0 400 900" data-t="approach1.planLabel" data-t-attr="aria-label"></svg>
+  <p class="state" id="a1kurzor" role="status" aria-live="polite"></p>
+  <p class="listMark" data-t="nav.klavesniNapoveda"></p>
 
   <div class="tools">
     <button type="button" id="a1run" data-t="approach1.tools.run"></button>
@@ -94,14 +104,19 @@
   <p class="listMark" data-t="approach2.foot"></p>
 </section>
 
-<div class="sekceNav" id="sekceNav"></div>
-<div class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="index.html" data-t="nav.prehled"></a></div>
+<div class="zapamatujBox" id="zapamatujBox" hidden></div>
+
+<nav class="sekceNav" id="sekceNav" data-t="nav.sekceNavLabel" data-t-attr="aria-label"></nav>
+</main>
+
+<footer class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="index.html" data-t="nav.prehled"></a></footer>
 
 <script type="module">
 import { vytvorJazyk, nactiSlovnik } from '../../js/jazyk.js';
 import { E, V, clear, blob, blobPts, hatch, radial, stipple, pin, clipPath } from '../../js/platy.js';
 import { HRACI, odehrajKolo, bocniChyba, puttyPlynule, normCdf } from '../../js/simulace.js';
 import { vykresliNavSekci } from '../../js/sekce-nav.js';
+import { nactiUI, vykresliRamec, ovladaniKlavesnici } from '../../js/ucebnice.js';
 
 const $ = (id) => document.getElementById(id);
 const fmt = (n, lang, d = 2) => {
@@ -110,6 +125,8 @@ const fmt = (n, lang, d = 2) => {
 };
 
 const slovnik = await nactiSlovnik('../../data/preklady/lekce-01.json');
+await nactiUI('../../');
+const slovnikPojmu = await nactiSlovnik('../../data/preklady/slovnik-pojmu.json');
 const jazyk = vytvorJazyk(slovnik, {
   titul: (lang) => lang === 'cs' ? 'ROUTING — Lekce 1: Approach' : 'ROUTING — Lesson 1: Approach',
 });
@@ -291,9 +308,8 @@ function renderApproach1() {
   if (a1Shots) a1UpdateResults();
 }
 
-$('p3').addEventListener('click', (ev) => {
-  const r = $('p3').getBoundingClientRect();
-  const sx = (ev.clientX - r.left) / r.width * 400, sy = (ev.clientY - r.top) / r.height * 900;
+/* Umístění bunkru — jedno místo pro myš, dotyk i klávesnici. */
+function a1Vyber(sx, sy) {
   const wx = sx / A1_SX + A1_WX[0], wy = (900 - sy) / A1_SY + A1_WY[0];
   const hit = a1Bunkers.findIndex((b) => Math.hypot(wx - b.x, wy - b.y) <= b.r + 3);
   if (hit >= 0) a1Bunkers.splice(hit, 1);
@@ -301,6 +317,14 @@ $('p3').addEventListener('click', (ev) => {
   a1Shots = null;
   $('a1results').hidden = true;
   renderApproach1();
+}
+$('p3').addEventListener('click', (ev) => {
+  const r = $('p3').getBoundingClientRect();
+  a1Vyber((ev.clientX - r.left) / r.width * 400, (ev.clientY - r.top) / r.height * 900);
+});
+const a1Klavesy = ovladaniKlavesnici($('p3'), {
+  sirka: 400, vyska: 900, jazyk, krok: 24, stavEl: $('a1kurzor'),
+  onVyber: (x, y) => { a1Vyber(x, y); a1Klavesy.kresliKurzor(); },
 });
 $('a1run').addEventListener('click', () => {
   const r0 = a1Hraj(HRACI[0], 100), r24 = a1Hraj(HRACI[24], 100);
@@ -377,6 +401,7 @@ jazyk.on(() => {
   renderApproach1();
   renderApproach2();
   vykresliNavSekci({ lekce: 1, index: 3, jazyk, krokEl: $('krokLabel'), navEl: $('sekceNav') });
+  vykresliRamec({ lekce: 1, index: 3, jazyk, slovnikPojmu });
 });
 </script>
 </body>

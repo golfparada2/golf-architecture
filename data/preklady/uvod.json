@@ -30,10 +30,13 @@
         "text": "Každá lekce končí bodovanou zkouškou. Výsledky se ukládají jen v tvém prohlížeči — nikam se neposílají, a stáhneš si je jako soubor, kdykoli budeš chtít."
       }
     ],
-    "ctaPrimary": "Otevřít kurz",
+    "ctaPrimary": "Začít první lekcí",
     "ctaSecondary": "Přehled všech lekcí →",
     "foot1": "ROUTING · úvod",
-    "foot2": "kurz golfové architektury"
+    "foot2": "kurz golfové architektury",
+    "startHead": "Kde začít",
+    "startText": "Začni lekcí 1 a jdi po pořádku — každá lekce staví na předchozí. Hotové jsou zatím tři z osmnácti; další přibývají postupně. Nic se nikam neregistruje, nic se neplatí.",
+    "kdyzZnas": "Znáš základy? Přeskoč na slovníček nebo rovnou na sbírku rozebraných jamek."
   },
   "en": {
     "kicker": "Golf course architecture",
@@ -66,9 +69,12 @@
         "text": "Every lesson ends with a scored quiz. Results are stored only in your browser — never sent anywhere — and you can download them as a file whenever you like."
       }
     ],
-    "ctaPrimary": "Open the course",
-    "ctaSecondary": "Overview of all lessons →",
+    "ctaPrimary": "Start the first lesson",
+    "ctaSecondary": "All lessons →",
     "foot1": "ROUTING · introduction",
-    "foot2": "a course in golf architecture"
+    "foot2": "a course in golf architecture",
+    "startHead": "Where to start",
+    "startText": "Start with lesson 1 and work through in order — each lesson builds on the last. Three of eighteen are ready so far; more arrive step by step. Nothing to register, nothing to pay.",
+    "kdyzZnas": "Know the basics already? Jump to the glossary, or straight to the collection of analysed holes."
   }
 }

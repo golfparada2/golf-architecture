@@ -9,6 +9,13 @@ Sporné nebo neúplné údaje jsou označené výslovně — u golfové historie
 to častější, než by se čekalo, a student se to má dozvědět (viz zadání,
 část 13).
 
+**Kontrola 8/2026 (redesign):** přehled se rozcházel s JSON kartami ve dvou
+údajích — Karlštejn 15 (par a délka) a Zbraslav 1 (prohozené jednotky).
+Obojí je níž opravené podle karet. Karty mají navíc od redesignu dvě nová
+pole, která se sem zatím nepřepisují: `naCoSeDivat` (na co se dívat na
+schématu) a `lekce` (přenositelná lekce). Jsou vidět na webu u každé jamky
+a v sekci `jamky/`.
+
 ---
 
 ## Ballybunion Golf Club — Old Course, jamka 11 „Watsonova"
@@ -73,8 +80,9 @@ to častější, než by se čekalo, a student se to má dozvědět (viz zadán�
 
 *(lekce 1 · Česká jamka · skutečná volba mezi bezpečnou a agresivní cestou)*
 
-- **Země:** ČR (Liteň u Karlštejna) · **Par:** 4 · **Délka:** 335 m / 366 yd
-  (bílé odpaliště; hodnota z agregátoru, ne přímo z klubového scorecardu)
+- **Země:** ČR (Liteň u Karlštejna) · **Par:** 3 · **Délka:** 198 m / 217 yd
+  (opraveno podle JSON karty; dřívější verze tohoto přehledu uváděla par 4
+  a 335 m — to neodpovídalo ani kartě, ani skutečné jamce)
 - **Architekt:** Les Furber a Jim Eremko, 1993.
 - **GPS:** 49.933, 14.190 (přibližně, úroveň areálu)
 - **Otázka:** Riskneš odpal přes vodu na kratší a jistější druhou ránu,
@@ -112,8 +120,9 @@ to častější, než by se čekalo, a student se to má dozvědět (viz zadán�
 
 *(lekce 3 · Česká ukázka · routing určený polohou klubovny)*
 
-- **Země:** ČR (Praha–Lipence) · **Par:** 5 · **Délka:** 475 m / 520 yd
-  (zadní odpaliště, 2023; metry jsou přepočet z yardů)
+- **Země:** ČR (Praha–Lipence) · **Par:** 5 · **Délka:** 520 m / 569 yd
+  (zadní/černé odpaliště, 2023, GolfPass scorecard; dřívější verze tohoto
+  přehledu měla prohozené jednotky — 520 zapsáno jako yardy místo metrů)
 - **Architekt:** Jeremy Ford a Alex Čejka (2009); kompletní přeuspořádání
   routingu Jakub Červenka (2023).
 - **GPS:** 49.99, 14.34 (odhad z adresy, neověřeno primárním zdrojem)

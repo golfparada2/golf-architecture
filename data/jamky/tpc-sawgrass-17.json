@@ -55,7 +55,7 @@
     "en": "How do you hit a small island green with a short club when the only safe line is dead center, and a miss in any direction means a ball in the water?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(); pořadí vykreslení je hazardy → bunkry → green (js/platy.js:442-462), takže voda soustředěná kolem greenu a jen mírně větší než green se automaticky ukáže jako prstenec obklopující ostrůvek ze všech stran. OPRAVA (2026-08-19): původní návrh měl vodní hazard rx:34/ry:30 vystředěný mimo green (0,118) — to je stejná chyba jako u jiné jamky dřív (obří jezero přes celou kartu, šířka bounding boxu by vyšla přes 90 m). Green podle Golf News Net (3 912 sq ft, 78×81 ft ≈ skoro kruhový) měl navíc být méně zploštělý (ry blíž rx) a bunker je podle stejného zdroje vpředu vlevo, ne vzadu. Přepsáno: voda je teď soustředěná na stejné x,y jako green a jen o pár metrů větší na každou stranu (rx 18 / ry 15 vs. green rx 12 / ry 11) — pořád obklopuje ostrůvek ze všech stran, ale nedominuje kartě.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(); pořadí vykreslení je hazardy → bunkry → green (js/platy.js:442-462), takže voda soustředěná kolem greenu a jen mírně větší než green se automaticky ukáže jako prstenec obklopující ostrůvek ze všech stran. OPRAVA (2026-08-19): původní návrh měl vodní hazard rx:34/ry:30 vystředěný mimo green (0,118) — to je stejná chyba jako u jiné jamky dřív (obří jezero přes celou kartu, šířka bounding boxu by vyšla přes 90 m). Green podle Golf News Net (3 912 sq ft, 78×81 ft ≈ skoro kruhový) měl navíc být méně zploštělý (ry blíž rx) a bunker je podle stejného zdroje vpředu vlevo, ne vzadu. Přepsáno: voda je teď soustředěná na stejné x,y jako green a jen o pár metrů větší na každou stranu (rx 18 / ry 15 vs. green rx 12 / ry 11) — pořád obklopuje ostrůvek ze všech stran, ale nedominuje kartě. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením.",
     "green": {
       "x": 0,
       "y": 121,
@@ -77,6 +77,10 @@
         "label": {
           "cs": "malý pot bunker vpředu vlevo",
           "en": "small pot bunker front-left"
+        },
+        "zkratka": {
+          "cs": "POT BUNKR",
+          "en": "POT BUNKER"
         }
       }
     ],
@@ -93,9 +97,14 @@
         "label": {
           "cs": "jezero obklopující green ze všech stran",
           "en": "lake surrounding the green on every side"
+        },
+        "zkratka": {
+          "cs": "JEZERO",
+          "en": "LAKE"
         }
       }
-    ]
+    ],
+    "fairway": null
   },
   "prvky": [
     {
@@ -157,6 +166,16 @@
     "alt": {
       "cs": "Slavná 17. jamka, TPC Sawgrass — ostrůvkový green obklopený vodou",
       "en": "The famous 17th hole, TPC Sawgrass — island green surrounded by water"
-    }
+    },
+    "sirka": 1316,
+    "vyska": 670
+  },
+  "naCoSeDivat": {
+    "cs": "Podívej se, jak je green malý vůči ploše vody kolem něj — a že schéma nemá kam nakreslit bezpečnou stranu. Žádná tam totiž není.",
+    "en": "Look at how small the green is against the water around it — and note the drawing has nowhere to put a safe side. There isn't one."
+  },
+  "lekce": {
+    "cs": "Když jamka nenabízí žádnou bezpečnou stranu, přestává být rozhodnutím a stává se zkouškou nervů. Na hřišti se to snese jednou, ne osmnáctkrát.",
+    "en": "A hole with no safe side stops being a decision and becomes a nerve test. A course can carry one of those, not eighteen."
   }
 }
