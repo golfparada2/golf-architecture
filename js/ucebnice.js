@@ -37,6 +37,7 @@ export async function nactiUI(zaklad = '') {
   const res = await fetch(`${zaklad}data/preklady/ui.json`);
   if (!res.ok) throw new Error(`Slovník rozhraní se nepodařilo načíst (HTTP ${res.status}).`);
   UI = await res.json();
+  nactiVerzi(zaklad);          // datum v patičce — doplněk, neblokuje stránku
   return UI;
 }
 
@@ -482,4 +483,62 @@ export function vykresliVyzkousej(el, jazyk, klicSekce, ulozisteKlic) {
     stav.textContent = u(jazyk.lang, 'vyzkousejUlozeno');
   });
   el.append(h, p, ta, stav);
+}
+
+/* ==========================================================================
+ * 8 · Datum poslední aktualizace v patičce
+ *
+ * Statický web bez build kroku si datum nedoplní sám, takže žije v
+ * `data/verze.json` a udržuje se ručně. Vykresluje se do patičky každé
+ * stránky — a protože patičku mají všechny stránky stejnou, instaluje se
+ * samo z `nactiUI()`, aby se to nemuselo dopisovat do dvaceti sedmi
+ * souborů zvlášť.
+ *
+ * Jazyk se hlídá přes `MutationObserver` na atributu `lang` kořenového
+ * elementu: `jazyk.js` ho přepíná spolu s textem, takže se stačí svézt
+ * s ním a není potřeba žádné další propojení.
+ * ======================================================================== */
+
+let VERZE = null;
+
+function formatujDatum(iso, lang) {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return '';
+  const den = d.getDate(), mesic = d.getMonth() + 1, rok = d.getFullYear();
+  const hh = String(d.getHours()).padStart(2, '0');
+  const mm = String(d.getMinutes()).padStart(2, '0');
+  return lang === 'cs'
+    ? `${den}. ${mesic}. ${rok} v ${hh}:${mm}`
+    : `${rok}-${String(mesic).padStart(2, '0')}-${String(den).padStart(2, '0')} ${hh}:${mm}`;
+}
+
+function vykresliAktualizaci() {
+  if (!VERZE || !VERZE.aktualizovano) return;
+  const lang = document.documentElement.lang === 'en' ? 'en' : 'cs';
+  document.querySelectorAll('footer.foot, .foot').forEach((foot) => {
+    let el = foot.querySelector('.aktualizace');
+    if (!el) {
+      el = document.createElement('span');
+      el.className = 'aktualizace';
+      foot.appendChild(el);
+    }
+    const t = document.createElement('time');
+    t.dateTime = VERZE.aktualizovano;
+    t.textContent = formatujDatum(VERZE.aktualizovano, lang);
+    el.textContent = (lang === 'cs' ? 'Aktualizováno ' : 'Updated ');
+    el.appendChild(t);
+  });
+}
+
+/** Načte `data/verze.json` a nainstaluje datum do patičky. Volá `nactiUI()`. */
+async function nactiVerzi(zaklad) {
+  if (VERZE) { vykresliAktualizaci(); return; }
+  try {
+    const res = await fetch(`${zaklad}data/verze.json`);
+    if (!res.ok) return;               // datum je doplněk, ne podmínka běhu
+    VERZE = await res.json();
+  } catch { return; }
+  vykresliAktualizaci();
+  new MutationObserver(vykresliAktualizaci)
+    .observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
 }

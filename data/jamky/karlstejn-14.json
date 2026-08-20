@@ -1,0 +1,224 @@
+{
+  "verze": 1,
+  "id": "karlstejn-14",
+  "hriste": "Golf Resort Karlštejn",
+  "zeme": "CZ",
+  "jamka": 14,
+  "nazev": null,
+  "par": 3,
+  "delky": [
+    {
+      "odpaliste": "bílé",
+      "m": 198,
+      "yd": 217,
+      "rok": null,
+      "poznamka": "Z birdie booku (strokesaveru) hřiště. 198 m je na střed greenu, na přední okraj je to 180 m. Další odpaliště: žluté 173 m, modré 145 m, červené 119 m. HCP jamky 6/5."
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "Les Furber a Jim Eremko",
+      "en": "Les Furber and Jim Eremko"
+    },
+    "jistota": "jistá",
+    "poznamka": {
+      "cs": "Hřiště otevřeno 1993. Areál má 27 jamek číslovaných 1–27. POZOR: GolfPass vede „1-18 Course\" s číslováním posunutým o jednu jamku, takže jeho „15\" je právě tahle klubová 14.",
+      "en": "The course opened in 1993. The resort has 27 holes numbered 1–27. Note: GolfPass lists a \"1-18 Course\" whose numbering is offset by one, so its \"15\" is this club hole 14."
+    }
+  },
+  "vznik": 1993,
+  "gps": {
+    "tee": [
+      49.933,
+      14.19
+    ],
+    "green": [
+      49.933,
+      14.19
+    ],
+    "presnost": {
+      "cs": "přibližné, úroveň areálu (Liteň u Karlštejna)",
+      "en": "approximate, resort level (Liteň near Karlštejn)"
+    }
+  },
+  "otazka": {
+    "cs": "Namíříš přímo na praporek, i když rybník sahá až k pravému okraji greenu, nebo si vezmeš o klub víc a zahraješ na bezpečný pruh trávy vlevo?",
+    "en": "Do you aim straight at the flag even though the pond reaches the right edge of the green, or take one more club and play to the safe strip of grass on the left?"
+  },
+  "tvary": {
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). PODKLAD: birdie book (strokesaver) hřiště, dodaný objednatelem — proto jsou poměry (délka 198 m na střed, 180 m na přední okraj, green 19 × 35 m, rybník končící před greenem) věrné kartě. Přesné obrysy rybníka a bunkerů zůstávají zjednodušené.",
+    "zkraceni": 0.85,
+    "maxPomer": 1.9,
+    "fairway": {
+      "ohyb": -20,
+      "sirkaTee": 24,
+      "sirkaGreen": 30,
+      "zacatek": 15,
+      "seed": 4109
+    },
+    "green": {
+      "x": -8,
+      "y": 198,
+      "rx": 9.5,
+      "ry": 17.5,
+      "rot": 0.05,
+      "seed": 2101,
+      "amp": 0.06
+    },
+    "bunkry": [
+      {
+        "x": -21,
+        "y": 184,
+        "rx": 5,
+        "ry": 4,
+        "rot": 0.4,
+        "seed": 2102,
+        "amp": 0.16,
+        "zkratka": {
+          "cs": "VPŘEDU VLEVO",
+          "en": "FRONT LEFT"
+        },
+        "label": {
+          "cs": "bunker před levým rohem greenu",
+          "en": "bunker at the front-left corner of the green"
+        }
+      },
+      {
+        "x": -22,
+        "y": 203,
+        "rx": 4.5,
+        "ry": 4,
+        "rot": -0.2,
+        "seed": 2103,
+        "amp": 0.15,
+        "zkratka": null,
+        "label": {
+          "cs": "bunker po levé straně greenu",
+          "en": "bunker down the left side of the green"
+        }
+      },
+      {
+        "x": 2,
+        "y": 186,
+        "rx": 4.5,
+        "ry": 3.5,
+        "rot": 0.3,
+        "seed": 2104,
+        "amp": 0.15,
+        "zkratka": null,
+        "label": {
+          "cs": "bunker vpředu vpravo, mezi vodou a greenem",
+          "en": "front-right bunker, between the water and the green"
+        }
+      },
+      {
+        "x": 3,
+        "y": 213,
+        "rx": 5,
+        "ry": 4,
+        "rot": -0.3,
+        "seed": 2105,
+        "amp": 0.16,
+        "zkratka": {
+          "cs": "VZADU VPRAVO",
+          "en": "BACK RIGHT"
+        },
+        "label": {
+          "cs": "bunker za greenem vpravo — trestá příliš dlouhou ránu",
+          "en": "bunker behind the green on the right, punishing too much club"
+        }
+      }
+    ],
+    "hazardy": [
+      {
+        "typ": "voda",
+        "x": 23,
+        "y": 105,
+        "rx": 22,
+        "ry": 60,
+        "rot": 0.05,
+        "seed": 2110,
+        "amp": 0.08,
+        "zkratka": {
+          "cs": "RYBNÍK",
+          "en": "POND"
+        },
+        "label": {
+          "cs": "rybník po celé pravé straně jamky; jeho horní konec sahá k pravému okraji greenu, ale green leží až za ním",
+          "en": "a pond down the whole right side; its far end reaches the right edge of the green, but the green lies beyond it"
+        }
+      }
+    ]
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Rybník končí před greenem",
+        "en": "The pond ends short of the green"
+      },
+      "popis": {
+        "cs": "Voda lemuje celou pravou stranu, ale k greenu se nedostane — ten leží až za jejím horním koncem. Kdo doletí, je za vodou; kdo ne, je v ní.",
+        "en": "Water lines the whole right side but never reaches the green, which sits beyond its far end. Carry it and you are past it; come up short and you are in it."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Green 19 × 35 metrů",
+        "en": "A green 19 by 35 metres"
+      },
+      "popis": {
+        "cs": "Skoro dvakrát tak hluboký, jak je široký. Mezi předním okrajem a středem je 18 metrů — volba klubu tady rozhoduje víc než směr.",
+        "en": "Almost twice as deep as it is wide. There are 18 metres between the front edge and the middle, so club selection matters more than direction."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Úzký pruh trávy vlevo",
+        "en": "A narrow strip of grass on the left"
+      },
+      "popis": {
+        "cs": "Jediná bezpečná strana. Je tak úzká, že bezpečná hra pořád vyžaduje přesnost — a nechává delší chip do kopce.",
+        "en": "The only safe side. It is narrow enough that the safe play still demands precision, and it leaves a longer chip up the slope."
+      }
+    }
+  ],
+  "naCoSeDivat": {
+    "cs": "Sleduj, kde rybník končí: jeho horní okraj je pod greenem, ne vedle něj. Proto se tahle jamka nehraje na směr, ale na délku — a proto je green 35 metrů hluboký.",
+    "en": "Watch where the pond ends: its far edge is below the green, not beside it. That is why this hole is about length rather than line — and why the green is 35 metres deep."
+  },
+  "lekce": {
+    "cs": "Hazard, který končí těsně před greenem, mění otázku ze „kam\" na „jak daleko\". Hloubka greenu je pak odpověď architekta na to, jak velkou chybu ještě odpustí.",
+    "en": "A hazard that stops just short of the green turns the question from \"where\" into \"how far\". The depth of the green is then the architect's answer to how big a miss he will forgive."
+  },
+  "prameny": [
+    {
+      "titul": "Birdie book (strokesaver) Golf Resortu Karlštejn, jamka 14 — podklad dodaný objednatelem (par 3, 198/173/145/119 m, green 19 × 35 m, HCP 6/5)",
+      "url": "https://www.karlstejn-golf.cz/golfove-hriste/mapa-hriste"
+    },
+    {
+      "titul": "Golf Resort Karlštejn — oficiální mapa hřiště (jamka 14 uvedena jako par 3)",
+      "url": "https://www.karlstejn-golf.cz/golfove-hriste/mapa-hriste"
+    },
+    {
+      "titul": "offcourse.co — scorecard Golf Resort Karlstejn",
+      "url": "https://offcourse.co/courses/scorecard/golf-resort-karlstejn"
+    }
+  ],
+  "foto": {
+    "soubor": "karlstejn-15.jpg",
+    "autor": "Karelj",
+    "licence": "volné dílo (public domain)",
+    "licenceUrl": "https://en.wikipedia.org/wiki/Public_domain",
+    "zdrojUrl": "https://commons.wikimedia.org/wiki/File:Golf_Karl%C5%A1tejn_2.jpg",
+    "alt": {
+      "cs": "Letecký pohled na areál Golf Resort Karlštejn",
+      "en": "Aerial view of the Golf Resort Karlštejn grounds"
+    },
+    "poznamka": {
+      "cs": "letecký pohled na celý areál — volně licencovaný snímek přímo ze 14. jamky se nepodařilo dohledat",
+      "en": "aerial view of the whole resort — no freely licensed photo of the 14th hole itself could be found"
+    },
+    "sirka": 1028,
+    "vyska": 670
+  }
+}

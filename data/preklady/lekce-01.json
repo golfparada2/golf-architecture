@@ -114,20 +114,39 @@
       "vyzkousej": {
         "otazka": "Vyber si z těch tří jamek jednu, kterou bys chtěl/a mít na vlastním hřišti — a napiš jednou větou, co by na ní hráč musel umět.",
         "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      },
+      "filozofie": {
+        "tpc-sawgrass-17": {
+          "stitek": "Trestající",
+          "proc": "Jediná rozumná cesta — na green, nebo do vody. Kdo netrefí, platí bez ohledu na to, jak dobře hraje."
+        },
+        "pebble-beach-18": {
+          "stitek": "Heroická",
+          "proc": "Plynulá škála odvahy: čím větší kus zátoky ukrojíš, tím kratší zbytek jamky ti zůstane."
+        },
+        "riviera-10": {
+          "stitek": "Strategická",
+          "proc": "Dvě rozumné cesty a obě něco stojí. Hráč si vybírá, kolik rizika unese."
+        },
+        "karlstejn-14": {
+          "stitek": "Strategická",
+          "proc": "Přímo na praporek podél vody, nebo o klub víc na bezpečný pruh vlevo. Obě cesty dávají smysl a obě něco stojí."
+        }
       }
     },
     "ceskaJamka": {
       "eyebrow": "Fairway · doma",
       "over": "Jedna",
       "title": "česká jamka",
-      "lede": "Stejná otázka blíž domovu: kde je volba mezi bezpečnou a agresivní cestou skutečná, ne jen na papíře.",
+      "lede": "Stejná otázka blíž domovu: par 3, kde rybník lemuje celou pravou stranu — ale končí těsně před greenem. Volba je skutečná, ne jen na papíře.",
       "cile": [
         "Najdu stejné rozhodnutí, jaké dělají hráči na světových jamkách, na hřišti, kam se dá zajet.",
-        "Vysvětlím, jak hazard po jedné straně mění celou jamku, i když neleží před greenem."
+        "Vysvětlím, proč hazard, který končí před greenem, mění otázku z „kam\" na „jak daleko\"."
       ],
       "zapamatuj": [
-        "Hazard nemusí ležet před greenem, aby rozhodoval — stačí, když jamce sebere jednu stranu.",
-        "Bezpečná strana bývá zaplacená horším úhlem na praporek.",
+        "Hazard po jedné straně sebere jamce polovinu šířky — a rozhoduje, i když neleží před greenem.",
+        "Když voda končí těsně před greenem, přestává jít o směr a začne jít o délku.",
+        "Hloubka greenu je odpověď architekta na to, jak velkou chybu ještě odpustí. Tady 35 metrů.",
         "Nejlepší učební materiál je hřiště, na které si můžeš zajet a ověřit si to na vlastní oči."
       ],
       "vyzkousej": {
@@ -563,20 +582,39 @@
       "vyzkousej": {
         "otazka": "Pick one of the three holes you would want on your own course — and write one sentence about what a player would have to be able to do there.",
         "placeholder": "Write in your own words — nobody is marking this."
+      },
+      "filozofie": {
+        "tpc-sawgrass-17": {
+          "stitek": "Punishing",
+          "proc": "One reasonable route — the green, or the water. Miss it and you pay, however well you play."
+        },
+        "pebble-beach-18": {
+          "stitek": "Heroic",
+          "proc": "A smooth scale of daring: the more of the cove you bite off, the less hole is left."
+        },
+        "riviera-10": {
+          "stitek": "Strategic",
+          "proc": "Two reasonable routes, and both cost something. The player picks how much risk to carry."
+        },
+        "karlstejn-14": {
+          "stitek": "Strategic",
+          "proc": "Straight at the flag along the water, or one more club to the safe strip on the left. Both routes make sense and both cost something."
+        }
       }
     },
     "ceskaJamka": {
       "eyebrow": "Fairway · closer to home",
       "over": "One",
       "title": "Czech hole",
-      "lede": "The same question closer to home: where the choice between a safe and an aggressive line is real, not just on paper.",
+      "lede": "The same question closer to home: a par 3 with a pond down the whole right side — that stops just short of the green. The choice is real, not just on paper.",
       "cile": [
         "Find the same decision the world's famous holes demand, on a course you can actually drive to.",
-        "Explain how a hazard down one side changes a whole hole even when it isn't in front of the green."
+        "Explain why a hazard that ends short of the green turns the question from \"where\" into \"how far\"."
       ],
       "zapamatuj": [
-        "A hazard doesn't have to sit in front of the green to matter — taking one side away is enough.",
-        "The safe side is usually paid for with a worse angle to the flag.",
+        "A hazard down one side takes away half the hole’s width — and decides things without ever sitting in front of the green.",
+        "When water stops just short of the green, the hole stops being about line and starts being about length.",
+        "The depth of a green is the architect's answer to how big a miss he will forgive. Here, 35 metres.",
         "The best teaching material is a course you can drive to and check with your own eyes."
       ],
       "vyzkousej": {

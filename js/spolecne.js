@@ -63,7 +63,8 @@ function aktualniDelka(karta) {
  * @param {Object} karta — obsah `data/jamky/<id>.json`
  * @param {Object} slovnik — `{ cs:{...}, en:{...} }` aktuální lekce
  * @param {'cs'|'en'} lang
- * @param {{uroven?:number, zaklad?:string}} [opts] — `zaklad` je relativní
+ * @param {{uroven?:number, zaklad?:string, stitek?:{stitek:string,proc:string}}} [opts]
+ *   `stitek` je filozofie jamky pro lekci 1. `zaklad` je relativní
  *   cesta ke kořeni webu (fotky), např. '../../' ze sekce lekce, '../' ze sbírky
  */
 export function kartaJamky(container, karta, slovnik, lang, opts = {}) {
@@ -79,6 +80,16 @@ export function kartaJamky(container, karta, slovnik, lang, opts = {}) {
   const hlavicka = document.createElement('div');
   hlavicka.className = 'kartaHlavicka';
   wrap.appendChild(hlavicka);
+
+  /* Štítek filozofie jamky („Trestající / Strategická / Heroická") s jednou
+     větou proč. Bez něj student projde tři karty a netuší, která je která —
+     lekce to říkala jen v perexu a v „Zapamatuj si", ne u samotné jamky. */
+  if (opts.stitek && opts.stitek.stitek) {
+    const st = document.createElement('p');
+    st.className = 'kartaStitek';
+    st.innerHTML = `<b>${opts.stitek.stitek}</b>${opts.stitek.proc ? ' — ' + opts.stitek.proc : ''}`;
+    hlavicka.appendChild(st);
+  }
 
   const hlava = document.createElement('p');
   hlava.className = 'kartaHlava';

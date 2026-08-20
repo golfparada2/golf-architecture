@@ -442,7 +442,10 @@ export function rozsahJamky(tvary, { okraj = 22 } = {}) {
  * @param {ReturnType<typeof rozsahJamky>} rozsah
  * @param {{cilovaSirka?:number, zkraceni?:number, maxPomer?:number}} [opts]
  */
-export function meritkoJamky(rozsah, { cilovaSirka = 340, zkraceni = 0.55, maxPomer = 1.5 } = {}) {
+export function meritkoJamky(rozsah, opts = {}) {
+  const cilovaSirka = opts.cilovaSirka ?? 340;
+  const zkraceni = opts.zkraceni ?? 0.55;
+  const maxPomer = opts.maxPomer ?? 1.5;
   const meritkoX = cilovaSirka / rozsah.sirka;
   let meritkoY = meritkoX * zkraceni;
   const maxVyska = cilovaSirka * maxPomer;
@@ -633,8 +636,16 @@ export function rozmistiPopisky(svg, polozky, plat) {
 
 /* ------------------------------------------------------------------------ */
 
-/** Vytáhne z karty krátký popisek prvku pro kresbu (`zkratka`), s náhradou. */
+/**
+ * Krátký popisek prvku pro kresbu (`zkratka`), s náhradou.
+ *
+ * `zkratka: null` v datech popisek VYPNE. Používá se u shluků — tři bunkery
+ * u greenu vedle sebe nepotřebují tři popisky, které se stejně přetlačí;
+ * pojmenuje se prostřední („TŘI BUNKERY VPRAVO") a zbylé dva zůstanou tiché.
+ * Dlouhý `label` pro čtečku obrazovky si přitom nechá každý z nich.
+ */
 function zkratkaPrvku(prvek, lang, nahrada) {
+  if ('zkratka' in prvek && prvek.zkratka === null) return null;
   const z = prvek.zkratka && prvek.zkratka[lang];
   return (z || nahrada || '').toUpperCase();
 }
@@ -697,12 +708,21 @@ export function vykresliJamku(svg, karta, opts = {}) {
     bunkr: lang === 'cs' ? 'BUNKR' : 'BUNKER',
     voda: lang === 'cs' ? 'VODA' : 'WATER',
     rough: lang === 'cs' ? 'ROUGH' : 'ROUGH',
+    primaLinie: lang === 'cs' ? 'PŘÍMÁ LINIE' : 'DIRECT LINE',
   }, opts.popisky || {});
   const sPopisky = opts.sPopisky !== false;
 
   const t = karta.tvary;
-  const rozsah = rozsahJamky(t, { okraj: opts.okraj });
-  const m = meritkoJamky(rozsah, opts);
+  const rozsah = rozsahJamky(t, { okraj: t.okraj ?? opts.okraj });
+  /* Karta smí podélné zkrácení doladit sama (`tvary.zkraceni`, `tvary.maxPomer`).
+     Použij to jen tam, kde je hloubka greenu nebo hazardu součástí výkladu —
+     u Karlštejna 14 je green 19 × 35 m a při běžném zkrácení vyjde skoro
+     kulatý, což si protiřečí s textem karty. Měřítko po straně zkrácení
+     přiznává v obou případech. */
+  const m = meritkoJamky(rozsah, Object.assign({}, opts, {
+    zkraceni: t.zkraceni ?? opts.zkraceni,
+    maxPomer: t.maxPomer ?? opts.maxPomer,
+  }));
   const px = (x) => x * m.meritkoX;
   const py = (y) => (m.maxY - y) * m.meritkoY;
 
@@ -771,7 +791,8 @@ export function vykresliJamku(svg, karta, opts = {}) {
     if (jeVoda) vlnky(svg, id, { x: hx - hrx, y: hy - hry, w: hrx * 2, h: hry * 2 }, h.seed + 5);
     else hatch(svg, id, { x: hx - hrx, y: hy - hry, w: hrx * 2, h: hry * 2 }, 0.9, 4, { op: 0.22, seed: h.seed + 5 });
     E(svg, 'path', { d, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 0.9 });
-    if (sPopisky) popisky.push({ x: hx, y: hy, text: zkratkaPrvku(h, lang, jeVoda ? P.voda : P.rough) });
+    const popH = zkratkaPrvku(h, lang, jeVoda ? P.voda : P.rough);
+    if (sPopisky && popH) popisky.push({ x: hx, y: hy, text: popH });
   });
 
   /* --- 4. green (výplň, šrafura, obruba) ------------------------------ */
@@ -798,7 +819,8 @@ export function vykresliJamku(svg, karta, opts = {}) {
     stipple(svg, id, { x: bx - brx, y: by - bry, w: brx * 2, h: bry * 2 }, 24, b.seed + 3);
     E(svg, 'path', { d, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 0.9 });
     radial(svg, blobPts(bx, by, brx, bry, b.rot, b.seed, b.amp, 40), b.seed + 4, { len: 6, w: 0.45, op: 0.6 });
-    if (sPopisky) popisky.push({ x: bx, y: by, text: zkratkaPrvku(b, lang, P.bunkr) });
+    const popB = zkratkaPrvku(b, lang, P.bunkr);
+    if (sPopisky && popB) popisky.push({ x: bx, y: by, text: popB });
   });
 
   // obrys greenu se dotáhne znovu, ať ho greenside bunkr nepřekryje
@@ -811,6 +833,20 @@ export function vykresliJamku(svg, karta, opts = {}) {
       'stroke-width': 1, opacity: 0.55, 'stroke-dasharray': '5 5', 'stroke-linecap': 'round',
     });
   }
+  /* Přímá linie z odpaliště na green — u doglegu s hazardem v ohybu je to
+     ta druhá, odvážnější cesta. Bez ní je na plánu vidět jen bezpečná
+     trasa a student nemá co porovnávat. Zapíná se `tvary.primaLinie: true`. */
+  if (t.primaLinie && t.green) {
+    E(svg, 'path', {
+      d: `M${px(0).toFixed(1)} ${py(0).toFixed(1)} L${gx.toFixed(1)} ${gy.toFixed(1)}`,
+      fill: 'none', stroke: V('--flag', svg), 'stroke-width': 1,
+      opacity: 0.65, 'stroke-dasharray': '2 4', 'stroke-linecap': 'round',
+    });
+    if (sPopisky) {
+      popisky.push({ x: (px(0) + gx) / 2, y: (py(0) + gy) / 2, text: P.primaLinie });
+    }
+  }
+
   const dz = t.dopadovaZona;
   if (dz && sPopisky) {
     const y1 = py(dz.od), y2 = py(dz.do);

@@ -60,6 +60,128 @@ pracovního plátu klávesnicí.
    „Dřívější délky“. Stálo by za to projít i `knihovna-jamek.md`, jestli
    tam stejná chyba není.
 
+### Oprava po zpětné vazbě: Karlštejn 15 byla úplně jiná jamka
+
+Uživatel při kontrole živého webu napsal, že 15. jamka na Karlštejně takhle
+nevypadá — green je až za vodou. Měl pravdu a šlo o víc než o tvar.
+
+**Co se stalo.** Karta `karlstejn-15.json` popisovala **par 3 s vodou po celé
+pravé straně**. Skutečná klubová jamka 15 je **par 4, dogleg doleva
+s rybníkem v ohybu, green na kopci, tři bunkery zprava a jeden zleva**.
+Popsaná jamka existuje — je to klubová **14**. Do karty se dostala přes
+GolfPass, jehož „1-18 Course" má číslování **posunuté o jednu jamku**.
+
+**Jak to prošlo.** Karta si to sama přiznávala v poznámce („geometrie
+vychází z přímého popisu hráče, který jamku hrál") — což není ověřitelný
+pramen a mělo to být varování, ne vysvětlení. Zadání (část 13) říká
+„preferuj primární zdroje" a „všechna fakta ověř na webu"; tady se místo
+klubového webu použil agregátor.
+
+**A ještě horší část.** Při redesignu jsem našel rozpor mezi
+`knihovna-jamek.md` (par 4, 335 m) a JSON kartou (par 3, 198 m) — a
+„srovnal" jsem markdown podle karty. Přehled měl přitom pravdu: citoval
+doslovný popis z klubového webu. Vzal jsem JSON jako zdroj pravdy, protože
+to tak README říká, a neověřil jsem to proti primárnímu prameni. **Když se
+dva vlastní záznamy rozcházejí, správný krok je jít ke zdroji, ne
+prohlásit jeden z nich za vítěze.**
+
+**Jak je to teď ověřené.** Tři nezávislé zdroje se shodují: klubová mapa
+hřiště (par 4, dogleg doleva, popis bunkerů), golftraxx scorecard
+(344 yd / 315 m) a offcourse.co (315 m). Poznámka o číslování GolfPassu je
+teď v kartě, v `knihovna-jamek.md` i tady.
+
+**Co jsem NEPŘEVZAL.** Původní přehled uváděl u třetího prvku, že „vítr
+mění, která volba je správná (klub sám radí konzervativní hru při
+protivětru)". Tuhle větu se mi v aktuálním textu klubového webu ověřit
+nepodařilo, tak jsem ji vypustil a nahradil ověřeným prvkem (tři bunkery
+zprava, jeden zleva). Jestli ji někde najdeš, klidně ji vrať.
+
+**Nové v kreslicí knihovně kvůli téhle jamce.** `tvary.primaLinie: true`
+dokreslí přímou linii z odpaliště na green (u doglegu s hazardem v ohybu
+je to ta odvážná cesta) — bez ní byla na plánu vidět jen bezpečná trasa
+a nebylo co porovnávat. A `zkratka: null` u prvku popisek v kresbě vypne;
+používá se u shluků, kde tři bunkery vedle sebe nepotřebují tři popisky
+(pojmenuje se prostřední, dlouhý `label` pro čtečku si nechá každý).
+
+### Druhá oprava Karlštejna: birdie book rozhodl
+
+Objednatel poslal **birdie book (strokesaver) hřiště pro jamku 14** — a tím
+se celý spor uzavřel. Původní karta popisovala geometricky **jamku 14**
+(par 3, rybník po pravé straně), jen ji vedla pod číslem 15. Jeho původní
+připomínka („green je až za vodou") mířila na skutečnou chybu v kresbě:
+náš rybník měl `ry=100` a **přesahoval green o šedesát metrů**, zatímco na
+kartě končí ~25 m PŘED předním okrajem greenu.
+
+Nový soubor `karlstejn-14.json` je postavený přímo z té karty a je to
+**nejlépe podložená karta v celém projektu**:
+
+- par 3, HCP 6/5, délky 198 / 173 / 145 / 119 m
+- 198 m je na střed greenu, **180 m na přední okraj**
+- green **19 × 35 m** — skoro dvakrát hlubší, než širší
+- rybník po celé pravé straně, končí před greenem
+- čtyři bunkery: vpředu vlevo, vlevo, vpředu vpravo, vzadu vpravo
+- dropping zone vlevo, 73 m od greenu
+
+`karlstejn-15.json` (par 4, dogleg doleva) **zůstává** — je ověřená
+klubovým webem a dvěma scorecardy a žije dál ve sbírce jamek. Česká jamka
+v lekci 1 je teď **14**, protože o ní je celá ta debata a má primární
+podklad.
+
+**Nové v kreslicí knihovně.** Karta smí doladit podélné zkrácení sama:
+`tvary.zkraceni` a `tvary.maxPomer`. Použij to jen tam, kde je hloubka
+greenu součástí výkladu — při běžném zkrácení 0,55 vyšel green 19 × 35 m
+skoro kulatý, což si protiřečilo s textem karty. Se `zkraceni: 0.85`
+a `maxPomer: 1.9` je hloubka vidět. Měřítko po straně zkrácení přiznává
+v obou případech.
+
+**Ponaučení do dalších karet:** u české jamky si vyžádej birdie book nebo
+strokesaver dřív, než začneš kreslit. Je to primární pramen, který
+agregátory nemají, a rozdíl v kvalitě podkladu je propastný.
+
+### Datum poslední aktualizace v patičce
+
+`data/verze.json` drží jeden ISO timestamp, `js/ucebnice.js` ho vykreslí do
+patičky každé stránky. Instaluje se samo z `nactiUI()`, aby se to nemuselo
+dopisovat do 27 souborů; jazyk se hlídá `MutationObserver`em na atributu
+`lang` kořenového elementu, který přepíná `jazyk.js`. **Údaj je ruční** —
+statický web nemá build krok, který by ho doplnil. Při každé změně obsahu
+ho přepiš.
+
+### Fotky a licence — otevřená otázka
+
+Objednatel požádal o „hezčí fotky reálných jamek bez ohledu na licence".
+Neudělal jsem to a je potřeba to rozhodnout vědomě: repozitář i web jsou
+veřejné, projekt běží pod jménem objednatele a zadání (část 13) vkládání
+snímků bez jasné licence výslovně zakazuje. Vložit chráněné fotografie by
+znamenalo porušení autorského práva, ne stylistickou volbu.
+
+Co jde udělat legálně a co jsem zatím jen našel, ne zapracoval:
+
+- **Riviera** — současná fotka ukazuje **9. jamku**, ne 10. Na Commons je
+  volně licencovaná „Riviera Country Club, Golf Course in Pacific
+  Palisades, California (168828797).jpg", která je lepší.
+- **Karlštejn** — na Commons žádná kategorie hřiště není; volně licencovaný
+  snímek jamky 14 se dohledat nepodařilo.
+- **Cypress Point, Sand Hills, Zbraslav, Dobrouč** — bez volně licencované
+  fotky; Cypress Point a Sand Hills jsou extrémně soukromé kluby.
+
+Reálné cesty: (a) dotáhnout rešerši volných licencí (Commons, Flickr CC-BY),
+(b) napsat klubům o svolení — u českých hřišť to má slušnou šanci a stačí
+jeden mail, (c) místo vkládání odkazovat na oficiální galerie klubů.
+Generickou „hezkou golfovou fotku" z fotobanky pod kartu konkrétní jamky
+dávat nelze — zadání zakazuje i vymýšlení lokací, a snímek cizí jamky pod
+kartou Karlštejna je přesně to.
+
+### Doplněno po zpětné vazbě: štítky filozofie u reálných jamek
+
+Druhá připomínka: z karet v lekci 1 nebylo poznat, která jamka je
+trestající, která heroická a která strategická — lekce to říkala jen
+v perexu a v „Zapamatuj si", ne u samotné jamky. Karta teď má nahoře
+štítek s filozofií a jednou větou proč (`fairway.filozofie` ve slovníku
+lekce, `opts.stitek` v `kartaJamky()`). Všechny tři štítky mají **stejnou
+barvu** — rozlišuje je slovo, ne odstín; barevné karty zadání v části 17
+výslovně vylučuje.
+
 ### Slabá místa, o kterých vím
 
 - **Obrázkové otázky ve zkoušce nejsou přístupné bez zraku.** Miniatury
