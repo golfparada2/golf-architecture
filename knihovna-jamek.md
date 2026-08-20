@@ -10,8 +10,11 @@ to častější, než by se čekalo, a student se to má dozvědět (viz zadán�
 část 13).
 
 **Kontrola 8/2026 (redesign):** přehled se rozcházel s JSON kartami ve dvou
-údajích — Karlštejn 15 (par a délka) a Zbraslav 1 (prohozené jednotky).
-Obojí je níž opravené podle karet. Karty mají navíc od redesignu dvě nová
+údajích — Karlštejn 15 a Zbraslav 1 (prohozené jednotky). U Zbraslavi měl
+pravdu JSON. **U Karlštejna měl pravdu tenhle přehled a chyba byla v JSON
+kartě** — ta popisovala klubovou jamku 14 (par 3 přes rybník), protože
+vycházela z GolfPassu, jehož číslování je posunuté o jednu. Karta i přehled
+jsou teď srovnané podle klubového webu a dvou nezávislých scorecardů. Karty mají navíc od redesignu dvě nová
 pole, která se sem zatím nepřepisují: `naCoSeDivat` (na co se dívat na
 schématu) a `lekce` (přenositelná lekce). Jsou vidět na webu u každé jamky
 a v sekci `jamky/`.
@@ -80,19 +83,22 @@ a v sekci `jamky/`.
 
 *(lekce 1 · Česká jamka · skutečná volba mezi bezpečnou a agresivní cestou)*
 
-- **Země:** ČR (Liteň u Karlštejna) · **Par:** 3 · **Délka:** 198 m / 217 yd
-  (opraveno podle JSON karty; dřívější verze tohoto přehledu uváděla par 4
-  a 335 m — to neodpovídalo ani kartě, ani skutečné jamce)
+- **Země:** ČR (Liteň u Karlštejna) · **Par:** 4 · **Délka:** 315 m / 344 yd
+  (zadní odpaliště; kratší 290 / 264 / 223 m)
 - **Architekt:** Les Furber a Jim Eremko, 1993.
 - **GPS:** 49.933, 14.190 (přibližně, úroveň areálu)
-- **Otázka:** Riskneš odpal přes vodu na kratší a jistější druhou ránu,
-  nebo zahraješ jistě mimo vodu a přijmeš delší, těžší příhoz do kopce
-  mezi bunkery?
-- **Tři prvky:** dogleg doleva s vodou přesně v bodě rozhodnutí · green na
-  vyvýšenině mezi bunkery · vítr mění, která volba je správná (klub sám
-  radí konzervativní hru při protivětru)
-- **Zdroje:** karlstejn-golf.cz Course Map (doslovný popis jamky) ·
-  GolfPass · AllSquareGolf · GolfEurope.cz
+- **Otázka:** Ukrojíš roh rybníka a zaútočíš na green rovnou, nebo zahraješ
+  bezpečně doprava a smíříš se s delším přístupem do prudkého kopce?
+- **Tři prvky:** dogleg doleva s rybníkem přesně v ohybu · green na kopci,
+  kde rána nedoletí tak daleko, jak vypadá · nesymetrická obrana greenu —
+  tři bunkery zprava, jeden zleva
+- **Zdroje:** karlstejn-golf.cz, mapa hřiště (doslovný popis jamky) ·
+  golftraxx scorecard · offcourse.co scorecard
+
+> **Pozor na číslování.** GolfPass vede „1-18 Course“ s číslováním posunutým
+> o jednu jamku oproti klubu — jeho „15“ je klubová **14** (par 3 přes
+> rybník do kopce). Ověřeno na třech zdrojích: klubový web, golftraxx
+> i offcourse.co se shodují, že klubová 15 je par 4, 315 m, dogleg doleva.
 
 ---
 

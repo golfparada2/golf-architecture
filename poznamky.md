@@ -60,6 +60,59 @@ pracovního plátu klávesnicí.
    „Dřívější délky“. Stálo by za to projít i `knihovna-jamek.md`, jestli
    tam stejná chyba není.
 
+### Oprava po zpětné vazbě: Karlštejn 15 byla úplně jiná jamka
+
+Uživatel při kontrole živého webu napsal, že 15. jamka na Karlštejně takhle
+nevypadá — green je až za vodou. Měl pravdu a šlo o víc než o tvar.
+
+**Co se stalo.** Karta `karlstejn-15.json` popisovala **par 3 s vodou po celé
+pravé straně**. Skutečná klubová jamka 15 je **par 4, dogleg doleva
+s rybníkem v ohybu, green na kopci, tři bunkery zprava a jeden zleva**.
+Popsaná jamka existuje — je to klubová **14**. Do karty se dostala přes
+GolfPass, jehož „1-18 Course" má číslování **posunuté o jednu jamku**.
+
+**Jak to prošlo.** Karta si to sama přiznávala v poznámce („geometrie
+vychází z přímého popisu hráče, který jamku hrál") — což není ověřitelný
+pramen a mělo to být varování, ne vysvětlení. Zadání (část 13) říká
+„preferuj primární zdroje" a „všechna fakta ověř na webu"; tady se místo
+klubového webu použil agregátor.
+
+**A ještě horší část.** Při redesignu jsem našel rozpor mezi
+`knihovna-jamek.md` (par 4, 335 m) a JSON kartou (par 3, 198 m) — a
+„srovnal" jsem markdown podle karty. Přehled měl přitom pravdu: citoval
+doslovný popis z klubového webu. Vzal jsem JSON jako zdroj pravdy, protože
+to tak README říká, a neověřil jsem to proti primárnímu prameni. **Když se
+dva vlastní záznamy rozcházejí, správný krok je jít ke zdroji, ne
+prohlásit jeden z nich za vítěze.**
+
+**Jak je to teď ověřené.** Tři nezávislé zdroje se shodují: klubová mapa
+hřiště (par 4, dogleg doleva, popis bunkerů), golftraxx scorecard
+(344 yd / 315 m) a offcourse.co (315 m). Poznámka o číslování GolfPassu je
+teď v kartě, v `knihovna-jamek.md` i tady.
+
+**Co jsem NEPŘEVZAL.** Původní přehled uváděl u třetího prvku, že „vítr
+mění, která volba je správná (klub sám radí konzervativní hru při
+protivětru)". Tuhle větu se mi v aktuálním textu klubového webu ověřit
+nepodařilo, tak jsem ji vypustil a nahradil ověřeným prvkem (tři bunkery
+zprava, jeden zleva). Jestli ji někde najdeš, klidně ji vrať.
+
+**Nové v kreslicí knihovně kvůli téhle jamce.** `tvary.primaLinie: true`
+dokreslí přímou linii z odpaliště na green (u doglegu s hazardem v ohybu
+je to ta odvážná cesta) — bez ní byla na plánu vidět jen bezpečná trasa
+a nebylo co porovnávat. A `zkratka: null` u prvku popisek v kresbě vypne;
+používá se u shluků, kde tři bunkery vedle sebe nepotřebují tři popisky
+(pojmenuje se prostřední, dlouhý `label` pro čtečku si nechá každý).
+
+### Doplněno po zpětné vazbě: štítky filozofie u reálných jamek
+
+Druhá připomínka: z karet v lekci 1 nebylo poznat, která jamka je
+trestající, která heroická a která strategická — lekce to říkala jen
+v perexu a v „Zapamatuj si", ne u samotné jamky. Karta teď má nahoře
+štítek s filozofií a jednou větou proč (`fairway.filozofie` ve slovníku
+lekce, `opts.stitek` v `kartaJamky()`). Všechny tři štítky mají **stejnou
+barvu** — rozlišuje je slovo, ne odstín; barevné karty zadání v části 17
+výslovně vylučuje.
+
 ### Slabá místa, o kterých vím
 
 - **Obrázkové otázky ve zkoušce nejsou přístupné bez zraku.** Miniatury

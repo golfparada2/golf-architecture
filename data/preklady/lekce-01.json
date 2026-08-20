@@ -114,20 +114,39 @@
       "vyzkousej": {
         "otazka": "Vyber si z těch tří jamek jednu, kterou bys chtěl/a mít na vlastním hřišti — a napiš jednou větou, co by na ní hráč musel umět.",
         "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      },
+      "filozofie": {
+        "tpc-sawgrass-17": {
+          "stitek": "Trestající",
+          "proc": "Jediná rozumná cesta — na green, nebo do vody. Kdo netrefí, platí bez ohledu na to, jak dobře hraje."
+        },
+        "pebble-beach-18": {
+          "stitek": "Heroická",
+          "proc": "Plynulá škála odvahy: čím větší kus zátoky ukrojíš, tím kratší zbytek jamky ti zůstane."
+        },
+        "riviera-10": {
+          "stitek": "Strategická",
+          "proc": "Dvě rozumné cesty a obě něco stojí. Hráč si vybírá, kolik rizika unese."
+        },
+        "karlstejn-15": {
+          "stitek": "Strategická",
+          "proc": "Přímo přes roh rybníka, nebo bezpečně doprava a delší přístup do kopce. Obojí dává smysl."
+        }
       }
     },
     "ceskaJamka": {
       "eyebrow": "Fairway · doma",
       "over": "Jedna",
       "title": "česká jamka",
-      "lede": "Stejná otázka blíž domovu: kde je volba mezi bezpečnou a agresivní cestou skutečná, ne jen na papíře.",
+      "lede": "Stejná otázka blíž domovu: dogleg doleva, rybník přesně v ohybu. Roh se dá ukrojit — nebo obejít. Volba je skutečná, ne jen na papíře.",
       "cile": [
         "Najdu stejné rozhodnutí, jaké dělají hráči na světových jamkách, na hřišti, kam se dá zajet.",
-        "Vysvětlím, jak hazard po jedné straně mění celou jamku, i když neleží před greenem."
+        "Vysvětlím, proč hazard v ohybu doglegu nabízí každému hráči jinou míru rizika."
       ],
       "zapamatuj": [
-        "Hazard nemusí ležet před greenem, aby rozhodoval — stačí, když jamce sebere jednu stranu.",
-        "Bezpečná strana bývá zaplacená horším úhlem na praporek.",
+        "Hazard v ohybu doglegu nabízí volbu podle odvahy — a nemusí k tomu ležet před greenem.",
+        "Bezpečná cesta bývá zaplacená delším přístupem a horším úhlem na praporek.",
+        "Do kopce rána nedoletí tak daleko, jak vypadá. Delší přístup se tady platí dvakrát.",
         "Nejlepší učební materiál je hřiště, na které si můžeš zajet a ověřit si to na vlastní oči."
       ],
       "vyzkousej": {
@@ -563,20 +582,39 @@
       "vyzkousej": {
         "otazka": "Pick one of the three holes you would want on your own course — and write one sentence about what a player would have to be able to do there.",
         "placeholder": "Write in your own words — nobody is marking this."
+      },
+      "filozofie": {
+        "tpc-sawgrass-17": {
+          "stitek": "Punishing",
+          "proc": "One reasonable route — the green, or the water. Miss it and you pay, however well you play."
+        },
+        "pebble-beach-18": {
+          "stitek": "Heroic",
+          "proc": "A smooth scale of daring: the more of the cove you bite off, the less hole is left."
+        },
+        "riviera-10": {
+          "stitek": "Strategic",
+          "proc": "Two reasonable routes, and both cost something. The player picks how much risk to carry."
+        },
+        "karlstejn-15": {
+          "stitek": "Strategic",
+          "proc": "Straight over the corner of the pond, or safely right and a longer uphill approach. Both make sense."
+        }
       }
     },
     "ceskaJamka": {
       "eyebrow": "Fairway · closer to home",
       "over": "One",
       "title": "Czech hole",
-      "lede": "The same question closer to home: where the choice between a safe and an aggressive line is real, not just on paper.",
+      "lede": "The same question closer to home: a dogleg left with a pond right in the corner. Cut it — or go round it. The choice is real, not just on paper.",
       "cile": [
         "Find the same decision the world's famous holes demand, on a course you can actually drive to.",
-        "Explain how a hazard down one side changes a whole hole even when it isn't in front of the green."
+        "Explain why a hazard in the corner of a dogleg offers every player a different amount of risk."
       ],
       "zapamatuj": [
-        "A hazard doesn't have to sit in front of the green to matter — taking one side away is enough.",
-        "The safe side is usually paid for with a worse angle to the flag.",
+        "A hazard in the corner of a dogleg offers a choice scaled to your nerve — without sitting in front of the green.",
+        "The safe route is usually paid for with a longer approach and a worse angle to the flag.",
+        "Uphill, a shot does not carry as far as it looks. A longer approach is charged twice here.",
         "The best teaching material is a course you can drive to and check with your own eyes."
       ],
       "vyzkousej": {

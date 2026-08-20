@@ -5,14 +5,14 @@
   "zeme": "CZ",
   "jamka": 15,
   "nazev": null,
-  "par": 3,
+  "par": 4,
   "delky": [
     {
-      "odpaliste": "bílé",
-      "m": 198,
-      "yd": 217,
+      "odpaliste": "zadní (Pro / bílé)",
+      "m": 315,
+      "yd": 344,
       "rok": null,
-      "poznamka": "hodnota z scorecardu kombinace „1-18“ (GolfPass) — Karlštejn má 27 jamek rozdělených do tří devítek a různé scorecardy (course-map webu klubu vs. hraná kombinace „1-18“) číslují fyzické jamky jinak. Tahle karta popisuje jamku, kterou hráč potká jako „#15“ při běžné hře kombinace 1-18 — par 3 s vodou napravo, podle přímého popisu hráče, který ji hrál. Doporučeno ověřit přesnou délku u klubu."
+      "poznamka": "Shodně uvádí golftraxx i offcourse.co. Klubový web délky nepublikuje. Kratší odpaliště: 290 m (championship), 264 m, 223 m."
     }
   ],
   "architekt": {
@@ -22,8 +22,8 @@
     },
     "jistota": "jistá",
     "poznamka": {
-      "cs": "Nezávisle potvrzeno webem klubu i více golfovými katalogy. Areál má 27 jamek; jamka 15 je součástí druhé devítky (jamky 10–18).",
-      "en": "Independently confirmed by the club's own site and several golf directories. The resort has 27 holes; hole 15 belongs to the second nine (holes 10–18)."
+      "cs": "Hřiště otevřeno 1993. Areál má 27 jamek číslovaných 1–27; jamka 15 patří do druhé devítky. POZOR na číslování v katalozích: GolfPass vede „1-18 Course“ s číslováním posunutým o jednu jamku, takže jeho „15“ je klubová 14 (par 3 přes rybník). Tahle karta popisuje jamku 15 podle číslování klubu.",
+      "en": "The course opened in 1993. The resort has 27 holes numbered 1–27; hole 15 is on the second nine. Beware of numbering in directories: GolfPass lists a \"1-18 Course\" whose numbering is offset by one, so its \"15\" is the club's 14 (a par 3 over a pond). This card describes hole 15 in the club's own numbering."
     }
   },
   "vznik": 1993,
@@ -42,109 +42,165 @@
     }
   },
   "otazka": {
-    "cs": "Zahraješ přímo na vlaječku přes roh té obrovské vodní plochy, nebo si necháš víc rezervy nalevo — na úzký pruh trávy, kde promáchnutí greenu doleva ještě odpouští?",
-    "en": "Do you fire straight at the flag across the corner of that huge water hazard, or leave yourself more margin left — on the narrow strip of grass where missing the green left is still forgiving?"
+    "cs": "Ukrojíš roh rybníka a zaútočíš na green rovnou, nebo zahraješ bezpečně doprava a smíříš se s delším přístupem do prudkého kopce?",
+    "en": "Do you cut the corner of the pond and go straight at the green, or play safely out to the right and accept a longer approach up a steep hill?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Geometrie vychází z přímého popisu hráče, který jamku hrál (viz poznámka u délky) — voda dominuje pravé straně, na levé zbývá jen úzký pruh. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). OPRAVENO 2026-08-19: předchozí verze karty popisovala JINOU JAMKU — par 3 s vodou po celé pravé straně. To je klubová jamka 14; do karty se dostala přes GolfPass, jehož „1-18 Course“ má číslování posunuté o jednu. Nová geometrie vychází z popisu na oficiálním webu klubu: dogleg doleva, rybník v ohybu, green na kopci, tři bunkery zprava a jeden zleva. Ohyb doglegu, velikost rybníka a přesné polohy bunkerů jsou schematické — sloužím jimi k vysvětlení volby, ne k měření.",
+    "fairway": {
+      "ohyb": 72,
+      "sirkaTee": 34,
+      "sirkaGreen": 26,
+      "zacatek": 20,
+      "seed": 4108
+    },
+    "dopadovaZona": {
+      "od": 190,
+      "do": 240
+    },
+    "primaLinie": true,
     "green": {
-      "x": -18,
-      "y": 190,
-      "rx": 10,
+      "x": -55,
+      "y": 300,
+      "rx": 11,
       "ry": 8,
-      "rot": -0.1,
+      "rot": -0.35,
       "seed": 2001,
       "amp": 0.07
     },
     "bunkry": [
       {
-        "x": -27,
-        "y": 184,
-        "rx": 4,
-        "ry": 3.5,
-        "rot": 0.2,
+        "x": -47,
+        "y": 296,
+        "rx": 5,
+        "ry": 4,
+        "rot": 0.5,
         "seed": 2002,
-        "amp": 0.17,
+        "amp": 0.16,
+        "zkratka": null,
         "label": {
-          "cs": "bunker vlevo od greenu",
-          "en": "bunker left of the green"
+          "cs": "první ze tří bunkerů po pravé straně greenu, hlídá krátký nájezd",
+          "en": "first of the three bunkers down the right of the green, guarding the short approach"
+        }
+      },
+      {
+        "x": -44,
+        "y": 306,
+        "rx": 4.5,
+        "ry": 3.5,
+        "rot": 0.5,
+        "seed": 2003,
+        "amp": 0.15,
+        "zkratka": {
+          "cs": "TŘI BUNKERY VPRAVO",
+          "en": "THREE BUNKERS RIGHT"
         },
+        "label": {
+          "cs": "prostřední bunker po pravé straně greenu",
+          "en": "middle bunker down the right of the green"
+        }
+      },
+      {
+        "x": -46,
+        "y": 315,
+        "rx": 4,
+        "ry": 3,
+        "rot": 0.3,
+        "seed": 2004,
+        "amp": 0.15,
+        "zkratka": null,
+        "label": {
+          "cs": "zadní bunker po pravé straně greenu — trestá dlouhou ránu",
+          "en": "back bunker down the right of the green, punishing a long approach"
+        }
+      },
+      {
+        "x": -67,
+        "y": 295,
+        "rx": 5,
+        "ry": 4,
+        "rot": -0.2,
+        "seed": 2005,
+        "amp": 0.16,
         "zkratka": {
           "cs": "BUNKR VLEVO",
           "en": "LEFT BUNKER"
+        },
+        "label": {
+          "cs": "jediný bunker po levé straně greenu",
+          "en": "the single bunker on the left of the green"
         }
       }
     ],
     "hazardy": [
       {
         "typ": "voda",
-        "x": 12,
-        "y": 150,
-        "rx": 22,
-        "ry": 100,
-        "rot": 0,
-        "seed": 2004,
-        "amp": 0.07,
-        "label": {
-          "cs": "voda přes celou pravou stranu",
-          "en": "water covering the whole right side"
-        },
+        "x": -38,
+        "y": 185,
+        "rx": 24,
+        "ry": 40,
+        "rot": 0.15,
+        "seed": 2010,
+        "amp": 0.09,
         "zkratka": {
-          "cs": "VODA",
-          "en": "WATER"
+          "cs": "RYBNÍK",
+          "en": "POND"
+        },
+        "label": {
+          "cs": "rybník v ohybu doglegu — přímá linie na green vede přes něj",
+          "en": "the pond in the corner of the dogleg — the direct line to the green crosses it"
         }
       }
-    ],
-    "fairway": null
+    ]
   },
   "prvky": [
     {
       "nazev": {
-        "cs": "Voda přes celou pravou polovinu jamky",
-        "en": "Water down the whole right half"
+        "cs": "Dogleg doleva přes rybník",
+        "en": "A dogleg left over the pond"
       },
       "popis": {
-        "cs": "Nejde o jeden hazard u greenu — vodní plocha lemuje pravou stranu od odpaliště až ke greenu. Pravá strana prakticky neexistuje jako bezpečná volba.",
-        "en": "This isn't one hazard by the green — the water runs the whole right side from tee to green. The right side barely exists as a safe option."
+        "cs": "Rybník leží v ohybu jamky, takže přímá linie na green vede přes něj. Kdo si troufne, zkrátí si jamku; kdo ne, obchází ho zprava.",
+        "en": "The pond sits in the corner, so the direct line to the green crosses it. Take it on and the hole shortens; refuse and you go round to the right."
       }
     },
     {
       "nazev": {
-        "cs": "Jen úzký pruh nalevo",
-        "en": "Only a narrow strip on the left"
+        "cs": "Green na kopci",
+        "en": "A green on the hilltop"
       },
       "popis": {
-        "cs": "Bezpečná přistávací plocha je úzký pruh trávy vlevo od vody — přesnost rozhoduje víc než síla úderu.",
-        "en": "The safe landing area is a narrow strip of grass left of the water — accuracy decides more than how far you can hit it."
+        "cs": "Přístup vede do prudkého svahu, takže rána nedoletí tak daleko, jak vypadá. Delší přístup se tady platí dvakrát.",
+        "en": "The approach climbs a steep hill, so the shot does not carry as far as it looks. A longer approach is charged twice here."
       }
     },
     {
       "nazev": {
-        "cs": "Krátká jamka, žádná úleva",
-        "en": "A short hole, no relief"
+        "cs": "Tři bunkery vpravo, jeden vlevo",
+        "en": "Three bunkers right, one left"
       },
       "popis": {
-        "cs": "Jako par 3 je krátká na papíře, ale voda po celé pravé straně znamená, že i menší nepřesnost doprava stojí míč a trestnou ránu.",
-        "en": "As a par 3 it's short on paper, but water down the whole right side means even a small miss right costs a ball and a penalty stroke."
+        "cs": "Obrana greenu je nesymetrická — minout doprava stojí víc než doleva. To rozhoduje, ze které strany se vyplatí nájezd.",
+        "en": "The green is defended asymmetrically — missing right costs more than missing left. That decides which side is worth approaching from."
       }
     }
   ],
   "prameny": [
     {
-      "titul": "GolfPass — Golf Resort Karlstejn, 1-18 Course (scorecard, jamka 15 = par 3)",
+      "titul": "Golf Resort Karlštejn — oficiální mapa hřiště, popis jamky 15 (par 4, dogleg doleva, green na kopci, tři bunkery zprava a jeden zleva)",
+      "url": "https://www.karlstejn-golf.cz/golfove-hriste/mapa-hriste"
+    },
+    {
+      "titul": "golftraxx — scorecard Karlstejn Golf Resort (jamka 15: par 4, 344 yd / 315 m)",
+      "url": "https://golftraxx.com/scorecard?course_name=Karlstejn+Golf+Resort%2C+Black%2FRed&static=true&zipcode=CZECH"
+    },
+    {
+      "titul": "offcourse.co — scorecard Golf Resort Karlstejn (jamka 15: par 4, 315 m)",
+      "url": "https://offcourse.co/courses/scorecard/golf-resort-karlstejn"
+    },
+    {
+      "titul": "GolfPass — 1-18 Course (POZOR: číslování posunuté o jednu jamku oproti klubu)",
       "url": "https://www.golfpass.com/travel-advisor/courses/21970-golf-resort-karlstejn-1-18-course"
-    },
-    {
-      "titul": "Golf Resort Karlštejn — oficiální mapa hřiště (upozornění: číslování „course map“ se u jamky 15 liší od hrané kombinace 1-18)",
-      "url": "https://karlstejn-golf.cz/en/course-map/"
-    },
-    {
-      "titul": "AllSquareGolf — Golf Resort Karlstejn",
-      "url": "https://www.allsquaregolf.com/golf-courses/czech-republic/golf-resort-karlstejn"
-    },
-    {
-      "titul": "GolfEurope.cz — Golf Resort Karlštejn",
-      "url": "https://www.golfeurope.cz/golf-hriste/Golf-Resort-Karlstejn.html"
     }
   ],
   "foto": {
@@ -165,11 +221,11 @@
     "vyska": 670
   },
   "naCoSeDivat": {
-    "cs": "Voda zabírá celou pravou stranu a green leží vlevo od osy hry. Kdo se vody bojí, míří doleva — a tam čeká bunkr.",
-    "en": "Water takes the whole right side and the green sits left of the line of play. Whoever fears the water aims left — and a bunker is waiting there."
+    "cs": "Sleduj, jak stuha fairwaye obchází rybník zprava, zatímco čárkovaná linie hry míří přes jeho roh. Rozdíl mezi těmi dvěma cestami je celá jamka.",
+    "en": "Watch the fairway ribbon swing right around the pond while the dashed line of play cuts across its corner. The gap between those two routes is the whole hole."
   },
   "lekce": {
-    "cs": "Hazard nemusí ležet před greenem, aby rozhodoval. Stačí, když jamce sebere jednu stranu.",
-    "en": "A hazard does not have to sit in front of the green to matter. Taking one side away is enough."
+    "cs": "Hazard v ohybu doglegu nabízí volbu každému hráči podle jeho odvahy — a nemusí k tomu ležet před greenem.",
+    "en": "A hazard in the corner of a dogleg offers every player a choice scaled to their own nerve — without ever sitting in front of the green."
   }
 }

@@ -68,7 +68,9 @@ const jazyk = vytvorJazyk(slovnik, {
 function renderKartyFairway() {
   const c = $('fairwayCards');
   c.innerHTML = '';
-  [kartaSawgrass, kartaPebble, kartaRiviera].forEach((k) => kartaJamky(c, k, slovnik, jazyk.lang));
+  const filozofie = slovnik[jazyk.lang].fairway.filozofie || {};
+  [kartaSawgrass, kartaPebble, kartaRiviera]
+    .forEach((k) => kartaJamky(c, k, slovnik, jazyk.lang, { stitek: filozofie[k.id] }));
 }
 
 jazyk.on(() => {

@@ -894,3 +894,18 @@ header.hlavicka{display:block}
   color:var(--ink);resize:vertical;
 }
 .vyzkousejBox textarea:focus-visible{outline:2px solid var(--flag);outline-offset:2px}
+
+/* --- štítek filozofie jamky (lekce 1) --------------------------------------
+   Jedna barva pro všechny tři filozofie záměrně — rozlišuje je slovo, ne
+   barevná karta (zadání, část 17: žádné barevné teplotní mapy a křiklavé
+   karty). Signál nese název, ne odstín. */
+.kartaStitek{
+  font-size:13px;line-height:1.45;color:var(--ink2);
+  padding:7px 0 8px;border-top:2px solid var(--olive);
+  border-bottom:1px solid rgba(74,68,58,.25);margin-bottom:12px;
+  max-width:var(--text-max);
+}
+.kartaStitek b{
+  color:var(--olive);font-weight:500;letter-spacing:.16em;text-transform:uppercase;
+  font-size:11px;
+}
