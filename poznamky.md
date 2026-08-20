@@ -103,6 +103,75 @@ a nebylo co porovnávat. A `zkratka: null` u prvku popisek v kresbě vypne;
 používá se u shluků, kde tři bunkery vedle sebe nepotřebují tři popisky
 (pojmenuje se prostřední, dlouhý `label` pro čtečku si nechá každý).
 
+### Druhá oprava Karlštejna: birdie book rozhodl
+
+Objednatel poslal **birdie book (strokesaver) hřiště pro jamku 14** — a tím
+se celý spor uzavřel. Původní karta popisovala geometricky **jamku 14**
+(par 3, rybník po pravé straně), jen ji vedla pod číslem 15. Jeho původní
+připomínka („green je až za vodou") mířila na skutečnou chybu v kresbě:
+náš rybník měl `ry=100` a **přesahoval green o šedesát metrů**, zatímco na
+kartě končí ~25 m PŘED předním okrajem greenu.
+
+Nový soubor `karlstejn-14.json` je postavený přímo z té karty a je to
+**nejlépe podložená karta v celém projektu**:
+
+- par 3, HCP 6/5, délky 198 / 173 / 145 / 119 m
+- 198 m je na střed greenu, **180 m na přední okraj**
+- green **19 × 35 m** — skoro dvakrát hlubší, než širší
+- rybník po celé pravé straně, končí před greenem
+- čtyři bunkery: vpředu vlevo, vlevo, vpředu vpravo, vzadu vpravo
+- dropping zone vlevo, 73 m od greenu
+
+`karlstejn-15.json` (par 4, dogleg doleva) **zůstává** — je ověřená
+klubovým webem a dvěma scorecardy a žije dál ve sbírce jamek. Česká jamka
+v lekci 1 je teď **14**, protože o ní je celá ta debata a má primární
+podklad.
+
+**Nové v kreslicí knihovně.** Karta smí doladit podélné zkrácení sama:
+`tvary.zkraceni` a `tvary.maxPomer`. Použij to jen tam, kde je hloubka
+greenu součástí výkladu — při běžném zkrácení 0,55 vyšel green 19 × 35 m
+skoro kulatý, což si protiřečilo s textem karty. Se `zkraceni: 0.85`
+a `maxPomer: 1.9` je hloubka vidět. Měřítko po straně zkrácení přiznává
+v obou případech.
+
+**Ponaučení do dalších karet:** u české jamky si vyžádej birdie book nebo
+strokesaver dřív, než začneš kreslit. Je to primární pramen, který
+agregátory nemají, a rozdíl v kvalitě podkladu je propastný.
+
+### Datum poslední aktualizace v patičce
+
+`data/verze.json` drží jeden ISO timestamp, `js/ucebnice.js` ho vykreslí do
+patičky každé stránky. Instaluje se samo z `nactiUI()`, aby se to nemuselo
+dopisovat do 27 souborů; jazyk se hlídá `MutationObserver`em na atributu
+`lang` kořenového elementu, který přepíná `jazyk.js`. **Údaj je ruční** —
+statický web nemá build krok, který by ho doplnil. Při každé změně obsahu
+ho přepiš.
+
+### Fotky a licence — otevřená otázka
+
+Objednatel požádal o „hezčí fotky reálných jamek bez ohledu na licence".
+Neudělal jsem to a je potřeba to rozhodnout vědomě: repozitář i web jsou
+veřejné, projekt běží pod jménem objednatele a zadání (část 13) vkládání
+snímků bez jasné licence výslovně zakazuje. Vložit chráněné fotografie by
+znamenalo porušení autorského práva, ne stylistickou volbu.
+
+Co jde udělat legálně a co jsem zatím jen našel, ne zapracoval:
+
+- **Riviera** — současná fotka ukazuje **9. jamku**, ne 10. Na Commons je
+  volně licencovaná „Riviera Country Club, Golf Course in Pacific
+  Palisades, California (168828797).jpg", která je lepší.
+- **Karlštejn** — na Commons žádná kategorie hřiště není; volně licencovaný
+  snímek jamky 14 se dohledat nepodařilo.
+- **Cypress Point, Sand Hills, Zbraslav, Dobrouč** — bez volně licencované
+  fotky; Cypress Point a Sand Hills jsou extrémně soukromé kluby.
+
+Reálné cesty: (a) dotáhnout rešerši volných licencí (Commons, Flickr CC-BY),
+(b) napsat klubům o svolení — u českých hřišť to má slušnou šanci a stačí
+jeden mail, (c) místo vkládání odkazovat na oficiální galerie klubů.
+Generickou „hezkou golfovou fotku" z fotobanky pod kartu konkrétní jamky
+dávat nelze — zadání zakazuje i vymýšlení lokací, a snímek cizí jamky pod
+kartou Karlštejna je přesně to.
+
 ### Doplněno po zpětné vazbě: štítky filozofie u reálných jamek
 
 Druhá připomínka: z karet v lekci 1 nebylo poznat, která jamka je

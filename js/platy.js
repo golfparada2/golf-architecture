@@ -442,7 +442,10 @@ export function rozsahJamky(tvary, { okraj = 22 } = {}) {
  * @param {ReturnType<typeof rozsahJamky>} rozsah
  * @param {{cilovaSirka?:number, zkraceni?:number, maxPomer?:number}} [opts]
  */
-export function meritkoJamky(rozsah, { cilovaSirka = 340, zkraceni = 0.55, maxPomer = 1.5 } = {}) {
+export function meritkoJamky(rozsah, opts = {}) {
+  const cilovaSirka = opts.cilovaSirka ?? 340;
+  const zkraceni = opts.zkraceni ?? 0.55;
+  const maxPomer = opts.maxPomer ?? 1.5;
   const meritkoX = cilovaSirka / rozsah.sirka;
   let meritkoY = meritkoX * zkraceni;
   const maxVyska = cilovaSirka * maxPomer;
@@ -710,8 +713,16 @@ export function vykresliJamku(svg, karta, opts = {}) {
   const sPopisky = opts.sPopisky !== false;
 
   const t = karta.tvary;
-  const rozsah = rozsahJamky(t, { okraj: opts.okraj });
-  const m = meritkoJamky(rozsah, opts);
+  const rozsah = rozsahJamky(t, { okraj: t.okraj ?? opts.okraj });
+  /* Karta smí podélné zkrácení doladit sama (`tvary.zkraceni`, `tvary.maxPomer`).
+     Použij to jen tam, kde je hloubka greenu nebo hazardu součástí výkladu —
+     u Karlštejna 14 je green 19 × 35 m a při běžném zkrácení vyjde skoro
+     kulatý, což si protiřečí s textem karty. Měřítko po straně zkrácení
+     přiznává v obou případech. */
+  const m = meritkoJamky(rozsah, Object.assign({}, opts, {
+    zkraceni: t.zkraceni ?? opts.zkraceni,
+    maxPomer: t.maxPomer ?? opts.maxPomer,
+  }));
   const px = (x) => x * m.meritkoX;
   const py = (y) => (m.maxY - y) * m.meritkoY;
 
