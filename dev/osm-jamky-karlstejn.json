@@ -1,5 +1,5 @@
 {
-  "poznamka": "Přiřazení greenů z OpenStreetMap ke klubovým číslům jamek. Určil objednatel (hřiště zná), ověřeno proti klubovým grafikám: u jamky 14 dávají vzdálenosti odpališť v OSM 119/144/172/201 m proti oficiálním 119/145/173/198 m, u jamky 15 sedí 223 a 264 m. Indexy G* odpovídají pořadí prvků golf=green v exportu _archiv/osm-karlstejn.geojson z 22. 8. 2026.",
+  "poznamka": "Přiřazení greenů z OpenStreetMap ke klubovým číslům jamek. Určil objednatel (hřiště zná). Indexy G* odpovídají pořadí prvků golf=green v exportu _archiv/osm-karlstejn.geojson z 22. 8. 2026.",
   "zdroj": "OpenStreetMap (ODbL)",
   "export": "_archiv/osm-karlstejn.geojson, dotaz rel(4046214);map_to_area->.a;(nwr[golf](area.a););out geom;",
   "jamky": {
@@ -12,7 +12,15 @@
     "11": "G17",
     "12": "G14",
     "14": "G5",
-    "15": "G15"
+    "15": "G15",
+    "16": "G0",
+    "17": "G3"
   },
-  "chybi": "Vodní plochy — dotaz nwr[golf] je nezachytil, protože rybníky bývají značené natural=water. Rozšířený dotaz přidává nwr[natural=water] a nwr[waterway]."
+  "overeni": {
+    "14": "HOTOVO — karta kreslená ze skutečných obrysů (Krok 18). Vzdálenosti odpališť ze západní řady 119/144/172 m proti oficiálním 119/145/173 m; rybník Poučník po celé pravé straně, jak kreslí klub. Mistrovské odpaliště 198 m v OSM zmapované není.",
+    "15": "NEJDE — Krok 21. Odpaliště severovýchodně od G15 dávají 223/260/295/308 m proti oficiálním 223/264/290/315 a leží 77–145 m od greenu čtrnáctky, což sedí. Jenže z nich vychází Voškov vpravo, kdežto objednatel potvrdil, že rybník je na patnáctce VLEVO. V okolí (49.9225–49.9265 / 14.1700–14.1780) přitom nejsou žádné jiné pořádné vodní plochy — jen Poučník 7874 m² a Voškov 4875 m², obě severně od greenu 15, nejbližší 170 m daleko. Rybník téhle jamky v OSM prostě není. Karta zůstává parametrická.",
+    "16": "Nepokuseno — kurz na jamku 16 zatím nemá kartu.",
+    "17": "Nepokuseno — kurz na jamku 17 zatím nemá kartu."
+  },
+  "chybi": "Vodní plochy — dotaz nwr[golf] je nezachytil, protože rybníky bývají značené natural=water. Rozšířený dotaz přidává nwr[natural=water] a nwr[waterway]. POZOR: ani rozšířený dotaz nenajde rybník u jamky 15 — ten v OSM zmapovaný není vůbec."
 }

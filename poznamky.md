@@ -2,6 +2,176 @@
 
 Průběžný soubor podle části 15 zadání. Kroky 1–7 hotové.
 
+## Krok 21 — Karlštejn 15: pokus o převod, karta obhájena (22. 8. 2026)
+
+Objednatel potvrdil přiřazení greenů (15 = G15, 16 = G0, 17 = G3) a na
+doplňující otázku odpověděl, že **rybník je na patnáctce po levé straně**.
+
+### Chyba v testu z Kroku 20, kterou to odhalilo
+
+Podmínka kolinearity odpališť — bez které test vybírá špatné greeny —
+**platí jen pro rovné jamky**. Patnáctka je dogleg, takže odpaliště
+s greenem v přímce nejsou a test ji vyřadil. U par 3 (Karlštejn 14)
+fungoval správně, a proto mě to nenapadlo.
+
+**Poučení: test z `dev/osm-hledac-jamek.py` se smí použít jen na jamky,
+u kterých se dá čekat rovná osa — typicky par 3.** U doglegů je potřeba
+jiné kritérium.
+
+### Proč se patnáctka nakonec převést nedá
+
+Po opravě jsem u G15 našel souvislou skupinu odpališť severovýchodně od
+greenu (223 / 260 / 295 / 308 m proti oficiálním 223 / 264 / 290 / 315),
+navíc 77–145 m od greenu čtrnáctky, tedy tam, kde má být „TEE 15". Z téhle
+skupiny ale vychází Voškov **vpravo**, kdežto karta i objednatel říkají
+vlevo.
+
+Prověřil jsem proto celé okolí: v obdélníku 49.9225–49.9265 / 14.1700–14.1780
+jsou **jen dvě pořádné vodní plochy** — Poučník (7 874 m²) a Voškov
+(4 875 m²) — a obě leží **severně od greenu patnáctky**, nejbližší 170 m
+daleko. Zbytek jsou potoky a kaluže do 516 m². Aby Voškov vyšel vlevo,
+muselo by se hrát od západu; tam ale souvislý žebřík odpališť není
+(nalezené vzdálenosti 264 / 286 / 310 m sedí, jenže odpaliště jsou od sebe
+rozházená přes 200 metrů, což tee complex jedné jamky nebývá).
+
+**Závěr: rybník u patnáctky v OpenStreetMap zmapovaný není.** Bez něj by
+kresba ze skutečných dat byla horší než dnešní — rybník v ohybu je celá
+pointa téhle jamky. **Karta zůstává parametrická.**
+
+### Co se tím naopak potvrdilo
+
+Karta obstála ve druhém nezávislém přezkoušení. Popis „dogleg doleva
+s rybníkem v ohybu, bezpečně se hraje doprava" odpovídá tomu, co říká
+hráč, který jamku zná. Stejně jako u čtrnáctky v Kroku 18 platí, že chyba
+byla na mé straně, ne v obsahu.
+
+## Krok 20 — Pokus převést zbylé jamky automaticky: neprošlo (22. 8. 2026)
+
+Objednatel řekl „udělej jen ty jamky, které najdeš v OSM". Zkusil jsem
+najít metodu, která jamku určí bez lidské pomoci. **Nenašel jsem ji** —
+a tohle je záznam, co všechno bylo vyzkoušeno, ať to nikdo nedělá znovu.
+
+### Metoda, kterou jsem postavil
+
+Hledat green, ke kterému vede „žebřík" odpališť odpovídající oficiálním
+délkám z karty. Nástroj je v `dev/osm-hledac-jamek.py`.
+
+**Sama shoda délek nestačí.** U kontrolní jamky (Karlštejn 14, o které
+díky objednateli víme, že je to green G5) vybere test jako nejlepší
+**G0** s odchylkou 0,7 m — zatímco správné G5 má 1,3 m. Mezi 58 odpališti
+se ke kterémukoli greenu najdou čtyři v libovolných vzdálenostech.
+
+**S podmínkou kolinearity** (všechna odpaliště musí ležet od greenu
+v jednom směru, azimut do 12°) kontrola projde správně: G5 je jediný se
+čtyřmi shodami (azimuty 85–87°), ostatní spadnou na tři. Test tedy funguje
+jako síto.
+
+### Jak dopadly jednotlivé jamky
+
+- **Karlštejn 15** — nemá jednoznačného vítěze: nejlepší kandidát má jen
+  tři shody ze čtyř, a je to jiný green (G17), než který určil objednatel.
+  **Zůstává parametrická.**
+- **Riviera 6** — s tolerancí 5 m nenajde nic, s 9 m jednoho kandidáta
+  (182/156/124 proti oficiálním 182/160/132). Ověření selhalo: karta stojí
+  na bunkru **uvnitř** greenu, a v OSM na celé Rivieře **žádný green bunkr
+  uvnitř nemá** — mapaři ho nakreslili vedle. **Zůstává parametrická.**
+- **Mid Ocean 5** — jediný kandidát, hezký žebřík (391/366/294 proti
+  396/368/299), kolineární, délka jamky vyšla 392 m proti 396 m z karty,
+  a i bunkry seděly (dvojice vpravo od greenu). Ale ověření podle vody
+  selhalo: karta stojí na tom, že se hraje přes **Mangrove Lake**, a to
+  v OSM v okruhu 900 metrů **není** — jediné vodní plochy jsou Trott's
+  Pond (2,84 ha, ale 900 m daleko) a bezejmenný rybníček 0,5 ha.
+  Bez jistoty, že ta voda je ta správná, jsem převod neudělal.
+  **Zůstává parametrická.**
+- **Pinehurst 5, Augusta 13, Pebble Beach 18, TPC Sawgrass 17** — karta
+  u nich sice uvádí víc délek, ale jsou to délky z RŮZNÝCH DOB (Augusta
+  498 m dnes, 466 m od roku 2002, 440 m ve 30. letech), ne současná
+  odpaliště. Žebřík z nich sestavit nelze.
+- **Ostravice 16, Dobrouč 3** — hřiště v OSM nejsou vůbec.
+- **Slapy 14** — hřiště je zmapované, ale **bez jediného odpaliště**.
+
+### Závěr, který z toho plyne
+
+Jediná jamka kurzu, u které je identifikace jistá, zůstává **Karlštejn 14** —
+a byla jistá jen proto, že ji určil člověk, který hřiště zná, a navíc
+pojmenoval rybník, což odhalilo, že jsem si vybral špatnou řadu odpališť.
+
+**Automat na to nestačí a hádat se nesmí.** Špatně přiřazený polygon by
+kartu tiše proměnil ve lež — a to je horší než dnešní zjednodušení, které
+karta poctivě přiznává.
+
+**Nejlevnější cesta, jak to odemknout:** ke každé jamce dvě souřadnice —
+střed greenu a zadní odpaliště, odečtené ze satelitní mapy. Určí jamku
+jednoznačně a zaberou minutu. Zbytek je pak strojová práce.
+
+## Krok 19 — Průzkum pokrytí v OSM a proč hromadný převod nejde (22. 8. 2026)
+
+Objednatel řekl „předělej ty jamky". Zkusil jsem to a **zastavil jsem se
+po jedné**. Tady je proč, ať to příště nikdo nezkouší znovu naslepo.
+
+### Pokrytí OpenStreetMap u hřišť, na která máme karty
+
+Měřeno v okruhu zhruba 500 m od ověřených souřadnic klubu, počty prvků:
+
+| hřiště | green | tee | bunkr | fairway | voda | rough |
+|---|---|---|---|---|---|---|
+| TPC Sawgrass | 38 | 46 | 95 | 14 | 24 | 15 |
+| Prague City Zbraslav | 15 | 69 | 64 | 15 | 6 | 8 |
+| Karlštejn | 12 | 54 | 75 | 11 | 4 | 0 |
+| Pinehurst No. 2 | 30 | 16 | 109 | 11 | 7 | 2 |
+| Mid Ocean | 14 | 40 | 77 | 18 | 1 | 0 |
+| Riviera | 19 | 45 | 51 | 6 | 12 | 0 |
+| Augusta National | 27 | 31 | 44 | 2 | 4 | 13 |
+| Pebble Beach | 26 | 14 | 47 | 7 | 1 | 3 |
+| Sand Hills | 9 | 25 | 55 | 4 | 0 | 78 |
+| Ballybunion | 13 | 36 | 29 | 16 | 0 | 0 |
+| Golf Park Slapy | 12 | **0** | 24 | 12 | 3 | 2 |
+| **Ostravice** | **0** | **0** | **0** | **0** | 1 | 0 |
+| **Golf Dobrouč** | **0** | **0** | **0** | **0** | 2 | 0 |
+
+Ostravice a Dobrouč nejsou zmapované vůbec, Slapy nemají odpaliště.
+U zbytku jsou data bohatá — problém je jinde.
+
+### Skutečná překážka: OSM neví, která jamka je která
+
+Prvky nemají `ref` ani jméno. Zkoušel jsem tři automatické podpisy a ani
+jeden nestačil:
+
+1. **Shoda délek odpališť.** U Karlštejna 14 vyšla nádherně — a vedla mě
+   ke špatné řadě odpališť (viz Krok 18). Kolem jednoho greenu bývají dvě
+   řady a obě dají „žebřík".
+2. **Bunkr uvnitř greenu** (Riviera 6, jednoznačný architektonický podpis).
+   Prošel jsem všech 19 greenů Riviery — **ani jeden neobsahuje bunkr**.
+   Mapaři ho nakreslili vedle, ne dovnitř.
+3. **Ostrovní green** (TPC Sawgrass 17). Greenů obklopených vodou z více
+   než 84 % je tam **čtyři**, s plochami 199, 477, 477 a 506 m². Skutečná
+   sedmnáctka má 363 m². Žádný jednoznačně nevyhrává.
+
+Karlštejn 15 se nepodařilo ověřit ani s pomocí objednatelova přiřazení
+greenu: odpaliště v okolí netvoří žebřík odpovídající oficiálním délkám
+223 / 264 / 290 / 315 m. Karta proto zůstává parametrická.
+
+### Co z toho plyne pro další postup
+
+**Převádět se dá jen jamka, u které je identifikace jistá** — a tou je
+zatím jen ta, kde ji potvrdil člověk, co hřiště zná (Karlštejn 14).
+Automaticky to nejde a hádat se nesmí: špatně přiřazený polygon by kartu
+tiše proměnil ve lež, což je horší než dnešní přiznané zjednodušení.
+
+Tři schůdné cesty, kdyby se v tom pokračovalo:
+
+- **Doplnit `ref` do OpenStreetMap.** Kdo hřiště zná, může jamkám v OSM
+  dopsat čísla. Je to práce pro komunitu, ale pak by šel převod udělat
+  automaticky pro celé hřiště naráz — a prospělo by to i ostatním.
+- **Identifikace po jedné jamce člověkem**, jako u Karlštejna 14.
+  Realistické u českých hřišť, ne u Augusty.
+- **Vizuální spárování s klubovou mapou** — pracné a u každé jamky
+  znovu.
+
+Do té doby platí: **parametrická kresba není provizorium, je to poctivé
+zjednodušení**, které karta přiznává. Skutečné obrysy jsou lepší tam, kde
+se dají ověřit — a nikde jinde.
+
 ## Krok 18 — Karlštejn 14 ze zaměřených dat, a chyba, kterou odhalil objednatel (22. 8. 2026)
 
 **První karta kurzu kreslená ze skutečných obrysů.** `karlstejn-14.json` má
