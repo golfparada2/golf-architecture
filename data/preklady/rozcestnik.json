@@ -43,13 +43,18 @@
         "num": 3,
         "title": "Routing",
         "popis": "Pořadí a propojení osmnácti jamek — víc rozhodne o kvalitě hřiště než jakýkoli jednotlivý bunkr."
+      },
+      {
+        "num": 4,
+        "title": "Jak šířka vytváří úhel",
+        "popis": "Diagonální hazardy, bezpečná a odvážná strana fairwaye — a proč riziko musí být odměněné lepším úhlem na green."
       }
     ],
     "foot1": "ROUTING · rozcestník",
-    "foot2": "Lekce 1–3 z 18",
-    "pripravujeme": "Lekce 4 až 18 se připravují. Přibývají postupně — každá projde stejnou kontrolou jako první tři, než se sem dostane.",
+    "foot2": "Lekce 1–4 z 18",
+    "pripravujeme": "Lekce 5 až 18 se připravují. Přibývají postupně — každá projde stejnou kontrolou jako první čtyři, než se sem dostane.",
     "daleHead": "Kdykoli po ruce",
-    "slovnicekPopis": "Všech 38 pojmů kurzu na jednom místě, abecedně a dvojjazyčně.",
+    "slovnicekPopis": "Všech 43 pojmů kurzu na jednom místě, abecedně a dvojjazyčně.",
     "sbirkaPopis": "Deset rozebraných jamek v jednotném formátu — otázka, plán, tři prvky, lekce.",
     "importHotovo": "Výsledky načteny.",
     "importChyba": "Soubor se nepodařilo přečíst. Zkontroluj, že je to JSON stažený z tohoto kurzu."
@@ -98,13 +103,18 @@
         "num": 3,
         "title": "Routing",
         "popis": "The order and connection of all eighteen holes — it decides a course's quality more than any single bunker."
+      },
+      {
+        "num": 4,
+        "title": "How Width Creates Angle",
+        "popis": "Diagonal hazards, the safe and bold side of a fairway — and why risk has to be repaid with a better angle into the green."
       }
     ],
     "foot1": "ROUTING · hub",
-    "foot2": "Lessons 1–3 of 18",
-    "pripravujeme": "Lessons 4 to 18 are in preparation. They arrive one at a time — each goes through the same checks as the first three before it lands here.",
+    "foot2": "Lessons 1–4 of 18",
+    "pripravujeme": "Lessons 5 to 18 are in preparation. They arrive one at a time — each goes through the same checks as the first four before it lands here.",
     "daleHead": "Always at hand",
-    "slovnicekPopis": "All 38 course terms in one place, alphabetical and bilingual.",
+    "slovnicekPopis": "All 43 course terms in one place, alphabetical and bilingual.",
     "sbirkaPopis": "Ten holes analysed in one format — question, plan, three elements, lesson.",
     "importHotovo": "Results loaded.",
     "importChyba": "The file could not be read. Check that it is JSON downloaded from this course."

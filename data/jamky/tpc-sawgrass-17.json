@@ -55,7 +55,7 @@
     "en": "How do you hit a small island green with a short club when the only safe line is dead center, and a miss in any direction means a ball in the water?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(); pořadí vykreslení je hazardy → bunkry → green (js/platy.js:442-462), takže voda soustředěná kolem greenu a jen mírně větší než green se automaticky ukáže jako prstenec obklopující ostrůvek ze všech stran. OPRAVA (2026-08-19): původní návrh měl vodní hazard rx:34/ry:30 vystředěný mimo green (0,118) — to je stejná chyba jako u jiné jamky dřív (obří jezero přes celou kartu, šířka bounding boxu by vyšla přes 90 m). Green podle Golf News Net (3 912 sq ft, 78×81 ft ≈ skoro kruhový) měl navíc být méně zploštělý (ry blíž rx) a bunker je podle stejného zdroje vpředu vlevo, ne vzadu. Přepsáno: voda je teď soustředěná na stejné x,y jako green a jen o pár metrů větší na každou stranu (rx 18 / ry 15 vs. green rx 12 / ry 11) — pořád obklopuje ostrůvek ze všech stran, ale nedominuje kartě. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(); pořadí vykreslení je hazardy → bunkry → green (js/platy.js:442-462), takže voda soustředěná kolem greenu a jen mírně větší než green se automaticky ukáže jako prstenec obklopující ostrůvek ze všech stran. OPRAVA (2026-08-19): původní návrh měl vodní hazard rx:34/ry:30 vystředěný mimo green (0,118) — to je stejná chyba jako u jiné jamky dřív (obří jezero přes celou kartu, šířka bounding boxu by vyšla přes 90 m). Green podle Golf News Net (3 912 sq ft, 78×81 ft ≈ skoro kruhový) měl navíc být méně zploštělý (ry blíž rx) a bunker je podle stejného zdroje vpředu vlevo, ne vzadu. Přepsáno: voda je teď soustředěná na stejné x,y jako green a jen o pár metrů větší na každou stranu (rx 18 / ry 15 vs. green rx 12 / ry 11) — pořád obklopuje ostrůvek ze všech stran, ale nedominuje kartě. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. OVĚŘENO (2026-08-21): druhé kolo rešerše (birdie book/yardage book) nenašlo žádnou veřejně čitelnou skutečnou stránku yardage booku pro tuhle jamku (TPC PDF existuje, ale jeho grafická vrstva se nedala přečíst) — nejlepší dostupný zdroj zůstává textový popis greenu (Golf News Net: 78×81 stop ≈ 24×25 m, tedy prakticky kruhový), který current green rx12/ry11 už odpovídá. Nově zjištěný detail, nezakreslený: dřevěná lávka pro pěší provoz vede podél zadní LEVÉ hrany greenu (Golf Course Industry) — mimo rozsah schématu.",
     "green": {
       "x": 0,
       "y": 121,
@@ -155,6 +155,10 @@
       "titul": "Golf News Net — What is the size of the island green par-3 17th hole at TPC Sawgrass and The Players?",
       "url": "https://thegolfnewsnet.com/golfnewsnetteam/2022/03/12/what-is-the-size-of-the-island-green-par-3-17th-hole-at-tpc-sawgrass-and-the-players-125558/",
       "poznamka": "zdroj rozměrů greenu (3 912 sq ft, 78×81 stop) a polohy bunkeru (pot bunker vpředu vlevo) použitých k opravě pole tvary"
+    },
+    {
+      "titul": "Golf Course Industry — Inside the Cut (TPC Sawgrass 17, agronomie a rozměry greenu)",
+      "url": "https://www.golfcourseindustry.com/news/tpc-sawgrass-island-green/"
     }
   ],
   "foto": {

@@ -8,10 +8,10 @@
   "par": 4,
   "delky": [
     {
-      "odpaliste": "základní",
-      "m": null,
-      "yd": null,
-      "poznamka": "přesná délka jamky 3 nebyla v dostupných pramenech dohledána — ověř přímo u klubu, než se použije v tisknuté kartě"
+      "odpaliste": "základní (černá/bílá)",
+      "m": 270,
+      "yd": 295,
+      "poznamka": "Podle GolfPass scorecardu (295 yd na černé i bílé shodně — možná sdílené pánské odpaliště, nebo nepřesnost agregátoru; Hole19 uvádí pro srovnatelné odpaliště jiné číslo, 223 yd — neshodu se nepodařilo rozhodnout u klubu samotného, ber jako orientační, ne jistou hodnotu)."
     }
   ],
   "architekt": {
@@ -45,7 +45,7 @@
     "en": "Which way does rainwater run off the steep slope into the stream, and where must the fairway or green give way so the player isn't left playing across water from a bad angle?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. ZPŘESNĚNO (2026-08-21): dosavadní schéma (bunker vpravo jako „opěrná stěna”, potok vlevo po většině délky jamky) souhlasí s vlastními slovy architekta Jakuba Červenky (golfdobrouc.cz/slovo-architekta): jamka je „posazená do úzkého údolí”, nabízí volbu mezi agresivní ranou přes vodu a bunkery k greenu nebo bezpečnějším železem do fairwaye, green chrání velký bunker, voda vede podél LEVÉ strany. Přesné rozměry greenu, úhel dogleg-ohybu ani přesná poloha bunkeru se nikde nedají dohledat — u tak malého a nového hřiště žádný birdie book/strokesaver veřejně neexistuje.",
     "green": {
       "x": 6,
       "y": 280,
@@ -140,7 +140,7 @@
   ],
   "prameny": [
     {
-      "titul": "Golf Dobrouč — Slovo architekta",
+      "titul": "Golf Dobrouč — Slovo architekta (Jakub Červenka, přímý citát o jamce 3: „nejkratší, zato strategický a herně atraktivní čtyřpar…, jamka posazená do úzkého údolí”)",
       "url": "https://www.golfdobrouc.cz/slovo-architekta/"
     },
     {
@@ -150,6 +150,10 @@
     {
       "titul": "GolfExtra.cz — Golf Dobrouč: český golf našel nové hřiště v Orlických horách",
       "url": "https://www.golfextra.cz/rubriky/zahranici/golf-dobrouc-cesky-golf-nasel-nove-hriste-v-orlickych-horach_7344.html"
+    },
+    {
+      "titul": "GolfPass — Golf Dobrouč scorecard",
+      "url": "https://www.golfpass.com/travel-advisor/courses/39772-golf-dobrouc/scorecard"
     }
   ],
   "naCoSeDivat": {

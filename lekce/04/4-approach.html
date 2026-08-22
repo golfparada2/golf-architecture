@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ROUTING — Lekce 4: Approach</title>
+<meta name="description" content="Lekce 4, sekce 4 z 7: sto simulovaných kol z bezpečné a z odvážné strany — pro dva různé hráče.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F1E0'/%3E%3Ccircle cx='16' cy='14' r='9' fill='%23A9B983' stroke='%231E1B15' stroke-width='1.4'/%3E%3Ccircle cx='16' cy='14' r='1.6' fill='%231E1B15'/%3E%3Cpath d='M16 14 L16 5' stroke='%231E1B15' stroke-width='1.3'/%3E%3Cpath d='M16 5 L23 7.5 L16 10 Z' fill='%23B0452C' stroke='%231E1B15' stroke-width='.8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/styl.css">
+<style>
+  .l4Tabulka{width:100%;border-collapse:collapse;margin-top:14px;font-size:14.5px}
+  .l4Tabulka th, .l4Tabulka td{padding:7px 10px;text-align:left;border-bottom:1px solid rgba(74,68,58,.25)}
+  .l4Tabulka th{font-family:'Literata',serif;font-weight:500;letter-spacing:.05em;text-transform:uppercase;font-size:12px;color:var(--ink2)}
+  .l4Tabulka tr.aktivni td{font-weight:600;color:var(--olive)}
+  .l4Verdikt{margin-top:14px;padding-left:13px;border-left:2px solid var(--good);font-size:15px;line-height:1.5}
+  .l4Poznamka{font-size:12.5px;color:var(--ink2);opacity:.85;margin-top:10px;line-height:1.5}
+</style>
+</head>
+<body>
+
+<a class="preskocit" href="#obsah" data-t="nav.preskocit">Přeskočit na obsah</a>
+
+<header class="hlavicka">
+<div class="topbar">
+  <div class="hr"><span data-t="meta.kicker"></span></div>
+  <div class="lang" role="group" aria-label="Language" data-t="nav.jazykLabel" data-t-attr="aria-label">
+    <button data-l="cs" aria-current="true">ČES</button><i>/</i><button data-l="en">ENG</button>
+  </div>
+</div>
+<nav class="drobky" id="drobky"></nav>
+<p class="krokLabel" id="krokLabel"></p>
+<nav class="kroky" id="kroky"></nav>
+</header>
+
+<main id="obsah">
+
+<section class="plat" id="secApproachIntro">
+  <p class="eyebrow" data-t="approachNadpis.eyebrow"></p>
+  <h1 class="platNadpis"><em data-t="approachNadpis.over"></em><span data-t="approachNadpis.title"></span></h1>
+  <p class="lede" data-t="approachNadpis.lede"></p>
+  <div class="cileBox" id="cileBox" hidden></div>
+</section>
+
+<section class="plat" id="secApproach1">
+  <p class="eyebrow" data-t="approach1.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="approach1.over"></em><span data-t="approach1.title"></span></h2>
+  <p class="lede" data-t="approach1.lede"></p>
+
+  <svg id="p2" viewBox="0 0 400 520" data-t="approach1.planLabel" data-t-attr="aria-label"></svg>
+
+  <div class="toggle" id="approachToggle" role="group" aria-label="Strana fairwaye">
+    <button type="button" data-strana="bezpecna" data-t="teeShot.toggle.bezpecna" aria-pressed="true"></button>
+    <button type="button" data-strana="odvazna" data-t="teeShot.toggle.odvazna"></button>
+  </div>
+
+  <div style="overflow-x:auto">
+    <table class="l4Tabulka" id="l4tab">
+      <thead><tr><th data-t="approach1.tabulka.hrac"></th><th data-t="approach1.tabulka.prumer"></th><th data-t="approach1.tabulka.fairway"></th><th data-t="approach1.tabulka.bunkr"></th></tr></thead>
+      <tbody id="l4tabBody"></tbody>
+    </table>
+  </div>
+  <div id="l4verdikty"></div>
+  <p class="l4Poznamka" data-t="approachNadpis.zapamatuj.2"></p>
+
+  <p class="listMark" data-t="approach1.foot"></p>
+</section>
+
+<div class="zapamatujBox" id="zapamatujBox" hidden></div>
+
+<nav class="sekceNav" id="sekceNav" data-t="nav.sekceNavLabel" data-t-attr="aria-label"></nav>
+</main>
+
+<footer class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="index.html" data-t="nav.prehled"></a></footer>
+
+<script type="module">
+import { vytvorJazyk, nactiSlovnik } from '../../js/jazyk.js';
+import { E, V, clear, hatch, clipPath } from '../../js/platy.js';
+import { HRACI, odehrajKolo } from '../../js/simulace.js';
+import { vykresliNavSekci } from '../../js/sekce-nav.js';
+import { nactiUI, vykresliRamec } from '../../js/ucebnice.js';
+
+const $ = (id) => document.getElementById(id);
+
+const slovnik = await nactiSlovnik('../../data/preklady/lekce-04.json');
+await nactiUI('../../');
+const slovnikPojmu = await nactiSlovnik('../../data/preklady/slovnik-pojmu.json');
+const jazyk = vytvorJazyk(slovnik, {
+  titul: (lang) => lang === 'cs' ? 'ROUTING — Lekce 4: Approach' : 'ROUTING — Lesson 4: Approach',
+});
+
+/* ============================================================================
+ * GEOMETRIE JAMKY — stejné hodnoty jako v `1-tee-shot.html` (ilustrace tam,
+ * skutečná fyzika simulace tady — proto tu geometrie určuje i `resolveLie()`
+ * pro `js/simulace.js`). Souřadnice v metrech, y roste směrem ke greenu.
+ * ==========================================================================*/
+const SCALE = 1.2;
+const toX = (x) => 200 + x * SCALE;
+const toY = (y) => 510 - y * SCALE;
+
+const FAIRWAY_PTS = [[0, 0], [190, 4], [230, 32], [400, 20]];
+const HALF_W = 17;
+function centerX(y) {
+  if (y <= FAIRWAY_PTS[0][0]) return FAIRWAY_PTS[0][1];
+  for (let i = 0; i < FAIRWAY_PTS.length - 1; i++) {
+    const [y0, x0] = FAIRWAY_PTS[i], [y1, x1] = FAIRWAY_PTS[i + 1];
+    if (y <= y1) return x0 + (x1 - x0) * ((y - y0) / (y1 - y0));
+  }
+  return FAIRWAY_PTS[FAIRWAY_PTS.length - 1][1];
+}
+
+const BUNKER_CORNER = { x: 38, y: 222, r: 13 };
+const BUNKER_GREEN = { x: 2, y: 330, r: 7 };
+const GREEN = { x: 20, y: 345, rx: 10, ry: 9 };
+const PIN = { x: 20, y: 345 };
+const AIM = {
+  bezpecna: { x: -8, y: 195 },
+  odvazna: { x: 30, y: 235 },
+};
+
+/** Klasifikace ležení pro `odehrajJamku` — viz `js/simulace.js`. */
+function resolveLie(x, y) {
+  const dgx = (x - GREEN.x) / GREEN.rx, dgy = (y - GREEN.y) / GREEN.ry;
+  if (dgx * dgx + dgy * dgy <= 1) return { typ: 'green' };
+  if (Math.hypot(x - BUNKER_CORNER.x, y - BUNKER_CORNER.y) <= BUNKER_CORNER.r) return { typ: 'bunkr' };
+  if (Math.hypot(x - BUNKER_GREEN.x, y - BUNKER_GREEN.y) <= BUNKER_GREEN.r) return { typ: 'bunkr' };
+  const cx = centerX(y);
+  if (y >= 0 && y <= 400 && Math.abs(x - cx) <= HALF_W) return { typ: 'fairway' };
+  return { typ: 'rough' };
+}
+
+function fairwayPathD() {
+  const n = 40;
+  const left = [], right = [];
+  for (let i = 0; i <= n; i++) {
+    const y = (i / n) * 400;
+    const cx = centerX(y);
+    left.push([toX(cx - HALF_W), toY(y)]);
+    right.push([toX(cx + HALF_W), toY(y)]);
+  }
+  let d = `M${left[0][0]} ${left[0][1]} `;
+  left.slice(1).forEach(([x, y]) => { d += `L${x} ${y} `; });
+  right.reverse().forEach(([x, y]) => { d += `L${x} ${y} `; });
+  return d + 'Z';
+}
+
+function drawArrow(svg, x1, y1, x2, y2, color, dash) {
+  const g = E(svg, 'g', { stroke: color, 'stroke-width': 2.2, fill: 'none', 'stroke-dasharray': dash || '' });
+  E(g, 'line', { x1, y1, x2, y2 });
+  const ang = Math.atan2(y2 - y1, x2 - x1);
+  const ax = x2 - Math.cos(ang - 0.4) * 11, ay = y2 - Math.sin(ang - 0.4) * 11;
+  const bx = x2 - Math.cos(ang + 0.4) * 11, by = y2 - Math.sin(ang + 0.4) * 11;
+  E(g, 'path', { d: `M${x2} ${y2} L${ax} ${ay} M${x2} ${y2} L${bx} ${by}` });
+}
+
+function kresliPlate(svg, strana) {
+  clear(svg);
+  const defs = E(svg, 'defs', {});
+  const ink = V('--ink', svg), turfD = V('--turf-d', svg), turf = V('--turf', svg),
+    ink2 = V('--ink2', svg), sand = V('--sand', svg), flag = V('--flag', svg);
+
+  E(svg, 'rect', { x: 0, y: 0, width: 400, height: 520, fill: turfD, opacity: 0.35 });
+
+  const fid = 'l4a-fw';
+  const fd = fairwayPathD();
+  clipPath(defs, fid, fd);
+  E(svg, 'path', { d: fd, fill: turf, opacity: 0.9 });
+  hatch(svg, fid, { x: 0, y: 0, w: 400, h: 520 }, 1.05, 4, { op: 0.15, seed: 12 });
+  E(svg, 'path', { d: fd, fill: 'none', stroke: ink, 'stroke-width': 1, opacity: 0.7 });
+
+  [BUNKER_CORNER, BUNKER_GREEN].forEach((b) => {
+    E(svg, 'ellipse', { cx: toX(b.x), cy: toY(b.y), rx: b.r * SCALE, ry: b.r * SCALE * 0.85, fill: sand, stroke: ink, 'stroke-width': 1 });
+  });
+
+  E(svg, 'ellipse', { cx: toX(GREEN.x), cy: toY(GREEN.y), rx: GREEN.rx * SCALE, ry: GREEN.ry * SCALE, fill: turf, stroke: ink, 'stroke-width': 1.3 });
+  E(svg, 'circle', { cx: toX(PIN.x), cy: toY(PIN.y) - 3, r: 1.8, fill: ink });
+  E(svg, 'rect', { x: toX(-6), y: toY(0) - 3, width: 12 * SCALE, height: 6, fill: ink2, opacity: 0.6 });
+
+  const aim = AIM[strana];
+  const barva = strana === 'odvazna' ? flag : ink;
+  drawArrow(svg, toX(0), toY(0), toX(aim.x), toY(aim.y), barva);
+  const dash = strana === 'bezpecna' ? '3 4' : '';
+  drawArrow(svg, toX(aim.x), toY(aim.y), toX(PIN.x), toY(PIN.y) + 6, barva, dash);
+}
+
+/* ============================================================================
+ * SIMULACE — spočítá se JEDNOU při načtení stránky pro obě strany a oba
+ * hráče, ať přepínání tlačítek nemění čísla pod rukama (viz `approach1.lede`).
+ * ==========================================================================*/
+const HENDIKEPY = [0, 24];
+const vysledky = {};
+HENDIKEPY.forEach((h) => {
+  vysledky[h] = {};
+  ['bezpecna', 'odvazna'].forEach((strana) => {
+    vysledky[h][strana] = odehrajKolo(HRACI[h], { pin: PIN, aim: AIM[strana], resolveLie }, 100);
+  });
+});
+
+let aktivniStrana = 'bezpecna';
+
+function renderTabulka() {
+  const tbody = $('l4tabBody');
+  tbody.innerHTML = '';
+  HENDIKEPY.forEach((h) => {
+    const r = vysledky[h][aktivniStrana];
+    const tr = document.createElement('tr');
+    tr.className = 'aktivni';
+    tr.innerHTML = `<td>${HRACI[h].jmeno}</td><td>${r.prumer.toFixed(2)}</td>` +
+      `<td>${Math.round(r.fairwayPct)}%</td><td>${Math.round(r.bunkrPct)}%</td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+function renderVerdikty() {
+  const wrap = $('l4verdikty');
+  wrap.innerHTML = '';
+  HENDIKEPY.forEach((h) => {
+    const b = vysledky[h].bezpecna.prumer, o = vysledky[h].odvazna.prumer;
+    const rozdil = Math.abs(b - o);
+    let klic = 'stejne', a1 = b, b1 = o;
+    if (rozdil >= 0.05) {
+      if (o < b) { klic = 'lepsiOdvazna'; a1 = o; b1 = b; }
+      else { klic = 'lepsiBezpecna'; a1 = b; b1 = o; }
+    }
+    const text = jazyk.t('approach1.verdict.' + klic)
+      .replace('{hrac}', HRACI[h].jmeno)
+      .replace('{a}', a1.toFixed(2))
+      .replace('{b}', b1.toFixed(2));
+    const div = document.createElement('div');
+    div.className = 'l4Verdikt';
+    div.textContent = text;
+    wrap.appendChild(div);
+  });
+}
+
+function renderVse() {
+  kresliPlate($('p2'), aktivniStrana);
+  renderTabulka();
+  renderVerdikty();
+}
+
+document.querySelectorAll('#approachToggle button').forEach((b) => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('#approachToggle button').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    aktivniStrana = b.dataset.strana;
+    renderVse();
+  });
+});
+
+jazyk.on(() => {
+  renderVse();
+  vykresliNavSekci({ lekce: 4, index: 3, jazyk, krokEl: $('krokLabel'), navEl: $('sekceNav') });
+  vykresliRamec({ lekce: 4, index: 3, jazyk, slovnikPojmu });
+});
+</script>
+</body>
+</html>

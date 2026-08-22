@@ -59,7 +59,7 @@
     }
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště jamky 7 (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Green je záměrně široký, aby naznačil dvojgreen se dvěma praporky. Kreslí se přes js/platy.js blob(). Oprava (ověřeno webem, 2026): původní verze měla jen dva neoznačené bunkry těsně u greenu a chyběl slavný fairwayový Shell Bunker. Doplněn Shell Bunker jako fairwayová hrozba ~310 yd (283 m) od odpaliště, tedy zřetelně před greenem (podle The Open course guide a LINKS Magazine popsán jako 'dominantní prvek jamky' se stěnou drnu vysokou přes dva metry). Oba greenové bunkry přejmenovány na skutečné historické názvy — Cockle Bunker (strana jamky 7) a Strath Bunker (strana jamky 11) — a přiblíženy k sobě, aby odpovídaly popisu z Alister MacKenzie Institute: nájezd na green musí buď přeletět Cockle bunker, nebo proletět 'velmi úzkou mezerou' mezi ním a bunkerem Strath. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště jamky 7 (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Green je záměrně široký, aby naznačil dvojgreen se dvěma praporky. Kreslí se přes js/platy.js blob(). Oprava (ověřeno webem, 2026): původní verze měla jen dva neoznačené bunkry těsně u greenu a chyběl slavný fairwayový Shell Bunker. Doplněn Shell Bunker jako fairwayová hrozba ~310 yd (283 m) od odpaliště, tedy zřetelně před greenem (podle The Open course guide a LINKS Magazine popsán jako 'dominantní prvek jamky' se stěnou drnu vysokou přes dva metry). Oba greenové bunkry přejmenovány na skutečné historické názvy — Cockle Bunker (strana jamky 7) a Strath Bunker (strana jamky 11) — a přiblíženy k sobě, aby odpovídaly popisu z Alister MacKenzie Institute: nájezd na green musí buď přeletět Cockle bunker, nebo proletět 'velmi úzkou mezerou' mezi ním a bunkerem Strath. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. OVĚŘENO/ZPŘESNĚNO (2026-08-21): vzdálenost Shell Bunkeru od odpaliště se mezi zdroji liší — LINKS Magazine uvádí ~240 yardů, oficiální průvodce The Open uvádí ~310 yardů (použito v kartě). Nesrovnalost se nedala rozhodnout, ponecháno 310 yardů podle oficiálního zdroje turnaje. Nezávisle potvrzeno (GolfPass): mezi Shell Bunkerem a greenem je přes 30 yardů — tomu current rozestup (bunker y283, green y330 ⇒ 47 m ≈ 51 yd) odpovídá. Fried Egg upřesňuje, že Shell Bunker ohrožuje hlavně ODPAL, ne dojezd na green — schematicky to karta už zachycuje (bunker je zřetelně před greenem, ne u něj).",
     "green": {
       "x": 0,
       "y": 330,
@@ -207,6 +207,14 @@
     {
       "titul": "Alister MacKenzie Institute — St Andrews Old Course",
       "url": "https://alistermackenzie.org/articles/oldcourse"
+    },
+    {
+      "titul": "The Fried Egg — The Old Course's Greens, Ranked (green 7/11, Shell Bunker role)",
+      "url": "https://www.thefriedegg.com/articles/the-old-course-at-st-andrews-greens-ranking"
+    },
+    {
+      "titul": "LINKS Magazine — Letter from St. Andrews: Between the Hill and Strath",
+      "url": "https://linksmagazine.com/letter_from_st_andrews_between_the_hill_and_strath/"
     }
   ],
   "foto": {

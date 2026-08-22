@@ -20,7 +20,9 @@
           "approach",
           "approachu"
         ],
-        "kde": []
+        "kde": [
+          4
+        ]
       },
       {
         "pojem": "Bailout",
@@ -56,6 +58,17 @@
         "kde": []
       },
       {
+        "pojem": "Cape hole",
+        "popis": "Vzorová jamka, kde fairway i green obtáčejí vodní nebo pískový hazard po jedné straně — čím víc si vezmeš, tím kratší je zbytek.",
+        "hledat": [
+          "cape hole",
+          "cape holu"
+        ],
+        "kde": [
+          4
+        ]
+      },
+      {
         "pojem": "Carry",
         "popis": "Vzdálenost, kterou míč urazí vzduchem, než poprvé dopadne. U přeletu přes hazard rozhoduje právě carry, ne celková délka rány.",
         "hledat": [
@@ -81,6 +94,18 @@
         ],
         "kde": [
           3
+        ]
+      },
+      {
+        "pojem": "Diagonální hazard",
+        "popis": "Bunkr, voda nebo drsný terén protínající fairway šikmo, ne kolmo — proto trestá jednu stranu víc než druhou.",
+        "hledat": [
+          "diagonální hazard",
+          "diagonálního hazardu",
+          "diagonální hazardy"
+        ],
+        "kde": [
+          4
         ]
       },
       {
@@ -169,6 +194,17 @@
         ]
       },
       {
+        "pojem": "Half-par hole",
+        "popis": "Jamka navržená tak, aby slabší hráč bezpečně zahrál na bogey a silnější riskoval birdie — nikdy to není klasický, vyrovnaný par.",
+        "hledat": [
+          "half-par hole",
+          "half-par holu"
+        ],
+        "kde": [
+          4
+        ]
+      },
+      {
         "pojem": "Hazard",
         "popis": "Voda, bunkr nebo jiná plocha, kde se za chybu platí ranou navíc nebo horším ležením.",
         "hledat": [
@@ -198,7 +234,8 @@
           "koridor"
         ],
         "kde": [
-          3
+          3,
+          4
         ]
       },
       {
@@ -211,6 +248,16 @@
         ],
         "kde": [
           1
+        ]
+      },
+      {
+        "pojem": "Line of charm",
+        "popis": "Termín architekta C. B. Macdonalda pro nejkratší, nejriskantnější linii přes hazard — ta „okouzlující“ cesta, kterou má hráč aspoň zvažovat.",
+        "hledat": [
+          "line of charm"
+        ],
+        "kde": [
+          4
         ]
       },
       {
@@ -252,6 +299,14 @@
         "kde": []
       },
       {
+        "pojem": "Punchbowl",
+        "popis": "Green položený do prohlubně; svahy kolem něj svádějí míč dovnitř, takže nepřesná rána může skončit líp, než si zaslouží.",
+        "hledat": [
+          "punchbowl"
+        ],
+        "kde": []
+      },
+      {
         "pojem": "Přechod",
         "popis": "Cesta, kterou hráč jde pěšky od greenu jedné jamky k odpališti další.",
         "hledat": [
@@ -260,14 +315,6 @@
         "kde": [
           3
         ]
-      },
-      {
-        "pojem": "Punchbowl",
-        "popis": "Green položený do prohlubně; svahy kolem něj svádějí míč dovnitř, takže nepřesná rána může skončit líp, než si zaslouží.",
-        "hledat": [
-          "punchbowl"
-        ],
-        "kde": []
       },
       {
         "pojem": "Redan",
@@ -286,7 +333,8 @@
           "rizika a odměny"
         ],
         "kde": [
-          1
+          1,
+          4
         ]
       },
       {
@@ -344,14 +392,6 @@
         ]
       },
       {
-        "pojem": "Šrafura",
-        "popis": "Kreslířská technika krátkých rovnoběžných čar. V tomhle kurzu nahrazuje stín i barvu — proto jsou pláty čitelné i černobíle.",
-        "hledat": [
-          "šrafur"
-        ],
-        "kde": []
-      },
-      {
         "pojem": "Stimpmetr",
         "popis": "Nakloněná kolejnička, kterou se měří rychlost greenu. Číslo ze stimpmetru je vzdálenost, kterou míč dokutálí.",
         "hledat": [
@@ -401,6 +441,26 @@
         "kde": [
           2
         ]
+      },
+      {
+        "pojem": "Úhel náběhu",
+        "popis": "Úhel, ze kterého míč přichází na green — od něj se odvíjí, jak moc hazardy u greenu blokují linii na vlajku.",
+        "hledat": [
+          "úhel náběhu",
+          "úhlu náběhu",
+          "angle of approach"
+        ],
+        "kde": [
+          4
+        ]
+      },
+      {
+        "pojem": "Šrafura",
+        "popis": "Kreslířská technika krátkých rovnoběžných čar. V tomhle kurzu nahrazuje stín i barvu — proto jsou pláty čitelné i černobíle.",
+        "hledat": [
+          "šrafur"
+        ],
+        "kde": []
       }
     ]
   },
@@ -419,13 +479,25 @@
     },
     "pojmy": [
       {
+        "pojem": "Angle of approach",
+        "popis": "The angle the ball arrives at the green from — it decides how much the hazards guarding the green block the line to the flag.",
+        "hledat": [
+          "angle of approach"
+        ],
+        "kde": [
+          4
+        ]
+      },
+      {
         "pojem": "Approach",
         "popis": "The shot played at the green — the second on a par 4, the third on a par 5. The angle it comes from often matters more than the length.",
         "hledat": [
           "approach",
           "approach shot"
         ],
-        "kde": []
+        "kde": [
+          4
+        ]
       },
       {
         "pojem": "Bailout",
@@ -452,6 +524,16 @@
           "bunkers"
         ],
         "kde": []
+      },
+      {
+        "pojem": "Cape hole",
+        "popis": "A template hole where the fairway and green wrap around a water or sand hazard on one side — the more you bite off, the shorter what's left.",
+        "hledat": [
+          "cape hole"
+        ],
+        "kde": [
+          4
+        ]
       },
       {
         "pojem": "Carry",
@@ -488,7 +570,8 @@
           "corridor"
         ],
         "kde": [
-          3
+          3,
+          4
         ]
       },
       {
@@ -499,6 +582,17 @@
         ],
         "kde": [
           3
+        ]
+      },
+      {
+        "pojem": "Diagonal hazard",
+        "popis": "A bunker, water, or rough that cuts across the fairway at an angle, not straight across — that's why it punishes one side more than the other.",
+        "hledat": [
+          "diagonal hazard",
+          "diagonal hazards"
+        ],
+        "kde": [
+          4
         ]
       },
       {
@@ -580,6 +674,16 @@
         ]
       },
       {
+        "pojem": "Half-par hole",
+        "popis": "A hole designed so a weaker player safely makes bogey while a stronger one risks birdie — never a clean, balanced par.",
+        "hledat": [
+          "half-par hole"
+        ],
+        "kde": [
+          4
+        ]
+      },
+      {
         "pojem": "Hatching",
         "popis": "A drawing technique of short parallel strokes. Here it stands in for both shadow and colour, which is why the plans read in black and white too.",
         "hledat": [
@@ -625,6 +729,16 @@
         ],
         "kde": [
           1
+        ]
+      },
+      {
+        "pojem": "Line of charm",
+        "popis": "Architect C. B. Macdonald's term for the shortest, riskiest line across a hazard — the \"charming\" route a player is meant to at least consider.",
+        "hledat": [
+          "line of charm"
+        ],
+        "kde": [
+          4
         ]
       },
       {
@@ -688,7 +802,8 @@
           "risk and reward"
         ],
         "kde": [
-          1
+          1,
+          4
         ]
       },
       {

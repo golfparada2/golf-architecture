@@ -14,10 +14,10 @@
  * pro popisky v navigaci i pro seznam na mini-rozcestníku.
  * ==========================================================================*/
 
-export const CELKEM_LEKCI_HOTOVO = 3;
+export const CELKEM_LEKCI_HOTOVO = 4;
 export const CELKEM_LEKCI = 18;
 
-/** Sekce jsou u všech tří hotových lekcí ve stejném pořadí a se stejným
+/** Sekce jsou u všech hotových lekcí ve stejném pořadí a se stejným
  * počtem stránek (7) — liší se jen `klic` u první sekce (lekce 1 má tee shot
  * rozdělený na dva pláty `teeShot1`/`teeShot2`, ale jako sekci/stránku ji
  * pojmenovává jen `teeShot1`, druhý plát žije na téže stránce). */

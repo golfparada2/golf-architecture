@@ -46,7 +46,7 @@
     "en": "Do you risk driving straight at a small, angled green ringed by bunkers, or lay up short and trust a precise wedge?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Opraveno 2026-08-19: dosavadní fairwayový bunker (rx=14) byl vůči greenu neúměrně velký a navíc uprostřed osy hry, přitom více zdrojů (Golf.com, Yardbarker) shodně popisuje jeden velký fairwayový bunker po LEVÉ straně přistávací zóny, ne uprostřed. Greenside bunkery jsou podle zdrojů (Yardbarker, Golf Digest/Shackelford) soustředěny hlavně vpravo od greenu (přední i zadní), proto přidán třetí, menší bunker vzadu vpravo; bunker vlevo od greenu ponechán jako menší, méně dominantní hazard. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Opraveno 2026-08-19: dosavadní fairwayový bunker (rx=14) byl vůči greenu neúměrně velký a navíc uprostřed osy hry, přitom více zdrojů (Golf.com, Yardbarker) shodně popisuje jeden velký fairwayový bunker po LEVÉ straně přistávací zóny, ne uprostřed. Greenside bunkery jsou podle zdrojů (Yardbarker, Golf Digest/Shackelford) soustředěny hlavně vpravo od greenu (přední i zadní), proto přidán třetí, menší bunker vzadu vpravo; bunker vlevo od greenu ponechán jako menší, méně dominantní hazard. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. OVĚŘENO (2026-08-21): The Fried Egg potvrzuje, že green je téměř v pravém úhlu k ose hry a Golf Digest (Scott Fawcett/DECADE) popisuje diagonální sklon greenu předek-vpravo k zadku-vlevo — souhlasí se stávajícím rot:0.6. Přesný počet a rozměry bunkerů se mezi zdroji různí (jeden komerční zdroj uvádí 8 bunkerů celkem, bez rozpisu) — ponecháno schematicky, jak už poznámka výše popisuje.",
     "green": {
       "x": 4,
       "y": 270,
@@ -191,6 +191,10 @@
     {
       "titul": "AllGolfHoles — Riviera Country Club, The, Hole 10 strategy",
       "url": "https://www.allgolfholes.com/courses/california/riviera-country-club-the/10th-hole"
+    },
+    {
+      "titul": "The Fried Egg — Bringing Showtime Back: The 10th at Riviera",
+      "url": "https://www.thefriedegg.com/articles/10th-at-riviera"
     }
   ],
   "foto": {

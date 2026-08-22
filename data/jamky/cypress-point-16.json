@@ -46,7 +46,7 @@
     "en": "Why subordinate an entire course's routing to one dramatic stretch of coastline, instead of spreading difficulty evenly across the land?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). OPRAVA (2026-08-19): vodní hazard byl původně nereálně dominantní (rx 45, symetricky přes celou šířku karty, tj. i větší než dřívější chybný příklad rx 34 u jiné jamky) a úplně blokoval prostor, kde ve skutečnosti existuje MacKenzieho bezpečnější levá trasa podél útesu (tzv. „chicken run“ — sám MacKenzie psal o „třech alternativních cestách“, přímé přes ~200 yardů oceánu, střední přes ~100 yardů a ještě kratší vlevo, kde povinný carry nikdy nepřesahuje ~80 yardů). Hazard proto zmenšen a posunut mírně doprava, aby vlevo zůstal volný pruh pro tuto bail-out trasu. Zdroj: golfcoursewiki.substack.com/p/the-16th-at-cypress-point-with-a; walkingwithtom.wordpress.com/2012/07/03/cypress-point-notes-holes-16-18. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). OPRAVA (2026-08-19): vodní hazard byl původně nereálně dominantní (rx 45, symetricky přes celou šířku karty, tj. i větší než dřívější chybný příklad rx 34 u jiné jamky) a úplně blokoval prostor, kde ve skutečnosti existuje MacKenzieho bezpečnější levá trasa podél útesu (tzv. „chicken run“ — sám MacKenzie psal o „třech alternativních cestách“, přímé přes ~200 yardů oceánu, střední přes ~100 yardů a ještě kratší vlevo, kde povinný carry nikdy nepřesahuje ~80 yardů). Hazard proto zmenšen a posunut mírně doprava, aby vlevo zůstal volný pruh pro tuto bail-out trasu. Zdroj: golfcoursewiki.substack.com/p/the-16th-at-cypress-point-with-a; walkingwithtom.wordpress.com/2012/07/03/cypress-point-notes-holes-16-18. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. DOPLNĚNO (2026-08-21): Alister MacKenzie Institute cituje MacKenzieho vlastní popis jamky (alistermackenzie.org/articles/cypresspoint) — green „na samém konci mysu, ze tří stran obklopený mořem”, tvar greenu popisován jinde jako „bumerang” ovíjející se okolo bunkru v čele (Golf Club Atlas). Doplněn tento čelní bunker, dosavadní boční bunkry (vlevo/vpravo) ponechány — zdroje je nevyvracejí, jen o nich nemluví. MacKenzieho vlastní čísla: „abyss” (mezera hned od odpaliště) 100 yardů (91 m) široká, přímý carry 210 yardů (192 m), střední trasa carry ~100 yardů — současná geometrie (voda x16,y100,rx15,ry80; green y205) je s těmito čísly v rozumné shodě (green ~192–205 m od tee).",
     "green": {
       "x": 0,
       "y": 205,
@@ -89,6 +89,23 @@
         "zkratka": {
           "cs": "BUNKR VPRAVO",
           "en": "RIGHT BUNKER"
+        }
+      },
+      {
+        "x": 2,
+        "y": 200,
+        "rx": 4,
+        "ry": 3,
+        "rot": 0,
+        "seed": 2505,
+        "amp": 0.18,
+        "label": {
+          "cs": "bunker v čele greenu, kolem kterého se green ovíjí do tvaru bumerangu (MacKenzieho návrh)",
+          "en": "a bunker at the front of the green that the putting surface wraps around in a boomerang shape (MacKenzie's design)"
+        },
+        "zkratka": {
+          "cs": "ČELNÍ BUNKR",
+          "en": "FRONT BUNKER"
         }
       }
     ],
@@ -166,6 +183,14 @@
     {
       "titul": "Walking with Tom — Cypress Point Notes (Holes 16–18)",
       "url": "https://walkingwithtom.wordpress.com/2012/07/03/cypress-point-notes-holes-16-18/"
+    },
+    {
+      "titul": "Alister MacKenzie Institute — Cypress Point Golf Course (MacKenzieho vlastní popis jamky 16, primární zdroj)",
+      "url": "https://alistermackenzie.org/articles/cypresspoint"
+    },
+    {
+      "titul": "Golf Club Atlas — Cypress Point Club (tvar greenu jako „bumerang” kolem čelního bunkru)",
+      "url": "https://golfclubatlas.com/countries/cypress-point-club/"
     }
   ],
   "naCoSeDivat": {

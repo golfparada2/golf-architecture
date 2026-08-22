@@ -59,17 +59,51 @@
     "en": "How do you plan three shots along the ocean so none strays left into the water, when the left side is exactly the shortest, most tempting line to the green?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Oprava 2026-08-19: původní oceánský hazard měl rx:40 (šířka pruhu 80 m), což na kartě vypadalo jako by oceán zabíral skoro celou hrací plochu a přesahoval doprostřed fairwaye. Zúženo na rx:22 a posunuto blíž k levému okraji, aby zůstal realisticky úzký pruh podél levé strany (Stillwater Cove), ne dominantní plocha přes celou kartu. Ostatní prvky (délka, par, bunker vpravo/před greenem, strom ve fairwayi) ověřeny jako správné přes GolfPass a PebbleBeach.com — offcourse.co nebyl použit. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Oprava 2026-08-19: původní oceánský hazard měl rx:40 (šířka pruhu 80 m), což na kartě vypadalo jako by oceán zabíral skoro celou hrací plochu a přesahoval doprostřed fairwaye. Zúženo na rx:22 a posunuto blíž k levému okraji, aby zůstal realisticky úzký pruh podél levé strany (Stillwater Cove), ne dominantní plocha přes celou kartu. Ostatní prvky (délka, par, bunker vpravo/před greenem, strom ve fairwayi) ověřeny jako správné přes GolfPass a PebbleBeach.com — offcourse.co nebyl použit. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. DOPLNĚNO (2026-08-21): rešerše birdie-book/yardage-book zdrojů (viz poznamky.md) odhalila dvě věci k opravě. (1) Green byl kresleny širší než hluboký (rx14/ry11) — openyardage.com (LiDAR/OSM odvozená data) uvádí opak, hloubka ~26 yd > šířka ~23 yd. Otočeno na rx10.5/ry12. (2) Prameny už dřív zmiňovaly „dvě fairwayové bunkry vpravo od dráhy letu”, ale v `bunkry` chyběly — byla nakreslená jen ta u greenu. Doplněny obě, v pozicích odpovídajících dosahovým rozsahům z openyardage.com (175–226 m a 243–273 m), nezávisle potvrzeným kvalitativně u GolfPass a Spokesman-Review. Zdroj pro obojí: openyardage.com/en/course/pebble-beach-golf-course.html. Nekresleno (mimo rozsah schématu): dva stromy uprostřed fairwaye (cypřiš + sousední borovice, cca 30 m od sebe) — zmíněno v textu níže, ne v geometrii, protože kreslicí knihovna nemá glyf pro strom.",
     "green": {
       "x": 8,
       "y": 490,
-      "rx": 14,
-      "ry": 11,
+      "rx": 10.5,
+      "ry": 12,
       "rot": -0.1,
       "seed": 1801,
       "amp": 0.08
     },
     "bunkry": [
+      {
+        "x": 16,
+        "y": 175,
+        "rx": 3.5,
+        "ry": 2.8,
+        "rot": 0.2,
+        "seed": 1804,
+        "amp": 0.16,
+        "label": {
+          "cs": "první fairwayový bunker vpravo (kolem 175–226 m od odpaliště)",
+          "en": "first fairway bunker on the right (roughly 175–226 m off the tee)"
+        },
+        "zkratka": {
+          "cs": "FAIRWAY BUNKR",
+          "en": "FAIRWAY BUNKER"
+        }
+      },
+      {
+        "x": 22,
+        "y": 255,
+        "rx": 3.5,
+        "ry": 3,
+        "rot": -0.15,
+        "seed": 1805,
+        "amp": 0.16,
+        "label": {
+          "cs": "druhý fairwayový bunker vpravo (kolem 243–273 m od odpaliště)",
+          "en": "second fairway bunker on the right (roughly 243–273 m off the tee)"
+        },
+        "zkratka": {
+          "cs": "FAIRWAY BUNKR",
+          "en": "FAIRWAY BUNKER"
+        }
+      },
       {
         "x": 20,
         "y": 480,
@@ -173,6 +207,14 @@
       "titul": "GolfPass — Pebble Beach Golf Links: A hole-by-hole guide (2023 U.S. Women's Open)",
       "url": "https://www.golfpass.com/travel-advisor/articles/pebble-beach-golf-links-hole-by-hole-guide-2023-us-womens-open",
       "poznamka": "použito k ověření geometrie jamky 18 (bunker vpravo/před greenem, oceán/Stillwater Cove podél celé levé strany, strom ve fairwayi, dvě fairwayové bunkry vpravo od dráhy letu) — offcourse.co záměrně nepoužit kvůli nedůvěryhodným datům"
+    },
+    {
+      "titul": "openyardage.com — Pebble Beach Golf Course (OSM/US-3DEP LiDAR odvozené rozměry a dosahy bunkrů)",
+      "url": "https://openyardage.com/en/course/pebble-beach-golf-course.html"
+    },
+    {
+      "titul": "Golf.com — Pebble Beach restores a signature feature on its famed 18th hole (dva stromy ve fairwayi)",
+      "url": "https://golf.com/news/pebble-beach-links-cypress-tree-18th-hole/"
     }
   ],
   "foto": {
@@ -189,8 +231,8 @@
     "vyska": 670
   },
   "naCoSeDivat": {
-    "cs": "Sleduj, jak se stuha fairwaye nejdřív odklání od vody a u greenu se k ní zase vrací. Čím větší kus zátoky vlevo ukrojíš, tím kratší zbytek jamky ti zůstane.",
-    "en": "Watch how the fairway ribbon first swings away from the water and comes back to it at the green. The more of the cove you bite off on the left, the less hole is left."
+    "cs": "Sleduj, jak se stuha fairwaye nejdřív odklání od vody a u greenu se k ní zase vrací. Čím větší kus zátoky vlevo ukrojíš, tím kratší zbytek jamky ti zůstane. Na skutečné fairwayi navíc stojí dva stromy asi 30 metrů od sebe — na schématu nejsou, ale hráče omezují stejně jako bunkry.",
+    "en": "Watch how the fairway ribbon first swings away from the water and comes back to it at the green. The more of the cove you bite off on the left, the less hole is left. On the real fairway two trees also stand about 30 metres apart — not shown on the schematic, but they constrain the player just as the bunkers do."
   },
   "lekce": {
     "cs": "Hazard vedený podél celé jamky nabízí rozhodnutí na každou ránu, ne jen na jednu.",

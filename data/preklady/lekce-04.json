@@ -1,0 +1,700 @@
+{
+  "cs": {
+    "meta": {
+      "kicker": "Golfová architektura",
+      "chapter": "Lekce 4 z 18",
+      "over": "Stejný green, jiný úhel —",
+      "title": "Jak šířka vytváří úhel",
+      "lede": "Fairway není jen o tom, kam se vejdeš. Je to nástroj, kterým architekt rozhoduje, z jakého úhlu budeš na green útočit — a jestli si o to riziko vůbec řekneš.",
+      "zpet": "← Zpět na rozcestník"
+    },
+    "principLabel": "Princip",
+    "teeShot": {
+      "eyebrow": "Tee shot",
+      "over": "Plát —",
+      "title": "Bezpečná strana, odvážná strana",
+      "lede": "Stejný green, stejná vlajka. Přepni stranu fairwaye a sleduj, jak se mění úhel, ze kterého na ni útočíš.",
+      "principle": "Šířka fairwaye není štědrost. Je to nabídka: vyber si stranu, a fairway ti sama řekne, jaký úhel na green dostaneš.",
+      "toggle": {
+        "bezpecna": "Bezpečná strana",
+        "odvazna": "Odvážná strana"
+      },
+      "popis": {
+        "bezpecna": "Z levé strany fairwaye je na green sice slušný pohled, ale přístup blokuje bunkr přímo před levou částí greenu — musíš hrát vysoko a přes něj, s minimální marží. Bezpečný odpal, těžký druhý úder.",
+        "odvazna": "Z pravé strany — blíž k bunkru, který hlídá vnitřek zákruty — se green otevírá napřímo, bez překážky mezi tebou a vlajkou. Riskantnější odpal, ale odměnou je nejsnazší možný úhel dovnitř."
+      },
+      "foot": "list 1 · Tee shot",
+      "cile": [
+        "Vysvětlím, proč šířka fairwaye rozhoduje hlavně o úhlu na green, ne jen o tom, jestli se tam vejdu.",
+        "Poznám na plánu jamky diagonální hazard, který nutí hráče vybrat si stranu už na odpališti.",
+        "Popíšu, co znamená „strategická jamka“ na konkrétním příkladu — ne jen jako nálepku z lekce 1."
+      ],
+      "zapamatuj": [
+        "Šířka fairwaye je nabídka, ne štědrost — architekt ji rozšiřuje přesně tam, kde chce nabídnout volbu.",
+        "Diagonální hazard protíná fairway šikmo, ne kolmo — proto trestá jednu stranu víc než druhou, místo aby trestal všechny stejně.",
+        "Odměna za riskantní tee shot není jen „blíž ke greenu“ — je to lepší ÚHEL, ze kterého hazardy u greenu neblokují linii na vlajku.",
+        "Bezpečná strana není špatná volba. Je to jiná sázka — delší nebo blokovanější druhý úder výměnou za jistější odpal."
+      ]
+    },
+    "spolecneKarty": {
+      "specsHead": "Tři prvky",
+      "parLabel": "Par",
+      "delkaLabel": "Délka",
+      "architektLabel": "Architekt",
+      "vznikLabel": "Rok",
+      "prameny": "Prameny",
+      "otazkaLabel": "Otázka jamky",
+      "fotoLabel": "Foto"
+    },
+    "fairway": {
+      "eyebrow": "Fairway",
+      "over": "Tři jamky, jedna otázka —",
+      "title": "Kudy se vyplatí jít?",
+      "lede": "Riviera, St Andrews a Ballybunion neleží ani na stejném kontinentu, ale řeší tu samou úlohu: kam fairway pustí hráče, který si chce vzít riziko za odměnu.",
+      "cile": [
+        "Najdu na třech různých jamkách stejný princip: širší strana fairwaye = lepší úhel na green.",
+        "Rozliším, kde je riziko odměněné úhlem a kde jde jen o kratší vzdálenost."
+      ],
+      "zapamatuj": [
+        "Riviera 10 — krátký par 4, kde nejkratší cesta vede přes hazard, ne kolem něj.",
+        "St Andrews Old 7 — sdílená fairway se sousední jamkou dokazuje, že šířka sama o sobě nikoho neochrání, pokud zvolí špatný úhel.",
+        "Ballybunion 11 — duny nutí hráče rozhodnout se dřív, než vůbec uvidí vlajku."
+      ],
+      "vyzkousej": {
+        "otazka": "Vyber si jednu z těch tří jamek a popiš vlastními slovy, co by se stalo, kdyby architekt tu fairway udělal souměrně širokou po celé délce — proč by jamka přestala fungovat?",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
+    },
+    "ceskaJamka": {
+      "eyebrow": "Fairway · Česko",
+      "over": "Bunkry, co hlídají odvahu —",
+      "title": "Karlštejn, jamka 15",
+      "lede": "Dva bunkry v zákrutě netrestají špatný úder. Trestají špatné rozhodnutí — hráče, který si vzal odvážnou linii a netrefil ji.",
+      "cile": [
+        "Ukážu na Karlštejnu, jak dvojice bunkrů v zákrutě funguje jako „cena“ za odvážnou stranu, ne jako náhodná překážka."
+      ],
+      "zapamatuj": [
+        "Bunkry u zákruty nejsou tam, aby trestaly každého — jsou tam jen pro toho, kdo zkusil zkratku.",
+        "Kdo hraje bezpečně vlevo, bunkry v zákrutě nikdy neuvidí zblízka — a to je přesně záměr.",
+        "Česká hřiště nemusí kopírovat Rivieru, aby použila stejný princip diagonálního rizika."
+      ],
+      "vyzkousej": {
+        "otazka": "Najdi na Karlštejnu 15 (nebo na jamce, kterou znáš) místo, kde bys ty sám/sama radši riskoval/a bunkr, než hrál/a bezpečně. Napiš, proč by se ti to vyplatilo.",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
+    },
+    "approachNadpis": {
+      "eyebrow": "Approach",
+      "over": "Jeden úkol, dvě strany —",
+      "title": "Kde se vyplatí riskovat",
+      "lede": "Teorie říká, že odvážná strana dá lepší úhel. Teď to ověříme na číslech — sto odehraných kol pro hráče s hendikepem 0 a sto pro hráče s hendikepem 24.",
+      "cile": [
+        "Přečtu z tabulky výsledků, komu se riziko vyplácí a komu ne — a řeknu proč."
+      ],
+      "zapamatuj": [
+        "Riziko, které se vyplatí hráči s hendikepem 0, se nemusí vyplatit hráči s hendikepem 24 — a dobrá strategická jamka počítá s oběma.",
+        "„Odvážná strana“ není univerzálně lepší volba — je to sázka, která vyjde jednomu a druhému ne.",
+        "Simulace v týhle lekci je zjednodušený model, ne přesná předpověď — ukazuje směr, ne desetinná místa."
+      ]
+    },
+    "approach1": {
+      "eyebrow": "Úkol · simulace",
+      "over": "Zahraj sto kol z obou stran —",
+      "title": "Bezpečně, nebo odvážně?",
+      "lede": "Přepni stranu tee shotu. Uvidíš, jak si sto odehraných kol vedla obě strany pro hráče s hendikepem 0 i 24 — čísla se spočítala jednou při načtení stránky a zůstávají stejná, ať přepínáš, kolikrát chceš.",
+      "planLabel": "Plán jamky s fairway bunkrem v zákrutě a bunkrem před greenem",
+      "tabulka": {
+        "hrac": "Hráč",
+        "prumer": "Průměr ran",
+        "fairway": "Fairway",
+        "bunkr": "Bunkr"
+      },
+      "verdict": {
+        "lepsiOdvazna": "{hrac}: odvážná strana vychází lépe — průměr {a} rány místo {b}.",
+        "lepsiBezpecna": "{hrac}: bezpečná strana vychází lépe — průměr {a} rány místo {b}.",
+        "stejne": "{hrac}: obě strany vychází prakticky stejně (rozdíl pod 0,05 rány)."
+      },
+      "foot": "list 4 · Approach"
+    },
+    "putt": {
+      "eyebrow": "Putt",
+      "over": "Tři otázky, žádné body —",
+      "title": "K zamyšlení",
+      "lede": "Piš vlastními slovy. Nikdo to nebude opravovat — je to tu proto, aby sis to promyslel/a, ne abys to odříkal/a.",
+      "otazky": [
+        "Najdi jamku (v Česku nebo venku), kde bezpečná a odvážná strana fairwaye vedou do viditelně jiného úhlu na green. Popiš ten rozdíl.",
+        "Diagonální hazard funguje, jen když ho hráč VIDÍ a musí se rozhodnout dřív, než odpálí. Co se stane s jamkou, když ten hazard schováš za kopec nebo za strom?",
+        "Kdy je podle tebe v pořádku postavit jamku, kde odvážná strana nedává žádnou skutečnou výhodu — jen riziko bez odměny? Je to vůbec ještě „strategická“ jamka?"
+      ],
+      "poznamkaPlaceholder": "Piš sem…",
+      "ulozeno": "Uloženo v tomto prohlížeči.",
+      "foot": "list 5 · Putt",
+      "cile": [
+        "Popíšu vlastními slovy, jak úhel a šířka fairwaye spolu souvisí, na jamce, kterou jsem sám/sama viděl/a."
+      ],
+      "zapamatuj": [
+        "Diagonální hazard musí být vidět a musí nutit k rozhodnutí před odpalem — jinak přestává být strategický a stává se jen dekorací.",
+        "Riziko bez odměny není strategická jamka — je to jen trest, i kdyby vypadal fotogenicky.",
+        "Poznámky si nech — vrátíš se k nim v lekci o green komplexech."
+      ]
+    },
+    "slovnicek": {
+      "eyebrow": "Slovníček",
+      "over": "Pojmy z téhle lekce —",
+      "title": "Sedm slov",
+      "lede": "Odborné názvy zůstávají anglicky i v české větě — je to jazyk, kterým se o architektuře píše všude na světě.",
+      "pojmy": [
+        {
+          "pojem": "Diagonální hazard",
+          "popis": "Bunkr, voda nebo drsný terén protínající fairway šikmo, ne kolmo — proto trestá jednu stranu víc než druhou."
+        },
+        {
+          "pojem": "Úhel náběhu (angle of approach)",
+          "popis": "Úhel, ze kterého míč přichází na green — od něj se odvíjí, jak moc hazardy u greenu blokují linii na vlajku."
+        },
+        {
+          "pojem": "Half-par hole",
+          "popis": "Jamka navržená tak, aby slabší hráč bezpečně zahrál na bogey a silnější riskoval birdie — nikdy to není klasický, vyrovnaný par."
+        },
+        {
+          "pojem": "Cape hole",
+          "popis": "Vzorová jamka, kde fairway i green obtáčejí vodní nebo pískový hazard po jedné straně — čím víc si vezmeš, tím kratší je zbytek."
+        },
+        {
+          "pojem": "Koridor",
+          "popis": "Pás terénu vymezený hazardy nebo porostem, ve kterém se hráč smí bezpečně pohybovat — širší koridor znamená víc možných úhlů, ne jen víc místa."
+        },
+        {
+          "pojem": "Riziko a odměna",
+          "popis": "Princip, kdy je vyšší riziko odměněno reálnou výhodou — kratší ránou nebo lepším úhlem, ne jen pocitem, že jsi hrál/a odvážně."
+        },
+        {
+          "pojem": "Line of charm",
+          "popis": "Termín architekta C. B. Macdonalda pro nejkratší, nejriskantnější linii přes hazard — ta „okouzlující“ cesta, kterou má hráč aspoň zvažovat."
+        }
+      ],
+      "cile": [
+        "Budu rozumět sedmi pojmům, kterými se popisuje strategická volba úhlu a rizika."
+      ],
+      "zapamatuj": [
+        "Diagonální hazard a úhel náběhu patří k sobě — jeden vytváří to druhé.",
+        "Half-par hole a Cape hole jsou konkrétní recepty, jak riziko a odměnu proměnit ve skutečnou jamku.",
+        "„Line of charm“ je přes sto let starý termín, ale princip za ním používá golfová architektura dodnes."
+      ],
+      "vyzkousej": {
+        "otazka": "Vysvětli vlastními slovy rozdíl mezi diagonálním hazardem a hazardem, který leží prostě jen „v cestě“, jako bys to říkal/a kamarádovi na hřišti.",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
+    },
+    "zkouska": {
+      "eyebrow": "Zkouška",
+      "over": "Šest otázek za —",
+      "title": "100 bodů",
+      "lede": "Odpověz na všech šest, teprve pak uvidíš správná řešení. Do celkového hodnocení kurzu se počítá první pokus.",
+      "spolecne": {
+        "otazka": "Otázka",
+        "bodu": "bodů",
+        "zbyva": "Zbývá odpovědět na",
+        "hotovoMuzesOdevzdat": "Hotovo. Můžeš odevzdat.",
+        "spravne": "správně",
+        "tvojeVolba": "tvoje volba",
+        "nicNevybrano": "nic nevybráno",
+        "moznost": "Možnost",
+        "zkratkaBodu": "b",
+        "reseniUKazdeOtazky": "Správná řešení jsou u každé otázky."
+      },
+      "submit": "Odevzdat",
+      "again": "Zkusit znovu",
+      "q1": {
+        "text": "Které z těchhle tří fairwayí nabízí hráči skutečnou volbu úhlu?",
+        "hint": "Hledej hazard, který protíná fairway šikmo, ne symetricky ani napříč celou šířkou.",
+        "a": "Fairway A",
+        "b": "Fairway B",
+        "c": "Fairway C",
+        "why": "<b>B.</b> Diagonální hazard v B protíná fairway šikmo — bezpečná strana je delší a blokovaná, odvážná kratší a otevřená. A je symetrická bez hazardu (žádná volba), C má hazard napříč celou šířkou (trestá všechny stejně, taky žádná volba).",
+        "back": "Vrať se na plát „Bezpečná strana, odvážná strana“."
+      },
+      "q2": {
+        "text": "Co dělá hazard „diagonální“, na rozdíl od hazardu, co je prostě jen v cestě?",
+        "a": "Je vždycky z písku, ne z vody",
+        "b": "Protíná fairway šikmo, takže jedna strana je k němu blíž a druhá dál",
+        "c": "Je vidět až z greenu, ne z odpaliště",
+        "d": "Je vždycky umístěný přesně uprostřed fairwaye",
+        "why": "<b>B.</b> Diagonální znamená šikmo, ne kolmo — proto nabízí odstupňovanou volbu (blíž a riskantněji, nebo dál a bezpečněji), místo aby všem hráčům stál v cestě stejně.",
+        "back": "Vrať se na plát „Bezpečná strana, odvážná strana“."
+      },
+      "q3": {
+        "text": "Proč bezpečná strana fairwaye někdy vede k TĚŽŠÍMU druhému úderu, ne lehčímu?",
+        "a": "Protože bezpečná strana je vždycky delší tráva",
+        "b": "Protože hazard u greenu je postavený tak, aby blokoval právě tenhle úhel náběhu",
+        "c": "Protože se z ní hůř vidí vlajka",
+        "d": "Protože architekt bezpečnou stranu záměrně nekosí",
+        "why": "<b>B.</b> Green bývá bráněný hazardem přesně na té straně, odkud přichází „bezpečný“ druhý úder — jinak by bezpečná strana nebyla žádnou obětí a jamka by přestala fungovat jako volba.",
+        "back": "Vrať se na úkol „Kde se vyplatí riskovat“."
+      },
+      "q4": {
+        "text": "Bunkr leží těsně před levou částí greenu. Ze kterého úhlu (A/B/C) je přístup na green nejotevřenější?",
+        "hint": "Hledej úhel, který se bunkru vyhne, ne ten, co přes něj musí přeletět.",
+        "a": "Úhel A — zprava",
+        "b": "Úhel B — zleva, přes bunkr",
+        "c": "Úhel C — přímo od bunkru",
+        "why": "<b>A.</b> Přístup zprava obchází bunkr úplně mimo linii k vlajce. Úhel B musí bunkr přeletět s minimální marží, úhel C jde po jeho okraji — oba jsou blokovanější než A.",
+        "back": "Vrať se na úkol „Kde se vyplatí riskovat“."
+      },
+      "q5": {
+        "text": "Co platí o strategických jamkách s diagonálním hazardem? Vyber všechna správná tvrzení.",
+        "hint": "Za každou správnou volbu body, za každou špatnou se odečítají.",
+        "a": "Hazard musí být vidět z odpaliště, jinak nenutí k rozhodnutí",
+        "b": "Odvážná strana musí vyjít lépe úplně každému hráči bez ohledu na hendikep",
+        "c": "Bezpečná strana je legitimní volba, ne prohra předem",
+        "d": "Riziko bez skutečné odměny v úhlu nebo vzdálenosti není strategie, je to jen trest",
+        "why": "<b>A, C, D.</b> Viditelnost hazardu je podmínka rozhodování, bezpečná strana je platná strategie a riziko musí být odměněné, jinak jde jen o trest. B neplatí — dobrá strategická jamka počítá s tím, že se riziko vyplatí různým hráčům různě.",
+        "back": "Vrať se na úkol „Kde se vyplatí riskovat“."
+      },
+      "q6": {
+        "text": "Co je „line of charm“?",
+        "a": "Oficiální název pro střední linii fairwaye na golfové mapě",
+        "b": "Nejkratší a nejriskantnější linie přes hazard, kterou hráč aspoň zvažuje",
+        "c": "Termín pro obzvlášť fotogenickou jamku",
+        "d": "Přezdívka pro první jamku na hřišti",
+        "why": "<b>B.</b> Termín C. B. Macdonalda pro tu „okouzlující“, nejkratší cestu přes hazard — jádro celé myšlenky diagonálního rizika.",
+        "back": "Vrať se na slovníček."
+      },
+      "pasmo": {
+        "vyborne": {
+          "nadpis": "Výborně",
+          "text": "Šířku a úhel máš zvládnuté. Pokračuj na lekci 5."
+        },
+        "dobre": {
+          "nadpis": "Dobré",
+          "text": "Základ sedí. Projdi si otázky, kde ses spletl/a, a jdi dál."
+        },
+        "projdes": {
+          "nadpis": "Projdeš",
+          "text": "Vrať se na úkol „Kde se vyplatí riskovat“, než začneš lekci 5."
+        },
+        "zopakuj": {
+          "nadpis": "Zopakuj",
+          "text": "Vrať se na začátek lekce a projdi si plát i úkol znovu."
+        }
+      },
+      "souhrn": {
+        "nadpis": "Výsledek",
+        "procentBodu": "procent · {body} ze {max} bodů",
+        "spravne": "správně",
+        "chybneCastecne": "chybně nebo částečně",
+        "zcelaMimo": "zcela mimo",
+        "rozpis": "Rozpis odpovědí",
+        "tvojeOdpoved": "Tvoje odpověď",
+        "spravneReseni": "Správně",
+        "pata": "Podrobné vysvětlení je u každé otázky výše. Výsledek se ukládá do přehledu kurzu."
+      },
+      "foot": "list 7 · Zkouška",
+      "cile": [
+        "Ověřím si, jestli poznám diagonální riziko a jeho odměnu i na jamce, kterou vidím poprvé."
+      ],
+      "zapamatuj": [
+        "Do celkového hodnocení kurzu se počítá jen první pokus.",
+        "U chybných odpovědí je napsáno, na kterou část lekce se vrátit.",
+        "Výsledky žijí jen v tvém prohlížeči — stáhni si je, než přejdeš na jiné zařízení."
+      ]
+    },
+    "temata": {
+      "strategie": "strategie",
+      "trest": "trest",
+      "riziko-odmena": "riziko a odměna",
+      "umisteni-hazardu": "umístění hazardu",
+      "cteni-terenu": "čtení terénu",
+      "voda-odtok": "voda a odtok",
+      "vitr-slunce": "vítr a slunce",
+      "routing": "routing",
+      "bezpecnost": "bezpečnost",
+      "rytmus-hriste": "rytmus hřiště",
+      "uhel-nabehu": "úhel náběhu",
+      "diagonalni-hazard": "diagonální hazard"
+    },
+    "foot": {
+      "lekce": "ROUTING · lekce 4"
+    },
+    "nav": {
+      "predchozi": "Předchozí",
+      "dalsi": "Další",
+      "prehled": "Přehled lekce",
+      "krok": "Krok {n} z 7",
+      "dalsiLekce": "Pokračovat další lekcí",
+      "konecKurzu": "Zatím poslední hotová lekce — pokračuj sbírkou jamek",
+      "preskocit": "Přeskočit na obsah",
+      "sekceNavLabel": "Navigace mezi částmi lekce",
+      "jazykLabel": "Volba jazyka",
+      "sekceNazvy": [
+        "Bezpečná, odvážná",
+        "Nalezené úhly",
+        "Česká jamka",
+        "Kde se vyplatí riskovat",
+        "K zamyšlení",
+        "Slovníček",
+        "Zkouška"
+      ],
+      "klavesniNapoveda": "Plán se dá ovládat i klávesnicí: tabulátorem na něj přejdi, šipkami posouvej zaměřovač, Enterem potvrď."
+    },
+    "toc": {
+      "kicker": "Přehled lekce",
+      "sekceHead": "Co tě čeká",
+      "pokracovat": "Pokračovat",
+      "zacit": "Začít lekci",
+      "zpetNaPrehled": "← Zpět na přehled kurzu",
+      "daleHead": "Kam dál",
+      "slovnicekPopis": "Všechny pojmy kurzu na jednom místě, abecedně a dvojjazyčně.",
+      "sbirkaPopis": "Deset rozebraných jamek z celého světa i z Česka, v jednotném formátu."
+    }
+  },
+  "en": {
+    "meta": {
+      "kicker": "Golf course architecture",
+      "chapter": "Lesson 4 of 18",
+      "over": "Same green, different angle —",
+      "title": "How Width Creates Angle",
+      "lede": "A fairway isn't just about where you fit. It's the tool an architect uses to decide what angle you get to attack the green from — and whether you even bother taking the risk.",
+      "zpet": "← Back to the hub"
+    },
+    "principLabel": "The principle",
+    "teeShot": {
+      "eyebrow": "Tee shot",
+      "over": "The plate —",
+      "title": "The safe side, the bold side",
+      "lede": "Same green, same flag. Switch sides of the fairway and watch how the angle you attack from changes.",
+      "principle": "Fairway width isn't generosity. It's an offer: pick a side, and the fairway itself tells you what angle you get into the green.",
+      "toggle": {
+        "bezpecna": "Safe side",
+        "odvazna": "Bold side"
+      },
+      "popis": {
+        "bezpecna": "From the left side of the fairway the distance in looks fine, but the approach is blocked by a bunker sitting right in front of the left half of the green — you have to fly it high with almost no margin. A safe tee shot, a hard second.",
+        "odvazna": "From the right side — closer to the bunker guarding the inside of the bend — the green opens up straight ahead, nothing between you and the flag. A riskier tee shot, but the reward is the easiest angle in you can get."
+      },
+      "foot": "sheet 1 · Tee shot",
+      "cile": [
+        "Explain why fairway width mainly decides the angle into the green, not just whether I fit.",
+        "Spot a diagonal hazard on a plan that forces a player to pick a side already on the tee.",
+        "Describe what a \"strategic hole\" means with a concrete example, not just a label left over from lesson 1."
+      ],
+      "zapamatuj": [
+        "Fairway width is an offer, not generosity — an architect widens it exactly where they want to offer a choice.",
+        "A diagonal hazard cuts across the fairway at an angle, not straight across — that's why it punishes one side more than the other, instead of punishing everyone equally.",
+        "The reward for a risky tee shot is never just \"closer to the green\" — it's a better ANGLE, one where the hazards guarding the green don't block the line to the flag.",
+        "The safe side isn't a bad choice. It's a different bet — a longer or more blocked second shot in exchange for a surer tee shot."
+      ]
+    },
+    "spolecneKarty": {
+      "specsHead": "Three elements",
+      "parLabel": "Par",
+      "delkaLabel": "Length",
+      "architektLabel": "Architect",
+      "vznikLabel": "Year",
+      "prameny": "Sources",
+      "otazkaLabel": "The hole's question",
+      "fotoLabel": "Photo"
+    },
+    "fairway": {
+      "eyebrow": "Fairway",
+      "over": "Three holes, one question —",
+      "title": "Which side is worth it?",
+      "lede": "Riviera, St Andrews and Ballybunion don't even share a continent, but they solve the same problem: where does the fairway let a player take on risk for a reward.",
+      "cile": [
+        "Find the same principle on three different holes: the wider side of the fairway buys a better angle in.",
+        "Tell where risk is rewarded with angle and where it only buys shorter distance."
+      ],
+      "zapamatuj": [
+        "Riviera 10 — a short par 4 where the shortest route runs straight across the hazard, not around it.",
+        "St Andrews Old 7 — a shared fairway with the neighbouring hole proves that width alone protects nobody who picks the wrong angle.",
+        "Ballybunion 11 — the dunes force a player to decide before they even see the flag."
+      ],
+      "vyzkousej": {
+        "otazka": "Pick one of the three holes and describe, in your own words, what would happen if the architect had made that fairway evenly wide along its whole length — why would the hole stop working?",
+        "placeholder": "Write in your own words — nobody is marking this."
+      }
+    },
+    "ceskaJamka": {
+      "eyebrow": "Fairway · Czechia",
+      "over": "Bunkers that guard your nerve —",
+      "title": "Karlštejn, hole 15",
+      "lede": "Two bunkers at the elbow don't punish a bad shot. They punish a bad decision — a player who took the bold line and missed it.",
+      "cile": [
+        "Show, on Karlštejn, how a pair of bunkers at the elbow works as the \"price\" of the bold side, not a random obstacle."
+      ],
+      "zapamatuj": [
+        "Elbow bunkers aren't there to punish everyone — they're there only for the player who tried the shortcut.",
+        "Play safely to the left and you'll never see those bunkers up close — and that's exactly the point.",
+        "A Czech course doesn't have to copy Riviera to use the same diagonal-risk principle."
+      ],
+      "vyzkousej": {
+        "otazka": "Find a spot on Karlštejn 15 (or a hole you know) where you personally would rather risk the bunker than play safe. Write down why it would pay off for you.",
+        "placeholder": "Write in your own words — nobody is marking this."
+      }
+    },
+    "approachNadpis": {
+      "eyebrow": "Approach",
+      "over": "One task, two sides —",
+      "title": "Where risk pays off",
+      "lede": "Theory says the bold side buys a better angle. Now let's check it against numbers — a hundred simulated rounds for a 0-handicap player and a hundred for a 24-handicap player.",
+      "cile": [
+        "Read from a results table who the risk pays off for and who it doesn't — and say why."
+      ],
+      "zapamatuj": [
+        "A risk that pays off for a 0-handicap player might not pay off for a 24-handicap player — and a good strategic hole accounts for both.",
+        "The \"bold side\" is not a universally better choice — it's a bet that works out for one player and not another.",
+        "The simulation in this lesson is a simplified model, not a precise forecast — it shows direction, not decimal places."
+      ]
+    },
+    "approach1": {
+      "eyebrow": "Task · simulation",
+      "over": "Play a hundred rounds from both sides —",
+      "title": "Safe, or bold?",
+      "lede": "Switch the tee shot side. See how a hundred simulated rounds turned out from each side, for both a 0- and a 24-handicap player — the numbers were computed once when the page loaded and stay the same no matter how often you switch.",
+      "planLabel": "Hole plan with a fairway bunker at the bend and a bunker guarding the green",
+      "tabulka": {
+        "hrac": "Player",
+        "prumer": "Average strokes",
+        "fairway": "Fairway",
+        "bunkr": "Bunker"
+      },
+      "verdict": {
+        "lepsiOdvazna": "{hrac}: the bold side comes out ahead — average {a} strokes instead of {b}.",
+        "lepsiBezpecna": "{hrac}: the safe side comes out ahead — average {a} strokes instead of {b}.",
+        "stejne": "{hrac}: both sides come out practically the same (difference under 0.05 strokes)."
+      },
+      "foot": "sheet 4 · Approach"
+    },
+    "putt": {
+      "eyebrow": "Putt",
+      "over": "Three questions, no points —",
+      "title": "Something to think about",
+      "lede": "Write in your own words. Nobody is grading this — it's here to make you think it through, not recite it back.",
+      "otazky": [
+        "Find a hole (in Czechia or abroad) where the safe and bold sides of the fairway lead into a visibly different angle on the green. Describe that difference.",
+        "A diagonal hazard only works if a player can SEE it and has to decide before hitting the tee shot. What happens to a hole if you hide that hazard behind a hill or a tree?",
+        "When, in your view, is it fine to build a hole where the bold side offers no real advantage — just risk with no reward? Is that still a \"strategic\" hole at all?"
+      ],
+      "poznamkaPlaceholder": "Write here…",
+      "ulozeno": "Saved in this browser.",
+      "foot": "sheet 5 · Putt",
+      "cile": [
+        "Describe in my own words, on a hole I've personally seen, how angle and fairway width relate to each other."
+      ],
+      "zapamatuj": [
+        "A diagonal hazard must be visible and force a decision before the tee shot — otherwise it stops being strategic and becomes decoration.",
+        "Risk with no reward is not a strategic hole — it's just punishment, even if it photographs well.",
+        "Keep your notes — you'll come back to them in the lesson on green complexes."
+      ]
+    },
+    "slovnicek": {
+      "eyebrow": "Glossary",
+      "over": "Terms from this lesson —",
+      "title": "Seven words",
+      "lede": "Technical terms stay in English even in the Czech sentence — it's the language architecture is written in everywhere.",
+      "pojmy": [
+        {
+          "pojem": "Diagonal hazard",
+          "popis": "A bunker, water, or rough that cuts across the fairway at an angle, not straight across — that's why it punishes one side more than the other."
+        },
+        {
+          "pojem": "Angle of approach",
+          "popis": "The angle the ball arrives at the green from — it decides how much the hazards guarding the green block the line to the flag."
+        },
+        {
+          "pojem": "Half-par hole",
+          "popis": "A hole designed so a weaker player safely makes bogey while a stronger one risks birdie — never a clean, balanced par."
+        },
+        {
+          "pojem": "Cape hole",
+          "popis": "A template hole where the fairway and green wrap around a water or sand hazard on one side — the more you bite off, the shorter what's left."
+        },
+        {
+          "pojem": "Corridor",
+          "popis": "A band of terrain bounded by hazards or growth that a player may safely move within — a wider corridor means more possible angles, not just more room."
+        },
+        {
+          "pojem": "Risk and reward",
+          "popis": "The principle that higher risk is repaid with a real advantage — a shorter shot or a better angle, not just the feeling of having played bravely."
+        },
+        {
+          "pojem": "Line of charm",
+          "popis": "Architect C. B. Macdonald's term for the shortest, riskiest line across a hazard — the \"charming\" route a player is meant to at least consider."
+        }
+      ],
+      "cile": [
+        "Understand the seven terms used to describe strategic choice of angle and risk."
+      ],
+      "zapamatuj": [
+        "Diagonal hazard and angle of approach belong together — one creates the other.",
+        "Half-par hole and Cape hole are concrete recipes for turning risk and reward into an actual hole.",
+        "\"Line of charm\" is over a century old, but golf architecture still uses the principle behind it today."
+      ],
+      "vyzkousej": {
+        "otazka": "Explain in your own words the difference between a diagonal hazard and one that simply sits \"in the way\", as if you were telling a friend on the course.",
+        "placeholder": "Write in your own words — nobody is marking this."
+      }
+    },
+    "zkouska": {
+      "eyebrow": "Exam",
+      "over": "Six questions for —",
+      "title": "100 points",
+      "lede": "Answer all six, then you'll see the correct solutions. Only your first attempt counts toward your course grade.",
+      "spolecne": {
+        "otazka": "Question",
+        "bodu": "points",
+        "zbyva": "Still to answer:",
+        "hotovoMuzesOdevzdat": "Done. You can submit.",
+        "spravne": "correct",
+        "tvojeVolba": "your pick",
+        "nicNevybrano": "nothing selected",
+        "moznost": "Option",
+        "zkratkaBodu": "pts",
+        "reseniUKazdeOtazky": "The correct solutions are shown with each question."
+      },
+      "submit": "Submit",
+      "again": "Try again",
+      "q1": {
+        "text": "Which of these three fairways offers a player a genuine choice of angle?",
+        "hint": "Look for a hazard that cuts across at an angle, not symmetrically and not straight across the whole width.",
+        "a": "Fairway A",
+        "b": "Fairway B",
+        "c": "Fairway C",
+        "why": "<b>B.</b> The diagonal hazard in B cuts across at an angle — the safe side is longer and blocked, the bold side shorter and open. A is symmetric with no hazard (no choice at all), C has a hazard running the full width (punishes everyone equally, also no choice).",
+        "back": "Go back to the \"Safe side, bold side\" plate."
+      },
+      "q2": {
+        "text": "What makes a hazard \"diagonal\", as opposed to one that's simply in the way?",
+        "a": "It's always sand, never water",
+        "b": "It cuts across the fairway at an angle, so one side sits closer to it than the other",
+        "c": "It's only visible from the green, not from the tee",
+        "d": "It's always placed exactly in the middle of the fairway",
+        "why": "<b>B.</b> Diagonal means at an angle, not straight across — that's what creates a graduated choice (closer and riskier, or further and safer) instead of standing in everyone's way equally.",
+        "back": "Go back to the \"Safe side, bold side\" plate."
+      },
+      "q3": {
+        "text": "Why does the safe side of a fairway sometimes lead to a HARDER second shot, not an easier one?",
+        "a": "Because the safe side always has longer grass",
+        "b": "Because the hazard guarding the green is placed to block exactly that angle of approach",
+        "c": "Because you can't see the flag as well from there",
+        "d": "Because the architect deliberately leaves the safe side unmown",
+        "why": "<b>B.</b> The green is usually defended by a hazard sitting exactly on the side the \"safe\" second shot comes from — otherwise the safe side wouldn't cost anything, and the hole would stop working as a choice.",
+        "back": "Go back to the \"Where risk pays off\" task."
+      },
+      "q4": {
+        "text": "A bunker sits right in front of the left half of the green. Which angle (A/B/C) gives the most open approach?",
+        "hint": "Look for the angle that avoids the bunker, not the one that has to fly over it.",
+        "a": "Angle A — from the right",
+        "b": "Angle B — from the left, over the bunker",
+        "c": "Angle C — straight from the bunker's side",
+        "why": "<b>A.</b> Approaching from the right skirts the bunker entirely, off the line to the flag. Angle B must carry it with minimal margin, angle C runs along its edge — both are more blocked than A.",
+        "back": "Go back to the \"Where risk pays off\" task."
+      },
+      "q5": {
+        "text": "What's true about strategic holes with a diagonal hazard? Select all correct statements.",
+        "hint": "Points are added for each correct choice and subtracted for each wrong one.",
+        "a": "The hazard must be visible from the tee, or it can't force a decision",
+        "b": "The bold side must work out better for absolutely every player regardless of handicap",
+        "c": "The safe side is a legitimate choice, not a loss decided in advance",
+        "d": "Risk with no real reward in angle or distance isn't strategy, it's just punishment",
+        "why": "<b>A, C, D.</b> Visibility of the hazard is a precondition for the decision, the safe side is a valid strategy, and risk must be rewarded or it's just punishment. B is false — a good strategic hole expects the risk to pay off differently for different players.",
+        "back": "Go back to the \"Where risk pays off\" task."
+      },
+      "q6": {
+        "text": "What is a \"line of charm\"?",
+        "a": "The official name for the centre line of a fairway on a golf course map",
+        "b": "The shortest, riskiest line across a hazard that a player at least considers",
+        "c": "A term for an especially photogenic hole",
+        "d": "A nickname for the first hole of a course",
+        "why": "<b>B.</b> C. B. Macdonald's term for the \"charming\", shortest route across a hazard — the heart of the whole diagonal-risk idea.",
+        "back": "Go back to the glossary."
+      },
+      "pasmo": {
+        "vyborne": {
+          "nadpis": "Excellent",
+          "text": "You've got width and angle down. Move on to lesson 5."
+        },
+        "dobre": {
+          "nadpis": "Good",
+          "text": "The basics hold. Review the questions you missed, then move on."
+        },
+        "projdes": {
+          "nadpis": "You pass",
+          "text": "Go back to the \"Where risk pays off\" task before starting lesson 5."
+        },
+        "zopakuj": {
+          "nadpis": "Repeat this one",
+          "text": "Go back to the start of the lesson and work through the plate and the task again."
+        }
+      },
+      "souhrn": {
+        "nadpis": "Result",
+        "procentBodu": "percent · {body} of {max} points",
+        "spravne": "correct",
+        "chybneCastecne": "wrong or partial",
+        "zcelaMimo": "completely off",
+        "rozpis": "Answer breakdown",
+        "tvojeOdpoved": "Your answer",
+        "spravneReseni": "Correct answer",
+        "pata": "Detailed explanations are above with each question. The result is saved to the course overview."
+      },
+      "foot": "sheet 7 · Exam",
+      "cile": [
+        "Check whether I can spot diagonal risk and its reward on a hole I'm seeing for the first time."
+      ],
+      "zapamatuj": [
+        "Only the first attempt counts towards your overall course grade.",
+        "Wrong answers tell you which part of the lesson to go back to.",
+        "Results live only in this browser — download them before you switch device."
+      ]
+    },
+    "temata": {
+      "strategie": "strategy",
+      "trest": "punishment",
+      "riziko-odmena": "risk and reward",
+      "umisteni-hazardu": "hazard placement",
+      "cteni-terenu": "reading the land",
+      "voda-odtok": "water and drainage",
+      "vitr-slunce": "wind and sun",
+      "routing": "routing",
+      "bezpecnost": "safety",
+      "rytmus-hriste": "course rhythm",
+      "uhel-nabehu": "angle of approach",
+      "diagonalni-hazard": "diagonal hazard"
+    },
+    "foot": {
+      "lekce": "ROUTING · lesson 4"
+    },
+    "nav": {
+      "predchozi": "Previous",
+      "dalsi": "Next",
+      "prehled": "Lesson overview",
+      "krok": "Step {n} of 7",
+      "dalsiLekce": "Continue to the next lesson",
+      "konecKurzu": "The last finished lesson for now — continue with the hole collection",
+      "preskocit": "Skip to content",
+      "sekceNavLabel": "Navigation between lesson parts",
+      "jazykLabel": "Language",
+      "sekceNazvy": [
+        "Safe side, bold side",
+        "Angles found",
+        "Czech hole",
+        "Where risk pays off",
+        "To think about",
+        "Glossary",
+        "Exam"
+      ],
+      "klavesniNapoveda": "The plan works from the keyboard too: tab to it, move the crosshair with the arrow keys, confirm with Enter."
+    },
+    "toc": {
+      "kicker": "Lesson overview",
+      "sekceHead": "What's ahead",
+      "pokracovat": "Continue",
+      "zacit": "Start the lesson",
+      "zpetNaPrehled": "← Back to the course overview",
+      "daleHead": "Where next",
+      "slovnicekPopis": "Every term in the course in one place, alphabetical and bilingual.",
+      "sbirkaPopis": "Ten holes analysed, from around the world and from Czechia, in one format."
+    }
+  }
+}

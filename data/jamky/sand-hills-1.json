@@ -46,7 +46,7 @@
     "en": "Which way does the wind cross the dunes, and where does a natural hollow appear that a green can simply sit in, without moving any earth?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). OPRAVENO 2026-08-19: podle All Golf Holes (samostatná stránka jamky 1) má green plochu cca 3966 sq ft ve tvaru spíš úzkého a hlubokého oválu (cca 18×33 yardů, tj. přibližně rx≈8 m, ry≈11 m) — původní tvar byl širší než hluboký, což neodpovídalo realitě. Zásadnější chyba byla u bunkrů: hřiště má na jamce 1 celkem 6 bunkrů a několik zdrojů (Golf Club Atlas, GolfCourseGurus, All Golf Holes) nezávisle popisuje, že green je „perched between artistic and challenging bunkers“ a bunkry se koncentrují až u greenu (All Golf Holes uvádí bunkry na 529 yardech z 549 — tedy těsně před greenem, ohrožují druhý/třetí úder). Původní tvary měly OBA bunkry jen v prostoru dojezdu prvního úderu (y=300–340 m) a u greenu nebyl žádný — doplněny 2 menší bunkry lemující green, velikost bunkrů v dojezdové zóně zároveň zmenšena na doporučený rozsah (rx 3–6), protože rx=9 bylo nepřiměřeně velké. Zdroje: allgolfholes.com/courses/nebraska/sand-hills-golf-club/1st-hole, golfclubatlas.com/countries/sand-hills, golfcoursegurus.com/reviews/sand-hills-golf-club. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). OPRAVENO 2026-08-19: podle All Golf Holes (samostatná stránka jamky 1) má green plochu cca 3966 sq ft ve tvaru spíš úzkého a hlubokého oválu (cca 18×33 yardů, tj. přibližně rx≈8 m, ry≈11 m) — původní tvar byl širší než hluboký, což neodpovídalo realitě. Zásadnější chyba byla u bunkrů: hřiště má na jamce 1 celkem 6 bunkrů a několik zdrojů (Golf Club Atlas, GolfCourseGurus, All Golf Holes) nezávisle popisuje, že green je „perched between artistic and challenging bunkers“ a bunkry se koncentrují až u greenu (All Golf Holes uvádí bunkry na 529 yardech z 549 — tedy těsně před greenem, ohrožují druhý/třetí úder). Původní tvary měly OBA bunkry jen v prostoru dojezdu prvního úderu (y=300–340 m) a u greenu nebyl žádný — doplněny 2 menší bunkry lemující green, velikost bunkrů v dojezdové zóně zároveň zmenšena na doporučený rozsah (rx 3–6), protože rx=9 bylo nepřiměřeně velké. Zdroje: allgolfholes.com/courses/nebraska/sand-hills-golf-club/1st-hole, golfclubatlas.com/countries/sand-hills, golfcoursegurus.com/reviews/sand-hills-golf-club. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. OVĚŘENO (2026-08-21): „amfiteátrové” osazení greenu mezi dunami nezávisle potvrzují Golf Club Atlas i Planet Golf (dva na sobě nezávislé zdroje, shodná formulace „malý plošinový green v přírodním amfiteátru”). Přesná šířka fairwaye a přesná strana (levá/pravá) klíčového fairwayového bunkeru u odpalu se mezi zdroji liší a nedala se sjednotit — ponecháno schematicky (bunkery na obou stranách), jak už je nakresleno.",
     "green": {
       "x": 2,
       "y": 460,
@@ -201,6 +201,14 @@
     {
       "titul": "GolfCourseGurus — Sand Hills Golf Club review",
       "url": "https://golfcoursegurus.com/reviews/sand-hills-golf-club/"
+    },
+    {
+      "titul": "Golf Club Atlas — Sand Hills Golf Club (course profile)",
+      "url": "https://golfclubatlas.com/countries/sand-hills/"
+    },
+    {
+      "titul": "Planet Golf — Sand Hills Golf Club",
+      "url": "https://www.planetgolf.com/courses/usa/sand-hills-golf-club"
     }
   ],
   "naCoSeDivat": {

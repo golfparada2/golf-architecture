@@ -46,7 +46,7 @@
     "en": "Do you cut the corner of the pond and go straight at the green, or play safely out to the right and accept a longer approach up a steep hill?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). OPRAVENO 2026-08-19: předchozí verze karty popisovala JINOU JAMKU — par 3 s vodou po celé pravé straně. To je klubová jamka 14; do karty se dostala přes GolfPass, jehož „1-18 Course“ má číslování posunuté o jednu. Nová geometrie vychází z popisu na oficiálním webu klubu: dogleg doleva, rybník v ohybu, green na kopci, tři bunkery zprava a jeden zleva. Ohyb doglegu, velikost rybníka a přesné polohy bunkerů jsou schematické — sloužím jimi k vysvětlení volby, ne k měření.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). OPRAVENO 2026-08-19: předchozí verze karty popisovala JINOU JAMKU — par 3 s vodou po celé pravé straně. To je klubová jamka 14; do karty se dostala přes GolfPass, jehož „1-18 Course“ má číslování posunuté o jednu. Nová geometrie vychází z popisu na oficiálním webu klubu: dogleg doleva, rybník v ohybu, green na kopci, tři bunkery zprava a jeden zleva. Ohyb doglegu, velikost rybníka a přesné polohy bunkerů jsou schematické — sloužím jimi k vysvětlení volby, ne k měření. OPRAVENO (2026-08-21): dosavadní popis „tři bunkery vpravo, jeden vlevo” pocházel z parafráze textu na webu klubu, ne z obrázku samotného — a klubový text ve skutečnosti žádný přesný počet na stranu neuvádí (jen „bunkery po obou stranách greenu”). Oficiální diagram jamky (karlstejn-golf.cz/wp-content/uploads/2021/01/grafika-15.jpg), prohlédnutý přímo, ukazuje něco jiného: skupinu bunkerů na LEVÉ straně fairwaye v místě ohybu doglegu (ne u greenu) a dva menší bunkery těsně u greenu, jeden na každé straně. Dogleg doleva a rybník po pravé straně fairwaye jsou tímto obrázkem naopak potvrzeny. Přesné souřadnice bunkerů zůstávají schematické — obrázek nemá metrické měřítko pro jednotlivé prvky, jen vzdálenosti k praporku.",
     "fairway": {
       "ohyb": 72,
       "sirkaTee": 34,
@@ -70,65 +70,68 @@
     },
     "bunkry": [
       {
-        "x": -47,
-        "y": 296,
+        "x": -55,
+        "y": 155,
         "rx": 5,
         "ry": 4,
-        "rot": 0.5,
+        "rot": 0.3,
         "seed": 2002,
         "amp": 0.16,
-        "zkratka": null,
+        "zkratka": {
+          "cs": "BUNKRY U OHYBU",
+          "en": "BUNKERS AT THE ELBOW"
+        },
         "label": {
-          "cs": "první ze tří bunkerů po pravé straně greenu, hlídá krátký nájezd",
-          "en": "first of the three bunkers down the right of the green, guarding the short approach"
+          "cs": "první z několika bunkerů na levé straně fairwaye v ohybu doglegu",
+          "en": "first of several bunkers on the left side of the fairway at the dogleg elbow"
         }
       },
       {
-        "x": -44,
-        "y": 306,
+        "x": -68,
+        "y": 172,
         "rx": 4.5,
         "ry": 3.5,
-        "rot": 0.5,
+        "rot": 0.2,
         "seed": 2003,
-        "amp": 0.15,
-        "zkratka": {
-          "cs": "TŘI BUNKERY VPRAVO",
-          "en": "THREE BUNKERS RIGHT"
-        },
-        "label": {
-          "cs": "prostřední bunker po pravé straně greenu",
-          "en": "middle bunker down the right of the green"
-        }
-      },
-      {
-        "x": -46,
-        "y": 315,
-        "rx": 4,
-        "ry": 3,
-        "rot": 0.3,
-        "seed": 2004,
-        "amp": 0.15,
+        "amp": 0.16,
         "zkratka": null,
         "label": {
-          "cs": "zadní bunker po pravé straně greenu — trestá dlouhou ránu",
-          "en": "back bunker down the right of the green, punishing a long approach"
+          "cs": "další bunker v ohybu doglegu vlevo",
+          "en": "another bunker at the dogleg elbow, left side"
         }
       },
       {
-        "x": -67,
-        "y": 295,
-        "rx": 5,
-        "ry": 4,
-        "rot": -0.2,
-        "seed": 2005,
-        "amp": 0.16,
+        "x": -63,
+        "y": 290,
+        "rx": 3.5,
+        "ry": 2.8,
+        "rot": 0.4,
+        "seed": 2004,
+        "amp": 0.15,
         "zkratka": {
           "cs": "BUNKR VLEVO",
-          "en": "LEFT BUNKER"
+          "en": "LEFT OF GREEN"
         },
         "label": {
-          "cs": "jediný bunker po levé straně greenu",
-          "en": "the single bunker on the left of the green"
+          "cs": "bunker u předního levého okraje greenu",
+          "en": "bunker at the front-left edge of the green"
+        }
+      },
+      {
+        "x": -42,
+        "y": 302,
+        "rx": 3.5,
+        "ry": 2.8,
+        "rot": -0.2,
+        "seed": 2005,
+        "amp": 0.15,
+        "zkratka": {
+          "cs": "BUNKR VPRAVO",
+          "en": "RIGHT OF GREEN"
+        },
+        "label": {
+          "cs": "menší bunker při pravém okraji greenu",
+          "en": "a smaller bunker at the right edge of the green"
         }
       }
     ],
@@ -176,18 +179,18 @@
     },
     {
       "nazev": {
-        "cs": "Tři bunkery vpravo, jeden vlevo",
-        "en": "Three bunkers right, one left"
+        "cs": "Bunkery hlídají i tu odvážnou stranu",
+        "en": "Bunkers guard the bold line too"
       },
       "popis": {
-        "cs": "Obrana greenu je nesymetrická — minout doprava stojí víc než doleva. To rozhoduje, ze které strany se vyplatí nájezd.",
-        "en": "The green is defended asymmetrically — missing right costs more than missing left. That decides which side is worth approaching from."
+        "cs": "Levý ohyb u rybníka lemuje ještě shluk bunkerů — kdo zkracuje dogleg a nepřenese vodu přesně, čeká ho za jezerem ještě písek, ne jen tráva.",
+        "en": "A cluster of bunkers lines the left-hand elbow beside the pond — cut the corner and miss the carry even slightly, and there is sand waiting behind the water, not just more grass."
       }
     }
   ],
   "prameny": [
     {
-      "titul": "Golf Resort Karlštejn — oficiální mapa hřiště, popis jamky 15 (par 4, dogleg doleva, green na kopci, tři bunkery zprava a jeden zleva)",
+      "titul": "Golf Resort Karlštejn — oficiální mapa hřiště, popis jamky 15 (par 4, dogleg doleva, green na kopci, bunkery po obou stranách greenu)",
       "url": "https://www.karlstejn-golf.cz/golfove-hriste/mapa-hriste"
     },
     {
@@ -201,6 +204,10 @@
     {
       "titul": "GolfPass — 1-18 Course (POZOR: číslování posunuté o jednu jamku oproti klubu)",
       "url": "https://www.golfpass.com/travel-advisor/courses/21970-golf-resort-karlstejn-1-18-course"
+    },
+    {
+      "titul": "Golf Resort Karlštejn — oficiální diagram jamky 15 s měřítkem (obrázek, prohlédnuto přímo)",
+      "url": "https://karlstejn-golf.cz/wp-content/uploads/2021/01/grafika-15.jpg"
     }
   ],
   "foto": {
