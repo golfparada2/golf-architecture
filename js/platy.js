@@ -1043,8 +1043,10 @@ export function vykresliJamku(svg, karta, opts = {}) {
   }
   /* Přímá linie z odpaliště na green — u doglegu s hazardem v ohybu je to
      ta druhá, odvážnější cesta. Bez ní je na plánu vidět jen bezpečná
-     trasa a student nemá co porovnávat. Zapíná se `tvary.primaLinie: true`. */
-  if (t.primaLinie && t.green) {
+     trasa a student nemá co porovnávat. Zapíná se `tvary.primaLinie: true`.
+     Funguje i u karet kreslených ze skutečných obrysů, kde `tvary.green`
+     (parametrický green) vůbec neexistuje — cíl se pak bere z `obrys.green`. */
+  if (t.primaLinie && (t.green || (obrys && obrys.green))) {
     E(svg, 'path', {
       d: `M${px(0).toFixed(1)} ${py(0).toFixed(1)} L${gx.toFixed(1)} ${gy.toFixed(1)}`,
       fill: 'none', stroke: V('--flag', svg), 'stroke-width': 1,

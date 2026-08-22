@@ -69,13 +69,13 @@
       "eyebrow": "Fairway · Česko",
       "over": "Bunkry, co hlídají odvahu —",
       "title": "Karlštejn, jamka 15",
-      "lede": "Dva bunkry v zákrutě netrestají špatný úder. Trestají špatné rozhodnutí — hráče, který si vzal odvážnou linii a netrefil ji.",
+      "lede": "Tři bunkry v ohybu netrestají špatný úder. Trestají špatné rozhodnutí — jeden zevnitř toho, kdo si vzal zkratku přes vodu a nedoletěl, dva zvenku toho, kdo bezpečnou linii přetáhl.",
       "cile": [
-        "Ukážu na Karlštejnu, jak dvojice bunkrů v zákrutě funguje jako „cena“ za odvážnou stranu, ne jako náhodná překážka."
+        "Ukážu na Karlštejnu, jak bunkry v ohybu fungují jako „cena“ za obě volby, ne jako náhodná překážka."
       ],
       "zapamatuj": [
-        "Bunkry u zákruty nejsou tam, aby trestaly každého — jsou tam jen pro toho, kdo zkusil zkratku.",
-        "Kdo hraje bezpečně vlevo, bunkry v zákrutě nikdy neuvidí zblízka — a to je přesně záměr.",
+        "Bunkry u ohybu nejsou tam, aby trestaly každého — jsou tam pro toho, kdo si vybral linii a netrefil ji.",
+        "Kdo si linii vybere a udrží ji, projde ohybem bez písku. Trestá se nerozhodnost a přestřelení, ne odvaha sama.",
         "Česká hřiště nemusí kopírovat Rivieru, aby použila stejný princip diagonálního rizika."
       ],
       "vyzkousej": {
@@ -418,13 +418,13 @@
       "eyebrow": "Fairway · Czechia",
       "over": "Bunkers that guard your nerve —",
       "title": "Karlštejn, hole 15",
-      "lede": "Two bunkers at the elbow don't punish a bad shot. They punish a bad decision — a player who took the bold line and missed it.",
+      "lede": "The three bunkers at the corner do not punish a bad swing. They punish a bad decision — one on the inside for the player who took the shortcut over the water and came up short, two on the outside for the player who overcooked the safe line.",
       "cile": [
-        "Show, on Karlštejn, how a pair of bunkers at the elbow works as the \"price\" of the bold side, not a random obstacle."
+        "I will use Karlštejn to show how corner bunkers work as the price of both choices, not as a random obstacle."
       ],
       "zapamatuj": [
-        "Elbow bunkers aren't there to punish everyone — they're there only for the player who tried the shortcut.",
-        "Play safely to the left and you'll never see those bunkers up close — and that's exactly the point.",
+        "Corner bunkers are not there to punish everyone — they are there for the player who picked a line and missed it.",
+        "Pick a line and hold it, and you get through the corner without sand. What is punished is indecision and overcooking, not boldness itself.",
         "A Czech course doesn't have to copy Riviera to use the same diagonal-risk principle."
       ],
       "vyzkousej": {

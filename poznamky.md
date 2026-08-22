@@ -2,12 +2,99 @@
 
 Průběžný soubor podle části 15 zadání. Kroky 1–7 hotové.
 
-## Krok 21 — Karlštejn 15: pokus o převod, karta obhájena (22. 8. 2026)
+## Krok 22 — Karlštejn 15 ze zaměřených dat (22. 8. 2026)
 
-Objednatel potvrdil přiřazení greenů (15 = G15, 16 = G0, 17 = G3) a na
-doplňující otázku odpověděl, že **rybník je na patnáctce po levé straně**.
+**Druhá karta kurzu kreslená ze skutečných obrysů.** `karlstejn-15.json` má
+`tvary.obrys` s polygony greenu, čtyř odpališť, rybníka Voškov a sedmi
+bunkerů z OpenStreetMap (ODbL).
 
-### Chyba v testu z Kroku 20, kterou to odhalilo
+### Co to odemklo
+
+Jedna věta od objednatele: *„voškov je severně od greenu 15ky, ale odpaliště
+jsou těsně nad voškovem, je to ostrý dogleg."* V Kroku 21 jsem hledal rybník
+**vedle** koridoru a žádný nenašel. Ve skutečnosti leží rybník **přímo mezi
+odpalištěm a greenem** a odpaliště stojí na jeho severním břehu — nejbližší
+13 metrů od vody.
+
+### Jak se to ověřilo (tři nezávislá kritéria)
+
+1. **Poloha odpališť** — řada čtyř ploch na severním břehu Voškova, přesně
+   jak to popsal objednatel.
+2. **Délky** — přímé vzdálenosti odpaliště–green z OSM jsou 260 / 241 / 223 /
+   202 m proti oficiálním 315 / 290 / 264 / 223 m. Rozdíl 55 / 49 / 41 / 21 m
+   je právě to, co u doglegu přidává hra kolem ohybu — a **monotónně klesá
+   směrem k předním odpalištím**, která leží blíž ohybu. Tenhle klesající
+   trend by u náhodně vybrané řady odpališť nevyšel; je to samostatný důkaz.
+3. **Klubový diagram** (`grafika-15.jpg`), prohlédnutý přímo — stejné pořadí
+   odpališť (přední jsou vpravo vpředu), stejný diagonální tvar rybníka,
+   stejné rozmístění bunkerů. Diagram nakonec rozhodl i o tom, které bunkery
+   jamce patří: dva na vnější straně ohybu (v OSM 96 m vpravo od osy) na něm
+   jsou, kdežto shluk dál vpravo (138–169 m) už patří sousední jamce.
+
+### Rozpor „vlevo nebo vpravo", který mě dvakrát zdržel
+
+Rybník je **obojí** a záleží, proti čemu se měří:
+
+- Proti **přímé linii odpaliště–green**, tedy tak, jak se kreslí plán, leží
+  Voškov **vpravo** (a přímá linie ho protíná).
+- Proti **skutečné dráze hry**, která jde od odpaliště na západ kolem rybníka
+  a pak se ostře stáčí doleva, leží Voškov **vlevo**.
+
+Hráč vnímá druhé, plán ukazuje první. Obě tvrzení byla po celou dobu pravdivá
+a já je proti sobě stavěl jako protiklad.
+
+> **Poučení: než z rozporu „vlevo/vpravo" usoudíš, že jedna strana lže, ptej
+> se, PROTI ČEMU každá strana měří.** U doglegu se přímá linie a dráha hry
+> rozcházejí o desítky stupňů, takže si protiřečí, i když se oba popisy
+> shodují se skutečností.
+
+### Chyba v kartě, kterou to opravilo
+
+Parametrická verze měla rybník na **opačné** straně, než ve skutečnosti leží —
+a **vlastní poznámka téže karty přitom správně uváděla**, že podle klubového
+diagramu je rybník po pravé straně fairwaye. Karta si tedy protiřečila
+sama se sebou a nikdo si toho patnáct kroků nevšiml, protože se kontroloval
+text proti pramenům, ne text proti číslům v témže souboru.
+
+> **Poučení: rozpor mezi `tvary` a `poznamka` v jednom souboru je stejná
+> chyba jako rozpor s pramenem — a nikdo ho nenajde, dokud se na to
+> nepodíváme schválně.**
+
+### Co se změnilo mimo kartu
+
+- **`js/platy.js`** — `primaLinie` fungovala jen tehdy, když karta měla
+  parametrický `tvary.green`. U karet kreslených z obrysů `tvary.green`
+  neexistuje, takže se přímá linie nekreslila. Podmínka teď bere cíl
+  i z `obrys.green`.
+- **`data/preklady/lekce-04.json`** — sekce „česká jamka" mluvila o **dvou**
+  bunkrech v zákrutě (jsou tři) a o bezpečné hře **vlevo** (bezpečně se hraje
+  vpravo, jak říká i otázka na kartě). Obojí opraveno v češtině i angličtině.
+- **`naCoSeDivat`** na kartě říkalo „sleduj stuhu fairwaye" — ta na plánu
+  není. Přepsáno.
+
+### Co v datech chybí a není nakresleno
+
+1. **Fairway** — OSM pro tenhle koridor žádný polygon `golf=fairway` nemá.
+   Plán ukazuje odpaliště, vodu, bunkery a green; mezi nimi je prázdný rough.
+   Obkreslit fairway z klubového diagramu **nesmím** (zadání zakazuje
+   obkreslovat cizí plánek), takže tam prostě není.
+2. **Převýšení** — green je na kopci, ale změřená výška k dispozici není,
+   takže karta nemá výškový profil.
+
+**Je to rozhodnutí k přezkoumání:** plán bez fairwaye je chudší na pohled,
+zato v něm není nic vymyšleného. Předchozí kresba měla fairway, ale rybník
+špatně. Vyměnil jsem hezčí za pravdivější.
+
+## Krok 21 — Karlštejn 15: neúspěšný pokus (22. 8. 2026)
+
+> **PŘEKONÁNO KROKEM 22** — jamka se nakonec převést dala. Závěr „rybník
+> v OSM není" byl špatný: hledal jsem vodu **vedle** koridoru, zatímco
+> Voškov leží **přímo v něm**. Tenhle zápis zůstává kvůli poučení, které
+> platí dál.
+
+Objednatel potvrdil přiřazení greenů (15 = G15, 16 = G0, 17 = G3).
+
+### Chyba v testu z Kroku 20, kterou to odhalilo (platí dál)
 
 Podmínka kolinearity odpališť — bez které test vybírá špatné greeny —
 **platí jen pro rovné jamky**. Patnáctka je dogleg, takže odpaliště
@@ -18,32 +105,16 @@ fungoval správně, a proto mě to nenapadlo.
 u kterých se dá čekat rovná osa — typicky par 3.** U doglegů je potřeba
 jiné kritérium.
 
-### Proč se patnáctka nakonec převést nedá
+### Proč jsem tehdy usoudil, že to nejde
 
-Po opravě jsem u G15 našel souvislou skupinu odpališť severovýchodně od
-greenu (223 / 260 / 295 / 308 m proti oficiálním 223 / 264 / 290 / 315),
-navíc 77–145 m od greenu čtrnáctky, tedy tam, kde má být „TEE 15". Z téhle
-skupiny ale vychází Voškov **vpravo**, kdežto karta i objednatel říkají
-vlevo.
+Prověřil jsem obdélník 49.9225–49.9265 / 14.1700–14.1780 a našel jen dvě
+pořádné vodní plochy — Poučník (7 874 m²) a Voškov (4 875 m²) — obě severně
+od greenu patnáctky. Z toho jsem uzavřel, že rybník téhle jamky zmapovaný
+není. **Chyba byla v tom, co jsem považoval za „u jamky":** hledal jsem
+rybník lemující koridor, ne rybník ležící napříč ním.
 
-Prověřil jsem proto celé okolí: v obdélníku 49.9225–49.9265 / 14.1700–14.1780
-jsou **jen dvě pořádné vodní plochy** — Poučník (7 874 m²) a Voškov
-(4 875 m²) — a obě leží **severně od greenu patnáctky**, nejbližší 170 m
-daleko. Zbytek jsou potoky a kaluže do 516 m². Aby Voškov vyšel vlevo,
-muselo by se hrát od západu; tam ale souvislý žebřík odpališť není
-(nalezené vzdálenosti 264 / 286 / 310 m sedí, jenže odpaliště jsou od sebe
-rozházená přes 200 metrů, což tee complex jedné jamky nebývá).
-
-**Závěr: rybník u patnáctky v OpenStreetMap zmapovaný není.** Bez něj by
-kresba ze skutečných dat byla horší než dnešní — rybník v ohybu je celá
-pointa téhle jamky. **Karta zůstává parametrická.**
-
-### Co se tím naopak potvrdilo
-
-Karta obstála ve druhém nezávislém přezkoušení. Popis „dogleg doleva
-s rybníkem v ohybu, bezpečně se hraje doprava" odpovídá tomu, co říká
-hráč, který jamku zná. Stejně jako u čtrnáctky v Kroku 18 platí, že chyba
-byla na mé straně, ne v obsahu.
+> **Poučení: než prohlásíš prvek za chybějící, ověř, jestli ho nemáš přímo
+> před sebou v jiné roli, než jakou jsi čekal.**
 
 ## Krok 20 — Pokus převést zbylé jamky automaticky: neprošlo (22. 8. 2026)
 
