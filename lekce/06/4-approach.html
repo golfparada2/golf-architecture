@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ROUTING — Lekce 6: Approach</title>
+<meta name="description" content="Lekce 6, sekce 4 z 7: patnáct set simulovaných ran na čtyři polohy praporku — kam se míč po dopadu a doběhu skutečně zastaví.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F1E0'/%3E%3Ccircle cx='16' cy='14' r='9' fill='%23A9B983' stroke='%231E1B15' stroke-width='1.4'/%3E%3Ccircle cx='16' cy='14' r='1.6' fill='%231E1B15'/%3E%3Cpath d='M16 14 L16 5' stroke='%231E1B15' stroke-width='1.3'/%3E%3Cpath d='M16 5 L23 7.5 L16 10 Z' fill='%23B0452C' stroke='%231E1B15' stroke-width='.8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/styl.css">
+<style>
+  .l6Tabulka{width:100%;border-collapse:collapse;margin-top:14px;font-size:14.5px}
+  .l6Tabulka th,.l6Tabulka td{padding:7px 10px;text-align:left;border-bottom:1px solid rgba(74,68,58,.25)}
+  .l6Tabulka th{font-family:'Literata',serif;font-weight:500;letter-spacing:.05em;text-transform:uppercase;font-size:12px;color:var(--ink2)}
+  .l6Tabulka td{font-variant-numeric:tabular-nums}
+  .l6Tabulka tr.aktivni td{font-weight:600;color:var(--olive)}
+  .l6Ovladace{display:flex;flex-wrap:wrap;gap:18px;margin-top:16px}
+  .l6Pole{flex:1 1 260px;min-width:240px}
+  .l6Pole > span.lbl{display:block;font-family:'Literata',serif;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);margin-bottom:6px}
+  .l6PinPopis{margin-top:12px;padding-left:13px;border-left:2px solid var(--good);font-size:15px;line-height:1.55}
+  .l6Legenda{font-size:12.5px;color:var(--ink2);opacity:.85;margin-top:10px;line-height:1.55}
+  .l6Zaver{margin-top:16px;font-size:15px;line-height:1.6}
+  .l6Poznamka{font-size:12.5px;color:var(--ink2);opacity:.85;margin-top:12px;line-height:1.5}
+</style>
+</head>
+<body>
+
+<a class="preskocit" href="#obsah" data-t="nav.preskocit">Přeskočit na obsah</a>
+
+<header class="hlavicka">
+<div class="topbar">
+  <div class="hr"><span data-t="meta.kicker"></span></div>
+  <div class="lang" role="group" aria-label="Language" data-t="nav.jazykLabel" data-t-attr="aria-label">
+    <button data-l="cs" aria-current="true">ČES</button><i>/</i><button data-l="en">ENG</button>
+  </div>
+</div>
+<nav class="drobky" id="drobky"></nav>
+<p class="krokLabel" id="krokLabel"></p>
+<nav class="kroky" id="kroky"></nav>
+</header>
+
+<main id="obsah">
+
+<section class="plat" id="secApproachIntro">
+  <p class="eyebrow" data-t="approachNadpis.eyebrow"></p>
+  <h1 class="platNadpis"><em data-t="approachNadpis.over"></em><span data-t="approachNadpis.title"></span></h1>
+  <p class="lede" data-t="approachNadpis.lede"></p>
+  <div class="cileBox" id="cileBox" hidden></div>
+</section>
+
+<section class="plat" id="secApproach1">
+  <p class="eyebrow" data-t="approach1.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="approach1.over"></em><span data-t="approach1.title"></span></h2>
+  <p class="lede" data-t="approach1.lede"></p>
+
+  <svg id="p2" viewBox="0 0 400 340" data-t="approach1.planLabel" data-t-attr="aria-label"></svg>
+
+  <div class="l6Ovladace">
+    <div class="l6Pole">
+      <span class="lbl" id="pinLbl" data-t="approach1.pinLabel"></span>
+      <div class="toggle" id="pinToggle" role="group" aria-labelledby="pinLbl"></div>
+    </div>
+    <div class="l6Pole">
+      <span class="lbl" id="hracLbl" data-t="approach1.hracLabel"></span>
+      <div class="toggle" id="hracToggle" role="group" aria-labelledby="hracLbl"></div>
+    </div>
+  </div>
+  <p class="l6PinPopis" id="pinPopis"></p>
+
+  <div style="overflow-x:auto">
+    <table class="l6Tabulka" id="l6tab">
+      <thead><tr>
+        <th data-t="approach1.tabulka.hrac"></th>
+        <th data-t="approach1.tabulka.green"></th>
+        <th data-t="approach1.tabulka.blizko"></th>
+        <th data-t="approach1.tabulka.sberna"></th>
+        <th data-t="approach1.tabulka.bunkr"></th>
+      </tr></thead>
+      <tbody id="l6tabBody"></tbody>
+    </table>
+  </div>
+  <p class="l6Legenda" data-t="approach1.legenda"></p>
+
+  <div class="hr" style="margin-top:24px"><span data-t="approach1.grafHead"></span></div>
+  <p class="lede" style="margin-top:8px" data-t="approach1.grafPopis"></p>
+  <svg id="graf" viewBox="0 0 400 252" role="img"></svg>
+
+  <p class="l6Zaver" data-t="approach1.zaver"></p>
+  <p class="l6Poznamka" data-t="approach1.poznamka"></p>
+
+  <p class="listMark" data-t="approach1.foot"></p>
+</section>
+
+<div class="zapamatujBox" id="zapamatujBox" hidden></div>
+
+<nav class="sekceNav" id="sekceNav" data-t="nav.sekceNavLabel" data-t-attr="aria-label"></nav>
+</main>
+
+<footer class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="index.html" data-t="nav.prehled"></a></footer>
+
+<script type="module">
+import { vytvorJazyk, nactiSlovnik } from '../../js/jazyk.js';
+import { E, V, clear, clipPath, blob, stipple, hatch, pin as praporek, rng } from '../../js/platy.js';
+import { HRACI, bocniChyba, PODELNA_CHYBA, gauss } from '../../js/simulace.js';
+import { vykresliNavSekci } from '../../js/sekce-nav.js';
+import { nactiUI, vykresliRamec } from '../../js/ucebnice.js';
+
+const $ = (id) => document.getElementById(id);
+
+const slovnik = await nactiSlovnik('../../data/preklady/lekce-06.json');
+await nactiUI('../../');
+const slovnikPojmu = await nactiSlovnik('../../data/preklady/slovnik-pojmu.json');
+const jazyk = vytvorJazyk(slovnik, {
+  titul: (lang) => lang === 'cs' ? 'ROUTING — Lekce 6: Approach' : 'ROUTING — Lesson 6: Approach',
+});
+
+/* ============================================================================
+ * PAR 3 SE SKUTEČNÝM GREEN KOMPLEXEM
+ *
+ * Jamka je vymyšlená pro účel cvičení, ne převzatá z konkrétního hřiště —
+ * stejně jako pláty v lekcích 4 a 5. Postavená je ale podle principů, které
+ * lekce vykládá na Pinehurstu No. 2: mírně vypouklý green, vyžnutá sběrná
+ * prohlubeň vlevo a bunkr vpravo.
+ *
+ * VŠECHNO STOJÍ NA JEDNÉ VÝŠKOVÉ FUNKCI `vyska(x, y)` v metrech. Z ní se
+ * počítá spád, po kterém se míč valí, a z téže funkce se odvozují i šipky
+ * spádnice v kresbě. Kdyby se kresba a model rozešly, student by viděl míč
+ * odjíždět do kopce.
+ *
+ * MODEL DOBĚHU je nový pro tuhle lekci a je to zjednodušení, ne fyzika:
+ * míč má po dopadu zásobu doběhu `ZAKLAD` metrů, každý půlmetr ho stojí
+ * půl metru zásoby a svah mu ji naopak přidává úměrně tomu, jak je prudký.
+ * Nad kritickým spádem (`KRIT`) tedy míč zásobu neztrácí a valí se dál —
+ * to je ta hranice, za kterou se na rychlém greenu míč neudrží. Zásoba je
+ * shora omezená (`STROP`), jinak by se míč po prudkém srázu rozjel a jel
+ * ještě desítky metrů po rovině.
+ *
+ * Souřadnice v metrech se středem uprostřed greenu; y roste směrem DOZADU
+ * od hráče, rána přilétá zezdola.
+ * ==========================================================================*/
+const GRX = 15, GRY = 13;                 // poloosy greenu v metrech
+const DELKA = 135;                        // délka jamky v metrech
+const BUNKR = { x: 22, y: -3, r: 5.5 };
+const DUL = { x: -29, y: 2, rx: 14, ry: 16, hloubka: 0.55 };
+
+const KROK_M = 0.5;      // délka kroku při doběhu
+const KRIT = 0.055;      // kritický spád — nad ním se míč nezastaví
+const ZAKLAD = 1.5;      // základní doběh po dopadu v metrech
+const STROP = 8;         // strop zásoby doběhu v metrech
+const MAXD = 30;         // absolutní strop doběhu
+
+const PINY = [{ x: 0, y: -9 }, { x: 0, y: 0 }, { x: -8, y: 9 }, { x: 12, y: -2 }];
+const HENDIKEPY = [0, 9, 18, 24];
+const RAN = 1500;
+
+function vyska(x, y) {
+  const r = Math.hypot(x / GRX, y / GRY);
+  // vypouklý green: uprostřed plošinka, k okraji stále prudší spád
+  let h = r <= 1 ? -0.30 * Math.pow(r, 4) : -0.30 - 1.0 * Math.min(r - 1, 0.5);
+  h += 0.012 * y;                      // mírný spád zezadu dopředu
+  const d = Math.hypot((x - DUL.x) / DUL.rx, (y - DUL.y) / DUL.ry);
+  h += DUL.hloubka * Math.min(1, d * d);   // sběrná prohlubeň vlevo
+  return h;
+}
+
+function spad(x, y) {
+  const d = 0.3;
+  return {
+    gx: (vyska(x + d, y) - vyska(x - d, y)) / (2 * d),
+    gy: (vyska(x, y + d) - vyska(x, y - d)) / (2 * d),
+  };
+}
+
+const vBunkru = (x, y) => Math.hypot(x - BUNKR.x, y - BUNKR.y) <= BUNKR.r;
+const vDolu = (x, y) => Math.hypot((x - DUL.x) / DUL.rx, (y - DUL.y) / DUL.ry) <= 0.75;
+const naGreenu = (x, y) => Math.hypot(x / GRX, y / GRY) <= 1;
+
+function dobeh(x, y, rnd) {
+  /* Zásoba doběhu je u každé rány trochu jiná — míč dopadá pod jiným úhlem
+     a s jinou rotací. Bez toho rozptylu by všechny míče, které opustí green,
+     dojely do stejné vzdálenosti a na plánu by z nich vznikl nepřirozený
+     prstenec. Mimo green je navíc tráva delší, takže tření je vyšší. */
+  let zbyva = ZAKLAD * (0.55 + rnd()), ujeto = 0;
+  for (let i = 0; i < 200; i++) {
+    if (vBunkru(x, y)) break;
+    const g = spad(x, y);
+    const s = Math.hypot(g.gx, g.gy);
+    const treni = KROK_M * (naGreenu(x, y) ? 1 : 1.7);
+    zbyva = Math.min(STROP, zbyva + Math.min(2 * KROK_M, (s / KRIT) * KROK_M) - treni);
+    if (zbyva <= 0 || ujeto >= MAXD || s < 1e-6) break;
+    const uhel = Math.atan2(-g.gy, -g.gx) + (rnd() - 0.5) * 0.3;
+    x += Math.cos(uhel) * KROK_M;
+    y += Math.sin(uhel) * KROK_M;
+    ujeto += KROK_M;
+  }
+  return { x, y };
+}
+
+/* ============================================================================
+ * SIMULACE — spočítá se JEDNOU při načtení stránky pro všechny čtyři
+ * praporky a čtyři hráče, se semínkem, takže čísla jsou při každé návštěvě
+ * stejná (stejně jako v lekci 5).
+ * ==========================================================================*/
+const VYSLEDKY = [];
+PINY.forEach((pin, pi) => {
+  const radek = {};
+  HENDIKEPY.forEach((h) => {
+    const r = rng(7000 + pi * 10 + h);
+    let green = 0, blizko = 0, bunkr = 0, dul = 0;
+    const dopady = [];
+    for (let i = 0; i < RAN; i++) {
+      const lx = pin.x + gauss(r) * bocniChyba(h) * DELKA;
+      const ly = pin.y + gauss(r) * PODELNA_CHYBA * DELKA;
+      const p = dobeh(lx, ly, r);
+      const d = Math.hypot(p.x - pin.x, p.y - pin.y);
+      let kde = 'rough';
+      if (vBunkru(p.x, p.y)) { bunkr++; kde = 'bunkr'; }
+      else if (naGreenu(p.x, p.y)) { green++; kde = 'green'; if (d < 5) blizko++; }
+      else if (vDolu(p.x, p.y)) { dul++; kde = 'dul'; }
+      if (dopady.length < 150) dopady.push({ x: p.x, y: p.y, kde });
+    }
+    radek[h] = {
+      greenPct: (green / RAN) * 100, blizkoPct: (blizko / RAN) * 100,
+      dulPct: (dul / RAN) * 100, bunkrPct: (bunkr / RAN) * 100, dopady,
+    };
+  });
+  VYSLEDKY.push(radek);
+});
+
+let pinIndex = 1;
+let hracAktivni = 0;
+
+function cislo(n, des = 0) {
+  const t = n.toFixed(des);
+  return jazyk.lang === 'cs' ? t.replace('.', ',') : t;
+}
+
+/* --- kresba plánu -------------------------------------------------------- */
+const S = 4.6;
+const toX = (x) => 215 + x * S;
+const toY = (y) => 170 - y * S;
+
+function kresliPlan(svg) {
+  clear(svg);
+  const defs = E(svg, 'defs', {});
+  const ink = V('--ink', svg), ink2 = V('--ink2', svg), turf = V('--turf', svg),
+    turfD = V('--turf-d', svg), sand = V('--sand', svg), flag = V('--flag', svg);
+
+  E(svg, 'rect', { x: 0, y: 0, width: 400, height: 340, fill: turfD, opacity: 0.32 });
+
+  // sběrná prohlubeň
+  const dd = blob(toX(DUL.x), toY(DUL.y), DUL.rx * 0.75 * S, DUL.ry * 0.75 * S, 0.1, 6201, 0.1, 48);
+  clipPath(defs, 'l6-dul', dd);
+  E(svg, 'path', { d: dd, fill: turfD, opacity: 0.8 });
+  hatch(svg, 'l6-dul', { x: toX(DUL.x) - 60, y: toY(DUL.y) - 60, w: 120, h: 120 }, 0.9, 4, { op: 0.2, seed: 6202 });
+  E(svg, 'path', { d: dd, fill: 'none', stroke: ink, 'stroke-width': 0.9, 'stroke-dasharray': '3 3' });
+
+  // green
+  const gd = blob(toX(0), toY(0), GRX * S, GRY * S, 0, 6203, 0.05, 60);
+  clipPath(defs, 'l6-gr', gd);
+  E(svg, 'path', { d: gd, fill: turf, opacity: 0.95 });
+
+  // šipky spádnice na greenu
+  const sipky = E(svg, 'g', { stroke: ink2, 'stroke-width': 0.9, fill: 'none', opacity: 0.6, 'clip-path': 'url(#l6-gr)' });
+  for (let x = -12; x <= 12; x += 6) {
+    for (let y = -10; y <= 10; y += 5) {
+      const g = spad(x, y);
+      const s = Math.hypot(g.gx, g.gy);
+      if (s < 0.006) continue;
+      const dl = Math.min(13, 4 + s * 90);
+      const x1 = toX(x), y1 = toY(y);
+      const x2 = x1 - (g.gx / s) * dl, y2 = y1 + (g.gy / s) * dl;
+      E(sipky, 'line', { x1: x1.toFixed(1), y1: y1.toFixed(1), x2: x2.toFixed(1), y2: y2.toFixed(1) });
+      const ang = Math.atan2(y2 - y1, x2 - x1);
+      E(sipky, 'path', {
+        d: `M${x2.toFixed(1)} ${y2.toFixed(1)} L${(x2 - Math.cos(ang - 0.45) * 4).toFixed(1)} ${(y2 - Math.sin(ang - 0.45) * 4).toFixed(1)}`
+          + ` M${x2.toFixed(1)} ${y2.toFixed(1)} L${(x2 - Math.cos(ang + 0.45) * 4).toFixed(1)} ${(y2 - Math.sin(ang + 0.45) * 4).toFixed(1)}`,
+      });
+    }
+  }
+  E(svg, 'path', { d: gd, fill: 'none', stroke: ink, 'stroke-width': 1.3 });
+
+  // bunkr
+  const bd = blob(toX(BUNKR.x), toY(BUNKR.y), BUNKR.r * S, BUNKR.r * S * 0.85, 0.2, 6204, 0.16, 44);
+  clipPath(defs, 'l6-bk', bd);
+  E(svg, 'path', { d: bd, fill: sand });
+  stipple(svg, 'l6-bk', { x: toX(BUNKR.x) - 40, y: toY(BUNKR.y) - 40, w: 80, h: 80 }, 22, 6205);
+  E(svg, 'path', { d: bd, fill: 'none', stroke: ink, 'stroke-width': 0.9 });
+
+  // tečky konečných poloh
+  const v = VYSLEDKY[pinIndex][hracAktivni];
+  const g = E(svg, 'g', {});
+  v.dopady.forEach((p) => {
+    const mimo = p.kde !== 'green';
+    E(g, 'circle', {
+      cx: toX(p.x).toFixed(1), cy: toY(p.y).toFixed(1), r: mimo ? 2.1 : 1.9,
+      fill: mimo ? flag : ink, opacity: mimo ? 0.75 : 0.5,
+    });
+  });
+
+  // praporky — aktivní zvýrazněný
+  PINY.forEach((p, i) => {
+    const akt = i === pinIndex;
+    if (akt) {
+      praporek(svg, toX(p.x), toY(p.y), { h: 13, r: 1.8, flagW: 9, flagH: 4 });
+    } else {
+      E(svg, 'circle', { cx: toX(p.x).toFixed(1), cy: toY(p.y).toFixed(1), r: 2.6, fill: 'none', stroke: ink, 'stroke-width': 1.1, opacity: 0.6 });
+    }
+    E(svg, 'text', {
+      x: toX(p.x).toFixed(1), y: (toY(p.y) + (akt ? 14 : 11)).toFixed(1),
+      class: 'lab sm', 'text-anchor': 'middle', fill: ink, opacity: akt ? 1 : 0.6,
+    }, String(i + 1));
+  });
+
+  const cs = jazyk.lang === 'cs';
+  E(svg, 'text', { x: toX(DUL.x), y: toY(DUL.y), class: 'lab sm', 'text-anchor': 'middle', fill: ink },
+    cs ? 'SBĚRNÁ PLOCHA' : 'COLLECTION AREA');
+  E(svg, 'text', { x: toX(BUNKR.x), y: (toY(BUNKR.y) + 34).toFixed(1), class: 'lab sm', 'text-anchor': 'middle', fill: ink },
+    cs ? 'BUNKR' : 'BUNKER');
+  E(svg, 'text', { x: 215, y: 332, class: 'lab sm', 'text-anchor': 'middle', fill: ink },
+    cs ? 'RÁNA PŘILÉTÁ ODSUD' : 'THE SHOT COMES FROM HERE');
+  E(svg, 'path', { d: 'M215 324 L215 310 M215 310 L211 316 M215 310 L219 316', stroke: flag, 'stroke-width': 1.6, fill: 'none' });
+}
+
+/* --- sloupcový graf ------------------------------------------------------ */
+function kresliGraf(svg) {
+  clear(svg);
+  const ink = V('--ink', svg), ink2 = V('--ink2', svg), flag = V('--flag', svg), turf = V('--turf', svg);
+  const L = 44, R = 386, T = 14, B = 176;
+
+  let max = 0;
+  VYSLEDKY.forEach((r) => HENDIKEPY.forEach((h) => { max = Math.max(max, r[h].greenPct); }));
+  max = Math.ceil(max / 10) * 10;
+
+  const os = E(svg, 'g', { stroke: ink2, 'stroke-width': 0.8, opacity: 0.55, fill: 'none' });
+  E(os, 'path', { d: `M${L} ${T} L${L} ${B} L${R} ${B}` });
+  for (let v = 0; v <= max; v += 10) {
+    const y = B - (B - T) * (v / max);
+    E(os, 'path', { d: `M${L - 4} ${y.toFixed(1)} L${R} ${y.toFixed(1)}`, 'stroke-dasharray': '1 5' });
+    E(svg, 'text', { x: L - 7, y: (y + 3.5).toFixed(1), class: 'lab sm meritko', 'text-anchor': 'end', opacity: 0.8 }, v + ' %');
+  }
+
+  const skupina = (R - L) / PINY.length;
+  const sirka = (skupina - 16) / HENDIKEPY.length;
+  PINY.forEach((_, pi) => {
+    HENDIKEPY.forEach((h, hi) => {
+      const v = VYSLEDKY[pi][h].greenPct;
+      const x = L + pi * skupina + 8 + hi * sirka;
+      const y = B - (B - T) * (v / max);
+      const akt = pi === pinIndex && h === hracAktivni;
+      E(svg, 'rect', {
+        x: x.toFixed(1), y: y.toFixed(1), width: (sirka - 2.5).toFixed(1), height: (B - y).toFixed(1),
+        fill: akt ? flag : turf, stroke: ink, 'stroke-width': akt ? 1.1 : 0.7, opacity: akt ? 0.9 : 0.85,
+      });
+    });
+    // pod skupinou jen číslo praporku, ať se popisky nepřetlačí
+    E(svg, 'text', { x: (L + pi * skupina + skupina / 2).toFixed(1), y: B + 15, class: 'lab sm', 'text-anchor': 'middle' },
+      String(pi + 1));
+  });
+
+  const cs = jazyk.lang === 'cs';
+  E(svg, 'text', { x: (L + R) / 2, y: B + 33, class: 'lab sm', 'text-anchor': 'middle' },
+    cs ? 'POLOHA PRAPORKU' : 'FLAG POSITION');
+  E(svg, 'text', { x: (L + R) / 2, y: B + 50, class: 'lab sm meritko', 'text-anchor': 'middle', opacity: 0.85 },
+    cs ? 'v každé skupině zleva: HCP 0 · 9 · 18 · 24' : 'in each group, left to right: HCP 0 · 9 · 18 · 24');
+  E(svg, 'text', { x: (L + R) / 2, y: B + 68, class: 'lab sm', 'text-anchor': 'middle' },
+    cs ? 'PODÍL RAN, KTERÉ ZŮSTALY NA GREENU' : 'SHARE OF SHOTS THAT STAYED ON THE GREEN');
+  svg.setAttribute('aria-label', jazyk.t('approach1.grafPopis'));
+}
+
+/* --- ovládání a tabulka -------------------------------------------------- */
+function renderToggly() {
+  const pw = $('pinToggle');
+  pw.innerHTML = '';
+  (jazyk.t('approach1.pinNazvy') || []).forEach((jm, i) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.textContent = jm;
+    b.setAttribute('aria-pressed', String(i === pinIndex));
+    b.addEventListener('click', () => { pinIndex = i; render(); });
+    pw.appendChild(b);
+  });
+  const hw = $('hracToggle');
+  hw.innerHTML = '';
+  HENDIKEPY.forEach((h) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.textContent = HRACI[h].jmeno;
+    b.setAttribute('aria-pressed', String(h === hracAktivni));
+    b.addEventListener('click', () => { hracAktivni = h; render(); });
+    hw.appendChild(b);
+  });
+}
+
+function renderTabulka() {
+  const tbody = $('l6tabBody');
+  tbody.innerHTML = '';
+  HENDIKEPY.forEach((h) => {
+    const v = VYSLEDKY[pinIndex][h];
+    const tr = document.createElement('tr');
+    if (h === hracAktivni) tr.className = 'aktivni';
+    tr.innerHTML = `<td>${HRACI[h].jmeno}</td><td>${cislo(v.greenPct)} %</td>`
+      + `<td>${cislo(v.blizkoPct)} %</td><td>${cislo(v.dulPct)} %</td><td>${cislo(v.bunkrPct)} %</td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+function render() {
+  document.querySelectorAll('#pinToggle button').forEach((b, i) => b.setAttribute('aria-pressed', String(i === pinIndex)));
+  document.querySelectorAll('#hracToggle button').forEach((b, i) => b.setAttribute('aria-pressed', String(HENDIKEPY[i] === hracAktivni)));
+  $('pinPopis').textContent = (jazyk.t('approach1.pinPopis') || [])[pinIndex] || '';
+  kresliPlan($('p2'));
+  kresliGraf($('graf'));
+  renderTabulka();
+}
+
+jazyk.on(() => {
+  renderToggly();
+  render();
+  vykresliNavSekci({ lekce: 6, index: 3, jazyk, krokEl: $('krokLabel'), navEl: $('sekceNav') });
+  vykresliRamec({ lekce: 6, index: 3, jazyk, slovnikPojmu });
+});
+</script>
+</body>
+</html>

@@ -2,6 +2,226 @@
 
 Průběžný soubor podle části 15 zadání. Kroky 1–7 hotové.
 
+## Krok 16 — Nové zadání ke schématům reálných jamek (22. 8. 2026)
+
+Objednatel poslal odkaz na samostatnou konverzaci, kde se zadání ke
+schématům dohodlo. Plné znění je od teď v `zadani.md` jako „Doplněk
+zadání — jak dělat schémata reálných jamek"; tady je, co z toho šlo udělat
+hned, co ne a proč.
+
+### Co jsem ověřil jako první
+
+**Reálná data z OSM ani ČÚZK z téhle session nesehnu.** Overpass API je
+přes `WebFetch` zakázané v `robots.txt` a stahovat obsah jinou cestou
+(curl, python) pravidla prostředí nedovolují. Stejný závěr měla i ta druhá
+konverzace. Bod 8 zadání (polygony místo parametrů) tedy zůstává otevřený
+a data musí vyexportovat objednatel — návod je v `zadani.md`.
+
+**Adaptér z bodu 8 se ukázal jako zbytečný.** Ta druhá konverzace ho
+psala naslepo, bez `js/platy.js`, a proto v něm hádala, co znamená
+`fairwayOsa()`, jestli `tvar()` bere poloosy nebo celé rozměry a kterým
+směrem míří normála. V našem kódu ale `fairwayOsa()` **už polygony vrací** —
+`geo.levy` a `geo.pravy` jsou pole bodů v metrech, ze kterých se stuha
+kreslí. Adaptér parametry → polygony tedy v repozitáři existuje od Kroku 9,
+jen se tak nejmenuje. Psát druhý by znamenalo zavést druhé místo, kde se
+z týchž parametrů počítá tvar — a ta dvě místa by se dřív nebo později
+rozešla.
+
+### Co je hotové
+
+- **Navržené tvary jsou hladké (body 2 a 3).** `blob()` a `blobPts()` mají
+  teď jednu společnou definici rozvlnění (`vlnaObrysu()`), ze které vypadl
+  nejvyšší harmonický člen (sin 7t) — ten dělal z navrženého tvaru chvějící
+  se skvrnu — a amplituda se globálně tlumí koeficientem `TLUMENI = 0.55`.
+  Obrys navíc prochází novou funkcí `hladkaCesta()`: Catmull–Romova křivka
+  převedená na kubické Béziery. **Křivka prochází přesně zadanými body**,
+  takže normály z `blobPts()` na ní pořád sedí a `radial()` se nerozjede.
+  Tlumení je záměrně na jednom místě v kódu, ne přepsané v sedmnácti
+  kartách — jinak by se to rozešlo při první nové kartě.
+- **Rough má texturu, fairway je světlý koridor (bod 4).** Nová funkce
+  `trsy()` rozsévá krátké obloučky trávy. Kreslí se NA PODKLAD, ještě před
+  fairwayí, která je překryje — ořezávat je „všude kromě fairwaye" by
+  chtělo masku a zbytečnou složitost. Podkladový rough zesílen z krytí 0,2
+  na 0,42 a fairway je nově plně krytá.
+- **Okraj fairwaye je organický, ale plynulý (bod 3).** Obrys stuhy vede
+  přes `hladkaCesta()` místo lomené čáry.
+- **Výškový profil (částečně bod 7).** Nová funkce `profilTerenu()` kreslí
+  pod plánem proužek s převýšením — přesně to, co mají klubové plánky.
+  Zapíná se polem `tvary.profil = {celkemM, zdroj}` a **kreslí se jen tam,
+  kde je převýšení doložené**. Zatím ho má jediná karta: Ostravice 16
+  (−27 m z klubového plánku). Šrafy sklonu a vrstevnice nekreslím vůbec —
+  bez naměřených výšek by to byl vymyšlený terén.
+- **Bod 6 (jedna geometrie pro všechny vrstvy) v našem kódu už platil.**
+  `vykresliJamku()` spočítá `d` jednou a výplň, šrafura i obrys z něj
+  čerpají. Zkontrolováno, ne domněnka.
+- **Bod 5 (barva) taky platil** — paleta `--turf` / `--turf-d` / `--sand` /
+  `--water` je akvarelový nádech přes perokresbu od redesignu.
+
+### Co jsem vědomě neudělal
+
+- **Perspektiva.** Vypadá dobře, ale mění boční měřítko podle vzdálenosti,
+  a karty jamek tisknou po straně měřítko v metrech. Učebnice, která
+  poctivě přiznává podélné zkrácení, si nemůže dovolit tiše zkreslit
+  i šířku. Zapsáno do `zadani.md` jako bod 10 s označením, že je to moje
+  rozhodnutí, ne zadání.
+- **Šrafy sklonu a vrstevnice.** Viz výše — chybí data.
+- **Polygony z OSM.** Viz výše — nedostupné.
+
+### Past, kterou stálo za to ohlídat
+
+Zadání výslovně varuje, že u interaktivních plátů lekcí 4, 5 a 6 čerpají
+kresba i simulace ze stejných čísel, takže se smí měnit **jen vykreslení,
+ne geometrie**. Změna `blob()` mění tvar kresby, ne testovací funkce
+(`resolveLie`, `voda`, `naGreenu`), které pracují s analytickými elipsami.
+Tlumení amplitudy navíc přiblížilo nakreslený tvar té analytické elipse,
+takže se shoda kresby a fyziky **zlepšila**.
+
+Ověřeno měřením, ne úvahou: po změně dávají všechna cvičení **totožná
+čísla** jako před ní — lekce 5 optimum HCP 0 na 83 % odvahy s průměrem
+4,19 rány, lekce 6 plocha greenu 100 % / 80 % / 33 % a praporek 2 pro
+HCP 0 na 36 %. Celý web (52 stránek, lekce 1–6 plus rozcestník, sbírka
+a slovníček) projet Playwrightem: nula chyb v konzoli.
+
+## Krok 15 — Lekce 6: Green komplexy + sjednocení konců řádků (22. 8. 2026)
+
+Zadání uživatele: „pokračuj další lekcí, sjednoť konce řádků." Dvě věci
+v jedné dávce.
+
+### Sjednocení konců řádků (a co se přitom ukázalo)
+
+Pracovní strom v uživatelově složce měl u 42 textových souborů CRLF,
+zatímco `HEAD` má LF. Převedl jsem je přes `device_bash`
+(`tr -d '\r' < f > /tmp/x && cat /tmp/x > f` — `sed -i` v mountu selže,
+protože přejmenovává přes unlink) a přidal `.gitattributes`
+s `* text=auto eol=lf` plus výslovným `binary` u obrázků a písem, aby se
+to nevrátilo.
+
+**Nález, který stojí za zapamatování:** `git status` v té složce hlásil
+jako změněné i binární soubory (woff2 fonty, jpg fotky). Vypadalo to jako
+poškozená binárka, ale `md5sum` proti `git show HEAD:soubor` ukázal, že
+obsah je bit po bitu stejný. Příčina je **zapomenutý `.git/index.lock`**:
+git nemůže zapsat obnovený index, takže stat cache zůstává neplatná a
+všechno se tváří jako změněné. Po převodu hlásí `git diff --stat HEAD`
+„109 files changed, 0 insertions(+), 0 deletions(-)“ — tedy nula
+skutečných změn. Zámek musí smazat uživatel; cloudová session v mountu
+mazat nesmí.
+
+### Nové karty jamek (sbírka 14 → 17)
+
+- **`pinehurst-2-5.json`** — green, který míč odmítá. Klíčové číslo celé
+  lekce pochází z Golf Club Atlas a je to jediný nalezený pramen s rozpadem
+  plochy greenu podle spádu: 184 m² pod 3 % (pinovatelných), 83 m² mezi
+  3 a 4 %, ale **272 m² nad 4 %**, kde se míč neudrží. Z ~540 m² je tedy
+  použitelná zhruba třetina.
+  **Nález, který jsem málem přehlédl:** vypouklé („turtleback“) greeny se
+  automaticky připisují Rossovi, ale architekt Richard Mandell doložil, že
+  dnešní přehnaná vypouklost vznikla nejspíš až na přelomu 60. a 70. let,
+  kdy byly okraje greenů sraženy buldozerem. Karta i lekce to říkají takhle:
+  kontury NA greenu jsou Rossovy, prudké spády KOLEM nich přibyly po něm.
+  Zajímavé je, že Coore & Crenshaw při restauraci 2010–11 greeny samy
+  nepřestavěli — měnilo se jen okolí.
+- **`riviera-6.json`** — bunkr uvnitř greenu. Kreslicí kód to zvládá bez
+  úprav, protože `js/platy.js` kreslí bunkry AŽ NAD greenem (past z Kroku 9,
+  která se tady vyplatila). Nejsilnější doklad je statistika: jamka hraje
+  2,842, tedy **pod par**, a je teprve 13. nejtěžší z osmnácti — ale 61 birdie
+  a 21 bogey ze 240 kol. Architektonický záměr je vidět v rozptylu, ne
+  v průměru; lekce to takhle formuluje.
+  **Past, do které jsem skoro spadl:** při čtení Golf Club Atlas se mi jako
+  „Thomasův citát" nabízela věta „Only an extremely confident and secure
+  designer would dare to build such a hole." To je skoro jistě text autora
+  recenze, ne architekta — Thomas by o sobě sotva napsal, že jen extrémně
+  sebejistý architekt by takovou jamku postavil. Karta proto výslovně říká,
+  že **žádný dostupný pramen Thomase k téhle jamce necituje**.
+- **`slapy-14.json`** — česká jamka. Rešerše prošla weby zhruba dvaceti
+  českých klubů a hledala ne slávu jamky, ale **klub, který zveřejňuje
+  plánek se schématem greenu**. Takových je málo: Slapy (celý birdie book
+  jako obrázkové stránky), Albatross, Karlštejn, Čertovo břemeno, Greensgate,
+  Ypsilon. Vyhrály Slapy, protože klub o jamce 14 sám píše, že „každá ze
+  šesti pin pozicí má svou terasu" — a birdie book to potvrzuje green
+  18 × 31 m se šesti očíslovanými praporky. Stránka birdie booku odpovídá
+  číslu jamky + 5 (jamka 14 = strana 19), ověřeno srovnáním sousedních
+  stránek.
+
+Žádná ze tří jamek nemá volně licencovanou fotografii — Pinehurst ani
+Riviera na Commons jamku jednoznačně určenou nemají a u Slap žádná fotka
+není. Karty proto fotku nemají.
+
+### Co obsahuje lekce 6
+
+**Sekce 1 — „Velký green, malý cíl".** Tentýž obrys greenu (elipsa
+15 × 11 m, ~516 m²) se třemi různými výškovými funkcemi. Použitelná plocha
+se **nezadává, počítá se**: plán se navzorkuje po půl metru, v každém
+vzorku se numericky spočítá spád a sečte se plocha vzorků pod 3 %.
+Výsledky: mírný spád 100 %, dvě patra 80 %, vypouklý green **33 %** — což
+je skoro přesně to, co uvádí Golf Club Atlas o pátém greenu Pinehurstu.
+Tmavší plocha na obrázku je přesně ta spočítaná, šipky ukazují spádnici.
+
+**Sekce 2** — Pinehurst 5 (odmítá), Sand Hills 1 (sbírá, jediná recyklovaná
+karta — a sedí, protože její green leží v přirozené prohlubni), Riviera 6
+(dělí).
+
+**Sekce 3** — Slapy 14.
+
+**Sekce 4 — „Kam se míč skutálí".** Par 3 se skutečným green komplexem:
+vypouklý green, sběrná prohlubeň vlevo, bunkr vpravo. Čtyři polohy praporku
+× čtyři hráči × 1500 ran = 24 000 simulovaných ran při načtení stránky.
+Rozptyl rány je z `js/simulace.js`, **doběh po dopadu je nový model**
+postavený pro tuhle lekci (viz pasti níž).
+
+Výsledek, kvůli kterému cvičení existuje: mezi nejlehčím a nejtěžším
+praporkem ztratí HCP 0 asi 21 procentních bodů zásahů greenu (36 % → 15 %),
+zatímco HCP 24 jen asi 5 (20 % → 15 %). **Poloha praporku dělá s jamkou
+víc u přesného hráče než u nepřesného** — protože jeho rány letí těsně
+kolem cíle, takže o jejich osudu rozhoduje právě to, co u praporku leží.
+To je nečekané a je to hlavní pointa sekce.
+
+**Sekce 5–7** — tři otevřené otázky, sedm pojmů (slovníček 50 → 57), šest
+otázek za 100 bodů (proklikáno, správné odpovědi dávají 100/100).
+
+### Rozhodnutí a pasti z tohohle kroku
+
+- **Model doběhu míče je nový a musí se přiznat.** `js/simulace.js` umí
+  rozptyl rány, ne doběh po dopadu. Napsal jsem proto jednoduchý model:
+  míč má po dopadu zásobu doběhu v metrech, každý půlmetr ho stojí půl
+  metru zásoby a svah mu ji přidává úměrně své prudkosti. Nad kritickým
+  spádem (5,5 %) se zásoba neztrácí a míč se valí dál — to je ta hranice,
+  za kterou se na rychlém greenu míč neudrží. Poznámka pod cvičením to
+  říká výslovně: **není to fyzika, je to zjednodušení.**
+- **Bez náhody v doběhu vznikne prstenec.** První verze měla pevnou zásobu
+  doběhu, a všechny míče, které opustily green, dojely přesně do stejné
+  vzdálenosti — na plánu z nich byl nepřirozený kruh teček kolem greenu.
+  Řešení: zásobu losovat pro každou ránu (0,55–1,55 násobek), přidat malý
+  úhlový šum do směru valení a mimo green zvýšit tření (1,7×, delší tráva).
+  Teprve pak vypadá rozptyl teček jako rozptyl.
+- **Kreslicí geometrie a fyzika musí vycházet z JEDNÉ výškové funkce.**
+  V sekci 4 se z `vyska(x, y)` počítá jak spád pro valení, tak šipky
+  spádnice v kresbě. Kdyby se rozešly, student by viděl míč odjíždět do
+  kopce.
+- **Parabola je na vypouklý green špatná funkce.** První pokus měl
+  `h = -C·u²`, jenže parabola má prudký spád hned od středu a pinovatelných
+  vyšlo pár procent. Čtvrtá mocnina (`-C·u⁴`) dá uprostřed plošinku a spád
+  rostoucí až k okraji — to je to, co „turtleback" ve skutečnosti je.
+- **Popisky ve zkouškových miniaturách se nevejdou.** viewBox miniatury je
+  120 jednotek široký a `.lab.sm` je na něj velké písmo: „MÍČ V BUNKRU"
+  přeteklo přes oba okraje. Do miniatur patří nanejvýš jedno krátké slovo.
+- **U karet jamek pokračuje pravidlo z Kroku 14: zkratky co nejkratší.**
+  U Pinehurstu se „SBĚRNÁ PLOCHA" tlačila s „GREEN" a „FAIRWAY BUNKR"
+  s „DOPADOVÁ ZÓNA" — vyřešeno zkrácením a vypnutím jednoho popisku
+  (`zkratka: null`), ne posouváním prvků.
+- **Hluboký green potřebuje `tvary.zkraceni`.** Slapy 14 má green 18 × 31 m,
+  ale při výchozím zkrácení 0,55 vyšel skoro kulatý — tedy v přímém rozporu
+  s textem karty. Nastaveno 0,75 / maxPomer 1,7 (stejný postup jako
+  u Karlštejna 14 v Kroku 10).
+
+### Ověřeno před dodáním
+
+Playwright přes lokální server: všech osm stránek lekce 6 plus rozcestník,
+sbírka jamek a slovníček, česky i anglicky — nula chyb v konzoli. Proklikané
+všechny tři povrchy v sekci 1 (100 % / 80 % / 33 %), všechny čtyři praporky
+a všichni čtyři hráči v sekci 4, celá zkouška se správnými odpověďmi
+(100/100, uloženo do `routing.vysledky`). Datum v `data/verze.json` podle
+`date -u`.
+
 ## Krok 14 — Lekce 5: Riziko a odměna, kalibrace pokušení (22. 8. 2026)
 
 Uživatel řekl „pokračuj lekcí 5–9" a na doplňující otázku zvolil dvě věci:

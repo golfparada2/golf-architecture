@@ -1,0 +1,229 @@
+{
+  "verze": 1,
+  "id": "pinehurst-2-5",
+  "hriste": "Pinehurst Resort — Course No. 2",
+  "zeme": "US-NC",
+  "jamka": 5,
+  "nazev": null,
+  "par": 5,
+  "delky": [
+    {
+      "odpaliste": "US Open 2024 (aktuální)",
+      "m": 538,
+      "yd": 588,
+      "rok": 2024
+    },
+    {
+      "odpaliste": "US Open 2014",
+      "m": 527,
+      "yd": 576,
+      "rok": 2014
+    },
+    {
+      "odpaliste": "členská hra před restaurací",
+      "m": 434,
+      "yd": 475,
+      "rok": 2005,
+      "poznamka": "tehdy se hrála jako par 4; po restauraci se vrátila na par 5, jak se hrála na PGA Championship 1936"
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "Donald Ross",
+      "en": "Donald Ross"
+    },
+    "jistota": "jistá",
+    "poznamka": {
+      "cs": "Hřiště otevřeno 1907, Ross u něj bydlel od roku 1925 až do své smrti v roce 1948 a doživotně ho upravoval. Greeny byly původně z písku a jílu; na travnaté je Ross se superintendentem Frankem Maplesem převedl v letech 1935–1936, načas na PGA Championship. Pozor ale na rozšířenou zkratku: architekt Richard Mandell doložil, že dnešní přehnaná vypouklost greenů („turtleback“) vznikla nejspíš až později, když byly na přelomu 60. a 70. let okraje greenů sraženy buldozerem. Kontury NA greenu jsou v zásadě Rossovy, prudké spády KOLEM nich — tedy to, co dělá sběrné plochy — zesílily až po něm. Restaurace Coore & Crenshaw (2010–2011, 2,5 mil. USD) odstranila 20 akrů roughu kolem greenů a nahradila ho tvrdým pískem a nativním porostem; samotné putovací plochy nechala být.",
+      "en": "The course opened in 1907; Ross lived beside it from 1925 until his death in 1948 and kept adjusting it. The greens were originally sand and clay; Ross and superintendent Frank Maples converted them to grass in 1935–1936, in time for the PGA Championship. Beware the popular shorthand, though: architect Richard Mandell has documented that today's exaggerated „turtleback“ crowning probably came later, when the edges of the greens were bulldozed down around the late 1960s and early 1970s. The contours ON the greens are essentially Ross's; the steep slopes AROUND them — the very thing that creates the collection areas — were sharpened after him. The Coore & Crenshaw restoration (2010–2011, 2.5 million USD) removed 20 acres of rough around the greens and replaced it with hard sand and native growth; it left the putting surfaces alone."
+    }
+  },
+  "vznik": 1907,
+  "gps": {
+    "tee": [
+      35.191,
+      -79.469
+    ],
+    "green": [
+      35.191,
+      -79.469
+    ],
+    "presnost": {
+      "cs": "přibližné, úroveň areálu — souřadnice jednotlivých jamek resort nezveřejňuje",
+      "en": "approximate, resort-level — the resort does not publish per-hole coordinates"
+    }
+  },
+  "otazka": {
+    "cs": "Kam se dá na vypouklém greenu vůbec mířit, když víc než polovina jeho plochy má spád, na kterém se míč neudrží?",
+    "en": "Where can you even aim on a crowned green when more than half its area has a slope no ball will hold?"
+  },
+  "tvary": {
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kresba záměrně ukazuje to, co je na téhle jamce podstatné: plochu KOLEM greenu. Sběrná plocha vlevo je nakreslená jako plošný útvar typu „rough“, protože přesný obrys žádný pramen neuvádí — doložené je jen to, že míč minutý vlevo se nezastaví dřív než u odpaliště čtvrté jamky, tedy zhruba 46 metrů daleko (Golf Digest). Vypouklost greenu (spád na všechny strany od středu) je jádro téhle jamky a půdorys ji zobrazit neumí; popisuje ji text karty a plát v sekci 1 lekce. NEDOHLEDÁNO: výška vypouklosti v centimetrech, přesný počet greenside bunkrů (prameny mluví o jednom velkém vlevo, jeden zdroj o „bunkrech“ v množném čísle) a přesný obrys fairwayového bunkru. Poloha fairwayového bunkru vychází z údaje resortu, že jeho přelet vyžaduje ze zadního odpaliště 290–300 yardů.",
+    "green": {
+      "x": 0,
+      "y": 480,
+      "rx": 12,
+      "ry": 11,
+      "rot": 0.1,
+      "seed": 3401,
+      "amp": 0.07
+    },
+    "bunkry": [
+      {
+        "x": -17,
+        "y": 470,
+        "rx": 5,
+        "ry": 4,
+        "rot": 0.2,
+        "seed": 3402,
+        "amp": 0.18,
+        "label": {
+          "cs": "velký bunkr vlevo od greenu, opakovaně popisovaný jako nejhorší místo na jamce",
+          "en": "big bunker left of the green, repeatedly described as the worst place on the hole"
+        },
+        "zkratka": {
+          "cs": "BUNKR",
+          "en": "BUNKER"
+        }
+      },
+      {
+        "x": 13,
+        "y": 272,
+        "rx": 5,
+        "ry": 7,
+        "rot": 0.05,
+        "seed": 3403,
+        "amp": 0.2,
+        "label": {
+          "cs": "fairwayový bunkr obnovený při restauraci; jeho přelet vyžaduje ze zadního odpaliště 290–300 yardů",
+          "en": "fairway bunker restored in 2010–11; carrying it takes 290–300 yards from the back tee"
+        },
+        "zkratka": null
+      }
+    ],
+    "hazardy": [
+      {
+        "typ": "sberna",
+        "x": -28,
+        "y": 462,
+        "rx": 12,
+        "ry": 10,
+        "rot": 0.1,
+        "seed": 3404,
+        "amp": 0.12,
+        "label": {
+          "cs": "písčitá sběrná plocha vlevo od greenu — míč se v ní nezastaví dřív než zhruba 46 metrů od greenu",
+          "en": "sandy collection area left of the green — a ball there does not stop until some 46 metres away"
+        },
+        "zkratka": {
+          "cs": "SBĚRNÁ PLOCHA",
+          "en": "COLLECTION"
+        }
+      },
+      {
+        "typ": "sberna",
+        "x": 18,
+        "y": 492,
+        "rx": 8,
+        "ry": 6,
+        "rot": -0.2,
+        "seed": 3405,
+        "amp": 0.12,
+        "label": {
+          "cs": "sráz vzadu vpravo, kam odchází přehraná rána",
+          "en": "fall-off at the back right, where a long shot goes"
+        },
+        "zkratka": null
+      }
+    ],
+    "fairway": {
+      "ohyb": 10,
+      "sirkaTee": 34,
+      "sirkaGreen": 30,
+      "zacatek": 20,
+      "seed": 4112
+    },
+    "dopadovaZona": {
+      "od": 240,
+      "do": 285
+    }
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Polovina greenu je jen na okrasu",
+        "en": "Half the green is decoration"
+      },
+      "popis": {
+        "cs": "Rozbor spádů pátého greenu: pod 3 % (tedy pinovatelných) je 184 m², mezi 3 a 4 % dalších 83 m², ale nad 4 % — kde se míč neudrží — je 272 m². Z pěti a půl set metrů čtverečních je použitelná zhruba třetina.",
+        "en": "The slope breakdown of the fifth green: 184 m² sits under 3 % (pinnable), another 83 m² between 3 and 4 %, but 272 m² is over 4 % — where no ball holds. Of some 540 square metres, roughly a third is usable."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Kolem greenu není rough",
+        "en": "There is no rough around the green"
+      },
+      "popis": {
+        "cs": "Po restauraci 2010–11 je kolem greenů krátce sečená tráva a písek. Míč se tedy nezastaví na okraji, ale doběhne až na dno sběrné plochy — a odtud se hraje z těsného lie do kopce na green, který od hráče utíká pryč.",
+        "en": "Since the 2010–11 restoration the greens are surrounded by tightly mown grass and sand. A ball does not stop at the edge; it runs to the bottom of the collection area — and from there you play off a tight lie, uphill, to a green running away from you."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Bunkr je milosrdnější než svah",
+        "en": "The bunker is kinder than the slope"
+      },
+      "popis": {
+        "cs": "Architekt Richard Mandell o sousední třetí jamce píše, že nejlepší místo, kam minout, je strana s bunkrem — protože z bunkru míč vyletí vysoko a měkce, kdežto z vyžnutého svahu musí letět nízko a doběhnout přes green, který mu utíká.",
+        "en": "Architect Richard Mandell writes of the neighbouring third hole that the best place to miss is the bunker side — because from sand the ball comes out high and soft, while from a shaved slope it has to fly low and run across a green that is running away."
+      }
+    }
+  ],
+  "prameny": [
+    {
+      "titul": "Golf Club Atlas — Pinehurst No. 2 (rozbor spádů pátého greenu)",
+      "url": "https://golfclubatlas.com/countries/pinehurst-no-2-2/",
+      "poznamka": "jediný pramen s rozpadem plochy greenu podle spádu (pod 3 % / 3–4 % / nad 4 %) a s Mandellovým výrokem o bunkru vs. svahu"
+    },
+    {
+      "titul": "Golf Digest — Nejděsivější green na Pinehurstu No. 2",
+      "url": "https://www.golfdigest.com/story/pinehurst-number-two-scariest-green",
+      "poznamka": "zdroj údaje, že míč minutý vlevo dojede až k odpališti čtvrté jamky, 50 yardů daleko"
+    },
+    {
+      "titul": "Australian Golf Digest — proč hráči na US Open 2024 mířili mimo praporek",
+      "url": "https://www.australiangolfdigest.com.au/2024-us-open-pinehurst-green-approach-short-sided-strategy/",
+      "poznamka": "zdroj pojmu „effective green size“ a hranice 4 % spádu, přes kterou se míč neudrží"
+    },
+    {
+      "titul": "Pinehurst — The Pinehurst No. 2 Restoration: a hole-by-hole tour",
+      "url": "https://www.pinehurst.com/news/the-pinehurst-no-2-restoration-a-hole-by-hole-tour/",
+      "poznamka": "sběrná plocha vlevo od pátého greenu a fairwayový bunkr s přeletem 290–300 yardů"
+    },
+    {
+      "titul": "Pinehurst — Donald Ross a přestavba greenů na travnaté (1935–36)",
+      "url": "https://www.pinehurst.com/news/donald-ross-got-mad-and-soon-after-the-pga-championship-came-to-pinehurst/"
+    },
+    {
+      "titul": "Golf Today — Richard Mandell o tom, kdy vlastně vznikly „turtleback“ greeny",
+      "url": "https://golftoday.co.uk/behind-the-architectural-curtain-pinehurst-no-2-pt-1/"
+    },
+    {
+      "titul": "The Fried Egg — Pinehurst No. 2",
+      "url": "https://www.thefriedegg.com/courses/pinehurst-no-2"
+    },
+    {
+      "titul": "USGA — 2024 U.S. Open Fact Sheet (délky jamek)",
+      "url": "https://filecache.mediaroom.com/mr5mr_usga2/187888/download/2024%20U.S.%20Open%20Fact%20Sheet.pdf"
+    }
+  ],
+  "naCoSeDivat": {
+    "cs": "Nedívej se na green, dívej se vedle něj. Plocha vlevo není rough — je to vyžnutá sběrná plocha, do které míč sjede a odkud se hraje nejtěžší rána na jamce. Na půdorysu vypadá jako prázdné místo, ve skutečnosti je to hlavní obrana jamky.",
+    "en": "Do not look at the green, look beside it. The area on the left is not rough — it is a shaved collection area the ball runs down into, and the hardest shot on the hole is played from there. On the plan it looks like empty space; in fact it is the hole's main defence."
+  },
+  "lekce": {
+    "cs": "Velikost greenu na papíře neříká skoro nic. Ptej se, kolik z něj má spád pod tři procenta — to je skutečný cíl. Zbytek plochy jen odvádí míče někam, kde bude hráč trpět.",
+    "en": "The size of a green on paper says almost nothing. Ask how much of it sits under three per cent of slope — that is the real target. The rest merely delivers balls somewhere the player will suffer."
+  }
+}

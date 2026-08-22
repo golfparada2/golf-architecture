@@ -21,7 +21,8 @@
           "approachu"
         ],
         "kde": [
-          4
+          4,
+          6
         ]
       },
       {
@@ -69,7 +70,9 @@
           "bunkeru",
           "bunkery"
         ],
-        "kde": []
+        "kde": [
+          6
+        ]
       },
       {
         "pojem": "Cape hole",
@@ -193,6 +196,18 @@
         ]
       },
       {
+        "pojem": "Efektivní velikost greenu",
+        "popis": "Část greenu, kde spád nepřesahuje zhruba tři procenta — tedy kde smí stát praporek a kde se míč udrží. Bývá výrazně menší než plocha na mapě.",
+        "hledat": [
+          "efektivní velikost",
+          "efektivní velikosti greenu",
+          "effective green size"
+        ],
+        "kde": [
+          6
+        ]
+      },
+      {
         "pojem": "Fairway",
         "popis": "Sečená dráha mezi odpalištěm a greenem, kde míč leží nejlíp. Kudy povede a jak bude široká, rozhoduje o obtížnosti celé jamky.",
         "hledat": [
@@ -202,6 +217,17 @@
           "fairwayí"
         ],
         "kde": []
+      },
+      {
+        "pojem": "False front",
+        "popis": "Přední část greenu, která klesá zpátky k fairwayi. Rána, která doletí jen na ni, se nezastaví a vrátí se dolů — proto „falešná“ přední hrana.",
+        "hledat": [
+          "false front",
+          "falešná přední hrana"
+        ],
+        "kde": [
+          6
+        ]
       },
       {
         "pojem": "Gradace rizika",
@@ -224,7 +250,21 @@
           "greeny",
           "greenem"
         ],
-        "kde": []
+        "kde": [
+          6
+        ]
+      },
+      {
+        "pojem": "Green komplex",
+        "popis": "Green a všechno, co k němu patří: okolní svahy, sběrné plochy, bunkry a přední hrana. Hráče trestá i odměňuje komplex jako celek, ne samotná putovací plocha.",
+        "hledat": [
+          "green komplex",
+          "green komplexu",
+          "green komplexy"
+        ],
+        "kde": [
+          6
+        ]
       },
       {
         "pojem": "Green speed",
@@ -233,7 +273,8 @@
           "green speed"
         ],
         "kde": [
-          2
+          2,
+          6
         ]
       },
       {
@@ -369,6 +410,19 @@
         ]
       },
       {
+        "pojem": "Patro greenu",
+        "popis": "Rovná plošina oddělená od zbytku greenu krátkým prudkým srázem. Anglicky tier. Rozděluje jeden cíl na několik a nutí hráče vybrat si, na které patro hraje.",
+        "hledat": [
+          "patro",
+          "patra",
+          "patrem",
+          "tier"
+        ],
+        "kde": [
+          6
+        ]
+      },
+      {
         "pojem": "Penalty area",
         "popis": "Označená oblast (typicky voda), ze které se dá pokračovat s jednou trestnou ranou. Červená dovoluje boční drop, žlutá ne — a to je rozdíl skoro půl rány.",
         "hledat": [
@@ -386,7 +440,9 @@
         "hledat": [
           "punchbowl"
         ],
-        "kde": []
+        "kde": [
+          6
+        ]
       },
       {
         "pojem": "Přechod",
@@ -416,7 +472,9 @@
           "redan",
           "redanu"
         ],
-        "kde": []
+        "kde": [
+          6
+        ]
       },
       {
         "pojem": "Riziko a odměna",
@@ -438,7 +496,9 @@
           "rough",
           "roughu"
         ],
-        "kde": []
+        "kde": [
+          6
+        ]
       },
       {
         "pojem": "Routing",
@@ -466,6 +526,18 @@
         ]
       },
       {
+        "pojem": "Sběrná plocha",
+        "popis": "Vyžnutá prohlubeň u greenu, do které míč sjede. Anglicky collection area. Bývá těžší než bunkr: hraje se z těsného lie do kopce na green, který od hráče utíká.",
+        "hledat": [
+          "sběrná plocha",
+          "sběrné plochy",
+          "collection area"
+        ],
+        "kde": [
+          6
+        ]
+      },
+      {
         "pojem": "Shaping",
         "popis": "Tvarování terénu stavební technikou — čím míň shapingu, tím víc pozemek „mluví“ sám za sebe.",
         "hledat": [
@@ -476,13 +548,26 @@
         ]
       },
       {
+        "pojem": "Short-side",
+        "popis": "Minout green na tu stranu, kde je mezi míčem a praporkem nejmíň místa. Nejdražší chyba v krátké hře — na zotavení nezbývá green, kam by se dalo přistát.",
+        "hledat": [
+          "short-side",
+          "short side",
+          "shortside"
+        ],
+        "kde": [
+          6
+        ]
+      },
+      {
         "pojem": "Spádnice",
         "popis": "Čára nejstrmějšího klesání terénu — cesta, kudy se dá voda vždy vydá jako první.",
         "hledat": [
           "spádnic"
         ],
         "kde": [
-          2
+          2,
+          6
         ]
       },
       {
@@ -492,7 +577,9 @@
           "stimpmetr",
           "stimpmetru"
         ],
-        "kde": []
+        "kde": [
+          6
+        ]
       },
       {
         "pojem": "Strategická jamka",
@@ -524,6 +611,17 @@
         ],
         "kde": [
           1
+        ]
+      },
+      {
+        "pojem": "Turtleback",
+        "popis": "Vypouklý green ve tvaru želvího krunýře: nejvyšší je uprostřed a plocha padá na všechny strany. Obranu obstará vlastní okraj, bunkry nejsou potřeba.",
+        "hledat": [
+          "turtleback",
+          "vypouklý green"
+        ],
+        "kde": [
+          6
         ]
       },
       {
@@ -590,7 +688,8 @@
           "approach shot"
         ],
         "kde": [
-          4
+          4,
+          6
         ]
       },
       {
@@ -631,7 +730,9 @@
           "bunker",
           "bunkers"
         ],
-        "kde": []
+        "kde": [
+          6
+        ]
       },
       {
         "pojem": "Cape hole",
@@ -662,6 +763,17 @@
         ],
         "kde": [
           3
+        ]
+      },
+      {
+        "pojem": "Collection area",
+        "popis": "A shaved hollow beside a green that a ball runs down into. Often harder than a bunker: you play from a tight lie, uphill, to a green running away.",
+        "hledat": [
+          "collection area",
+          "collection areas"
+        ],
+        "kde": [
+          6
         ]
       },
       {
@@ -761,6 +873,17 @@
         ]
       },
       {
+        "pojem": "Effective green size",
+        "popis": "The part of a green where the slope does not exceed about three per cent — where a flag may stand and a ball will hold. Usually far smaller than the area on the map.",
+        "hledat": [
+          "effective green size",
+          "effective size"
+        ],
+        "kde": [
+          6
+        ]
+      },
+      {
         "pojem": "Expected strokes",
         "popis": "How many strokes a given choice averages if you played it many thousands of times. The architect calibrates that average, not what comes off for you today.",
         "hledat": [
@@ -787,7 +910,18 @@
           "fall line"
         ],
         "kde": [
-          2
+          2,
+          6
+        ]
+      },
+      {
+        "pojem": "False front",
+        "popis": "The front of a green that falls back towards the fairway. A shot that reaches only that far does not stop but returns down the slope.",
+        "hledat": [
+          "false front"
+        ],
+        "kde": [
+          6
         ]
       },
       {
@@ -808,7 +942,20 @@
         "hledat": [
           "green"
         ],
-        "kde": []
+        "kde": [
+          6
+        ]
+      },
+      {
+        "pojem": "Green complex",
+        "popis": "The green and everything that belongs to it: surrounding slopes, collection areas, bunkers and the front edge. The complex as a whole punishes and rewards, not the putting surface alone.",
+        "hledat": [
+          "green complex",
+          "green complexes"
+        ],
+        "kde": [
+          6
+        ]
       },
       {
         "pojem": "Green speed",
@@ -817,7 +964,8 @@
           "green speed"
         ],
         "kde": [
-          2
+          2,
+          6
         ]
       },
       {
@@ -950,7 +1098,9 @@
         "hledat": [
           "punchbowl"
         ],
-        "kde": []
+        "kde": [
+          6
+        ]
       },
       {
         "pojem": "Punishing hole",
@@ -979,7 +1129,9 @@
         "hledat": [
           "redan"
         ],
-        "kde": []
+        "kde": [
+          6
+        ]
       },
       {
         "pojem": "Risk and reward",
@@ -999,7 +1151,9 @@
         "hledat": [
           "rough"
         ],
-        "kde": []
+        "kde": [
+          6
+        ]
       },
       {
         "pojem": "Round dramaturgy",
@@ -1035,12 +1189,26 @@
         ]
       },
       {
+        "pojem": "Short-side",
+        "popis": "To miss a green on the side where there is least room between ball and flag. The most expensive error in the short game.",
+        "hledat": [
+          "short-side",
+          "short side",
+          "shortside"
+        ],
+        "kde": [
+          6
+        ]
+      },
+      {
         "pojem": "Stimpmeter",
         "popis": "A sloped rail used to measure green speed. The stimpmeter number is how far the ball rolls out.",
         "hledat": [
           "stimpmeter"
         ],
-        "kde": []
+        "kde": [
+          6
+        ]
       },
       {
         "pojem": "Strategic hole",
@@ -1071,6 +1239,18 @@
         "kde": []
       },
       {
+        "pojem": "Tier",
+        "popis": "A flat shelf separated from the rest of the green by a short steep ramp. It splits one target into several and forces the player to choose a level.",
+        "hledat": [
+          "tier",
+          "tiers",
+          "tiered"
+        ],
+        "kde": [
+          6
+        ]
+      },
+      {
         "pojem": "Transition",
         "popis": "The walk a player takes from one hole's green to the next hole's tee.",
         "hledat": [
@@ -1078,6 +1258,17 @@
         ],
         "kde": [
           3
+        ]
+      },
+      {
+        "pojem": "Turtleback",
+        "popis": "A crowned green shaped like a turtle's shell: highest in the middle, falling away on every side. Its own edge does the defending.",
+        "hledat": [
+          "turtleback",
+          "crowned green"
+        ],
+        "kde": [
+          6
         ]
       }
     ]

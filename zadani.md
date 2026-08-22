@@ -454,3 +454,65 @@ Lekce je hotová, když:
 - **Bezpatkového písma a barevných teplotních map.** Vypadnou z idiomu a plát se rozpadne.
 - **Absolutních cest** začínajících lomítkem. Na Pages v podadresáři nefungují.
 - **Ternárního operátoru uvnitř `classList.add()`.** Jakmile jedna větev vrátí prázdný řetězec, celý skript spadne. Ověřeno v prototypu.
+
+---
+
+## Doplněk zadání — jak dělat schémata reálných jamek (22. 8. 2026)
+
+Zadal objednatel v samostatné konverzaci. Tady je to zapsané v repozitáři,
+ať se na to nedá zapomenout. Body 1–9 jsou zadání, bod 10 je rozhodnutí
+učiněné při zapracování a je označené.
+
+1. **Kreslí se kódem, ne generátorem obrázků.** Generátor obrázků neumí
+   mlčet: na dotaz „14. jamka Karlštejna, par 3, rybník vpravo" nakreslí
+   věrohodnou jamku, která neexistuje — s bunkry, které tam nejsou. Studentovi
+   bude připadat stejně důvěryhodná jako to, co se tři dny ověřovalo.
+   AI obrázek smí být nanejvýš **atmosférická ilustrace** (linksová krajina
+   do hlavičky, ilustrace pojmu ve slovníčku), viditelně označená, nikdy
+   s tvrzením „tohle je jamka X".
+2. **Navržené tvary jsou hladké.** Green, bunkr ani odpaliště nevznikly
+   v přírodě — někdo je nakreslil a shrnovač je vyhrnul. Kreslí se plynulou
+   křivkou. Lomená čára mezi vrcholy polygonu je artefakt datového formátu,
+   ne vlastnost jamky.
+3. **Chvění pera patří jen tam, kde je nepravidelnost skutečná** — na okraj
+   fairwaye a roughu, který dělá sekačka, ne rýsovací prkno. I ten se má po
+   rozechvění vyhladit, aby byl organický a přitom plynulý.
+4. **Rough má výplň a texturu, fairway je čistý světlý koridor.** Posekaný
+   pruh se pak čte jako světlé místo vyříznuté z hrubšího okolí — přesně
+   jak ho hráč vidí z odpaliště.
+5. **Barva je akvarelový nádech přes perokresbu**, ne výplně z mapové
+   aplikace: fairway světle, rough tmavší olivová, green sytější, písek
+   pískový, voda modrošedá, terénní kresba v teplé sepii. Musí jít vypnout
+   a dostat čistou perokresbu na tisk.
+6. **Když kresba používá náhodu, geometrie se počítá JEDNOU** a všechny
+   vrstvy (výplň, textura, inkoustová linka) z ní jen čerpají. Dva průchody
+   generátorem znamenají dvě různé fáze — a inkoustová linka pak leží kousek
+   vedle barvy.
+7. **Terén se kreslí jen tam, kde jsou výšková data.** Šrafy sklonu (krátké
+   tahy po spádnici, delší a hustší na prudkém svahu, na rovině žádné)
+   a vrstevnice patří do kresby, ale bez naměřených výšek se nekreslí nic.
+   Prázdné místo je lepší než smyšlený terén.
+8. **Cíl u dat: nahradit parametrický model skutečnými polygony.**
+   `fairway.ohyb` s jedním číslem nikdy neuloží skutečný tvar (narazilo se
+   na to u Zbraslavi 1). Zdroje: OpenStreetMap má golfová hřiště zmapovaná
+   jako polygony (`golf=fairway`, `golf=green`, `golf=tee`, `golf=bunker`,
+   `golf=water_hazard`) pod licencí ODbL — stačí uvést zdroj; výšky ČÚZK
+   DMR 5G jsou od roku 2023 otevřená data se střední chybou 0,18 m
+   v odkrytém terénu. Postup: **nejdřív adaptér** (ze stávajících parametrů
+   vyrob polygony a projeď jím všechny karty beze změny dat), teprve pak
+   jamku po jamce nahrazovat parametry skutečnými obrysy. Opačné pořadí by
+   znamenalo migrovat data i engine naráz a při první chybě nevědět, co ji
+   způsobilo.
+9. **Hranice u cizích podkladů.** Dívat se smíš na cokoli — ortofoto,
+   birdie book, fotka z klubového webu. Zjistíš z toho **fakt** („bunkr je
+   240 metrů od odpaliště, patnáct metrů vlevo od osy"), a fakta chráněná
+   nejsou. Nesmíš dvě věci: publikovat cizí fotku bez licence a obkreslit
+   cizí plánek tak, že výsledné SVG je jeho kopie. Rozdíl je v tom, jestli
+   přebíráš čísla, nebo kresbu.
+10. **(Rozhodnutí při zapracování, ne zadání.) Perspektiva se u karet jamek
+    nepoužívá.** Zúžení vzdálenějších částí jamky vypadá dobře, ale mění
+    boční měřítko podle vzdálenosti — a karty jamek tisknou po straně
+    měřítko v metrech. Buď měřítko, nebo perspektiva; učebnice, která
+    přiznává podélné zkrácení, si nemůže dovolit tiše zkreslit i šířku.
+    Na ilustrativních plátech, kde se nic neměří, by perspektiva vadit
+    nemusela.

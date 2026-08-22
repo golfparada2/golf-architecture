@@ -207,6 +207,10 @@
     "dopadovaZona": {
       "od": 215,
       "do": 258
+    },
+    "profil": {
+      "celkemM": -27,
+      "zdroj": "výškový profil na oficiálním plánku jamky (jamka-16.jpg)"
     }
   },
   "prvky": [

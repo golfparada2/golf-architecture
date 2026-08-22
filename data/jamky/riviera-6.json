@@ -1,0 +1,199 @@
+{
+  "verze": 1,
+  "id": "riviera-6",
+  "hriste": "Riviera Country Club",
+  "zeme": "US-CA",
+  "jamka": 6,
+  "nazev": null,
+  "par": 3,
+  "delky": [
+    {
+      "odpaliste": "Genesis Invitational (aktuální)",
+      "m": 182,
+      "yd": 199,
+      "rok": 2026,
+      "poznamka": "na kartě 199 yardů, ale odpaliště se posouvá den ode dne — turnajově se jamka hraje zhruba 170 až 200 yardů"
+    },
+    {
+      "odpaliste": "modrá",
+      "m": 160,
+      "yd": 175
+    },
+    {
+      "odpaliste": "bílá",
+      "m": 132,
+      "yd": 144
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "George C. Thomas Jr. (stavbu vedl William P. „Billy“ Bell)",
+      "en": "George C. Thomas Jr. (construction led by William P. „Billy“ Bell)"
+    },
+    "jistota": "jistá",
+    "poznamka": {
+      "cs": "Rok se v pramenech liší: Wikipedie a PGA Tour uvádějí otevření 1926, Golf Club Atlas a The Fried Egg 1927. Rok 1927 je zároveň rokem vydání Thomasovy knihy Golf Architecture in America, což se v literatuře často slévá. Bezpečná formulace je „postaveno 1926, otevřeno na přelomu 1926/27“. Přímý Thomasův komentář právě k šesté jamce se v žádném dostupném prameni nenašel — co se o jeho záměru píše, jsou interpretace pozdějších autorů, ne jeho slova.",
+      "en": "Sources differ on the year: Wikipedia and the PGA Tour say the course opened in 1926, Golf Club Atlas and The Fried Egg say 1927. 1927 is also the year Thomas's book Golf Architecture in America appeared, which the literature often conflates. The safe phrasing is „built 1926, opened at the turn of 1926/27“. No available source quotes Thomas on the sixth hole itself — what is written about his intent is later authors' interpretation, not his words."
+    }
+  },
+  "vznik": 1926,
+  "gps": {
+    "tee": [
+      34.048,
+      -118.506
+    ],
+    "green": [
+      34.048,
+      -118.506
+    ],
+    "presnost": {
+      "cs": "přibližné, úroveň areálu — klub je soukromý a souřadnice jamek nezveřejňuje",
+      "en": "approximate, club-level — the club is private and does not publish per-hole coordinates"
+    }
+  },
+  "otazka": {
+    "cs": "Kam mířit na par 3, jejíž green má uprostřed bunkr — a kde tedy žádný bezpečný střed neexistuje?",
+    "en": "Where do you aim on a par 3 whose green has a bunker in the middle of it — and where no safe centre therefore exists?"
+  },
+  "tvary": {
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Bunkr uvnitř greenu je celý smysl téhle jamky a kresba ho proto zobrazuje jako bunkr obklopený putovací plochou; `js/platy.js` kreslí bunkry AŽ NAD greenem, takže se to zobrazí správně. NEDOHLEDÁNO a proto jen odhadnuto z popisů: rozměry bunkru (prameny ho popisují jen slovy „malý“, „pot bunker“), rozměry greenu (jediný nalezený zdroj si u nich protiřečí) a přesná poloha bunkru vůči středu — Golf Digest uvádí, že neleží v geometrickém středu, ale odděluje nižší přední pravou čtvrtinu od zbytku, a kresba to takhle ukazuje. Počet greenside bunkrů se v pramenech liší (The Fried Egg tři včetně středového, PGA Tour čtyři); kreslíme tři doložené. Dvě patra greenu a spád zezadu dopředu půdorys zobrazit neumí — popisuje je text karty.",
+    "green": {
+      "x": 0,
+      "y": 180,
+      "rx": 14,
+      "ry": 11,
+      "rot": 0.15,
+      "seed": 3501,
+      "amp": 0.09
+    },
+    "bunkry": [
+      {
+        "x": 2,
+        "y": 176,
+        "rx": 3,
+        "ry": 2.4,
+        "rot": 0.1,
+        "seed": 3502,
+        "amp": 0.14,
+        "label": {
+          "cs": "bunkr uprostřed putovací plochy, obklopený greenem ze všech stran",
+          "en": "bunker in the middle of the putting surface, surrounded by green on every side"
+        },
+        "zkratka": {
+          "cs": "V GREENU",
+          "en": "IN THE GREEN"
+        }
+      },
+      {
+        "x": -12,
+        "y": 169,
+        "rx": 5,
+        "ry": 3.5,
+        "rot": 0.2,
+        "seed": 3503,
+        "amp": 0.16,
+        "label": {
+          "cs": "hluboký přední bunkr",
+          "en": "deep front bunker"
+        },
+        "zkratka": {
+          "cs": "VPŘEDU",
+          "en": "FRONT"
+        }
+      },
+      {
+        "x": 6,
+        "y": 194,
+        "rx": 5,
+        "ry": 3.5,
+        "rot": -0.15,
+        "seed": 3504,
+        "amp": 0.16,
+        "label": {
+          "cs": "zadní bunkr",
+          "en": "back bunker"
+        },
+        "zkratka": {
+          "cs": "VZADU",
+          "en": "BACK"
+        }
+      }
+    ],
+    "hazardy": [],
+    "fairway": null
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Bunkr, který bere bezpečný střed",
+        "en": "A bunker that takes the safe middle away"
+      },
+      "popis": {
+        "cs": "Aaron Wise to řekl přesně: bunkr uprostřed hráčům bere obvyklou strategii mířit doprostřed greenu. „Buď míříš blízko a uděláš birdie, nebo jsi v maléru a uděláš bogey.“ Bez toho bunkru by to byla nudná par 3, kde všichni míří na střed.",
+        "en": "Aaron Wise put it exactly: the middle bunker takes away the usual strategy of aiming at the centre. „You either seem to aim close and make a birdie or are kind of in trouble and you end up making a bogey.“ Without that bunker it would be a dull par 3 where everyone aims at the middle."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Dvě patra a čtyři kouty",
+        "en": "Two tiers, four corners"
+      },
+      "popis": {
+        "cs": "Green je dvouúrovňový — nižší přední pravá část se svody, které do ní míč stahují, a vyšší zadní levé patro. Bunkr přidává druhou dělicí osu, takže z jednoho greenu vzniknou čtyři samostatné cíle. Jordan Spieth: „Máš skoro dvě různé par 3, dvě jamky v jedné.“",
+        "en": "The green is two-tiered — a lower front-right section with feeder slopes that draw the ball into it, and a higher back-left tier. The bunker adds a second dividing axis, so one green becomes four separate targets. Jordan Spieth: „You almost have two different par threes, so you get two holes in one.“"
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Průměr klame",
+        "en": "The average lies"
+      },
+      "popis": {
+        "cs": "Na Genesis Invitational 2024 hrála jamka 2,842 rány, tedy 0,158 pod par, a byla teprve 13. nejtěžší z osmnácti. Ale rozpad výsledků: 61 birdie a 21 bogey ze 240 kol. Ta jamka nedělá jamku těžší — dělá výsledky rozptýlenější, a to je přesně to, o co jde.",
+        "en": "At the 2024 Genesis Invitational the hole averaged 2.842, that is 0.158 under par, and ranked only 13th hardest of eighteen. But look at the spread: 61 birdies and 21 bogeys from 240 rounds. The hole does not make scoring harder — it makes it more scattered, which is exactly the point."
+      }
+    }
+  ],
+  "prameny": [
+    {
+      "titul": "PGA Tour — Genesis Invitational 2024, statistika po jamkách",
+      "url": "https://www.pgatour.com/tournaments/2024/the-genesis-invitational/R2024007/course-stats",
+      "poznamka": "zdroj průměru 2,842, pořadí obtížnosti a rozpadu 61 birdie / 157 par / 21 bogey"
+    },
+    {
+      "titul": "Golf Digest — Proč má šestý green Riviery bunkr uprostřed",
+      "url": "https://www.golfdigest.com/story/riviera-sixth-green-bunker-george-thomas",
+      "poznamka": "poloha bunkru mimo geometrický střed a svody do nižší přední pravé čtvrtiny"
+    },
+    {
+      "titul": "Medill Reports — profesionálové o tom, jak šestku hrají (Aaron Wise, Kevin Na)",
+      "url": "https://news.medill.northwestern.edu/chicago/pros-breakdown-how-they-play-the-tricky-sixth-hole-at-riviera-golf-club/"
+    },
+    {
+      "titul": "LINKS Magazine — Donut greens: pět jamek s bunkrem na putovací ploše",
+      "url": "https://linksmagazine.com/donut-greens-5-holes-with-bunkers-on-the-putting-surface/",
+      "poznamka": "citáty Jordana Spietha a Stewarta Cinka"
+    },
+    {
+      "titul": "The Fried Egg — Riviera Country Club",
+      "url": "https://www.thefriedegg.com/articles/riviera-country-club",
+      "poznamka": "spád greenu zezadu dopředu a tři bunkry kolem greenu"
+    },
+    {
+      "titul": "Two Inches Short — Bunkr uprostřed šestého greenu: trik, nebo smysl?",
+      "url": "https://twoinchesshort.com/architecture-geek-bunker-middle-6th-green-riviera-gimmick-or-does-it-make-sense/"
+    },
+    {
+      "titul": "Golf Club Atlas — Riviera Country Club",
+      "url": "https://golfclubatlas.com/countries/riviera-country-club/"
+    }
+  ],
+  "naCoSeDivat": {
+    "cs": "Bunkr uprostřed greenu není chyba kresby. Podívej se, jak málo místa zbývá kolem něj a proč se z odpaliště nedá zvolit „prostředek“ — každý ze čtyř koutů je jiná rána a jiný putt.",
+    "en": "The bunker in the middle of the green is not a drawing error. Look at how little room is left around it and why „the middle“ is not an option from the tee — each of the four corners is a different shot and a different putt."
+  },
+  "lekce": {
+    "cs": "Když architekt vezme hráči bezpečný střed, musí si vybrat stranu — a tím se z rutinní rány stane rozhodnutí. Kvalitu takové jamky nepoznáš z průměrného skóre, ale z toho, jak daleko od sebe leží nejlepší a nejhorší výsledky.",
+    "en": "Take the safe middle away and the player must choose a side — which turns a routine shot into a decision. You cannot judge such a hole by its scoring average, only by how far apart its best and worst outcomes lie."
+  }
+}

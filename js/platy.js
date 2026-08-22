@@ -130,22 +130,68 @@ export function clipPath(defs, id, d) {
  *   drobné miniatury (např. obrázkové volby ve zkoušce)
  * @returns {string} — SVG path data (atribut `d`), uzavřená cesta
  */
-export function blob(cx, cy, rx, ry, rot, seed, amp = 0.09, n = 60) {
+/* ---------------------------------------------------------------------------
+ * Rozvlnění obrysu — JEDNA definice pro `blob()` i `blobPts()`
+ *
+ * Přepsáno v Kroku 16 podle nového zadání ke schématům reálných jamek.
+ * Dvě věci se změnily:
+ *
+ * 1. Vypadl nejvyšší harmonický člen (sin 7t). Green, bunkr ani odpaliště
+ *    nevznikly v přírodě — někdo je nakreslil na papíře a shrnovač je
+ *    vyhrnul, takže mají plynulou křivku, ne roztřepený okraj. Vysoká
+ *    frekvence dělala z navrženého tvaru chvějící se skvrnu.
+ * 2. Amplituda se globálně tlumí koeficientem `TLUMENI`. Kdyby se místo
+ *    toho přepsalo `amp` v sedmnácti kartách, rozjelo by se to při první
+ *    nové kartě — takhle platí pravidlo na jednom místě.
+ *
+ * Zbytek nepravidelnosti (chvění pera) zůstává tam, kam patří: na okraji
+ * fairwaye a roughu, který skutečně dělá sekačka, ne rýsovací prkno.
+ * Ten je ve `fairwayOsa()`.
+ * ------------------------------------------------------------------------ */
+const TLUMENI = 0.55;
+
+function fazeObrysu(seed) {
   const r = rng(seed);
-  const ph = [r() * 6.28, r() * 6.28, r() * 6.28];
-  const co = Math.cos(rot), si = Math.sin(rot);
-  let d = '';
-  for (let i = 0; i <= n; i++) {
-    const t = (i / n) * 6.283185;
-    const w = 1 + amp * (
-      Math.sin(t * 3 + ph[0]) * 0.5 +
-      Math.sin(t * 5 + ph[1]) * 0.3 +
-      Math.sin(t * 7 + ph[2]) * 0.2
-    );
-    const x = Math.cos(t) * rx * w, y = Math.sin(t) * ry * w;
-    d += (i ? 'L' : 'M') + (cx + x * co - y * si).toFixed(1) + ' ' + (cy + x * si + y * co).toFixed(1) + ' ';
+  return [r() * 6.28, r() * 6.28];
+}
+
+function vlnaObrysu(amp, ph, t) {
+  return 1 + amp * TLUMENI * (Math.sin(t * 3 + ph[0]) * 0.72 + Math.sin(t * 5 + ph[1]) * 0.28);
+}
+
+/**
+ * Pole bodů → plynulá uzavřená cesta (Catmull–Rom převedená na kubické
+ * Bézierovy segmenty). Křivka prochází PŘESNĚ zadanými body, takže normály
+ * z `blobPts()` na ní pořád sedí — jen mezi body nevede lomená čára.
+ *
+ * @param {{x:number,y:number}[]} pts
+ * @returns {string} — SVG path data
+ */
+export function hladkaCesta(pts) {
+  const n = pts.length;
+  if (n < 3) return '';
+  const P = (i) => pts[((i % n) + n) % n];
+  let d = `M${P(0).x.toFixed(1)} ${P(0).y.toFixed(1)} `;
+  for (let i = 0; i < n; i++) {
+    const p0 = P(i - 1), p1 = P(i), p2 = P(i + 1), p3 = P(i + 2);
+    const c1x = p1.x + (p2.x - p0.x) / 6, c1y = p1.y + (p2.y - p0.y) / 6;
+    const c2x = p2.x - (p3.x - p1.x) / 6, c2y = p2.y - (p3.y - p1.y) / 6;
+    d += `C${c1x.toFixed(1)} ${c1y.toFixed(1)} ${c2x.toFixed(1)} ${c2y.toFixed(1)} ${p2.x.toFixed(1)} ${p2.y.toFixed(1)} `;
   }
   return d + 'Z';
+}
+
+export function blob(cx, cy, rx, ry, rot, seed, amp = 0.09, n = 60) {
+  const ph = fazeObrysu(seed);
+  const co = Math.cos(rot), si = Math.sin(rot);
+  const pts = [];
+  for (let i = 0; i < n; i++) {
+    const t = (i / n) * 6.283185;
+    const w = vlnaObrysu(amp, ph, t);
+    const x = Math.cos(t) * rx * w, y = Math.sin(t) * ry * w;
+    pts.push({ x: cx + x * co - y * si, y: cy + x * si + y * co });
+  }
+  return hladkaCesta(pts);
 }
 
 /**
@@ -163,17 +209,12 @@ export function blob(cx, cy, rx, ry, rot, seed, amp = 0.09, n = 60) {
  * @returns {{x:number,y:number,nx:number,ny:number}[]}
  */
 export function blobPts(cx, cy, rx, ry, rot, seed, amp = 0.09, n = 60) {
-  const r = rng(seed);
-  const ph = [r() * 6.28, r() * 6.28, r() * 6.28];
+  const ph = fazeObrysu(seed);
   const co = Math.cos(rot), si = Math.sin(rot);
   const out = [];
   for (let i = 0; i < n; i++) {
     const t = (i / n) * 6.283185;
-    const w = 1 + amp * (
-      Math.sin(t * 3 + ph[0]) * 0.5 +
-      Math.sin(t * 5 + ph[1]) * 0.3 +
-      Math.sin(t * 7 + ph[2]) * 0.2
-    );
+    const w = vlnaObrysu(amp, ph, t);
     const x = Math.cos(t) * rx * w, y = Math.sin(t) * ry * w;
     // normála elipsy v bodě (x,y): gradient x²/rx² + y²/ry², normalizovaný
     const nx = x / (rx * rx), ny = y / (ry * ry);
@@ -359,6 +400,81 @@ export function bboxOf(d) {
     if (y < minY) minY = y; if (y > maxY) maxY = y;
   }
   return { x: minX, y: minY, w: maxX - minX, h: maxY - minY };
+}
+
+/**
+ * Trsy trávy — krátké obloučky rozeseté po ploše, textura roughu.
+ *
+ * Přidáno v Kroku 16. Rough se od redesignu kreslil jako plocha bez
+ * struktury, takže se od fairwaye lišil jen odstínem. Trsy dělají to, co
+ * na starých perokresbách: posekaný koridor se pak čte jako světlé místo
+ * vyříznuté z hrubšího okolí.
+ *
+ * POZOR NA POŘADÍ: trsy se kreslí NA PODKLAD, ještě před fairwayí, a
+ * fairway je pak překryje. Ořezávat je „všude kromě fairwaye" by chtělo
+ * masku a zbytečnou složitost.
+ *
+ * @param {Element} parent
+ * @param {{x:number,y:number,w:number,h:number}} box
+ * @param {number} n — počet trsů
+ * @param {number} seed
+ * @param {{op?:number, velikost?:number}} [opts]
+ */
+export function trsy(parent, box, n, seed, { op = 0.35, velikost = 3.2 } = {}) {
+  const r = rng(seed);
+  const density = parseFloat(V('--hatch-density', parent)) || 1;
+  const g = E(parent, 'g', {
+    stroke: V('--ink', parent), 'stroke-width': 0.45, fill: 'none',
+    opacity: op * density, 'stroke-linecap': 'round',
+  });
+  for (let i = 0; i < n; i++) {
+    const x = box.x + r() * box.w;
+    const y = box.y + r() * box.h;
+    const v = velikost * (0.6 + r() * 0.8);
+    const roztec = v * 0.55;
+    let d = '';
+    for (let k = -1; k <= 1; k++) {
+      const x0 = x + k * roztec;
+      const naklon = (r() - 0.5) * v * 0.7;
+      d += `M${x0.toFixed(1)} ${y.toFixed(1)} Q${(x0 + naklon * 0.5).toFixed(1)} ${(y - v * 0.6).toFixed(1)} ${(x0 + naklon).toFixed(1)} ${(y - v).toFixed(1)} `;
+    }
+    E(g, 'path', { d });
+  }
+}
+
+/**
+ * Výškový profil jamky jako proužek pod plánem — přesně to, co mají
+ * klubové plánky (Ostravice, Slapy): vodorovná osa je délka jamky, svislá
+ * převýšení, a u konce je napsané, o kolik metrů jamka klesá nebo stoupá.
+ *
+ * Kreslí se JEN tehdy, když karta má `tvary.profil` — tedy když je
+ * převýšení doložené pramenem. Půdorys převýšení zobrazit neumí a
+ * vymýšlet si ho nebudeme; radši prázdné místo než smyšlený terén.
+ *
+ * @param {Element} svg
+ * @param {{x:number, y:number, w:number, h:number,
+ *          celkemM:number, delkaM:number, lang:'cs'|'en'}} cfg
+ *   `celkemM` je záporné číslo, když jamka klesá.
+ */
+export function profilTerenu(svg, { x, y, w, h, celkemM, delkaM, lang = 'cs' }) {
+  const ink = V('--ink', svg), ink2 = V('--ink2', svg), turfD = V('--turf-d', svg);
+  const klesa = celkemM < 0;
+  const yStart = klesa ? y : y + h;
+  const yEnd = klesa ? y + h : y;
+  const g = E(svg, 'g', {});
+  E(g, 'path', {
+    d: `M${x} ${yStart} L${(x + w).toFixed(1)} ${yEnd} L${(x + w).toFixed(1)} ${(y + h).toFixed(1)} L${x} ${(y + h).toFixed(1)} Z`,
+    fill: turfD, opacity: 0.55,
+  });
+  E(g, 'path', {
+    d: `M${x} ${yStart} L${(x + w).toFixed(1)} ${yEnd}`,
+    stroke: ink, 'stroke-width': 1, fill: 'none',
+  });
+  E(svg, 'text', { x: (x - 4).toFixed(1), y: (yStart + 3.5).toFixed(1), class: 'lab sm meritko', 'text-anchor': 'end', opacity: 0.85 }, '0');
+  E(svg, 'text', { x: (x + w + 4).toFixed(1), y: (yEnd + 3.5).toFixed(1), class: 'lab sm meritko', 'text-anchor': 'start', opacity: 0.85 },
+    (celkemM > 0 ? '+' : '\u2212') + Math.abs(celkemM) + ' m');
+  E(svg, 'text', { x: (x + w / 2).toFixed(1), y: (y + h + 13).toFixed(1), class: 'lab sm', 'text-anchor': 'middle', fill: ink2 },
+    lang === 'cs' ? 'V\u00dd\u0160KOV\u00dd PROFIL' : 'ELEVATION PROFILE');
 }
 
 /* ============================================================================
@@ -730,7 +846,7 @@ export function vykresliJamku(svg, karta, opts = {}) {
      mimo plochu odvozenou z metrů. viewBox se proto rozšíří o pár jednotek
      na všechny strany — v jednotkách viewBoxu, ne v metrech, protože jde
      o velikost písma, ne o kus pozemku. */
-  const padH = 22, padD = 26, padR = 4;
+  const padH = 22, padD = t.profil ? 78 : 26, padR = 4;
   const padL = 58;   // levý žlab jen pro měřítko — bez něj se popisky prvků
                      // a značky měřítka tisknou přes sebe
   svg.setAttribute('viewBox',
@@ -747,8 +863,13 @@ export function vykresliJamku(svg, karta, opts = {}) {
 
   const defs = E(svg, 'defs', {});
 
-  /* --- 1. okolní trávník ---------------------------------------------- */
-  E(svg, 'rect', { x: m.minX - padL, y: -padH, width: m.sirka + padL + padR, height: m.vyska + padH + padD, fill: V('--turf-d', svg), opacity: 0.2 });
+  /* --- 1. okolní trávník ----------------------------------------------
+     Rough je od Kroku 16 výrazně přítomnější a má texturu trsů. Fairway se
+     pak čte jako světlý posekaný koridor vyříznutý z hrubšího okolí — tak,
+     jak ho hráč vidí z odpaliště. Trsy se kreslí SEM, pod fairway, která je
+     překryje (viz komentář u `trsy()`). */
+  E(svg, 'rect', { x: m.minX - padL, y: -padH, width: m.sirka + padL + padR, height: m.vyska + padH + padD, fill: V('--turf-d', svg), opacity: 0.42 });
+  trsy(svg, { x: m.minX, y: -padH, w: m.sirka, h: m.vyska + padH + padD }, Math.round((m.sirka * (m.vyska + padH + padD)) / 620), (karta.id || '').length + 4200, { op: 0.26, velikost: 3.8 });
 
   const popisky = [];
 
@@ -770,11 +891,14 @@ export function vykresliJamku(svg, karta, opts = {}) {
     osaBody = geo.osa.map((p) => ({ x: px(p.x), y: py(p.y) }));
 
     if (f) {
+      /* Obrys stuhy vede přes `hladkaCesta()`, ne lomenou čarou: chvění pera
+         na okraji fairwaye má být organické, ale plynulé. Lomená čára mezi
+         vzorky je artefakt vzorkování, ne vlastnost jamky. */
       const obrys = [...geo.levy, ...geo.pravy.slice().reverse()].map((p) => ({ x: px(p.x), y: py(p.y) }));
-      const d = cesta(obrys, true);
+      const d = hladkaCesta(obrys);
       const id = 'fw-' + karta.id;
       clipPath(defs, id, d);
-      E(svg, 'path', { d, fill: V('--turf', svg), opacity: 0.95 });
+      E(svg, 'path', { d, fill: V('--turf', svg), opacity: 1 });
       hatch(svg, id, bboxOf(d), Math.PI / 2, 5, { op: 0.11, seed: (f.seed || 4001) + 1 });
       E(svg, 'path', { d, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1 });
     }
@@ -883,6 +1007,15 @@ export function vykresliJamku(svg, karta, opts = {}) {
         dolniHranice: ty0 + 4,
       });
     }
+  }
+
+  /* --- 8b. výškový profil (jen když ho karta doloží) -------------------- */
+  if (t.profil && typeof t.profil.celkemM === 'number') {
+    const sirkaP = Math.min(m.sirka * 0.62, 190);
+    profilTerenu(svg, {
+      x: m.minX + (m.sirka - sirkaP) / 2, y: ty0 + 36, w: sirkaP, h: 16,
+      celkemM: t.profil.celkemM, delkaM: t.green ? t.green.y : 0, lang,
+    });
   }
 
   /* --- 9. měřítko po straně ------------------------------------------- */

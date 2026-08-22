@@ -1,0 +1,21 @@
+# Konce řádků: v repozitáři i v pracovním stromu vždy LF.
+#
+# Přidáno v Kroku 15. Do té doby měl pracovní strom na Windows u většiny
+# souborů CRLF, zatímco HEAD měl LF — `git add -A` proto do každého commitu
+# vtahoval desítky souborů, které se lišily jen konci řádků. Tenhle soubor
+# tomu zabraňuje: git normalizuje text při zápisu do indexu a při checkoutu
+# ho nepřevádí zpátky.
+* text=auto eol=lf
+
+# Binární soubory se nesmí normalizovat nikdy.
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.pdf    binary
+*.zip    binary
+*.woff   binary
+*.woff2  binary
+*.ttf    binary
+*.otf    binary

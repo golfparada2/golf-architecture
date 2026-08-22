@@ -1,0 +1,210 @@
+{
+  "verze": 1,
+  "id": "slapy-14",
+  "hriste": "Golf Park Slapy svatý Jan",
+  "zeme": "CZ",
+  "jamka": 14,
+  "nazev": null,
+  "par": 4,
+  "delky": [
+    {
+      "odpaliste": "bílá (aktuální)",
+      "m": 307,
+      "yd": 336,
+      "rok": 2024
+    },
+    {
+      "odpaliste": "žlutá",
+      "m": 281,
+      "yd": 307
+    },
+    {
+      "odpaliste": "modrá",
+      "m": 272,
+      "yd": 297
+    },
+    {
+      "odpaliste": "červená",
+      "m": 263,
+      "yd": 288
+    },
+    {
+      "odpaliste": "oranžová",
+      "m": 187,
+      "yd": 205
+    },
+    {
+      "odpaliste": "zelená",
+      "m": 162,
+      "yd": 177
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "neuveden — klub autora hřiště nezveřejňuje",
+      "en": "not stated — the club does not publish the designer"
+    },
+    "jistota": "nejistá",
+    "poznamka": {
+      "cs": "Web klubu ani jeho materiály autora hřiště neuvádějí. Jediný nalezený pramen (agregátor 1golf.eu) jmenuje Jiřího Veldena, ale bez potvrzení odjinud to neuvádíme jako fakt. Rok otevření je také sporný: článek v časopise GOLF z roku 2012 popisuje hřiště jako nedávno otevřené (2010), zatímco jeden golfový průvodce uvádí 2022 — což bude spíš pozdější přestavba nebo přeměření, protože v roce 2012 už hřiště prokazatelně existovalo.",
+      "en": "Neither the club's website nor its materials name the designer. The one source found (the aggregator 1golf.eu) names Jiří Velden, but without corroboration we do not state it as fact. The opening year is disputed too: a 2012 article in GOLF magazine describes the course as recently opened (2010), while one golf guide says 2022 — more likely a later rebuild or re-measurement, since the course demonstrably existed in 2012."
+    }
+  },
+  "vznik": 2010,
+  "gps": {
+    "tee": [
+      49.793,
+      14.376
+    ],
+    "green": [
+      49.793,
+      14.376
+    ],
+    "presnost": {
+      "cs": "přibližné, úroveň areálu — souřadnice jednotlivých jamek klub nezveřejňuje",
+      "en": "approximate, resort-level — the club does not publish per-hole coordinates"
+    }
+  },
+  "otazka": {
+    "cs": "Jak rozdělit jeden green na šest samostatných úkolů, aniž bys musel postavit šest greenů?",
+    "en": "How do you split one green into six separate tasks without building six greens?"
+  },
+  "tvary": {
+    "poznamka": "kresleno podle birdie booku, který klub zveřejňuje jako obrázkové stránky (2024_SLAPY_BIRDIE_BOOK_WEB, strana 19 = jamka 14) — odtud pochází par, HCP index 16, délky ze šesti odpališť, rozměry greenu 18 × 31 metrů, šest očíslovaných pin pozic, poloha obou greenside bunkrů i červeně vyznačená trestná oblast vlevo krátko před greenem. Souřadnice jsou v metrech od odpaliště a odečtené z plánku, ne zaměřené. DVĚ VĚCI, KTERÉ KRESBA NEUMÍ: green má na plánku zřetelný zúžený pas uprostřed (tvar připomínající přesýpací hodiny), ale `blob()` v `js/platy.js` kreslí jen konvexní rozvlněné tvary — nakreslený green je proto pravidelnější, než jaký ve skutečnosti je. A hlavně: terasy, o kterých mluví klub, jsou výškový rozdíl, který půdorys zobrazit nedokáže. NEOVĚŘENO: článek v časopise GOLF z roku 2012 zmiňuje u téhle jamky „záchytné jezírko“ před greenem; na birdie booku z roku 2024 u greenu žádná vodní plocha není, jen červeně vyznačená oblast vlevo krátko. Vodu proto nekreslíme.",
+    "green": {
+      "x": 3,
+      "y": 300,
+      "rx": 9,
+      "ry": 15.5,
+      "rot": 0.08,
+      "seed": 3601,
+      "amp": 0.11
+    },
+    "bunkry": [
+      {
+        "x": -12,
+        "y": 305,
+        "rx": 4.5,
+        "ry": 3.5,
+        "rot": 0.25,
+        "seed": 3602,
+        "amp": 0.17,
+        "label": {
+          "cs": "bunkr vlevo od greenu",
+          "en": "bunker left of the green"
+        },
+        "zkratka": {
+          "cs": "BUNKR VLEVO",
+          "en": "LEFT BUNKER"
+        }
+      },
+      {
+        "x": 16,
+        "y": 288,
+        "rx": 6,
+        "ry": 4.5,
+        "rot": -0.2,
+        "seed": 3603,
+        "amp": 0.17,
+        "label": {
+          "cs": "větší bunkr vpravo před greenem",
+          "en": "larger bunker right and short of the green"
+        },
+        "zkratka": {
+          "cs": "BUNKR VPRAVO",
+          "en": "RIGHT BUNKER"
+        }
+      }
+    ],
+    "hazardy": [
+      {
+        "typ": "trestna",
+        "x": -20,
+        "y": 272,
+        "rx": 10,
+        "ry": 12,
+        "rot": 0.15,
+        "seed": 3604,
+        "amp": 0.13,
+        "label": {
+          "cs": "trestná oblast vyznačená červenými kolíky vlevo krátko před greenem",
+          "en": "penalty area marked with red stakes, left and short of the green"
+        },
+        "zkratka": {
+          "cs": "ČERVENÉ KOLÍKY",
+          "en": "RED STAKES"
+        }
+      }
+    ],
+    "fairway": {
+      "ohyb": -12,
+      "sirkaTee": 34,
+      "sirkaGreen": 28,
+      "zacatek": 20,
+      "seed": 4113
+    },
+    "dopadovaZona": {
+      "od": 175,
+      "do": 215
+    },
+    "zkraceni": 0.75,
+    "maxPomer": 1.7
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Šest praporků, šest teras",
+        "en": "Six flags, six terraces"
+      },
+      "popis": {
+        "cs": "Klub o téhle jamce píše doslova: „kde má každá ze šesti pin pozicí svou terasu, vyzkouší schopnost čtení greenu“. Jeden green tak funguje jako šest různých jamek — a hráč, který ho zná ze středy, ho v sobotu nepozná.",
+        "en": "The club writes of this hole, in so many words, that „each of the six pin positions has its own terrace, testing your ability to read the green“. One green thus works as six different holes — and a player who knows it from Wednesday will not recognise it on Saturday."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Hlubší než širší",
+        "en": "Deeper than it is wide"
+      },
+      "popis": {
+        "cs": "Green měří 18 metrů napříč, ale 31 metrů po ose hry. Chyba o jednu hůl nahoru nebo dolů proto stojí víc než stejně velká chyba do strany — na téhle jamce se rozhoduje volbou hole, ne mířidlem.",
+        "en": "The green is 18 metres across but 31 metres deep. A club too many or too few therefore costs more than the same error sideways — this hole is decided by club selection, not by aim."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Krátká jamka, dlouhé rozhodování",
+        "en": "A short hole, a long decision"
+      },
+      "popis": {
+        "cs": "Z bílých je to jen 307 metrů, HCP index 16 — na papíře jedna z nejlehčích jamek hřiště. Celá obrana je až u greenu: bunkr vlevo, větší bunkr vpravo před greenem a červeně vyznačená oblast vlevo krátko.",
+        "en": "From the white tee it is only 307 metres, stroke index 16 — on paper one of the easiest holes on the course. The entire defence sits at the green: a bunker left, a larger one short right, and a red-staked area short left."
+      }
+    }
+  ],
+  "prameny": [
+    {
+      "titul": "Golf Park Slapy — Birdie Card (obrázkové stránky birdie booku)",
+      "url": "https://www.golfslapy.cz/birdie-card/",
+      "poznamka": "primární pramen pro schéma: strana 19 je jamka 14 — par, HCP 16, šest délek, rozměry greenu 18 × 31 m, šest pin pozic, oba bunkry a červeně vyznačená oblast"
+    },
+    {
+      "titul": "Golf Park Slapy — Naše hřiště",
+      "url": "https://www.golfslapy.cz/nase-hriste/",
+      "poznamka": "doslovný citát klubu o šesti pin pozicích, z nichž každá má svou terasu"
+    },
+    {
+      "titul": "GolfInfo / časopis GOLF 10/2012 — Slapy ve středu Českého království",
+      "url": "https://www.golfinfo.cz/golfova-hriste-cr/slapy-ve-stredu-kralovstvi-ceskeho-a-pritom-na-golfu",
+      "poznamka": "nezávislý popis hřiště a jeho greenů; zmiňuje u jamky 14 i jezírko, které dnešní birdie book neukazuje"
+    }
+  ],
+  "naCoSeDivat": {
+    "cs": "Podívej se na poměr stran greenu: je skoro dvakrát hlubší než širší. Na plánu klubu je do něj vepsáno šest očíslovaných praporků, každý na jiné terase — schéma tady kreslí jen obrys, výškové rozdíly do půdorysu nepatří.",
+    "en": "Look at the proportions of the green: it is almost twice as deep as it is wide. The club's own plan marks six numbered pin positions inside it, each on its own terrace — the schematic here draws only the outline; the height differences do not belong in a plan view."
+  },
+  "lekce": {
+    "cs": "Hloubka greenu je levný nástroj. Protáhni green po ose hry a přidej v něm patra — a jedna jamka ti dá šest různých úkolů, aniž bys musel hnout s bunkrem nebo prodloužit odpaliště.",
+    "en": "Depth is a cheap tool. Stretch the green along the line of play and add tiers inside it — and one hole gives you six different tasks without moving a bunker or lengthening a tee."
+  }
+}

@@ -1,0 +1,756 @@
+{
+  "cs": {
+    "meta": {
+      "kicker": "Golfová architektura",
+      "chapter": "Lekce 6 z 18",
+      "over": "Green není plocha, je to krajina —",
+      "title": "Green komplexy",
+      "lede": "Green má na mapě pár set metrů čtverečních. Kolik z nich je ale skutečný cíl? A kam přesně odejde míč, který ten cíl mine? Odpověď na tyhle dvě otázky rozhoduje o obtížnosti jamky víc než její délka.",
+      "zpet": "← Zpět na rozcestník"
+    },
+    "principLabel": "Princip",
+    "teeShot": {
+      "eyebrow": "Tee shot",
+      "over": "Plát —",
+      "title": "Velký green, malý cíl",
+      "lede": "Tentýž obrys greenu, tři různé povrchy. Přepínej mezi nimi a sleduj, jak se plocha, na které praporek vůbec smí stát, mění z celého greenu na pár ostrůvků.",
+      "principle": "Praporek se nedá postavit tam, kde se míč neudrží. Zhruba od tří procent spádu přestává být green cílem a začíná být svahem — a to platí bez ohledu na to, kolik metrů čtverečních má na papíře.",
+      "toggle": {
+        "rovny": "Mírný spád",
+        "patra": "Dvě patra",
+        "vypukly": "Vypouklý green"
+      },
+      "popis": {
+        "rovny": "Green klesá rovnoměrně zezadu dopředu asi o půldruhého procenta. Praporek se dá postavit skoro kdekoli, míč zůstane blízko místa, kde dopadl, a hráč řeší jen vzdálenost. Poctivé, ale po osmnácti jamkách nezapamatovatelné.",
+        "patra": "Dvě rovné plošiny oddělené krátkým prudkým srázem. Použitelná plocha se skoro nezmenšila — ale rozpadla se na dva ostrovy. Trefit green nestačí: musíš trefit to správné patro, jinak tě čeká putt přes zlom.",
+        "vypukly": "Střed je nejvyšší bod a plocha padá na všechny strany. Praporek se dá postavit jen na náhorní plošince uprostřed; okraje míč aktivně odmítají a posílají ho pryč z greenu. Tohle je princip Pinehurstu — a taky důvod, proč se tam ztrácí víc ran kolem greenu než na něm."
+      },
+      "plochaHead": "Kolik z greenu je cíl",
+      "plochaCelkem": "Plocha greenu",
+      "plochaPouzitelna": "Plocha se spádem pod 3 %",
+      "plochaPodil": "Podíl použitelné plochy",
+      "plochaLegenda": "Tmavší plocha na plánu je ta, kde spád nepřesahuje tři procenta — tedy kde smí stát praporek a kde se míč udrží. Šipky ukazují, kterým směrem plocha padá.",
+      "verdikt": {
+        "siroky": "Použitelných je {proc} % greenu. Cíl je prakticky celý green — hráč řeší vzdálenost, ne polohu praporku.",
+        "uzky": "Použitelných je {proc} % greenu, ale ne v jednom kuse. Trefit green a trefit správnou část greenu jsou od téhle chvíle dvě různé věci.",
+        "ostrov": "Použitelných je jen {proc} % greenu. Zbytek plochy není cíl — je to svah, který míče odvádí pryč. Skutečný cíl je několikrát menší, než jak green vypadá z odpaliště."
+      },
+      "foot": "list 1 · Tee shot",
+      "cile": [
+        "Vysvětlím rozdíl mezi plochou greenu a jeho použitelnou (efektivní) plochou.",
+        "Poznám podle spádu, kde smí a nesmí stát praporek.",
+        "Popíšu, čím se liší green, který míč přijímá, od greenu, který ho odmítá."
+      ],
+      "zapamatuj": [
+        "Zhruba tři procenta spádu jsou hranice, za kterou se míč na rychlém greenu neudrží — a praporek tam nesmí.",
+        "Velikost greenu v metrech čtverečních neříká skoro nic. Ptej se, kolik z něj je pod tou hranicí.",
+        "Patra použitelnou plochu nezmenší, ale rozdělí. Tím se z jednoho cíle stane několik.",
+        "Vypouklý green nepotřebuje bunkry — obranu obstará jeho vlastní okraj."
+      ]
+    },
+    "spolecneKarty": {
+      "specsHead": "Tři prvky",
+      "parLabel": "Par",
+      "delkaLabel": "Délka",
+      "architektLabel": "Architekt",
+      "vznikLabel": "Rok",
+      "prameny": "Prameny",
+      "otazkaLabel": "Otázka jamky",
+      "fotoLabel": "Foto"
+    },
+    "fairway": {
+      "eyebrow": "Fairway",
+      "over": "Tři greeny, tři povahy —",
+      "title": "Odmítá, sbírá, dělí",
+      "lede": "Pinehurst ukazuje green, který míče odhání. Sand Hills green, který je naopak sbírá. A Riviera green, kterému architekt postavil bunkr rovnou doprostřed, aby si hráč nemohl vybrat střed.",
+      "cile": [
+        "Rozeznám tři základní povahy green komplexu a řeknu, co každá dělá s nepřesnou ranou.",
+        "Popíšu, proč je zotavení ze sběrné plochy často těžší než z bunkru."
+      ],
+      "zapamatuj": [
+        "Green, který odmítá, trestá i dobré rány — proto musí mít někde bezpečné místo, kam se dá minout.",
+        "Green, který sbírá, umí být zábavný i pro slabšího hráče, protože terén za něj část práce udělá.",
+        "Vyžnutý svah je tvrdší trest než písek: z bunkru míč vyletí vysoko a měkce, z těsného lie musí letět nízko."
+      ],
+      "vyzkousej": {
+        "otazka": "Vyber si jednu ze tří jamek a napiš, co by se s ní stalo, kdyby jí architekt vzal okolí greenu a nahradil ho rovným roughem. Zůstala by pořád zajímavá?",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
+    },
+    "ceskaJamka": {
+      "eyebrow": "Fairway · Česko",
+      "over": "Šest praporků, šest teras —",
+      "title": "Slapy, jamka 14",
+      "lede": "Krátká par 4, kde je celá obrana až u greenu. Green měří osmnáct metrů napříč a jedenatřicet po ose hry — a klub o něm sám píše, že každá ze šesti pin pozic má vlastní terasu.",
+      "cile": [
+        "Ukážu na české jamce, jak se hloubkou a patry greenu vyrábí šest různých úkolů z jedné jamky."
+      ],
+      "zapamatuj": [
+        "Hluboký a úzký green přesouvá rozhodování z mířidla na volbu hole.",
+        "Patra jsou nejlevnější způsob, jak jamce dodat šest variant, aniž bys hnul se zemí kolem ní.",
+        "Krátká jamka s náročným greenem bývá zábavnější než dlouhá jamka s plochým."
+      ],
+      "vyzkousej": {
+        "otazka": "Na hřišti, které znáš, najdi green s výrazným patrem nebo spádem. Kde na něm bývá praporek v běžný den a kde na turnaji? A jak moc se tím jamka změní?",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
+    },
+    "approachNadpis": {
+      "eyebrow": "Approach",
+      "over": "Jeden green, čtyři praporky —",
+      "title": "Kam se míč skutálí",
+      "lede": "Postavíme par 3 se skutečným green komplexem — vypouklou plochou, sběrnou prohlubní vlevo a bunkrem vpravo — a necháme čtyři hráče odehrát patnáct set ran na každý ze čtyř praporků. Zajímá nás nejen kolik ran green udrží, ale hlavně kam odejdou ty ostatní.",
+      "cile": [
+        "Ukážu na číslech, že poloha praporku mění obtížnost greenu víc než délka rány."
+      ],
+      "zapamatuj": [
+        "Short-side znamená minout na tu stranu, kde je mezi míčem a praporkem nejmíň místa. Je to nejdražší chyba v golfu.",
+        "Míč se na greenu nezastaví tam, kde dopadl — spád ho stěhuje dál, a čím je prudší, tím víc.",
+        "Praporek u kraje vypouklého greenu udělá z běžné par 3 nejtěžší jamku kola, aniž by se hnulo s odpalištěm."
+      ]
+    },
+    "approach1": {
+      "eyebrow": "Úkol · simulace",
+      "over": "Vyber praporek —",
+      "title": "Kam odejdou ty ostatní",
+      "lede": "Vyber polohu praporku a hráče. Tečky na plánu jsou skutečná místa, kde se míč po dopadu a doběhu zastavil: tmavé zůstaly na greenu, červené odešly pryč.",
+      "planLabel": "Plán par 3 s vypouklým greenem, sběrnou plochou vlevo a bunkrem vpravo",
+      "pinLabel": "Poloha praporku",
+      "hracLabel": "Kterého hráče sleduješ",
+      "pinNazvy": [
+        "1 · vpředu uprostřed",
+        "2 · uprostřed greenu",
+        "3 · vzadu vlevo",
+        "4 · vpravo u bunkru"
+      ],
+      "pinPopis": [
+        "Praporek vpředu uprostřed. Přední hrana greenu klesá zpátky k fairwayi, takže krátká rána se nezastaví — vrátí se dolů.",
+        "Praporek uprostřed, na nejvyšším místě greenu. Nejbezpečnější poloha: kolem praporku je použitelná plocha na všechny strany.",
+        "Praporek vzadu vlevo, blízko hrany, za kterou plocha padá do sběrné prohlubně. Kdo přehraje, hraje pátou ránu zpátky do kopce.",
+        "Praporek vpravo, kousek od bunkru. Klasický short-side: mezi pískem a praporkem není skoro žádné místo, kam by se dalo minout."
+      ],
+      "tabulka": {
+        "hrac": "Hráč",
+        "green": "Zůstalo na greenu",
+        "blizko": "Do 5 m od jamky",
+        "sberna": "Sběrná plocha",
+        "bunkr": "Bunkr"
+      },
+      "grafHead": "Jak si praporky stojí vedle sebe",
+      "grafPopis": "Podíl ran, které zůstaly na greenu, pro každou ze čtyř poloh praporku a každého ze čtyř hráčů. Sloupce postavené vedle sebe ukazují něco nečekaného: rozdíl mezi nejlehčím a nejtěžším praporkem je větší u profesionála než u hráče s hendikepem 24.",
+      "zaver": "Všimni si, co s profesionálem udělá poloha praporku: mezi nejlehčím a nejtěžším ztratí kolem dvaceti procentních bodů, zatímco hráč s hendikepem 24 jen kolem sedmi. Není to tím, že by praporek trápil profesionála víc. Je to tím, že jeho rány letí těsně kolem cíle, takže o jejich osudu rozhoduje přesně to, co u praporku leží — bunkr, hrana, sráz. Hráč s velkým rozptylem mine green tak jako tak. Green komplex se proto kreslí pro toho, kdo míří přesně, a teprve potom se ptáš, jestli v něm přežije i ten druhý.",
+      "foot": "list 4 · Approach",
+      "poznamka": "Patnáct set ran na každou kombinaci praporku a hráče, spočítaných jednou při načtení stránky se stejným náhodným generátorem. Rozptyl rány vychází z modelu v části 8 zadání (`js/simulace.js`); doběh po dopadu je model postavený pro tuhle lekci: míč se po dopadu posouvá po spádnici, dokud spád neklesne pod jedno procento nebo dokud nespadne z greenu. Není to fyzika, je to zjednodušení — ukazuje směr a řádovou vzdálenost doběhu, ne přesné metry.",
+      "legenda": "Zbytek do sta procent skončil v okolí greenu — v krátce sečeném roughu za jeho hranou, odkud se hraje chip zpátky nahoru."
+    },
+    "putt": {
+      "eyebrow": "Putt",
+      "over": "Tři otázky, žádné body —",
+      "title": "K zamyšlení",
+      "lede": "Piš vlastními slovy. Nikdo to nebude opravovat — je to tu proto, aby sis na to musel odpovědět sám.",
+      "otazky": [
+        "Vzpomeň si na green, který ti nesedí. Je to tím, jak vypadá z přihrávky, nebo tím, co dělá s míčem, když ho mineš? Zkus to popsat co nejpřesněji.",
+        "Kdybys měl na jednom greenu svého hřiště vyměnit bunkr za vyžnutou sběrnou prohlubeň, u které jamky by to dávalo největší smysl — a co by se tím pro hráče změnilo?",
+        "Vypouklý green trestá i dobrou ránu, která skončí půl metru vedle. Je to spravedlivé? A záleží na tom, jestli jde o osmnáctou jamku turnaje, nebo o třetí jamku sobotního kola s kamarády?"
+      ],
+      "poznamkaPlaceholder": "Piš sem…",
+      "ulozeno": "Uloženo v tomto prohlížeči.",
+      "foot": "list 5 · Putt",
+      "cile": [
+        "Rozliším, kdy je náročný green zajímavý a kdy už jen otravný."
+      ],
+      "zapamatuj": [
+        "Green, který odmítá, potřebuje někde poctivé místo, kam se dá minout — jinak z rozhodnutí zbude loterie (lekce 5).",
+        "Rychlost greenu mění jeho geometrii: co je při stimpu 9 hratelné, je při 12 nepinovatelné.",
+        "Zábavnost greenu se pozná podle toho, kolik různých ran z jeho okolí dává smysl."
+      ]
+    },
+    "slovnicek": {
+      "eyebrow": "Slovníček",
+      "over": "Pojmy z téhle lekce —",
+      "title": "Sedm slov",
+      "lede": "Odborné názvy zůstávají anglicky i v české větě — je to jazyk, kterým golfová architektura mluví ve všech pramenech.",
+      "pojmy": [
+        {
+          "pojem": "Green komplex",
+          "popis": "Green a všechno, co k němu patří: okolní svahy, sběrné plochy, bunkry a přední hrana. Hráče trestá i odměňuje komplex jako celek, ne samotná putovací plocha."
+        },
+        {
+          "pojem": "Efektivní velikost greenu",
+          "popis": "Část greenu, kde spád nepřesahuje zhruba tři procenta — tedy kde smí stát praporek a kde se míč udrží. Bývá výrazně menší než plocha na mapě."
+        },
+        {
+          "pojem": "Sběrná plocha",
+          "popis": "Vyžnutá prohlubeň u greenu, do které míč sjede. Anglicky collection area. Bývá těžší než bunkr: hraje se z těsného lie do kopce na green, který od hráče utíká."
+        },
+        {
+          "pojem": "False front",
+          "popis": "Přední část greenu, která klesá zpátky k fairwayi. Rána, která doletí jen na ni, se nezastaví a vrátí se dolů — proto „falešná“ přední hrana."
+        },
+        {
+          "pojem": "Turtleback",
+          "popis": "Vypouklý green ve tvaru želvího krunýře: nejvyšší je uprostřed a plocha padá na všechny strany. Obranu obstará vlastní okraj, bunkry nejsou potřeba."
+        },
+        {
+          "pojem": "Patro greenu",
+          "popis": "Rovná plošina oddělená od zbytku greenu krátkým prudkým srázem. Anglicky tier. Rozděluje jeden cíl na několik a nutí hráče vybrat si, na které patro hraje."
+        },
+        {
+          "pojem": "Short-side",
+          "popis": "Minout green na tu stranu, kde je mezi míčem a praporkem nejmíň místa. Nejdražší chyba v krátké hře — na zotavení nezbývá green, kam by se dalo přistát."
+        }
+      ],
+      "cile": [
+        "Pojmenuji přesně části green komplexu a nemíchám plochu greenu s jeho cílem."
+      ],
+      "zapamatuj": [
+        "Efektivní velikost je to jediné číslo o greenu, které opravdu něco znamená.",
+        "False front není chyba stavby, je to nástroj: trestá ránu, která nedoletí, aniž by k tomu potřeboval písek.",
+        "Short-side není vlastnost jamky, ale vztah mezi místem, kam míč odešel, a polohou praporku."
+      ],
+      "vyzkousej": {
+        "otazka": "Vysvětli vlastními slovy rozdíl mezi sběrnou plochou a bunkrem — a to jak z pohledu hráče, tak z pohledu architekta, který rozhoduje, co kam postaví.",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
+    },
+    "zkouska": {
+      "eyebrow": "Zkouška",
+      "over": "Šest otázek za —",
+      "title": "100 bodů",
+      "lede": "Odpověz na všech šest, teprve pak uvidíš správná řešení. Do celkového přehledu se počítá první pokus.",
+      "spolecne": {
+        "otazka": "Otázka",
+        "bodu": "bodů",
+        "zbyva": "Zbývá odpovědět na",
+        "hotovoMuzesOdevzdat": "Hotovo. Můžeš odevzdat.",
+        "spravne": "správně",
+        "tvojeVolba": "tvoje volba",
+        "nicNevybrano": "nic nevybráno",
+        "moznost": "Možnost",
+        "zkratkaBodu": "b",
+        "reseniUKazdeOtazky": "Správná řešení jsou u každé otázky."
+      },
+      "submit": "Odevzdat",
+      "again": "Zkusit znovu",
+      "q1": {
+        "text": "Na kterém z těch tří greenů zůstane nejmenší část plochy použitelná pro praporek?",
+        "hint": "Nedívej se na obrys, ale na to, kolik místa má spád mírný. Šipky ukazují, kudy plocha padá.",
+        "a": "Green A",
+        "b": "Green B",
+        "c": "Green C",
+        "why": "<b>C.</b> Vypouklý green padá na všechny strany od středu, takže mírný spád zbývá jen na náhorní plošince uprostřed. A má rovnoměrný mírný spád po celé ploše, B má dvě rovné plošiny oddělené srázem — u obou zůstává použitelné víc.",
+        "back": "Vrať se na plát „Velký green, malý cíl“."
+      },
+      "q2": {
+        "text": "Zhruba od jakého spádu se praporek na rychlém greenu už nedá postavit?",
+        "a": "Od 1 %",
+        "b": "Od 3 %",
+        "c": "Od 8 %",
+        "d": "Od 15 %",
+        "why": "<b>B.</b> Kolem tří procent je hranice, za kterou se míč u jamky neudrží; USGA jde na turnajích výjimečně na čtyři, ale výš už ne. Osm a patnáct procent jsou hodnoty svahů a srázů, ne jamkovišť.",
+        "back": "Vrať se na plát „Velký green, malý cíl“."
+      },
+      "q3": {
+        "text": "Proč bývá zotavení ze sběrné plochy těžší než z greenside bunkru?",
+        "a": "Protože ze sběrné plochy se podle pravidel nesmí opřít hůl o zem",
+        "b": "Protože z těsného lie musí míč letět nízko a doběhnout, kdežto z písku vyletí vysoko a měkce",
+        "c": "Protože sběrné plochy bývají vždycky dál od greenu než bunkry",
+        "d": "Protože ve sběrné ploše bývá vyšší tráva",
+        "why": "<b>B.</b> Klíč je v tom, jakou ránu ti lie dovolí. Z písku jde zahrát vysoký měkký úder, který zastaví; z krátce sečeného svahu musí míč letět nízko a doběhnout — a když green od hráče ještě utíká, nemá kde zastavit. Sběrné plochy naopak bývají blíž než bunkry, ne dál.",
+        "back": "Vrať se na kartu jamky Pinehurst No. 2, jamka 5."
+      },
+      "q4": {
+        "text": "U kterého praporku je hráč nejvíc „short-side“?",
+        "hint": "Hledej praporek, mezi kterým a nejbližším hazardem zbývá nejmíň greenu.",
+        "a": "Praporek A",
+        "b": "Praporek B",
+        "c": "Praporek C",
+        "why": "<b>A.</b> Mezi bunkrem a praporkem A zbývá pár metrů greenu, takže rána z bunkru nemá kde přistát a zastavit. U B i C je za hazardem dost plochy na to, aby se dala zahrát normální vysoká rána na green.",
+        "back": "Vrať se na úkol „Kam odejdou ty ostatní“."
+      },
+      "q5": {
+        "text": "Co platí o green komplexu? Vyber všechna správná tvrzení.",
+        "hint": "Za každou správnou volbu body, za každou špatnou se odečítají.",
+        "a": "Vypouklý green umí bránit jamku i bez jediného bunkru",
+        "b": "Plocha greenu v metrech čtverečních je dobré měřítko jeho obtížnosti",
+        "c": "Patra použitelnou plochu spíš rozdělí, než zmenší",
+        "d": "Rychlost greenu mění, kde se ještě dá postavit praporek",
+        "why": "<b>A, C, D.</b> B je právě ta chyba, kterou lekce vyvrací: rozhoduje efektivní plocha, ne celková. Zbylá tři tvrzení popisují tři nástroje architekta — vypouklost, patra a nastavení rychlosti.",
+        "back": "Vrať se na plát „Velký green, malý cíl“."
+      },
+      "q6": {
+        "text": "Co je „false front“?",
+        "a": "Přední bunkr, který z odpaliště není vidět",
+        "b": "Přední část greenu klesající zpátky k fairwayi, ze které se rána vrátí dolů",
+        "c": "Napodobenina historického greenu na moderním hřišti",
+        "d": "Zadní hrana greenu, která funguje jako mantinel",
+        "why": "<b>B.</b> Falešná přední hrana vypadá jako green, ale klesá zpět — rána, která doletí jen na ni, se nezastaví. Zadní hrana fungující jako mantinel se naopak anglicky říká backboard a hráči pomáhá.",
+        "back": "Vrať se na slovníček."
+      },
+      "pasmo": {
+        "vyborne": {
+          "nadpis": "Výborně",
+          "text": "Green komplexy máš zvládnuté. Pokračuj na lekci 7."
+        },
+        "dobre": {
+          "nadpis": "Dobré",
+          "text": "Základ sedí. Projdi si otázky, kde ses spletl/a, a jdi dál."
+        },
+        "projdes": {
+          "nadpis": "Projdeš",
+          "text": "Vrať se na úkol „Kam odejdou ty ostatní“, než začneš lekci 7."
+        },
+        "zopakuj": {
+          "nadpis": "Zopakuj",
+          "text": "Vrať se na začátek lekce a projdi si plát i úkol znovu."
+        }
+      },
+      "souhrn": {
+        "nadpis": "Výsledek",
+        "procentBodu": "procent · {body} ze {max} bodů",
+        "spravne": "správně",
+        "chybneCastecne": "chybně nebo částečně",
+        "zcelaMimo": "zcela mimo",
+        "rozpis": "Rozpis odpovědí",
+        "tvojeOdpoved": "Tvoje odpověď",
+        "spravneReseni": "Správně",
+        "pata": "Podrobné vysvětlení je u každé otázky výše. Výsledek se ukládá do přehledu v tomto prohlížeči."
+      },
+      "foot": "list 7 · Zkouška",
+      "cile": [
+        "Ověřím si, že rozumím rozdílu mezi plochou greenu a jeho skutečným cílem."
+      ],
+      "zapamatuj": [
+        "Efektivní plocha je hranice tří procent spádu.",
+        "Sběrná plocha trestá jinak než bunkr, ne slaběji.",
+        "Poloha praporku umí změnit obtížnost jamky víc než třicet metrů délky."
+      ]
+    },
+    "temata": {
+      "strategie": "strategie",
+      "trest": "trest",
+      "riziko-odmena": "riziko a odměna",
+      "umisteni-hazardu": "umístění hazardu",
+      "cteni-terenu": "čtení terénu",
+      "voda-odtok": "voda a odtok",
+      "vitr-slunce": "vítr a slunce",
+      "routing": "routing",
+      "bezpecnost": "bezpečnost",
+      "rytmus-hriste": "rytmus hřiště",
+      "uhel-nabehu": "úhel náběhu",
+      "diagonalni-hazard": "diagonální hazard",
+      "green-komplex": "green komplex"
+    },
+    "foot": {
+      "lekce": "ROUTING · lekce 6"
+    },
+    "nav": {
+      "predchozi": "Předchozí",
+      "dalsi": "Další",
+      "prehled": "Přehled lekce",
+      "krok": "Krok {n} z 7",
+      "dalsiLekce": "Pokračovat další lekcí",
+      "konecKurzu": "Zatím poslední hotová lekce — pokračuj sbírkou jamek",
+      "preskocit": "Přeskočit na obsah",
+      "sekceNavLabel": "Navigace mezi částmi lekce",
+      "jazykLabel": "Volba jazyka",
+      "sekceNazvy": [
+        "Velký green, malý cíl",
+        "Odmítá, sbírá, dělí",
+        "Slapy 14",
+        "Kam se míč skutálí",
+        "K zamyšlení",
+        "Slovníček",
+        "Zkouška"
+      ],
+      "klavesniNapoveda": "Plán se dá ovládat i klávesnicí: tabulátorem na něj přejdi, šipkami posouvej zaměřovač, Enterem potvrď."
+    },
+    "toc": {
+      "kicker": "Přehled lekce",
+      "sekceHead": "Co tě čeká",
+      "pokracovat": "Pokračovat",
+      "zacit": "Začít lekci",
+      "zpetNaPrehled": "← Zpět na přehled kurzu",
+      "daleHead": "Kam dál",
+      "slovnicekPopis": "Všechny pojmy kurzu na jednom místě, abecedně a dvojjazyčně.",
+      "sbirkaPopis": "Sedmnáct rozebraných jamek z celého světa i z Česka, v jednotném formátu."
+    }
+  },
+  "en": {
+    "meta": {
+      "kicker": "Golf architecture",
+      "chapter": "Lesson 6 of 18",
+      "over": "A green is not a surface, it is a landscape —",
+      "title": "Green complexes",
+      "lede": "A green covers a few hundred square metres on the map. But how many of them are a real target? And where exactly does a ball go when it misses that target? Those two questions decide a hole's difficulty more than its length does.",
+      "zpet": "← Back to the course overview"
+    },
+    "principLabel": "Principle",
+    "teeShot": {
+      "eyebrow": "Tee shot",
+      "over": "Plate —",
+      "title": "Big green, small target",
+      "lede": "The same green outline, three different surfaces. Switch between them and watch the area a flag may actually stand on shrink from the whole green to a couple of islands.",
+      "principle": "A flag cannot stand where a ball will not hold. From roughly three per cent of slope a green stops being a target and starts being a hillside — no matter how many square metres it has on paper.",
+      "toggle": {
+        "rovny": "Gentle slope",
+        "patra": "Two tiers",
+        "vypukly": "Crowned green"
+      },
+      "popis": {
+        "rovny": "The green falls evenly from back to front by about one and a half per cent. A flag can go almost anywhere, the ball stays near where it landed, and the player is left thinking about distance alone. Fair — and utterly forgettable after eighteen holes.",
+        "patra": "Two flat shelves divided by a short steep ramp. The usable area has barely shrunk — but it has broken into two islands. Hitting the green is no longer enough: you have to hit the right tier, or face a putt across the break.",
+        "vypukly": "The centre is the highest point and the surface falls away on every side. A flag can only stand on the plateau in the middle; the edges actively reject the ball and send it off the green. This is the Pinehurst principle — and the reason more strokes are lost around those greens than on them."
+      },
+      "plochaHead": "How much of the green is a target",
+      "plochaCelkem": "Green area",
+      "plochaPouzitelna": "Area under 3 % of slope",
+      "plochaPodil": "Share that is usable",
+      "plochaLegenda": "The darker area on the plan is where the slope does not exceed three per cent — that is, where a flag may stand and a ball will hold. The arrows show which way the surface falls.",
+      "verdikt": {
+        "siroky": "{proc} % of the green is usable. The target is effectively the whole green — the player is thinking about distance, not about the flag.",
+        "uzky": "{proc} % of the green is usable, but not in one piece. From here on, hitting the green and hitting the right part of the green are two different things.",
+        "ostrov": "Only {proc} % of the green is usable. The rest is not a target — it is a slope that carries balls away. The real target is several times smaller than the green looks from the tee."
+      },
+      "foot": "sheet 1 · Tee shot",
+      "cile": [
+        "Explain the difference between the area of a green and its usable (effective) area.",
+        "Tell from the slope where a flag may and may not stand.",
+        "Describe what separates a green that accepts a ball from one that rejects it."
+      ],
+      "zapamatuj": [
+        "About three per cent of slope is the line beyond which a ball will not hold on a fast green — and a flag must not go there.",
+        "The size of a green in square metres says almost nothing. Ask how much of it sits under that line.",
+        "Tiers do not shrink the usable area, they divide it. One target becomes several.",
+        "A crowned green needs no bunkers — its own edge does the defending."
+      ]
+    },
+    "spolecneKarty": {
+      "specsHead": "Three elements",
+      "parLabel": "Par",
+      "delkaLabel": "Length",
+      "architektLabel": "Architect",
+      "vznikLabel": "Year",
+      "prameny": "Sources",
+      "otazkaLabel": "The hole's question",
+      "fotoLabel": "Photo"
+    },
+    "fairway": {
+      "eyebrow": "Fairway",
+      "over": "Three greens, three temperaments —",
+      "title": "Rejects, gathers, divides",
+      "lede": "Pinehurst shows a green that drives balls away. Sand Hills a green that gathers them instead. And Riviera a green whose architect put a bunker right in the middle so the player could not choose the middle.",
+      "cile": [
+        "Recognise the three basic temperaments of a green complex and say what each does with an imprecise shot.",
+        "Explain why recovering from a collection area is often harder than from a bunker."
+      ],
+      "zapamatuj": [
+        "A green that rejects punishes good shots too — so it needs somewhere safe to miss.",
+        "A green that gathers can be fun even for a weaker player, because the ground does part of the work.",
+        "A shaved slope is a harsher penalty than sand: from sand the ball comes out high and soft, from a tight lie it has to fly low."
+      ],
+      "vyzkousej": {
+        "otazka": "Pick one of the three holes and write what would happen to it if the architect took away the ground around the green and replaced it with flat rough. Would it still be interesting?",
+        "placeholder": "Write in your own words — nobody marks this."
+      }
+    },
+    "ceskaJamka": {
+      "eyebrow": "Fairway · Czechia",
+      "over": "Six flags, six terraces —",
+      "title": "Slapy, hole 14",
+      "lede": "A short par 4 whose entire defence sits at the green. The green is eighteen metres across and thirty-one deep — and the club itself writes that each of its six pin positions has its own terrace.",
+      "cile": [
+        "Show on a Czech hole how depth and tiers turn one hole into six different tasks."
+      ],
+      "zapamatuj": [
+        "A deep, narrow green moves the decision from aim to club selection.",
+        "Tiers are the cheapest way to give a hole six variants without moving the ground around it.",
+        "A short hole with a demanding green is usually more fun than a long hole with a flat one."
+      ],
+      "vyzkousej": {
+        "otazka": "On a course you know, find a green with a pronounced tier or slope. Where does the flag usually stand on an ordinary day, and where in a tournament? And how much does that change the hole?",
+        "placeholder": "Write in your own words — nobody marks this."
+      }
+    },
+    "approachNadpis": {
+      "eyebrow": "Approach",
+      "over": "One green, four flags —",
+      "title": "Where the ball actually rolls",
+      "lede": "We build a par 3 with a real green complex — a crowned surface, a gathering hollow on the left and a bunker on the right — and let four players hit fifteen hundred shots at each of four flags. What interests us is not only how many shots the green holds, but above all where the rest of them go.",
+      "cile": [
+        "Show in numbers that the position of the flag changes a green's difficulty more than the length of the shot does."
+      ],
+      "zapamatuj": [
+        "Short-siding means missing on the side where there is least room between ball and flag. It is the most expensive error in golf.",
+        "A ball does not stop where it lands on a green — the slope moves it on, and the steeper it is, the further.",
+        "A flag near the edge of a crowned green turns an ordinary par 3 into the hardest hole of the round without moving the tee."
+      ]
+    },
+    "approach1": {
+      "eyebrow": "Task · simulation",
+      "over": "Pick a flag —",
+      "title": "Where the rest of them go",
+      "lede": "Choose a flag position and a player. The dots on the plan are the actual places where the ball came to rest after landing and running: dark ones stayed on the green, red ones went away.",
+      "planLabel": "Plan of a par 3 with a crowned green, a collection area on the left and a bunker on the right",
+      "pinLabel": "Flag position",
+      "hracLabel": "Which player you are watching",
+      "pinNazvy": [
+        "1 · front centre",
+        "2 · middle of the green",
+        "3 · back left",
+        "4 · right, by the bunker"
+      ],
+      "pinPopis": [
+        "Flag at the front centre. The front of the green falls back towards the fairway, so a short shot does not stop — it comes back down.",
+        "Flag in the middle, on the highest point of the green. The safest position: there is usable ground around the flag on every side.",
+        "Flag back left, close to the edge beyond which the surface drops into the gathering hollow. Go long and your next shot is played back uphill.",
+        "Flag on the right, a few paces from the bunker. The classic short-side: between the sand and the flag there is almost no room to miss into."
+      ],
+      "tabulka": {
+        "hrac": "Player",
+        "green": "Stayed on the green",
+        "blizko": "Within 5 m of the hole",
+        "sberna": "Collection area",
+        "bunkr": "Bunker"
+      },
+      "grafHead": "The four flags side by side",
+      "grafPopis": "The share of shots that stayed on the green, for each of the four flag positions and each of the four players. Placed side by side, the bars show something unexpected: the gap between the easiest and the hardest flag is wider for the professional than for the 24-handicapper.",
+      "zaver": "Notice what the flag position does to the professional: between the easiest and the hardest he loses around twenty percentage points, while the 24-handicapper loses about seven. It is not that the flag troubles the professional more. It is that his shots fly close to the target, so their fate is decided by exactly what sits beside the flag — a bunker, an edge, a fall-off. A player with a wide dispersion misses the green anyway. So a green complex is drawn for the one who aims precisely, and only then do you ask whether the other one survives in it.",
+      "foot": "sheet 4 · Approach",
+      "poznamka": "Fifteen hundred shots for every combination of flag and player, computed once when the page loads with the same random generator. Shot dispersion comes from the model in part 8 of the brief (`js/simulace.js`); the run-out after landing is a model built for this lesson: the ball moves down the fall line until the slope drops below one per cent or until it runs off the green. It is not physics, it is a simplification — it shows the direction and the rough distance of the run, not exact metres.",
+      "legenda": "The remainder up to one hundred per cent finished around the green — in the closely mown rough beyond its edge, from where the recovery is a chip back up."
+    },
+    "putt": {
+      "eyebrow": "Putt",
+      "over": "Three questions, no marks —",
+      "title": "Something to think about",
+      "lede": "Write in your own words. Nobody will correct it — it is here so that you have to answer it for yourself.",
+      "otazky": [
+        "Think of a green that does not suit you. Is it how it looks from the approach, or what it does with the ball when you miss it? Try to describe it as precisely as you can.",
+        "If you had to swap a bunker for a shaved gathering hollow on one green of your course, which hole would make most sense — and what would change for the player?",
+        "A crowned green punishes even a good shot that finishes half a metre wide. Is that fair? And does it matter whether it is the eighteenth hole of a tournament or the third hole of a Saturday round with friends?"
+      ],
+      "poznamkaPlaceholder": "Write here…",
+      "ulozeno": "Saved in this browser.",
+      "foot": "sheet 5 · Putt",
+      "cile": [
+        "Tell when a demanding green is interesting and when it is merely annoying."
+      ],
+      "zapamatuj": [
+        "A green that rejects needs an honest place to miss into — otherwise the decision collapses into a lottery (lesson 5).",
+        "Green speed changes the geometry: what is playable at a stimp of 9 is unpinnable at 12.",
+        "You can tell a green is good by how many different recovery shots from around it make sense."
+      ]
+    },
+    "slovnicek": {
+      "eyebrow": "Glossary",
+      "over": "Terms from this lesson —",
+      "title": "Seven words",
+      "lede": "The technical terms stay in English even in Czech text — it is the language golf architecture speaks in every source.",
+      "pojmy": [
+        {
+          "pojem": "Green complex",
+          "popis": "The green and everything that belongs to it: the surrounding slopes, collection areas, bunkers and the front edge. The player is punished and rewarded by the complex as a whole, not by the putting surface alone."
+        },
+        {
+          "pojem": "Effective green size",
+          "popis": "The part of a green where the slope does not exceed about three per cent — where a flag may stand and a ball will hold. It is usually far smaller than the area on the map."
+        },
+        {
+          "pojem": "Collection area",
+          "popis": "A shaved hollow beside a green that a ball runs down into. It is often harder than a bunker: you play from a tight lie, uphill, to a green running away from you."
+        },
+        {
+          "pojem": "False front",
+          "popis": "The front of a green that falls back towards the fairway. A shot that reaches only that far does not stop but returns down the slope — hence the „false“ front edge."
+        },
+        {
+          "pojem": "Turtleback",
+          "popis": "A crowned green shaped like a turtle's shell: highest in the middle, falling away on every side. Its own edge does the defending; bunkers are not required."
+        },
+        {
+          "pojem": "Tier",
+          "popis": "A flat shelf separated from the rest of the green by a short steep ramp. It splits one target into several and forces the player to choose which level he is playing to."
+        },
+        {
+          "pojem": "Short-side",
+          "popis": "To miss a green on the side where there is least room between ball and flag. The most expensive error in the short game — there is no green left to land the recovery on."
+        }
+      ],
+      "cile": [
+        "Name the parts of a green complex precisely and stop confusing the area of a green with its target."
+      ],
+      "zapamatuj": [
+        "Effective size is the only figure about a green that really means anything.",
+        "A false front is not a construction error, it is a tool: it punishes a shot that comes up short without needing sand.",
+        "Short-side is not a property of a hole but a relationship between where the ball went and where the flag is."
+      ],
+      "vyzkousej": {
+        "otazka": "Explain in your own words the difference between a collection area and a bunker — both from the player's point of view and from that of the architect deciding what to build where.",
+        "placeholder": "Write in your own words — nobody marks this."
+      }
+    },
+    "zkouska": {
+      "eyebrow": "Exam",
+      "over": "Six questions for —",
+      "title": "100 points",
+      "lede": "Answer all six; only then will you see the solutions. Your first attempt is the one that counts in the overview.",
+      "spolecne": {
+        "otazka": "Question",
+        "bodu": "points",
+        "zbyva": "Still to answer",
+        "hotovoMuzesOdevzdat": "Done. You can submit.",
+        "spravne": "correct",
+        "tvojeVolba": "your choice",
+        "nicNevybrano": "nothing selected",
+        "moznost": "Option",
+        "zkratkaBodu": "pt",
+        "reseniUKazdeOtazky": "The solutions are shown with each question."
+      },
+      "submit": "Submit",
+      "again": "Try again",
+      "q1": {
+        "text": "On which of these three greens does the smallest share of the surface remain usable for a flag?",
+        "hint": "Do not look at the outline, look at how much of it has a gentle slope. The arrows show which way the surface falls.",
+        "a": "Green A",
+        "b": "Green B",
+        "c": "Green C",
+        "why": "<b>C.</b> A crowned green falls away from the centre on every side, so gentle slope remains only on the plateau in the middle. A has an even gentle fall across the whole surface, B has two flat shelves divided by a ramp — both keep more of it usable.",
+        "back": "Go back to the plate „Big green, small target“."
+      },
+      "q2": {
+        "text": "From roughly what slope can a flag no longer stand on a fast green?",
+        "a": "From 1 %",
+        "b": "From 3 %",
+        "c": "From 8 %",
+        "d": "From 15 %",
+        "why": "<b>B.</b> Around three per cent is the line beyond which a ball will not hold by the hole; the USGA occasionally goes to four in a championship, but no further. Eight and fifteen per cent are figures for banks and slopes, not for hole locations.",
+        "back": "Go back to the plate „Big green, small target“."
+      },
+      "q3": {
+        "text": "Why is recovering from a collection area usually harder than from a greenside bunker?",
+        "a": "Because the rules forbid grounding the club in a collection area",
+        "b": "Because a tight lie forces the ball to fly low and run, while sand lets it come out high and soft",
+        "c": "Because collection areas are always further from the green than bunkers",
+        "d": "Because the grass in a collection area is always longer",
+        "why": "<b>B.</b> The key is what shot the lie allows. From sand you can play a high, soft shot that stops; from a closely mown slope the ball has to fly low and run — and if the green is running away as well, it has nowhere to stop. Collection areas are in fact usually closer than bunkers, not further.",
+        "back": "Go back to the Pinehurst No. 2, hole 5 card."
+      },
+      "q4": {
+        "text": "At which flag is the player most short-sided?",
+        "hint": "Look for the flag with the least green left between it and the nearest hazard.",
+        "a": "Flag A",
+        "b": "Flag B",
+        "c": "Flag C",
+        "why": "<b>A.</b> Between the bunker and flag A there are only a few metres of green, so a shot from the sand has nowhere to land and stop. At B and C there is enough surface beyond the hazard to play a normal high shot at the green.",
+        "back": "Go back to the task „Where the rest of them go“."
+      },
+      "q5": {
+        "text": "What is true of a green complex? Select all correct statements.",
+        "hint": "Each correct choice scores; each wrong one is deducted.",
+        "a": "A crowned green can defend a hole without a single bunker",
+        "b": "The area of a green in square metres is a good measure of its difficulty",
+        "c": "Tiers divide the usable area rather than shrink it",
+        "d": "Green speed changes where a flag can still stand",
+        "why": "<b>A, C, D.</b> B is exactly the mistake this lesson refutes: what matters is effective area, not total area. The other three describe three of the architect's tools — crowning, tiers, and the speed setting.",
+        "back": "Go back to the plate „Big green, small target“."
+      },
+      "q6": {
+        "text": "What is a „false front“?",
+        "a": "A front bunker that cannot be seen from the tee",
+        "b": "The front of a green falling back towards the fairway, off which a shot returns down the slope",
+        "c": "A replica of a historic green on a modern course",
+        "d": "The back edge of a green that works as a backboard",
+        "why": "<b>B.</b> A false front looks like green but falls away — a shot that reaches only that far does not stop. A back edge that works as a backboard is the opposite: it is called exactly that, and it helps the player.",
+        "back": "Go back to the glossary."
+      },
+      "pasmo": {
+        "vyborne": {
+          "nadpis": "Excellent",
+          "text": "You have green complexes under control. Move on to lesson 7."
+        },
+        "dobre": {
+          "nadpis": "Good",
+          "text": "The basics hold. Look over the questions you got wrong and carry on."
+        },
+        "projdes": {
+          "nadpis": "Pass",
+          "text": "Go back to the task „Where the rest of them go“ before you start lesson 7."
+        },
+        "zopakuj": {
+          "nadpis": "Repeat",
+          "text": "Go back to the start of the lesson and work through the plate and the task again."
+        }
+      },
+      "souhrn": {
+        "nadpis": "Result",
+        "procentBodu": "per cent · {body} of {max} points",
+        "spravne": "correct",
+        "chybneCastecne": "wrong or partial",
+        "zcelaMimo": "completely off",
+        "rozpis": "Answer by answer",
+        "tvojeOdpoved": "Your answer",
+        "spravneReseni": "Correct",
+        "pata": "The full explanation sits with each question above. The result is stored in the overview in this browser."
+      },
+      "foot": "sheet 7 · Exam",
+      "cile": [
+        "Confirm that you understand the difference between the area of a green and its real target."
+      ],
+      "zapamatuj": [
+        "Effective area is the three-per-cent line.",
+        "A collection area punishes differently from a bunker, not more weakly.",
+        "The position of a flag can change a hole's difficulty more than thirty metres of length."
+      ]
+    },
+    "temata": {
+      "strategie": "strategy",
+      "trest": "penalty",
+      "riziko-odmena": "risk and reward",
+      "umisteni-hazardu": "hazard placement",
+      "cteni-terenu": "reading the land",
+      "voda-odtok": "water and drainage",
+      "vitr-slunce": "wind and sun",
+      "routing": "routing",
+      "bezpecnost": "safety",
+      "rytmus-hriste": "rhythm of the course",
+      "uhel-nabehu": "angle of attack",
+      "diagonalni-hazard": "diagonal hazard",
+      "green-komplex": "green complex"
+    },
+    "foot": {
+      "lekce": "ROUTING · lesson 6"
+    },
+    "nav": {
+      "predchozi": "Previous",
+      "dalsi": "Next",
+      "prehled": "Lesson overview",
+      "krok": "Step {n} of 7",
+      "dalsiLekce": "Continue to the next lesson",
+      "konecKurzu": "The last finished lesson so far — carry on with the hole collection",
+      "preskocit": "Skip to content",
+      "sekceNavLabel": "Navigation between parts of the lesson",
+      "jazykLabel": "Language",
+      "sekceNazvy": [
+        "Big green, small target",
+        "Rejects, gathers, divides",
+        "Slapy 14",
+        "Where the ball actually rolls",
+        "Something to think about",
+        "Glossary",
+        "Exam"
+      ],
+      "klavesniNapoveda": "The plan can be used from the keyboard: tab to it, move the crosshair with the arrow keys, confirm with Enter."
+    },
+    "toc": {
+      "kicker": "Lesson overview",
+      "sekceHead": "What is coming",
+      "pokracovat": "Continue",
+      "zacit": "Start the lesson",
+      "zpetNaPrehled": "← Back to the course overview",
+      "daleHead": "Where next",
+      "slovnicekPopis": "Every term in the course in one place, alphabetical and bilingual.",
+      "sbirkaPopis": "Seventeen holes from around the world and from Czechia, analysed in one format."
+    }
+  }
+}

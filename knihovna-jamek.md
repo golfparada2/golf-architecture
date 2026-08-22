@@ -1,6 +1,6 @@
 # Knihovna jamek
 
-Čtrnáct karet z `data/jamky/*.json` v čitelné podobě, řazeno podle hřiště.
+Sedmnáct karet z `data/jamky/*.json` v čitelné podobě, řazeno podle hřiště.
 Zdroj pravdy jsou JSON soubory — tohle je jejich čitelný otisk pro
 kontrolu a pro lektora, ne duplicitní záznam k ručnímu udržování.
 Aktualizuj vždy nejdřív JSON, pak tenhle přehled.
@@ -90,25 +90,6 @@ a v sekci `jamky/`.
 
 ---
 
-## Golf Dobrouč, jamka 3
-
-*(lekce 2 · Česká jamka · terén diktuje řešení)*
-
-- **Země:** ČR (Orlické hory) · **Par:** 4 · **Délka:** neověřena (viz
-  níže)
-- **Architekt:** MgA. Jakub Červenka (EIGCA Associate), hřiště otevřeno
-  2020.
-- **GPS:** 49.99993, 16.50200 (přibližně, úroveň areálu)
-- **Otázka:** Kudy steče voda po dešti z prudkého svahu do potoka, a kde
-  tím pádem musí fairway nebo green uhnout?
-- **Tři prvky:** úzké údolí určuje osu jamky · potok jako přirozený hazard
-  · bunkr jako konstrukční prvek zvládající převýšení
-- **Zdroje:** golfdobrouc.cz „Slovo architekta" · GolfExtra.cz
-- **Neověřeno:** přesná délka jamky v metrech/yardech — nedohledána ve
-  veřejných pramenech, doporučeno ověřit přímo u klubu před tiskem karty.
-
----
-
 ## Golf & Ski Resort Ostravice, jamka 16
 
 *(lekce 5 · Česká jamka · i bezpečná cesta musí něco stát)*
@@ -131,6 +112,56 @@ a v sekci `jamky/`.
 > bloky (vzdálenost od každého odpaliště k příčné linii) a bílé kolonky
 > 18 / 96 / 108 / 135 / 146 / 225, u kterých se nedá spolehlivě určit, co
 > měří. Karta z nich proto neuvádí žádné číslo.
+
+---
+
+## Golf Dobrouč, jamka 3
+
+*(lekce 2 · Česká jamka · terén diktuje řešení)*
+
+- **Země:** ČR (Orlické hory) · **Par:** 4 · **Délka:** neověřena (viz
+  níže)
+- **Architekt:** MgA. Jakub Červenka (EIGCA Associate), hřiště otevřeno
+  2020.
+- **GPS:** 49.99993, 16.50200 (přibližně, úroveň areálu)
+- **Otázka:** Kudy steče voda po dešti z prudkého svahu do potoka, a kde
+  tím pádem musí fairway nebo green uhnout?
+- **Tři prvky:** úzké údolí určuje osu jamky · potok jako přirozený hazard
+  · bunkr jako konstrukční prvek zvládající převýšení
+- **Zdroje:** golfdobrouc.cz „Slovo architekta" · GolfExtra.cz
+- **Neověřeno:** přesná délka jamky v metrech/yardech — nedohledána ve
+  veřejných pramenech, doporučeno ověřit přímo u klubu před tiskem karty.
+
+---
+
+## Golf Park Slapy svatý Jan, jamka 14
+
+*(lekce 6 · Česká jamka · šest pin pozic, každá na vlastní terase)*
+
+- **Země:** ČR (Slapy nad Vltavou) · **Par:** 4 · **HCP:** 16 · **Délka:**
+  307 m z bílé (dále 281 / 272 / 263 / 187 / 162 m ze šesti odpališť)
+- **Architekt:** klub ho nezveřejňuje; jediný nalezený pramen (1golf.eu)
+  jmenuje Jiřího Veldena — bez potvrzení neuvádíme jako fakt. Rok otevření
+  rovněž sporný (2010 podle článku z roku 2012, 2022 podle jednoho průvodce).
+- **GPS:** 49.793, 14.376 (přibližně, úroveň areálu)
+- **Otázka:** Jak rozdělit jeden green na šest samostatných úkolů, aniž bys
+  musel postavit šest greenů?
+- **Tři prvky:** šest pin pozic, každá na vlastní terase (doslovný popis
+  klubu) · green 18 m napříč, 31 m po ose hry — rozhoduje volba hole, ne
+  mířidlo · celá obrana je až u greenu (bunkr vlevo, větší vpravo vpředu,
+  červeně vyznačená oblast vlevo krátko)
+- **Zdroje:** birdie book klubu (obrázkové stránky, strana 19 = jamka 14 —
+  primární pramen pro schéma) · golfslapy.cz „Naše hřiště" (citát o šesti
+  terasách) · GolfInfo / časopis GOLF 10/2012
+
+> **Co kresba neumí.** Green má na plánku zřetelný zúžený pas uprostřed
+> (tvar přesýpacích hodin), ale `blob()` v `js/platy.js` kreslí jen konvexní
+> rozvlněné tvary. A hlavně: terasy jsou výškový rozdíl, který půdorys
+> zobrazit nedokáže.
+>
+> **Neověřeno:** článek z roku 2012 zmiňuje u téhle jamky „záchytné jezírko"
+> před greenem; birdie book z roku 2024 u greenu žádnou vodní plochu
+> neukazuje, a proto ji karta nekreslí.
 
 ---
 
@@ -229,6 +260,38 @@ a v sekci `jamky/`.
 
 ---
 
+## Pinehurst Resort — Course No. 2, jamka 5
+
+*(lekce 6 · Fairway · green, který míč odmítá)*
+
+- **Země:** USA (Severní Karolína) · **Par:** 5 · **Délka:** 538 m / 588 yd
+  (US Open 2024; 2014 to bylo 527 m / 576 yd, před restaurací se hrála jako
+  par 4 zhruba 434 m)
+- **Architekt:** Donald Ross, hřiště otevřeno 1907. Greeny převedeny z písku
+  na trávu 1935–36. Restaurace Coore & Crenshaw 2010–11 (2,5 mil. USD)
+  odstranila 20 akrů roughu kolem greenů; samotné putovací plochy nechala být.
+- **GPS:** 35.191, -79.469 (přibližně, úroveň areálu)
+- **Otázka:** Kam se dá na vypouklém greenu vůbec mířit, když víc než polovina
+  jeho plochy má spád, na kterém se míč neudrží?
+- **Tři prvky:** rozbor spádů — 184 m² pod 3 %, 83 m² mezi 3 a 4 %, ale
+  272 m² nad 4 % · kolem greenu není rough, jen krátce sečená tráva a písek ·
+  zotavení z bunkru je snazší než z vyžnutého svahu
+- **Zdroje:** Golf Club Atlas (rozbor spádů pátého greenu) · Golf Digest
+  (míč minutý vlevo dojede 50 yardů k odpališti čtyřky) · Australian Golf
+  Digest (pojem effective green size) · pinehurst.com · Golf Today (Mandell
+  o původu „turtleback" tvaru) · The Fried Egg · USGA fact sheet
+
+> **Pozor na rozšířenou zkratku.** Vypouklé greeny se běžně připisují Rossovi,
+> ale architekt Richard Mandell doložil, že dnešní přehnaná vypouklost vznikla
+> nejspíš až na přelomu 60. a 70. let, kdy byly okraje greenů sraženy
+> buldozerem. Kontury NA greenu jsou v zásadě Rossovy; prudké spády KOLEM nich
+> — tedy to, co dělá sběrné plochy — přibyly po něm.
+>
+> **Nedohledáno:** výška vypouklosti v centimetrech, přesný počet greenside
+> bunkrů, GIR a scrambling pro tuhle konkrétní jamku.
+
+---
+
 ## Prague City Golf Zbraslav, jamka 1
 
 *(lekce 3 · Česká ukázka · routing určený polohou klubovny)*
@@ -249,6 +312,35 @@ a v sekci `jamky/`.
   (rozhovor na golfcourses.cz nedostupný); GPS jen odhadem z adresy;
   konkrétní rozestavění hazardů jamky 1 nebylo dohledáno — tvar v kartě je
   jen ilustrativní podle obecného charakteru hřiště, ne ověřený půdorys.
+
+---
+
+## Riviera Country Club, jamka 6
+
+*(lekce 6 · Fairway · bunkr uvnitř greenu)*
+
+- **Země:** USA (Kalifornie) · **Par:** 3 · **Délka:** 182 m / 199 yd na kartě;
+  turnajově se hraje zhruba 170–200 m podle toho, kam klub den ode dne posune
+  odpaliště (modrá 160 m, bílá 132 m)
+- **Architekt:** George C. Thomas Jr., stavbu vedl William P. „Billy" Bell.
+  Rok se v pramenech liší (1926 podle Wikipedie a PGA Tour, 1927 podle Golf
+  Club Atlas a The Fried Egg).
+- **GPS:** 34.048, -118.506 (přibližně, úroveň areálu)
+- **Otázka:** Kam mířit na par 3, jejíž green má uprostřed bunkr — a kde tedy
+  žádný bezpečný střed neexistuje?
+- **Tři prvky:** bunkr uprostřed putovací plochy bere hráči obvyklou strategii
+  mířit na střed · dvouúrovňový green se svody, do kterých bunkr vnáší druhou
+  dělicí osu (vzniknou čtyři kouty) · statistika Genesis 2024: průměr 2,842,
+  teprve 13. nejtěžší z 18 — ale 61 birdie a 21 bogey ze 240 kol
+- **Zdroje:** PGA Tour course stats 2024 · Golf Digest · Medill Reports
+  (citáty Aarona Wise a Kevina Na) · LINKS Magazine (Spieth, Cink) ·
+  The Fried Egg · Two Inches Short · Golf Club Atlas
+
+> **Nedohledáno:** rozměry bunkru (prameny ho popisují jen slovy „malý",
+> „pot bunker"), rozměry greenu (jediný nalezený zdroj si u nich protiřečí),
+> přesný počet greenside bunkrů (tři vs. čtyři) a **jakýkoli přímý Thomasův
+> komentář právě k téhle jamce** — co se o jeho záměru píše, jsou interpretace
+> pozdějších autorů.
 
 ---
 
@@ -338,8 +430,10 @@ a v sekci `jamky/`.
 | 3 — Routing | St Andrews Old 7/11 · Cypress Point 16 · Zbraslav 1 |
 | 4 — Jak šířka vytváří úhel | Riviera 10 · St Andrews Old 7 · Ballybunion Old 11 · Karlštejn 15 |
 | 5 — Riziko a odměna | Augusta National 13 · Mid Ocean 5 · TPC Sawgrass 17 · Ostravice 16 |
+| 6 — Green komplexy | Pinehurst No. 2 jamka 5 · Sand Hills 1 · Riviera 6 · Slapy 14 |
 
-Čtrnáct souborů. Lekce 4 a 5 některé karty sdílejí s lekcemi 1–3 —
+Sedmnáct souborů. Lekce 4 a 5 některé karty sdílejí s lekcemi 1–3 —
 karta je popis jamky, ne majetek jedné lekce, a tatáž jamka může
 ilustrovat víc principů. Nové karty přibývají s každou lekcí, která je
-potřebuje (Krok 14: Augusta 13, Mid Ocean 5, Ostravice 16).
+potřebuje (Krok 14: Augusta 13, Mid Ocean 5, Ostravice 16; Krok 15:
+Pinehurst No. 2 jamka 5, Riviera 6, Slapy 14).
