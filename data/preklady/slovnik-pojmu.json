@@ -31,7 +31,9 @@
           "bailout",
           "bailoutu"
         ],
-        "kde": []
+        "kde": [
+          5
+        ]
       },
       {
         "pojem": "Blowout",
@@ -42,6 +44,18 @@
           "blowouty"
         ],
         "kde": []
+      },
+      {
+        "pojem": "Bod zlomu",
+        "popis": "Šance na úspěch, při které se odvážná a bezpečná cesta vyrovnají. Spočítáš ho jako cena prohry děleno součtem ceny prohry a odměny.",
+        "hledat": [
+          "bod zlomu",
+          "bodu zlomu",
+          "break-even"
+        ],
+        "kde": [
+          5
+        ]
       },
       {
         "pojem": "Bunkr",
@@ -65,7 +79,8 @@
           "cape holu"
         ],
         "kde": [
-          4
+          4,
+          5
         ]
       },
       {
@@ -74,7 +89,9 @@
         "hledat": [
           "carry"
         ],
-        "kde": []
+        "kde": [
+          5
+        ]
       },
       {
         "pojem": "Clubhouse loop",
@@ -128,7 +145,9 @@
           "dopadové zón",
           "dopadovou zónu"
         ],
-        "kde": []
+        "kde": [
+          5
+        ]
       },
       {
         "pojem": "Dramaturgie kola",
@@ -152,6 +171,18 @@
         ]
       },
       {
+        "pojem": "Drop zone",
+        "popis": "Vyznačené místo, odkud se pokračuje po ráně do vody, když jinde dropnout nejde. Architekt jím přímo nastavuje cenu prohry.",
+        "hledat": [
+          "drop zone",
+          "dropzóna",
+          "drop"
+        ],
+        "kde": [
+          5
+        ]
+      },
+      {
         "pojem": "Dvojgreen",
         "popis": "Jeden fyzický green sloužící dvěma různým jamkám — typicky jdoucím opačným směrem, jako na St Andrews.",
         "hledat": [
@@ -171,6 +202,18 @@
           "fairwayí"
         ],
         "kde": []
+      },
+      {
+        "pojem": "Gradace rizika",
+        "popis": "Vlastnost jamky, kde si hráč volí velikost sázky plynule, ne jen ano/ne. Vzniká tím, že hazard leží šikmo k linii hry.",
+        "hledat": [
+          "gradace",
+          "gradaci",
+          "gradace rizika"
+        ],
+        "kde": [
+          5
+        ]
       },
       {
         "pojem": "Green",
@@ -213,7 +256,9 @@
           "hazardy",
           "hazardů"
         ],
-        "kde": []
+        "kde": [
+          5
+        ]
       },
       {
         "pojem": "Heroická jamka",
@@ -224,7 +269,8 @@
           "heroickou jamku"
         ],
         "kde": [
-          1
+          1,
+          5
         ]
       },
       {
@@ -247,7 +293,8 @@
           "layupu"
         ],
         "kde": [
-          1
+          1,
+          5
         ]
       },
       {
@@ -282,6 +329,17 @@
         ]
       },
       {
+        "pojem": "Momentous decision",
+        "popis": "Slova Bobbyho Jonese o třináctce v Augustě: rozhodnutí jít na green druhou ranou má být zásadní. Když zautomatizuje, jamka přestala fungovat.",
+        "hledat": [
+          "momentous",
+          "momentous decision"
+        ],
+        "kde": [
+          5
+        ]
+      },
+      {
         "pojem": "Odpaliště",
         "popis": "Místo, odkud se hraje první rána jamky. Posunem odpaliště se mění délka i úhel na hazard, aniž by se cokoliv přestavovalo.",
         "hledat": [
@@ -297,6 +355,30 @@
           "out of bounds"
         ],
         "kde": []
+      },
+      {
+        "pojem": "Očekávaný počet ran",
+        "popis": "Kolik ran ti daná volba vyjde v průměru, kdybys ji zahrál mnohotisíckrát. Architekt kalibruje tenhle průměr, ne to, co se ti povede dnes.",
+        "hledat": [
+          "očekávaný počet ran",
+          "očekávaného počtu ran",
+          "expected strokes"
+        ],
+        "kde": [
+          5
+        ]
+      },
+      {
+        "pojem": "Penalty area",
+        "popis": "Označená oblast (typicky voda), ze které se dá pokračovat s jednou trestnou ranou. Červená dovoluje boční drop, žlutá ne — a to je rozdíl skoro půl rány.",
+        "hledat": [
+          "penalty area",
+          "penalty",
+          "trestná oblast"
+        ],
+        "kde": [
+          5
+        ]
       },
       {
         "pojem": "Punchbowl",
@@ -317,6 +399,17 @@
         ]
       },
       {
+        "pojem": "Reachable par 5",
+        "popis": "Par 5, na jehož green se dá dojet druhou ranou. Celá jamka pak stojí na jediné otázce: komu se to vyplatí.",
+        "hledat": [
+          "reachable",
+          "reachable par 5"
+        ],
+        "kde": [
+          5
+        ]
+      },
+      {
         "pojem": "Redan",
         "popis": "Šikmý plošinový green natočený od hráče, s hlubokým bunkrem u kratší strany. Původ: North Berwick, jamka 15.",
         "hledat": [
@@ -334,7 +427,8 @@
         ],
         "kde": [
           1,
-          4
+          4,
+          5
         ]
       },
       {
@@ -505,7 +599,9 @@
         "hledat": [
           "bailout"
         ],
-        "kde": []
+        "kde": [
+          5
+        ]
       },
       {
         "pojem": "Blowout",
@@ -515,6 +611,18 @@
           "blowouts"
         ],
         "kde": []
+      },
+      {
+        "pojem": "Break-even point",
+        "popis": "The chance of success at which the bold and the safe route come out equal. Work it out as the cost of failure divided by the sum of cost and reward.",
+        "hledat": [
+          "break-even",
+          "break even",
+          "breakeven"
+        ],
+        "kde": [
+          5
+        ]
       },
       {
         "pojem": "Bunker",
@@ -532,7 +640,8 @@
           "cape hole"
         ],
         "kde": [
-          4
+          4,
+          5
         ]
       },
       {
@@ -541,7 +650,9 @@
         "hledat": [
           "carry"
         ],
-        "kde": []
+        "kde": [
+          5
+        ]
       },
       {
         "pojem": "Clubhouse loop",
@@ -638,6 +749,30 @@
         ]
       },
       {
+        "pojem": "Drop zone",
+        "popis": "A marked spot from which play continues after a ball in the water when there is nowhere else to drop. The architect sets the cost of failure with it directly.",
+        "hledat": [
+          "drop zone",
+          "dropzone",
+          "drop"
+        ],
+        "kde": [
+          5
+        ]
+      },
+      {
+        "pojem": "Expected strokes",
+        "popis": "How many strokes a given choice averages if you played it many thousands of times. The architect calibrates that average, not what comes off for you today.",
+        "hledat": [
+          "expected strokes",
+          "expected",
+          "strokes gained"
+        ],
+        "kde": [
+          5
+        ]
+      },
+      {
         "pojem": "Fairway",
         "popis": "The mown corridor between tee and green where the ball sits best. Where it runs and how wide it is decides the difficulty of the whole hole.",
         "hledat": [
@@ -653,6 +788,18 @@
         ],
         "kde": [
           2
+        ]
+      },
+      {
+        "pojem": "Graded risk",
+        "popis": "A property of a hole where the player chooses the size of the bet continuously, not just yes or no. It comes from a hazard lying diagonally to the line of play.",
+        "hledat": [
+          "graded risk",
+          "gradation",
+          "graded"
+        ],
+        "kde": [
+          5
         ]
       },
       {
@@ -698,7 +845,9 @@
           "hazard",
           "hazards"
         ],
-        "kde": []
+        "kde": [
+          5
+        ]
       },
       {
         "pojem": "Heroic hole",
@@ -707,7 +856,8 @@
           "heroic hole"
         ],
         "kde": [
-          1
+          1,
+          5
         ]
       },
       {
@@ -717,7 +867,9 @@
           "landing zone",
           "landing area"
         ],
-        "kde": []
+        "kde": [
+          5
+        ]
       },
       {
         "pojem": "Layup",
@@ -728,7 +880,8 @@
           "layupu"
         ],
         "kde": [
-          1
+          1,
+          5
         ]
       },
       {
@@ -762,12 +915,34 @@
         ]
       },
       {
+        "pojem": "Momentous decision",
+        "popis": "Bobby Jones's words about the 13th at Augusta: the decision whether to go for the green in two should be a momentous one. Once it becomes automatic, the hole has stopped working.",
+        "hledat": [
+          "momentous",
+          "momentous decision"
+        ],
+        "kde": [
+          5
+        ]
+      },
+      {
         "pojem": "Out of bounds",
         "popis": "The boundary of the course. A ball beyond it costs a penalty stroke and a replay from the original spot — the harshest penalty in golf.",
         "hledat": [
           "out of bounds"
         ],
         "kde": []
+      },
+      {
+        "pojem": "Penalty area",
+        "popis": "A marked area, typically water, from which play may continue with one penalty stroke. Red allows a lateral drop, yellow does not — and that is a difference of nearly half a stroke.",
+        "hledat": [
+          "penalty area",
+          "penalty"
+        ],
+        "kde": [
+          5
+        ]
       },
       {
         "pojem": "Punchbowl",
@@ -788,6 +963,17 @@
         ]
       },
       {
+        "pojem": "Reachable par 5",
+        "popis": "A par 5 whose green can be reached with the second shot. The whole hole then rests on a single question: who does that pay for?",
+        "hledat": [
+          "reachable",
+          "reachable par 5"
+        ],
+        "kde": [
+          5
+        ]
+      },
+      {
         "pojem": "Redan",
         "popis": "An angled plateau green running away from the player with a deep bunker at the short side. Origin: North Berwick, hole 15.",
         "hledat": [
@@ -803,7 +989,8 @@
         ],
         "kde": [
           1,
-          4
+          4,
+          5
         ]
       },
       {

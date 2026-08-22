@@ -1,0 +1,274 @@
+{
+  "verze": 1,
+  "id": "ostravice-16",
+  "hriste": "Golf & Ski Resort Ostravice",
+  "zeme": "CZ",
+  "jamka": 16,
+  "nazev": null,
+  "par": 5,
+  "delky": [
+    {
+      "odpaliste": "černá (aktuální)",
+      "m": 522,
+      "yd": 571,
+      "rok": 2024
+    },
+    {
+      "odpaliste": "bílá",
+      "m": 500,
+      "yd": 547
+    },
+    {
+      "odpaliste": "žlutá",
+      "m": 490,
+      "yd": 536
+    },
+    {
+      "odpaliste": "modrá",
+      "m": 468,
+      "yd": 512
+    },
+    {
+      "odpaliste": "červená",
+      "m": 448,
+      "yd": 490
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "Chris Johnson",
+      "en": "Chris Johnson"
+    },
+    "jistota": "pravděpodobná",
+    "poznamka": {
+      "cs": "Autorství uvádí klub i české golfové servery shodně. Rok otevření hřiště (2008) uvádějí jen sekundární prameny, klub sám ho na webu neuvádí — proto je označený jako pravděpodobný, ne jistý.",
+      "en": "The attribution is given consistently by the club and by Czech golf sites. The opening year (2008) appears only in secondary sources; the club itself does not state it, so it is marked probable rather than certain."
+    }
+  },
+  "vznik": 2008,
+  "gps": {
+    "tee": [
+      49.535,
+      18.395
+    ],
+    "green": [
+      49.535,
+      18.395
+    ],
+    "presnost": {
+      "cs": "přibližné, úroveň areálu — souřadnice jednotlivých jamek klub nezveřejňuje",
+      "en": "approximate, resort-level — the club does not publish per-hole coordinates"
+    }
+  },
+  "otazka": {
+    "cs": "Půjdeš na green druhou ranou přes potok a kolem rybníčku, nebo přihraješ před potok a necháš si wedge? Na jamce, která klesá o 27 metrů, je to lákavější, než by mělo být.",
+    "en": "Do you go for the green in two, over the brook and past the pond, or lay up short of the water and keep a wedge? On a hole that drops 27 metres, the temptation is stronger than it should be."
+  },
+  "tvary": {
+    "poznamka": "kresleno podle oficiálního plánku jamky, který klub zveřejňuje jako samostatný obrázek (jamka-16.jpg) — z něj pochází tvar fairwaye, poloha bunkrů, potok křižující hru před greenem, rybníček vpravo od greenu i rozměry greenu 23 × 30 metrů. Souřadnice jsou v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry) a jsou odečtené z plánku, ne zaměřené. Green je hlubší než širší (30 m po ose hry, 23 m napříč) a plánek ho dělí na šest pin pozic; na plátu se to kvůli podélnému zkrácení nedá věrně ukázat, měřítko po straně zkrácení přiznává. Plánek nese i výškový profil s poklesem 27 metrů od odpaliště ke greenu, který kresba půdorysu zobrazit neumí — je popsaný v textu karty. NEINTERPRETOVÁNO: plánek obsahuje dvě různé řady čísel (barevné bloky se vzdálenostmi z pěti odpališť a bílé kolonky s čísly 18, 96, 108, 135, 146 a 225). Bloky jednoznačně udávají vzdálenost od každého odpaliště k dané příčné linii; význam bílých kolonek se z plánku spolehlivě přečíst nedá, a proto z nich karta nic netvrdí.",
+    "green": {
+      "x": 2,
+      "y": 500,
+      "rx": 11.5,
+      "ry": 15,
+      "rot": 0.08,
+      "seed": 3301,
+      "amp": 0.07
+    },
+    "bunkry": [
+      {
+        "x": -15,
+        "y": 493,
+        "rx": 5,
+        "ry": 4,
+        "rot": 0.3,
+        "seed": 3302,
+        "amp": 0.17,
+        "label": {
+          "cs": "bunkr vpředu vlevo od greenu",
+          "en": "bunker front-left of the green"
+        },
+        "zkratka": {
+          "cs": "BUNKR VLEVO",
+          "en": "LEFT OF GREEN"
+        }
+      },
+      {
+        "x": 14,
+        "y": 516,
+        "rx": 4,
+        "ry": 3,
+        "rot": -0.2,
+        "seed": 3303,
+        "amp": 0.17,
+        "label": {
+          "cs": "bunkr vzadu vpravo za greenem",
+          "en": "bunker back-right behind the green"
+        },
+        "zkratka": {
+          "cs": "BUNKR VZADU",
+          "en": "BACK RIGHT"
+        }
+      },
+      {
+        "x": 15,
+        "y": 365,
+        "rx": 5.5,
+        "ry": 11,
+        "rot": 0.05,
+        "seed": 3304,
+        "amp": 0.22,
+        "label": {
+          "cs": "velký členitý fairwayový bunkr vpravo v zóně druhé rány",
+          "en": "large ragged fairway bunker on the right in the second-shot zone"
+        },
+        "zkratka": {
+          "cs": "FAIRWAY BUNKR",
+          "en": "FAIRWAY BUNKER"
+        }
+      },
+      {
+        "x": -13,
+        "y": 258,
+        "rx": 3.5,
+        "ry": 2.8,
+        "rot": 0.2,
+        "seed": 3305,
+        "amp": 0.16,
+        "label": {
+          "cs": "malé bunkry vlevo v dopadové zóně odpalu",
+          "en": "small bunkers left in the driving zone"
+        },
+        "zkratka": {
+          "cs": "BUNKRY VLEVO",
+          "en": "LEFT BUNKERS"
+        }
+      },
+      {
+        "x": -8,
+        "y": 247,
+        "rx": 3,
+        "ry": 2.4,
+        "rot": -0.3,
+        "seed": 3306,
+        "amp": 0.16,
+        "label": {
+          "cs": "druhý z malých bunkrů v dopadové zóně",
+          "en": "second of the small bunkers in the driving zone"
+        },
+        "zkratka": null
+      }
+    ],
+    "hazardy": [
+      {
+        "typ": "voda",
+        "x": -3,
+        "y": 481,
+        "rx": 29,
+        "ry": 3.5,
+        "rot": 0.11,
+        "seed": 3307,
+        "amp": 0.08,
+        "label": {
+          "cs": "potok křižující hru těsně před greenem",
+          "en": "brook crossing the line of play just short of the green"
+        },
+        "zkratka": {
+          "cs": "POTOK",
+          "en": "BROOK"
+        }
+      },
+      {
+        "typ": "voda",
+        "x": 23,
+        "y": 502,
+        "rx": 8,
+        "ry": 8,
+        "rot": 0,
+        "seed": 3308,
+        "amp": 0.1,
+        "label": {
+          "cs": "rybníček po pravé straně greenu",
+          "en": "small pond to the right of the green"
+        },
+        "zkratka": {
+          "cs": "RYBNÍČEK",
+          "en": "POND"
+        }
+      }
+    ],
+    "fairway": {
+      "ohyb": 12,
+      "sirkaTee": 32,
+      "sirkaGreen": 30,
+      "zacatek": 20,
+      "seed": 4111
+    },
+    "dopadovaZona": {
+      "od": 215,
+      "do": 258
+    }
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Dva hazardy, jedna rána",
+        "en": "Two hazards, one shot"
+      },
+      "popis": {
+        "cs": "Druhou ránu na green ohrožuje potok napříč předpolím a rybníček hned vpravo vedle greenu. Kdo přeletí potok, ale trochu zatáhne doprava, skončí ve vodě stejně.",
+        "en": "The second shot to the green is threatened by the brook across the approach and by the pond immediately right of the green. Carry the brook but drift right and you are wet anyway."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Bunkr, který trestá layup",
+        "en": "A bunker that punishes the lay-up"
+      },
+      "popis": {
+        "cs": "Velký členitý bunkr vpravo neleží v dopadové zóně odpalu, ale v místě, kde končí bezpečná přihrávka. I opatrná varianta tak má svou cenu — není to volný průchod.",
+        "en": "The big ragged bunker on the right does not sit in the driving zone but where the safe lay-up finishes. The cautious option has its own price — it is not a free pass."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Klesání o 27 metrů",
+        "en": "A 27-metre drop"
+      },
+      "popis": {
+        "cs": "Výškový profil na plánku klubu ukazuje pokles 27 metrů od odpaliště ke greenu. Míč letí dál, než hráč čeká, a jamka se tím zdá kratší, než je — pokušení jít na green je tedy silnější, než napovídá číslo 522 metrů.",
+        "en": "The elevation profile on the club's own plan shows a 27-metre drop from tee to green. The ball flies further than expected and the hole looks shorter than it is — so the temptation to go for it is stronger than the figure of 522 metres suggests."
+      }
+    }
+  ],
+  "prameny": [
+    {
+      "titul": "Golf & Ski Resort Ostravice — hřiště a scorecard",
+      "url": "https://www.ostravice-golf.cz/golf",
+      "poznamka": "zdroj paru, HCP indexu 14 a délek z pěti odpališť"
+    },
+    {
+      "titul": "Golf & Ski Resort Ostravice — oficiální plánek jamky 16",
+      "url": "https://www.ostravice-golf.cz/images/hriste/mapy/jamka-16.jpg",
+      "poznamka": "primární pramen pro schéma: tvar fairwaye, bunkry, potok, rybníček, rozměry greenu 23 × 30 m a výškový profil −27 m"
+    },
+    {
+      "titul": "Premium Sports — Ostravice, klenot Beskyd (rozbor jamek)",
+      "url": "https://www.premiumsports.cz/ostravice-golf-klenot-beskydy/",
+      "poznamka": "zdroj popisu volby na jamce 16: útok na green druhou ranou přes potůček a kolem rybníčku, nebo přihrávka před potok"
+    },
+    {
+      "titul": "Golfero — Golf & Ski Resort Ostravice",
+      "url": "https://www.golfero.cz/golfova-hriste/ostravice/golf-ski-resort-ostravice/",
+      "poznamka": "autorství Chrise Johnsona"
+    }
+  ],
+  "naCoSeDivat": {
+    "cs": "Nejdřív si všimni fairwayového bunkru vpravo — leží v místě, kde končí bezpečná přihrávka, ne tam, kam dopadá odpal. A pak úzkého pásu vody přes celé předpolí: mezi ním a greenem není skoro nic, kam by šlo minout nakrátko.",
+    "en": "First notice the fairway bunker on the right — it sits where the safe lay-up finishes, not where the drive lands. Then the narrow band of water across the whole approach: between it and the green there is almost nowhere to miss short."
+  },
+  "lekce": {
+    "cs": "Aby byla volba poctivá, musí mít cenu i ta opatrná varianta. Ostravice 16 to řeší bunkrem v layup zóně: bezpečná cesta není zadarmo, jen je levnější. To je rozdíl mezi rozhodnutím a formalitou.",
+    "en": "For the choice to be honest, the cautious option must cost something too. Ostravice's 16th does it with a bunker in the lay-up zone: the safe route is not free, only cheaper. That is the difference between a decision and a formality."
+  }
+}

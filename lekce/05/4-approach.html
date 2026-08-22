@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ROUTING — Lekce 5: Approach</title>
+<meta name="description" content="Lekce 5, sekce 4 z 7: patnáct set simulovaných kol ze sedmi různě odvážných linií, pro čtyři různé hráče.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F1E0'/%3E%3Ccircle cx='16' cy='14' r='9' fill='%23A9B983' stroke='%231E1B15' stroke-width='1.4'/%3E%3Ccircle cx='16' cy='14' r='1.6' fill='%231E1B15'/%3E%3Cpath d='M16 14 L16 5' stroke='%231E1B15' stroke-width='1.3'/%3E%3Cpath d='M16 5 L23 7.5 L16 10 Z' fill='%23B0452C' stroke='%231E1B15' stroke-width='.8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/styl.css">
+<style>
+  .l5Tabulka{width:100%;border-collapse:collapse;margin-top:14px;font-size:14.5px}
+  .l5Tabulka th,.l5Tabulka td{padding:7px 10px;text-align:left;border-bottom:1px solid rgba(74,68,58,.25)}
+  .l5Tabulka th{font-family:'Literata',serif;font-weight:500;letter-spacing:.05em;text-transform:uppercase;font-size:12px;color:var(--ink2)}
+  .l5Tabulka td{font-variant-numeric:tabular-nums}
+  .l5Tabulka tr.aktivni td{font-weight:600;color:var(--olive)}
+  .l5Ovladace{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-end;margin-top:16px}
+  .l5Pole{flex:1 1 220px;min-width:200px}
+  .l5Pole > label{display:block;font-family:'Literata',serif;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink2);margin-bottom:6px}
+  .l5Pole input[type=range]{width:100%}
+  .l5Hodnota{font-variant-numeric:tabular-nums;font-weight:600;color:var(--olive)}
+  .l5Zbyva{margin-top:10px;font-size:14.5px}
+  .l5Optimum{margin-top:10px;padding-left:13px;border-left:2px solid var(--good);font-size:15px;line-height:1.55}
+  .l5Zaver{margin-top:16px;font-size:15px;line-height:1.6}
+  .l5Poznamka{font-size:12.5px;color:var(--ink2);opacity:.85;margin-top:12px;line-height:1.5}
+</style>
+</head>
+<body>
+
+<a class="preskocit" href="#obsah" data-t="nav.preskocit">Přeskočit na obsah</a>
+
+<header class="hlavicka">
+<div class="topbar">
+  <div class="hr"><span data-t="meta.kicker"></span></div>
+  <div class="lang" role="group" aria-label="Language" data-t="nav.jazykLabel" data-t-attr="aria-label">
+    <button data-l="cs" aria-current="true">ČES</button><i>/</i><button data-l="en">ENG</button>
+  </div>
+</div>
+<nav class="drobky" id="drobky"></nav>
+<p class="krokLabel" id="krokLabel"></p>
+<nav class="kroky" id="kroky"></nav>
+</header>
+
+<main id="obsah">
+
+<section class="plat" id="secApproachIntro">
+  <p class="eyebrow" data-t="approachNadpis.eyebrow"></p>
+  <h1 class="platNadpis"><em data-t="approachNadpis.over"></em><span data-t="approachNadpis.title"></span></h1>
+  <p class="lede" data-t="approachNadpis.lede"></p>
+  <div class="cileBox" id="cileBox" hidden></div>
+</section>
+
+<section class="plat" id="secApproach1">
+  <p class="eyebrow" data-t="approach1.eyebrow"></p>
+  <h2 class="platNadpis"><em data-t="approach1.over"></em><span data-t="approach1.title"></span></h2>
+  <p class="lede" data-t="approach1.lede"></p>
+
+  <svg id="p2" viewBox="0 0 400 560" data-t="approach1.planLabel" data-t-attr="aria-label"></svg>
+
+  <div class="l5Ovladace">
+    <div class="l5Pole">
+      <label for="odvaha"><span data-t="approach1.odvahaLabel"></span>: <span class="l5Hodnota" id="odvahaVal"></span></label>
+      <input type="range" id="odvaha" min="0" max="6" step="1" value="0">
+    </div>
+    <div class="l5Pole">
+      <label id="hracLabel" data-t="approach1.hracLabel"></label>
+      <div class="toggle" id="hracToggle" role="group" aria-labelledby="hracLabel"></div>
+    </div>
+  </div>
+
+  <p class="l5Zbyva"><b data-t="approach1.zbyvaLabel"></b>: <span class="l5Hodnota" id="zbyvaVal"></span></p>
+
+  <div style="overflow-x:auto">
+    <table class="l5Tabulka" id="l5tab">
+      <thead><tr><th data-t="approach1.tabulka.hrac"></th><th data-t="approach1.tabulka.prumer"></th><th data-t="approach1.tabulka.voda"></th><th data-t="approach1.tabulka.fairway"></th></tr></thead>
+      <tbody id="l5tabBody"></tbody>
+    </table>
+  </div>
+
+  <div class="hr" style="margin-top:24px"><span data-t="approach1.grafHead"></span></div>
+  <p class="lede" style="margin-top:8px" data-t="approach1.grafPopis"></p>
+  <svg id="graf" viewBox="0 0 400 250" role="img"></svg>
+
+  <div class="hr" style="margin-top:22px"><span data-t="approach1.optimumHead"></span></div>
+  <div id="l5optima"></div>
+  <p class="l5Zaver" data-t="approach1.zaver"></p>
+  <p class="l5Poznamka" data-t="approach1.poznamka"></p>
+
+  <p class="listMark" data-t="approach1.foot"></p>
+</section>
+
+<div class="zapamatujBox" id="zapamatujBox" hidden></div>
+
+<nav class="sekceNav" id="sekceNav" data-t="nav.sekceNavLabel" data-t-attr="aria-label"></nav>
+</main>
+
+<footer class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="index.html" data-t="nav.prehled"></a></footer>
+
+<script type="module">
+import { vytvorJazyk, nactiSlovnik } from '../../js/jazyk.js';
+import { E, V, clear, hatch, clipPath, blob, vlnky, rng } from '../../js/platy.js';
+import { HRACI, odehrajKolo } from '../../js/simulace.js';
+import { vykresliNavSekci } from '../../js/sekce-nav.js';
+import { nactiUI, vykresliRamec } from '../../js/ucebnice.js';
+
+const $ = (id) => document.getElementById(id);
+
+const slovnik = await nactiSlovnik('../../data/preklady/lekce-05.json');
+await nactiUI('../../');
+const slovnikPojmu = await nactiSlovnik('../../data/preklady/slovnik-pojmu.json');
+const jazyk = vytvorJazyk(slovnik, {
+  titul: (lang) => lang === 'cs' ? 'ROUTING — Lekce 5: Approach' : 'ROUTING — Lesson 5: Approach',
+});
+
+/* ============================================================================
+ * JAMKA TYPU CAPE — geometrie i fyzika
+ *
+ * Jamka je vymyšlená pro účel cvičení (jako plát v sekci 1), ale je postavená
+ * podle principu, který lekce vykládá na Mid Ocean 5: jezero neleží NAPŘÍČ
+ * jamkou, nýbrž ŠIKMO podél ní. Díky tomu není sázka typu ano/ne — každá
+ * linie odpalu má jinou délku přeletu i jinou odměnu.
+ *
+ * Jezero je natočená elipsa. Popisuje ji střed, směr dlouhé osy (`dir`,
+ * jednotkový vektor), poloosa `ry` podél toho směru a poloosa `rx` napříč.
+ * Táž definice slouží dvakrát: pro test ležení (`voda()`, a tedy pro
+ * simulaci) i pro kresbu. Kdyby se lišily, student by viděl míč ve vodě
+ * mimo nakreslenou vodu — proto se kreslí z týchž čísel.
+ *
+ * MĚŘÍTKO JE ZÁMĚRNĚ STEJNÉ pro obě osy (`S`). Kdyby se x a y škálovalo
+ * různě (jako na plátu v sekci 1), natočená elipsa by se zkosila a přestala
+ * by odpovídat testu ležení.
+ *
+ * Souřadnice v metrech, y roste od odpaliště ke greenu, x kladně vpravo.
+ * ==========================================================================*/
+const JEZERO = { x: -57.5, y: 147.5, rx: 30, ry: 113, dir: { x: -0.4204, y: 0.9073 } };
+const GREEN = { x: -70, y: 300, rx: 11, ry: 9 };
+const PIN = { x: GREEN.x, y: GREEN.y };
+const BUNKRY = [{ x: -84, y: 296, r: 6 }, { x: -56, y: 291, r: 5 }];
+
+/* Obrys hratelné plochy (fairway) v metrech. Táž čísla slouží ke KRESBĚ
+   i k testu ležení — kdyby se lišily, student by viděl míč v roughu
+   uprostřed nakresleného fairwaye. Levý okraj kopíruje pravý břeh jezera
+   s několikametrovou rezervou: hratelný koridor vede zprava kolem vody
+   a nad jejím cípem se otáčí doleva ke greenu, jak to na jamkách typu
+   Cape bývá. Za jezerem (vlevo) se nehraje, a proto tam fairway není. */
+const FW = [
+  [28, 10], [44, 88], [46, 168], [34, 228], [4, 276], [-38, 308], [-88, 318],
+  [-108, 302], [-94, 264], [-76, 240], [-54, 210], [-34, 178], [-24, 150],
+  [-8, 110], [10, 66], [6, 34], [-8, 12],
+];
+
+/** Leží bod uvnitř mnohoúhelníku? (paprskový test) */
+function vPolygonu(x, y, poly) {
+  let uvnitr = false;
+  for (let i = 0, j = poly.length - 1; i < poly.length; j = i++) {
+    const [xi, yi] = poly[i], [xj, yj] = poly[j];
+    if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) uvnitr = !uvnitr;
+  }
+  return uvnitr;
+}
+
+/** Nejbezpečnější a nejodvážnější cíl odpalu; mezi nimi se lineárně interpoluje. */
+const AIM0 = { x: 30, y: 175 };
+const AIM1 = { x: -45, y: 235 };
+const KROKU = 6;                       // 7 poloh posuvníku: 0 … 6
+const HENDIKEPY = [0, 9, 18, 24];
+const KOL = 1500;                      // kol na jednu kombinaci (linie × hráč)
+
+const S = 1.25;
+const toX = (x) => 275 + x * S;
+const toY = (y) => 530 - y * S;
+
+function voda(x, y) {
+  const dx = x - JEZERO.x, dy = y - JEZERO.y, d = JEZERO.dir;
+  const v = dx * d.x + dy * d.y;         // podél dlouhé osy
+  const u = dx * -d.y + dy * d.x;        // napříč
+  return (u / JEZERO.rx) ** 2 + (v / JEZERO.ry) ** 2 <= 1;
+}
+
+/**
+ * Klasifikace ležení pro `odehrajJamku` — viz `js/simulace.js`.
+ * Míč ve vodě se vrací na místo, kde linie letu vodu naposledy protínala,
+ * tedy „kde míč do překážky vstoupil“ (zjednodušení pravidla 17.1d).
+ */
+function resolveLie(x, y) {
+  const gx = (x - GREEN.x) / GREEN.rx, gy = (y - GREEN.y) / GREEN.ry;
+  if (gx * gx + gy * gy <= 1) return { typ: 'green' };
+  for (const b of BUNKRY) if (Math.hypot(x - b.x, y - b.y) <= b.r) return { typ: 'bunkr' };
+  if (voda(x, y)) {
+    const L = Math.hypot(x, y) || 1;
+    let t = 1;
+    while (t > 0) {
+      t -= 2 / L;
+      const px = x * t, py = y * t;
+      if (!voda(px, py)) return { trest: true, x: px, y: py };
+    }
+    return { trest: true, x: 0, y: 0 };
+  }
+  if (vPolygonu(x, y, FW)) return { typ: 'fairway' };
+  return { typ: 'rough' };
+}
+
+function cil(i) {
+  const a = i / KROKU;
+  return { x: AIM0.x + (AIM1.x - AIM0.x) * a, y: AIM0.y + (AIM1.y - AIM0.y) * a };
+}
+
+/* ============================================================================
+ * SIMULACE — spočítá se JEDNOU při načtení stránky, pro všech 7 linií a
+ * všechny 4 hráče. Náhoda je nasazená semínkem (`rng`), takže výsledky jsou
+ * při každé návštěvě stejné — jamka se kalibruje na průměru, ne na náladě
+ * generátoru, a student si čísla může s někým porovnat.
+ * ==========================================================================*/
+const VYSLEDKY = [];
+for (let i = 0; i <= KROKU; i++) {
+  const aim = cil(i);
+  const radek = { aim, zbyva: Math.hypot(PIN.x - aim.x, PIN.y - aim.y), hraci: {} };
+  HENDIKEPY.forEach((h) => {
+    radek.hraci[h] = odehrajKolo(HRACI[h], { pin: PIN, aim, resolveLie, rnd: rng(9000 + i * 10 + h) }, KOL);
+  });
+  VYSLEDKY.push(radek);
+}
+
+/** Index linie, která danému hráči vychází nejlépe. */
+const OPTIMUM = {};
+HENDIKEPY.forEach((h) => {
+  let nej = 0;
+  VYSLEDKY.forEach((r, i) => { if (r.hraci[h].prumer < VYSLEDKY[nej].hraci[h].prumer) nej = i; });
+  OPTIMUM[h] = nej;
+});
+
+let indexLinie = 0;
+let hracAktivni = 0;
+
+function cislo(n, des = 2) {
+  const t = n.toFixed(des);
+  return jazyk.lang === 'cs' ? t.replace('.', ',') : t;
+}
+
+/* --- kresba plánu -------------------------------------------------------- */
+function jezeroPath() {
+  const rot = Math.atan2(-JEZERO.dir.y, JEZERO.dir.x);   // směr dlouhé osy v souřadnicích SVG
+  return blob(toX(JEZERO.x), toY(JEZERO.y), JEZERO.ry * S, JEZERO.rx * S, rot, 5201, 0.05, 64);
+}
+
+/* Obrys fairwaye do SVG. Vrcholy se prokládají kvadratickými křivkami
+   přes středy stran — z lomené čáry tím vznikne plynulý okraj, aniž by se
+   tvar odchýlil od dat, podle kterých se testuje ležení. */
+function fairwayPath() {
+  const b = FW.map(([x, y]) => ({ x: toX(x), y: toY(y) }));
+  const stred = (a, c) => ({ x: (a.x + c.x) / 2, y: (a.y + c.y) / 2 });
+  let d = '';
+  for (let i = 0; i < b.length; i++) {
+    const pred = b[(i - 1 + b.length) % b.length], ted = b[i], dalsi = b[(i + 1) % b.length];
+    const s1 = stred(pred, ted), s2 = stred(ted, dalsi);
+    d += (i ? '' : `M${s1.x.toFixed(1)} ${s1.y.toFixed(1)} `)
+      + `Q${ted.x.toFixed(1)} ${ted.y.toFixed(1)} ${s2.x.toFixed(1)} ${s2.y.toFixed(1)} `;
+  }
+  return d + 'Z';
+}
+
+function kresliPlan(svg) {
+  clear(svg);
+  const defs = E(svg, 'defs', {});
+  const ink = V('--ink', svg), ink2 = V('--ink2', svg), turf = V('--turf', svg),
+    turfD = V('--turf-d', svg), water = V('--water', svg), sand = V('--sand', svg), flag = V('--flag', svg);
+
+  E(svg, 'rect', { x: 0, y: 0, width: 400, height: 560, fill: turfD, opacity: 0.35 });
+
+  // fairway
+  const fd = fairwayPath();
+  clipPath(defs, 'l5a-fw', fd);
+  E(svg, 'path', { d: fd, fill: turf, opacity: 0.9 });
+  hatch(svg, 'l5a-fw', { x: 0, y: 0, w: 400, h: 560 }, 1.05, 5, { op: 0.12, seed: 21 });
+  E(svg, 'path', { d: fd, fill: 'none', stroke: ink, 'stroke-width': 1, opacity: 0.6 });
+
+  // jezero
+  const jd = jezeroPath();
+  clipPath(defs, 'l5a-vd', jd);
+  E(svg, 'path', { d: jd, fill: water, opacity: 0.82 });
+  vlnky(svg, 'l5a-vd', { x: toX(JEZERO.x) - 150, y: toY(JEZERO.y) - 150, w: 300, h: 300 }, 5206);
+  E(svg, 'path', { d: jd, fill: 'none', stroke: ink, 'stroke-width': 1 });
+
+  // bunkry a green
+  BUNKRY.forEach((b, i) => {
+    E(svg, 'path', { d: blob(toX(b.x), toY(b.y), b.r * S, b.r * S * 0.8, 0.2, 5210 + i, 0.16, 40), fill: sand, stroke: ink, 'stroke-width': 0.9 });
+  });
+  E(svg, 'ellipse', { cx: toX(GREEN.x), cy: toY(GREEN.y), rx: GREEN.rx * S, ry: GREEN.ry * S, fill: turf, stroke: ink, 'stroke-width': 1.3 });
+  E(svg, 'circle', { cx: toX(GREEN.x), cy: toY(GREEN.y) - 3, r: 1.8, fill: ink });
+  E(svg, 'rect', { x: toX(0) - 8, y: toY(0) - 3, width: 16, height: 6, fill: ink2, opacity: 0.6 });
+
+  // dopady odpalu vybraného hráče — prvních 120 z patnácti set
+  const r = VYSLEDKY[indexLinie].hraci[hracAktivni];
+  const g = E(svg, 'g', {});
+  r.dopady.slice(0, 120).forEach((p) => {
+    const mokro = voda(p.x, p.y);
+    E(g, 'circle', {
+      cx: toX(p.x).toFixed(1), cy: toY(p.y).toFixed(1), r: mokro ? 2.2 : 1.9,
+      fill: mokro ? flag : ink, opacity: mokro ? 0.85 : 0.45,
+    });
+  });
+
+  // zvolená linie odpalu
+  const aim = VYSLEDKY[indexLinie].aim;
+  E(svg, 'path', {
+    d: `M${toX(0)} ${toY(0)} L${toX(aim.x).toFixed(1)} ${toY(aim.y).toFixed(1)}`,
+    fill: 'none', stroke: flag, 'stroke-width': 2, opacity: 0.9,
+  });
+  E(svg, 'path', {
+    d: `M${toX(aim.x).toFixed(1)} ${toY(aim.y).toFixed(1)} L${toX(PIN.x)} ${toY(PIN.y) + 6}`,
+    fill: 'none', stroke: flag, 'stroke-width': 1.6, opacity: 0.55, 'stroke-dasharray': '4 5',
+  });
+
+  const cs = jazyk.lang === 'cs';
+  E(svg, 'text', { x: toX(JEZERO.x), y: toY(JEZERO.y), class: 'lab sm', 'text-anchor': 'middle', fill: ink }, cs ? 'JEZERO' : 'LAKE');
+  E(svg, 'text', { x: toX(GREEN.x), y: toY(GREEN.y) - 20, class: 'lab sm', 'text-anchor': 'middle', fill: ink }, 'GREEN');
+  E(svg, 'text', { x: toX(0), y: toY(0) + 18, class: 'lab sm', 'text-anchor': 'middle', fill: ink }, cs ? 'ODPALIŠTĚ' : 'TEE');
+}
+
+/* --- kalibrační křivka --------------------------------------------------- */
+const CARY = ['', '5 4', '2 3', '8 3 2 3'];
+
+function kresliGraf(svg) {
+  clear(svg);
+  const ink = V('--ink', svg), ink2 = V('--ink2', svg), flag = V('--flag', svg);
+  const L = 44, R = 344, T = 18, B = 208;
+
+  let min = Infinity, max = -Infinity;
+  VYSLEDKY.forEach((r) => HENDIKEPY.forEach((h) => {
+    min = Math.min(min, r.hraci[h].prumer); max = Math.max(max, r.hraci[h].prumer);
+  }));
+  min = Math.floor(min * 2) / 2; max = Math.ceil(max * 2) / 2;
+
+  const gx = (i) => L + (R - L) * (i / KROKU);
+  const gy = (v) => B - (B - T) * ((v - min) / (max - min));
+
+  // osy a vodorovné rysky po půl ráně
+  const os = E(svg, 'g', { stroke: ink2, 'stroke-width': 0.8, opacity: 0.55, fill: 'none' });
+  E(os, 'path', { d: `M${L} ${T} L${L} ${B} L${R} ${B}` });
+  for (let v = min; v <= max + 0.001; v += 0.5) {
+    E(os, 'path', { d: `M${L - 4} ${gy(v).toFixed(1)} L${R} ${gy(v).toFixed(1)}`, 'stroke-dasharray': '1 5' });
+    E(svg, 'text', { x: L - 7, y: (gy(v) + 3.5).toFixed(1), class: 'lab sm meritko', 'text-anchor': 'end', opacity: 0.8 }, cisloOsy(v));
+  }
+  for (let i = 0; i <= KROKU; i++) {
+    E(svg, 'text', { x: gx(i).toFixed(1), y: B + 15, class: 'lab sm meritko', 'text-anchor': 'middle', opacity: 0.8 },
+      Math.round((i / KROKU) * 100) + ' %');
+  }
+  E(svg, 'text', { x: (L + R) / 2, y: B + 32, class: 'lab sm', 'text-anchor': 'middle' }, jazyk.t('approach1.grafOsaX'));
+
+  HENDIKEPY.forEach((h, k) => {
+    const body = VYSLEDKY.map((r, i) => `${gx(i).toFixed(1)} ${gy(r.hraci[h].prumer).toFixed(1)}`);
+    E(svg, 'path', {
+      d: 'M' + body.join(' L'), fill: 'none', stroke: ink, 'stroke-width': 1.6,
+      opacity: 0.8, 'stroke-dasharray': CARY[k], 'stroke-linecap': 'round',
+    });
+    const oi = OPTIMUM[h];
+    E(svg, 'circle', { cx: gx(oi).toFixed(1), cy: gy(VYSLEDKY[oi].hraci[h].prumer).toFixed(1), r: 4.2, fill: 'none', stroke: flag, 'stroke-width': 1.8 });
+    E(svg, 'text', {
+      x: R + 5, y: (gy(VYSLEDKY[KROKU].hraci[h].prumer) + 3.5).toFixed(1),
+      class: 'lab sm', 'text-anchor': 'start',
+    }, HRACI[h].jmeno);
+  });
+
+  svg.setAttribute('aria-label', jazyk.t('approach1.grafPopis'));
+}
+
+function cisloOsy(v) {
+  const t = v.toFixed(1);
+  return jazyk.lang === 'cs' ? t.replace('.', ',') : t;
+}
+
+/* --- tabulka, optimum, ovládání ------------------------------------------ */
+function renderHracToggle() {
+  const wrap = $('hracToggle');
+  wrap.innerHTML = '';
+  HENDIKEPY.forEach((h) => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.textContent = HRACI[h].jmeno;
+    b.setAttribute('aria-pressed', String(h === hracAktivni));
+    b.addEventListener('click', () => { hracAktivni = h; render(); });
+    wrap.appendChild(b);
+  });
+}
+
+function renderTabulka() {
+  const tbody = $('l5tabBody');
+  tbody.innerHTML = '';
+  const r = VYSLEDKY[indexLinie];
+  HENDIKEPY.forEach((h) => {
+    const v = r.hraci[h];
+    const tr = document.createElement('tr');
+    if (h === hracAktivni) tr.className = 'aktivni';
+    tr.innerHTML = `<td>${HRACI[h].jmeno}</td><td>${cislo(v.prumer)}</td>`
+      + `<td>${Math.round(v.trestPct)} %</td><td>${Math.round(v.fairwayPct)} %</td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+function renderOptima() {
+  const wrap = $('l5optima');
+  wrap.innerHTML = '';
+  HENDIKEPY.forEach((h) => {
+    const oi = OPTIMUM[h];
+    const nejlepsi = VYSLEDKY[oi].hraci[h].prumer;
+    const naMax = VYSLEDKY[KROKU].hraci[h].prumer;
+    const klic = oi === KROKU ? 'approach1.optimumRadekMax' : 'approach1.optimumRadek';
+    const text = jazyk.t(klic)
+      .replace('{hrac}', HRACI[h].jmeno)
+      .replace('{proc}', String(Math.round((oi / KROKU) * 100)))
+      .replace('{prumer}', cislo(nejlepsi))
+      .replace('{rozdil}', cislo(naMax - nejlepsi));
+    const p = document.createElement('p');
+    p.className = 'l5Optimum';
+    p.textContent = text;
+    wrap.appendChild(p);
+  });
+}
+
+function render() {
+  document.querySelectorAll('#hracToggle button').forEach((b, i) => {
+    b.setAttribute('aria-pressed', String(HENDIKEPY[i] === hracAktivni));
+  });
+  $('odvahaVal').textContent = Math.round((indexLinie / KROKU) * 100) + ' %';
+  $('zbyvaVal').textContent = Math.round(VYSLEDKY[indexLinie].zbyva) + ' m';
+  kresliPlan($('p2'));
+  kresliGraf($('graf'));
+  renderTabulka();
+  renderOptima();
+}
+
+$('odvaha').addEventListener('input', (e) => { indexLinie = Number(e.target.value); render(); });
+
+jazyk.on(() => {
+  renderHracToggle();
+  render();
+  vykresliNavSekci({ lekce: 5, index: 3, jazyk, krokEl: $('krokLabel'), navEl: $('sekceNav') });
+  vykresliRamec({ lekce: 5, index: 3, jazyk, slovnikPojmu });
+});
+</script>
+</body>
+</html>

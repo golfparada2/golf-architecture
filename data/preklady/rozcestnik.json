@@ -20,8 +20,8 @@
     "importOk": "Výsledky načteny.",
     "importErr": "Soubor se nepodařilo přečíst — zkontroluj, že je to JSON stažený z tohoto kurzu.",
     "souhrnZadne": "Zatím žádný zaznamenaný pokus. Projdi si zkoušku v některé lekci a vrať se sem.",
-    "souhrnText": "První pokus zaznamenán u {n} ze 3 lekcí · průměr {prumer} %",
-    "souhrnPoznamka": "Celkový rozbor podle témat (silné a slabé okruhy) se odemkne až po deváté lekci, jak popisuje zadání — tady je to jen průběžný přehled prvních tří.",
+    "souhrnText": "První pokus zaznamenán u {n} z {celkem} lekcí · průměr {prumer} %",
+    "souhrnPoznamka": "Celkový rozbor podle témat (silné a slabé okruhy) se odemkne až po deváté lekci, jak popisuje zadání — tady je to jen průběžný přehled hotových lekcí.",
     "pasmo": {
       "vyborne": "Výborně",
       "dobre": "Dobré",
@@ -48,14 +48,19 @@
         "num": 4,
         "title": "Jak šířka vytváří úhel",
         "popis": "Diagonální hazardy, bezpečná a odvážná strana fairwaye — a proč riziko musí být odměněné lepším úhlem na green."
+      },
+      {
+        "num": 5,
+        "title": "Riziko a odměna",
+        "popis": "Cena prohry, velikost odměny a šance na úspěch — tři čísla, kterými architekt kalibruje pokušení."
       }
     ],
     "foot1": "ROUTING · rozcestník",
-    "foot2": "Lekce 1–4 z 18",
-    "pripravujeme": "Lekce 5 až 18 se připravují. Přibývají postupně — každá projde stejnou kontrolou jako první čtyři, než se sem dostane.",
+    "foot2": "Lekce 1–5 z 18",
+    "pripravujeme": "Lekce 6 až 18 se připravují. Přibývají postupně — každá projde stejnou kontrolou jako prvních pět, než se sem dostane.",
     "daleHead": "Kdykoli po ruce",
-    "slovnicekPopis": "Všech 43 pojmů kurzu na jednom místě, abecedně a dvojjazyčně.",
-    "sbirkaPopis": "Deset rozebraných jamek v jednotném formátu — otázka, plán, tři prvky, lekce.",
+    "slovnicekPopis": "Všech 50 pojmů kurzu na jednom místě, abecedně a dvojjazyčně.",
+    "sbirkaPopis": "Čtrnáct rozebraných jamek z celého světa i z Česka, v jednotném formátu — otázka, plán, tři prvky, lekce.",
     "importHotovo": "Výsledky načteny.",
     "importChyba": "Soubor se nepodařilo přečíst. Zkontroluj, že je to JSON stažený z tohoto kurzu."
   },
@@ -80,8 +85,8 @@
     "importOk": "Results loaded.",
     "importErr": "Could not read the file — check that it's a JSON export from this course.",
     "souhrnZadne": "No attempts recorded yet. Take a quiz in one of the lessons and come back here.",
-    "souhrnText": "{n} lessons with a first attempt · average {prumer}%",
-    "souhrnPoznamka": "The full topic-based breakdown (strong vs. weak areas) unlocks after lesson nine, as the brief describes — this is just a running overview of the first three.",
+    "souhrnText": "First attempt recorded in {n} of {celkem} lessons · average {prumer} %",
+    "souhrnPoznamka": "The full breakdown by topic (strong and weak areas) unlocks after lesson nine, as the brief describes — this is only a running overview of the finished lessons.",
     "pasmo": {
       "vyborne": "Excellent",
       "dobre": "Good",
@@ -108,14 +113,19 @@
         "num": 4,
         "title": "How Width Creates Angle",
         "popis": "Diagonal hazards, the safe and bold side of a fairway — and why risk has to be repaid with a better angle into the green."
+      },
+      {
+        "num": 5,
+        "title": "Risk and reward",
+        "popis": "Cost of failure, size of reward and chance of success — the three numbers with which an architect calibrates temptation."
       }
     ],
     "foot1": "ROUTING · hub",
-    "foot2": "Lessons 1–4 of 18",
-    "pripravujeme": "Lessons 5 to 18 are in preparation. They arrive one at a time — each goes through the same checks as the first four before it lands here.",
+    "foot2": "Lessons 1–5 of 18",
+    "pripravujeme": "Lessons 6 to 18 are in preparation. They arrive one at a time — each goes through the same checks as the first five before it appears here.",
     "daleHead": "Always at hand",
-    "slovnicekPopis": "All 43 course terms in one place, alphabetical and bilingual.",
-    "sbirkaPopis": "Ten holes analysed in one format — question, plan, three elements, lesson.",
+    "slovnicekPopis": "All 50 terms of the course in one place, alphabetical and bilingual.",
+    "sbirkaPopis": "Fourteen holes from around the world and from Czechia, analysed in one format — question, plan, three elements, lesson.",
     "importHotovo": "Results loaded.",
     "importChyba": "The file could not be read. Check that it is JSON downloaded from this course."
   }

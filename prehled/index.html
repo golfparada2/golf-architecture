@@ -86,7 +86,7 @@
 import { vytvorJazyk, nactiSlovnik } from '../js/jazyk.js';
 import { prvniPokusy, pokusyLekce, pasmo, importJSON, stahniSoubor } from '../js/vysledky.js';
 import { nactiUI, u, vykresliPokracovat, nactiPostup } from '../js/ucebnice.js';
-import { CELKEM_LEKCI } from '../js/sekce-nav.js';
+import { CELKEM_LEKCI, CELKEM_LEKCI_HOTOVO } from '../js/sekce-nav.js';
 
 const $ = (id) => document.getElementById(id);
 
@@ -179,14 +179,14 @@ function renderPokracovat() {
 
 function renderSouhrn() {
   const el = $('souhrn');
-  const prvni = prvniPokusy().filter((p) => p.lekce >= 1 && p.lekce <= 3);
+  const prvni = prvniPokusy().filter((p) => p.lekce >= 1 && p.lekce <= CELKEM_LEKCI_HOTOVO);
   if (!prvni.length) {
     el.innerHTML = `<p>${jazyk.t('souhrnZadne')}</p>`;
     return;
   }
   const lekce = new Set(prvni.map((p) => p.lekce));
   const prumer = Math.round(prvni.reduce((s, p) => s + p.procenta, 0) / prvni.length);
-  const text = jazyk.t('souhrnText').replace('{n}', lekce.size).replace('{prumer}', prumer);
+  const text = jazyk.t('souhrnText').replace('{n}', lekce.size).replace('{celkem}', CELKEM_LEKCI_HOTOVO).replace('{prumer}', prumer);
   el.innerHTML = `<p>${text}</p><p class="poznamka">${jazyk.t('souhrnPoznamka')}</p>`;
 }
 

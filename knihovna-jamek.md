@@ -1,6 +1,6 @@
 # Knihovna jamek
 
-Deset karet z `data/jamky/*.json` v čitelné podobě, řazeno podle hřiště.
+Čtrnáct karet z `data/jamky/*.json` v čitelné podobě, řazeno podle hřiště.
 Zdroj pravdy jsou JSON soubory — tohle je jejich čitelný otisk pro
 kontrolu a pro lektora, ne duplicitní záznam k ručnímu udržování.
 Aktualizuj vždy nejdřív JSON, pak tenhle přehled.
@@ -18,6 +18,36 @@ jsou teď srovnané podle klubového webu a dvou nezávislých scorecardů. Kart
 pole, která se sem zatím nepřepisují: `naCoSeDivat` (na co se dívat na
 schématu) a `lekce` (přenositelná lekce). Jsou vidět na webu u každé jamky
 a v sekci `jamky/`.
+
+---
+
+## Augusta National Golf Club, jamka 13 „Azalea"
+
+*(lekce 5 · Fairway · sázka, kterou klub po devadesáti letech překalibroval)*
+
+- **Země:** USA (Georgia) · **Par:** 5 · **Délka:** 498 m / 545 yd
+  (Masters od roku 2023; předtím 466 m / 510 yd od roku 2002, původně
+  zhruba 480–485 yd)
+- **Architekt:** Alister MacKenzie a Bobby Jones, hřiště otevřeno v lednu
+  1933. V původním layoutu z roku 1932 se jamka hrála jako čtvrtá.
+- **GPS:** 33.5030, -82.0199 (přibližně, úroveň areálu — klub souřadnice
+  jamek nezveřejňuje)
+- **Otázka:** Půjdeš na green druhou ranou přes Rae's Creek, nebo přihraješ
+  a spolehneš se na wedge? A změní se ta odpověď, když ti klub přidá
+  32 metrů?
+- **Tři prvky:** jeden potok ohrožuje odpal i druhou ránu · fairway se
+  naklání zprava doleva k vodě, takže bezpečná strana dává míč nad nohama ·
+  prodloužení v roce 2023 o 35 yardů, po kterém se nezvedlo skóre, ale
+  změnilo rozhodování
+- **Zdroje:** Golf Digest (oznámení délky i statistika 2022 vs. 2023) ·
+  The Fried Egg (rozbor jamky a Jonesův citát) · Planet Golf (odkup
+  pozemku 2017) · Geoff Shackelford (vyjádření Freda Ridleyho z roku 2018)
+
+> **Co je doložené a co ne.** Čtyři bunkry ZA greenem potvrzují tři
+> nezávislé prameny; fairwayový bunkr na jamce žádný není. Naopak
+> **nedohledáno**: šířka fairwaye, převýšení a plocha greenu — klub tato
+> čísla nezveřejňuje. Průměrné skóre po prodloužení nestouplo (2022: 4,85 ·
+> 2023: 4,74 · historický průměr 4,775), a karta to výslovně říká.
 
 ---
 
@@ -79,6 +109,53 @@ a v sekci `jamky/`.
 
 ---
 
+## Golf & Ski Resort Ostravice, jamka 16
+
+*(lekce 5 · Česká jamka · i bezpečná cesta musí něco stát)*
+
+- **Země:** ČR (Beskydy) · **Par:** 5 · **HCP:** 14 · **Délka:** 522 m
+  (černá; 500 / 490 / 468 / 448 m)
+- **Architekt:** Chris Johnson; hřiště otevřeno 2008 (rok uvádějí jen
+  sekundární prameny, proto označen jako pravděpodobný)
+- **GPS:** 49.5350, 18.3950 (přibližně, úroveň areálu)
+- **Otázka:** Půjdeš na green druhou ranou přes potok a kolem rybníčku,
+  nebo přihraješ před potok a necháš si wedge?
+- **Tři prvky:** potok napříč předpolím a rybníček hned vpravo od greenu ·
+  velký členitý bunkr přesně tam, kde končí bezpečná přihrávka · pokles
+  27 metrů od odpaliště ke greenu
+- **Zdroje:** oficiální plánek jamky klubu (`jamka-16.jpg` — primární
+  pramen pro schéma) · scorecard klubu · Premium Sports (rozbor volby na
+  jamce) · Golfero (autorství)
+
+> **Co jsem z plánku nečetl.** Plánek obsahuje dvě řady čísel: barevné
+> bloky (vzdálenost od každého odpaliště k příčné linii) a bílé kolonky
+> 18 / 96 / 108 / 135 / 146 / 225, u kterých se nedá spolehlivě určit, co
+> měří. Karta z nich proto neuvádí žádné číslo.
+
+---
+
+## Golf Resort Karlštejn, jamka 14
+
+*(lekce 1 · Česká jamka · hra natvrdo přes vodu, nebo bezpečně vlevo)*
+
+- **Země:** ČR (Liteň u Karlštejna) · **Par:** 3 · **Délka:** 198 m
+  (kratší odpaliště 173 / 145 / 119 m) · **HCP:** 6/5
+- **Architekt:** Les Furber a Jim Eremko, 1993.
+- **GPS:** 49.933, 14.190 (přibližně, úroveň areálu)
+- **Otázka:** Namíříš přímo na praporek, i když rybník sahá až k pravému
+  okraji greenu, nebo si vezmeš o klub víc a zahraješ na bezpečný pruh
+  trávy vlevo?
+- **Tři prvky:** rybník po celé pravé straně · protáhlý green 19 × 35 m ·
+  čtyři bunkry
+- **Zdroje:** birdie book / strokesaver klubu (fotografie od objednatele —
+  primární pramen pro schéma i pro délky)
+
+> **Pozor na číslování.** Tuhle jamku dřív karta vedla omylem jako „15",
+> protože vycházela z GolfPassu (posunuté číslování). Viz Krok 10
+> v `poznamky.md`.
+
+---
+
 ## Golf Resort Karlštejn, jamka 15
 
 *(lekce 1 · Česká jamka · skutečná volba mezi bezpečnou a agresivní cestou)*
@@ -99,6 +176,36 @@ a v sekci `jamky/`.
 > o jednu jamku oproti klubu — jeho „15“ je klubová **14** (par 3 přes
 > rybník do kopce). Ověřeno na třech zdrojích: klubový web, golftraxx
 > i offcourse.co se shodují, že klubová 15 je par 4, 315 m, dogleg doleva.
+
+---
+
+## Mid Ocean Club, jamka 5 „The Cape"
+
+*(lekce 5 · Fairway · archetyp odstupňované sázky)*
+
+- **Země:** Bermudy · **Par:** 4 · **Délka:** 396 m / 433 yd (modrá; bílá
+  368 m, červená 299 m) · **Stroke index 1**
+- **Architekt:** Charles Blair Macdonald, stavbu vedl Seth Raynor. Hřiště
+  dokončeno v prosinci 1921, slavnostně otevřeno 1924. Robert Trent Jones
+  st. přidal v roce 1953 zadní odpaliště a upravil bunkry, greeny nechal
+  být. V červenci 2026 klub oznámil restauraci pod vedením Gila Hanse.
+- **GPS:** 32.3437, -64.6752 (přibližně, úroveň areálu)
+- **Otázka:** Kolik z Mangrove Lake si ukrojíš? Není to otázka ano/ne —
+  každý metr navíc přes vodu je kus jamky, který už nemusíš hrát.
+- **Tři prvky:** voda leží podél hrany fairwaye šikmo, ne napříč · odměnou
+  není jen kratší rána, ale i rovnější postoj a lepší úhel · splňuje
+  Macdonaldovu původní definici Cape hole (green obtékaný vodou ze tří
+  stran) i tu moderní
+- **Zdroje:** Golf Club Atlas · The Fried Egg · oficiální historie klubu ·
+  GolfPass scorecard · Bernews (restaurace 2026) · The A Position
+  (Macdonaldova definice z Golf Illustrated, 1914)
+
+> **Co se nepodařilo dohledat.** Žádný veřejný pramen neuvádí carry
+> v yardech pro jednotlivé linie odpalu, zbývající vzdálenost na green
+> podle míry ukrojení, rozměry greenu ani přesný počet bunkrů. Schéma
+> je proto odvozené z textových popisů, ne ze zaměření. Rozpory ponechané
+> přiznané: délka 433 vs. 435 yd · převýšení 90 stop vs. pokles 50 stop ·
+> rok otevření 1921 / 1923 / 1924.
 
 ---
 
@@ -229,6 +336,10 @@ a v sekci `jamky/`.
 | 1 — Proč jamka vypadá, jak vypadá | TPC Sawgrass 17 · Pebble Beach 18 · Riviera 10 · Karlštejn 15 |
 | 2 — Čtení pozemku | Sand Hills 1 · Ballybunion Old 11 · Dobrouč 3 |
 | 3 — Routing | St Andrews Old 7/11 · Cypress Point 16 · Zbraslav 1 |
+| 4 — Jak šířka vytváří úhel | Riviera 10 · St Andrews Old 7 · Ballybunion Old 11 · Karlštejn 15 |
+| 5 — Riziko a odměna | Augusta National 13 · Mid Ocean 5 · TPC Sawgrass 17 · Ostravice 16 |
 
-Deset souborů (jedenáctá jamka — 11 — je vedlejší, sdílí kartu se
-St Andrews 7), přesně podle odhadu ze zadání, část 12.
+Čtrnáct souborů. Lekce 4 a 5 některé karty sdílejí s lekcemi 1–3 —
+karta je popis jamky, ne majetek jedné lekce, a tatáž jamka může
+ilustrovat víc principů. Nové karty přibývají s každou lekcí, která je
+potřebuje (Krok 14: Augusta 13, Mid Ocean 5, Ostravice 16).

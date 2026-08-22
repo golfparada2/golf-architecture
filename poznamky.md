@@ -2,6 +2,169 @@
 
 Průběžný soubor podle části 15 zadání. Kroky 1–7 hotové.
 
+## Krok 14 — Lekce 5: Riziko a odměna, kalibrace pokušení (22. 8. 2026)
+
+Uživatel řekl „pokračuj lekcí 5–9" a na doplňující otázku zvolil dvě věci:
+lekce dodávat **po jedné s review** a u každé **rozšířit sbírku o nové
+reálné jamky**, ne jen recyklovat těch deset stávajících. Tenhle krok je
+tedy lekce 5 plus tři nové karty jamek.
+
+### Nové karty jamek (sbírka 11 → 14)
+
+- **`augusta-national-13.json` (Azalea, par 5)** — případ, kdy klub sázku
+  po devadesáti letech *překalibroval*. Doložená čísla: 545 yd / 498 m od
+  Masters 2023 (dřív 510 yd / 466 m), přidáno 35 yardů na pozemku
+  odkoupeném od Augusta Country Club v roce 2017. Čtyři bunkry výhradně
+  ZA greenem (tři nezávislé prameny), žádný fairwayový bunkr, přítok
+  Rae's Creek po celé levé straně a napříč před greenem.
+  **Nejdůležitější nález a zároveň nejzajímavější pointa lekce:**
+  prodloužení průměrné skóre NEZVEDLO — 2022 (kratší verze) 4,85, 2023
+  (delší verze) 4,74. Změnila se struktura rozhodování: průměrný odpal
+  vyskočil ze zhruba 270 na téměř 300 yardů a jamka byla poprvé od roku
+  2013 nejtěžším ze čtyř par 5 v Augustě. Karta i lekce to říkají takhle
+  a netvrdí, že je jamka „těžší".
+  Vědomě NEPOUŽITO, i když se to nabízelo: titulek Golf Digestu „13. jamka
+  hraje nejtěžší za 50 let" (2025) stojí jen na průměru z prvního kola
+  (5,03); za celý týden vyšlo 4,83, tedy daleko od rekordu 5,04 z roku
+  1976. Nepoužit ani údaj o Nicklausově prohlubni z roku 1983 (jediný
+  zdroj) a přesná stránka Jonesova citátu v *Golf Is My Game* (vydání se
+  v pramenech uvádí jednou 1959, jednou 1960).
+- **`mid-ocean-5.json` (The Cape, par 4)** — archetyp odstupňované sázky.
+  Klíčový mechanismus i doslovná formulace pochází z Golf Club Atlas:
+  čím blíž k vodě odpal skončí, tím rovnější postoj a lepší úhel.
+  Macdonaldova původní definice Cape hole (Golf Illustrated, srpen 1914)
+  mluví o GREENU obklopeném vodou ze tří stran, ne o odpalu — karta to
+  uvádí přesně takhle, protože moderní „Capes" (Pebble 18, Sawgrass 18)
+  tuhle podmínku nesplňují.
+  **Co se nepodařilo dohledat a co karta proto netvrdí:** žádný veřejný
+  pramen neuvádí carry v yardech pro jednotlivé linie odpalu ani zbývající
+  vzdálenost na green podle míry ukrojení. Klub yardage book online nemá.
+  Rovněž nenalezeny rozměry greenu a přesný počet bunkrů (doložená je jen
+  „dvojice bunkrů" pod svahem vpravo od greenu). Rozpory ponechané
+  přiznané: délka 433 vs. 435 yardů, převýšení 90 stop vs. pokles 50 stop,
+  rok otevření 1921 / 1923 / 1924, Babe Ruth 1937 vs. 1938.
+- **`ostravice-16.json` (par 5, HCP 14)** — česká jamka. Poučení z Kroku 10
+  („u českých jamek rovnou hledej birdie book, ne scorecard agregátor")
+  se tentokrát uplatnilo předem: rešerše šesti kandidátů (Ostravice 16,
+  Albatross 6/15/17, Greensgate 3, Mstětice 10) vybírala kromě čistoty
+  principu i podle toho, jestli klub zveřejňuje **skutečný plánek jamky**.
+  Ostravice ano — `https://www.ostravice-golf.cz/images/hriste/mapy/jamka-16.jpg`.
+  Plánek jsem si otevřel v prohlížeči a schéma kreslil podle něj: tvar
+  fairwaye, bunkr vpravo v zóně druhé rány, malé bunkry vlevo v dopadové
+  zóně, potok napříč předpolím, rybníček vpravo od greenu, green 23 × 30 m
+  a výškový profil −27 m.
+  **Co jsem z plánku vědomě NEinterpretoval:** obsahuje dvě různé řady
+  čísel — barevné bloky (jednoznačně vzdálenost od každého z pěti odpališť
+  k příčné linii) a bílé kolonky s čísly 18, 96, 108, 135, 146 a 225.
+  U bílých kolonek jsem nedokázal spolehlivě určit, co měří (na
+  vzdálenost k greenu nesedí: 522 − 353 = 169, ale nejbližší kolonka
+  ukazuje 146), a proto z nich karta neuvádí ani jedno číslo. Radši
+  prázdné místo než vymyšlený údaj.
+
+Žádná ze tří jamek nemá volně licencovanou fotografii — u Augusty kvůli
+striktnímu režimu klubu (veškerý obrazový materiál je komerčně
+licencovaný), u Mid Oceanu kvůli soukromému režimu klubu, u Ostravice se
+prostě žádná nenašla. Karty proto fotku nemají a text to nepředstírá.
+**Otevřená možnost:** požádat Ostravici e-mailem o svolení k použití
+jedné fotky jamky 16 — u českých klubů to má smysl zkusit, stejně jako
+u Karlštejna (Krok 11).
+
+### Co obsahuje lekce 5
+
+Stejný sedmisekční vzor jako 1–4.
+
+**Sekce 1 — „Tři čísla, která rozhodují o sázce".** Vlastní ilustrativní
+plát s přepínačem tří variant a spočítanou „sázkovou kartou" (cena prohry
+/ odměna / šance → čistý zisk). Zásadní rozhodnutí o designu plátu, ke
+kterému jsem se dopracoval až po dvou přepsáních: **ve všech třech
+variantách je stejná fairway, stejný green a stejné dvě linie — mění se
+JEN rybník.** První verze měnila i polohu odvážného cíle, takže se
+současně hýbalo odměnou i rizikem a nešlo poznat, co za co může. Odměna
+je teď ve všech třech stejná (0,45 rány) a liší se jen šance a cena
+prohry. Verdikt pod tabulkou se počítá z čísel (práh ±0,12 rány), ne
+píše ručně, takže text nemůže tvrdit něco jiného než aritmetika nad ním.
+
+**Sekce 2** — tři nové/staré karty: Augusta 13 (překalibrovaná sázka),
+Mid Ocean 5 (odstupňovaná sázka), TPC Sawgrass 17 (sázka, která žádnou
+gradaci nenabízí — jediná recyklovaná karta, a schválně: je to
+protipříklad).
+
+**Sekce 3** — Ostravice 16, s pointou „i bezpečná cesta musí něco stát"
+(bunkr v layup zóně).
+
+**Sekce 4 — „Kolik vody přeletíš?"** Skutečná simulace přes
+`js/simulace.js`: jamka typu Cape, sedm poloh posuvníku (0–100 % odvahy),
+čtyři hráči (HCP 0/9/18/24), **1500 kol na každou kombinaci** = 42 000
+odehraných jamek při načtení stránky (~150 ms). Výstup: plán s mrakem
+120 skutečných dopadů odpalu (červeně ty ve vodě), tabulka čtyř hráčů,
+**kalibrační křivka** (průměr ran proti míře odvahy, kolečko na optimu)
+a seznam optim.
+
+Výsledek, kvůli kterému celé cvičení existuje — optimum se posouvá
+monotónně s rozptylem hráče: HCP 0 → 83 % odvahy, HCP 9 → 50 %,
+HCP 18 → 17 %, HCP 24 → 17 %. Jedna jamka, čtyři různé správné odpovědi.
+
+**Sekce 5–7** — tři otevřené otázky, sedm pojmů, šest otázek u zkoušky
+(dvě obrázkové, 100 bodů; ověřeno proklikáním, správné odpovědi dávají
+100/100 a ukládají se do přehledu).
+
+### Rozhodnutí a pasti z tohohle kroku
+
+- **Náhoda v simulaci je nasazená semínkem** (`rng(9000 + i*10 + hcp)`
+  z `platy.js`), ne `Math.random`. Lekce 4 používá `Math.random` a čísla
+  se tam mění mezi návštěvami. Tady je to jinak schválně: student si má
+  moct čísla s někým porovnat a učebnice o nich může mluvit. V textu
+  sekce je to přiznané.
+- **Šum modelu se musí přiznat.** Mezi 0 % a 17 % odvahy vychází HCP 24
+  rozdíl 0,01 rány — to je šum, ne zjištění. Poznámka pod cvičením proto
+  říká, že rozdíly pod ~0,05 rány se nemají číst jako výsledek. Bez toho
+  by tabulka tvrdila přesnost, kterou model nemá.
+- **Geometrii testu ležení a geometrii kresby drž v JEDNĚCH číslech.**
+  Jezero v sekci 4 je natočená elipsa popsaná středem, jednotkovým směrem
+  dlouhé osy a dvěma poloosami; táž definice slouží pro `voda()` (a tedy
+  simulaci) i pro `blob()` v kresbě. Kdyby se rozešly, student by viděl
+  červenou tečku mimo nakreslenou vodu.
+- **Natočený tvar snese jen STEJNÉ měřítko obou os.** V sekci 4 je proto
+  `S = 1,25` pro x i y (žádné podélné zkrácení). V sekci 1, kde je jamka
+  bez natočených tvarů, zkrácení je (3,2 : 1,35), jinak by z 300metrové
+  jamky zbyl nečitelný proužek.
+- **Fairway kresli jako koridor, ne jako obdélník.** První verze sekce 4
+  měla hratelnou plochu definovanou obdélníkem (`y ∈ ⟨30,290⟩`,
+  `x ∈ ⟨−105,42⟩`) — bylo to jednoduché, ale plán vypadal jako zelená
+  bedna s kaluží, ne jako jamka. Druhá verze měla mnohoúhelník, který
+  vyšel po vyhlazení jako ovál kolem jezera (fairway i tam, kde se
+  nehraje). Teprve třetí verze kopíruje levým okrajem pravý břeh jezera:
+  koridor vede zprava kolem vody a nad jejím cípem se otáčí ke greenu.
+  Mnohoúhelník je zároveň testem ležení (paprskový test), takže kresba
+  a fyzika pořád sedí.
+- **Popisky u karet jamek: čím kratší, tím líp.** U Ostravice se
+  „BUNKRY V DOPADOVÉ ZÓNĚ" přetlačovalo s automatickým popiskem
+  „DOPADOVÁ ZÓNA" a u Augusty „ČTYŘI BUNKRY ZA GREENEM" s „POTOK PŘED
+  GREENEM". Řešení bylo zkrátit (`4 BUNKRY VZADU`, `POTOK`,
+  `BUNKRY VLEVO`), ne posouvat prvky.
+- **Dogleg: `ohyb` posouvá stuhu daleko od hazardu.** U Augusty i
+  Mid Oceanu vyšla první verze tak, že mezi fairwayí a vodou zela
+  třicetimetrová mezera, ačkoli obě jamky vodu lemují. `ohyb` je boční
+  posun ŘÍDICÍHO bodu Bézierovy křivky, takže se stuha vyklene zhruba na
+  polovinu té hodnoty — se zmenšením na 46 a posunem hazardu o 10 m
+  k ose to sedlo. Pravidlo pro příští karty: po nakreslení se vždycky
+  podívej, jestli hazard leží tam, kde ho prameny popisují *vůči
+  fairwayi*, ne jen na správné straně jamky.
+- **Opravená stará chyba mimo lekci:** `prehled/index.html` počítal souhrn
+  výsledků natvrdo z lekcí 1–3 (`p.lekce >= 1 && p.lekce <= 3`) a text
+  v rozcestníku říkal „ze 3 lekcí". Po lekci 4 to už neplatilo a nikdo si
+  toho nevšiml. Teď se bere `CELKEM_LEKCI_HOTOVO` a v textu je `{celkem}`.
+
+### Ověřeno před dodáním
+
+Playwright přes lokální server: všech osm stránek lekce 5 plus rozcestník,
+sbírka jamek a slovníček, v češtině i angličtině — nula chyb v konzoli.
+Proklikané všechny tři varianty plátu v sekci 1 (verdikt se mění správně:
++0,32 / −0,01 / −0,65 rány), všech sedm poloh posuvníku a všichni čtyři
+hráči v sekci 4, celá zkouška se správnými odpověďmi (100/100, uloženo do
+`routing.vysledky`). Datum v `data/verze.json` podle `date -u`, ne podle
+odhadu (past z Kroku 12).
+
 ## Krok 13 — Lekce 4: Jak šířka vytváří úhel (21. 8. 2026)
 
 Zadání uživatele: „udělej lekce 4-9, táhni autem obsahu, co mají lekce

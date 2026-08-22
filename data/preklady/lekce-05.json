@@ -1,0 +1,742 @@
+{
+  "cs": {
+    "meta": {
+      "kicker": "Golfová architektura",
+      "chapter": "Lekce 5 z 18",
+      "over": "Kolik má stát chyba —",
+      "title": "Riziko a odměna: kalibrace pokušení",
+      "lede": "Každá odvážná rána je sázka. Architekt o ní rozhoduje třemi čísly: co tě stojí prohra, co ti vynese výhra a jak často to vyjde. Když ta tři čísla sedí, vznikne rozhodnutí. Když ne, vznikne buď dárek, nebo loterie.",
+      "zpet": "← Zpět na rozcestník"
+    },
+    "principLabel": "Princip",
+    "teeShot": {
+      "eyebrow": "Tee shot",
+      "over": "Plát —",
+      "title": "Tři čísla, která rozhodují o sázce",
+      "lede": "Tatáž jamka, tytéž dvě linie, tentýž zisk za odvahu. Mění se jen rybník — a s ním dvě ze tří čísel sázky. Přepínej mezi variantami a sleduj, jak se z rozhodnutí stane dárek a z dárku past.",
+      "principle": "Sázka na golfové jamce má jen tři čísla: cenu prohry, velikost odměny a šanci na úspěch. Vynásob je mezi sebou a víš, jestli jsi navrhl volbu, nebo jen dekoraci.",
+      "toggle": {
+        "zadarmo": "Riziko zadarmo",
+        "poctiva": "Poctivá sázka",
+        "trest": "Nepřiměřený trest"
+      },
+      "popis": {
+        "zadarmo": "Rybník leží stranou od odvážné linie — přeletět ho vůbec nemusíš a do vody se dostaneš jen po opravdu špatné ráně. Odměna je přitom stejná jako v dalších dvou variantách: odvážná linie zkracuje přihrávku skoro o šedesát metrů. Nikdo rozumný proto nebude hrát bezpečně a jamka nic nezjistí.",
+        "poctiva": "Táž odměna, ale rybník teď zasahuje do odvážné linie tak akorát: přeletíš ho zhruba ve třech ze čtyř pokusů a chyba stojí ránu a kus pozice. Obě volby vyjdou skoro nastejno — a přesně to je stav, kdy se hráč musí rozhodnout sám za sebe.",
+        "trest": "Odměna je pořád stejná, jenže rybník se roztáhl přes celou zákrutu — přeletíš ho sotva v polovině pokusů. A dropzóna je až u odpaliště, takže neúspěch stojí rovnou dvě rány. Jamka vypadá dramaticky, ale žádnou otázku neklade: kdo umí počítat, hraje bezpečně vždycky."
+      },
+      "sazkaHead": "Sázka v číslech",
+      "sazkaCena": "Cena prohry",
+      "sazkaOdmena": "Odměna za úspěch",
+      "sazkaSance": "Šance na úspěch",
+      "sazkaVysledek": "Čistý zisk odvážné cesty",
+      "sazkaJednotka": "rány",
+      "sazkaVzorec": "šance × odměna − (1 − šance) × cena prohry",
+      "verdikt": {
+        "dar": "Zisk {z} rány. Odvážná cesta vyhrává tak jasně, že se hráč nemá o čem rozhodovat — bezpečná varianta je tu jen na papíře.",
+        "poctiva": "Rozdíl {z} rány, tedy prakticky nula. To je poctivá sázka: obě cesty stojí stejně a rozhodnutí zůstává na hráči a jeho dnešní formě.",
+        "trest": "Ztráta {z} rány. Riziko se nevyplácí ani náhodou — jamka nenabízí volbu, jen past na netrpělivé."
+      },
+      "foot": "list 1 · Tee shot",
+      "cile": [
+        "Rozložím libovolnou odvážnou ránu na tři čísla: cenu prohry, velikost odměny a šanci na úspěch.",
+        "Spočítám, jestli se sázka na konkrétní jamce vyplácí, a poznám jamku, která rozhodnutí jen předstírá.",
+        "Vysvětlím, proč „těžší“ a „zajímavější“ není totéž — a proč se dá jamka překalibrovat, aniž by se zvedlo průměrné skóre."
+      ],
+      "zapamatuj": [
+        "Sázka má tři čísla, ne jedno. Samotná velikost hazardu neříká nic — musíš znát i odměnu a šanci.",
+        "Když jedna cesta vyhrává vždycky, jamka nenabízí rozhodnutí, ať vypadá jakkoli dramaticky.",
+        "Poctivá sázka není ta nejtěžší. Je to ta, u které vyjdou obě cesty skoro nastejno.",
+        "Bezpečná cesta musí mít taky svou cenu. Zadarmo je z ní jen zkratka pro opatrné."
+      ]
+    },
+    "spolecneKarty": {
+      "specsHead": "Tři prvky",
+      "parLabel": "Par",
+      "delkaLabel": "Délka",
+      "architektLabel": "Architekt",
+      "vznikLabel": "Rok",
+      "prameny": "Prameny",
+      "otazkaLabel": "Otázka jamky",
+      "fotoLabel": "Foto"
+    },
+    "fairway": {
+      "eyebrow": "Fairway",
+      "over": "Tři jamky, tři kalibrace —",
+      "title": "Dobře, přesně a vůbec",
+      "lede": "Augusta ukazuje sázku, kterou klub po devadesáti letech musel přenastavit. Mid Ocean sázku, kterou si hráč nastavuje sám po metrech. A Sawgrass jamku, kde se nesází — tam se jen doufá.",
+      "cile": [
+        "Poznám na reálné jamce, čím architekt určuje cenu prohry a velikost odměny.",
+        "Popíšu rozdíl mezi odstupňovanou sázkou a sázkou typu ano/ne."
+      ],
+      "zapamatuj": [
+        "Diagonální hazard dělá ze sázky plynulou stupnici — hráč si vybere, kolik si ukrojí.",
+        "Když hazard obklopí cíl ze všech stran, gradace zmizí a zbude zkouška nervů.",
+        "Cena sázky se dá změnit i bez bagru: stačí posunout odpaliště."
+      ],
+      "vyzkousej": {
+        "otazka": "Vezmi jednu z těch tří jamek a napiš, co by se stalo, kdyby architekt zdvojnásobil odměnu za odvážnou cestu — a co kdyby místo toho zdvojnásobil cenu prohry.",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
+    },
+    "ceskaJamka": {
+      "eyebrow": "Fairway · Česko",
+      "over": "Sázka, která má cenu na obou stranách —",
+      "title": "Ostravice, jamka 16",
+      "lede": "Par 5 klesající o dvacet sedm metrů, potok přes celé předpolí a rybníček hned vedle greenu. A hlavně: bunkr přesně tam, kde končí bezpečná přihrávka.",
+      "cile": [
+        "Ukážu na české jamce, proč musí mít i opatrná varianta svoji cenu."
+      ],
+      "zapamatuj": [
+        "Bunkr v layup zóně je levný způsob, jak zdražit bezpečnou cestu — a tím zlevnit tu odvážnou.",
+        "Klesání jamku opticky zkracuje, takže pokušení roste rychleji než skutečná šance.",
+        "Když jsou dva hazardy vedle sebe (potok a rybníček), chyba na obě strany stojí stejně — a to gradaci ubírá."
+      ],
+      "vyzkousej": {
+        "otazka": "Najdi na hřišti, které znáš, par 5, kam se dá dojet druhou ranou. Kolik ran tě podle tvého odhadu stojí neúspěšný pokus — a jak často ti to vyjde? Vynásob si to.",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
+    },
+    "approachNadpis": {
+      "eyebrow": "Approach",
+      "over": "Jedna jamka, čtyři hráči —",
+      "title": "Kde se sázka přestává vyplácet",
+      "lede": "Teď to nebudeme odhadovat. Postavíme jamku typu Cape, necháme čtyři různé hráče odehrát patnáct set kol z každé linie a podíváme se, kde má který z nich optimum.",
+      "cile": [
+        "Najdu v číslech bod, za kterým se větší odvaha přestává vyplácet — a ukážu, že pro každého hráče leží jinde."
+      ],
+      "zapamatuj": [
+        "Optimální míra odvahy se posouvá s rozptylem hráče, ne s jeho odhodláním.",
+        "Dobře kalibrovaná jamka dává každému hráči jinou správnou odpověď — a nikomu odpověď „vždycky“.",
+        "Simulace nepočítá nervy ani vítr. Ukazuje průměr z mnoha kol, ne to, co se stane dnes."
+      ]
+    },
+    "approach1": {
+      "eyebrow": "Úkol · simulace",
+      "over": "Ukroj si sám —",
+      "title": "Kolik vody přeletíš?",
+      "lede": "Posuvníkem vybíráš, jak moc si z jezera ukrojíš: nula znamená bezpečně doprava kolem vody, sto procent nejodvážnější možnou linii. Tečky na plánu jsou skutečná místa dopadu odpalu vybraného hráče, červené jsou ty ve vodě.",
+      "planLabel": "Plán jamky typu Cape s jezerem šikmo přes vnitřek zákruty",
+      "odvahaLabel": "Kolik si ukrojíš",
+      "hracLabel": "Kterého hráče sleduješ",
+      "zbyvaLabel": "Z téhle linie zbývá na green",
+      "tabulka": {
+        "hrac": "Hráč",
+        "prumer": "Průměr ran",
+        "voda": "Voda",
+        "fairway": "Fairway"
+      },
+      "grafHead": "Kalibrační křivka",
+      "grafPopis": "Průměrný počet ran podle míry odvahy, pro každého ze čtyř hráčů. Kolečko označuje optimum — linii, která tomu hráči vychází nejlépe.",
+      "grafOsaX": "Kolik si ukrojíš",
+      "grafOsaY": "Průměr ran",
+      "optimumHead": "Kde má kdo optimum",
+      "optimumRadek": "{hrac}: nejlépe vychází {proc} % odvahy — průměr {prumer} rány. Na plný útok by ho to stálo {rozdil} rány navíc.",
+      "optimumRadekMax": "{hrac}: nejlépe vychází nejodvážnější linie, {proc} % — průměr {prumer} rány.",
+      "zaver": "Všimni si, kam se optimum posouvá: čím menší rozptyl hráč má, tím víc se mu vyplatí ukrojit. Jamka je přitom pořád jedna a tatáž — mění se jen ten, kdo na ní stojí.",
+      "foot": "list 4 · Approach",
+      "poznamka": "Patnáct set kol na každou linii a hráče, spočítaných jednou při načtení stránky se stejným náhodným generátorem — čísla se proto mezi návštěvami nemění a dají se s někým porovnat. Model je z části 8 zadání: rozptyl podle hendikepu, žádné nervy, žádný vítr. Rozdíly menší než zhruba pět setin rány ber jako šum modelu, ne jako výsledek — u dvou linií, které vyjdou skoro stejně, není správná odpověď žádná z nich, ale právě to, že si hráč může vybrat."
+    },
+    "putt": {
+      "eyebrow": "Putt",
+      "over": "Tři otázky, žádné body —",
+      "title": "K zamyšlení",
+      "lede": "Piš vlastními slovy. Nikdo to nebude opravovat — je to tu proto, aby sis na to musel odpovědět sám.",
+      "otazky": [
+        "Vzpomeň si na jamku, kde ses rozhodl riskovat a nevyšlo to. Zpětně: byla to špatná sázka, nebo dobrá sázka se špatným koncem? Podle čeho to poznáš?",
+        "Kdybys měl na svém domovském hřišti přidat jedné jamce jeden bunkr tak, aby se zlepšilo rozhodování (ne aby se zvýšila obtížnost), kam bys ho dal a proč?",
+        "Augusta prodloužila třináctku o dvaatřicet metrů a průměrné skóre se nezvedlo. Je to úspěch, nebo neúspěch? Obhaj svou odpověď."
+      ],
+      "poznamkaPlaceholder": "Piš sem…",
+      "ulozeno": "Uloženo v tomto prohlížeči.",
+      "foot": "list 5 · Putt",
+      "cile": [
+        "Rozliším dobré rozhodnutí od dobrého výsledku — a poznám, že to není totéž."
+      ],
+      "zapamatuj": [
+        "Dobrá sázka se špatným koncem je pořád dobrá sázka. Podle jednoho kola se kalibrovat nedá.",
+        "Obtížnost se dá zvýšit vždycky. Kvalitu rozhodování ne.",
+        "Když nedokážeš svou volbu obhájit čísly, obhajuješ ji pocitem — a ten se na hřišti mění každou hodinu."
+      ]
+    },
+    "slovnicek": {
+      "eyebrow": "Slovníček",
+      "over": "Pojmy z téhle lekce —",
+      "title": "Sedm slov",
+      "lede": "Odborné názvy zůstávají anglicky i v české větě — je to jazyk, kterým golfová architektura mluví ve všech pramenech.",
+      "pojmy": [
+        {
+          "pojem": "Očekávaný počet ran",
+          "popis": "Kolik ran ti daná volba vyjde v průměru, kdybys ji zahrál mnohotisíckrát. Architekt kalibruje tenhle průměr, ne to, co se ti povede dnes."
+        },
+        {
+          "pojem": "Bod zlomu",
+          "popis": "Šance na úspěch, při které se odvážná a bezpečná cesta vyrovnají. Spočítáš ho jako cena prohry děleno součtem ceny prohry a odměny."
+        },
+        {
+          "pojem": "Gradace rizika",
+          "popis": "Vlastnost jamky, kde si hráč volí velikost sázky plynule, ne jen ano/ne. Vzniká tím, že hazard leží šikmo k linii hry."
+        },
+        {
+          "pojem": "Reachable par 5",
+          "popis": "Par 5, na jehož green se dá dojet druhou ranou. Celá jamka pak stojí na jediné otázce: komu se to vyplatí."
+        },
+        {
+          "pojem": "Drop zone",
+          "popis": "Vyznačené místo, odkud se pokračuje po ráně do vody, když jinde dropnout nejde. Architekt jím přímo nastavuje cenu prohry."
+        },
+        {
+          "pojem": "Penalty area",
+          "popis": "Označená oblast (typicky voda), ze které se dá pokračovat s jednou trestnou ranou. Červená dovoluje boční drop, žlutá ne — a to je rozdíl skoro půl rány."
+        },
+        {
+          "pojem": "Momentous decision",
+          "popis": "Slova Bobbyho Jonese o třináctce v Augustě: rozhodnutí jít na green druhou ranou má být zásadní. Když zautomatizuje, jamka přestala fungovat."
+        }
+      ],
+      "cile": [
+        "Používám při rozboru jamky slovník rizika a odměny přesně, ne intuitivně."
+      ],
+      "zapamatuj": [
+        "Bod zlomu spočítáš z ceny a odměny — je to nejrychlejší test, jestli jamka nabízí volbu.",
+        "Gradace je vlastnost geometrie, ne velikosti hazardu.",
+        "Barva kolíků kolem vody (červená / žlutá) mění cenu prohry, aniž by se hnulo s terénem."
+      ],
+      "vyzkousej": {
+        "otazka": "Odvážná cesta ušetří 0,5 rány a stojí 1,5 rány, když nevyjde. Spočítej bod zlomu a napiš, jestli je taková jamka spíš pro profesionály, nebo pro každého.",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
+    },
+    "zkouska": {
+      "eyebrow": "Zkouška",
+      "over": "Šest otázek za —",
+      "title": "100 bodů",
+      "lede": "Odpověz na všech šest, teprve pak uvidíš správná řešení. Do celkového přehledu se počítá první pokus.",
+      "spolecne": {
+        "otazka": "Otázka",
+        "bodu": "bodů",
+        "zbyva": "Zbývá odpovědět na",
+        "hotovoMuzesOdevzdat": "Hotovo. Můžeš odevzdat.",
+        "spravne": "správně",
+        "tvojeVolba": "tvoje volba",
+        "nicNevybrano": "nic nevybráno",
+        "moznost": "Možnost",
+        "zkratkaBodu": "b",
+        "reseniUKazdeOtazky": "Správná řešení jsou u každé otázky."
+      },
+      "submit": "Odevzdat",
+      "again": "Zkusit znovu",
+      "q1": {
+        "text": "Na kterém z těch tří plánů si hráč volí velikost rizika plynule, ne jen ano/ne?",
+        "hint": "Hledej hazard, který leží podél linie hry šikmo, ne napříč ní.",
+        "a": "Plán A",
+        "b": "Plán B",
+        "c": "Plán C",
+        "why": "<b>B.</b> Voda leží šikmo podél hrany fairwaye, takže každá linie odpalu má jinou délku přeletu i jinou odměnu. V A jde voda napříč jamkou — všichni mají stejný přelet, tedy sázka ano/ne. V C je voda až kolem greenu a odpal se nerozhoduje o ničem.",
+        "back": "Vrať se na plát „Tři čísla, která rozhodují o sázce“."
+      },
+      "q2": {
+        "text": "Odvážná cesta ti ušetří 0,4 rány, když vyjde, a stojí 1,2 rány, když nevyjde. Od jaké šance na úspěch se vyplatí?",
+        "a": "Od 25 %",
+        "b": "Od 50 %",
+        "c": "Od 75 %",
+        "d": "Od 90 %",
+        "why": "<b>C.</b> Bod zlomu je cena děleno (cena + odměna): 1,2 ÷ (1,2 + 0,4) = 0,75. Pod 75 % úspěšnosti prodělává, nad ní vydělává. Většina amatérů se přes tři čtvrtiny nedostane — proto je taková jamka nastavená pro profesionály.",
+        "back": "Vrať se na slovníček."
+      },
+      "q3": {
+        "text": "Proč Augusta National v roce 2023 posunula odpaliště třináctky o 35 yardů dozadu?",
+        "a": "Aby se zvedlo průměrné skóre jamky",
+        "b": "Aby se rozhodnutí jít na green druhou ranou zase stalo skutečným rozhodnutím",
+        "c": "Protože staré odpaliště zaplavoval Rae's Creek",
+        "d": "Aby se třináctka stala nejtěžší jamkou hřiště",
+        "why": "<b>B.</b> Předseda klubu to v roce 2018 řekl doslova: Jones psal o „zásadním rozhodnutí“, jenže když hráči útočí na green středním železem, žádné zásadní rozhodnutí to není. Průměrné skóre se po prodloužení ostatně nezvedlo — v roce 2022 hrála jamka 4,85, v roce 2023 dokonce 4,74.",
+        "back": "Vrať se na kartu jamky Augusta National 13."
+      },
+      "q4": {
+        "text": "Na kterém plánu má i bezpečná cesta svou cenu?",
+        "hint": "Dívej se, jestli je něco v cestě tam, kde končí opatrná přihrávka — ne jen tam, kam míří odvážná linie.",
+        "a": "Plán A",
+        "b": "Plán B",
+        "c": "Plán C",
+        "why": "<b>B.</b> Bunkr leží v layup zóně, tedy tam, kde končí bezpečná varianta. Tím se opatrná cesta zdraží a rozdíl mezi oběma volbami se zmenší. V A i C je bezpečná strana úplně volná, takže odvážná linie musí být neúměrně výhodná, aby ji někdo vůbec zvážil.",
+        "back": "Vrať se na kartu jamky Ostravice 16."
+      },
+      "q5": {
+        "text": "Co platí o dobře kalibrované jamce typu riziko a odměna? Vyber všechna správná tvrzení.",
+        "hint": "Za každou správnou volbu body, za každou špatnou se odečítají.",
+        "a": "I bezpečná varianta musí mít nějakou cenu",
+        "b": "Odvážná linie se musí vyplatit každému hráči bez ohledu na hendikep",
+        "c": "Hazard musí být z odpaliště vidět, jinak nejde o rozhodnutí",
+        "d": "Velikost sázky by měl jít volit po stupních, ne jen ano/ne",
+        "why": "<b>A, C, D.</b> B je právě ta chyba, po které vzniká „riziko zadarmo“ — pokud odvážná cesta vyhrává všem, jamka se neptá na nic. Zbylá tři tvrzení jsou tři různé způsoby, jak volbu udržet živou: zdražit bezpečnou cestu, ukázat riziko předem a nechat hráče nastavit si jeho velikost.",
+        "back": "Vrať se na úkol „Kolik vody přeletíš?“."
+      },
+      "q6": {
+        "text": "Co znamená „očekávaný počet ran“ u jedné konkrétní volby?",
+        "a": "Počet ran, který na jamce zahraje průměrný hráč klubu",
+        "b": "Průměr z velmi mnoha opakování téže volby, včetně těch neúspěšných",
+        "c": "Nejlepší výsledek, jakého se dá tou volbou dosáhnout",
+        "d": "Par jamky zvýšený o počet hazardů",
+        "why": "<b>B.</b> Je to průměr přes mnoho opakování, ne předpověď pro dnešek. Právě proto se dá jamka kalibrovat: jedno kolo je náhoda, patnáct set kol už je vlastnost jamky.",
+        "back": "Vrať se na úkol „Kolik vody přeletíš?“."
+      },
+      "pasmo": {
+        "vyborne": {
+          "nadpis": "Výborně",
+          "text": "Kalibraci rizika máš zvládnutou. Pokračuj na lekci 6."
+        },
+        "dobre": {
+          "nadpis": "Dobré",
+          "text": "Základ sedí. Projdi si otázky, kde ses spletl/a, a jdi dál."
+        },
+        "projdes": {
+          "nadpis": "Projdeš",
+          "text": "Vrať se na úkol „Kolik vody přeletíš?“, než začneš lekci 6."
+        },
+        "zopakuj": {
+          "nadpis": "Zopakuj",
+          "text": "Vrať se na začátek lekce a projdi si plát i úkol znovu."
+        }
+      },
+      "souhrn": {
+        "nadpis": "Výsledek",
+        "procentBodu": "procent · {body} ze {max} bodů",
+        "spravne": "správně",
+        "chybneCastecne": "chybně nebo částečně",
+        "zcelaMimo": "zcela mimo",
+        "rozpis": "Rozpis odpovědí",
+        "tvojeOdpoved": "Tvoje odpověď",
+        "spravneReseni": "Správně",
+        "pata": "Podrobné vysvětlení je u každé otázky výše. Výsledek se ukládá do přehledu v tomto prohlížeči."
+      },
+      "foot": "list 7 · Zkouška",
+      "cile": [
+        "Ověřím si, že rozeznám poctivou sázku od dárku i od pasti."
+      ],
+      "zapamatuj": [
+        "Bod zlomu = cena prohry ÷ (cena prohry + odměna).",
+        "Dobře kalibrovaná jamka nedává stejnou odpověď všem hráčům.",
+        "Jamka může být těžká a přitom nezajímavá — a naopak."
+      ]
+    },
+    "temata": {
+      "strategie": "strategie",
+      "trest": "trest",
+      "riziko-odmena": "riziko a odměna",
+      "umisteni-hazardu": "umístění hazardu",
+      "cteni-terenu": "čtení terénu",
+      "voda-odtok": "voda a odtok",
+      "vitr-slunce": "vítr a slunce",
+      "routing": "routing",
+      "bezpecnost": "bezpečnost",
+      "rytmus-hriste": "rytmus hřiště",
+      "uhel-nabehu": "úhel náběhu",
+      "diagonalni-hazard": "diagonální hazard"
+    },
+    "foot": {
+      "lekce": "ROUTING · lekce 5"
+    },
+    "nav": {
+      "predchozi": "Předchozí",
+      "dalsi": "Další",
+      "prehled": "Přehled lekce",
+      "krok": "Krok {n} z 7",
+      "dalsiLekce": "Pokračovat další lekcí",
+      "konecKurzu": "Zatím poslední hotová lekce — pokračuj sbírkou jamek",
+      "preskocit": "Přeskočit na obsah",
+      "sekceNavLabel": "Navigace mezi částmi lekce",
+      "jazykLabel": "Volba jazyka",
+      "sekceNazvy": [
+        "Tři čísla sázky",
+        "Tři jamky, tři kalibrace",
+        "Ostravice 16",
+        "Kolik vody přeletíš?",
+        "K zamyšlení",
+        "Slovníček",
+        "Zkouška"
+      ],
+      "klavesniNapoveda": "Plán se dá ovládat i klávesnicí: tabulátorem na něj přejdi, šipkami posouvej zaměřovač, Enterem potvrď."
+    },
+    "toc": {
+      "kicker": "Přehled lekce",
+      "sekceHead": "Co tě čeká",
+      "pokracovat": "Pokračovat",
+      "zacit": "Začít lekci",
+      "zpetNaPrehled": "← Zpět na přehled kurzu",
+      "daleHead": "Kam dál",
+      "slovnicekPopis": "Všechny pojmy kurzu na jednom místě, abecedně a dvojjazyčně.",
+      "sbirkaPopis": "Čtrnáct rozebraných jamek z celého světa i z Česka, v jednotném formátu."
+    }
+  },
+  "en": {
+    "meta": {
+      "kicker": "Golf architecture",
+      "chapter": "Lesson 5 of 18",
+      "over": "What a mistake should cost —",
+      "title": "Risk and reward: calibrating temptation",
+      "lede": "Every bold shot is a bet. The architect sets it with three numbers: what losing costs you, what winning saves you, and how often it comes off. Get the three right and you have a decision. Get them wrong and you have either a gift or a lottery.",
+      "zpet": "← Back to the course overview"
+    },
+    "principLabel": "Principle",
+    "teeShot": {
+      "eyebrow": "Tee shot",
+      "over": "Plate —",
+      "title": "The three numbers behind a bet",
+      "lede": "The same hole, the same two lines, the same gain for courage. Only the pond changes — and with it two of the three numbers of the bet. Switch between the versions and watch a decision turn into a gift, and a gift into a trap.",
+      "principle": "A bet on a golf hole has exactly three numbers: the cost of failure, the size of the reward and the chance of success. Multiply them out and you know whether you designed a choice or a decoration.",
+      "toggle": {
+        "zadarmo": "Free risk",
+        "poctiva": "A fair bet",
+        "trest": "Disproportionate punishment"
+      },
+      "popis": {
+        "zadarmo": "The pond sits away from the bold line — you do not have to carry it at all, and only a genuinely bad shot finds water. The reward is the same as in the other two versions: the bold line shortens the approach by nearly sixty metres. So nobody sensible plays safe, and the hole learns nothing about anyone.",
+        "poctiva": "The same reward, but now the pond reaches into the bold line by just the right amount: you carry it in roughly three attempts out of four, and a miss costs a stroke and some position. Both options come out almost equal — and that is exactly the state in which the player has to decide for himself.",
+        "trest": "The reward is unchanged, but the pond has spread across the whole corner — you carry it barely half the time. And the drop zone is back by the tee, so failure costs a full two strokes. The hole looks dramatic but asks nothing: anyone who can count plays safe every time."
+      },
+      "sazkaHead": "The bet in numbers",
+      "sazkaCena": "Cost of failure",
+      "sazkaOdmena": "Reward for success",
+      "sazkaSance": "Chance of success",
+      "sazkaVysledek": "Net gain of the bold route",
+      "sazkaJednotka": "strokes",
+      "sazkaVzorec": "chance × reward − (1 − chance) × cost of failure",
+      "verdikt": {
+        "dar": "A gain of {z} of a stroke. The bold route wins so clearly that there is nothing to decide — the safe option exists only on paper.",
+        "poctiva": "A difference of {z} of a stroke, which is practically zero. That is a fair bet: both routes cost the same and the decision stays with the player and his form today.",
+        "trest": "A loss of {z} of a stroke. The risk never pays — the hole offers no choice, only a trap for the impatient."
+      },
+      "foot": "sheet 1 · Tee shot",
+      "cile": [
+        "Break any bold shot down into three numbers: the cost of failure, the size of the reward and the chance of success.",
+        "Work out whether the bet on a given hole pays, and recognise a hole that only pretends to offer a decision.",
+        "Explain why „harder“ and „more interesting“ are not the same — and why a hole can be recalibrated without the scoring average moving."
+      ],
+      "zapamatuj": [
+        "A bet has three numbers, not one. The size of the hazard alone says nothing — you also need the reward and the chance.",
+        "When one route always wins, the hole offers no decision, however dramatic it looks.",
+        "A fair bet is not the hardest one. It is the one where both routes come out almost equal.",
+        "The safe route must cost something too. Otherwise it is just a free shortcut for the cautious."
+      ]
+    },
+    "spolecneKarty": {
+      "specsHead": "Three elements",
+      "parLabel": "Par",
+      "delkaLabel": "Length",
+      "architektLabel": "Architect",
+      "vznikLabel": "Year",
+      "prameny": "Sources",
+      "otazkaLabel": "The hole's question",
+      "fotoLabel": "Photo"
+    },
+    "fairway": {
+      "eyebrow": "Fairway",
+      "over": "Three holes, three calibrations —",
+      "title": "Well, precisely, and not at all",
+      "lede": "Augusta shows a bet the club had to reset after ninety years. Mid Ocean shows a bet the player sets himself, metre by metre. And Sawgrass shows a hole where nobody bets — they only hope.",
+      "cile": [
+        "Recognise on a real hole how the architect sets the cost of failure and the size of the reward.",
+        "Describe the difference between a graded bet and a yes/no bet."
+      ],
+      "zapamatuj": [
+        "A diagonal hazard turns the bet into a continuous scale — the player picks how much to bite off.",
+        "When the hazard surrounds the target on every side, the gradation disappears and only a nerve test remains.",
+        "The price of a bet can be changed without a digger: move the tee."
+      ],
+      "vyzkousej": {
+        "otazka": "Take one of those three holes and write what would happen if the architect doubled the reward for the bold route — and what would happen if he doubled the cost of failure instead.",
+        "placeholder": "Write in your own words — nobody marks this."
+      }
+    },
+    "ceskaJamka": {
+      "eyebrow": "Fairway · Czechia",
+      "over": "A bet that costs on both sides —",
+      "title": "Ostravice, hole 16",
+      "lede": "A par 5 dropping twenty-seven metres, a brook across the whole approach and a pond right beside the green. And above all: a bunker exactly where the safe lay-up finishes.",
+      "cile": [
+        "Show on a Czech hole why the cautious option must have a price too."
+      ],
+      "zapamatuj": [
+        "A bunker in the lay-up zone is a cheap way to make the safe route dearer — and the bold one, by comparison, cheaper.",
+        "A downhill hole looks shorter than it is, so temptation grows faster than the actual chance.",
+        "When two hazards sit side by side (brook and pond), a miss either way costs the same — and that takes gradation away."
+      ],
+      "vyzkousej": {
+        "otazka": "Find a par 5 on a course you know where the green is reachable in two. How many strokes do you think a failed attempt costs you — and how often does it come off? Multiply them.",
+        "placeholder": "Write in your own words — nobody marks this."
+      }
+    },
+    "approachNadpis": {
+      "eyebrow": "Approach",
+      "over": "One hole, four players —",
+      "title": "Where the bet stops paying",
+      "lede": "No more guessing. We build a Cape hole, let four different players play fifteen hundred rounds from every line, and look at where each of them has his optimum.",
+      "cile": [
+        "Find in the numbers the point beyond which more courage stops paying — and show that it sits in a different place for every player."
+      ],
+      "zapamatuj": [
+        "The optimal amount of courage moves with the player's dispersion, not with his determination.",
+        "A well-calibrated hole gives every player a different right answer — and nobody the answer „always“.",
+        "The simulation models neither nerves nor wind. It shows an average over many rounds, not what will happen today."
+      ]
+    },
+    "approach1": {
+      "eyebrow": "Task · simulation",
+      "over": "Bite off your own —",
+      "title": "How much water do you carry?",
+      "lede": "The slider sets how much of the lake you bite off: zero means safely right around the water, a hundred per cent the boldest line available. The dots on the plan are the actual landing points of the selected player's drives; the red ones finished in the water.",
+      "planLabel": "Plan of a Cape hole with the lake lying diagonally across the inside of the corner",
+      "odvahaLabel": "How much you bite off",
+      "hracLabel": "Which player you are watching",
+      "zbyvaLabel": "From this line the green is still",
+      "tabulka": {
+        "hrac": "Player",
+        "prumer": "Average strokes",
+        "voda": "Water",
+        "fairway": "Fairway"
+      },
+      "grafHead": "Calibration curve",
+      "grafPopis": "Average strokes against the amount bitten off, for each of the four players. The circle marks the optimum — the line that works best for that player.",
+      "grafOsaX": "How much you bite off",
+      "grafOsaY": "Average strokes",
+      "optimumHead": "Where each player's optimum sits",
+      "optimumRadek": "{hrac}: {proc} % of courage works best — an average of {prumer} strokes. Going all in would cost him {rozdil} of a stroke more.",
+      "optimumRadekMax": "{hrac}: the boldest line, {proc} %, works best — an average of {prumer} strokes.",
+      "zaver": "Notice where the optimum moves: the tighter a player's dispersion, the more it pays him to bite off. The hole is one and the same throughout — only the person standing on it changes.",
+      "foot": "sheet 4 · Approach",
+      "poznamka": "Fifteen hundred rounds for every line and player, computed once when the page loads with the same random generator — so the numbers do not change between visits and can be compared with someone else. The model comes from part 8 of the brief: dispersion by handicap, no nerves, no wind. Treat differences smaller than about five hundredths of a stroke as noise in the model rather than a result — where two lines come out almost equal, the right answer is not either of them but the fact that the player gets to choose."
+    },
+    "putt": {
+      "eyebrow": "Putt",
+      "over": "Three questions, no marks —",
+      "title": "Something to think about",
+      "lede": "Write in your own words. Nobody will correct it — it is here so that you have to answer it for yourself.",
+      "otazky": [
+        "Think of a hole where you decided to take the risk and it did not come off. In hindsight: was it a bad bet, or a good bet with a bad ending? How do you tell the difference?",
+        "If you had to add one bunker to one hole on your home course so that the decision-making improved (not so that the hole got harder), where would you put it and why?",
+        "Augusta lengthened its 13th by thirty-two metres and the scoring average did not rise. Is that a success or a failure? Defend your answer."
+      ],
+      "poznamkaPlaceholder": "Write here…",
+      "ulozeno": "Saved in this browser.",
+      "foot": "sheet 5 · Putt",
+      "cile": [
+        "Tell a good decision apart from a good outcome — and see that they are not the same thing."
+      ],
+      "zapamatuj": [
+        "A good bet with a bad ending is still a good bet. You cannot calibrate from a single round.",
+        "Difficulty can always be increased. The quality of the decision cannot.",
+        "If you cannot defend your choice with numbers, you are defending it with a feeling — and feelings change hourly on a golf course."
+      ]
+    },
+    "slovnicek": {
+      "eyebrow": "Glossary",
+      "over": "Terms from this lesson —",
+      "title": "Seven words",
+      "lede": "The technical terms stay in English even in Czech text — it is the language golf architecture speaks in every source.",
+      "pojmy": [
+        {
+          "pojem": "Expected strokes",
+          "popis": "How many strokes a given choice averages if you played it many thousands of times. The architect calibrates that average, not what comes off for you today."
+        },
+        {
+          "pojem": "Break-even point",
+          "popis": "The chance of success at which the bold and the safe route come out equal. Work it out as the cost of failure divided by the sum of cost and reward."
+        },
+        {
+          "pojem": "Graded risk",
+          "popis": "A property of a hole where the player chooses the size of the bet continuously, not just yes or no. It comes from a hazard lying diagonally to the line of play."
+        },
+        {
+          "pojem": "Reachable par 5",
+          "popis": "A par 5 whose green can be reached with the second shot. The whole hole then rests on a single question: who does that pay for?"
+        },
+        {
+          "pojem": "Drop zone",
+          "popis": "A marked spot from which play continues after a ball in the water when there is nowhere else to drop. The architect sets the cost of failure with it directly."
+        },
+        {
+          "pojem": "Penalty area",
+          "popis": "A marked area, typically water, from which play may continue with one penalty stroke. Red allows a lateral drop, yellow does not — and that is a difference of nearly half a stroke."
+        },
+        {
+          "pojem": "Momentous decision",
+          "popis": "Bobby Jones's words about the 13th at Augusta: the decision whether to go for the green in two should be a momentous one. Once it becomes automatic, the hole has stopped working."
+        }
+      ],
+      "cile": [
+        "Use the vocabulary of risk and reward precisely when analysing a hole, not by instinct."
+      ],
+      "zapamatuj": [
+        "The break-even point follows from cost and reward — the quickest test of whether a hole offers a choice.",
+        "Gradation is a property of geometry, not of the size of the hazard.",
+        "The colour of the stakes around water (red or yellow) changes the cost of failure without moving a spadeful of earth."
+      ],
+      "vyzkousej": {
+        "otazka": "The bold route saves 0.5 of a stroke and costs 1.5 strokes when it fails. Work out the break-even point and say whether such a hole is for professionals or for everybody.",
+        "placeholder": "Write in your own words — nobody marks this."
+      }
+    },
+    "zkouska": {
+      "eyebrow": "Exam",
+      "over": "Six questions for —",
+      "title": "100 points",
+      "lede": "Answer all six; only then will you see the solutions. Your first attempt is the one that counts in the overview.",
+      "spolecne": {
+        "otazka": "Question",
+        "bodu": "points",
+        "zbyva": "Still to answer",
+        "hotovoMuzesOdevzdat": "Done. You can submit.",
+        "spravne": "correct",
+        "tvojeVolba": "your choice",
+        "nicNevybrano": "nothing selected",
+        "moznost": "Option",
+        "zkratkaBodu": "pt",
+        "reseniUKazdeOtazky": "The solutions are shown with each question."
+      },
+      "submit": "Submit",
+      "again": "Try again",
+      "q1": {
+        "text": "On which of these three plans does the player choose the size of the risk continuously, rather than yes or no?",
+        "hint": "Look for a hazard that lies diagonally along the line of play, not across it.",
+        "a": "Plan A",
+        "b": "Plan B",
+        "c": "Plan C",
+        "why": "<b>B.</b> The water lies diagonally along the edge of the fairway, so every line off the tee has a different carry and a different reward. In A the water crosses the hole — everyone faces the same carry, so it is a yes/no bet. In C the water is only around the green and the drive decides nothing.",
+        "back": "Go back to the plate „The three numbers behind a bet“."
+      },
+      "q2": {
+        "text": "The bold route saves you 0.4 of a stroke when it works and costs 1.2 strokes when it does not. From what chance of success does it pay?",
+        "a": "From 25 %",
+        "b": "From 50 %",
+        "c": "From 75 %",
+        "d": "From 90 %",
+        "why": "<b>C.</b> The break-even point is cost divided by (cost + reward): 1.2 ÷ (1.2 + 0.4) = 0.75. Below 75 % success it loses, above it wins. Most amateurs never get past three quarters — which is why such a hole is set up for professionals.",
+        "back": "Go back to the glossary."
+      },
+      "q3": {
+        "text": "Why did Augusta National move the 13th tee back 35 yards in 2023?",
+        "a": "To raise the hole's scoring average",
+        "b": "To make the decision whether to go for the green in two a real decision again",
+        "c": "Because Rae's Creek was flooding the old tee",
+        "d": "To make the 13th the hardest hole on the course",
+        "why": "<b>B.</b> The chairman said it in so many words in 2018: Jones wrote about a „momentous decision“, but when players are hitting middle irons at the green, nothing about it is momentous. The scoring average did not rise afterwards anyway — the hole played 4.85 in 2022 and 4.74 in 2023.",
+        "back": "Go back to the Augusta National 13 hole card."
+      },
+      "q4": {
+        "text": "On which plan does the safe route also have a price?",
+        "hint": "Look for something in the way where the cautious lay-up finishes — not only where the bold line goes.",
+        "a": "Plan A",
+        "b": "Plan B",
+        "c": "Plan C",
+        "why": "<b>B.</b> The bunker sits in the lay-up zone, that is, where the safe option finishes. That makes the cautious route dearer and narrows the gap between the two choices. In A and C the safe side is wide open, so the bold line has to be disproportionately rewarding before anyone will even consider it.",
+        "back": "Go back to the Ostravice 16 hole card."
+      },
+      "q5": {
+        "text": "What is true of a well-calibrated risk-and-reward hole? Select all correct statements.",
+        "hint": "Each correct choice scores; each wrong one is deducted.",
+        "a": "The safe option must have some price too",
+        "b": "The bold line must pay off for every player regardless of handicap",
+        "c": "The hazard has to be visible from the tee, otherwise there is no decision",
+        "d": "The size of the bet should be selectable by degrees, not just yes or no",
+        "why": "<b>A, C, D.</b> B is exactly the mistake that produces „free risk“ — if the bold route wins for everyone, the hole asks nothing. The other three are three different ways of keeping the choice alive: make the safe route dearer, show the risk in advance, and let the player set its size.",
+        "back": "Go back to the task „How much water do you carry?“."
+      },
+      "q6": {
+        "text": "What does „expected strokes“ mean for one particular choice?",
+        "a": "The number of strokes an average club member takes on the hole",
+        "b": "The average over very many repetitions of the same choice, failures included",
+        "c": "The best result the choice can produce",
+        "d": "The par of the hole plus the number of hazards",
+        "why": "<b>B.</b> It is an average over many repetitions, not a forecast for today. That is precisely why a hole can be calibrated: one round is chance, fifteen hundred rounds are a property of the hole.",
+        "back": "Go back to the task „How much water do you carry?“."
+      },
+      "pasmo": {
+        "vyborne": {
+          "nadpis": "Excellent",
+          "text": "You have the calibration of risk under control. Move on to lesson 6."
+        },
+        "dobre": {
+          "nadpis": "Good",
+          "text": "The basics hold. Look over the questions you got wrong and carry on."
+        },
+        "projdes": {
+          "nadpis": "Pass",
+          "text": "Go back to the task „How much water do you carry?“ before you start lesson 6."
+        },
+        "zopakuj": {
+          "nadpis": "Repeat",
+          "text": "Go back to the start of the lesson and work through the plate and the task again."
+        }
+      },
+      "souhrn": {
+        "nadpis": "Result",
+        "procentBodu": "per cent · {body} of {max} points",
+        "spravne": "correct",
+        "chybneCastecne": "wrong or partial",
+        "zcelaMimo": "completely off",
+        "rozpis": "Answer by answer",
+        "tvojeOdpoved": "Your answer",
+        "spravneReseni": "Correct",
+        "pata": "The full explanation sits with each question above. The result is stored in the overview in this browser."
+      },
+      "foot": "sheet 7 · Exam",
+      "cile": [
+        "Confirm that you can tell a fair bet from a gift and from a trap."
+      ],
+      "zapamatuj": [
+        "Break-even = cost of failure ÷ (cost of failure + reward).",
+        "A well-calibrated hole does not give every player the same answer.",
+        "A hole can be hard and still uninteresting — and the other way round."
+      ]
+    },
+    "temata": {
+      "strategie": "strategy",
+      "trest": "penalty",
+      "riziko-odmena": "risk and reward",
+      "umisteni-hazardu": "hazard placement",
+      "cteni-terenu": "reading the land",
+      "voda-odtok": "water and drainage",
+      "vitr-slunce": "wind and sun",
+      "routing": "routing",
+      "bezpecnost": "safety",
+      "rytmus-hriste": "rhythm of the course",
+      "uhel-nabehu": "angle of attack",
+      "diagonalni-hazard": "diagonal hazard"
+    },
+    "foot": {
+      "lekce": "ROUTING · lesson 5"
+    },
+    "nav": {
+      "predchozi": "Previous",
+      "dalsi": "Next",
+      "prehled": "Lesson overview",
+      "krok": "Step {n} of 7",
+      "dalsiLekce": "Continue to the next lesson",
+      "konecKurzu": "The last finished lesson so far — carry on with the hole collection",
+      "preskocit": "Skip to content",
+      "sekceNavLabel": "Navigation between parts of the lesson",
+      "jazykLabel": "Language",
+      "sekceNazvy": [
+        "The three numbers",
+        "Three holes, three calibrations",
+        "Ostravice 16",
+        "How much water do you carry?",
+        "Something to think about",
+        "Glossary",
+        "Exam"
+      ],
+      "klavesniNapoveda": "The plan can be used from the keyboard: tab to it, move the crosshair with the arrow keys, confirm with Enter."
+    },
+    "toc": {
+      "kicker": "Lesson overview",
+      "sekceHead": "What is coming",
+      "pokracovat": "Continue",
+      "zacit": "Start the lesson",
+      "zpetNaPrehled": "← Back to the course overview",
+      "daleHead": "Where next",
+      "slovnicekPopis": "Every term in the course in one place, alphabetical and bilingual.",
+      "sbirkaPopis": "Fourteen holes from around the world and from Czechia, analysed in one format."
+    }
+  }
+}

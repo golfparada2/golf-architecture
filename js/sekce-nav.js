@@ -14,7 +14,7 @@
  * pro popisky v navigaci i pro seznam na mini-rozcestníku.
  * ==========================================================================*/
 
-export const CELKEM_LEKCI_HOTOVO = 4;
+export const CELKEM_LEKCI_HOTOVO = 5;
 export const CELKEM_LEKCI = 18;
 
 /** Sekce jsou u všech hotových lekcí ve stejném pořadí a se stejným

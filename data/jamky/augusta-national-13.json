@@ -1,0 +1,266 @@
+{
+  "verze": 1,
+  "id": "augusta-national-13",
+  "hriste": "Augusta National Golf Club",
+  "zeme": "US-GA",
+  "jamka": 13,
+  "nazev": {
+    "cs": "Azalea",
+    "en": "Azalea"
+  },
+  "par": 5,
+  "delky": [
+    {
+      "odpaliste": "Masters, aktuální (od 2023)",
+      "m": 498,
+      "yd": 545,
+      "rok": 2023,
+      "poznamka": "nové zadní odpaliště oznámené v únoru 2023, poprvé ve hře na Masters v dubnu 2023 — jamka se prodloužila o 35 yardů (32 m)"
+    },
+    {
+      "odpaliste": "Masters 2002–2022",
+      "m": 466,
+      "yd": 510,
+      "rok": 2002
+    },
+    {
+      "odpaliste": "původní stav ve 30. letech",
+      "m": 440,
+      "yd": 481,
+      "rok": 1934,
+      "poznamka": "zdroje se rozcházejí mezi 480 a 485 yardy; uvádíme střed s výhradou"
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "Alister MacKenzie a Bobby Jones",
+      "en": "Alister MacKenzie and Bobby Jones"
+    },
+    "jistota": "jistá",
+    "poznamka": {
+      "cs": "MacKenzie jamku položil na nejnižší část pozemku a nechal přírodní přítok Rae's Creek hlídat levou stranu i předpolí greenu — nemusel tedy stavět jediný fairwayový bunkr. V původním layoutu z roku 1932 se hrála jako čtvrtá. Zásadní pozdější zásah je až rok 2023: klub odkoupil v roce 2017 pozemek od sousedního Augusta Country Club, o pět let později na něm postavil nové odpaliště a jamku prodloužil o 35 yardů. Předseda klubu Fred Ridley to v roce 2018 zdůvodnil doslova tím, že Jonesovo „zásadní rozhodnutí“, jestli jít na green druhou ranou, přestalo být zásadní, když hráči útočí středním železem.",
+      "en": "MacKenzie laid the hole across the lowest part of the property and let the natural tributary of Rae's Creek guard both the left side and the ground in front of the green — so he never needed a single fairway bunker. In the original 1932 routing it played as the fourth. The one decisive later change came in 2023: the club had bought land from neighbouring Augusta Country Club in 2017, built a new tee on it five years later, and stretched the hole by 35 yards. Chairman Fred Ridley had justified it in 2018 in so many words: Jones's „momentous decision“ whether to go for the green in two had stopped being momentous once players were hitting middle irons."
+    }
+  },
+  "vznik": 1933,
+  "gps": {
+    "tee": [
+      33.503,
+      -82.0199
+    ],
+    "green": [
+      33.503,
+      -82.0199
+    ],
+    "presnost": {
+      "cs": "přibližné, úroveň areálu — Augusta National přesné souřadnice jednotlivých odpališť a greenů nezveřejňuje",
+      "en": "approximate, club-level — Augusta National does not publish precise tee and green coordinates"
+    }
+  },
+  "otazka": {
+    "cs": "Půjdeš na green druhou ranou přes Rae's Creek, nebo přihraješ a spolehneš se na wedge? A změní se ta odpověď, když ti klub přidá 32 metrů?",
+    "en": "Do you go for the green in two over Rae's Creek, or lay up and trust a wedge? And does the answer change when the club adds 32 metres?"
+  },
+  "tvary": {
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Ostrý dogleg doleva kolem přítoku Rae's Creek: potok vede podél celé levé strany fairwaye a pak kříží hru těsně před greenem. Kladný `fairway.ohyb` znamená, že se stuha vyklenuje doprava od přímé linie na green, který leží vlevo — tak vzniká dogleg doleva (stejná konvence jako u Karlštejna 15). Čtyři bunkry ZA greenem jsou doložené třemi nezávislými prameny; fairwayový bunkr na jamce žádný není a schéma proto žádný nekreslí. NEDOHLEDÁNO a proto nezakresleno: šířka fairwaye v metrech, převýšení a plocha greenu — Augusta National tato čísla nezveřejňuje. Sklon fairwaye zprava doleva k potoku (klíč k celé strategii) je kresbou nezobrazitelný, popisuje ho text karty. Poloha čtyř bunkrů za greenem vůči sobě je odhad podle fotografií, ne podle zaměření.",
+    "green": {
+      "x": -42,
+      "y": 470,
+      "rx": 14,
+      "ry": 9,
+      "rot": 0.12,
+      "seed": 3101,
+      "amp": 0.06
+    },
+    "bunkry": [
+      {
+        "x": -56,
+        "y": 487,
+        "rx": 4,
+        "ry": 3,
+        "rot": 0.2,
+        "seed": 3102,
+        "amp": 0.14,
+        "label": {
+          "cs": "první ze čtyř bunkrů za greenem",
+          "en": "first of four bunkers behind the green"
+        },
+        "zkratka": null
+      },
+      {
+        "x": -47,
+        "y": 491,
+        "rx": 4,
+        "ry": 3,
+        "rot": 0.1,
+        "seed": 3103,
+        "amp": 0.14,
+        "label": {
+          "cs": "druhý ze čtyř bunkrů za greenem",
+          "en": "second of four bunkers behind the green"
+        },
+        "zkratka": {
+          "cs": "4 BUNKRY VZADU",
+          "en": "4 BUNKERS BEHIND"
+        }
+      },
+      {
+        "x": -38,
+        "y": 491,
+        "rx": 4,
+        "ry": 3,
+        "rot": -0.1,
+        "seed": 3104,
+        "amp": 0.14,
+        "label": {
+          "cs": "třetí ze čtyř bunkrů za greenem",
+          "en": "third of four bunkers behind the green"
+        },
+        "zkratka": null
+      },
+      {
+        "x": -29,
+        "y": 486,
+        "rx": 4,
+        "ry": 3,
+        "rot": -0.2,
+        "seed": 3105,
+        "amp": 0.14,
+        "label": {
+          "cs": "čtvrtý ze čtyř bunkrů za greenem",
+          "en": "fourth of four bunkers behind the green"
+        },
+        "zkratka": null
+      }
+    ],
+    "hazardy": [
+      {
+        "typ": "voda",
+        "x": -41,
+        "y": 285,
+        "rx": 7,
+        "ry": 150,
+        "rot": 0.06,
+        "seed": 3106,
+        "amp": 0.06,
+        "label": {
+          "cs": "přítok Rae's Creek podél celé levé strany fairwaye",
+          "en": "tributary of Rae's Creek down the entire left side of the fairway"
+        },
+        "zkratka": {
+          "cs": "RAE'S CREEK",
+          "en": "RAE'S CREEK"
+        }
+      },
+      {
+        "typ": "voda",
+        "x": -42,
+        "y": 452,
+        "rx": 26,
+        "ry": 4,
+        "rot": 0.1,
+        "seed": 3107,
+        "amp": 0.07,
+        "label": {
+          "cs": "tentýž potok kříží hru těsně před greenem",
+          "en": "the same creek crosses the line of play right in front of the green"
+        },
+        "zkratka": {
+          "cs": "POTOK",
+          "en": "CREEK"
+        }
+      }
+    ],
+    "fairway": {
+      "ohyb": 46,
+      "sirkaTee": 34,
+      "sirkaGreen": 30,
+      "zacatek": 20,
+      "seed": 4109
+    },
+    "dopadovaZona": {
+      "od": 250,
+      "do": 300
+    },
+    "primaLinie": true
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Potok, který dělá obě rány najednou",
+        "en": "One creek, two decisions"
+      },
+      "popis": {
+        "cs": "Přítok Rae's Creek vede podél celé levé strany a pak přechází před green. Tentýž hazard tedy ohrožuje odpal i druhou ránu — a čím blíž k němu odpálíš, tím kratší druhou ránu máš.",
+        "en": "The tributary of Rae's Creek runs down the whole left side and then crosses in front of the green. The same hazard threatens both the drive and the second — and the closer you drive to it, the shorter your second becomes."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Sklon fairwaye jde proti hráči",
+        "en": "The fairway tilts against you"
+      },
+      "popis": {
+        "cs": "Fairway se naklání zprava doleva k potoku a nejstrmější je daleko od vody. Kdo si zvolí bezpečnou pravou stranu, dostane nejen delší druhou ránu, ale i míč nad nohama — Bobby Jones tomu říkal „nepříjemné lie ve svahu“.",
+        "en": "The fairway tilts right to left toward the creek, and it is steepest far from the water. Play safe to the right and you get not only a longer second but a sidehill lie — Bobby Jones called it an „annoying side-hill lie“."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Překalibrování v roce 2023",
+        "en": "The 2023 recalibration"
+      },
+      "popis": {
+        "cs": "Nové odpaliště přidalo 35 yardů. Průměrné skóre jamky se přitom nezvedlo — v roce 2022 (kratší verze) hrála 4,85, v roce 2023 (delší verze) 4,74. Co se změnilo, je rozhodování: průměrný odpal vyskočil ze zhruba 270 na téměř 300 yardů, protože hráči začali brát driver, a jamka byla poprvé od roku 2013 nejtěžším ze čtyř par 5 v Augustě.",
+        "en": "The new tee added 35 yards. The scoring average did not rise — in 2022 (the shorter version) it played 4.85, in 2023 (the longer version) 4.74. What changed is the decision: average driving distance jumped from roughly 270 to nearly 300 yards because players started taking driver, and for the first time since 2013 the hole was the hardest of Augusta's four par 5s."
+      }
+    }
+  ],
+  "prameny": [
+    {
+      "titul": "Golf Digest — Augusta National lengthens 13th hole, announces new yardage",
+      "url": "https://www.golfdigest.com/story/masters-2023-augusta-national-lengthens-13th-hole-announces-new-yardage-for-famed-par-5"
+    },
+    {
+      "titul": "Golf Digest — Jak se změnila 13. jamka po prodloužení (statistika 2022 vs. 2023)",
+      "url": "https://www.golfdigest.com/story/masters2023-13th-hole-augusta-national-lengthened-how-does-it-compare-strategy",
+      "poznamka": "zdroj průměrů 4,85 (2022) a 4,74 (2023) i skoku průměrné délky odpalu z ~270 na ~300 yardů"
+    },
+    {
+      "titul": "The Fried Egg — Every Hole at Augusta National: No. 13, Azalea",
+      "url": "https://www.thefriedegg.com/articles/augusta-national-golf-club-13-azalea",
+      "poznamka": "zdroj popisu sklonu fairwaye a Jonesova citátu z knihy Golf Is My Game"
+    },
+    {
+      "titul": "The Fried Egg — Azalea Returns to Form (rozbor Masters 2023)",
+      "url": "https://www.thefriedegg.com/articles/augusta-national-13th-hole-2023-masters"
+    },
+    {
+      "titul": "Planet Golf — Augusta National acquires land from neighbouring club",
+      "url": "https://www.planetgolf.com/news/augusta-national-acquires-land-from-neighbouring-golf-club-to-stretch-its-iconic-13th-hole",
+      "poznamka": "odkup pozemku od Augusta Country Club v roce 2017; cena nebyla zveřejněna"
+    },
+    {
+      "titul": "Geoff Shackelford — Fred Ridley's „momentous“ comments on the distance issue",
+      "url": "https://www.geoffshackelford.com/homepage/2018/4/4/fred-ridleys-momentous-comments-on-the-distance-issue",
+      "poznamka": "přesné znění Ridleyho vyjádření z tiskové konference 4. dubna 2018"
+    },
+    {
+      "titul": "Sports Illustrated — Masters 13th hole: stats, history, memorable moments",
+      "url": "https://www.si.com/golf/news/feature-2021-03-22-masters-13th-hole-stats-history-memorable-moments-from-augusta-nationals-par-5-azalea",
+      "poznamka": "historický průměr 4,775 a popis tvaru greenu"
+    },
+    {
+      "titul": "PGA Tour — Masters hole-by-hole",
+      "url": "https://www.pgatour.com/article/news/latest/2026/04/02/the-masters-2026-augusta-national-hole-by-hole-look-golf-course"
+    }
+  ],
+  "naCoSeDivat": {
+    "cs": "Sleduj, že mezi odpalištěm a greenem není jediný bunkr — celou obranu jamky obstarává jeden potok, který vede podél levé strany a pak se otočí napříč před green. Čárkovaná červená linie je přímá cesta na green: vede přesně nad vodou.",
+    "en": "Notice there is not a single bunker between tee and green — the hole's whole defence is one creek that runs down the left and then turns across the front. The dashed red line is the direct route to the green: it runs straight over the water."
+  },
+  "lekce": {
+    "cs": "Cena sázky se dá překalibrovat, aniž by se jamka stala těžší. Augusta přidala 32 metrů a průměrné skóre zůstalo stejné — jen se vrátilo rozhodování. Když navrhuješ, ptej se nejdřív „je to pořád volba?“, teprve pak „je to dost těžké?“.",
+    "en": "The price of a gamble can be recalibrated without making the hole harder. Augusta added 32 metres and the scoring average stayed put — what came back was the decision. When you design, ask „is this still a choice?“ before you ask „is this hard enough?“."
+  }
+}

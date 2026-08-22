@@ -1,0 +1,215 @@
+{
+  "verze": 1,
+  "id": "mid-ocean-5",
+  "hriste": "Mid Ocean Club",
+  "zeme": "BM",
+  "jamka": 5,
+  "nazev": {
+    "cs": "Cape",
+    "en": "The Cape"
+  },
+  "par": 4,
+  "delky": [
+    {
+      "odpaliste": "modrá (zadní) — aktuální",
+      "m": 396,
+      "yd": 433,
+      "rok": 2026,
+      "poznamka": "Golf Club Atlas uvádí 435 yardů; scorecard klubu 433 — rozdíl dvou yardů necháváme přiznaný, ne zprůměrovaný"
+    },
+    {
+      "odpaliste": "bílá",
+      "m": 368,
+      "yd": 402
+    },
+    {
+      "odpaliste": "červená",
+      "m": 299,
+      "yd": 327
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "Charles Blair Macdonald (stavbu vedl Seth Raynor)",
+      "en": "Charles Blair Macdonald (construction led by Seth Raynor)"
+    },
+    "jistota": "jistá",
+    "poznamka": {
+      "cs": "Jediné Macdonaldovo hřiště mimo Spojené státy — objednala si ho v roce 1919 paroplavební společnost Furness Withy, aby na Bermudy přilákala turisty. Raynor sem během pěti let jezdil asi desetkrát a stavěl podle Macdonaldových plánů a modelů. Roky se v pramenech rozcházejí: hřiště bylo dokončeno v prosinci 1921, poloficiálně se hrálo od roku 1923 a slavnostní otevření proběhlo v roce 1924. Robert Trent Jones st. v roce 1953 postavil nová zadní odpaliště a upravil bunkry, ale nepohnul ani jedním greenem. V červenci 2026 klub oznámil kompletní restauraci pod vedením Gila Hanse a Jima Wagnera se zemními pracemi od podzimu 2027; na páté jamce má obnovit břeh jezera, zvětšit green na původní rozměr a vrátit bunkrům původní měřítko.",
+      "en": "Macdonald's only course outside the United States — commissioned in 1919 by the Furness Withy steamship company to draw tourists to Bermuda. Raynor made some ten trips over five years, building from Macdonald's plans and models. The dates differ between sources: the course was finished in December 1921, was played semi-officially from 1923, and had its grand opening in 1924. Robert Trent Jones Sr. added new back tees and reworked bunkers in 1953 but moved no greens. In July 2026 the club announced a full restoration by Gil Hanse and Jim Wagner with earthworks from autumn 2027; at the fifth it is to restore the lake edge, return the green to its original size and put the bunkers back to their original scale."
+    }
+  },
+  "vznik": 1921,
+  "gps": {
+    "tee": [
+      32.3437,
+      -64.6752
+    ],
+    "green": [
+      32.3437,
+      -64.6752
+    ],
+    "presnost": {
+      "cs": "přibližné, úroveň areálu — klub je soukromý a přesné souřadnice jamek nezveřejňuje",
+      "en": "approximate, club-level — the club is private and does not publish per-hole coordinates"
+    }
+  },
+  "otazka": {
+    "cs": "Kolik z Mangrove Lake si ukrojíš? Není to otázka ano/ne — každý metr navíc přes vodu je kus jamky, který už nemusíš hrát.",
+    "en": "How much of Mangrove Lake do you bite off? It is not a yes/no question — every extra metre carried is a piece of the hole you no longer have to play."
+  },
+  "tvary": {
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Dogleg doleva kolem Mangrove Lake; kladný `fairway.ohyb` znamená vyklenutí stuhy doprava od přímé linie na green ležící vlevo, tedy dogleg doleva. NEDOHLEDÁNO a proto nezakresleno ani netvrzeno: kolik yardů má carry přes vodu při jednotlivých liniích odpalu, kolik zbývá na green podle míry ukrojení, přesný počet a rozmístění bunkrů (doložená je jen „dvojice bunkrů“ pod strmým svahem vpravo od greenu) a rozměry greenu. Žádný veřejný pramen tato čísla neuvádí a klub yardage book online nemá — tvar jezera i poloha bunkrů jsou tedy odvozené z textových popisů a leteckého dojmu, ne ze zaměření. Převýšení odpaliště nad jezerem se v pramenech liší (90 stop podle Golf Club Atlas, pokles zhruba 50 stop k fairwayi podle The Fried Egg) a kresba ho stejně zobrazit neumí.",
+    "green": {
+      "x": -48,
+      "y": 370,
+      "rx": 11,
+      "ry": 9,
+      "rot": -0.22,
+      "seed": 3201,
+      "amp": 0.08
+    },
+    "bunkry": [
+      {
+        "x": -33,
+        "y": 362,
+        "rx": 5,
+        "ry": 4,
+        "rot": 0.15,
+        "seed": 3202,
+        "amp": 0.16,
+        "label": {
+          "cs": "dvojice bunkrů pod strmým svahem vpravo od greenu",
+          "en": "pair of bunkers below the steep bank right of the green"
+        },
+        "zkratka": {
+          "cs": "BUNKRY VPRAVO",
+          "en": "BUNKERS RIGHT"
+        }
+      },
+      {
+        "x": -29,
+        "y": 353,
+        "rx": 4,
+        "ry": 3.2,
+        "rot": -0.1,
+        "seed": 3203,
+        "amp": 0.16,
+        "label": {
+          "cs": "druhý z dvojice bunkrů vpravo od greenu",
+          "en": "second of the pair right of the green"
+        },
+        "zkratka": null
+      }
+    ],
+    "hazardy": [
+      {
+        "typ": "voda",
+        "x": -51,
+        "y": 190,
+        "rx": 30,
+        "ry": 105,
+        "rot": 0.04,
+        "seed": 3204,
+        "amp": 0.09,
+        "label": {
+          "cs": "Mangrove Lake vyplňuje celý vnitřek zákruty",
+          "en": "Mangrove Lake fills the whole inside of the dogleg"
+        },
+        "zkratka": {
+          "cs": "MANGROVE LAKE",
+          "en": "MANGROVE LAKE"
+        }
+      }
+    ],
+    "fairway": {
+      "ohyb": 46,
+      "sirkaTee": 32,
+      "sirkaGreen": 28,
+      "zacatek": 25,
+      "seed": 4110
+    },
+    "dopadovaZona": {
+      "od": 200,
+      "do": 250
+    },
+    "primaLinie": true
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Sázka po metrech, ne ano/ne",
+        "en": "A bet by the metre, not yes or no"
+      },
+      "popis": {
+        "cs": "Voda leží podél hrany fairwaye šikmo, ne napříč. Každá linie odpalu má proto jinou délku přeletu a jinou odměnu — hráč si sázku nastavuje sám, plynule, ne dvěma tlačítky.",
+        "en": "The water lies diagonally along the edge of the fairway, not across it. Every line off the tee has a different carry and a different reward — the player sets the size of the bet himself, continuously, not with two buttons."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Odměna není jen kratší rána",
+        "en": "The reward is not just a shorter shot"
+      },
+      "popis": {
+        "cs": "Fairway i green se naklánějí zprava doleva a náklon je nejstrmější daleko od vody. Kdo ukrojí víc, dostane rovnější postoj a lepší úhel; kdo hraje bezpečně doprava, čelí greenu, který ránu odmítá.",
+        "en": "Both fairway and green tilt right to left, and the tilt is steepest furthest from the water. Cut off more and you get a flatter stance and a better angle; play safe to the right and you face a green that rejects the shot."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Předloha, kterou moderní kopie ztratily",
+        "en": "The template modern copies lost"
+      },
+      "popis": {
+        "cs": "Macdonald v roce 1914 definoval Cape podle greenu, ne podle odpalu: green vybíhá do vody, která ho obklopuje ze tří stran. Pátá jamka Mid Oceanu splňuje obojí — původní definici i tu moderní o diagonálním odpalu.",
+        "en": "In 1914 Macdonald defined the Cape by its green, not its tee shot: the green runs out into the water, surrounded on three sides. Mid Ocean's fifth satisfies both — the original definition and the modern one about the diagonal drive."
+      }
+    }
+  ],
+  "prameny": [
+    {
+      "titul": "Golf Club Atlas — Mid Ocean Club",
+      "url": "https://golfclubatlas.com/countries/midocean/",
+      "poznamka": "zdroj popisu mechanismu („čím blíž k hazardu, tím rovnější postoj a lepší úhel“), sklonu fairwaye i greenu a délky 435 yardů"
+    },
+    {
+      "titul": "The Fried Egg — Mid Ocean Club",
+      "url": "https://www.thefriedegg.com/courses/mid-ocean-club"
+    },
+    {
+      "titul": "Mid Ocean Club — Our Story (oficiální historie klubu)",
+      "url": "https://www.midoceanclub.com/our-story"
+    },
+    {
+      "titul": "GolfPass — Mid Ocean Club scorecard",
+      "url": "https://www.golfpass.com/travel-advisor/courses/16449-mid-ocean-club",
+      "poznamka": "zdroj délek z jednotlivých odpališť a stroke indexu 1"
+    },
+    {
+      "titul": "Bernews — Gil Hanse discusses the Mid Ocean restoration (červenec 2026)",
+      "url": "https://bernews.com/2026/07/gil-hanse-discusses-mid-ocean-restoration/"
+    },
+    {
+      "titul": "The A Position — Macdonaldovo vlastní vysvětlení Cape hole (Golf Illustrated, 1914)",
+      "url": "http://theaposition.com/anthonypioppi/golf/2197/the-correct-explanation-according-to-charles-blair-macdonald-of-the-cape-hole",
+      "poznamka": "původní definice: green vybíhá do vody, která ho obklopuje ze tří stran"
+    },
+    {
+      "titul": "The Fried Egg — The Cape template hole",
+      "url": "https://www.thefriedegg.com/articles/cape-template-hole"
+    },
+    {
+      "titul": "Planet Golf — The Mid Ocean Club",
+      "url": "https://www.planetgolf.com/courses/bermuda/the-mid-ocean-club"
+    }
+  ],
+  "naCoSeDivat": {
+    "cs": "Podívej se, že hranice vody nejde napříč jamkou, ale šikmo podél ní. Přesně proto tu není jedna „správná“ linie — čárkovaná červená přímka na green je jen ta nejodvážnější z nekonečně mnoha možných.",
+    "en": "Look at how the water's edge does not cross the hole but runs diagonally along it. That is exactly why there is no single „right“ line — the dashed red line to the green is merely the boldest of infinitely many."
+  },
+  "lekce": {
+    "cs": "Nejlepší sázka je odstupňovaná. Když hazard leží šikmo, hráč si sám vybere, jak velké riziko chce — a jamka funguje pro profesionála i pro hráče s hendikepem 24, aniž bys musel stavět dvě různé jamky.",
+    "en": "The best bet is a graded one. When the hazard lies diagonally, the player chooses the size of his own risk — and the hole works for a professional and for a 24-handicapper without you having to build two different holes."
+  }
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ROUTING — Lekce 5: Zkouška</title>
+<meta name="description" content="Lekce 5, sekce 7 z 7: šest otázek za 100 bodů.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F1E0'/%3E%3Ccircle cx='16' cy='14' r='9' fill='%23A9B983' stroke='%231E1B15' stroke-width='1.4'/%3E%3Ccircle cx='16' cy='14' r='1.6' fill='%231E1B15'/%3E%3Cpath d='M16 14 L16 5' stroke='%231E1B15' stroke-width='1.3'/%3E%3Cpath d='M16 5 L23 7.5 L16 10 Z' fill='%23B0452C' stroke='%231E1B15' stroke-width='.8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/styl.css">
+</head>
+<body>
+
+<a class="preskocit" href="#obsah" data-t="nav.preskocit">Přeskočit na obsah</a>
+
+<header class="hlavicka">
+<div class="topbar">
+  <div class="hr"><span data-t="meta.kicker"></span></div>
+  <div class="lang" role="group" aria-label="Language" data-t="nav.jazykLabel" data-t-attr="aria-label">
+    <button data-l="cs" aria-current="true">ČES</button><i>/</i><button data-l="en">ENG</button>
+  </div>
+</div>
+<nav class="drobky" id="drobky"></nav>
+<p class="krokLabel" id="krokLabel"></p>
+<nav class="kroky" id="kroky"></nav>
+</header>
+
+<main id="obsah">
+
+<section class="plat" id="secZkouska">
+  <p class="eyebrow" data-t="zkouska.eyebrow"></p>
+  <h1 class="platNadpis"><em data-t="zkouska.over"></em><span data-t="zkouska.title"></span></h1>
+  <p class="lede" data-t="zkouska.lede"></p>
+  <div class="cileBox" id="cileBox" hidden></div>
+
+  <div class="meter" id="zMeter"></div>
+  <div id="zQuiz"></div>
+  <div class="tools">
+    <button type="button" id="zSubmit" data-t="zkouska.submit" disabled></button>
+    <button type="button" id="zAgain" class="quiet" data-t="zkouska.again" hidden></button>
+  </div>
+  <p class="note" id="zNote"></p>
+  <div class="result" id="zResult" hidden></div>
+
+  <p class="listMark" data-t="zkouska.foot"></p>
+</section>
+
+<div class="zapamatujBox" id="zapamatujBox" hidden></div>
+
+<nav class="sekceNav" id="sekceNav" data-t="nav.sekceNavLabel" data-t-attr="aria-label"></nav>
+</main>
+
+<footer class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="index.html" data-t="nav.prehled"></a></footer>
+
+<script type="module">
+import { vytvorJazyk, nactiSlovnik } from '../../js/jazyk.js';
+import { E, V } from '../../js/platy.js';
+import { vytvorZkousku } from '../../js/zkouska.js';
+import { vykresliNavSekci } from '../../js/sekce-nav.js';
+import { nactiUI, vykresliRamec } from '../../js/ucebnice.js';
+
+const $ = (id) => document.getElementById(id);
+
+const slovnik = await nactiSlovnik('../../data/preklady/lekce-05.json');
+await nactiUI('../../');
+const slovnikPojmu = await nactiSlovnik('../../data/preklady/slovnik-pojmu.json');
+const jazyk = vytvorJazyk(slovnik, {
+  titul: (lang) => lang === 'cs' ? 'ROUTING — Lekce 5: Zkouška' : 'ROUTING — Lesson 5: Exam',
+});
+
+/* ============================================================================
+ * MINIATURY PRO OBRÁZKOVÉ OTÁZKY
+ *
+ * Q1 — kde si hráč volí velikost rizika plynule (voda šikmo podél fairwaye),
+ *      proti vodě napříč jamkou (sázka ano/ne) a vodě až u greenu.
+ * Q4 — kde má i bezpečná cesta svou cenu (bunkr v layup zóně).
+ * ==========================================================================*/
+function podklad(svg) {
+  const turfD = V('--turf-d', svg);
+  E(svg, 'rect', { x: 0, y: 0, width: 120, height: 220, fill: turfD, opacity: 0.35 });
+}
+function odpaliste(svg) {
+  E(svg, 'rect', { x: 54, y: 200, width: 12, height: 6, fill: V('--ink', svg), opacity: 0.6 });
+}
+
+function kresliMiniVoda(svg, kind) {
+  const ink = V('--ink', svg), turf = V('--turf', svg), water = V('--water', svg);
+  podklad(svg);
+  E(svg, 'rect', { x: 32, y: 15, width: 56, height: 190, fill: turf, stroke: ink, 'stroke-width': 1 });
+  if (kind === 'a') {
+    // voda napříč celou jamkou — všichni mají stejný přelet
+    E(svg, 'rect', { x: 26, y: 108, width: 68, height: 20, fill: water, stroke: ink, 'stroke-width': 1 });
+  } else if (kind === 'b') {
+    // voda šikmo podél levé hrany — každá linie má jiný přelet
+    E(svg, 'path', { d: 'M26 200 L26 98 L58 54 L34 54 L14 110 L14 200 Z', fill: water, stroke: ink, 'stroke-width': 1 });
+  } else {
+    // voda jen kolem greenu — odpal se nerozhoduje o ničem
+    E(svg, 'ellipse', { cx: 84, cy: 34, rx: 16, ry: 12, fill: water, stroke: ink, 'stroke-width': 1 });
+  }
+  E(svg, 'ellipse', { cx: 60, cy: 30, rx: 14, ry: 11, fill: turf, stroke: ink, 'stroke-width': 1.2 });
+  odpaliste(svg);
+}
+
+function kresliMiniLayup(svg, kind) {
+  const ink = V('--ink', svg), turf = V('--turf', svg), water = V('--water', svg), sand = V('--sand', svg);
+  podklad(svg);
+  E(svg, 'rect', { x: 32, y: 15, width: 56, height: 190, fill: turf, stroke: ink, 'stroke-width': 1 });
+  // u všech tří variant tentýž hazard u greenu — liší se jen bezpečná strana
+  E(svg, 'rect', { x: 30, y: 54, width: 60, height: 12, fill: water, stroke: ink, 'stroke-width': 1 });
+  if (kind === 'b') {
+    // bunkr přesně tam, kde končí bezpečná přihrávka
+    E(svg, 'ellipse', { cx: 62, cy: 90, rx: 15, ry: 9, fill: sand, stroke: ink, 'stroke-width': 1 });
+  } else if (kind === 'c') {
+    // bunkr až za greenem — bezpečné přihrání zůstává zadarmo
+    E(svg, 'ellipse', { cx: 60, cy: 16, rx: 13, ry: 7, fill: sand, stroke: ink, 'stroke-width': 1 });
+  }
+  E(svg, 'ellipse', { cx: 60, cy: 32, rx: 14, ry: 11, fill: turf, stroke: ink, 'stroke-width': 1.2 });
+  odpaliste(svg);
+}
+
+const zkouskaOtazky = [
+  {
+    typ: 'obrazek', body: 20, tema: 'riziko-odmena', textKlic: 'zkouska.q1.text', hintKlic: 'zkouska.q1.hint',
+    vysvetleniKlic: 'zkouska.q1.why', zpetKlic: 'zkouska.q1.back', spravna: 'b',
+    moznosti: ['a', 'b', 'c'].map((id) => ({ id, kresli: (svg) => kresliMiniVoda(svg, id) })),
+  },
+  {
+    typ: 'jedna', body: 15, tema: 'riziko-odmena', textKlic: 'zkouska.q2.text',
+    vysvetleniKlic: 'zkouska.q2.why', zpetKlic: 'zkouska.q2.back', spravna: 'c',
+    moznosti: ['a', 'b', 'c', 'd'].map((id) => ({ id, textKlic: 'zkouska.q2.' + id })),
+  },
+  {
+    typ: 'jedna', body: 15, tema: 'strategie', textKlic: 'zkouska.q3.text',
+    vysvetleniKlic: 'zkouska.q3.why', zpetKlic: 'zkouska.q3.back', spravna: 'b',
+    moznosti: ['a', 'b', 'c', 'd'].map((id) => ({ id, textKlic: 'zkouska.q3.' + id })),
+  },
+  {
+    typ: 'obrazek', body: 20, tema: 'umisteni-hazardu', textKlic: 'zkouska.q4.text', hintKlic: 'zkouska.q4.hint',
+    vysvetleniKlic: 'zkouska.q4.why', zpetKlic: 'zkouska.q4.back', spravna: 'b',
+    moznosti: ['a', 'b', 'c'].map((id) => ({ id, kresli: (svg) => kresliMiniLayup(svg, id) })),
+  },
+  {
+    typ: 'vice', body: 15, tema: 'riziko-odmena', textKlic: 'zkouska.q5.text', hintKlic: 'zkouska.q5.hint',
+    vysvetleniKlic: 'zkouska.q5.why', zpetKlic: 'zkouska.q5.back',
+    moznosti: [
+      { id: 'a', textKlic: 'zkouska.q5.a', ok: true },
+      { id: 'b', textKlic: 'zkouska.q5.b', ok: false },
+      { id: 'c', textKlic: 'zkouska.q5.c', ok: true },
+      { id: 'd', textKlic: 'zkouska.q5.d', ok: true },
+    ],
+  },
+  {
+    typ: 'jedna', body: 15, tema: 'trest', textKlic: 'zkouska.q6.text',
+    vysvetleniKlic: 'zkouska.q6.why', zpetKlic: 'zkouska.q6.back', spravna: 'b',
+    moznosti: ['a', 'b', 'c', 'd'].map((id) => ({ id, textKlic: 'zkouska.q6.' + id })),
+  },
+];
+
+vytvorZkousku({
+  lekce: 5,
+  otazky: zkouskaOtazky,
+  slovnik,
+  jazyk,
+  el: { meter: $('zMeter'), quiz: $('zQuiz'), submit: $('zSubmit'), again: $('zAgain'), note: $('zNote'), result: $('zResult') },
+});
+
+jazyk.on(() => {
+  vykresliNavSekci({ lekce: 5, index: 6, jazyk, krokEl: $('krokLabel'), navEl: $('sekceNav') });
+  vykresliRamec({ lekce: 5, index: 6, jazyk, slovnikPojmu });
+});
+</script>
+</body>
+</html>
