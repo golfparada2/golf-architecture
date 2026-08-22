@@ -2,6 +2,66 @@
 
 Průběžný soubor podle části 15 zadání. Kroky 1–7 hotové.
 
+## Krok 18 — Karlštejn 14 ze zaměřených dat, a chyba, kterou odhalil objednatel (22. 8. 2026)
+
+**První karta kurzu kreslená ze skutečných obrysů.** `karlstejn-14.json` má
+nově `tvary.obrys` s polygony greenu, čtyř odpališť, tří bunkrů a rybníka
+Poučník z OpenStreetMap (ODbL). Parametrická data v kartě zůstala, ale
+kreslítko je odteď u téhle jamky ignoruje.
+
+### Dvě věci, které to odemklo
+
+**Data si stahuju sám.** Overpass je z prostředí zakázaný, ale
+`openstreetmap.org/api/0.6/map?bbox=…` funguje a jde zavolat z prohlížeče
+objednatele. Vrací XML se všemi prvky ve výřezu; uzly se rozřeší podle
+`nd ref` a přepočtou do metrů. **Od Kroku 18 se po objednateli nemusí chtít
+žádné exporty** — stačí vědět, které hřiště.
+
+**Rozšířený dotaz už nebyl potřeba.** Rybníky Poučník i Voškov jsou
+otagované `natural=water` **i** `golf=water_hazard`, takže je původní dotaz
+`nwr[golf]` zachytil. Chyba nebyla v tagu.
+
+### Chyba, kterou jsem udělal, a jak se našla
+
+Kolem greenu 14 jsou **dvě řady odpališť** — jedna východně, druhá západně.
+Obě jsou zhruba v jedné přímce s greenem. Vybral jsem tu východní, protože
+její vzdálenosti (119,6 / 146,4 / 174,5 / 201,5 m) seděly na **všechny čtyři**
+oficiální hodnoty (119 / 145 / 173 / 198). Jenže z té strany vycházel rybník
+**vlevo** a osmdesát metrů od linie, což odporovalo klubové grafice.
+
+Došel jsem až k hypotéze, že je klubové schéma zrcadlené — a byl bych
+opravil kartu, která byla celou dobu správně. Zachránila to jedna věta od
+objednatele: *„rybník na té jamce se jmenuje Poučník."*
+
+Západní řada odpališť dává vzdálenosti 101 / 119 / 144 / 172 m — tři z nich
+sedí na oficiální hodnoty na **jeden metr** (119, 145, 173), čtvrtá je navíc
+(krátké odpaliště 101 m) a mistrovské odpaliště 198 m v OSM zmapované není.
+A hlavně: z téhle strany leží **Poučník po celé pravé straně jamky**, přesně
+jak to kreslí klub. Zbylo tedy jediné konzistentní řešení a karta byla
+správně.
+
+**Poučení, které si beru dál:** shoda čtyř čísel vypadá průkazně, ale je to
+jen jedno kritérium. Když druhé kritérium (na které straně leží hazard)
+odporuje, nesmí se prohlásit za vítěze to první — musí se hledat řešení,
+kde sedí obojí. A na hřišti, které někdo zná, je jedna jeho věta rychlejší
+než hodina geometrie.
+
+### Co karta přiznává
+
+`tvary.poznamka` říká, že plán začíná u odpaliště 173 m, protože mistrovské
+198 m v OSM není — plán je tedy o pětadvacet metrů kratší než délka, kterou
+karta uvádí jako aktuální. Dál přiznává, že šest pin pozic a terasy greenu
+jsou výškový rozdíl, který půdorys nezobrazí, a že rough kolem jamky
+v OSM zmapovaný není.
+
+### Co zbývá u dat
+
+Fairway ani rough u téhle jamky v OSM nejsou (u par 3 fairway ani být
+nemusí). U delších jamek bude potřeba rozhodnout, jestli okolí dokreslovat
+z `golf=rough`, nebo nechat prázdný papír jako staré perokresby. Mapování
+dalších devíti jamek Karlštejna od objednatele je v
+`dev/osm-jamky-karlstejn.json`.
+
 ## Krok 17 — Skutečné obrysy z OpenStreetMap: pilot (22. 8. 2026)
 
 Bod 8 doplňku zadání (polygony místo parametrů) se rozjel. Tenhle krok je

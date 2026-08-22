@@ -179,11 +179,20 @@ a v sekci `jamky/`.
 - **Tři prvky:** rybník po celé pravé straně · protáhlý green 19 × 35 m ·
   čtyři bunkry
 - **Zdroje:** birdie book / strokesaver klubu (fotografie od objednatele —
-  primární pramen pro schéma i pro délky)
+  primární pramen pro délky) · klubová grafika `grafika-14.jpg` na
+  karlstejn-golf.cz (nezávislé potvrzení: par 3, HCP 6/5, 198/173/145/119 m,
+  green 19 × 35 m se šesti pin pozicemi) · **OpenStreetMap (ODbL) — od Kroku 18
+  odtud pochází samotné schéma: zaměřené obrysy greenu, čtyř odpališť, tří
+  bunkrů a rybníka Poučník**
 
 > **Pozor na číslování.** Tuhle jamku dřív karta vedla omylem jako „15",
 > protože vycházela z GolfPassu (posunuté číslování). Viz Krok 10
 > v `poznamky.md`.
+>
+> **První jamka kurzu kreslená ze zaměřených dat.** Vzdálenosti odpališť
+> v OpenStreetMap (119, 144, 172 m) souhlasí s oficiálními klubovými
+> (119, 145, 173 m) na jeden metr. Mistrovské odpaliště 198 m v OSM
+> zmapované není, takže plán začíná u odpaliště 173 m.
 
 ---
 

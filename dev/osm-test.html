@@ -8,7 +8,7 @@ import { kartaJamky } from '../js/spolecne.js';
 import { nactiUI } from '../js/ucebnice.js';
 const slovnik = await nactiSlovnik('../data/preklady/jamky.json');
 await nactiUI('../');
-for (const [cesta, cil] of [['../dev/osm-karlstejn-14.json','a'],['../data/jamky/karlstejn-14.json','b']]) {
+for (const [cesta, cil] of [['../data/jamky/karlstejn-14.json','a']]) {
   const k = await nactiSlovnik(cesta);
   kartaJamky(document.getElementById(cil), k, slovnik, 'cs', { zaklad: '../' });
 }

@@ -555,7 +555,7 @@ export function rozsahZObrysu(obrys, { okraj = 22 } = {}) {
     if (y < minY) minY = y; if (y > maxY) maxY = y;
   });
   if (obrys.green) vezmi(obrys.green.body);
-  if (obrys.odpaliste) vezmi(obrys.odpaliste.body);
+  (Array.isArray(obrys.odpaliste) ? obrys.odpaliste : (obrys.odpaliste ? [obrys.odpaliste] : [])).forEach((t) => vezmi(t.body));
   (obrys.fairway || []).forEach((f) => vezmi(f.body));
   (obrys.bunkry || []).forEach((b) => vezmi(b.body));
   (obrys.voda || []).forEach((w) => vezmi(w.body));
@@ -1072,8 +1072,13 @@ export function vykresliJamku(svg, karta, opts = {}) {
   /* --- 7. odpaliště a praporek ---------------------------------------- */
   const tx0 = px(0), ty0 = py(0);
   if (obrys && obrys.odpaliste) {
-    const d = hladkaCesta(obrys.odpaliste.body.map(([x, y]) => ({ x: px(x), y: py(y) })));
-    E(svg, 'path', { d, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1 });
+    /* Odpališť bývá na jamce několik — kreslí se všechna, jak to dělá
+       birdie book. Počátek soustavy leží v tom nejzadnějším, které je
+       v datech. */
+    (Array.isArray(obrys.odpaliste) ? obrys.odpaliste : [obrys.odpaliste]).forEach((t) => {
+      const d = hladkaCesta(t.body.map(([x, y]) => ({ x: px(x), y: py(y) })));
+      E(svg, 'path', { d, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1 });
+    });
   } else {
     E(svg, 'rect', { x: tx0 - 7, y: ty0 - 5, width: 14, height: 9, rx: 1.5, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1 });
   }
