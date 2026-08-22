@@ -29,16 +29,16 @@
   "vznik": 1926,
   "gps": {
     "tee": [
-      34.0459,
-      -118.5024
+      34.04516,
+      -118.50249
     ],
     "green": [
-      34.0459,
-      -118.5024
+      34.04516,
+      -118.50249
     ],
     "presnost": {
-      "cs": "přibližné, úroveň areálu — přesná poloha odpaliště a greenu jamky 10 není ve veřejných pramenech uvedena",
-      "en": "approximate, resort-level — precise tee/green coordinates for hole 10 are not published in available sources"
+      "cs": "úroveň areálu, ověřeno v OpenStreetMap (Nominatim) — souřadnice jednotlivých jamek klub nezveřejňuje",
+      "en": "resort-level, verified against OpenStreetMap (Nominatim) — the club does not publish per-hole coordinates"
     }
   },
   "otazka": {

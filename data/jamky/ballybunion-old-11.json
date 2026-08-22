@@ -31,16 +31,16 @@
   "vznik": 1893,
   "gps": {
     "tee": [
-      52.502,
-      -9.677
+      52.49611,
+      -9.67752
     ],
     "green": [
-      52.502,
-      -9.677
+      52.49611,
+      -9.67752
     ],
     "presnost": {
-      "cs": "přibližné, úroveň areálu (Co. Kerry) — přesná poloha odpaliště a greenu jamky 11 není veřejně publikována",
-      "en": "approximate, resort-level (Co. Kerry) — precise tee/green coordinates for hole 11 are not publicly published"
+      "cs": "úroveň areálu, ověřeno v OpenStreetMap (Nominatim) — souřadnice jednotlivých jamek klub nezveřejňuje",
+      "en": "resort-level, verified against OpenStreetMap (Nominatim) — the club does not publish per-hole coordinates"
     }
   },
   "otazka": {

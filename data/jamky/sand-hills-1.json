@@ -29,16 +29,16 @@
   "vznik": 1995,
   "gps": {
     "tee": [
-      41.8688,
-      -101.0996
+      41.87046,
+      -101.09929
     ],
     "green": [
-      41.8688,
-      -101.0996
+      41.87046,
+      -101.09929
     ],
     "presnost": {
-      "cs": "přibližné, úroveň areálu (Mullen, Nebraska) — přesná poloha odpaliště a greenu jamky 1 není veřejně publikována",
-      "en": "approximate, resort-level (Mullen, Nebraska) — precise tee/green coordinates for hole 1 are not publicly published"
+      "cs": "úroveň areálu, ověřeno v OpenStreetMap (Nominatim) — souřadnice jednotlivých jamek klub nezveřejňuje",
+      "en": "resort-level, verified against OpenStreetMap (Nominatim) — the club does not publish per-hole coordinates"
     }
   },
   "otazka": {

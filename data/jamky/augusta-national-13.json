@@ -45,16 +45,16 @@
   "vznik": 1933,
   "gps": {
     "tee": [
-      33.503,
-      -82.0199
+      33.50056,
+      -82.02258
     ],
     "green": [
-      33.503,
-      -82.0199
+      33.50056,
+      -82.02258
     ],
     "presnost": {
-      "cs": "přibližné, úroveň areálu — Augusta National přesné souřadnice jednotlivých odpališť a greenů nezveřejňuje",
-      "en": "approximate, club-level — Augusta National does not publish precise tee and green coordinates"
+      "cs": "úroveň areálu, ověřeno v OpenStreetMap (Nominatim) — souřadnice jednotlivých jamek klub nezveřejňuje",
+      "en": "resort-level, verified against OpenStreetMap (Nominatim) — the club does not publish per-hole coordinates"
     }
   },
   "otazka": {

@@ -42,16 +42,16 @@
   "vznik": 1921,
   "gps": {
     "tee": [
-      32.3437,
-      -64.6752
+      32.33186,
+      -64.69365
     ],
     "green": [
-      32.3437,
-      -64.6752
+      32.33186,
+      -64.69365
     ],
     "presnost": {
-      "cs": "přibližné, úroveň areálu — klub je soukromý a přesné souřadnice jamek nezveřejňuje",
-      "en": "approximate, club-level — the club is private and does not publish per-hole coordinates"
+      "cs": "úroveň areálu, ověřeno v OpenStreetMap (Nominatim) — souřadnice jednotlivých jamek klub nezveřejňuje",
+      "en": "resort-level, verified against OpenStreetMap (Nominatim) — the club does not publish per-hole coordinates"
     }
   },
   "otazka": {

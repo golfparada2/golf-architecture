@@ -29,16 +29,16 @@
   "vznik": 1993,
   "gps": {
     "tee": [
-      49.933,
-      14.19
+      49.92193,
+      14.17166
     ],
     "green": [
-      49.933,
-      14.19
+      49.92193,
+      14.17166
     ],
     "presnost": {
-      "cs": "přibližné, úroveň areálu (Liteň u Karlštejna)",
-      "en": "approximate, resort level (Liteň near Karlštejn)"
+      "cs": "úroveň areálu, ověřeno v OpenStreetMap (Nominatim) — souřadnice jednotlivých jamek klub nezveřejňuje",
+      "en": "resort-level, verified against OpenStreetMap (Nominatim) — the club does not publish per-hole coordinates"
     }
   },
   "otazka": {

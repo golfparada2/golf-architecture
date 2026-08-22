@@ -28,16 +28,16 @@
   "vznik": 2020,
   "gps": {
     "tee": [
-      49.99993,
-      16.502
+      50.0024,
+      16.50831
     ],
     "green": [
-      49.99993,
-      16.502
+      50.0024,
+      16.50831
     ],
     "presnost": {
-      "cs": "přibližné, úroveň areálu (Dolní Dobrouč, Orlické hory) — přesná poloha odpaliště a greenu jamky 3 není veřejně publikována",
-      "en": "approximate, resort-level (Dolní Dobrouč, Orlické hory foothills) — precise tee/green coordinates for hole 3 are not publicly published"
+      "cs": "úroveň areálu, ověřeno v OpenStreetMap (Nominatim) — souřadnice jednotlivých jamek klub nezveřejňuje",
+      "en": "resort-level, verified against OpenStreetMap (Nominatim) — the club does not publish per-hole coordinates"
     }
   },
   "otazka": {

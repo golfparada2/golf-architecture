@@ -38,16 +38,16 @@
   "vznik": 1980,
   "gps": {
     "tee": [
-      30.1913,
-      -81.3895
+      30.196,
+      -81.39375
     ],
     "green": [
-      30.1913,
-      -81.3895
+      30.196,
+      -81.39375
     ],
     "presnost": {
-      "cs": "přibližné, úroveň areálu — přesná poloha odpaliště a greenu jamky 17 není ve veřejných pramenech uvedena",
-      "en": "approximate, resort-level — precise tee/green coordinates for hole 17 are not published in available sources"
+      "cs": "úroveň areálu, ověřeno v OpenStreetMap (Nominatim) — souřadnice jednotlivých jamek klub nezveřejňuje",
+      "en": "resort-level, verified against OpenStreetMap (Nominatim) — the club does not publish per-hole coordinates"
     }
   },
   "otazka": {

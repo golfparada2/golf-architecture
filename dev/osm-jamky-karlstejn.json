@@ -1,0 +1,18 @@
+{
+  "poznamka": "Přiřazení greenů z OpenStreetMap ke klubovým číslům jamek. Určil objednatel (hřiště zná), ověřeno proti klubovým grafikám: u jamky 14 dávají vzdálenosti odpališť v OSM 119/144/172/201 m proti oficiálním 119/145/173/198 m, u jamky 15 sedí 223 a 264 m. Indexy G* odpovídají pořadí prvků golf=green v exportu _archiv/osm-karlstejn.geojson z 22. 8. 2026.",
+  "zdroj": "OpenStreetMap (ODbL)",
+  "export": "_archiv/osm-karlstejn.geojson, dotaz rel(4046214);map_to_area->.a;(nwr[golf](area.a););out geom;",
+  "jamky": {
+    "1": "G6",
+    "3": "G13",
+    "6": "G2",
+    "7": "G18",
+    "8": "G1",
+    "10": "G19",
+    "11": "G17",
+    "12": "G14",
+    "14": "G5",
+    "15": "G15"
+  },
+  "chybi": "Vodní plochy — dotaz nwr[golf] je nezachytil, protože rybníky bývají značené natural=water. Rozšířený dotaz přidává nwr[natural=water] a nwr[waterway]."
+}

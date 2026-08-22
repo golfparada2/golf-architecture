@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="cs"><head><meta charset="utf-8">
+<title>Test obrysů z OSM</title><link rel="stylesheet" href="../assets/styl.css"></head>
+<body><main style="max-width:900px;margin:20px auto">
+<div id="a"></div><div id="b"></div>
+<script type="module">
+import { nactiSlovnik } from '../js/jazyk.js';
+import { kartaJamky } from '../js/spolecne.js';
+import { nactiUI } from '../js/ucebnice.js';
+const slovnik = await nactiSlovnik('../data/preklady/jamky.json');
+await nactiUI('../');
+for (const [cesta, cil] of [['../dev/osm-karlstejn-14.json','a'],['../data/jamky/karlstejn-14.json','b']]) {
+  const k = await nactiSlovnik(cesta);
+  kartaJamky(document.getElementById(cil), k, slovnik, 'cs', { zaklad: '../' });
+}
+</script></main></body></html>

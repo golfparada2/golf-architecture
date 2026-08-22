@@ -39,8 +39,8 @@
       -2.8161
     ],
     "presnost": {
-      "cs": "přibližné, úroveň areálu (Old Course, St Andrews) — přesná poloha dvojgreenu 7/11 není v tomto zdroji uvedena samostatně",
-      "en": "approximate, resort-level (Old Course, St Andrews) — the precise position of the 7th/11th double green is not separately published in this source"
+      "cs": "přibližné, úroveň areálu — NEOVĚŘENO: vyhledávání v OpenStreetMap (Nominatim) tenhle klub pod jménem nenajde, takže souřadnice zůstávají odhadem a jako odhad se s nimi má zacházet",
+      "en": "approximate, resort-level — UNVERIFIED: an OpenStreetMap (Nominatim) search does not find this club by name, so the coordinates remain an estimate and should be treated as one"
     }
   },
   "otazka": {

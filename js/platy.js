@@ -542,6 +542,28 @@ export function rozsahJamky(tvary, { okraj = 22 } = {}) {
 }
 
 /**
+ * Ohraničující obdélník karty, která místo parametrů nese SKUTEČNÉ OBRYSY
+ * (`tvary.obrys`) — polygony v metrech od zadního odpaliště, x kladně
+ * vpravo, y podél osy hry. Přidáno v Kroku 17 podle bodu 8 doplňku zadání.
+ *
+ * @param {Object} obrys @param {{okraj?:number}} [opts]
+ */
+export function rozsahZObrysu(obrys, { okraj = 22 } = {}) {
+  let minX = 0, maxX = 0, minY = 0, maxY = 0;
+  const vezmi = (body) => body.forEach(([x, y]) => {
+    if (x < minX) minX = x; if (x > maxX) maxX = x;
+    if (y < minY) minY = y; if (y > maxY) maxY = y;
+  });
+  if (obrys.green) vezmi(obrys.green.body);
+  if (obrys.odpaliste) vezmi(obrys.odpaliste.body);
+  (obrys.fairway || []).forEach((f) => vezmi(f.body));
+  (obrys.bunkry || []).forEach((b) => vezmi(b.body));
+  (obrys.voda || []).forEach((w) => vezmi(w.body));
+  minX -= okraj; maxX += okraj; minY -= okraj; maxY += okraj;
+  return { minX, maxX, minY, maxY, sirka: maxX - minX, vyska: maxY - minY };
+}
+
+/**
  * Spočítá měřítko pro převod „hole-local" metrů na jednotky viewBoxu
  * shodné s ostatními pláty v kurzu — `.lab`/`.lab.sm` v `styl.css` čtou
  * velikost popisků v jednotkách viewBoxu (pravidlo 3 ze zadání), takže
@@ -829,7 +851,16 @@ export function vykresliJamku(svg, karta, opts = {}) {
   const sPopisky = opts.sPopisky !== false;
 
   const t = karta.tvary;
-  const rozsah = rozsahJamky(t, { okraj: t.okraj ?? opts.okraj });
+  /* Karta může nést buď PARAMETRY (ohyb, šířky — původní model z Kroku 9),
+     nebo SKUTEČNÉ OBRYSY v metrech (`tvary.obrys`, Krok 17). Obojí se
+     kreslí toutéž funkcí, jen se jinak spočítá rozsah a jinak vzniknou
+     tvary. Parametrická cesta zůstává, protože většina karet zatím
+     skutečná data nemá — a přepisovat je bez dat by znamenalo vyměnit
+     přiznané zjednodušení za nepřiznané. */
+  const obrys = t.obrys || null;
+  const rozsah = obrys
+    ? rozsahZObrysu(obrys, { okraj: t.okraj ?? opts.okraj })
+    : rozsahJamky(t, { okraj: t.okraj ?? opts.okraj });
   /* Karta smí podélné zkrácení doladit sama (`tvary.zkraceni`, `tvary.maxPomer`).
      Použij to jen tam, kde je hloubka greenu nebo hazardu součástí výkladu —
      u Karlštejna 14 je green 19 × 35 m a při běžném zkrácení vyjde skoro
@@ -862,6 +893,7 @@ export function vykresliJamku(svg, karta, opts = {}) {
   svg.setAttribute('aria-labelledby', `${idBase}-t ${idBase}-d`);
 
   const defs = E(svg, 'defs', {});
+  let gx = 0, gy = 0;
 
   /* --- 1. okolní trávník ----------------------------------------------
      Rough je od Kroku 16 výrazně přítomnější a má texturu trsů. Fairway se
@@ -873,12 +905,64 @@ export function vykresliJamku(svg, karta, opts = {}) {
 
   const popisky = [];
 
+  /* --- 2a. kresba ze skutečných obrysů --------------------------------
+     Polygony jdou přes `hladkaCesta()` stejně jako všechno ostatní: body
+     z OpenStreetMap jsou vzorky obrysu, ne rohy — lomená čára mezi nimi by
+     byla artefakt formátu, ne tvar bunkru (doplněk zadání, bod 2). */
+  if (obrys) {
+    const cestaZBodu = (body) => hladkaCesta(body.map(([x, y]) => ({ x: px(x), y: py(y) })));
+
+    (obrys.fairway || []).forEach((f, i) => {
+      const d = cestaZBodu(f.body);
+      const id = 'ofw' + i + '-' + karta.id;
+      clipPath(defs, id, d);
+      E(svg, 'path', { d, fill: V('--turf', svg), opacity: 1 });
+      hatch(svg, id, bboxOf(d), Math.PI / 2, 5, { op: 0.11, seed: 5100 + i });
+      E(svg, 'path', { d, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1 });
+    });
+
+    (obrys.voda || []).forEach((w, i) => {
+      const d = cestaZBodu(w.body);
+      const id = 'ovd' + i + '-' + karta.id;
+      const bb = bboxOf(d);
+      clipPath(defs, id, d);
+      E(svg, 'path', { d, fill: V('--water', svg), opacity: 0.82 });
+      vlnky(svg, id, bb, 5200 + i);
+      E(svg, 'path', { d, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 0.9 });
+      const z = zkratkaPrvku(w, lang, P.voda);
+      if (sPopisky && z) popisky.push({ x: bb.x + bb.w / 2, y: bb.y + bb.h / 2, text: z });
+    });
+
+    if (obrys.green) {
+      const d = cestaZBodu(obrys.green.body);
+      const bb = bboxOf(d);
+      const id = 'ogr-' + karta.id;
+      clipPath(defs, id, d);
+      E(svg, 'path', { d, fill: V('--turf', svg) });
+      hatch(svg, id, bb, 1, 3, { op: 0.16, seed: 5301 });
+      E(svg, 'path', { d, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1.3 });
+      gx = bb.x + bb.w / 2; gy = bb.y + bb.h / 2;
+    }
+
+    (obrys.bunkry || []).forEach((b, i) => {
+      const d = cestaZBodu(b.body);
+      const bb = bboxOf(d);
+      const id = 'obk' + i + '-' + karta.id;
+      clipPath(defs, id, d);
+      E(svg, 'path', { d, fill: V('--sand', svg) });
+      stipple(svg, id, bb, 22, 5400 + i);
+      E(svg, 'path', { d, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 0.9 });
+      const z = zkratkaPrvku(b, lang, P.bunkr);
+      if (sPopisky && z) popisky.push({ x: bb.x + bb.w / 2, y: bb.y + bb.h / 2, text: z });
+    });
+  }
+
   /* --- 2. fairway jako stuha podél Bézierovy křivky --------------------
      Par 3 fairway nemá (hraje se přímo na green) — u něj se stuha vynechá
      a nakreslí se jen linie hry. --------------------------------------- */
   let osaBody = null;
   const f = t.fairway;
-  if (t.green) {
+  if (t.green && !obrys) {
     const cil = { x: t.green.x, y: t.green.y - t.green.ry * 0.6 };
     const start = { x: 0, y: f && f.zacatek != null ? f.zacatek : 0 };
     const geo = fairwayOsa({
@@ -905,7 +989,7 @@ export function vykresliJamku(svg, karta, opts = {}) {
   }
 
   /* --- 3. hazardy (voda s vlnkami) ------------------------------------ */
-  (t.hazardy || []).forEach((h, i) => {
+  (obrys ? [] : (t.hazardy || [])).forEach((h, i) => {
     const hx = px(h.x), hy = py(h.y), hrx = h.rx * m.meritkoX, hry = h.ry * m.meritkoY;
     const d = blob(hx, hy, hrx, hry, h.rot, h.seed, h.amp, 44);
     const jeVoda = h.typ === 'voda';
@@ -920,8 +1004,8 @@ export function vykresliJamku(svg, karta, opts = {}) {
   });
 
   /* --- 4. green (výplň, šrafura, obruba) ------------------------------ */
-  let greenObrys = null, gx = 0, gy = 0;
-  if (t.green) {
+  let greenObrys = null;
+  if (t.green && !obrys) {
     const g = t.green;
     gx = px(g.x); gy = py(g.y);
     const grx = g.rx * m.meritkoX, gry = g.ry * m.meritkoY;
@@ -934,7 +1018,7 @@ export function vykresliJamku(svg, karta, opts = {}) {
   }
 
   /* --- 5. bunkry — AŽ NAD greenem ------------------------------------- */
-  (t.bunkry || []).forEach((b, i) => {
+  (obrys ? [] : (t.bunkry || [])).forEach((b, i) => {
     const bx = px(b.x), by = py(b.y), brx = b.rx * m.meritkoX, bry = b.ry * m.meritkoY;
     const d = blob(bx, by, brx, bry, b.rot, b.seed, b.amp, 40);
     const id = 'bk' + i + '-' + karta.id;
@@ -987,15 +1071,22 @@ export function vykresliJamku(svg, karta, opts = {}) {
 
   /* --- 7. odpaliště a praporek ---------------------------------------- */
   const tx0 = px(0), ty0 = py(0);
-  E(svg, 'rect', { x: tx0 - 7, y: ty0 - 5, width: 14, height: 9, rx: 1.5, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1 });
-  if (t.green) pin(svg, gx, gy, { h: Math.max(9, t.green.ry * m.meritkoY * 0.8), flagW: 11, flagH: 4.5 });
+  if (obrys && obrys.odpaliste) {
+    const d = hladkaCesta(obrys.odpaliste.body.map(([x, y]) => ({ x: px(x), y: py(y) })));
+    E(svg, 'path', { d, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1 });
+  } else {
+    E(svg, 'rect', { x: tx0 - 7, y: ty0 - 5, width: 14, height: 9, rx: 1.5, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1 });
+  }
+  if (obrys && obrys.green) pin(svg, gx, gy, { h: 13, r: 1.8, flagW: 10, flagH: 4.2 });
+  else if (t.green) pin(svg, gx, gy, { h: Math.max(9, t.green.ry * m.meritkoY * 0.8), flagW: 11, flagH: 4.5 });
 
   /* --- 8. popisky ------------------------------------------------------ */
   let yGreenPopisek = null;
   if (sPopisky) {
     E(svg, 'text', { x: tx0, y: ty0 + 18, class: 'lab sm', 'text-anchor': 'middle' }, P.odpaliste);
-    if (t.green) {
-      yGreenPopisek = gy - (t.green.ry * m.meritkoY) - 9;
+    if (t.green || obrys) {
+      const ryPx = obrys && obrys.green ? (bboxOf(hladkaCesta(obrys.green.body.map(([x, y]) => ({ x: px(x), y: py(y) })))).h / 2) : (t.green.ry * m.meritkoY);
+      yGreenPopisek = gy - ryPx - 9;
       E(svg, 'text', { x: gx, y: yGreenPopisek, class: 'lab sm', 'text-anchor': 'middle' }, P.green);
     }
     if (popisky.length) {
@@ -1019,7 +1110,7 @@ export function vykresliJamku(svg, karta, opts = {}) {
   }
 
   /* --- 9. měřítko po straně ------------------------------------------- */
-  const nejdelsi = t.green ? t.green.y : 0;
+  const nejdelsi = obrys && obrys.green ? Math.max(...obrys.green.body.map((b) => b[1])) : (t.green ? t.green.y : 0);
   meritkoPoStrane(svg, {
     x: m.minX - padL + 5, dole: ty0, meritkoY: m.meritkoY,
     pocet: Math.max(2, Math.floor(nejdelsi / 100)), krokM: 100,

@@ -2,6 +2,76 @@
 
 Průběžný soubor podle části 15 zadání. Kroky 1–7 hotové.
 
+## Krok 17 — Skutečné obrysy z OpenStreetMap: pilot (22. 8. 2026)
+
+Bod 8 doplňku zadání (polygony místo parametrů) se rozjel. Tenhle krok je
+zatím **pilot, ne dodávka do obsahu** — žádná karta jamky se nezměnila.
+
+### Co se povedlo
+
+**Export z OSM funguje.** Dotaz přes relaci hřiště (`rel(4046214);
+map_to_area->.a;(nwr[golf](area.a););out geom;`) vrátil pro Karlštejn
+**267 prvků**: 126 bunkrů, 58 odpališť, 20 greenů, 14 fairwayí, 2 vodní
+hazardy, 37 cest. Přepočet zeměpisných souřadnic do metrů a otočení do
+soustavy jamky (počátek v zadním odpališti, x kladně vpravo, y podél osy
+hry) je v `dev/`.
+
+**Přiřazení jamek udělal objednatel** — OSM u prvků nemá čísla jamek
+(`ref` je prázdný u všech 267) a geometrické testy daly vždycky víc
+kandidátů. Mapování je v `dev/osm-jamky-karlstejn.json`: deset jamek,
+z toho obě, ke kterým máme karty.
+
+**Ověření, které tomu dalo váhu.** U jamky 14 vycházejí vzdálenosti
+odpališť od greenu v OSM **119 / 144 / 172 / 201 m** proti oficiálním
+klubovým **119 / 145 / 173 / 198 m**. Rozdíl do tří metrů, což je přesně
+to, co se čeká mezi měřením ke středu greenu a vzdáleností mezi těžišti
+polygonů. U jamky 15 sedí 223 a 264 m proti klubovým 223 a 264 m.
+**Nezávisle se tím zároveň potvrdila karta jamky 14** — klubová grafika
+`grafika-14.jpg` udává par 3, HCP 6/5, délky 198/173/145/119 a green
+19 × 35 m se šesti pin pozicemi, tedy přesně to, co karta tvrdí od Kroku 10.
+
+**Kreslítko umí polygony.** `vykresliJamku()` má novou větev: když karta
+nese `tvary.obrys` (green, odpaliště, fairway, bunkry, voda jako pole bodů
+v metrech), kreslí se z nich; když ne, jede se po staré parametrické cestě.
+Obojí prochází `hladkaCesta()`, protože body z OSM jsou vzorky obrysu, ne
+rohy. Ukázka je v `dev/osm-test.html` — vedle sebe tatáž jamka ze
+skutečných dat a ze současných parametrů.
+
+### Proč se to zatím nedodává do karet
+
+**Rybníky v datech nejsou.** Dotaz `nwr[golf]` je nezachytil, protože se
+vodní plochy obvykle značí `natural=water`, ne `golf=water_hazard` — proto
+vyšly jen dva na celý areál a ani jeden z nich nepatří k jamce 14 nebo 15.
+U jamky 14 je přitom rybník po celé pravé straně **to jediné, o čem ta
+jamka je**. Karta ze skutečných dat bez něj by byla horší než dnešní
+přiznaně zjednodušená.
+
+Rozšířený dotaz pro příští export:
+
+    [out:json][timeout:120];
+    rel(4046214);map_to_area->.a;
+    (
+      nwr[golf](area.a);
+      nwr[natural=water](area.a);
+      nwr[waterway](area.a);
+    );
+    out geom;
+
+**Druhá věc, která bude chtít rozmyslet:** par 3 nemá v OSM fairway (a
+správně — žádnou nemá ani ve skutečnosti), takže plát ze samotných dat je
+z velké části prázdný. Bude potřeba rozhodnout, jestli okolí greenu
+dokreslovat z `golf=rough`, nebo nechat prázdný papír, jak to dělají staré
+perokresby.
+
+### Past, kterou tenhle krok odhalil jinde
+
+Výřez pro první export jsem nadiktoval ze souřadnic ve vlastní kartě —
+a ty byly označené jako „přibližné". Minul hřiště o 1,8 km a export vrátil
+jediný prvek. Vedlo to k auditu souřadnic všech patnácti karet (viz dodatek
+u Kroku 16), kde šest českých bylo posunutých o 0,5 až 3 km.
+**Údaj označený jako přibližný se nesmí použít jako vstup pro něco, co má
+být přesné.**
+
 ## Krok 16 — Nové zadání ke schématům reálných jamek (22. 8. 2026)
 
 Objednatel poslal odkaz na samostatnou konverzaci, kde se zadání ke
@@ -81,6 +151,46 @@ Ověřeno měřením, ne úvahou: po změně dávají všechna cvičení **toto�
 4,19 rány, lekce 6 plocha greenu 100 % / 80 % / 33 % a praporek 2 pro
 HCP 0 na 36 %. Celý web (52 stránek, lekce 1–6 plus rozcestník, sbírka
 a slovníček) projet Playwrightem: nula chyb v konzoli.
+
+
+### Dodatek — první pokus o data z OSM a audit souřadnic (22. 8. 2026 večer)
+
+Objednatel vyexportoval z overpass-turbo první dávku dat pro Karlštejn.
+Vrátila **jedinou** položku, a to `golf=cartpath`. Příčinu jsem našel hned:
+**výřez, který jsem mu nadiktoval, hřiště minul.** Souřadnice jsem vzal
+z vlastní karty jamky — jenže tam byly od začátku označené jako „přibližné,
+úroveň areálu", což byl v praxi můj odhad. Golf Resort Karlštejn leží podle
+OpenStreetMap na 49.92193, 14.17166 (relace 4046214, poštovní adresa Běleč
+u Litně), tedy asi 1,8 km jihozápadně od místa, které karta uváděla.
+
+**Poučení, které stálo za tu ostudu:** údaj označený jako „přibližný" se nesmí
+použít jako vstup pro cokoli, co má být přesné. Buď se ověří, nebo se
+nepoužije.
+
+Rovnou jsem proto proauditoval souřadnice **všech patnácti karet** proti
+OpenStreetMap (Nominatim). Výsledek:
+
+- **Šest českých karet bylo posunutých o 0,5 až 3 km** — Slapy o 3,0 km,
+  Zbraslav o 3,1 km, Ostravice o 2,6 km, oba Karlštejny o 1,8 km, Dobrouč
+  o 0,5 km. Opraveno.
+- **Devět zahraničních karet** bylo blíž (0,1–2,2 km; nejhorší Mid Ocean),
+  ale i tak opraveno.
+- **Dvě karty se ověřit nepodařilo:** St Andrews Old 7 a Cypress Point 16 —
+  Nominatim ani jeden klub pod jménem nenajde (u Cypress Pointu vrací
+  shodou jmen ulici v Georgii, u Old Course obchod se suvenýry). Jejich
+  souřadnice zůstávají odhadem a karta to teď **výslovně přiznává** místo
+  mírného „přibližné".
+
+Pole `gps.presnost` u ověřených karet nově říká, že je ověřeno proti
+OpenStreetMap. Je to drobnost, ale je to přesně ten druh drobnosti, na které
+stojí důvěryhodnost celé učebnice.
+
+**Co z toho plyne pro data ke schématům:** správný dotaz nemá stát na
+hádaném výřezu, ale na samotné relaci hřiště:
+`[out:json][timeout:90];rel(4046214);map_to_area->.a;(nwr[golf](area.a););out geom;`
+Podle vykreslení OSM to navíc vypadá, že Karlštejn má zmapované **bunkry
+a vodní plochy, ale ne fairwaye a greeny** — takže reálný zisk bude přesná
+poloha hazardů, ne kompletní obrysy. Potvrdí to až export.
 
 ## Krok 15 — Lekce 6: Green komplexy + sjednocení konců řádků (22. 8. 2026)
 

@@ -1,0 +1,787 @@
+{
+  "verze": 1,
+  "id": "karlstejn-14-osm",
+  "hriste": "Golf Resort Karlštejn",
+  "zeme": "CZ",
+  "jamka": 14,
+  "nazev": null,
+  "par": 3,
+  "delky": [
+    {
+      "odpaliste": "bílé",
+      "m": 198,
+      "yd": 217,
+      "rok": null,
+      "poznamka": "Z birdie booku (strokesaveru) hřiště. 198 m je na střed greenu, na přední okraj je to 180 m. Další odpaliště: žluté 173 m, modré 145 m, červené 119 m. HCP jamky 6/5."
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "Les Furber a Jim Eremko",
+      "en": "Les Furber and Jim Eremko"
+    },
+    "jistota": "jistá",
+    "poznamka": {
+      "cs": "Hřiště otevřeno 1993. Areál má 27 jamek číslovaných 1–27. POZOR: GolfPass vede „1-18 Course\" s číslováním posunutým o jednu jamku, takže jeho „15\" je právě tahle klubová 14.",
+      "en": "The course opened in 1993. The resort has 27 holes numbered 1–27. Note: GolfPass lists a \"1-18 Course\" whose numbering is offset by one, so its \"15\" is this club hole 14."
+    }
+  },
+  "vznik": 1993,
+  "gps": {
+    "tee": [
+      49.92193,
+      14.17166
+    ],
+    "green": [
+      49.92193,
+      14.17166
+    ],
+    "presnost": {
+      "cs": "úroveň areálu, ověřeno v OpenStreetMap (Nominatim) — souřadnice jednotlivých jamek klub nezveřejňuje",
+      "en": "resort-level, verified against OpenStreetMap (Nominatim) — the club does not publish per-hole coordinates"
+    }
+  },
+  "otazka": {
+    "cs": "Namíříš přímo na praporek, i když rybník sahá až k pravému okraji greenu, nebo si vezmeš o klub víc a zahraješ na bezpečný pruh trávy vlevo?",
+    "en": "Do you aim straight at the flag even though the pond reaches the right edge of the green, or take one more club and play to the safe strip of grass on the left?"
+  },
+  "tvary": {
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). PODKLAD: birdie book (strokesaver) hřiště, dodaný objednatelem — proto jsou poměry (délka 198 m na střed, 180 m na přední okraj, green 19 × 35 m, rybník končící před greenem) věrné kartě. Přesné obrysy rybníka a bunkerů zůstávají zjednodušené.",
+    "zkraceni": 0.85,
+    "maxPomer": 1.9,
+    "fairway": {
+      "ohyb": -20,
+      "sirkaTee": 24,
+      "sirkaGreen": 30,
+      "zacatek": 15,
+      "seed": 4109
+    },
+    "green": {
+      "x": -8,
+      "y": 198,
+      "rx": 9.5,
+      "ry": 17.5,
+      "rot": 0.05,
+      "seed": 2101,
+      "amp": 0.06
+    },
+    "bunkry": [
+      {
+        "x": -21,
+        "y": 184,
+        "rx": 5,
+        "ry": 4,
+        "rot": 0.4,
+        "seed": 2102,
+        "amp": 0.16,
+        "zkratka": {
+          "cs": "VPŘEDU VLEVO",
+          "en": "FRONT LEFT"
+        },
+        "label": {
+          "cs": "bunker před levým rohem greenu",
+          "en": "bunker at the front-left corner of the green"
+        }
+      },
+      {
+        "x": -22,
+        "y": 203,
+        "rx": 4.5,
+        "ry": 4,
+        "rot": -0.2,
+        "seed": 2103,
+        "amp": 0.15,
+        "zkratka": null,
+        "label": {
+          "cs": "bunker po levé straně greenu",
+          "en": "bunker down the left side of the green"
+        }
+      },
+      {
+        "x": 2,
+        "y": 186,
+        "rx": 4.5,
+        "ry": 3.5,
+        "rot": 0.3,
+        "seed": 2104,
+        "amp": 0.15,
+        "zkratka": null,
+        "label": {
+          "cs": "bunker vpředu vpravo, mezi vodou a greenem",
+          "en": "front-right bunker, between the water and the green"
+        }
+      },
+      {
+        "x": 3,
+        "y": 213,
+        "rx": 5,
+        "ry": 4,
+        "rot": -0.3,
+        "seed": 2105,
+        "amp": 0.16,
+        "zkratka": {
+          "cs": "VZADU VPRAVO",
+          "en": "BACK RIGHT"
+        },
+        "label": {
+          "cs": "bunker za greenem vpravo — trestá příliš dlouhou ránu",
+          "en": "bunker behind the green on the right, punishing too much club"
+        }
+      }
+    ],
+    "hazardy": [
+      {
+        "typ": "voda",
+        "x": 23,
+        "y": 105,
+        "rx": 22,
+        "ry": 60,
+        "rot": 0.05,
+        "seed": 2110,
+        "amp": 0.08,
+        "zkratka": {
+          "cs": "RYBNÍK",
+          "en": "POND"
+        },
+        "label": {
+          "cs": "rybník po celé pravé straně jamky; jeho horní konec sahá k pravému okraji greenu, ale green leží až za ním",
+          "en": "a pond down the whole right side; its far end reaches the right edge of the green, but the green lies beyond it"
+        }
+      }
+    ],
+    "obrys": {
+      "zdroj": "OpenStreetMap, export 22. 8. 2026 (ODbL). Souřadnice přepočtené do metrů od zadního odpaliště, x kladně vpravo, y podél osy hry.",
+      "green": {
+        "body": [
+          [
+            -12.0,
+            195.0
+          ],
+          [
+            -12.5,
+            191.7
+          ],
+          [
+            -12.5,
+            187.5
+          ],
+          [
+            -11.2,
+            185.3
+          ],
+          [
+            -8.3,
+            183.9
+          ],
+          [
+            -4.9,
+            184.0
+          ],
+          [
+            -1.9,
+            185.1
+          ],
+          [
+            0.4,
+            186.8
+          ],
+          [
+            2.5,
+            189.1
+          ],
+          [
+            4.3,
+            191.8
+          ],
+          [
+            6.6,
+            194.4
+          ],
+          [
+            9.3,
+            196.7
+          ],
+          [
+            11.3,
+            198.9
+          ],
+          [
+            13.1,
+            202.0
+          ],
+          [
+            13.8,
+            206.5
+          ],
+          [
+            13.6,
+            210.7
+          ],
+          [
+            12.8,
+            213.3
+          ],
+          [
+            11.6,
+            215.3
+          ],
+          [
+            9.1,
+            217.4
+          ],
+          [
+            6.7,
+            218.2
+          ],
+          [
+            4.9,
+            218.4
+          ],
+          [
+            2.2,
+            217.5
+          ],
+          [
+            0.3,
+            216.3
+          ],
+          [
+            -1.8,
+            214.6
+          ],
+          [
+            -4.7,
+            211.5
+          ],
+          [
+            -7.6,
+            209.2
+          ],
+          [
+            -10.0,
+            205.8
+          ],
+          [
+            -11.2,
+            202.7
+          ],
+          [
+            -11.6,
+            199.2
+          ],
+          [
+            -12.0,
+            195.0
+          ]
+        ]
+      },
+      "odpaliste": {
+        "body": [
+          [
+            1.7,
+            5.7
+          ],
+          [
+            -0.7,
+            6.6
+          ],
+          [
+            -3.2,
+            6.1
+          ],
+          [
+            -4.7,
+            4.8
+          ],
+          [
+            -5.2,
+            2.2
+          ],
+          [
+            -5.4,
+            -0.5
+          ],
+          [
+            -5.0,
+            -3.0
+          ],
+          [
+            -4.0,
+            -4.8
+          ],
+          [
+            -2.0,
+            -5.8
+          ],
+          [
+            0.3,
+            -6.5
+          ],
+          [
+            2.6,
+            -6.3
+          ],
+          [
+            4.2,
+            -5.4
+          ],
+          [
+            5.2,
+            -3.4
+          ],
+          [
+            5.4,
+            -1.1
+          ],
+          [
+            5.3,
+            1.4
+          ],
+          [
+            3.8,
+            4.3
+          ],
+          [
+            1.7,
+            5.7
+          ]
+        ]
+      },
+      "fairway": [],
+      "bunkry": [
+        {
+          "body": [
+            [
+              -15.3,
+              196.8
+            ],
+            [
+              -16.2,
+              199.6
+            ],
+            [
+              -17.7,
+              200.5
+            ],
+            [
+              -19.3,
+              200.4
+            ],
+            [
+              -20.9,
+              199.8
+            ],
+            [
+              -21.8,
+              198.3
+            ],
+            [
+              -21.8,
+              196.9
+            ],
+            [
+              -20.9,
+              194.6
+            ],
+            [
+              -20.4,
+              192.3
+            ],
+            [
+              -20.0,
+              189.1
+            ],
+            [
+              -18.8,
+              187.0
+            ],
+            [
+              -17.0,
+              186.4
+            ],
+            [
+              -15.5,
+              187.4
+            ],
+            [
+              -14.9,
+              189.1
+            ],
+            [
+              -14.5,
+              191.5
+            ],
+            [
+              -14.9,
+              193.9
+            ],
+            [
+              -15.3,
+              196.8
+            ]
+          ],
+          "zkratka": {
+            "cs": "BUNKR VLEVO",
+            "en": "LEFT BUNKER"
+          },
+          "label": {
+            "cs": "bunkr vlevo od greenu",
+            "en": "bunker left of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              25.3,
+              210.0
+            ],
+            [
+              24.6,
+              211.3
+            ],
+            [
+              23.8,
+              212.5
+            ],
+            [
+              23.5,
+              214.1
+            ],
+            [
+              23.2,
+              215.9
+            ],
+            [
+              22.4,
+              217.5
+            ],
+            [
+              21.4,
+              218.7
+            ],
+            [
+              20.4,
+              219.3
+            ],
+            [
+              18.8,
+              219.0
+            ],
+            [
+              17.7,
+              218.1
+            ],
+            [
+              17.3,
+              216.9
+            ],
+            [
+              17.5,
+              215.6
+            ],
+            [
+              18.1,
+              214.0
+            ],
+            [
+              19.3,
+              212.0
+            ],
+            [
+              19.8,
+              209.6
+            ],
+            [
+              20.0,
+              207.2
+            ],
+            [
+              20.0,
+              204.4
+            ],
+            [
+              21.0,
+              202.9
+            ],
+            [
+              21.9,
+              202.5
+            ],
+            [
+              23.4,
+              202.5
+            ],
+            [
+              24.2,
+              203.1
+            ],
+            [
+              25.0,
+              204.6
+            ],
+            [
+              25.6,
+              206.5
+            ],
+            [
+              25.9,
+              208.5
+            ],
+            [
+              25.3,
+              210.0
+            ]
+          ],
+          "zkratka": {
+            "cs": "BUNKR VPRAVO",
+            "en": "RIGHT BUNKER"
+          },
+          "label": {
+            "cs": "bunkr vpravo od greenu",
+            "en": "bunker right of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              -4.1,
+              226.2
+            ],
+            [
+              -6.3,
+              225.3
+            ],
+            [
+              -9.1,
+              225.9
+            ],
+            [
+              -11.0,
+              225.2
+            ],
+            [
+              -15.4,
+              225.7
+            ],
+            [
+              -16.3,
+              224.7
+            ],
+            [
+              -17.0,
+              223.1
+            ],
+            [
+              -16.7,
+              222.1
+            ],
+            [
+              -16.4,
+              220.7
+            ],
+            [
+              -16.4,
+              219.6
+            ],
+            [
+              -16.9,
+              218.3
+            ],
+            [
+              -17.3,
+              216.9
+            ],
+            [
+              -17.4,
+              215.7
+            ],
+            [
+              -17.1,
+              215.1
+            ],
+            [
+              -16.1,
+              214.0
+            ],
+            [
+              -14.4,
+              214.0
+            ],
+            [
+              -12.9,
+              214.8
+            ],
+            [
+              -11.6,
+              215.3
+            ],
+            [
+              -10.4,
+              216.5
+            ],
+            [
+              -9.3,
+              217.2
+            ],
+            [
+              -8.1,
+              218.0
+            ],
+            [
+              -6.6,
+              218.0
+            ],
+            [
+              -4.9,
+              218.9
+            ],
+            [
+              -3.5,
+              218.8
+            ],
+            [
+              -2.6,
+              219.5
+            ],
+            [
+              -2.3,
+              220.1
+            ],
+            [
+              -2.1,
+              221.7
+            ],
+            [
+              -2.0,
+              222.7
+            ],
+            [
+              -1.6,
+              223.4
+            ],
+            [
+              -1.1,
+              224.0
+            ],
+            [
+              0.4,
+              224.4
+            ],
+            [
+              0.8,
+              224.9
+            ],
+            [
+              0.6,
+              225.8
+            ],
+            [
+              -0.5,
+              226.2
+            ],
+            [
+              -1.2,
+              226.0
+            ],
+            [
+              -2.0,
+              226.0
+            ],
+            [
+              -2.6,
+              226.4
+            ],
+            [
+              -3.3,
+              226.8
+            ],
+            [
+              -4.1,
+              226.2
+            ]
+          ],
+          "zkratka": {
+            "cs": "BUNKR ZA GREENEM",
+            "en": "BEHIND THE GREEN"
+          },
+          "label": {
+            "cs": "bunkr za greenem",
+            "en": "bunker behind the green"
+          }
+        }
+      ],
+      "voda": []
+    }
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Rybník končí před greenem",
+        "en": "The pond ends short of the green"
+      },
+      "popis": {
+        "cs": "Voda lemuje celou pravou stranu, ale k greenu se nedostane — ten leží až za jejím horním koncem. Kdo doletí, je za vodou; kdo ne, je v ní.",
+        "en": "Water lines the whole right side but never reaches the green, which sits beyond its far end. Carry it and you are past it; come up short and you are in it."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Green 19 × 35 metrů",
+        "en": "A green 19 by 35 metres"
+      },
+      "popis": {
+        "cs": "Skoro dvakrát tak hluboký, jak je široký. Mezi předním okrajem a středem je 18 metrů — volba klubu tady rozhoduje víc než směr.",
+        "en": "Almost twice as deep as it is wide. There are 18 metres between the front edge and the middle, so club selection matters more than direction."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Úzký pruh trávy vlevo",
+        "en": "A narrow strip of grass on the left"
+      },
+      "popis": {
+        "cs": "Jediná bezpečná strana. Je tak úzká, že bezpečná hra pořád vyžaduje přesnost — a nechává delší chip do kopce.",
+        "en": "The only safe side. It is narrow enough that the safe play still demands precision, and it leaves a longer chip up the slope."
+      }
+    }
+  ],
+  "naCoSeDivat": {
+    "cs": "Sleduj, kde rybník končí: jeho horní okraj je pod greenem, ne vedle něj. Proto se tahle jamka nehraje na směr, ale na délku — a proto je green 35 metrů hluboký.",
+    "en": "Watch where the pond ends: its far edge is below the green, not beside it. That is why this hole is about length rather than line — and why the green is 35 metres deep."
+  },
+  "lekce": {
+    "cs": "Hazard, který končí těsně před greenem, mění otázku ze „kam\" na „jak daleko\". Hloubka greenu je pak odpověď architekta na to, jak velkou chybu ještě odpustí.",
+    "en": "A hazard that stops just short of the green turns the question from \"where\" into \"how far\". The depth of the green is then the architect's answer to how big a miss he will forgive."
+  },
+  "prameny": [
+    {
+      "titul": "Birdie book (strokesaver) Golf Resortu Karlštejn, jamka 14 — podklad dodaný objednatelem (par 3, 198/173/145/119 m, green 19 × 35 m, HCP 6/5)",
+      "url": "https://www.karlstejn-golf.cz/golfove-hriste/mapa-hriste"
+    },
+    {
+      "titul": "Golf Resort Karlštejn — oficiální mapa hřiště (jamka 14 uvedena jako par 3)",
+      "url": "https://www.karlstejn-golf.cz/golfove-hriste/mapa-hriste"
+    },
+    {
+      "titul": "offcourse.co — scorecard Golf Resort Karlstejn",
+      "url": "https://offcourse.co/courses/scorecard/golf-resort-karlstejn"
+    }
+  ],
+  "foto": {
+    "soubor": "karlstejn-15.jpg",
+    "autor": "Karelj",
+    "licence": "volné dílo (public domain)",
+    "licenceUrl": "https://en.wikipedia.org/wiki/Public_domain",
+    "zdrojUrl": "https://commons.wikimedia.org/wiki/File:Golf_Karl%C5%A1tejn_2.jpg",
+    "alt": {
+      "cs": "Letecký pohled na areál Golf Resort Karlštejn",
+      "en": "Aerial view of the Golf Resort Karlštejn grounds"
+    },
+    "poznamka": {
+      "cs": "letecký pohled na celý areál — volně licencovaný snímek přímo ze 14. jamky se nepodařilo dohledat",
+      "en": "aerial view of the whole resort — no freely licensed photo of the 14th hole itself could be found"
+    },
+    "sirka": 1028,
+    "vyska": 670
+  }
+}
