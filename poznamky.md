@@ -2,6 +2,106 @@
 
 Průběžný soubor podle části 15 zadání. Kroky 1–7 hotové.
 
+## Krok 26 — Jak zpřesnit skupinu C (23. 8. 2026)
+
+Objednatel se zeptal, jestli u patnácti schematických karet dokážu udělat
+co nejpřesnější půdorys. Zkusil jsem dvě cesty; **jedna nefunguje a druhá ano.**
+
+### Cesta 1 — dourčit jamku v OSM bez souřadnic od objednatele: NEFUNGUJE
+
+Nápad byl hledat POJMENOVANÉ prvky. Nominatim je umí najít jménem a je
+maličký, takže je to levné. Výsledek dotazů:
+
+| dotaz | nalezeno |
+|---|---|
+| Mangrove Lake Bermuda | **ANO** — way 166121000, 9,6 ha |
+| Rae's Creek Augusta | **ANO** — way 26250864 |
+| Hell Bunker · Road Hole Bunker · Swilcan Burn · Church Pews | ne |
+
+Slavné bunkry pojmenované nejsou. Vodní toky a jezera ano.
+
+**Zkouška na Mid Ocean 5 ale ukázala, proč to stejně nestačí.** Kolem
+Mangrove Lake leží greeny na OBOU stranách a obě linie odpaliště–green vodu
+protínají, takže kritérium „hraje se přes jezero" jamku nerozliší. Nejlepší
+kandidát (green way 1147093241, odpaliště 304 / 330 / 366 m) sedí na dvě ze
+tří oficiálních délek, jenže zadní odpaliště 396 m v OSM není a druhé
+nezávislé kritérium chybí. **Zastavil jsem to** — je to přesně situace, kdy
+mě v Krocích 18 a 22 shoda čísel svedla ke špatnému závěru.
+
+### Cesta 2 — odměřit oficiální klubový diagram: FUNGUJE
+
+Metoda z Kroku 24 (Albatross 15) je opakovatelná a OSM vůbec nepotřebuje.
+Použil jsem ji na **Zbraslav 1** a opravila tři chyby najednou:
+
+1. **Green ležel na plánu ve 430 metrech, ačkoli jamka měří 520** — kresba
+   zkracovala jamku o 90 metrů, tedy o 17 %.
+2. **Karta měla jeden greenside bunkr, diagram ukazuje dva** (menší kulatý
+   u levého konce greenu, velký členitý před greenem).
+3. **Karta znala jediné odpaliště, diagram jich tiskne sedm**
+   (520 / 489 / 450 / 450 / 421 / 303 / 250 m).
+
+Navíc odsud pochází kóta 295 m z černého odpaliště k referenční čáře napříč
+fairwayí, podle které je teď nastavená dopadová zóna, a potvrzení rozměrů
+greenu 43 × 30 m.
+
+**Čeho se metoda nedotkne:** boční polohy hazardů. Diagram Zbraslavi je
+letecký snímek bez měřítka po stranách — na rozdíl od Albatrossu, kde
+měřítko daly kótované vzdálenosti k bunkrům. Trestná oblast s červenými
+kolíky vpravo a out of bounds vlevo se proto NEKRESLÍ, jen popisují: z čáry
+kolíků se nedá určit šířka plochy.
+
+### Co z toho plyne pro zbytek skupiny C
+
+Cesta 2 je pomalá, ruční a jamku po jamce — ale funguje a nic k ní není
+potřeba. Použitelná je všude, kde klub nebo turnaj zveřejňuje diagram
+s vytištěnými čísly. Nadějní kandidáti: Augusta 13 (masters.com), TPC
+Sawgrass 17, Pebble Beach 18, St Andrews 7 a 14 (Links Trust). Naopak
+u soukromých klubů (Cypress Point, Sand Hills, Woking, Ballybunion) se
+diagram nejspíš nenajde.
+
+> **Poučení: „zpřesnit" neznamená jen „dohledat souřadnice". U karty, která
+> stojí na cizím plánku, bývá největší zisk v tom PŘEČÍST TEN PLÁNEK
+> POŘÁDNĚ — u Zbraslavi ležel green o 90 metrů vedle a nikdo si toho čtyři
+> kroky nevšiml.**
+
+## Krok 25 — Audit doloženosti všech dvaceti karet (23. 8. 2026)
+
+Objednatel se zeptal, jestli jsou už všechny jamky „pořádně zaměřené".
+Projel jsem proto strojově všech dvacet karet a roztřídil je podle toho, o co
+se jejich geometrie skutečně opírá. **Odpověď je ne — zaměřené jsou dvě.**
+
+| úroveň | karet | které |
+|---|---|---|
+| **A — ze skutečných zaměřených obrysů** (polygony z OSM) | 2 | Karlštejn 14, Karlštejn 15 |
+| **B — odečtené z oficiálního klubového plánku** | 3 | Albatross 15, Ostravice 16, Slapy 14 |
+| **C — schematické** (vysvětlují princip, neměří se z nich) | 15 | zbytek |
+
+**Uvnitř skupiny B je Albatross 15 nejsilnější** — jako u jediné karty se
+podařilo měřítko nezávisle zkontrolovat (green vyšel 411 m proti oficiálním
+412). Ostravice a Slapy mají čísla odečtená z plánku, ale bez takové kontroly.
+
+**Skupina C není totéž co „vymyšlené".** U několika karet oficiální diagram
+existuje a opravil konkrétní věci (Zbraslav 1, Pebble Beach 18 v Kroku 12),
+ale geometrie na plátu zůstala schematická. Každá z těch patnácti karet to
+říká v první větě `tvary.poznamka` slovy „schematické, ne přesný půdorys".
+**Ověřeno strojově: žádná z dvaceti karet není bez téhle poznámky.**
+
+### Dvě nesrovnalosti, které audit našel
+
+1. **`karlstejn-14` má GPS na úrovni areálu, přestože je kreslená ze
+   zaměřených obrysů.** Karta má polygony z OSM, ale pole `gps` zůstalo od
+   Kroku 11 na souřadnicích resortu (49.92193 / 14.17166), zatímco sesterská
+   `karlstejn-15` má od Kroku 22 souřadnice jednotlivé jamky. **Doplnit** —
+   znamená to znovu najít v OSM green G5 a západní řadu odpališť.
+2. **„Ověřená GPS" u šestnácti karet znamená úroveň hřiště, ne jamky.**
+   Souřadnice jamky má zatím jediná karta (Karlštejn 15). Formulace v poli
+   `presnost` to u každé karty říká, ale při zběžném pohledu na seznam to
+   splývá — proto sem.
+
+> **Poučení: „doloženo" má u téhle sbírky nejmíň tři různé úrovně a je
+> potřeba je pojmenovat, jinak z toho v souhrnu vznikne dojem, že je
+> zaměřené všechno.**
+
 ## Krok 24 — Proč přestal fungovat prohlížeč (23. 8. 2026)
 
 ### Příznaky
@@ -383,6 +483,14 @@ jako síto.
   selhalo: karta stojí na tom, že se hraje přes **Mangrove Lake**, a to
   v OSM v okruhu 900 metrů **není** — jediné vodní plochy jsou Trott's
   Pond (2,84 ha, ale 900 m daleko) a bezejmenný rybníček 0,5 ha.
+  **OPRAVA (Krok 26, 23. 8. 2026): tenhle závěr byl ŠPATNĚ.** Mangrove Lake
+  v OpenStreetMap je — způsob `way 166121000`, 9,6 ha, souřadnice
+  32.32563 / −64.70841. Nenašel jsem ho proto, že jsem hledal v okruhu
+  900 metrů kolem souřadnice hřiště z karty, a ta je od jezera **1,5 km**.
+  Byla to tedy stejná chyba jako v Kroku 17: hledání ukotvené na
+  nepřesném údaji. Najít ho šlo jednou otázkou na Nominatim.
+  **Poučení: než prohlásíš pojmenovaný prvek za nezmapovaný, zeptej se na
+  něj Nominatimu jménem — ne bboxem kolem něčeho jiného.**
   Bez jistoty, že ta voda je ta správná, jsem převod neudělal.
   **Zůstává parametrická.**
 - **Pinehurst 5, Augusta 13, Pebble Beach 18, TPC Sawgrass 17** — karta

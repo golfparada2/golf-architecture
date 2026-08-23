@@ -8,11 +8,48 @@
   "par": 5,
   "delky": [
     {
-      "odpaliste": "zadní (černé)",
+      "odpaliste": "černé",
       "m": 520,
       "yd": 569,
       "rok": 2023,
-      "poznamka": "opraveno podle GolfPass scorecardu (569 yd ≈ 520 m) — dřívější verze měla omylem prohozené jednotky (520 zapsáno jako yardy místo metrů)"
+      "aktualni": true,
+      "poznamka": "Všech sedm délek je vytištěných na oficiálním diagramu jamky (pcg.cz/wp-content/uploads/2024/03/1.jpg). opraveno podle GolfPass scorecardu (569 yd ≈ 520 m) — dřívější verze měla omylem prohozené jednotky (520 zapsáno jako yardy místo metrů)"
+    },
+    {
+      "odpaliste": "bílé",
+      "m": 489,
+      "yd": 535,
+      "rok": 2023
+    },
+    {
+      "odpaliste": "žluté",
+      "m": 450,
+      "yd": 492,
+      "rok": 2023
+    },
+    {
+      "odpaliste": "modré",
+      "m": 450,
+      "yd": 492,
+      "rok": 2023
+    },
+    {
+      "odpaliste": "červené",
+      "m": 421,
+      "yd": 460,
+      "rok": 2023
+    },
+    {
+      "odpaliste": "oranžové",
+      "m": 303,
+      "yd": 331,
+      "rok": 2023
+    },
+    {
+      "odpaliste": "zelené",
+      "m": 250,
+      "yd": 273,
+      "rok": 2023
     }
   ],
   "architekt": {
@@ -46,10 +83,10 @@
     "en": "What do you do to an eighteen-hole routing when the clubhouse moves more than two kilometres away?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Opraveno 2026-08-19: dosavadní pár bočních pot bunkerů u greenu (vlevo i vpravo) nahrazen jedním velkým bunkerem před greenem — oficiální stránka klubu (pcg.cz, popis jamky 1 pro současný routing) výslovně říká, že fairway bunkery vůbec neobklopují (jen tráva okolo) a že green je „v přední části dobře chráněn velkým bunkerem“. Stejný zdroj zmiňuje doglegový ohyb v závěrečné části jamky, ale směr ohybu (vlevo/vpravo) neuvádí, takže zůstal jen mírný, směrově neutrální posun greenu od osy (nebyl vymýšlen naslano). Vodní překážka za greenem zmiňovaná ve starších popisech (19jamka.cz, 2018) se týkala PŮVODNÍHO routingu před přesunem klubovny v roce 2023/2024, ne dnešní jamky 1 — proto zde není použita. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. ZPŘESNĚNO (2026-08-21): oficiální diagram jamky přímo z webu klubu (pcg.cz/wp-content/uploads/2024/03/1.jpg — prohlédnuto přímo, ne jen popsáno textem) ukazuje dvě věci jinak, než dosavadní schéma. (1) Fairway se stáčí doprava a ohyb je vizuálně soustředěný blíž ke greenu — ohyb proto změněn na kladný (doprava). Přesně umístit ohyb jen do posledních zhruba 100 metrů ale tahle kreslicí funkce neumí: fairwayOsa() staví fairway jako jednu kvadratickou Bézierovu křivku od odpaliště ke greenu, jejíž řídicí bod leží vždy v geometrickém středu jamky — nedá se jí schematicky odlišit ohyb hned za odpalištěm od ohybu těsně před greenem, aniž by se přepsala na víc segmentů. Parametr zacatek navíc není místo ohybu, jak jsem si nejdřív myslel, ale y-souřadnice, kde stuha fairwaye začíná kreslit — ponechán na 25 m jako u ostatních karet, jinak by prvních 330 m jamky chybělo úplně. (2) Green je podle přiloženého detailu s měřítkem 43 × 30 m — mnohem větší a protáhlejší, než dosavadní rx12/ry9 (24×18 m). Upraveno na rx21.5/ry15. Bunker před greenem ponechán, jen posunut k levému okraji greenu podle stejného obrázku.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od černého odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). OPRAVENO 23. 8. 2026 podle oficiálního diagramu jamky (pcg.cz/wp-content/uploads/2024/03/1.jpg), prohlédnutého přímo.\nCO JE Z DIAGRAMU VYTIŠTĚNÉ, a tedy doložené: par 5, HCP 9; SEDM odpališť 520 / 489 / 450 / 450 / 421 / 303 / 250 m; rozměry greenu 43 × 30 m (výřez greenu má obě kóty); DVA greenside bunkry — menší kulatý u levého konce greenu a velký členitý před greenem mírně vpravo; a kóta 295 m z černého odpaliště k vyznačené referenční čáře napříč fairwayí, podle které je nastavená dopadová zóna.\nTŘI CHYBY, KTERÉ TO OPRAVILO: (1) green ležel na plánu ve 430 metrech, ačkoli jamka měří 520 — kresba tedy jamku zkracovala o 90 metrů; (2) karta měla jediný greenside bunkr, diagram ukazuje dva; (3) karta znala jen zadní odpaliště, teď je jich sedm.\nCO ODMĚŘENÉ NENÍ: boční polohy hazardů a míra ohybu doglegu. Diagram je letecký snímek bez metrického měřítka po stranách, takže se z něj boční vzdálenosti spolehlivě odečíst nedají — na rozdíl od Albatrossu 15, kde měřítko daly kótované vzdálenosti k bunkrům. Kresba také NEZOBRAZUJE trestnou oblast vyznačenou červenými kolíky po pravé straně ani out of bounds po levé, přestože na diagramu jsou: z čáry kolíků se nedá určit šířka plochy a vymýšlet ji nebudu.",
     "green": {
       "x": 4,
-      "y": 430,
+      "y": 520,
       "rx": 21.5,
       "ry": 15,
       "rot": 0.1,
@@ -58,20 +95,34 @@
     },
     "bunkry": [
       {
-        "x": -6,
-        "y": 418,
-        "rx": 7,
-        "ry": 5.5,
-        "rot": 0,
+        "x": -18,
+        "y": 505,
+        "rx": 6,
+        "ry": 5,
+        "rot": 0.2,
         "seed": 2602,
-        "amp": 0.17,
+        "amp": 0.16,
+        "zkratka": null,
         "label": {
-          "cs": "velký bunker chránící přední část greenu (fairway bunkery nejsou — jen tráva okolo)",
-          "en": "large bunker guarding the front of the green (no fairway bunkers — just grass around it)"
-        },
+          "cs": "menší kulatý bunkr u levého konce greenu",
+          "en": "a smaller round bunker at the left end of the green"
+        }
+      },
+      {
+        "x": 6,
+        "y": 496,
+        "rx": 12,
+        "ry": 6.5,
+        "rot": 0.05,
+        "seed": 2603,
+        "amp": 0.18,
         "zkratka": {
-          "cs": "BUNKR PŘED GREENEM",
-          "en": "FRONT BUNKER"
+          "cs": "PŘED GREENEM",
+          "en": "SHORT"
+        },
+        "label": {
+          "cs": "velký členitý bunkr před greenem, mírně vpravo od jeho středu",
+          "en": "the large lobed bunker short of the green, slightly right of its centre"
         }
       }
     ],
@@ -84,8 +135,8 @@
       "seed": 4107
     },
     "dopadovaZona": {
-      "od": 230,
-      "do": 280
+      "od": 275,
+      "do": 315
     }
   },
   "prvky": [
