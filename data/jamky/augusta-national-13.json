@@ -62,127 +62,602 @@
     "en": "Do you go for the green in two over Rae's Creek, or lay up and trust a wedge? And does the answer change when the club adds 32 metres?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Ostrý dogleg doleva kolem přítoku Rae's Creek: potok vede podél celé levé strany fairwaye a pak kříží hru těsně před greenem. Kladný `fairway.ohyb` znamená, že se stuha vyklenuje doprava od přímé linie na green, který leží vlevo — tak vzniká dogleg doleva (stejná konvence jako u Karlštejna 15). Čtyři bunkry ZA greenem jsou doložené třemi nezávislými prameny; fairwayový bunkr na jamce žádný není a schéma proto žádný nekreslí. NEDOHLEDÁNO a proto nezakresleno: šířka fairwaye v metrech, převýšení a plocha greenu — Augusta National tato čísla nezveřejňuje. Sklon fairwaye zprava doleva k potoku (klíč k celé strategii) je kresbou nezobrazitelný, popisuje ho text karty. Poloha čtyř bunkrů za greenem vůči sobě je odhad podle fotografií, ne podle zaměření.",
-    "green": {
-      "x": -42,
-      "y": 470,
-      "rx": 14,
-      "ry": 9,
-      "rot": 0.12,
-      "seed": 3101,
-      "amp": 0.06
-    },
-    "bunkry": [
-      {
-        "x": -56,
-        "y": 487,
-        "rx": 4,
-        "ry": 3,
-        "rot": 0.2,
-        "seed": 3102,
-        "amp": 0.14,
-        "label": {
-          "cs": "první ze čtyř bunkrů za greenem",
-          "en": "first of four bunkers behind the green"
-        },
-        "zkratka": null
+    "poznamka": "KRESLENO ZE SKUTEČNÝCH OBRYSŮ (23. 8. 2026, Krok 33) — polygony greenu, dvou odpališť, fairwaye, Rae's Creeku a čtyř bunkerů pocházejí z OpenStreetMap (ODbL). Soustava je popsaná v obrys.zdroj.\nIDENTIFIKACE: green v OSM leží 3 metry od bodu ze satelitní mapy. Přímá vzdálenost odpaliště–green je 410 m proti oficiálním 498 m (−17,7 %) — a to je u téhle jamky přesně to, co se čekalo: třináctka je výrazný dogleg doleva a hraná délka je proto o šestinu delší než přímá.\nRAE'S CREEK SE MUSEL HLEDAT DVAKRÁT. Poprvé mi vypadl, protože jsem prvky filtroval podle TĚŽIŠTĚ: potok je v OSM dlouhý přes dva kilometry, jeho těžiště leží stovky metrů od jamky, a filtr ho vyhodil. Voda u jamky je navíc zapsaná zvlášť jako vodní PLOCHA (301 bodů) podél celé pravé strany, která se před greenem stáčí napříč. Tu kreslím; osu potoka ne, protože linie nemá šířku.\n> Poučení: prvky se nesmějí filtrovat podle těžiště, ale podle toho, jestli NĚKTERÝ JEJICH BOD leží v koridoru. U dlouhých liniových prvků je těžiště bezcenné.\nCO JSEM VYPUSTIL: tři pískové plochy kolem 50. metru od odpaliště — leží u odpaliště a patří nejspíš sousední dvanáctce. Fairway je nakreslená celá tak, jak je v datech, včetně toho, jak se vyklání doprava od přímé linie; u doglegu doleva je to správně (hráč hraje ven doprava a pak se stáčí).\nCO NENÍ NAKRESLENO: rough, azalky ani převýšení. Klub nezveřejňuje šířku fairwaye ani plochu greenu, takže tahle čísla karta dál neuvádí.",
+    "obrys": {
+      "zdroj": "OpenStreetMap (ODbL), staženo 23. 8. 2026 přes openstreetmap.org/api/0.6/map. Souřadnice v metrech od zadního odpaliště; x kladně vpravo od přímé linie odpaliště–green, y po téhle linii.",
+      "green": {
+        "body": [
+          [
+            -0.8,
+            393.4
+          ],
+          [
+            5.5,
+            392.5
+          ],
+          [
+            11.4,
+            394.9
+          ],
+          [
+            14.6,
+            398.1
+          ],
+          [
+            14.6,
+            402.2
+          ],
+          [
+            13.1,
+            406.3
+          ],
+          [
+            12.1,
+            410.7
+          ],
+          [
+            12.0,
+            414.8
+          ],
+          [
+            11.3,
+            418.7
+          ],
+          [
+            8.6,
+            422.9
+          ],
+          [
+            5.4,
+            428.1
+          ],
+          [
+            2.8,
+            431.2
+          ],
+          [
+            -1.8,
+            432.0
+          ],
+          [
+            -6.4,
+            430.6
+          ],
+          [
+            -10.7,
+            427.1
+          ],
+          [
+            -13.0,
+            422.3
+          ],
+          [
+            -13.7,
+            417.2
+          ],
+          [
+            -12.2,
+            412.7
+          ],
+          [
+            -8.6,
+            406.5
+          ],
+          [
+            -6.7,
+            399.1
+          ],
+          [
+            -2.7,
+            394.4
+          ]
+        ]
       },
-      {
-        "x": -47,
-        "y": 491,
-        "rx": 4,
-        "ry": 3,
-        "rot": 0.1,
-        "seed": 3103,
-        "amp": 0.14,
-        "label": {
-          "cs": "druhý ze čtyř bunkrů za greenem",
-          "en": "second of four bunkers behind the green"
+      "odpaliste": [
+        {
+          "body": [
+            [
+              8.6,
+              5.6
+            ],
+            [
+              1.2,
+              -8.2
+            ],
+            [
+              -3.9,
+              -5.4
+            ],
+            [
+              3.5,
+              8.3
+            ]
+          ]
         },
-        "zkratka": {
-          "cs": "4 BUNKRY VZADU",
-          "en": "4 BUNKERS BEHIND"
+        {
+          "body": [
+            [
+              36.3,
+              72.5
+            ],
+            [
+              30.5,
+              60.7
+            ],
+            [
+              37.0,
+              57.6
+            ],
+            [
+              42.7,
+              69.4
+            ]
+          ]
         }
-      },
-      {
-        "x": -38,
-        "y": 491,
-        "rx": 4,
-        "ry": 3,
-        "rot": -0.1,
-        "seed": 3104,
-        "amp": 0.14,
-        "label": {
-          "cs": "třetí ze čtyř bunkrů za greenem",
-          "en": "third of four bunkers behind the green"
-        },
-        "zkratka": null
-      },
-      {
-        "x": -29,
-        "y": 486,
-        "rx": 4,
-        "ry": 3,
-        "rot": -0.2,
-        "seed": 3105,
-        "amp": 0.14,
-        "label": {
-          "cs": "čtvrtý ze čtyř bunkrů za greenem",
-          "en": "fourth of four bunkers behind the green"
-        },
-        "zkratka": null
-      }
-    ],
-    "hazardy": [
-      {
-        "typ": "voda",
-        "x": -41,
-        "y": 285,
-        "rx": 7,
-        "ry": 150,
-        "rot": 0.06,
-        "seed": 3106,
-        "amp": 0.06,
-        "label": {
-          "cs": "přítok Rae's Creek podél celé levé strany fairwaye",
-          "en": "tributary of Rae's Creek down the entire left side of the fairway"
-        },
-        "zkratka": {
-          "cs": "RAE'S CREEK",
-          "en": "RAE'S CREEK"
+      ],
+      "fairway": [
+        {
+          "body": [
+            [
+              136.2,
+              319.4
+            ],
+            [
+              121.5,
+              339.4
+            ],
+            [
+              21.1,
+              422.9
+            ],
+            [
+              23.6,
+              405.4
+            ],
+            [
+              24.6,
+              391.8
+            ],
+            [
+              14.9,
+              382.4
+            ],
+            [
+              26.9,
+              360.3
+            ],
+            [
+              46.0,
+              337.9
+            ],
+            [
+              86.9,
+              285.9
+            ],
+            [
+              99.4,
+              265.8
+            ],
+            [
+              98.0,
+              245.7
+            ],
+            [
+              101.2,
+              218.2
+            ],
+            [
+              91.6,
+              193.3
+            ],
+            [
+              88.0,
+              176.5
+            ],
+            [
+              94.8,
+              153.1
+            ],
+            [
+              72.0,
+              150.8
+            ],
+            [
+              54.3,
+              134.6
+            ],
+            [
+              81.3,
+              87.8
+            ],
+            [
+              131.8,
+              149.8
+            ],
+            [
+              149.4,
+              193.2
+            ],
+            [
+              132.3,
+              267.2
+            ],
+            [
+              128.2,
+              298.6
+            ],
+            [
+              141.7,
+              299.9
+            ],
+            [
+              166.9,
+              303.2
+            ]
+          ]
         }
-      },
-      {
-        "typ": "voda",
-        "x": -42,
-        "y": 452,
-        "rx": 26,
-        "ry": 4,
-        "rot": 0.1,
-        "seed": 3107,
-        "amp": 0.07,
-        "label": {
-          "cs": "tentýž potok kříží hru těsně před greenem",
-          "en": "the same creek crosses the line of play right in front of the green"
-        },
-        "zkratka": {
-          "cs": "POTOK",
-          "en": "CREEK"
+      ],
+      "voda": [
+        {
+          "body": [
+            [
+              7.8,
+              435.7
+            ],
+            [
+              9.7,
+              436.0
+            ],
+            [
+              15.0,
+              424.7
+            ],
+            [
+              17.8,
+              409.8
+            ],
+            [
+              23.1,
+              394.2
+            ],
+            [
+              13.2,
+              386.0
+            ],
+            [
+              14.8,
+              373.8
+            ],
+            [
+              23.7,
+              354.5
+            ],
+            [
+              40.6,
+              344.6
+            ],
+            [
+              40.5,
+              325.4
+            ],
+            [
+              59.9,
+              312.5
+            ],
+            [
+              80.2,
+              292.8
+            ],
+            [
+              91.3,
+              269.9
+            ],
+            [
+              97.8,
+              250.5
+            ],
+            [
+              97.1,
+              231.4
+            ],
+            [
+              97.0,
+              210.2
+            ],
+            [
+              86.4,
+              190.0
+            ],
+            [
+              86.3,
+              175.1
+            ],
+            [
+              93.0,
+              156.4
+            ],
+            [
+              88.9,
+              165.7
+            ],
+            [
+              81.9,
+              185.0
+            ],
+            [
+              93.2,
+              204.4
+            ],
+            [
+              93.5,
+              225.6
+            ],
+            [
+              95.7,
+              254.3
+            ],
+            [
+              80.7,
+              280.0
+            ],
+            [
+              62.6,
+              306.5
+            ],
+            [
+              36.2,
+              328.3
+            ],
+            [
+              32.3,
+              349.4
+            ],
+            [
+              13.5,
+              363.5
+            ],
+            [
+              9.8,
+              380.1
+            ],
+            [
+              19.7,
+              391.3
+            ],
+            [
+              17.4,
+              405.2
+            ],
+            [
+              17.8,
+              417.0
+            ],
+            [
+              9.7,
+              430.4
+            ]
+          ],
+          "zkratka": {
+            "cs": "RAE'S CREEK",
+            "en": "RAE'S CREEK"
+          },
+          "label": {
+            "cs": "Rae's Creek — potok lemuje celou pravou stranu jamky a před greenem se stáčí napříč",
+            "en": "Rae's Creek — the stream runs the whole right side of the hole and turns across in front of the green"
+          }
         }
-      }
-    ],
-    "fairway": {
-      "ohyb": 46,
-      "sirkaTee": 34,
-      "sirkaGreen": 30,
-      "zacatek": 20,
-      "seed": 4109
-    },
-    "dopadovaZona": {
-      "od": 250,
-      "do": 300
-    },
-    "primaLinie": true
+      ],
+      "bunkry": [
+        {
+          "body": [
+            [
+              5.7,
+              378.2
+            ],
+            [
+              4.2,
+              383.6
+            ],
+            [
+              -0.7,
+              388.2
+            ],
+            [
+              -6.1,
+              389.1
+            ],
+            [
+              -7.1,
+              386.5
+            ],
+            [
+              -5.7,
+              382.2
+            ],
+            [
+              -3.0,
+              381.0
+            ],
+            [
+              -2.7,
+              378.7
+            ],
+            [
+              -4.3,
+              376.7
+            ],
+            [
+              -0.3,
+              373.4
+            ],
+            [
+              3.8,
+              373.1
+            ],
+            [
+              5.6,
+              376.1
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr před greenem",
+            "en": "bunker short of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              -14.7,
+              399.4
+            ],
+            [
+              -12.9,
+              400.4
+            ],
+            [
+              -12.3,
+              404.3
+            ],
+            [
+              -13.3,
+              408.0
+            ],
+            [
+              -15.2,
+              410.0
+            ],
+            [
+              -17.7,
+              409.5
+            ],
+            [
+              -20.9,
+              407.8
+            ],
+            [
+              -22.5,
+              405.1
+            ],
+            [
+              -22.0,
+              402.6
+            ],
+            [
+              -19.1,
+              400.5
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr vlevo od greenu",
+            "en": "bunker left of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              -20.8,
+              419.9
+            ],
+            [
+              -17.1,
+              422.1
+            ],
+            [
+              -14.9,
+              429.0
+            ],
+            [
+              -18.9,
+              433.4
+            ],
+            [
+              -21.1,
+              433.4
+            ],
+            [
+              -24.0,
+              430.9
+            ],
+            [
+              -22.1,
+              427.3
+            ],
+            [
+              -22.9,
+              426.3
+            ],
+            [
+              -25.6,
+              426.6
+            ],
+            [
+              -26.5,
+              424.0
+            ],
+            [
+              -24.0,
+              421.2
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "druhý bunkr vlevo za greenem",
+            "en": "a second bunker left and long of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              -15.5,
+              431.7
+            ],
+            [
+              -12.9,
+              430.8
+            ],
+            [
+              -9.4,
+              432.6
+            ],
+            [
+              -5.1,
+              435.1
+            ],
+            [
+              -4.2,
+              438.0
+            ],
+            [
+              -7.2,
+              440.5
+            ],
+            [
+              -11.7,
+              441.5
+            ],
+            [
+              -15.7,
+              440.6
+            ],
+            [
+              -18.3,
+              437.4
+            ],
+            [
+              -18.7,
+              434.4
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr za greenem",
+            "en": "bunker behind the green"
+          }
+        }
+      ]
+    }
   },
   "prvky": [
     {

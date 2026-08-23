@@ -48,65 +48,193 @@
     "en": "Where does the cliff edge run, and where do natural hollows in the dunes punish a bad shot on their own — so the architect doesn't need to build a single bunker?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Jamka záměrně nemá žádný bunkr — hazardem je terén samotný, viz pole hazardy. Strana útesu/OB opravena na pravou (viz poznámka v kroku ověřování) podle popisu hry podél pobřeží ve zdrojích golfcoursegurus.com a thegolfarchitects.com. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. OVĚŘENO (2026-08-21): absence bunkerů na téhle jamce nezávisle potvrzují čtyři zdroje (LINKS Magazine výslovně: „ani jeden bunker nebyl potřeba”; Golf Course Gurus, golffeatures.com, National Club Golfer) — jamku brání jen terén. Green podle golffeatures.com měří cca 4 482 čtverečních stop (≈ 416 m²) a nájezd vede úzkou mezerou mezi dvěma dunami — current tvar greenu (rx10/ry8) je spíš menší než tahle hodnota napovídá, ale rozdíl je v rámci schematické tolerance. OPRAVENO 23. 8. 2026 (Krok 27): plán kreslil jamku o 11.9 % KRATŠÍ, než je její oficiální délka — délka oblouku osy fairwaye vycházela 381 m proti oficiálním 432 m. Všechny podélné souřadnice (green, bunkry, hazardy, dopadová zóna) jsou proto přenásobené činitelem 1.135, aby oblouk odpovídal skutečné délce. Boční polohy se nezměnily. Chyba se našla strojovou kontrolou vnitřní konzistence všech karet, ne novým pramenem — schematický plán nesmí být ve sporu s číslem, které tatáž karta uvádí jako délku jamky.",
-    "green": {
-      "x": 10,
-      "y": 431.3,
-      "rx": 10,
-      "ry": 9.1,
-      "rot": -0.3,
-      "seed": 2201,
-      "amp": 0.09
-    },
-    "bunkry": [],
-    "hazardy": [
-      {
-        "typ": "duny",
-        "x": 22,
-        "y": 227.0,
-        "rx": 16,
-        "ry": 60,
-        "rot": -0.15,
-        "seed": 2202,
-        "amp": 0.22,
-        "label": {
-          "cs": "přirozené terasy a prohlubně v dunách podél útesu",
-          "en": "natural dune terraces and hollows along the cliff"
-        },
-        "zkratka": {
-          "cs": "DUNY",
-          "en": "DUNES"
-        }
+    "poznamka": "KRESLENO ZE SKUTEČNÝCH OBRYSŮ (23. 8. 2026, Krok 35) — polygony greenu, tří odpališť a pobřežní čára Atlantiku pocházejí z OpenStreetMap (ODbL).\nIDENTIFIKACE: green v OSM leží 4 metry od bodu ze satelitní mapy, odpaliště tvoří řadu 357 / 343 / 314 m ke greenu. Přímá vzdálenost zadní odpaliště–green je 346 m proti oficiálním 432 m, tedy −20 %. Tahle odchylka byla v Kroku 29 označená jako HRANIČNÍ a zůstává největší ze všech převedených jamek: buď se jamka po dunách zatáčí víc, než se zdá, nebo je oficiální délka 432 m nadsazená (jiné prameny uvádějí 449 yardů, tedy 411 m, což by odchylku srazilo na −16 %). Karta to nerozhoduje.\nV DATECH NENÍ ANI JEDEN BUNKR — a to je nález, ne mezera. Jedenáctka Ballybunionu se hájí dunami, srázem k moři a vysokým roughem, ne pískem. Plán proto ukazuje jen odpaliště, green a oceán, a je to tak správně.\nCO NENÍ NAKRESLENO: fairway. V koridoru je šest drobných polygonů golf=fairway, každý jen dvacet až čtyřicet metrů napříč — na souvislý koridor to nevypadá a přiřadit je jamce spolehlivě nejde. Dále nejsou nakresleny duny ani převýšení, které jamku ve skutečnosti tvarují nejvíc.",
+    "obrys": {
+      "zdroj": "OpenStreetMap (ODbL), staženo 23. 8. 2026 přes openstreetmap.org/api/0.6/map. Souřadnice v metrech od zadního odpaliště; x kladně vpravo od přímé linie odpaliště–green, y po téhle linii. Atlantik je zakreslen z pobřežní čáry (natural=coastline); strana moře je v poli vodaVpravo a ověřená pohledem na plán.",
+      "green": {
+        "body": [
+          [
+            -7.0,
+            336.0
+          ],
+          [
+            -3.0,
+            335.0
+          ],
+          [
+            1.0,
+            335.0
+          ],
+          [
+            3.0,
+            336.0
+          ],
+          [
+            4.0,
+            341.0
+          ],
+          [
+            5.0,
+            347.0
+          ],
+          [
+            7.0,
+            352.0
+          ],
+          [
+            10.0,
+            358.0
+          ],
+          [
+            12.0,
+            364.0
+          ],
+          [
+            11.0,
+            365.0
+          ],
+          [
+            10.0,
+            368.0
+          ],
+          [
+            5.0,
+            368.0
+          ],
+          [
+            1.0,
+            361.0
+          ],
+          [
+            -5.0,
+            355.0
+          ],
+          [
+            -8.0,
+            354.0
+          ],
+          [
+            -11.0,
+            350.0
+          ],
+          [
+            -11.0,
+            345.0
+          ],
+          [
+            -11.0,
+            341.0
+          ],
+          [
+            -10.0,
+            338.0
+          ]
+        ]
       },
-      {
-        "typ": "OB",
-        "x": 55,
-        "y": 283.8,
-        "rx": 8,
-        "ry": 220,
-        "rot": 0,
-        "seed": 2203,
-        "amp": 0.1,
-        "label": {
-          "cs": "hrana pobřežního útesu",
-          "en": "the coastal cliff edge"
+      "odpaliste": [
+        {
+          "body": [
+            [
+              4.0,
+              0.0
+            ],
+            [
+              1.0,
+              15.0
+            ],
+            [
+              -7.0,
+              13.0
+            ],
+            [
+              -4.0,
+              -1.0
+            ]
+          ]
         },
-        "zkratka": {
-          "cs": "ÚTES",
-          "en": "CLIFF"
+        {
+          "body": [
+            [
+              8.0,
+              -11.0
+            ],
+            [
+              6.0,
+              -3.0
+            ],
+            [
+              -2.0,
+              -4.0
+            ],
+            [
+              0.0,
+              -11.0
+            ]
+          ]
+        },
+        {
+          "body": [
+            [
+              -16.0,
+              25.0
+            ],
+            [
+              -10.0,
+              26.0
+            ],
+            [
+              -13.0,
+              47.0
+            ],
+            [
+              -20.0,
+              46.0
+            ]
+          ]
         }
-      }
-    ],
-    "fairway": {
-      "ohyb": -14,
-      "sirkaTee": 34,
-      "sirkaGreen": 26,
-      "zacatek": 34,
-      "seed": 4101
-    },
-    "dopadovaZona": {
-      "od": 227,
-      "do": 284
+      ],
+      "fairway": [],
+      "voda": [],
+      "bunkry": [],
+      "pobrezi": [
+        {
+          "body": [
+            [
+              76.0,
+              -140.0
+            ],
+            [
+              56.0,
+              -48.0
+            ],
+            [
+              35.0,
+              41.0
+            ],
+            [
+              32.0,
+              115.0
+            ],
+            [
+              42.0,
+              196.0
+            ],
+            [
+              52.0,
+              288.0
+            ],
+            [
+              54.0,
+              346.0
+            ],
+            [
+              54.0,
+              440.0
+            ]
+          ],
+          "vodaVpravo": true
+        }
+      ]
     }
   },
   "prvky": [

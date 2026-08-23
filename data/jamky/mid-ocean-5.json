@@ -59,79 +59,558 @@
     "en": "How much of Mangrove Lake do you bite off? It is not a yes/no question — every extra metre carried is a piece of the hole you no longer have to play."
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Dogleg doleva kolem Mangrove Lake; kladný `fairway.ohyb` znamená vyklenutí stuhy doprava od přímé linie na green ležící vlevo, tedy dogleg doleva. NEDOHLEDÁNO a proto nezakresleno ani netvrzeno: kolik yardů má carry přes vodu při jednotlivých liniích odpalu, kolik zbývá na green podle míry ukrojení, přesný počet a rozmístění bunkrů (doložená je jen „dvojice bunkrů“ pod strmým svahem vpravo od greenu) a rozměry greenu. Žádný veřejný pramen tato čísla neuvádí a klub yardage book online nemá — tvar jezera i poloha bunkrů jsou tedy odvozené z textových popisů a leteckého dojmu, ne ze zaměření. DOPLNĚK 23. 8. 2026: samotné Mangrove Lake v OpenStreetMap ZMAPOVANÉ JE (way 166121000, 9,6 ha, 32.32563 / −64.70841) — dřívější poznámka v `poznamky.md`, že tam není, byla chybná. Green jamky se přesto určit nepodařilo: po obou stranách jezera leží green s vlastní řadou odpališť a obě linie vodu protínají, takže „hraje se přes jezero“ tady jamku nerozliší. Nejlepší kandidát (green way 1147093241 s odpališti 304 / 330 / 366 m) sedí na dvě ze tří oficiálních délek, ale zadní odpaliště 396 m v OSM není a druhé kritérium chybí. Karta proto zůstává schematická. Převýšení odpaliště nad jezerem se v pramenech liší (90 stop podle Golf Club Atlas, pokles zhruba 50 stop k fairwayi podle The Fried Egg) a kresba ho stejně zobrazit neumí.",
-    "green": {
-      "x": -48,
-      "y": 370,
-      "rx": 11,
-      "ry": 9,
-      "rot": -0.22,
-      "seed": 3201,
-      "amp": 0.08
-    },
-    "bunkry": [
-      {
-        "x": -33,
-        "y": 362,
-        "rx": 5,
-        "ry": 4,
-        "rot": 0.15,
-        "seed": 3202,
-        "amp": 0.16,
-        "label": {
-          "cs": "dvojice bunkrů pod strmým svahem vpravo od greenu",
-          "en": "pair of bunkers below the steep bank right of the green"
-        },
-        "zkratka": {
-          "cs": "BUNKRY VPRAVO",
-          "en": "BUNKERS RIGHT"
-        }
+    "poznamka": "KRESLENO ZE SKUTEČNÝCH OBRYSŮ (23. 8. 2026, Krok 34) — polygony greenu, tří odpališť, Mangrove Lake a šesti bunkerů pocházejí z OpenStreetMap (ODbL). Soustava a ořez jezera jsou popsané v obrys.zdroj.\nIDENTIFIKACE — A OPRAVA ZADANÉHO ODPALIŠTĚ: green sedí, objednatel ho trefil na 5 metrů. Odpaliště, které zadal, ale leží na VÝCHODNÍ straně greenu, a linie odtud jezero vůbec neprotíná. Prověřil jsem všech sedmnáct odpališť ve vzdálenosti 230 až 430 m od greenu a jen TŘI z nich linii přes Mangrove Lake mají — všechna na západní straně (azimut 279 až 293°). Ta tři navíc sedí na oficiální délky líp: 364 / 328 / 301 m přímé vzdálenosti proti oficiálním 396 / 368 / 299 m (odchylky −8 / −11 / +1 %), kdežto východní sada dává 310 / 288 / 257 m (odchylky −22 / −22 / −14 %). Dvě nezávislá kritéria se shodují, proto kreslím západní sadu.\nCO NENÍ NAKRESLENO: fairway. V koridoru jsou tři polygony golf=fairway, ale ani jeden nejde spolehlivě přiřadit téhle jamce — jeden leží za greenem, druhý zasahuje k odpališti sousední jamky. Radši žádná fairway než cizí. Dále není nakreslen rough ani převýšení odpaliště nad jezerem, které prameny uvádějí rozdílně (90 stop podle Golf Club Atlas).",
+    "obrys": {
+      "zdroj": "OpenStreetMap (ODbL), staženo 23. 8. 2026 přes openstreetmap.org/api/0.6/map. Souřadnice v metrech od zadního odpaliště; x kladně vpravo od přímé linie odpaliště–green, y po téhle linii. Obrys Mangrove Lake je OŘÍZNUTÝ obdélníkem (x od −105 do 115 m, y od −45 do 420 m) — jezero má 9,6 hektaru a bez ořezu by na plánu jamka zmizela. Ořez tvar nemění, jen ustřihne to, co je mimo plán.",
+      "green": {
+        "body": [
+          [
+            6.3,
+            379.9
+          ],
+          [
+            1.0,
+            378.4
+          ],
+          [
+            -5.1,
+            376.0
+          ],
+          [
+            -7.4,
+            373.5
+          ],
+          [
+            -8.6,
+            370.8
+          ],
+          [
+            -8.5,
+            366.9
+          ],
+          [
+            -6.9,
+            361.7
+          ],
+          [
+            -5.5,
+            356.7
+          ],
+          [
+            -3.7,
+            352.7
+          ],
+          [
+            -1.0,
+            349.9
+          ],
+          [
+            2.0,
+            349.0
+          ],
+          [
+            6.4,
+            349.7
+          ],
+          [
+            12.0,
+            352.0
+          ],
+          [
+            15.1,
+            354.3
+          ],
+          [
+            17.0,
+            356.3
+          ],
+          [
+            18.1,
+            359.0
+          ],
+          [
+            18.7,
+            363.0
+          ],
+          [
+            16.9,
+            369.9
+          ],
+          [
+            15.0,
+            375.4
+          ],
+          [
+            11.9,
+            378.7
+          ],
+          [
+            9.1,
+            379.7
+          ]
+        ]
       },
-      {
-        "x": -29,
-        "y": 353,
-        "rx": 4,
-        "ry": 3.2,
-        "rot": -0.1,
-        "seed": 3203,
-        "amp": 0.16,
-        "label": {
-          "cs": "druhý z dvojice bunkrů vpravo od greenu",
-          "en": "second of the pair right of the green"
+      "odpaliste": [
+        {
+          "body": [
+            [
+              6.6,
+              -15.3
+            ],
+            [
+              -7.1,
+              5.7
+            ],
+            [
+              -12.8,
+              16.0
+            ],
+            [
+              -9.3,
+              18.2
+            ],
+            [
+              9.8,
+              -7.8
+            ],
+            [
+              12.4,
+              -15.6
+            ],
+            [
+              8.1,
+              -16.1
+            ]
+          ]
         },
-        "zkratka": null
-      }
-    ],
-    "hazardy": [
-      {
-        "typ": "voda",
-        "x": -51,
-        "y": 190,
-        "rx": 30,
-        "ry": 105,
-        "rot": 0.04,
-        "seed": 3204,
-        "amp": 0.09,
-        "label": {
-          "cs": "Mangrove Lake vyplňuje celý vnitřek zákruty",
-          "en": "Mangrove Lake fills the whole inside of the dogleg"
+        {
+          "body": [
+            [
+              -31.4,
+              36.8
+            ],
+            [
+              -34.1,
+              41.8
+            ],
+            [
+              -36.2,
+              41.0
+            ],
+            [
+              -36.6,
+              38.9
+            ],
+            [
+              -35.3,
+              35.9
+            ],
+            [
+              -34.0,
+              34.4
+            ],
+            [
+              -31.7,
+              35.6
+            ]
+          ]
         },
-        "zkratka": {
-          "cs": "MANGROVE LAKE",
-          "en": "MANGROVE LAKE"
+        {
+          "body": [
+            [
+              -69.4,
+              69.2
+            ],
+            [
+              -71.8,
+              73.8
+            ],
+            [
+              -74.0,
+              74.2
+            ],
+            [
+              -74.6,
+              72.7
+            ],
+            [
+              -71.9,
+              67.7
+            ]
+          ]
         }
-      }
-    ],
-    "fairway": {
-      "ohyb": 46,
-      "sirkaTee": 32,
-      "sirkaGreen": 28,
-      "zacatek": 25,
-      "seed": 4110
-    },
-    "dopadovaZona": {
-      "od": 200,
-      "do": 250
+      ],
+      "fairway": [],
+      "voda": [
+        {
+          "body": [
+            [
+              28.9,
+              278.5
+            ],
+            [
+              -15.6,
+              253.2
+            ],
+            [
+              -64.2,
+              261.5
+            ],
+            [
+              -56.5,
+              252.0
+            ],
+            [
+              -20.2,
+              231.0
+            ],
+            [
+              -9.0,
+              195.0
+            ],
+            [
+              -1.0,
+              166.8
+            ],
+            [
+              26.8,
+              140.7
+            ],
+            [
+              48.1,
+              100.5
+            ],
+            [
+              66.5,
+              69.5
+            ],
+            [
+              94.2,
+              57.6
+            ],
+            [
+              115.0,
+              47.1
+            ],
+            [
+              115.0,
+              300.0
+            ],
+            [
+              103.4,
+              300.2
+            ]
+          ],
+          "zkratka": {
+            "cs": "MANGROVE LAKE",
+            "en": "MANGROVE LAKE"
+          },
+          "label": {
+            "cs": "Mangrove Lake — přímá linie na green ho protíná mezi 250. a 300. metrem",
+            "en": "Mangrove Lake — the direct line to the green crosses it between 250 and 300 metres"
+          }
+        }
+      ],
+      "bunkry": [
+        {
+          "body": [
+            [
+              13.1,
+              424.6
+            ],
+            [
+              11.8,
+              424.0
+            ],
+            [
+              10.9,
+              422.8
+            ],
+            [
+              10.8,
+              421.9
+            ],
+            [
+              11.5,
+              420.6
+            ],
+            [
+              12.7,
+              419.7
+            ],
+            [
+              13.8,
+              419.3
+            ],
+            [
+              14.8,
+              419.8
+            ],
+            [
+              15.6,
+              420.7
+            ],
+            [
+              15.7,
+              422.2
+            ],
+            [
+              15.1,
+              423.6
+            ],
+            [
+              14.2,
+              424.3
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr za greenem vpravo",
+            "en": "bunker behind the green, right"
+          }
+        },
+        {
+          "body": [
+            [
+              9.0,
+              415.6
+            ],
+            [
+              7.9,
+              415.7
+            ],
+            [
+              6.8,
+              414.9
+            ],
+            [
+              6.1,
+              413.4
+            ],
+            [
+              6.1,
+              412.2
+            ],
+            [
+              6.9,
+              411.2
+            ],
+            [
+              8.3,
+              410.6
+            ],
+            [
+              9.4,
+              410.7
+            ],
+            [
+              10.3,
+              411.5
+            ],
+            [
+              10.4,
+              412.9
+            ],
+            [
+              9.9,
+              414.5
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "druhý bunkr za greenem",
+            "en": "a second bunker behind the green"
+          }
+        },
+        {
+          "body": [
+            [
+              17.9,
+              388.5
+            ],
+            [
+              18.1,
+              385.7
+            ],
+            [
+              18.2,
+              384.7
+            ],
+            [
+              18.9,
+              384.1
+            ],
+            [
+              19.6,
+              384.0
+            ],
+            [
+              20.3,
+              384.8
+            ],
+            [
+              20.5,
+              386.3
+            ],
+            [
+              20.6,
+              388.3
+            ],
+            [
+              20.0,
+              390.1
+            ],
+            [
+              18.9,
+              390.6
+            ],
+            [
+              17.9,
+              390.3
+            ],
+            [
+              17.8,
+              389.4
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr vpravo od greenu",
+            "en": "bunker right of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              20.4,
+              376.1
+            ],
+            [
+              22.3,
+              369.6
+            ],
+            [
+              24.3,
+              368.2
+            ],
+            [
+              25.4,
+              369.6
+            ],
+            [
+              25.4,
+              371.9
+            ],
+            [
+              24.4,
+              374.6
+            ],
+            [
+              23.9,
+              377.9
+            ],
+            [
+              22.1,
+              378.8
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "druhý bunkr vpravo od greenu",
+            "en": "a second bunker right of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              9.2,
+              390.4
+            ],
+            [
+              -10.3,
+              384.2
+            ],
+            [
+              -13.3,
+              382.6
+            ],
+            [
+              -13.8,
+              380.5
+            ],
+            [
+              -12.2,
+              378.6
+            ],
+            [
+              -8.0,
+              379.8
+            ],
+            [
+              6.1,
+              384.5
+            ],
+            [
+              11.0,
+              385.9
+            ],
+            [
+              12.3,
+              387.8
+            ],
+            [
+              11.1,
+              390.0
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "protáhlý bunkr za greenem",
+            "en": "an elongated bunker behind the green"
+          }
+        },
+        {
+          "body": [
+            [
+              15.0,
+              345.5
+            ],
+            [
+              10.0,
+              341.7
+            ],
+            [
+              10.1,
+              339.7
+            ],
+            [
+              12.4,
+              336.6
+            ],
+            [
+              14.7,
+              336.8
+            ],
+            [
+              18.3,
+              339.8
+            ],
+            [
+              18.7,
+              343.8
+            ],
+            [
+              16.4,
+              345.7
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr vpravo před greenem",
+            "en": "bunker right and short of the green"
+          }
+        }
+      ]
     },
     "primaLinie": true
   },

@@ -58,94 +58,709 @@
     "en": "Where can you even aim on a crowned green when more than half its area has a slope no ball will hold?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kresba záměrně ukazuje to, co je na téhle jamce podstatné: plochu KOLEM greenu. Sběrná plocha vlevo je nakreslená jako plošný útvar typu „rough“, protože přesný obrys žádný pramen neuvádí — doložené je jen to, že míč minutý vlevo se nezastaví dřív než u odpaliště čtvrté jamky, tedy zhruba 46 metrů daleko (Golf Digest). Vypouklost greenu (spád na všechny strany od středu) je jádro téhle jamky a půdorys ji zobrazit neumí; popisuje ji text karty a plát v sekci 1 lekce. NEDOHLEDÁNO: výška vypouklosti v centimetrech, přesný počet greenside bunkrů (prameny mluví o jednom velkém vlevo, jeden zdroj o „bunkrech“ v množném čísle) a přesný obrys fairwayového bunkru. Poloha fairwayového bunkru vychází z údaje resortu, že jeho přelet vyžaduje ze zadního odpaliště 290–300 yardů. OPRAVENO 23. 8. 2026 (Krok 27): plán kreslil jamku o 10.8 % KRATŠÍ, než je její oficiální délka — délka oblouku osy fairwaye vycházela 480 m proti oficiálním 538 m. Všechny podélné souřadnice (green, bunkry, hazardy, dopadová zóna) jsou proto přenásobené činitelem 1.121, aby oblouk odpovídal skutečné délce. Boční polohy se nezměnily. Chyba se našla strojovou kontrolou vnitřní konzistence všech karet, ne novým pramenem — schematický plán nesmí být ve sporu s číslem, které tatáž karta uvádí jako délku jamky.",
-    "green": {
-      "x": 0,
-      "y": 537.9,
-      "rx": 12,
-      "ry": 12.3,
-      "rot": 0.1,
-      "seed": 3401,
-      "amp": 0.07
-    },
-    "bunkry": [
-      {
-        "x": -17,
-        "y": 526.7,
-        "rx": 5,
-        "ry": 4,
-        "rot": 0.2,
-        "seed": 3402,
-        "amp": 0.18,
-        "label": {
-          "cs": "velký bunkr vlevo od greenu, opakovaně popisovaný jako nejhorší místo na jamce",
-          "en": "big bunker left of the green, repeatedly described as the worst place on the hole"
-        },
-        "zkratka": {
-          "cs": "BUNKR",
-          "en": "BUNKER"
-        }
+    "poznamka": "KRESLENO ZE SKUTEČNÝCH OBRYSŮ (23. 8. 2026, Krok 33) — polygony greenu a dvanácti bunkerů pocházejí z OpenStreetMap (ODbL). Soustava je popsaná v obrys.zdroj.\nIDENTIFIKACE: green v OSM leží 3 metry od bodu ze satelitní mapy. Přímá vzdálenost odpaliště–green je 489 m proti oficiálním 538 m (−9,1 %), což u mírného doglegu sedí.\nODPALIŠTĚ V DATECH NENÍ. V celém výřezu kolem jamky jsou jen dvě plochy golf=tee a ani jedna k pětce nepatří (jedna leží 213 m stranou, druhá 91 m ZA greenem — to je odpaliště šestky). Pinehurst má v OSM 62 greenů, ale jen 42 odpališť pro devět hřišť, takže pokrytí odpališť je děravé. Na plánu je proto odpaliště jen značka na správném MÍSTĚ (ze souřadnice od objednatele), ne zaměřený obrys — je to jediný prvek téhle karty, který zaměřený není.\nCO TVAR GREENU POTVRDIL: obrys je vypouklý útvar bez rovných hran, širší vzadu než vpředu. Karta stojí na tom, že víc než polovina plochy má spád, na kterém se míč neudrží; obrys sám o sobě spád neukáže, ale ukáže, že green nemá kde „schovat“ rovnou plochu u okraje.\nCO JSEM VYPUSTIL: jednu pískovou plochu 76 metrů vlevo — je za hranicí koridoru a patří nejspíš sousední čtyřce.\nCO NENÍ NAKRESLENO: fairway (v OSM pro tenhle koridor není), rough ani sběrné plochy kolem greenu, na kterých karta staví — ty v datech zakreslené nejsou.",
+    "obrys": {
+      "zdroj": "OpenStreetMap (ODbL), staženo 23. 8. 2026 přes openstreetmap.org/api/0.6/map. Souřadnice v metrech od zadního odpaliště; x kladně vpravo od přímé linie odpaliště–green, y po téhle linii.",
+      "green": {
+        "body": [
+          [
+            2.8,
+            497.9
+          ],
+          [
+            1.4,
+            500.2
+          ],
+          [
+            -2.4,
+            503.3
+          ],
+          [
+            -6.0,
+            504.3
+          ],
+          [
+            -11.4,
+            503.7
+          ],
+          [
+            -15.1,
+            501.7
+          ],
+          [
+            -16.9,
+            499.3
+          ],
+          [
+            -17.7,
+            496.3
+          ],
+          [
+            -17.8,
+            494.3
+          ],
+          [
+            -15.7,
+            489.6
+          ],
+          [
+            -11.9,
+            483.0
+          ],
+          [
+            -8.7,
+            477.6
+          ],
+          [
+            -6.0,
+            475.3
+          ],
+          [
+            -2.5,
+            473.7
+          ],
+          [
+            1.4,
+            473.9
+          ],
+          [
+            4.9,
+            474.9
+          ],
+          [
+            7.4,
+            476.2
+          ],
+          [
+            10.0,
+            478.7
+          ],
+          [
+            12.0,
+            482.0
+          ],
+          [
+            12.1,
+            484.4
+          ],
+          [
+            9.6,
+            489.0
+          ],
+          [
+            6.3,
+            493.4
+          ],
+          [
+            4.2,
+            496.2
+          ]
+        ]
       },
-      {
-        "x": 13,
-        "y": 304.8,
-        "rx": 5,
-        "ry": 7,
-        "rot": 0.05,
-        "seed": 3403,
-        "amp": 0.2,
-        "label": {
-          "cs": "fairwayový bunkr obnovený při restauraci; jeho přelet vyžaduje ze zadního odpaliště 290–300 yardů",
-          "en": "fairway bunker restored in 2010–11; carrying it takes 290–300 yards from the back tee"
+      "fairway": [],
+      "voda": [],
+      "bunkry": [
+        {
+          "body": [
+            [
+              -20.2,
+              96.8
+            ],
+            [
+              -17.4,
+              92.1
+            ],
+            [
+              -20.1,
+              89.3
+            ],
+            [
+              -25.1,
+              93.9
+            ],
+            [
+              -28.5,
+              99.7
+            ],
+            [
+              -31.0,
+              104.2
+            ],
+            [
+              -33.1,
+              108.9
+            ],
+            [
+              -30.9,
+              111.1
+            ],
+            [
+              -27.6,
+              108.2
+            ],
+            [
+              -23.9,
+              105.0
+            ],
+            [
+              -24.7,
+              100.9
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr vlevo kolem 100. metru",
+            "en": "bunker on the left around 100 metres"
+          }
         },
-        "zkratka": null
-      }
-    ],
-    "hazardy": [
-      {
-        "typ": "sberna",
-        "x": -28,
-        "y": 517.7,
-        "rx": 12,
-        "ry": 10,
-        "rot": 0.1,
-        "seed": 3404,
-        "amp": 0.12,
-        "label": {
-          "cs": "písčitá sběrná plocha vlevo od greenu — míč se v ní nezastaví dřív než zhruba 46 metrů od greenu",
-          "en": "sandy collection area left of the green — a ball there does not stop until some 46 metres away"
+        {
+          "body": [
+            [
+              -46.7,
+              101.4
+            ],
+            [
+              -49.5,
+              99.7
+            ],
+            [
+              -53.0,
+              99.2
+            ],
+            [
+              -54.1,
+              96.0
+            ],
+            [
+              -56.9,
+              95.1
+            ],
+            [
+              -58.0,
+              96.8
+            ],
+            [
+              -56.0,
+              100.8
+            ],
+            [
+              -59.5,
+              105.8
+            ],
+            [
+              -55.9,
+              112.6
+            ],
+            [
+              -49.3,
+              107.8
+            ],
+            [
+              -46.7,
+              103.4
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "druhý bunkr vlevo tamtéž",
+            "en": "a second bunker on the left there"
+          }
         },
-        "zkratka": {
-          "cs": "SBĚRNÁ PLOCHA",
-          "en": "COLLECTION"
+        {
+          "body": [
+            [
+              -31.6,
+              154.9
+            ],
+            [
+              -33.2,
+              159.8
+            ],
+            [
+              -37.9,
+              159.0
+            ],
+            [
+              -37.1,
+              152.9
+            ],
+            [
+              -39.3,
+              147.6
+            ],
+            [
+              -35.9,
+              142.6
+            ],
+            [
+              -31.3,
+              142.5
+            ],
+            [
+              -30.1,
+              146.9
+            ],
+            [
+              -31.6,
+              151.5
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr vlevo kolem 151. metru",
+            "en": "bunker on the left around 151 metres"
+          }
+        },
+        {
+          "body": [
+            [
+              -43.0,
+              240.0
+            ],
+            [
+              -46.4,
+              241.4
+            ],
+            [
+              -50.5,
+              243.9
+            ],
+            [
+              -53.0,
+              241.5
+            ],
+            [
+              -50.7,
+              236.8
+            ],
+            [
+              -47.4,
+              235.8
+            ],
+            [
+              -45.5,
+              233.7
+            ],
+            [
+              -42.8,
+              234.6
+            ],
+            [
+              -42.5,
+              238.1
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr vlevo v dopadové zóně",
+            "en": "bunker on the left in the landing zone"
+          }
+        },
+        {
+          "body": [
+            [
+              -39.9,
+              351.4
+            ],
+            [
+              -45.0,
+              353.6
+            ],
+            [
+              -51.2,
+              356.3
+            ],
+            [
+              -56.9,
+              352.9
+            ],
+            [
+              -54.9,
+              344.8
+            ],
+            [
+              -50.5,
+              335.9
+            ],
+            [
+              -46.8,
+              330.7
+            ],
+            [
+              -43.4,
+              336.3
+            ],
+            [
+              -43.5,
+              342.5
+            ],
+            [
+              -39.3,
+              348.5
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr vlevo v pásmu druhé rány",
+            "en": "bunker on the left in the second-shot zone"
+          }
+        },
+        {
+          "body": [
+            [
+              22.5,
+              421.8
+            ],
+            [
+              21.7,
+              423.7
+            ],
+            [
+              19.9,
+              423.9
+            ],
+            [
+              18.5,
+              422.3
+            ],
+            [
+              18.0,
+              420.7
+            ],
+            [
+              17.1,
+              417.7
+            ],
+            [
+              19.2,
+              416.7
+            ],
+            [
+              20.9,
+              417.6
+            ],
+            [
+              21.8,
+              419.7
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "malý bunkr vpravo před greenem",
+            "en": "a small bunker right and short of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              19.2,
+              430.9
+            ],
+            [
+              18.4,
+              435.6
+            ],
+            [
+              8.1,
+              440.6
+            ],
+            [
+              2.2,
+              445.1
+            ],
+            [
+              1.2,
+              452.2
+            ],
+            [
+              -4.4,
+              443.0
+            ],
+            [
+              -5.8,
+              436.2
+            ],
+            [
+              2.9,
+              428.3
+            ],
+            [
+              8.7,
+              428.3
+            ],
+            [
+              16.1,
+              421.8
+            ],
+            [
+              18.5,
+              427.4
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr před greenem",
+            "en": "bunker short of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              36.8,
+              469.8
+            ],
+            [
+              36.2,
+              474.0
+            ],
+            [
+              32.9,
+              477.3
+            ],
+            [
+              28.6,
+              475.9
+            ],
+            [
+              24.8,
+              473.2
+            ],
+            [
+              23.9,
+              469.5
+            ],
+            [
+              25.4,
+              465.1
+            ],
+            [
+              29.7,
+              460.0
+            ],
+            [
+              35.1,
+              454.8
+            ],
+            [
+              37.5,
+              458.5
+            ],
+            [
+              39.0,
+              463.5
+            ],
+            [
+              36.6,
+              467.5
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr vpravo od greenu",
+            "en": "bunker right of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              29.2,
+              488.5
+            ],
+            [
+              26.9,
+              493.3
+            ],
+            [
+              17.1,
+              498.0
+            ],
+            [
+              13.8,
+              493.1
+            ],
+            [
+              16.1,
+              484.7
+            ],
+            [
+              19.6,
+              482.8
+            ],
+            [
+              17.7,
+              478.5
+            ],
+            [
+              20.7,
+              472.2
+            ],
+            [
+              27.0,
+              478.2
+            ],
+            [
+              29.6,
+              485.5
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "druhý bunkr vpravo od greenu",
+            "en": "a second bunker right of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              -7.8,
+              472.5
+            ],
+            [
+              -11.0,
+              476.4
+            ],
+            [
+              -14.1,
+              477.6
+            ],
+            [
+              -15.7,
+              475.0
+            ],
+            [
+              -15.2,
+              471.5
+            ],
+            [
+              -16.7,
+              467.3
+            ],
+            [
+              -15.1,
+              462.7
+            ],
+            [
+              -12.4,
+              460.6
+            ],
+            [
+              -8.7,
+              464.0
+            ],
+            [
+              -6.6,
+              466.2
+            ],
+            [
+              -6.3,
+              469.1
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr vlevo od greenu",
+            "en": "bunker left of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              23.2,
+              544.5
+            ],
+            [
+              24.1,
+              538.8
+            ],
+            [
+              23.9,
+              533.7
+            ],
+            [
+              21.2,
+              532.9
+            ],
+            [
+              18.8,
+              535.0
+            ],
+            [
+              17.5,
+              538.4
+            ],
+            [
+              17.2,
+              543.7
+            ],
+            [
+              15.0,
+              548.6
+            ],
+            [
+              15.0,
+              552.7
+            ],
+            [
+              18.5,
+              553.1
+            ],
+            [
+              21.2,
+              550.2
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr za greenem vpravo",
+            "en": "bunker behind the green, right"
+          }
+        },
+        {
+          "body": [
+            [
+              -3.5,
+              555.4
+            ],
+            [
+              -7.5,
+              552.1
+            ],
+            [
+              -8.9,
+              550.2
+            ],
+            [
+              -13.2,
+              546.1
+            ],
+            [
+              -17.6,
+              548.4
+            ],
+            [
+              -17.1,
+              555.5
+            ],
+            [
+              -13.8,
+              559.8
+            ],
+            [
+              -6.5,
+              562.1
+            ],
+            [
+              -2.7,
+              557.8
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr za greenem vlevo",
+            "en": "bunker behind the green, left"
+          }
         }
-      },
-      {
-        "typ": "sberna",
-        "x": 18,
-        "y": 551.3,
-        "rx": 8,
-        "ry": 6,
-        "rot": -0.2,
-        "seed": 3405,
-        "amp": 0.12,
-        "label": {
-          "cs": "sráz vzadu vpravo, kam odchází přehraná rána",
-          "en": "fall-off at the back right, where a long shot goes"
-        },
-        "zkratka": null
-      }
-    ],
-    "fairway": {
-      "ohyb": 10,
-      "sirkaTee": 34,
-      "sirkaGreen": 30,
-      "zacatek": 22,
-      "seed": 4112
-    },
-    "dopadovaZona": {
-      "od": 269,
-      "do": 319
+      ]
     }
   },
   "prvky": [

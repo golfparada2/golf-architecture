@@ -39,16 +39,16 @@
   "vznik": 1926,
   "gps": {
     "tee": [
-      34.04516,
-      -118.50249
+      34.041461,
+      -118.50919
     ],
     "green": [
-      34.04516,
-      -118.50249
+      34.0405,
+      -118.507632
     ],
     "presnost": {
-      "cs": "úroveň areálu, ověřeno v OpenStreetMap (Nominatim) — souřadnice jednotlivých jamek klub nezveřejňuje",
-      "en": "resort-level, verified against OpenStreetMap (Nominatim) — the club does not publish per-hole coordinates"
+      "cs": "zaměřeno: odpaliště je těžiště polygonu golf=tee z OpenStreetMap, green těžiště putovací plochy odečtené z leteckého snímku a usazené na zaměřené bunkry (Krok 36). Dřívější hodnota byla jen poloha areálu.",
+      "en": "surveyed: the tee is the centroid of the golf=tee polygon from OpenStreetMap, the green the centroid of the putting surface read off an aerial photograph and registered to the surveyed bunkers (Step 36). The earlier value was the resort location only."
     }
   },
   "otazka": {
@@ -56,71 +56,797 @@
     "en": "Where do you aim on a par 3 whose green has a bunker in the middle of it — and where no safe centre therefore exists?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Bunkr uvnitř greenu je celý smysl téhle jamky a kresba ho proto zobrazuje jako bunkr obklopený putovací plochou; `js/platy.js` kreslí bunkry AŽ NAD greenem, takže se to zobrazí správně. NEDOHLEDÁNO a proto jen odhadnuto z popisů: rozměry bunkru (prameny ho popisují jen slovy „malý“, „pot bunker“), rozměry greenu (jediný nalezený zdroj si u nich protiřečí) a přesná poloha bunkru vůči středu — Golf Digest uvádí, že neleží v geometrickém středu, ale odděluje nižší přední pravou čtvrtinu od zbytku, a kresba to takhle ukazuje. Počet greenside bunkrů se v pramenech liší (The Fried Egg tři včetně středového, PGA Tour čtyři); kreslíme tři doložené. Dvě patra greenu a spád zezadu dopředu půdorys zobrazit neumí — popisuje je text karty. DOPLNĚK 23. 8. 2026 (Krok 28): oficiální průvodce The Genesis Invitational potvrzuje polohu bunkru „uprostřed dvoupatrového greenu“ i délku 199 yardů. Rozměry ale neuvádí, takže geometrie zůstává schematická — potvrdil se popis, ne čísla.",
-    "green": {
-      "x": 0,
-      "y": 180,
-      "rx": 14,
-      "ry": 11,
-      "rot": 0.15,
-      "seed": 3501,
-      "amp": 0.09
+    "poznamka": "KRESLENO ZE SKUTEČNÝCH OBRYSŮ (23. 8. 2026, Krok 36) — čtyři bunkry a obě odpaliště pocházejí z OpenStreetMap (ODbL), putovací plocha z leteckého snímku, který dodal objednatel. Soustava je popsaná v obrys.zdroj, celý postup se dá zopakovat skriptem `dev/riviera-6-zamereni.py`.\nIDENTIFIKACE: objednatel poslal souřadnice středu greenu (34°02'25,8\"N 118°30'27,6\"W). V OSM na tom bodě končí osa jamky zapsaná jako golf=hole s ref=6 — druhý konec leží v ploše odpaliště 179 m daleko, proti oficiálním 182 m (−1,6 %). U par 3 se přímá a hraná vzdálenost rovnají, takže tahle shoda je silný důkaz. Kontrola navíc: sousední osa ref=7 měří 376 m proti oficiálním 408 yardům (373 m), tedy +0,8 % — číslování v datech sedí.\nGREEN SE MUSEL VZÍT Z FOTKY. Riviera má v OSM zakreslených jen 45 bunkerů a green šestky v datech vůbec není. Obrys putovací plochy je proto odečtený ze snímku a do metrů usazený tím, že se na snímek proložily čtyři zaměřené bunkry: měřítko vyšlo 14,1 pixelu na metr, natočení 0,1° (snímek je prakticky sever nahoru) a zbytkové odchylky těžišť 0,03 až 0,20 m na rozpětí 35 m. Kontrola nezávislá na tom výpočtu: střed takto změřeného greenu vyšel 3 m od bodu, který poslal objednatel.\nROZLIŠIT GREEN OD APRONU NESTAČILO PODLE BARVY. První pokus prahoval jen na jas a barvu a pobral i apron a předgreen — green vyšel 46 × 37 m a přes 1000 m². Rozhodla teprve hladkost: posekaná putovací plocha má v okně 7 × 7 pixelů skoro nulový rozptyl jasu, rough má pruhy po sekačce a stíny.\nCO SE TÍM ROZHODLO: prameny se neshodly, kolik má šestka bunkerů — The Fried Egg psal o třech včetně středového, PGA Tour o čtyřech. Zaměření ukazuje ČTYŘI: ostrovní uprostřed greenu, velký členitý 13 m před greenem na linii, malý u levého okraje a jeden vpravo vzadu. Padl i dřívější odhad rozměrů: putovací plocha měří zhruba 31 × 33 m; nakreslený obrys uzavírá 720 m², hrubá maska ze snímku před vyhlazením 780 m² — pravda je někde mezi, ostrovní bunkr 4,2 × 4,6 m a 13,6 m², tedy 1,9 % greenu — je to tedy velký green s malým bunkrem, ne malý green s velkým. Golf Digest píše, že bunkr neleží v geometrickém středu; podle zaměření je jeho těžiště 2,0 m od těžiště greenu, posunuté doprava. Na greenu té velikosti je to prakticky střed, ale rozdíl uvádím, ať je vidět, kde se se zdrojem rozcházím.\nPRAPOREK JE KRESEBNÁ KONVENCE. Na ostatních kartách se vlajka kreslí do středu greenu; tady tam leží bunkr. Kreslítko proto dostalo pole `obrys.green.jamkoviste` a vlajka je posazená do zadního levého kouta — do bodu, který má od bunkru i od okraje největší odstup (8,5 m). Není to zaměřená poloha jamkoviště, ta se stěhuje den ode dne.\nCO NENÍ ZAMĚŘENO: dvě patra greenu a spád zezadu dopředu — půdorys výšky zobrazit neumí a popisuje je text karty. Dál chybí fairway (par 3 ji nemá), rough, stromy a poloha jamkoviště. Odpaliště jsou v OSM dvě plochy, ne tři značky, takže která délka z tabulky se hraje ze které, z dat nevyplývá — přední plocha je 36 m dlouhá a pokryje obě kratší délky. Obrys greenu je vlevo a dole velkorysejší asi o metr až dva: sytě zelený límec kolem plochy se od ní na snímku neodliší.",
+    "obrys": {
+      "zdroj": "Bunkry a odpaliště: OpenStreetMap (ODbL), staženo 23. 8. 2026 přes openstreetmap.org/api/0.6/map. Putovací plocha: letecký snímek Google Maps dodaný objednatelem 23. 8. 2026, obrys odečtený programově a usazený do metrů shodou se čtyřmi zaměřenými bunkry (podobnostní transformace, zbytková odchylka do 1 m). Souřadnice v metrech od zadního odpaliště; x kladně vpravo od přímé linie odpaliště–green, y po téhle linii.",
+      "green": {
+        "body": [
+          [
+            15.4,
+            181.7
+          ],
+          [
+            16.3,
+            179.1
+          ],
+          [
+            16.5,
+            176.3
+          ],
+          [
+            16.0,
+            173.6
+          ],
+          [
+            14.9,
+            171.0
+          ],
+          [
+            13.5,
+            168.6
+          ],
+          [
+            11.8,
+            166.4
+          ],
+          [
+            9.5,
+            164.9
+          ],
+          [
+            9.2,
+            163.8
+          ],
+          [
+            7.7,
+            162.9
+          ],
+          [
+            5.0,
+            163.2
+          ],
+          [
+            2.2,
+            163.8
+          ],
+          [
+            -0.5,
+            164.4
+          ],
+          [
+            -3.1,
+            165.3
+          ],
+          [
+            -5.7,
+            166.4
+          ],
+          [
+            -8.2,
+            167.7
+          ],
+          [
+            -10.4,
+            169.4
+          ],
+          [
+            -11.9,
+            171.7
+          ],
+          [
+            -12.3,
+            174.4
+          ],
+          [
+            -12.4,
+            177.2
+          ],
+          [
+            -12.6,
+            180.0
+          ],
+          [
+            -13.1,
+            182.7
+          ],
+          [
+            -13.8,
+            185.4
+          ],
+          [
+            -14.8,
+            188.0
+          ],
+          [
+            -14.9,
+            190.8
+          ],
+          [
+            -14.7,
+            193.6
+          ],
+          [
+            -12.5,
+            195.1
+          ],
+          [
+            -9.7,
+            195.1
+          ],
+          [
+            -6.9,
+            195.3
+          ],
+          [
+            -4.3,
+            196.0
+          ],
+          [
+            -1.6,
+            195.3
+          ],
+          [
+            0.4,
+            193.4
+          ],
+          [
+            2.3,
+            191.3
+          ],
+          [
+            4.2,
+            189.3
+          ],
+          [
+            6.5,
+            187.7
+          ],
+          [
+            8.6,
+            185.9
+          ],
+          [
+            10.9,
+            184.6
+          ],
+          [
+            13.6,
+            183.8
+          ]
+        ],
+        "jamkoviste": [
+          -5.4,
+          186.9
+        ]
+      },
+      "odpaliste": [
+        {
+          "body": [
+            [
+              -3.7,
+              -7.3
+            ],
+            [
+              4.5,
+              -6.8
+            ],
+            [
+              3.7,
+              7.3
+            ],
+            [
+              -4.5,
+              6.8
+            ]
+          ]
+        },
+        {
+          "body": [
+            [
+              1.3,
+              24.9
+            ],
+            [
+              -5.3,
+              25.2
+            ],
+            [
+              -4.8,
+              38.8
+            ],
+            [
+              -14.7,
+              40.4
+            ],
+            [
+              -14.0,
+              60.9
+            ],
+            [
+              3.4,
+              60.7
+            ]
+          ]
+        }
+      ],
+      "fairway": [],
+      "voda": [],
+      "bunkry": [
+        {
+          "body": [
+            [
+              -4.0,
+              143.4
+            ],
+            [
+              -2.3,
+              143.2
+            ],
+            [
+              -0.2,
+              142.5
+            ],
+            [
+              2.1,
+              141.8
+            ],
+            [
+              3.3,
+              141.8
+            ],
+            [
+              4.5,
+              142.7
+            ],
+            [
+              5.0,
+              144.2
+            ],
+            [
+              4.7,
+              145.3
+            ],
+            [
+              4.4,
+              145.7
+            ],
+            [
+              3.6,
+              146.1
+            ],
+            [
+              2.7,
+              146.5
+            ],
+            [
+              2.4,
+              147.1
+            ],
+            [
+              2.7,
+              148.0
+            ],
+            [
+              3.3,
+              148.3
+            ],
+            [
+              4.4,
+              148.5
+            ],
+            [
+              5.3,
+              148.5
+            ],
+            [
+              6.3,
+              148.7
+            ],
+            [
+              7.4,
+              149.1
+            ],
+            [
+              8.1,
+              149.7
+            ],
+            [
+              8.7,
+              151.0
+            ],
+            [
+              7.7,
+              152.3
+            ],
+            [
+              6.3,
+              154.1
+            ],
+            [
+              4.9,
+              155.2
+            ],
+            [
+              4.1,
+              155.3
+            ],
+            [
+              3.0,
+              155.1
+            ],
+            [
+              2.4,
+              153.9
+            ],
+            [
+              2.0,
+              153.1
+            ],
+            [
+              1.3,
+              152.5
+            ],
+            [
+              0.7,
+              151.9
+            ],
+            [
+              0.0,
+              151.4
+            ],
+            [
+              -0.5,
+              150.9
+            ],
+            [
+              -0.8,
+              150.4
+            ],
+            [
+              -1.0,
+              149.7
+            ],
+            [
+              -1.1,
+              148.6
+            ],
+            [
+              -1.3,
+              147.8
+            ],
+            [
+              -2.0,
+              147.2
+            ],
+            [
+              -3.1,
+              147.4
+            ],
+            [
+              -3.8,
+              147.7
+            ],
+            [
+              -4.7,
+              148.5
+            ],
+            [
+              -4.6,
+              149.6
+            ],
+            [
+              -3.7,
+              150.7
+            ],
+            [
+              -2.9,
+              152.2
+            ],
+            [
+              -2.2,
+              153.2
+            ],
+            [
+              -0.9,
+              154.5
+            ],
+            [
+              0.1,
+              155.5
+            ],
+            [
+              0.8,
+              156.7
+            ],
+            [
+              0.5,
+              157.6
+            ],
+            [
+              -0.6,
+              159.1
+            ],
+            [
+              -1.9,
+              159.8
+            ],
+            [
+              -3.1,
+              160.1
+            ],
+            [
+              -4.3,
+              159.7
+            ],
+            [
+              -5.1,
+              158.6
+            ],
+            [
+              -5.4,
+              157.1
+            ],
+            [
+              -5.6,
+              155.4
+            ],
+            [
+              -5.9,
+              154.3
+            ],
+            [
+              -6.2,
+              153.6
+            ],
+            [
+              -6.9,
+              152.8
+            ],
+            [
+              -8.0,
+              151.7
+            ],
+            [
+              -9.2,
+              150.5
+            ],
+            [
+              -9.8,
+              149.6
+            ],
+            [
+              -9.8,
+              148.1
+            ],
+            [
+              -9.1,
+              146.9
+            ],
+            [
+              -8.4,
+              145.9
+            ],
+            [
+              -7.7,
+              144.8
+            ],
+            [
+              -7.0,
+              144.2
+            ],
+            [
+              -6.4,
+              143.9
+            ],
+            [
+              -5.4,
+              143.9
+            ]
+          ],
+          "zkratka": {
+            "cs": "PŘED GREENEM",
+            "en": "SHORT"
+          },
+          "label": {
+            "cs": "velký členitý bunkr před greenem, přímo na linii rány",
+            "en": "a large lobed bunker short of the green, straight on the line of the shot"
+          }
+        },
+        {
+          "body": [
+            [
+              -16.5,
+              175.3
+            ],
+            [
+              -15.3,
+              175.1
+            ],
+            [
+              -14.4,
+              175.5
+            ],
+            [
+              -13.7,
+              177.1
+            ],
+            [
+              -13.7,
+              178.5
+            ],
+            [
+              -13.5,
+              179.9
+            ],
+            [
+              -13.4,
+              181.0
+            ],
+            [
+              -13.4,
+              181.9
+            ],
+            [
+              -13.8,
+              182.8
+            ],
+            [
+              -14.8,
+              182.9
+            ],
+            [
+              -15.8,
+              182.6
+            ],
+            [
+              -16.7,
+              181.6
+            ],
+            [
+              -17.1,
+              180.6
+            ],
+            [
+              -17.3,
+              179.6
+            ],
+            [
+              -17.7,
+              178.8
+            ],
+            [
+              -17.8,
+              177.8
+            ],
+            [
+              -17.5,
+              176.8
+            ],
+            [
+              -17.1,
+              176.2
+            ]
+          ],
+          "zkratka": {
+            "cs": "VLEVO",
+            "en": "LEFT"
+          },
+          "label": {
+            "cs": "bunkr u levého okraje greenu",
+            "en": "bunker at the left edge of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              1.0,
+              191.3
+            ],
+            [
+              3.0,
+              189.8
+            ],
+            [
+              4.6,
+              189.1
+            ],
+            [
+              6.7,
+              188.6
+            ],
+            [
+              8.5,
+              188.3
+            ],
+            [
+              9.6,
+              188.5
+            ],
+            [
+              10.6,
+              189.3
+            ],
+            [
+              11.3,
+              190.3
+            ],
+            [
+              11.5,
+              191.5
+            ],
+            [
+              11.3,
+              192.7
+            ],
+            [
+              10.7,
+              193.9
+            ],
+            [
+              10.1,
+              194.5
+            ],
+            [
+              9.5,
+              194.3
+            ],
+            [
+              9.0,
+              194.2
+            ],
+            [
+              8.5,
+              194.5
+            ],
+            [
+              8.2,
+              195.0
+            ],
+            [
+              7.8,
+              195.3
+            ],
+            [
+              7.2,
+              195.1
+            ],
+            [
+              6.9,
+              194.6
+            ],
+            [
+              6.6,
+              193.8
+            ],
+            [
+              5.7,
+              193.5
+            ],
+            [
+              4.9,
+              194.3
+            ],
+            [
+              4.2,
+              194.9
+            ],
+            [
+              3.7,
+              195.6
+            ],
+            [
+              2.7,
+              195.9
+            ],
+            [
+              2.0,
+              195.7
+            ],
+            [
+              1.2,
+              194.9
+            ],
+            [
+              0.7,
+              194.1
+            ],
+            [
+              0.4,
+              193.2
+            ],
+            [
+              0.3,
+              192.4
+            ]
+          ],
+          "zkratka": {
+            "cs": "VPRAVO VZADU",
+            "en": "RIGHT/LONG"
+          },
+          "label": {
+            "cs": "bunkr vpravo za greenem",
+            "en": "bunker right and long of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              -0.3,
+              179.0
+            ],
+            [
+              -0.1,
+              178.2
+            ],
+            [
+              0.4,
+              177.4
+            ],
+            [
+              1.5,
+              177.4
+            ],
+            [
+              2.4,
+              177.7
+            ],
+            [
+              3.3,
+              178.5
+            ],
+            [
+              3.9,
+              179.4
+            ],
+            [
+              3.9,
+              180.1
+            ],
+            [
+              3.9,
+              181.1
+            ],
+            [
+              3.2,
+              181.8
+            ],
+            [
+              2.4,
+              182.0
+            ],
+            [
+              1.8,
+              181.7
+            ],
+            [
+              1.4,
+              181.0
+            ],
+            [
+              0.9,
+              180.5
+            ],
+            [
+              0.2,
+              180.3
+            ],
+            [
+              -0.3,
+              179.7
+            ]
+          ],
+          "zkratka": {
+            "cs": "V GREENU",
+            "en": "IN THE GREEN"
+          },
+          "label": {
+            "cs": "bunkr uprostřed putovací plochy, obklopený greenem ze všech stran",
+            "en": "bunker in the middle of the putting surface, surrounded by green on every side"
+          }
+        }
+      ]
     },
-    "bunkry": [
-      {
-        "x": 2,
-        "y": 176,
-        "rx": 3,
-        "ry": 2.4,
-        "rot": 0.1,
-        "seed": 3502,
-        "amp": 0.14,
-        "label": {
-          "cs": "bunkr uprostřed putovací plochy, obklopený greenem ze všech stran",
-          "en": "bunker in the middle of the putting surface, surrounded by green on every side"
-        },
-        "zkratka": {
-          "cs": "V GREENU",
-          "en": "IN THE GREEN"
-        }
-      },
-      {
-        "x": -12,
-        "y": 169,
-        "rx": 5,
-        "ry": 3.5,
-        "rot": 0.2,
-        "seed": 3503,
-        "amp": 0.16,
-        "label": {
-          "cs": "hluboký přední bunkr",
-          "en": "deep front bunker"
-        },
-        "zkratka": {
-          "cs": "VPŘEDU",
-          "en": "FRONT"
-        }
-      },
-      {
-        "x": 6,
-        "y": 194,
-        "rx": 5,
-        "ry": 3.5,
-        "rot": -0.15,
-        "seed": 3504,
-        "amp": 0.16,
-        "label": {
-          "cs": "zadní bunkr",
-          "en": "back bunker"
-        },
-        "zkratka": {
-          "cs": "VZADU",
-          "en": "BACK"
-        }
-      }
-    ],
-    "hazardy": [],
-    "fairway": null
+    "primaLinie": true
   },
   "prvky": [
     {
@@ -194,8 +920,8 @@
     }
   ],
   "naCoSeDivat": {
-    "cs": "Bunkr uprostřed greenu není chyba kresby. Podívej se, jak málo místa zbývá kolem něj a proč se z odpaliště nedá zvolit „prostředek“ — každý ze čtyř koutů je jiná rána a jiný putt.",
-    "en": "The bunker in the middle of the green is not a drawing error. Look at how little room is left around it and why „the middle“ is not an option from the tee — each of the four corners is a different shot and a different putt."
+    "cs": "Bunkr uprostřed greenu není chyba kresby. Teď je green zaměřený, tak si všimni poměru: putovací plocha má kolem 720 m², bunkr 13,6 m² — necelá dvě procenta. Je to malý bunkr na velkém greenu, a přesto sebere celý střed, protože stojí přesně tam, kam by každý mířil. Každý ze čtyř koutů kolem něj je jiná rána a jiný putt.",
+    "en": "The bunker in the middle of the green is not a drawing error. The green is now surveyed, so look at the ratio: the putting surface is about 720 m², the bunker 13.6 m² — under two per cent. It is a small bunker on a big green, and it still takes the whole middle away, because it sits exactly where everyone would aim. Each of the four corners around it is a different shot and a different putt."
   },
   "lekce": {
     "cs": "Když architekt vezme hráči bezpečný střed, musí si vybrat stranu — a tím se z rutinní rány stane rozhodnutí. Kvalitu takové jamky nepoznáš z průměrného skóre, ale z toho, jak daleko od sebe leží nejlepší a nejhorší výsledky.",

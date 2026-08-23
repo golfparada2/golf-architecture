@@ -334,7 +334,7 @@ a v sekci `jamky/`.
 - **Architekt:** George C. Thomas Jr., stavbu vedl William P. „Billy" Bell.
   Rok se v pramenech liší (1926 podle Wikipedie a PGA Tour, 1927 podle Golf
   Club Atlas a The Fried Egg).
-- **GPS:** 34.048, -118.506 (přibližně, úroveň areálu)
+- **GPS:** odpaliště 34.041461, -118.509190 · green 34.040500, -118.507632 (zaměřeno, Krok 36)
 - **Otázka:** Kam mířit na par 3, jejíž green má uprostřed bunkr — a kde tedy
   žádný bezpečný střed neexistuje?
 - **Tři prvky:** bunkr uprostřed putovací plochy bere hráči obvyklou strategii
@@ -345,11 +345,16 @@ a v sekci `jamky/`.
   (citáty Aarona Wise a Kevina Na) · LINKS Magazine (Spieth, Cink) ·
   The Fried Egg · Two Inches Short · Golf Club Atlas
 
-> **Nedohledáno:** rozměry bunkru (prameny ho popisují jen slovy „malý",
-> „pot bunker"), rozměry greenu (jediný nalezený zdroj si u nich protiřečí),
-> přesný počet greenside bunkrů (tři vs. čtyři) a **jakýkoli přímý Thomasův
-> komentář právě k téhle jamce** — co se o jeho záměru píše, jsou interpretace
-> pozdějších autorů.
+- **Zaměřeno (Krok 36):** putovací plocha zhruba 31 × 33 m v soustavě jamky,
+  nakreslený obrys uzavírá 720 m²; ostrovní bunkr 4,2 × 4,6 m a 13,6 m², tedy
+  1,9 % greenu, s těžištěm 2,0 m od těžiště greenu (doprava). Bunkry jsou **čtyři**: ostrovní,
+  velký členitý 13 m před greenem přímo na linii, malý u levého okraje a jeden
+  vpravo vzadu. Přímá vzdálenost odpaliště–green 179 m proti oficiálním 182 m.
+
+> **Nedohledáno:** **jakýkoli přímý Thomasův komentář právě k téhle jamce** —
+> co se o jeho záměru píše, jsou interpretace pozdějších autorů. Zaměřeno není
+> ani dvoupatrový profil greenu (půdorys výšku neukáže) a která z tabulkových
+> délek se hraje ze které plochy — odpaliště jsou v OSM dvě plochy, ne tři značky.
 
 ---
 
@@ -449,6 +454,15 @@ potřebuje (Krok 14: Augusta 13, Mid Ocean 5, Ostravice 16; Krok 15:
 Pinehurst No. 2 jamka 5, Riviera 6, Slapy 14; Krok 23: Woking 4,
 St Andrews Old 14, Albatross 15).
 
-**Karty kreslené ze skutečných zaměřených obrysů (OpenStreetMap, ODbL):**
-Karlštejn 14 (Krok 18) a Karlštejn 15 (Krok 22). Ostatní karty mají
-geometrii schematickou — vysvětlují princip, neměří se z nich.
+**Karty kreslené ze skutečných zaměřených obrysů (OpenStreetMap, ODbL) —
+patnáct z dvaceti:** Karlštejn 14 a 15, Sand Hills 1, Zbraslav 1, Woking 4,
+TPC Sawgrass 17, Riviera 10, St Andrews Old 7 a 14, Augusta National 13,
+Pinehurst No. 2 jamka 5, Mid Ocean 5, Cypress Point 16, Pebble Beach 18,
+Ballybunion Old 11.
+**Odečteno z oficiálního klubového plánku:** Albatross 15 (zaměřené obrysy
+prověřeny a odmítnuty — chyběl v nich jeden ze dvou středových bunkerů),
+Ostravice 16, Slapy 14.
+**Zaměřeno smíšeně:** Riviera 6 — bunkry a odpaliště z OSM, putovací plocha
+z leteckého snímku od objednatele, usazená na zaměřené bunkry (Krok 36).
+**Nepřevedeno:** Dobrouč 3 (v OSM není zakreslené nic).
+Každá převedená karta v `tvary.poznamka` vyjmenovává, co v ní zaměřené NENÍ.

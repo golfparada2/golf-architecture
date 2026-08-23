@@ -50,118 +50,705 @@
     "en": "How many hazards can one hole carry before it turns into a lottery?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště. DVĚ VZDÁLENOSTI JSOU DOLOŽENÉ a plán je podle nich: Beardies začínají 240 a končí 285 yardů od odpaliště (219 a 261 m), Hell Bunker leží 108 yardů před greenem (99 m, tedy 462 m od odpaliště). Boční polohy, velikosti a tvary doložené nejsou a jsou odhad. Zeď a out of bounds po pravé straně se nekreslí — kreslítko pro ně nemá tvar.",
-    "fairway": {
-      "ohyb": 14,
-      "sirkaTee": 52,
-      "sirkaGreen": 30,
-      "zacatek": 20,
-      "seed": 5201
-    },
-    "green": {
-      "x": 6,
-      "y": 552,
-      "rx": 14,
-      "ry": 11,
-      "rot": 0.1,
-      "seed": 5202,
-      "amp": 0.07
-    },
-    "bunkry": [
-      {
-        "x": -19,
-        "y": 222,
-        "rx": 3.2,
-        "ry": 2.6,
-        "rot": 0.2,
-        "seed": 5203,
-        "amp": 0.2,
-        "zkratka": {
-          "cs": "BEARDIES",
-          "en": "BEARDIES"
+    "poznamka": "KRESLENO ZE SKUTEČNÝCH OBRYSŮ (23. 8. 2026, Krok 35) — polygony greenu, tří odpališť a dvanácti bunkerů pocházejí z OpenStreetMap (ODbL).\nIDENTIFIKACE: přímá vzdálenost odpaliště–green je 475 m proti oficiálním 561 m (−15,3 %). Green má PADESÁT SEDM bodů a měří přes osmdesát metrů napříč — je to sdílený dvojgreen čtvrté a čtrnácté jamky, proto leží jeho těžiště 24 metrů od bodu, který objednatel odečetl; u tak velkého útvaru to není nepřesnost, ale důsledek toho, že se měří ke středu celého dvojgreenu.\nDVA SLAVNÉ ÚTVARY VYŠLY NA SVÝCH MÍSTECH: (1) Beardies jsou v datech ČTYŘI samostatné bunkry mezi 153. a 186. metrem přímé vzdálenosti, tedy po přepočtu na hranou délku 179 až 217 metrů — průvodce The Open je klade na 240 až 285 yardů (219 až 261 m) a Fried Egg je popisuje jako „čtyři ponořené a divně tvarované díry“. Počet i vzájemné rozestupy sedí. (2) Hell Bunker leží 106 metrů před greenem; oficiální průvodce uvádí 108 yardů, tedy 99 metrů. Odchylka sedm metrů u útvaru, který je sám přes dvacet metrů široký.\nCO NENÍ NAKRESLENO: fairway (v OSM pro tenhle koridor není), zeď panství Strathtyrum s out of bounds po pravé straně (v datech je jako linie, ne plocha) a osm dalších bunkerů, které v koridoru leží, ale patří sousedním drahám — Old Course má jamky vedle sebe a bunkerů je v okolí dvacet.",
+    "obrys": {
+      "zdroj": "OpenStreetMap (ODbL), staženo 23. 8. 2026 přes openstreetmap.org/api/0.6/map. Souřadnice v metrech od zadního odpaliště; x kladně vpravo od přímé linie odpaliště–green, y po téhle linii.",
+      "green": {
+        "body": [
+          [
+            9.0,
+            467.0
+          ],
+          [
+            0.0,
+            461.0
+          ],
+          [
+            -12.0,
+            458.0
+          ],
+          [
+            -19.0,
+            462.0
+          ],
+          [
+            -23.0,
+            474.0
+          ],
+          [
+            -31.0,
+            477.0
+          ],
+          [
+            -46.0,
+            477.0
+          ],
+          [
+            -56.0,
+            486.0
+          ],
+          [
+            -57.0,
+            498.0
+          ],
+          [
+            -49.0,
+            517.0
+          ],
+          [
+            -42.0,
+            520.0
+          ],
+          [
+            -26.0,
+            511.0
+          ],
+          [
+            -27.0,
+            502.0
+          ],
+          [
+            -31.0,
+            493.0
+          ],
+          [
+            -26.0,
+            488.0
+          ],
+          [
+            -14.0,
+            491.0
+          ],
+          [
+            9.0,
+            489.0
+          ],
+          [
+            22.0,
+            482.0
+          ],
+          [
+            20.0,
+            472.0
+          ]
+        ]
+      },
+      "odpaliste": [
+        {
+          "body": [
+            [
+              -25.0,
+              -1.0
+            ],
+            [
+              -16.0,
+              -2.0
+            ],
+            [
+              -13.0,
+              0.0
+            ],
+            [
+              -12.0,
+              13.0
+            ],
+            [
+              -23.0,
+              14.0
+            ]
+          ]
         },
-        "label": {
-          "cs": "první z Beardies — skupina bunkerů vlevo, 240 yardů od odpaliště",
-          "en": "the first of the Beardies — the cluster on the left, 240 yards from the tee"
-        }
-      },
-      {
-        "x": -24,
-        "y": 236,
-        "rx": 2.8,
-        "ry": 2.4,
-        "rot": -0.1,
-        "seed": 5204,
-        "amp": 0.2,
-        "zkratka": null,
-        "label": {
-          "cs": "druhý z Beardies",
-          "en": "the second of the Beardies"
-        }
-      },
-      {
-        "x": -17,
-        "y": 250,
-        "rx": 3.0,
-        "ry": 2.4,
-        "rot": 0.3,
-        "seed": 5205,
-        "amp": 0.2,
-        "zkratka": null,
-        "label": {
-          "cs": "třetí z Beardies",
-          "en": "the third of the Beardies"
-        }
-      },
-      {
-        "x": -23,
-        "y": 261,
-        "rx": 2.6,
-        "ry": 2.2,
-        "rot": 0.1,
-        "seed": 5206,
-        "amp": 0.2,
-        "zkratka": null,
-        "label": {
-          "cs": "poslední z Beardies, 285 yardů od odpaliště",
-          "en": "the last of the Beardies, 285 yards from the tee"
-        }
-      },
-      {
-        "x": -3,
-        "y": 462,
-        "rx": 15,
-        "ry": 9,
-        "rot": 0.05,
-        "seed": 5207,
-        "amp": 0.14,
-        "zkratka": {
-          "cs": "HELL",
-          "en": "HELL"
+        {
+          "body": [
+            [
+              -11.0,
+              19.0
+            ],
+            [
+              -24.0,
+              19.0
+            ],
+            [
+              -24.0,
+              33.0
+            ],
+            [
+              -11.0,
+              33.0
+            ]
+          ]
         },
-        "label": {
-          "cs": "Hell Bunker — leží 108 yardů před greenem, přesně tam, kam míří druhá rána",
-          "en": "Hell Bunker — 108 yards short of the green, exactly where the second shot wants to go"
+        {
+          "body": [
+            [
+              -13.0,
+              71.0
+            ],
+            [
+              -13.0,
+              74.0
+            ],
+            [
+              -16.0,
+              74.0
+            ],
+            [
+              -16.0,
+              71.0
+            ]
+          ]
         }
-      },
-      {
-        "x": 17,
-        "y": 540,
-        "rx": 4,
-        "ry": 3,
-        "rot": 0.2,
-        "seed": 5208,
-        "amp": 0.16,
-        "zkratka": null,
-        "label": {
-          "cs": "bunkr u greenu vpravo",
-          "en": "bunker right of the green"
+      ],
+      "fairway": [],
+      "voda": [],
+      "bunkry": [
+        {
+          "body": [
+            [
+              -35.0,
+              161.0
+            ],
+            [
+              -37.0,
+              161.0
+            ],
+            [
+              -38.0,
+              156.0
+            ],
+            [
+              -41.0,
+              152.0
+            ],
+            [
+              -41.0,
+              149.0
+            ],
+            [
+              -37.0,
+              146.0
+            ],
+            [
+              -34.0,
+              148.0
+            ],
+            [
+              -35.0,
+              153.0
+            ]
+          ],
+          "zkratka": {
+            "cs": "BEARDIES",
+            "en": "BEARDIES"
+          },
+          "label": {
+            "cs": "první z Beardies — skupiny čtyř bunkerů vlevo v dopadové zóně odpalu",
+            "en": "the first of the Beardies — the cluster of four bunkers left of the driving zone"
+          }
+        },
+        {
+          "body": [
+            [
+              -33.0,
+              167.0
+            ],
+            [
+              -32.0,
+              167.0
+            ],
+            [
+              -31.0,
+              168.0
+            ],
+            [
+              -31.0,
+              169.0
+            ],
+            [
+              -33.0,
+              171.0
+            ],
+            [
+              -36.0,
+              172.0
+            ],
+            [
+              -37.0,
+              171.0
+            ],
+            [
+              -38.0,
+              170.0
+            ],
+            [
+              -38.0,
+              169.0
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "druhý z Beardies",
+            "en": "the second of the Beardies"
+          }
+        },
+        {
+          "body": [
+            [
+              -44.0,
+              174.0
+            ],
+            [
+              -45.0,
+              174.0
+            ],
+            [
+              -46.0,
+              174.0
+            ],
+            [
+              -46.0,
+              175.0
+            ],
+            [
+              -46.0,
+              176.0
+            ],
+            [
+              -45.0,
+              177.0
+            ],
+            [
+              -44.0,
+              177.0
+            ],
+            [
+              -43.0,
+              176.0
+            ],
+            [
+              -43.0,
+              175.0
+            ],
+            [
+              -43.0,
+              174.0
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "třetí z Beardies",
+            "en": "the third of the Beardies"
+          }
+        },
+        {
+          "body": [
+            [
+              -32.0,
+              184.0
+            ],
+            [
+              -32.0,
+              183.0
+            ],
+            [
+              -32.0,
+              182.0
+            ],
+            [
+              -33.0,
+              181.0
+            ],
+            [
+              -35.0,
+              182.0
+            ],
+            [
+              -35.0,
+              183.0
+            ],
+            [
+              -35.0,
+              184.0
+            ],
+            [
+              -34.0,
+              185.0
+            ],
+            [
+              -33.0,
+              185.0
+            ],
+            [
+              -32.0,
+              184.0
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "čtvrtý z Beardies",
+            "en": "the fourth of the Beardies"
+          }
+        },
+        {
+          "body": [
+            [
+              -14.0,
+              289.0
+            ],
+            [
+              -15.0,
+              289.0
+            ],
+            [
+              -17.0,
+              288.0
+            ],
+            [
+              -18.0,
+              285.0
+            ],
+            [
+              -16.0,
+              284.0
+            ],
+            [
+              -14.0,
+              284.0
+            ],
+            [
+              -13.0,
+              286.0
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr uprostřed Elysian Fields",
+            "en": "a bunker in the middle of the Elysian Fields"
+          }
+        },
+        {
+          "body": [
+            [
+              -23.0,
+              342.0
+            ],
+            [
+              -24.0,
+              342.0
+            ],
+            [
+              -25.0,
+              341.0
+            ],
+            [
+              -25.0,
+              339.0
+            ],
+            [
+              -24.0,
+              338.0
+            ],
+            [
+              -23.0,
+              338.0
+            ],
+            [
+              -22.0,
+              338.0
+            ],
+            [
+              -21.0,
+              340.0
+            ],
+            [
+              -21.0,
+              341.0
+            ],
+            [
+              -22.0,
+              342.0
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "malý bunkr před Hell",
+            "en": "a small bunker short of Hell"
+          }
+        },
+        {
+          "body": [
+            [
+              10.0,
+              334.0
+            ],
+            [
+              9.0,
+              334.0
+            ],
+            [
+              8.0,
+              335.0
+            ],
+            [
+              8.0,
+              336.0
+            ],
+            [
+              8.0,
+              337.0
+            ],
+            [
+              8.0,
+              338.0
+            ],
+            [
+              9.0,
+              339.0
+            ],
+            [
+              11.0,
+              337.0
+            ],
+            [
+              11.0,
+              336.0
+            ],
+            [
+              11.0,
+              335.0
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "malý bunkr vpravo",
+            "en": "a small bunker on the right"
+          }
+        },
+        {
+          "body": [
+            [
+              -4.0,
+              365.0
+            ],
+            [
+              -7.0,
+              371.0
+            ],
+            [
+              -12.0,
+              366.0
+            ],
+            [
+              -16.0,
+              366.0
+            ],
+            [
+              -18.0,
+              379.0
+            ],
+            [
+              -20.0,
+              378.0
+            ],
+            [
+              -25.0,
+              375.0
+            ],
+            [
+              -27.0,
+              367.0
+            ],
+            [
+              -22.0,
+              358.0
+            ],
+            [
+              -5.0,
+              362.0
+            ]
+          ],
+          "zkratka": {
+            "cs": "HELL",
+            "en": "HELL"
+          },
+          "label": {
+            "cs": "Hell Bunker — leží 106 metrů před greenem, tedy přesně tam, kam ho klade oficiální průvodce The Open (108 yardů)",
+            "en": "Hell Bunker — 106 metres short of the green, exactly where the official Open guide places it (108 yards)"
+          }
+        },
+        {
+          "body": [
+            [
+              -24.0,
+              428.0
+            ],
+            [
+              -22.0,
+              428.0
+            ],
+            [
+              -21.0,
+              430.0
+            ],
+            [
+              -22.0,
+              432.0
+            ],
+            [
+              -23.0,
+              432.0
+            ],
+            [
+              -25.0,
+              430.0
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr před greenem",
+            "en": "a bunker short of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              -27.0,
+              467.0
+            ],
+            [
+              -27.0,
+              466.0
+            ],
+            [
+              -26.0,
+              466.0
+            ],
+            [
+              -25.0,
+              466.0
+            ],
+            [
+              -24.0,
+              467.0
+            ],
+            [
+              -24.0,
+              468.0
+            ],
+            [
+              -24.0,
+              469.0
+            ],
+            [
+              -25.0,
+              469.0
+            ],
+            [
+              -26.0,
+              469.0
+            ],
+            [
+              -27.0,
+              468.0
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "malý bunkr u greenu",
+            "en": "a small bunker at the green"
+          }
+        },
+        {
+          "body": [
+            [
+              -18.0,
+              495.0
+            ],
+            [
+              -17.0,
+              497.0
+            ],
+            [
+              -20.0,
+              498.0
+            ],
+            [
+              -23.0,
+              497.0
+            ],
+            [
+              -28.0,
+              496.0
+            ],
+            [
+              -29.0,
+              492.0
+            ],
+            [
+              -26.0,
+              489.0
+            ],
+            [
+              -22.0,
+              490.0
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr u zadní části greenu",
+            "en": "a bunker at the back of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              15.0,
+              492.0
+            ],
+            [
+              14.0,
+              491.0
+            ],
+            [
+              12.0,
+              492.0
+            ],
+            [
+              12.0,
+              493.0
+            ],
+            [
+              12.0,
+              494.0
+            ],
+            [
+              13.0,
+              495.0
+            ],
+            [
+              14.0,
+              495.0
+            ],
+            [
+              15.0,
+              494.0
+            ],
+            [
+              16.0,
+              493.0
+            ],
+            [
+              15.0,
+              492.0
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr vpravo u greenu",
+            "en": "a bunker right of the green"
+          }
         }
-      }
-    ],
-    "dopadovaZona": {
-      "od": 200,
-      "do": 265
+      ]
     }
   },
   "prvky": [

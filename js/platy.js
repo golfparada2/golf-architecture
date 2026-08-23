@@ -559,6 +559,7 @@ export function rozsahZObrysu(obrys, { okraj = 22 } = {}) {
   (obrys.fairway || []).forEach((f) => vezmi(f.body));
   (obrys.bunkry || []).forEach((b) => vezmi(b.body));
   (obrys.voda || []).forEach((w) => vezmi(w.body));
+  (obrys.pobrezi || []).forEach((c) => vezmi(c.body));
   minX -= okraj; maxX += okraj; minY -= okraj; maxY += okraj;
   return { minX, maxX, minY, maxY, sirka: maxX - minX, vyska: maxY - minY };
 }
@@ -825,6 +826,62 @@ export function popisJamkyProCtecku(karta, lang) {
 }
 
 /**
+ * Nakreslí POBŘEŽNÍ ČÁRU a zaplní moře na správné straně.
+ *
+ * Oceán není v OpenStreetMap plocha, ale otevřená linie `natural=coastline`.
+ * Moře se proto dopočítá: vezme se čára a od každého jejího bodu se odskočí
+ * kolmo na vodní stranu tak daleko, že to přeteče plát. Nic se nevymýšlí,
+ * jen se doplní strana.
+ *
+ * KTEROU STRANU — TO SE MUSÍ OVĚŘIT OKEM. Konvence OSM sice říká, že ve
+ * směru zákresu je pevnina vlevo a voda vpravo, jenže mezi zákresem a
+ * plátem stojí dvě věci, které orientaci obracejí: soustava jamky má y
+ * nahoru a viewBox dolů, a extrakce z čáry vyřízne úsek, který může běžet
+ * opačným směrem než původní způsob. Proto `vodaVpravo` NENÍ automatický
+ * závěr z konvence, ale nastavení na kartě, které se u každé jamky ověří
+ * pohledem na vykreslený plán: moře nesmí ležet tam, kde stojí odpaliště
+ * nebo green. U Cypress Pointu 16 vyšlo `false` (Krok 35).
+ *
+ * @param {Element} svg
+ * @param {{x:number,y:number}[]} body — pobřežní čára už v jednotkách viewBoxu
+ * @param {boolean} vodaVpravo — true, pokud je voda vpravo od SMĚRU ZÁKRESU (konvence OSM)
+ */
+export function pobrezniCara(svg, body, vodaVpravo, { seed = 91 } = {}) {
+  if (!body || body.length < 3) return;
+  const ink = V('--ink', svg), water = V('--water', svg);
+  const D = 5000;                     // dost daleko, aby výplň přetekla plát
+  /* Konce čáry se protáhnou daleko za plát. Bez toho vede spojnice mezi
+     prvním bodem čáry a posledním bodem odsazené kopie napříč plánem
+     a moře se zužuje do klínu (past nalezená u Pebble Beach, Krok 35). */
+  const prodluz = (a, b) => {
+    let dx = b.x - a.x, dy = b.y - a.y;
+    const d = Math.hypot(dx, dy) || 1;
+    return { x: a.x - (dx / d) * D, y: a.y - (dy / d) * D };
+  };
+  body = [prodluz(body[0], body[1])].concat(body,
+    [prodluz(body[body.length - 1], body[body.length - 2])]);
+  const zpet = [];
+  for (let i = body.length - 1; i >= 0; i--) {
+    const a = body[Math.max(0, i - 1)], b = body[Math.min(body.length - 1, i + 1)];
+    let dx = b.x - a.x, dy = b.y - a.y;
+    const d = Math.hypot(dx, dy) || 1; dx /= d; dy /= d;
+    /* Kolmice na vodní stranu. Ve viewBoxu (y dolů) je geografické „vpravo"
+       vlevo od směru, tedy normála (-dy, dx). */
+    const nx = vodaVpravo ? -dy : dy;
+    const ny = vodaVpravo ? dx : -dx;
+    zpet.push({ x: body[i].x + nx * D, y: body[i].y + ny * D });
+  }
+  const cesta = 'M' + body.map((p) => `${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' L ')
+    + ' L ' + zpet.map((p) => `${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' L ') + ' Z';
+  E(svg, 'path', { d: cesta, fill: water, opacity: 0.92 });
+  vlnky(svg, bboxOf('M' + body.map((p) => `${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' L ')), { seed });
+  E(svg, 'path', {
+    d: 'M' + body.map((p) => `${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' L '),
+    fill: 'none', stroke: ink, 'stroke-width': 1.4, 'stroke-linejoin': 'round',
+  });
+}
+
+/**
  * Vykreslí libovolnou kartu jamky z `data/jamky/*.json`.
  *
  * @param {SVGSVGElement} svg — dostane nový `viewBox`, obsah se smaže a překreslí
@@ -921,6 +978,10 @@ export function vykresliJamku(svg, karta, opts = {}) {
       E(svg, 'path', { d, fill: 'none', stroke: V('--ink', svg), 'stroke-width': 1 });
     });
 
+    (obrys.pobrezi || []).forEach((c, i) => {
+      pobrezniCara(svg, c.body.map(([x, y]) => ({ x: px(x), y: py(y) })),
+        c.vodaVpravo !== false, { seed: 9100 + i });
+    });
     (obrys.voda || []).forEach((w, i) => {
       const d = cestaZBodu(w.body);
       const id = 'ovd' + i + '-' + karta.id;
@@ -1084,7 +1145,16 @@ export function vykresliJamku(svg, karta, opts = {}) {
   } else {
     E(svg, 'rect', { x: tx0 - 7, y: ty0 - 5, width: 14, height: 9, rx: 1.5, fill: V('--turf', svg), stroke: V('--ink', svg), 'stroke-width': 1 });
   }
-  if (obrys && obrys.green) pin(svg, gx, gy, { h: 13, r: 1.8, flagW: 10, flagH: 4.2 });
+  /* Praporek se normálně kreslí do středu greenu. Na Riviéře 6 tam ale leží
+     bunkr — a praporek v bunkru je kresebná nepravda. Karta proto smí říct,
+     kam se vlajka kreslí, polem `obrys.green.jamkoviste: [x, y]` v metrech.
+     Není to zaměřená poloha jamkoviště (to se stěhuje den ode dne), jen
+     kresebná konvence; karta to musí přiznat v `tvary.poznamka`. */
+  if (obrys && obrys.green) {
+    const jm = obrys.green.jamkoviste;
+    const jx = jm ? px(jm[0]) : gx, jy = jm ? py(jm[1]) : gy;
+    pin(svg, jx, jy, { h: 13, r: 1.8, flagW: 10, flagH: 4.2 });
+  }
   else if (t.green) pin(svg, gx, gy, { h: Math.max(9, t.green.ry * m.meritkoY * 0.8), flagW: 11, flagH: 4.5 });
 
   /* --- 8. popisky ------------------------------------------------------ */

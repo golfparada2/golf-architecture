@@ -91,100 +91,468 @@
     "en": "How do you plan three shots along the ocean so none strays left into the water, when the left side is exactly the shortest, most tempting line to the green?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Oprava 2026-08-19: původní oceánský hazard měl rx:40 (šířka pruhu 80 m), což na kartě vypadalo jako by oceán zabíral skoro celou hrací plochu a přesahoval doprostřed fairwaye. Zúženo na rx:22 a posunuto blíž k levému okraji, aby zůstal realisticky úzký pruh podél levé strany (Stillwater Cove), ne dominantní plocha přes celou kartu. Ostatní prvky (délka, par, bunker vpravo/před greenem, strom ve fairwayi) ověřeny jako správné přes GolfPass a PebbleBeach.com — offcourse.co nebyl použit. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. DOPLNĚNO (2026-08-21): rešerše birdie-book/yardage-book zdrojů (viz poznamky.md) odhalila dvě věci k opravě. (1) Green byl kresleny širší než hluboký (rx14/ry11) — openyardage.com (LiDAR/OSM odvozená data) uvádí opak, hloubka ~26 yd > šířka ~23 yd. Otočeno na rx10.5/ry12. (2) Prameny už dřív zmiňovaly „dvě fairwayové bunkry vpravo od dráhy letu”, ale v `bunkry` chyběly — byla nakreslená jen ta u greenu. Doplněny obě, v pozicích odpovídajících dosahovým rozsahům z openyardage.com (175–226 m a 243–273 m), nezávisle potvrzeným kvalitativně u GolfPass a Spokesman-Review. Zdroj pro obojí: openyardage.com/en/course/pebble-beach-golf-course.html. Nekresleno (mimo rozsah schématu): dva stromy uprostřed fairwaye (cypřiš + sousední borovice, cca 30 m od sebe) — zmíněno v textu níže, ne v geometrii, protože kreslicí knihovna nemá glyf pro strom. DOPLNĚNO 23. 8. 2026 (Krok 28): délky ze všech pěti odpališť pocházejí z oficiálního scorecardu resortu; stroke index 5 rovněž. Turnajová vzdálenost 543 yardů (497 m) z US Open zůstává jako samostatný záznam — je to jiné rozestavení odpališť než resortní Gold 541 yardů, ne rozpor. GEOMETRIE SE NEZMĚNILA: scorecard dává jen délky, žádné vzdálenosti k bunkrům ani rozměry greenu. Zkoušel jsem i databázi ProVisualizer, která měřené vzdálenosti k hazardům má, ale její yardage charts jsou přístupné až po odsouhlasení podmínek užití — to za objednatele odklikávat nebudu. Web navíc sám upozorňuje, že jeho satelitní podklady bývají i rok staré a je nutné je ověřit, takže by to stejně nebyl pramen, o který lze kartu opřít.",
-    "green": {
-      "x": 8,
-      "y": 490,
-      "rx": 10.5,
-      "ry": 12,
-      "rot": -0.1,
-      "seed": 1801,
-      "amp": 0.08
-    },
-    "bunkry": [
-      {
-        "x": 16,
-        "y": 175,
-        "rx": 3.5,
-        "ry": 2.8,
-        "rot": 0.2,
-        "seed": 1804,
-        "amp": 0.16,
-        "label": {
-          "cs": "první fairwayový bunker vpravo (kolem 175–226 m od odpaliště)",
-          "en": "first fairway bunker on the right (roughly 175–226 m off the tee)"
-        },
-        "zkratka": {
-          "cs": "FAIRWAY BUNKR",
-          "en": "FAIRWAY BUNKER"
-        }
+    "poznamka": "KRESLENO ZE SKUTEČNÝCH OBRYSŮ (23. 8. 2026, Krok 35) — polygony greenu, dvou odpališť, fairwaye a čtyř bunkerů a pobřežní čára Carmel Bay pocházejí z OpenStreetMap (ODbL).\nIDENTIFIKACE: green v OSM leží NULA metrů od bodu ze satelitní mapy — nejpřesnější zásah ze všech převedených jamek. Přímá vzdálenost odpaliště–green je 456 m proti oficiálním 495 m (−7,9 %).\nCO DATA UKÁZALA A KRESBA DOSUD NE: přímá linie z odpaliště na green vede PŘES MOŘE. Osmnáctka se totiž stáčí doleva kolem zátoky, takže fairway leží až 90 metrů vpravo od spojnice, kdežto odpaliště i green jsou u vody. Pobřežní čára v datech běží přesně mezi tou spojnicí a fairwayí — je to tedy poprvé doložené, ne jen popsané, že se tahle jamka dá zkracovat jen odvahou nad vodou.\nCO NENÍ NAKRESLENO: rough, skály pod pobřežní čárou ani stromy vpravo. Bunkerů je v datech jen čtyři — jeden dlouhý podél pravé strany fairwaye a tři u greenu.",
+    "obrys": {
+      "zdroj": "OpenStreetMap (ODbL), staženo 23. 8. 2026 přes openstreetmap.org/api/0.6/map. Souřadnice v metrech od zadního odpaliště; x kladně vpravo od přímé linie odpaliště–green, y po téhle linii. Carmel Bay je zakreslena z pobřežní čáry (natural=coastline); strana, na které leží moře, je v poli vodaVpravo a ověřená pohledem na plán.",
+      "green": {
+        "body": [
+          [
+            9.0,
+            452.0
+          ],
+          [
+            10.0,
+            455.0
+          ],
+          [
+            8.0,
+            459.0
+          ],
+          [
+            6.0,
+            462.0
+          ],
+          [
+            4.0,
+            464.0
+          ],
+          [
+            1.0,
+            466.0
+          ],
+          [
+            -5.0,
+            466.0
+          ],
+          [
+            -9.0,
+            465.0
+          ],
+          [
+            -11.0,
+            463.0
+          ],
+          [
+            -12.0,
+            458.0
+          ],
+          [
+            -9.0,
+            452.0
+          ],
+          [
+            -5.0,
+            447.0
+          ],
+          [
+            -1.0,
+            444.0
+          ],
+          [
+            1.0,
+            443.0
+          ],
+          [
+            4.0,
+            444.0
+          ],
+          [
+            7.0,
+            448.0
+          ]
+        ]
       },
-      {
-        "x": 22,
-        "y": 255,
-        "rx": 3.5,
-        "ry": 3,
-        "rot": -0.15,
-        "seed": 1805,
-        "amp": 0.16,
-        "label": {
-          "cs": "druhý fairwayový bunker vpravo (kolem 243–273 m od odpaliště)",
-          "en": "second fairway bunker on the right (roughly 243–273 m off the tee)"
+      "odpaliste": [
+        {
+          "body": [
+            [
+              24.0,
+              16.0
+            ],
+            [
+              8.0,
+              -10.0
+            ],
+            [
+              -13.0,
+              1.0
+            ],
+            [
+              -6.0,
+              3.0
+            ],
+            [
+              0.0,
+              10.0
+            ],
+            [
+              10.0,
+              8.0
+            ],
+            [
+              25.0,
+              33.0
+            ],
+            [
+              27.0,
+              21.0
+            ]
+          ]
         },
-        "zkratka": {
-          "cs": "FAIRWAY BUNKR",
-          "en": "FAIRWAY BUNKER"
+        {
+          "body": [
+            [
+              41.0,
+              61.0
+            ],
+            [
+              45.0,
+              60.0
+            ],
+            [
+              47.0,
+              67.0
+            ],
+            [
+              43.0,
+              68.0
+            ]
+          ]
         }
-      },
-      {
-        "x": 20,
-        "y": 480,
-        "rx": 6,
-        "ry": 5,
-        "rot": 0.3,
-        "seed": 1802,
-        "amp": 0.17,
-        "label": {
-          "cs": "hluboký bunker vpravo před greenem (funguje jako „zeď z písku“ na dojezdové ráně)",
-          "en": "deep bunker front-right of the green (acts as a 'wall of sand' on the approach)"
+      ],
+      "fairway": [
+        {
+          "body": [
+            [
+              -1.0,
+              444.0
+            ],
+            [
+              5.0,
+              445.0
+            ],
+            [
+              13.0,
+              437.0
+            ],
+            [
+              46.0,
+              427.0
+            ],
+            [
+              71.0,
+              372.0
+            ],
+            [
+              83.0,
+              288.0
+            ],
+            [
+              84.0,
+              224.0
+            ],
+            [
+              91.0,
+              192.0
+            ],
+            [
+              82.0,
+              141.0
+            ],
+            [
+              65.0,
+              99.0
+            ],
+            [
+              48.0,
+              124.0
+            ],
+            [
+              52.0,
+              161.0
+            ],
+            [
+              47.0,
+              203.0
+            ],
+            [
+              49.0,
+              238.0
+            ],
+            [
+              46.0,
+              272.0
+            ],
+            [
+              44.0,
+              315.0
+            ],
+            [
+              46.0,
+              363.0
+            ],
+            [
+              26.0,
+              402.0
+            ]
+          ]
+        }
+      ],
+      "voda": [],
+      "pobrezi": [
+        {
+          "body": [
+            [
+              -59.0,
+              482.0
+            ],
+            [
+              -26.0,
+              453.0
+            ],
+            [
+              3.0,
+              412.0
+            ],
+            [
+              23.0,
+              337.0
+            ],
+            [
+              35.0,
+              231.0
+            ],
+            [
+              38.0,
+              133.0
+            ],
+            [
+              29.0,
+              110.0
+            ],
+            [
+              25.0,
+              76.0
+            ],
+            [
+              12.0,
+              30.0
+            ],
+            [
+              -9.0,
+              10.0
+            ],
+            [
+              -13.0,
+              0.0
+            ],
+            [
+              -24.0,
+              1.0
+            ]
+          ],
+          "vodaVpravo": true
+        }
+      ],
+      "bunkry": [
+        {
+          "body": [
+            [
+              42.0,
+              323.0
+            ],
+            [
+              30.0,
+              374.0
+            ],
+            [
+              -9.0,
+              442.0
+            ],
+            [
+              1.0,
+              433.0
+            ],
+            [
+              13.0,
+              416.0
+            ],
+            [
+              26.0,
+              394.0
+            ],
+            [
+              38.0,
+              379.0
+            ],
+            [
+              43.0,
+              364.0
+            ],
+            [
+              42.0,
+              338.0
+            ],
+            [
+              43.0,
+              324.0
+            ]
+          ],
+          "zkratka": {
+            "cs": "PODÉL",
+            "en": "ALONG"
+          },
+          "label": {
+            "cs": "dlouhý bunkr lemující pravou stranu fairwaye od 320. metru až ke greenu",
+            "en": "the long bunker down the right of the fairway from 320 metres to the green"
+          }
         },
-        "zkratka": {
-          "cs": "BUNKR U GREENU",
-          "en": "GREENSIDE BUNKER"
-        }
-      }
-    ],
-    "hazardy": [
-      {
-        "typ": "voda",
-        "x": -46,
-        "y": 250,
-        "rx": 15,
-        "ry": 235,
-        "rot": 0,
-        "seed": 1803,
-        "amp": 0.06,
-        "label": {
-          "cs": "Stillwater Cove / Tichý oceán po celé levé straně jamky — vpravo od něj zůstává hratelná fairway",
-          "en": "Stillwater Cove / the Pacific Ocean along the whole left side of the hole — a playable fairway remains to its right"
+        {
+          "body": [
+            [
+              -9.0,
+              446.0
+            ],
+            [
+              -12.0,
+              443.0
+            ],
+            [
+              -22.0,
+              453.0
+            ],
+            [
+              -21.0,
+              458.0
+            ],
+            [
+              -19.0,
+              462.0
+            ],
+            [
+              -14.0,
+              459.0
+            ],
+            [
+              -14.0,
+              455.0
+            ],
+            [
+              -11.0,
+              452.0
+            ],
+            [
+              -8.0,
+              448.0
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr vlevo od greenu",
+            "en": "bunker left of the green"
+          }
         },
-        "zkratka": {
-          "cs": "STILLWATER COVE",
-          "en": "STILLWATER COVE"
+        {
+          "body": [
+            [
+              20.0,
+              445.0
+            ],
+            [
+              17.0,
+              440.0
+            ],
+            [
+              12.0,
+              441.0
+            ],
+            [
+              11.0,
+              445.0
+            ],
+            [
+              14.0,
+              449.0
+            ],
+            [
+              16.0,
+              455.0
+            ],
+            [
+              18.0,
+              459.0
+            ],
+            [
+              22.0,
+              460.0
+            ],
+            [
+              22.0,
+              453.0
+            ],
+            [
+              21.0,
+              447.0
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr vpravo od greenu",
+            "en": "bunker right of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              16.0,
+              463.0
+            ],
+            [
+              11.0,
+              461.0
+            ],
+            [
+              10.0,
+              467.0
+            ],
+            [
+              9.0,
+              468.0
+            ],
+            [
+              6.0,
+              468.0
+            ],
+            [
+              3.0,
+              473.0
+            ],
+            [
+              9.0,
+              476.0
+            ],
+            [
+              15.0,
+              476.0
+            ],
+            [
+              17.0,
+              470.0
+            ],
+            [
+              17.0,
+              464.0
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr za greenem",
+            "en": "bunker behind the green"
+          }
         }
-      }
-    ],
-    "fairway": {
-      "ohyb": 30,
-      "sirkaTee": 40,
-      "sirkaGreen": 34,
-      "zacatek": 20,
-      "seed": 4103
+      ]
     },
-    "dopadovaZona": {
-      "od": 220,
-      "do": 275
-    }
+    "primaLinie": true
   },
   "prvky": [
     {
