@@ -29,16 +29,16 @@
   "vznik": 1995,
   "gps": {
     "tee": [
-      41.87046,
-      -101.09929
+      41.867513,
+      -101.097374
     ],
     "green": [
-      41.87046,
-      -101.09929
+      41.87156,
+      -101.095408
     ],
     "presnost": {
-      "cs": "úroveň areálu, ověřeno v OpenStreetMap (Nominatim) — souřadnice jednotlivých jamek klub nezveřejňuje",
-      "en": "resort-level, verified against OpenStreetMap (Nominatim) — the club does not publish per-hole coordinates"
+      "cs": "souřadnice jednotlivé jamky odečtené ze satelitní mapy objednatelem 23. 8. 2026 Kontrola: přímá vzdálenost odpaliště–green vychází 479 m proti oficiálním 502 m (-4.6 %); u doglegu je přímá vzdálenost kratší než hraná, takže záporná odchylka je očekávaná. Green v OSM podle nich ještě přiřazený není — kresba ze skutečných obrysů teprve čeká.",
+      "en": "per-hole coordinates read off a satellite map by the client on 23 Aug 2026. Check: the straight-line tee-to-green distance is 479 m against the official 502 m (-4.6%). The OSM green has not been matched to them yet."
     }
   },
   "otazka": {
@@ -46,97 +46,828 @@
     "en": "Which way does the wind cross the dunes, and where does a natural hollow appear that a green can simply sit in, without moving any earth?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). OPRAVENO 2026-08-19: podle All Golf Holes (samostatná stránka jamky 1) má green plochu cca 3966 sq ft ve tvaru spíš úzkého a hlubokého oválu (cca 18×33 yardů, tj. přibližně rx≈8 m, ry≈11 m) — původní tvar byl širší než hluboký, což neodpovídalo realitě. Zásadnější chyba byla u bunkrů: hřiště má na jamce 1 celkem 6 bunkrů a několik zdrojů (Golf Club Atlas, GolfCourseGurus, All Golf Holes) nezávisle popisuje, že green je „perched between artistic and challenging bunkers“ a bunkry se koncentrují až u greenu (All Golf Holes uvádí bunkry na 529 yardech z 549 — tedy těsně před greenem, ohrožují druhý/třetí úder). Původní tvary měly OBA bunkry jen v prostoru dojezdu prvního úderu (y=300–340 m) a u greenu nebyl žádný — doplněny 2 menší bunkry lemující green, velikost bunkrů v dojezdové zóně zároveň zmenšena na doporučený rozsah (rx 3–6), protože rx=9 bylo nepřiměřeně velké. Zdroje: allgolfholes.com/courses/nebraska/sand-hills-golf-club/1st-hole, golfclubatlas.com/countries/sand-hills, golfcoursegurus.com/reviews/sand-hills-golf-club. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. OVĚŘENO (2026-08-21): „amfiteátrové” osazení greenu mezi dunami nezávisle potvrzují Golf Club Atlas i Planet Golf (dva na sobě nezávislé zdroje, shodná formulace „malý plošinový green v přírodním amfiteátru”). Přesná šířka fairwaye a přesná strana (levá/pravá) klíčového fairwayového bunkeru u odpalu se mezi zdroji liší a nedala se sjednotit — ponecháno schematicky (bunkery na obou stranách), jak už je nakresleno. OPRAVENO 23. 8. 2026 (Krok 27): plán kreslil jamku o 8.3 % KRATŠÍ, než je její oficiální délka — délka oblouku osy fairwaye vycházela 460 m proti oficiálním 502 m. Všechny podélné souřadnice (green, bunkry, hazardy, dopadová zóna) jsou proto přenásobené činitelem 1.09, aby oblouk odpovídal skutečné délce. Boční polohy se nezměnily. Chyba se našla strojovou kontrolou vnitřní konzistence všech karet, ne novým pramenem — schematický plán nesmí být ve sporu s číslem, které tatáž karta uvádí jako délku jamky.",
-    "green": {
-      "x": 2,
-      "y": 501.6,
-      "rx": 8,
-      "ry": 12.0,
-      "rot": 0.1,
-      "seed": 2101,
-      "amp": 0.08
-    },
-    "bunkry": [
-      {
-        "x": -18,
-        "y": 327.1,
-        "rx": 6,
-        "ry": 4,
-        "rot": 0.5,
-        "seed": 2102,
-        "amp": 0.26,
-        "label": {
-          "cs": "roztřepený fairwayový bunker vzniklý větrnou erozí (hlídá levou stranu dojezdu prvního úderu)",
-          "en": "jagged, wind-eroded fairway bunker (guards the left side of the layup zone)"
-        },
-        "zkratka": {
-          "cs": "BLOWOUT",
-          "en": "BLOWOUT"
-        }
+    "poznamka": "KRESLENO ZE SKUTEČNÝCH OBRYSŮ (23. 8. 2026, Krok 30) — polygony greenu, tří odpališť a deseti pískových ploch pocházejí z OpenStreetMap (ODbL). Soustava je popsaná v obrys.zdroj.\nJAK BYLA JAMKA IDENTIFIKOVÁNA: objednatel odečetl ze satelitní mapy souřadnice greenu a zadního odpaliště. Obě trefily skutečný prvek: green v OSM leží 3 metry od zadaného bodu, odpaliště 4 metry. U odpaliště navazuje souvislá řada tří ploch se vzdálenostmi 478 / 457 / 407 m ke greenu. Přímá vzdálenost zadní odpaliště–green vychází 479 m proti oficiálním 502 m, tedy −4,6 % — přesně tolik, kolik u mírně zahnuté jamky přidá hra po ose fairwaye. Sand Hills je navíc uprostřed prérie a žádné jiné hřiště v okolí není, takže záměna s cizí jamkou nehrozí.\nCO V DATECH CHYBÍ A NENÍ NAKRESLENO: (1) fairway — OSM pro tenhle koridor žádný polygon golf=fairway nemá; (2) rough a jeho hranice; (3) převýšení. Nakresleno je jen to, co je zaměřené.\nCO JSEM Z DAT VĚDOMĚ VYPUSTIL: čtyři pískové plochy ležící přímo u odpaliště (v soustavě jamky mezi −5 a +13 metrem). Na Sand Hills jsou bunkry přírodní výfuky a je jich všude plno; tyhle leží vedle odpaliště, ne ve hře, a na plánu by mátly. Pravidlo, které jsem použil, je zapsané tady, aby se dalo přezkoumat: kreslí se pískové plochy od 25. metru dál a do 75 metrů od osy.",
+    "obrys": {
+      "zdroj": "OpenStreetMap (ODbL), staženo 23. 8. 2026 přes rozhraní openstreetmap.org/api/0.6/map. Souřadnice v metrech od zadního odpaliště; x kladně vpravo od přímé linie odpaliště–green, y po téhle linii.",
+      "green": {
+        "body": [
+          [
+            -6.6,
+            477.8
+          ],
+          [
+            -10.2,
+            487.2
+          ],
+          [
+            -9.7,
+            491.6
+          ],
+          [
+            -8.0,
+            494.3
+          ],
+          [
+            -5.5,
+            496.0
+          ],
+          [
+            -2.7,
+            496.4
+          ],
+          [
+            0.5,
+            495.3
+          ],
+          [
+            2.8,
+            493.2
+          ],
+          [
+            5.8,
+            488.4
+          ],
+          [
+            9.9,
+            479.2
+          ],
+          [
+            10.9,
+            475.8
+          ],
+          [
+            9.8,
+            472.0
+          ],
+          [
+            8.2,
+            468.9
+          ],
+          [
+            5.6,
+            466.9
+          ],
+          [
+            2.0,
+            466.8
+          ],
+          [
+            -0.7,
+            467.8
+          ],
+          [
+            -3.4,
+            470.7
+          ]
+        ]
       },
-      {
-        "x": 20,
-        "y": 370.8,
-        "rx": 5,
-        "ry": 3.5,
-        "rot": -0.4,
-        "seed": 2103,
-        "amp": 0.25,
-        "label": {
-          "cs": "roztřepený fairwayový bunker vzniklý větrnou erozí",
-          "en": "jagged, wind-eroded fairway bunker"
+      "odpaliste": [
+        {
+          "body": [
+            [
+              -4.5,
+              6.1
+            ],
+            [
+              -4.8,
+              2.1
+            ],
+            [
+              -2.8,
+              -1.2
+            ],
+            [
+              0.8,
+              -1.5
+            ],
+            [
+              2.8,
+              1.5
+            ],
+            [
+              3.5,
+              5.4
+            ],
+            [
+              2.1,
+              8.9
+            ],
+            [
+              -1.8,
+              9.3
+            ]
+          ]
         },
-        "zkratka": {
-          "cs": "BLOWOUT",
-          "en": "BLOWOUT"
-        }
-      },
-      {
-        "x": -13,
-        "y": 479.8,
-        "rx": 5,
-        "ry": 3.5,
-        "rot": 0.3,
-        "seed": 2104,
-        "amp": 0.27,
-        "label": {
-          "cs": "bunker lemující green zleva — hlídá přístup ke zúženému greenu",
-          "en": "bunker framing the green on the left — guards the approach to the narrow green"
+        {
+          "body": [
+            [
+              2.2,
+              28.1
+            ],
+            [
+              1.9,
+              23.1
+            ],
+            [
+              3.9,
+              19.4
+            ],
+            [
+              7.5,
+              19.5
+            ],
+            [
+              9.1,
+              22.9
+            ],
+            [
+              9.1,
+              26.9
+            ],
+            [
+              7.5,
+              30.8
+            ],
+            [
+              4.1,
+              31.2
+            ]
+          ]
         },
-        "zkratka": {
-          "cs": "U GREENU VLEVO",
-          "en": "GREENSIDE LEFT"
+        {
+          "body": [
+            [
+              60.6,
+              81.3
+            ],
+            [
+              58.0,
+              83.2
+            ],
+            [
+              54.8,
+              83.0
+            ],
+            [
+              52.5,
+              80.8
+            ],
+            [
+              52.0,
+              77.8
+            ],
+            [
+              53.4,
+              75.3
+            ],
+            [
+              56.0,
+              74.0
+            ],
+            [
+              58.9,
+              74.5
+            ],
+            [
+              61.0,
+              76.6
+            ],
+            [
+              61.3,
+              79.8
+            ]
+          ]
         }
-      },
-      {
-        "x": 15,
-        "y": 488.5,
-        "rx": 4.5,
-        "ry": 3,
-        "rot": -0.35,
-        "seed": 2105,
-        "amp": 0.26,
-        "label": {
-          "cs": "bunker lemující green zprava",
-          "en": "bunker framing the green on the right"
+      ],
+      "fairway": [],
+      "voda": [],
+      "bunkry": [
+        {
+          "body": [
+            [
+              -83.4,
+              82.1
+            ],
+            [
+              -79.2,
+              73.6
+            ],
+            [
+              -87.2,
+              74.9
+            ],
+            [
+              -89.6,
+              67.5
+            ],
+            [
+              -79.0,
+              61.5
+            ],
+            [
+              -62.4,
+              52.4
+            ],
+            [
+              -54.8,
+              42.0
+            ],
+            [
+              -50.0,
+              37.8
+            ],
+            [
+              -53.0,
+              45.3
+            ],
+            [
+              -56.0,
+              52.5
+            ],
+            [
+              -61.0,
+              60.9
+            ],
+            [
+              -63.7,
+              70.7
+            ],
+            [
+              -68.5,
+              79.8
+            ],
+            [
+              -77.0,
+              77.1
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "rozsáhlý přírodní výfuk vlevo, 60 až 80 m od odpaliště",
+            "en": "a large natural blowout on the left, 60 to 80 m from the tee"
+          }
         },
-        "zkratka": {
-          "cs": "U GREENU VPRAVO",
-          "en": "GREENSIDE RIGHT"
+        {
+          "body": [
+            [
+              -48.7,
+              37.0
+            ],
+            [
+              -40.1,
+              32.9
+            ],
+            [
+              -33.1,
+              29.8
+            ],
+            [
+              -26.7,
+              32.2
+            ],
+            [
+              -26.6,
+              38.3
+            ],
+            [
+              -29.0,
+              39.3
+            ],
+            [
+              -34.2,
+              44.7
+            ],
+            [
+              -44.2,
+              51.7
+            ],
+            [
+              -48.2,
+              61.3
+            ],
+            [
+              -55.8,
+              65.6
+            ],
+            [
+              -52.3,
+              56.4
+            ],
+            [
+              -48.3,
+              49.0
+            ],
+            [
+              -45.5,
+              41.6
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "druhý výfuk vlevo, blíž k odpališti",
+            "en": "a second blowout on the left, nearer the tee"
+          }
+        },
+        {
+          "body": [
+            [
+              60.9,
+              105.5
+            ],
+            [
+              66.3,
+              101.2
+            ],
+            [
+              79.2,
+              108.1
+            ],
+            [
+              97.9,
+              116.6
+            ],
+            [
+              77.8,
+              132.3
+            ],
+            [
+              48.1,
+              135.6
+            ],
+            [
+              25.6,
+              136.8
+            ],
+            [
+              12.2,
+              147.2
+            ],
+            [
+              -14.7,
+              164.1
+            ],
+            [
+              -17.8,
+              159.1
+            ],
+            [
+              -16.4,
+              147.4
+            ],
+            [
+              15.1,
+              136.4
+            ],
+            [
+              10.4,
+              126.0
+            ],
+            [
+              65.4,
+              123.6
+            ]
+          ],
+          "zkratka": {
+            "cs": "VÝFUKY",
+            "en": "BLOWOUTS"
+          },
+          "label": {
+            "cs": "největší z pásu písku, který přetíná dopadovou zónu odpalu kolem 130 metrů",
+            "en": "the largest of the belt of sand crossing the driving zone around 130 metres"
+          }
+        },
+        {
+          "body": [
+            [
+              37.7,
+              126.3
+            ],
+            [
+              34.3,
+              127.3
+            ],
+            [
+              35.8,
+              131.9
+            ],
+            [
+              30.9,
+              140.6
+            ],
+            [
+              21.6,
+              143.9
+            ],
+            [
+              20.4,
+              148.9
+            ],
+            [
+              13.6,
+              148.2
+            ],
+            [
+              12.1,
+              157.2
+            ],
+            [
+              16.1,
+              159.2
+            ],
+            [
+              21.9,
+              155.0
+            ],
+            [
+              32.0,
+              152.8
+            ],
+            [
+              32.7,
+              146.0
+            ],
+            [
+              37.8,
+              141.0
+            ],
+            [
+              45.6,
+              135.8
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "druhý výfuk v témže pásu",
+            "en": "the second blowout in the same belt"
+          }
+        },
+        {
+          "body": [
+            [
+              27.5,
+              136.2
+            ],
+            [
+              28.4,
+              138.6
+            ],
+            [
+              29.9,
+              138.1
+            ],
+            [
+              31.9,
+              136.4
+            ],
+            [
+              33.5,
+              134.6
+            ],
+            [
+              33.7,
+              133.5
+            ],
+            [
+              32.0,
+              133.0
+            ],
+            [
+              30.8,
+              131.0
+            ],
+            [
+              27.7,
+              131.6
+            ],
+            [
+              27.9,
+              132.5
+            ],
+            [
+              30.0,
+              132.9
+            ],
+            [
+              31.0,
+              135.4
+            ],
+            [
+              28.6,
+              135.0
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "malý výfuk uvnitř pásu",
+            "en": "a small blowout inside the belt"
+          }
+        },
+        {
+          "body": [
+            [
+              37.1,
+              219.3
+            ],
+            [
+              43.2,
+              232.0
+            ],
+            [
+              41.1,
+              241.7
+            ],
+            [
+              33.3,
+              236.6
+            ],
+            [
+              26.8,
+              238.9
+            ],
+            [
+              34.0,
+              239.4
+            ],
+            [
+              34.2,
+              244.8
+            ],
+            [
+              29.8,
+              249.5
+            ],
+            [
+              24.5,
+              248.6
+            ],
+            [
+              21.4,
+              242.7
+            ],
+            [
+              21.7,
+              233.7
+            ],
+            [
+              29.0,
+              225.7
+            ],
+            [
+              35.6,
+              221.4
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "výfuk vpravo v pásmu druhé rány, kolem 238 metrů",
+            "en": "a blowout on the right in the second-shot zone, around 238 metres"
+          }
+        },
+        {
+          "body": [
+            [
+              11.8,
+              241.0
+            ],
+            [
+              12.6,
+              244.7
+            ],
+            [
+              14.7,
+              244.2
+            ],
+            [
+              16.6,
+              246.7
+            ],
+            [
+              14.7,
+              248.7
+            ],
+            [
+              12.5,
+              248.2
+            ],
+            [
+              11.0,
+              248.0
+            ],
+            [
+              9.2,
+              248.3
+            ],
+            [
+              7.0,
+              248.3
+            ],
+            [
+              6.2,
+              245.2
+            ],
+            [
+              5.6,
+              242.2
+            ],
+            [
+              7.9,
+              241.4
+            ],
+            [
+              10.0,
+              241.4
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "menší výfuk vedle něj",
+            "en": "a smaller blowout beside it"
+          }
+        },
+        {
+          "body": [
+            [
+              -6.0,
+              431.6
+            ],
+            [
+              -3.1,
+              433.4
+            ],
+            [
+              -2.5,
+              429.1
+            ],
+            [
+              3.1,
+              426.1
+            ],
+            [
+              10.0,
+              427.9
+            ],
+            [
+              8.1,
+              431.8
+            ],
+            [
+              5.7,
+              433.9
+            ],
+            [
+              1.8,
+              437.7
+            ],
+            [
+              0.8,
+              440.6
+            ],
+            [
+              -2.4,
+              441.2
+            ],
+            [
+              -6.6,
+              438.0
+            ],
+            [
+              -8.7,
+              436.3
+            ],
+            [
+              -8.8,
+              432.7
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr 48 metrů před greenem, přímo na ose",
+            "en": "a bunker 48 metres short of the green, right on the line"
+          }
+        },
+        {
+          "body": [
+            [
+              27.1,
+              488.0
+            ],
+            [
+              32.5,
+              494.1
+            ],
+            [
+              37.4,
+              487.1
+            ],
+            [
+              39.2,
+              488.1
+            ],
+            [
+              42.9,
+              481.7
+            ],
+            [
+              34.7,
+              475.7
+            ],
+            [
+              26.9,
+              471.7
+            ],
+            [
+              24.5,
+              476.7
+            ],
+            [
+              20.2,
+              470.6
+            ],
+            [
+              13.1,
+              471.0
+            ],
+            [
+              13.5,
+              481.7
+            ],
+            [
+              17.9,
+              485.1
+            ],
+            [
+              21.8,
+              479.6
+            ],
+            [
+              25.3,
+              486.4
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "členitý bunkr vpravo u greenu",
+            "en": "a lobed bunker right of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              34.5,
+              489.4
+            ],
+            [
+              35.5,
+              489.8
+            ],
+            [
+              35.8,
+              490.5
+            ],
+            [
+              36.7,
+              490.5
+            ],
+            [
+              37.2,
+              490.2
+            ],
+            [
+              37.6,
+              489.7
+            ],
+            [
+              39.3,
+              492.9
+            ],
+            [
+              38.6,
+              493.0
+            ],
+            [
+              37.7,
+              493.8
+            ],
+            [
+              36.8,
+              494.3
+            ],
+            [
+              36.7,
+              493.7
+            ],
+            [
+              35.8,
+              493.2
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "malý bunkr za pravým okrajem greenu",
+            "en": "a small bunker beyond the right edge of the green"
+          }
         }
-      }
-    ],
-    "hazardy": [],
-    "fairway": {
-      "ohyb": -16,
-      "sirkaTee": 40,
-      "sirkaGreen": 30,
-      "zacatek": 27,
-      "seed": 4105
-    },
-    "dopadovaZona": {
-      "od": 273,
-      "do": 333
+      ]
     }
   },
   "prvky": [

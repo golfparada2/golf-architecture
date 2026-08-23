@@ -53,11 +53,17 @@
   },
   "vznik": 2009,
   "gps": {
-    "tee": null,
-    "green": null,
+    "tee": [
+      49.9917,
+      14.19794
+    ],
+    "green": [
+      49.994738,
+      14.200841
+    ],
     "presnost": {
-      "cs": "poloha AREÁLU ověřena v OpenStreetMap (Nominatim): 49.99505, 14.19337. Souřadnice jednotlivé jamky zatím určené nejsou — chybí přiřazení greenu v OSM (v okolí je 21 greenů).",
-      "en": "the RESORT location is verified in OpenStreetMap (Nominatim): 49.99505, 14.19337. Per-hole coordinates are not yet determined — the green has not been identified in OSM (there are 21 greens nearby)."
+      "cs": "souřadnice jednotlivé jamky odečtené ze satelitní mapy objednatelem 23. 8. 2026 Kontrola: přímá vzdálenost odpaliště–green vychází 396 m proti oficiálním 412 m (-3.9 %); u doglegu je přímá vzdálenost kratší než hraná, takže záporná odchylka je očekávaná. Green v OSM podle nich ještě přiřazený není — kresba ze skutečných obrysů teprve čeká.",
+      "en": "per-hole coordinates read off a satellite map by the client on 23 Aug 2026. Check: the straight-line tee-to-green distance is 396 m against the official 412 m (-3.9%). The OSM green has not been matched to them yet."
     }
   },
   "otazka": {
@@ -65,7 +71,7 @@
     "en": "Do you take the wide right side and a long approach, or the narrow left one and a short approach?"
   },
   "tvary": {
-    "poznamka": "ODMĚŘENO Z OFICIÁLNÍHO KLUBOVÉHO PLÁNKU (2026-08-23) — souřadnice v metrech od černého odpaliště (412 m); x je boční odchylka od osy greenu, kladně vpravo. Plánek albatross.cz/images/jamky/jamka15.png jsem změřil po pixelech. Měřítko dávají dvě kótované vzdálenosti na plánku samotném (200 m a 262 m ke středovým bunkerům) a KONTROLA VYŠLA: při tomhle měřítku leží střed greenu 411 m od odpaliště proti oficiálním 412 m. Vzdálenosti podél jamky jsou tedy doložené na metr až dva.\nCO ODMĚŘENÉ NENÍ: plánek nezobrazuje odpaliště (je pod dolním okrajem obrázku), takže se z něj nedá odvodit ani boční poloha odpaliště, ani skutečný úhel doglegu. Ohyb fairwaye je proto odhad: je nastavený tak, aby osa stuhy procházela oběma změřenými středovými bunkry. POZOR NA ZNAMÉNKO — u doglegu DOLEVA se stuha vyklání DOPRAVA od přímé linie odpaliště–green, protože hráč hraje ven doprava a teprve pak se stáčí doleva na green (stejná geometrie jako u Karlštejna 15, Krok 22). Boční odchylky hazardů jsou měřené vůči ose greenu, ALE u dvou středových bunkrů jsem se od měření odchýlil: plánek bez odpaliště nedovoluje určit osu fairwaye přesně, a při doslovném přenesení vycházely bunkry na pravý okraj stuhy. Klub přitom výslovně píše, že velkorysá je pravá strana, takže bunkry kreslím kousek vlevo od osy. Je to jediné místo na téhle kartě, kde má text klubu přednost před mým měřením — a je to tady napsané, aby to nikdo nemusel hádat.\nRYBNÍK: na plánku je vlevo mezi 320 a 374 metrem výrazná vodní plocha, o které oficiální textový popis jamky vůbec nemluví. Kreslím ji podle plánku a tuhle nesrovnalost přiznávám — právě ona nejspíš dělá levou („kratší“) cestu tak úzkou.",
+    "poznamka": "ODMĚŘENO Z OFICIÁLNÍHO KLUBOVÉHO PLÁNKU (2026-08-23) — souřadnice v metrech od černého odpaliště (412 m); x je boční odchylka od osy greenu, kladně vpravo. Plánek albatross.cz/images/jamky/jamka15.png jsem změřil po pixelech. Měřítko dávají dvě kótované vzdálenosti na plánku samotném (200 m a 262 m ke středovým bunkerům) a KONTROLA VYŠLA: při tomhle měřítku leží střed greenu 411 m od odpaliště proti oficiálním 412 m. Vzdálenosti podél jamky jsou tedy doložené na metr až dva.\nCO ODMĚŘENÉ NENÍ: plánek nezobrazuje odpaliště (je pod dolním okrajem obrázku), takže se z něj nedá odvodit ani boční poloha odpaliště, ani skutečný úhel doglegu. Ohyb fairwaye je proto odhad: je nastavený tak, aby osa stuhy procházela oběma změřenými středovými bunkry. POZOR NA ZNAMÉNKO — u doglegu DOLEVA se stuha vyklání DOPRAVA od přímé linie odpaliště–green, protože hráč hraje ven doprava a teprve pak se stáčí doleva na green (stejná geometrie jako u Karlštejna 15, Krok 22). Boční odchylky hazardů jsou měřené vůči ose greenu, ALE u dvou středových bunkrů jsem se od měření odchýlil: plánek bez odpaliště nedovoluje určit osu fairwaye přesně, a při doslovném přenesení vycházely bunkry na pravý okraj stuhy. Klub přitom výslovně píše, že velkorysá je pravá strana, takže bunkry kreslím kousek vlevo od osy. Je to jediné místo na téhle kartě, kde má text klubu přednost před mým měřením — a je to tady napsané, aby to nikdo nemusel hádat.\nRYBNÍK: na plánku je vlevo mezi 320 a 374 metrem výrazná vodní plocha, o které oficiální textový popis jamky vůbec nemluví. Kreslím ji podle plánku a tuhle nesrovnalost přiznávám — právě ona nejspíš dělá levou („kratší“) cestu tak úzkou. PROVĚŘENO PROTI OSM (23. 8. 2026, Krok 31) — a plánková verze ZŮSTÁVÁ. Souřadnice od objednatele trefily green na 1 metr a v OSM je i šest odpališť (399 / 384 / 364 / 342 / 324 / 313 m přímé vzdálenosti) a dvě vodní plochy. JENŽE ze dvou středových bunkerů, na kterých celá jamka stojí, je v koridoru zaměřený jen JEDEN (259 m od odpaliště). Převod na obrysy z OSM by tedy kartu o polovinu její pointy připravil. Zůstává proto geometrie odměřená z klubového plánku, kde jsou oba (200 a 262 m) a kde měřítko prošlo nezávislou kontrolou. Poučení: zaměřené obrysy nejsou automaticky lepší, když jsou neúplné.",
     "fairway": {
       "ohyb": 30,
       "sirkaTee": 46,

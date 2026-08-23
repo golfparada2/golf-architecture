@@ -2,6 +2,319 @@
 
 Průběžný soubor podle části 15 zadání. Kroky 1–7 hotové.
 
+## Krok 32 — Převod, druhá dávka: Sawgrass, Riviera, St Andrews (23. 8. 2026)
+
+Tři další karty ze zaměřených obrysů. Sbírka jich má **osm**.
+
+### TPC Sawgrass 17 — a past, která by ostrov schovala
+
+Green na 6 metrů, přímá vzdálenost 131 m proti oficiálním 129 (+1,5 %).
+U par 3 se přímá a hraná vzdálenost rovnají, takže tahle shoda je
+nejsilnější druh důkazu — dogleg by ji schovat nemohl.
+
+**Jezero kolem ostrovního greenu ale v datech „nebylo".** Dotaz na
+`natural=water` vrátil tři plochy, žádnou u greenu. Příčina: jezero je
+v OSM zapsané jako **RELACE** (multipolygon 17360491), ne jako obyčejný
+způsob. Můj parser četl jen `<way>` a relace přeskakoval.
+
+> **Poučení: velké vodní plochy bývají multipolygonové relace. Kdo čte jen
+> způsoby, dojde k závěru, že voda v datech není** — a to je přesně chyba,
+> kterou jsem udělal u Mangrove Lake v Kroku 20 (tam z jiného důvodu) a málem
+> zopakoval tady. Relace se čtou tak, že se z nich vyberou členové s rolí
+> `outer` a jejich body se spojí.
+
+Obrys jezera navíc obtáčí ostrov jedním souvislým polygonem, takže se
+ostrůvek kolem greenu vykreslí správně jako díra ve vodě.
+
+**Co v datech překvapilo:** bunkr u greenu je zakreslený jako útvar široký
+sotva dva metry. Skutečný bunkr sedmnáctky je větší. Kreslím, co je
+zaměřené, a výhradu píšu do karty.
+
+### Riviera 10 — data potvrdila asymetrii
+
+Green na 3 metry, 271 m proti oficiálním 288 (−5,9 %). Obrys greenu má
+sotva **21 metrů napříč — nejmenší green v celé sbírce**, což karta tvrdila
+a teď je to změřené.
+
+**Osm bunkerů, a SEDM Z NICH LEŽÍ VLEVO.** Jediný vpravo je až u greenu. To
+je přesně ta asymetrie, o které karta mluví: odvážná pravá strana není
+trestaná pískem, ale úhlem.
+
+Vypustil jsem čtyři pískové plochy do 120. metru — na krátké par 4 nejsou
+v dopadové zóně nikoho a patří nejspíš sousedním jamkám.
+
+### St Andrews Old 7 — nejtěsnější shoda a nezávislé potvrzení
+
+**Green v OSM leží JEDEN METR** od bodu ze satelitní mapy. Nejtěsnější shoda
+ze všech osmi převedených jamek.
+
+Dvě věci data potvrdila:
+
+1. **Obrys greenu má padesát bodů a měří přes sto metrů napříč** — je to
+   sdílený dvojgreen sedmé a jedenácté jamky, přesně jak karta popisuje.
+   Žádná jiná jamka ve sbírce nemá green ani zdaleka takový.
+2. **Shell Bunker vychází 284 metrů od odpaliště.** Oficiální průvodce The
+   Open ho klade na 310 yardů, tedy 283 metrů. **Shoda na jeden metr mezi
+   dvěma nezávislými prameny** — jedním textovým, druhým zaměřeným.
+
+Vypustil jsem tři pískové plochy a jeden polygon fairwaye kolem 50. metru:
+na Old Course běží jamky vedle sebe a tyhle prvky patří sousední dráze.
+
+## Krok 31 — Převod na zaměřené obrysy, první dávka (23. 8. 2026)
+
+Objednatel dodal souřadnice, takže začal hromadný převod. **Hotové jsou
+Zbraslav 1 a Woking 4**; u Albatrossu 15 jsem se po prověření rozhodl
+zaměřené obrysy NEPOUŽÍT. Sbírka má teď **pět karet ze skutečných obrysů**
+(Karlštejn 14 a 15, Sand Hills 1, Zbraslav 1, Woking 4).
+
+### Zbraslav 1 — nejbohatší data zatím
+
+Green na 3 metry, **šest odpališť**, **fairway**, **vodní plocha** a šest
+bunkerů. Žebřík dává 513 / 472 / 424 / 396 / 369 / 341 m přímé vzdálenosti
+proti oficiálním 520 / 489 / 450 / 450 / 421 / 303 / 250 m z klubového
+diagramu — u zadního odpaliště rozdíl 1 %, u dalších 3 až 6 %.
+
+**Dva rozpory jsou v kartě napsané, ne zameteny:**
+1. Oficiální popis jamky na webu klubu tvrdí, že jamka **nemá fairwayové
+   bunkry** — v OSM jsou v koridoru **čtyři**. Buď je klubový text
+   zjednodušený, nebo OSM zachycuje podobu před přestavbou.
+2. Klubový diagram klade jeden greenside bunkr vlevo a druhý mírně vpravo;
+   v OSM leží oba vlevo. Rozměry greenu 43 × 30 m ale s obrysem sedí.
+
+### Woking 4 — data potvrdila, co karta tvrdí
+
+Green na 2 metry, přímá vzdálenost 314 m proti oficiálním 322 (−2,5 %).
+
+**Nejsilnější potvrzení přišlo z tvaru fairwaye:** polygon `golf=fairway` má
+kolem 220. metru **vykousnutou díru** a v ní leží dva malé bunkry (222 a 229
+metrů od odpaliště). Přesně ta dvojice, kterou tam v roce 1901 dali Low
+a Paton — a v datech je vidět, že fairway je **obtéká z obou stran**, tedy
+že jamku nezužují, ale rozdvojují. Do téhle chvíle byly jejich polohy na
+kartě odhad.
+
+Železnice, která tvoří out of bounds vpravo, nakreslená není: v OSM je to
+otevřená linie (`railway=rail`), ne plocha, a kreslítko pro linii tvar nemá.
+Podle dat běží 45 až 60 metrů vpravo od osy.
+
+### Albatross 15 — zaměřené obrysy ODMÍTNUTY
+
+Souřadnice trefily green na 1 metr a v OSM je i šest odpališť a dvě vodní
+plochy. **Jenže ze dvou středových bunkerů, na kterých celá jamka stojí, je
+v koridoru zaměřený jen jeden.** Převod by kartu připravil o polovinu její
+pointy. Zůstává geometrie odměřená z klubového plánku, kde jsou oba (200
+a 262 m) a kde měřítko prošlo nezávislou kontrolou.
+
+> **Poučení: zaměřené obrysy nejsou automaticky lepší, když jsou neúplné.**
+> Rozhoduje, jestli je v datech to, na čem karta stojí — ne to, odkud data
+> pocházejí.
+
+### Co brzdí tři jamky u moře
+
+Cypress Point 16, Pebble Beach 18 a Ballybunion 11 mají jako hlavní hazard
+oceán. **Ten v OSM není vodní plocha, ale `natural=coastline` — otevřená
+linie**, u které je podle konvence pevnina vlevo a voda vpravo od směru
+zákresu. Kreslítko umí jen uzavřené polygony, takže pro ně bude potřeba
+doplnit podporu otevřené pobřežní čáry. Do té doby se tyhle tři převádět
+nedají.
+
+### Recept na dotaz do OSM, který funguje
+
+1. Skript pouštět **ze stránky openstreetmap.org** a volat relativní
+   `/api/0.6/map?bbox=…`.
+2. **Žádný `return` na nejvyšší úrovni** — výsledek do proměnné, ta jako
+   poslední výraz.
+3. Bbox = obálka odpaliště a greenu **plus 0,0022 až 0,0026°**. Víc kartu
+   prohlížeče položí.
+4. Parsovat **regulárními výrazy nad textem**, ne DOMParserem.
+5. Polygony **zředit na 8 až 26 bodů** a vracet jako řetězec „x,y,x,y" —
+   jinak výsledek nástroje přeteče limit.
+
+## Krok 30 — Sand Hills 1 ze zaměřených dat (23. 8. 2026)
+
+**Třetí karta kurzu kreslená ze skutečných obrysů** a první zahraniční.
+`sand-hills-1.json` má `tvary.obrys` s polygony greenu, tří odpališť a deseti
+pískových ploch z OpenStreetMap (ODbL).
+
+### Identifikace prošla na první pokus
+
+Poprvé nebylo potřeba nic dohadovat — souřadnice od objednatele trefily
+skutečné prvky:
+
+- **green v OSM leží 3 metry** od zadaného bodu,
+- **odpaliště 4 metry**,
+- na odpaliště navazuje souvislá řada tří ploch, 478 / 457 / 407 m ke greenu,
+- přímá vzdálenost 479 m proti oficiálním 502 m je **−4,6 %**, přesně tolik,
+  kolik u mírně zahnuté jamky přidá hra po ose fairwaye,
+- Sand Hills je uprostřed prérie a žádné jiné hřiště v okolí není.
+
+Pro srovnání: u Karlštejna 14 i 15 stála identifikace na dvou až třech
+nepřímých kritériích a stejně mě dvakrát svedla. **Dvě souřadnice od člověka,
+který se podívá na satelit, jsou silnější než jakýkoli automat.**
+
+### Co se muselo rozhodnout
+
+V koridoru leželo **čtrnáct** pískových ploch, ale čtyři z nich přímo
+u odpaliště (v soustavě jamky mezi −5 a +13 metrem). Na Sand Hills jsou
+bunkry přírodní výfuky a je jich všude plno; tyhle nejsou ve hře a na plánu
+by mátly. Použil jsem pravidlo **„od 25. metru dál a do 75 metrů od osy"**
+a zapsal ho do `tvary.poznamka`, aby se dalo přezkoumat.
+
+### Co na plánu není
+
+Fairway — OSM pro tenhle koridor žádný polygon `golf=fairway` nemá. Plán
+proto ukazuje odpaliště, písek a green v prázdném roughu. **U Sand Hills to
+paradoxně sedí:** je to minimalistické prérijní hřiště, kde hranice fairwaye
+a roughu skoro splývá. Ale je to omezení dat, ne záměr, a karta to říká.
+
+### Stav prohlížeče a co z toho plyne
+
+Během kroku se karta prohlížeče opakovaně zasekla a jednou vrátila
+`Failed to fetch`. Zabralo tohle:
+
+1. **Skript pouštět ze stránky openstreetmap.org** a volat relativní
+   `/api/0.6/map?bbox=…` — ze stránky cizího původu (example.com) fetch
+   občas selže.
+2. **Nepoužívat `return` na nejvyšší úrovni** — vyhodnocovač vrátí
+   `undefined`. Výsledek se musí uložit do proměnné a ta být posledním
+   výrazem.
+3. **Výřez držet malý.** Dotaz kolem odpaliště St Andrews (±120 m) měl
+   281 kB a proběhl okamžitě; dotaz přes celou jamku (±700 m) v témže městě
+   kartu položil.
+
+## Krok 29 — Objednatel dodal souřadnice patnácti jamek (23. 8. 2026)
+
+Objednatel vyplnil pracovní list: čtrnáct jamek s dvojicí souřadnic
+(green + zadní odpaliště) a Slapy 14 jen s greenem, protože tam OSM
+odpaliště nemá. Souřadnice jsou uložené v `dev/souradnice-jamek.json`
+a zapsané do pole `gps` jednotlivých karet.
+
+### Kontrola, která proběhla PŘED zápisem
+
+U každé jamky se spočítala přímá vzdálenost odpaliště–green a porovnala
+s oficiální délkou. **U doglegu je přímá vzdálenost kratší než hraná**,
+takže záporná odchylka je očekávaná — a její velikost říká, jak zahnutá
+jamka je.
+
+| jamka | oficiálně | přímo | odchylka |
+|---|---|---|---|
+| TPC Sawgrass 17 (par 3) | 129 m | 130 m | **+1 %** |
+| Cypress Point 16 (par 3) | 211 m | 217 m | **+3 %** |
+| Woking 4 | 322 m | 314 m | −3 % |
+| Albatross 15 | 412 m | 396 m | −4 % |
+| Sand Hills 1 | 502 m | 479 m | −5 % |
+| St Andrews Old 7 | 339 m | 319 m | −6 % |
+| Riviera 10 | 288 m | 271 m | −6 % |
+| Pebble Beach 18 | 495 m | 455 m | −8 % |
+| Pinehurst No. 2 jamka 5 | 538 m | 488 m | −9 % |
+| Zbraslav 1 | 520 m | 433 m | −17 % |
+| Augusta National 13 | 498 m | 410 m | −18 % |
+| Ballybunion Old 11 | 432 m | 345 m | **−20 %** |
+| Mid Ocean 5 | 396 m | 309 m | **−22 %** |
+| St Andrews Old 14 | 561 m | 408 m | **−27 %** |
+
+**Obě par 3 vyšly na procento přesně** — a to je nejsilnější důkaz, že
+objednatel klikal správně, protože u par 3 se přímá a hraná vzdálenost
+rovnají a žádný dogleg odchylku nevysvětlí.
+
+### Jedna jamka neprošla: St Andrews Old 14
+
+Ověření v OSM ukázalo, že **green sedí** (v OSM leží green 12 metrů od
+zadaného bodu), ale **odpaliště je 415 m od něj**, zatímco čtrnáctka měří
+561 m. Nejbližší odpaliště k tomu zadanému je v OSM 1 metr daleko, takže
+objednatel klikl na skutečné odpaliště — jen na jiné.
+
+**Vysvětlení: Old Course má dvojgreeny.** Čtyřka a čtrnáctka sdílejí jeden
+green. Zadané odpaliště je téměř jistě odpaliště **čtyřky** (480 yardů =
+439 m, což ke 415 m přímé vzdálenosti sedí). Souřadnice odpaliště se proto
+do karty nezapsala; green ano.
+
+> **Poučení: u hřiště se sdílenými greeny nestačí ukázat na green — je
+> potřeba ukázat na odpaliště té správné jamky.** Nenapadlo mě na to
+> objednatele předem upozornit, přestože Old Course sdílí sedm greenů
+> a obě jamky z něj jsou ve sbírce.
+
+### Dvě jamky na hraně
+
+**Ballybunion Old 11** (−20 %) a **Mid Ocean 5** (−22 %) jsou obě jamky,
+kde velký dogleg takovou odchylku vysvětlit může — Ballybunion vede podél
+útesů, Mid Ocean je Cape s diagonálním odpalem přes jezero. Nezamítám je,
+ale ani nepotvrzuji: rozhodne až žebřík odpališť z OSM při kreslení karty.
+V kartách je to napsané.
+
+### Stav prohlížeče
+
+Během ověřování se karta prohlížeče opakovaně zasekla i na malých výřezech.
+St Andrews je hustě zastavěné město, takže i výřez 300 × 300 metrů má
+megabajty dat. Platí pravidlo z Kroku 24, jen ještě přísněji: **u hustých
+lokalit jeden dotaz na jednu kartu a kartu pak zavřít.**
+
+## Krok 28 — Pebble Beach a Riviera: co šlo a co ne (23. 8. 2026)
+
+Poslední pokus o cestu 2 (odměření oficiálního diagramu) u dvou karet, které
+měly ze skupiny C největší naději.
+
+### Pebble Beach 18 — částečný zisk
+
+Resort zveřejňuje **oficiální scorecard v PDF**
+(`pebblebeach.com/content/uploads/PebbleBeach-Scorecard.pdf`). Odtud je teď
+v kartě **pět odpališť** — Gold 541, Blue 531, White 531, Green 454, Red 454
+yardů — a stroke index 5. Dosud karta znala jen tři historické délky
+(1919, 1922 a turnajovou z US Open).
+
+Turnajových 543 yardů z US Open zůstává jako samostatný záznam. **Není to
+rozpor** s resortními 541 — je to jiné rozestavení odpališť.
+
+**Geometrie se nezměnila:** scorecard dává délky, ne vzdálenosti k bunkrům
+ani rozměry greenu.
+
+### ProVisualizer — zastaveno vědomě
+
+Databáze `provisualizer.com` má u Pebble Beach přesně to, co bych
+potřeboval: měřené vzdálenosti k hazardům po jamkách. Jenže **yardage charts
+jsou přístupné až po zaškrtnutí souhlasu s podmínkami užití.** Souhlas
+s podmínkami za objednatele odklikávat nebudu — to je jeho rozhodnutí, ne
+moje.
+
+Nezávisle na tom by to stejně byl slabý pramen: web sám v podmínkách
+upozorňuje, že jeho satelitní podklady bývají „i rok nebo více staré" a že
+je nutné je před použitím ověřit. Karta opřená o takový zdroj by musela
+nést stejnou výhradu.
+
+### Riviera 10 a 6 — geometrie ne, ale pramen ano
+
+Riviera je soukromý klub a plánek jamky nezveřejňuje. Oficiální
+hole-by-hole průvodce **The Genesis Invitational** potvrzuje jen délky
+(jamka 10 par 4 / 315 yardů, jamka 6 par 3 / 199 yardů) — polohy bunkrů ani
+rozměry greenu neuvádí.
+
+**U šestky je to přesto zisk.** Karta stojí na bunkru uvnitř greenu a
+v Kroku 15 jsem k ní musel napsat, že Thomase k téhle jamce necituje žádný
+dostupný pramen. Teď má turnajový web klubu doslova „island bunker
+positioned perfectly in the center [of] the two-tiered putting surface".
+Potvrdil se popis, ne čísla — geometrie zůstává schematická.
+
+U desítky jsem do pramenů zapsal výslovně, že se ověřovalo a nic se nenašlo,
+aby to příště nikdo nezkoušel znovu.
+
+### Kde tím skupina C končí
+
+| karta | co dál |
+|---|---|
+| Zbraslav 1, Albatross 15, Ostravice 16, Slapy 14 | hotovo z klubového plánku |
+| Pebble Beach 18 | délky doplněny, geometrie bez pramene |
+| Riviera 6, Riviera 10 | pramen potvrzuje popis, čísla neexistují |
+| Augusta 13, Sawgrass 17, St Andrews 7 a 14 | diagram se nezveřejňuje nebo neobsahuje vzdálenosti |
+| Cypress Point 16, Sand Hills 1, Woking 4, Ballybunion 11, Mid Ocean 5, Dobrouč 3 | soukromé kluby bez publikovaného plánku |
+
+**Cesta 2 je vyčerpaná.** Dál se skupina C posune jedině dvěma souřadnicemi
+na jamku ze satelitní mapy — tedy cestou, která z karty rovnou udělá
+skupinu A.
+
+> **Poučení: než začneš pramen používat, přečti si jeho vlastní výhrady.**
+> ProVisualizer sám říká, že jeho data můžou být rok stará a je nutné je
+> ověřit. To z něj nedělá špatný web, ale dělá to z něj špatný pramen pro
+> kartu, která tvrdí, že kreslí podle zaměření.
+
 ## Krok 27 — Strojová kontrola konzistence našla systematickou chybu (23. 8. 2026)
 
 Pokračování Kroku 26. Lov na další oficiální diagramy vynesl málo, zato

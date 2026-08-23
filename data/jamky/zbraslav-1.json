@@ -66,16 +66,16 @@
   "vznik": 2009,
   "gps": {
     "tee": [
-      49.96702,
-      14.36313
+      49.962104,
+      14.348106
     ],
     "green": [
-      49.96702,
-      14.36313
+      49.963783,
+      14.353569
     ],
     "presnost": {
-      "cs": "úroveň areálu, ověřeno v OpenStreetMap (Nominatim) — souřadnice jednotlivých jamek klub nezveřejňuje",
-      "en": "resort-level, verified against OpenStreetMap (Nominatim) — the club does not publish per-hole coordinates"
+      "cs": "souřadnice jednotlivé jamky odečtené ze satelitní mapy objednatelem 23. 8. 2026 Kontrola: přímá vzdálenost odpaliště–green vychází 433 m proti oficiálním 520 m (-16.7 %); u doglegu je přímá vzdálenost kratší než hraná, takže záporná odchylka je očekávaná. Green v OSM podle nich ještě přiřazený není — kresba ze skutečných obrysů teprve čeká.",
+      "en": "per-hole coordinates read off a satellite map by the client on 23 Aug 2026. Check: the straight-line tee-to-green distance is 433 m against the official 520 m (-16.7%). The OSM green has not been matched to them yet."
     }
   },
   "otazka": {
@@ -83,60 +83,690 @@
     "en": "What do you do to an eighteen-hole routing when the clubhouse moves more than two kilometres away?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od černého odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). OPRAVENO 23. 8. 2026 podle oficiálního diagramu jamky (pcg.cz/wp-content/uploads/2024/03/1.jpg), prohlédnutého přímo.\nCO JE Z DIAGRAMU VYTIŠTĚNÉ, a tedy doložené: par 5, HCP 9; SEDM odpališť 520 / 489 / 450 / 450 / 421 / 303 / 250 m; rozměry greenu 43 × 30 m (výřez greenu má obě kóty); DVA greenside bunkry — menší kulatý u levého konce greenu a velký členitý před greenem mírně vpravo; a kóta 295 m z černého odpaliště k vyznačené referenční čáře napříč fairwayí, podle které je nastavená dopadová zóna.\nTŘI CHYBY, KTERÉ TO OPRAVILO: (1) green ležel na plánu ve 430 metrech, ačkoli jamka měří 520 — kresba tedy jamku zkracovala o 90 metrů; (2) karta měla jediný greenside bunkr, diagram ukazuje dva; (3) karta znala jen zadní odpaliště, teď je jich sedm.\nCO ODMĚŘENÉ NENÍ: boční polohy hazardů a míra ohybu doglegu. Diagram je letecký snímek bez metrického měřítka po stranách, takže se z něj boční vzdálenosti spolehlivě odečíst nedají — na rozdíl od Albatrossu 15, kde měřítko daly kótované vzdálenosti k bunkrům. Kresba také NEZOBRAZUJE trestnou oblast vyznačenou červenými kolíky po pravé straně ani out of bounds po levé, přestože na diagramu jsou: z čáry kolíků se nedá určit šířka plochy a vymýšlet ji nebudu.",
-    "green": {
-      "x": 4,
-      "y": 520,
-      "rx": 21.5,
-      "ry": 15,
-      "rot": 0.1,
-      "seed": 2601,
-      "amp": 0.09
-    },
-    "bunkry": [
-      {
-        "x": -18,
-        "y": 505,
-        "rx": 6,
-        "ry": 5,
-        "rot": 0.2,
-        "seed": 2602,
-        "amp": 0.16,
-        "zkratka": null,
-        "label": {
-          "cs": "menší kulatý bunkr u levého konce greenu",
-          "en": "a smaller round bunker at the left end of the green"
-        }
+    "poznamka": "KRESLENO ZE SKUTEČNÝCH OBRYSŮ (23. 8. 2026, Krok 31) — polygony greenu, ŠESTI odpališť, fairwaye, vodní plochy a šesti bunkerů pocházejí z OpenStreetMap (ODbL). Soustava je popsaná v obrys.zdroj.\nIDENTIFIKACE: objednatel odečetl souřadnice ze satelitní mapy; green v OSM leží 3 metry od zadaného bodu. Žebřík odpališť dává přímé vzdálenosti 513 / 472 / 424 / 396 / 369 / 341 m ke greenu proti oficiálním 520 / 489 / 450 / 450 / 421 / 303 / 250 m z klubového diagramu; u doglegu je přímá vzdálenost kratší než hraná, u zadního odpaliště o 1 %, u dalších o 3 až 6 %. Přímá vzdálenost zadní odpaliště–green je 434 m proti oficiálním 520 m (−17 %), což odpovídá doglegu v závěru jamky.\nDVA ROZPORY, KTERÉ NEZAKRÝVÁM: (1) Oficiální popis jamky na webu klubu uvádí, že jamka NEMÁ fairwayové bunkry — v OSM ale v koridoru čtyři jsou (kolem 93., 139., 217. a 231. metru, všechny vpravo). Kreslím, co je zaměřené, a rozpor hlásím: buď je klubový text zjednodušený, nebo OSM zachycuje starší podobu hřiště (klub prošel přestavbou). (2) Klubový diagram ukazuje u greenu menší kulatý bunkr vlevo a velký členitý před greenem mírně vpravo; v OSM leží oba vlevo. Rozměry greenu 43 × 30 m z diagramu ale s obrysem z OSM sedí.\nCO NENÍ NAKRESLENO: trestná oblast s červenými kolíky vpravo a out of bounds vlevo, které jsou na klubovém diagramu — v OSM zakreslené nejsou a z čáry kolíků se nedá určit šířka plochy.",
+    "obrys": {
+      "zdroj": "OpenStreetMap (ODbL), staženo 23. 8. 2026 přes openstreetmap.org/api/0.6/map. Souřadnice v metrech od černého odpaliště; x kladně vpravo od přímé linie odpaliště–green, y po téhle linii.",
+      "green": {
+        "body": [
+          [
+            18.7,
+            450.8
+          ],
+          [
+            13.4,
+            434.2
+          ],
+          [
+            9.6,
+            422.4
+          ],
+          [
+            4.9,
+            414.0
+          ],
+          [
+            1.7,
+            411.4
+          ],
+          [
+            -4.4,
+            410.4
+          ],
+          [
+            -10.3,
+            415.0
+          ],
+          [
+            -9.8,
+            424.4
+          ],
+          [
+            -8.2,
+            435.6
+          ],
+          [
+            -3.7,
+            443.3
+          ],
+          [
+            -0.1,
+            452.2
+          ],
+          [
+            3.2,
+            456.3
+          ],
+          [
+            9.2,
+            456.9
+          ],
+          [
+            14.4,
+            455.5
+          ]
+        ]
       },
-      {
-        "x": 6,
-        "y": 496,
-        "rx": 12,
-        "ry": 6.5,
-        "rot": 0.05,
-        "seed": 2603,
-        "amp": 0.18,
-        "zkratka": {
-          "cs": "PŘED GREENEM",
-          "en": "SHORT"
+      "odpaliste": [
+        {
+          "body": [
+            [
+              44.7,
+              -74.0
+            ],
+            [
+              44.2,
+              -86.7
+            ],
+            [
+              50.9,
+              -88.2
+            ],
+            [
+              57.8,
+              -82.1
+            ],
+            [
+              77.2,
+              -74.8
+            ],
+            [
+              78.5,
+              -67.0
+            ],
+            [
+              73.0,
+              -64.2
+            ],
+            [
+              56.7,
+              -68.9
+            ]
+          ]
         },
-        "label": {
-          "cs": "velký členitý bunkr před greenem, mírně vpravo od jeho středu",
-          "en": "the large lobed bunker short of the green, slightly right of its centre"
+        {
+          "body": [
+            [
+              76.6,
+              -25.5
+            ],
+            [
+              75.7,
+              -38.5
+            ],
+            [
+              84.6,
+              -44.6
+            ],
+            [
+              93.4,
+              -38.8
+            ],
+            [
+              92.6,
+              -31.2
+            ],
+            [
+              94.4,
+              -24.0
+            ],
+            [
+              87.4,
+              -18.2
+            ],
+            [
+              79.6,
+              -20.4
+            ]
+          ]
+        },
+        {
+          "body": [
+            [
+              20.5,
+              15.1
+            ],
+            [
+              8.6,
+              18.4
+            ],
+            [
+              19.7,
+              -7.4
+            ],
+            [
+              39.6,
+              -3.9
+            ],
+            [
+              44.1,
+              22.8
+            ],
+            [
+              32.1,
+              22.7
+            ],
+            [
+              25.8,
+              9.9
+            ]
+          ]
+        },
+        {
+          "body": [
+            [
+              -24.0,
+              53.0
+            ],
+            [
+              -27.5,
+              46.3
+            ],
+            [
+              -14.9,
+              21.8
+            ],
+            [
+              -8.2,
+              23.7
+            ],
+            [
+              -16.7,
+              51.7
+            ],
+            [
+              -22.1,
+              54.1
+            ]
+          ]
+        },
+        {
+          "body": [
+            [
+              -31.3,
+              71.6
+            ],
+            [
+              -34.5,
+              65.1
+            ],
+            [
+              -30.5,
+              59.0
+            ],
+            [
+              -23.2,
+              60.3
+            ],
+            [
+              -24.1,
+              69.3
+            ],
+            [
+              -28.7,
+              72.7
+            ]
+          ]
+        },
+        {
+          "body": [
+            [
+              -40.6,
+              100.1
+            ],
+            [
+              -42.9,
+              93.6
+            ],
+            [
+              -38.5,
+              87.9
+            ],
+            [
+              -33.4,
+              90.4
+            ],
+            [
+              -33.2,
+              97.9
+            ],
+            [
+              -38.0,
+              101.2
+            ]
+          ]
         }
-      }
-    ],
-    "hazardy": [],
-    "fairway": {
-      "ohyb": 22,
-      "sirkaTee": 36,
-      "sirkaGreen": 30,
-      "zacatek": 25,
-      "seed": 4107
-    },
-    "dopadovaZona": {
-      "od": 275,
-      "do": 315
+      ],
+      "fairway": [
+        {
+          "body": [
+            [
+              29.3,
+              333.9
+            ],
+            [
+              20.3,
+              306.9
+            ],
+            [
+              2.0,
+              276.2
+            ],
+            [
+              -6.7,
+              237.4
+            ],
+            [
+              1.4,
+              174.0
+            ],
+            [
+              33.4,
+              147.3
+            ],
+            [
+              13.8,
+              116.6
+            ],
+            [
+              1.7,
+              105.7
+            ],
+            [
+              24.3,
+              57.0
+            ],
+            [
+              45.1,
+              62.9
+            ],
+            [
+              40.0,
+              80.5
+            ],
+            [
+              32.0,
+              94.6
+            ],
+            [
+              37.7,
+              111.1
+            ],
+            [
+              52.9,
+              118.4
+            ],
+            [
+              56.2,
+              145.3
+            ],
+            [
+              44.0,
+              167.5
+            ],
+            [
+              52.5,
+              210.8
+            ],
+            [
+              36.6,
+              205.0
+            ],
+            [
+              20.4,
+              209.0
+            ],
+            [
+              25.5,
+              229.6
+            ],
+            [
+              46.1,
+              243.7
+            ],
+            [
+              43.9,
+              278.0
+            ],
+            [
+              46.9,
+              323.4
+            ],
+            [
+              34.3,
+              335.1
+            ]
+          ]
+        }
+      ],
+      "voda": [
+        {
+          "body": [
+            [
+              -56.2,
+              339.5
+            ],
+            [
+              -59.3,
+              329.2
+            ],
+            [
+              -50.1,
+              271.4
+            ],
+            [
+              -42.7,
+              180.7
+            ],
+            [
+              -21.8,
+              154.8
+            ],
+            [
+              -13.6,
+              175.0
+            ],
+            [
+              -16.3,
+              232.5
+            ],
+            [
+              -13.5,
+              253.0
+            ],
+            [
+              1.4,
+              309.1
+            ],
+            [
+              7.7,
+              337.7
+            ],
+            [
+              -2.9,
+              351.4
+            ],
+            [
+              -21.6,
+              350.5
+            ]
+          ],
+          "zkratka": {
+            "cs": "VODA",
+            "en": "WATER"
+          },
+          "label": {
+            "cs": "dlouhá vodní plocha po levé straně, zhruba od 155. do 350. metru",
+            "en": "a long stretch of water down the left, roughly from 155 to 350 metres"
+          }
+        }
+      ],
+      "bunkry": [
+        {
+          "body": [
+            [
+              34.2,
+              97.0
+            ],
+            [
+              36.9,
+              108.0
+            ],
+            [
+              47.6,
+              107.3
+            ],
+            [
+              45.7,
+              97.4
+            ],
+            [
+              51.9,
+              87.2
+            ],
+            [
+              47.5,
+              83.8
+            ],
+            [
+              43.4,
+              79.6
+            ],
+            [
+              39.5,
+              86.3
+            ],
+            [
+              37.2,
+              90.3
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr vpravo kolem 93. metru",
+            "en": "bunker on the right around 93 metres"
+          }
+        },
+        {
+          "body": [
+            [
+              7.8,
+              127.6
+            ],
+            [
+              9.1,
+              140.4
+            ],
+            [
+              12.4,
+              148.1
+            ],
+            [
+              22.0,
+              158.0
+            ],
+            [
+              28.7,
+              147.9
+            ],
+            [
+              25.9,
+              140.2
+            ],
+            [
+              20.7,
+              131.4
+            ],
+            [
+              14.6,
+              119.3
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr vpravo kolem 139. metru",
+            "en": "bunker on the right around 139 metres"
+          }
+        },
+        {
+          "body": [
+            [
+              24.4,
+              215.4
+            ],
+            [
+              21.9,
+              219.9
+            ],
+            [
+              26.8,
+              225.7
+            ],
+            [
+              35.2,
+              225.2
+            ],
+            [
+              37.2,
+              219.4
+            ],
+            [
+              35.5,
+              215.5
+            ],
+            [
+              35.2,
+              210.4
+            ],
+            [
+              27.1,
+              209.0
+            ],
+            [
+              25.8,
+              213.9
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr vpravo kolem 217. metru",
+            "en": "bunker on the right around 217 metres"
+          }
+        },
+        {
+          "body": [
+            [
+              39.6,
+              227.7
+            ],
+            [
+              39.8,
+              235.4
+            ],
+            [
+              44.3,
+              241.1
+            ],
+            [
+              50.7,
+              238.7
+            ],
+            [
+              49.7,
+              229.1
+            ],
+            [
+              47.5,
+              223.0
+            ],
+            [
+              41.3,
+              222.2
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr vpravo kolem 231. metru",
+            "en": "bunker on the right around 231 metres"
+          }
+        },
+        {
+          "body": [
+            [
+              -27.6,
+              406.4
+            ],
+            [
+              -28.8,
+              415.7
+            ],
+            [
+              -29.4,
+              429.3
+            ],
+            [
+              -20.2,
+              431.7
+            ],
+            [
+              -11.2,
+              429.7
+            ],
+            [
+              -13.1,
+              421.6
+            ],
+            [
+              -17.6,
+              417.5
+            ],
+            [
+              -12.0,
+              414.2
+            ],
+            [
+              -17.9,
+              407.2
+            ]
+          ],
+          "zkratka": {
+            "cs": "PŘED GREENEM",
+            "en": "SHORT"
+          },
+          "label": {
+            "cs": "velký bunkr vlevo před greenem",
+            "en": "the large bunker left and short of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              -17.0,
+              449.6
+            ],
+            [
+              -15.0,
+              454.5
+            ],
+            [
+              -12.3,
+              455.6
+            ],
+            [
+              -7.6,
+              454.5
+            ],
+            [
+              -4.2,
+              451.9
+            ],
+            [
+              -3.2,
+              449.9
+            ],
+            [
+              -6.5,
+              444.4
+            ],
+            [
+              -9.9,
+              443.6
+            ],
+            [
+              -14.5,
+              444.3
+            ],
+            [
+              -16.5,
+              447.3
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "menší bunkr vlevo u greenu",
+            "en": "a smaller bunker left of the green"
+          }
+        }
+      ]
     }
   },
   "prvky": [

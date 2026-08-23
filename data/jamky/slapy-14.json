@@ -52,17 +52,14 @@
   },
   "vznik": 2010,
   "gps": {
-    "tee": [
-      49.80501,
-      14.41323
-    ],
+    "tee": null,
     "green": [
-      49.80501,
-      14.41323
+      49.812301,
+      14.411308
     ],
     "presnost": {
-      "cs": "úroveň areálu, ověřeno v OpenStreetMap (Nominatim) — souřadnice jednotlivých jamek klub nezveřejňuje",
-      "en": "resort-level, verified against OpenStreetMap (Nominatim) — the club does not publish per-hole coordinates"
+      "cs": "souřadnice GREENU odečtená ze satelitní mapy objednatelem 23. 8. 2026 Green v OSM podle nich ještě přiřazený není — kresba ze skutečných obrysů teprve čeká.",
+      "en": "the GREEN coordinate read off a satellite map by the client on 23 Aug 2026. The OSM green has not been matched to them yet."
     }
   },
   "otazka": {

@@ -56,7 +56,7 @@
     "en": "Where do you aim on a par 3 whose green has a bunker in the middle of it — and where no safe centre therefore exists?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Bunkr uvnitř greenu je celý smysl téhle jamky a kresba ho proto zobrazuje jako bunkr obklopený putovací plochou; `js/platy.js` kreslí bunkry AŽ NAD greenem, takže se to zobrazí správně. NEDOHLEDÁNO a proto jen odhadnuto z popisů: rozměry bunkru (prameny ho popisují jen slovy „malý“, „pot bunker“), rozměry greenu (jediný nalezený zdroj si u nich protiřečí) a přesná poloha bunkru vůči středu — Golf Digest uvádí, že neleží v geometrickém středu, ale odděluje nižší přední pravou čtvrtinu od zbytku, a kresba to takhle ukazuje. Počet greenside bunkrů se v pramenech liší (The Fried Egg tři včetně středového, PGA Tour čtyři); kreslíme tři doložené. Dvě patra greenu a spád zezadu dopředu půdorys zobrazit neumí — popisuje je text karty.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Bunkr uvnitř greenu je celý smysl téhle jamky a kresba ho proto zobrazuje jako bunkr obklopený putovací plochou; `js/platy.js` kreslí bunkry AŽ NAD greenem, takže se to zobrazí správně. NEDOHLEDÁNO a proto jen odhadnuto z popisů: rozměry bunkru (prameny ho popisují jen slovy „malý“, „pot bunker“), rozměry greenu (jediný nalezený zdroj si u nich protiřečí) a přesná poloha bunkru vůči středu — Golf Digest uvádí, že neleží v geometrickém středu, ale odděluje nižší přední pravou čtvrtinu od zbytku, a kresba to takhle ukazuje. Počet greenside bunkrů se v pramenech liší (The Fried Egg tři včetně středového, PGA Tour čtyři); kreslíme tři doložené. Dvě patra greenu a spád zezadu dopředu půdorys zobrazit neumí — popisuje je text karty. DOPLNĚK 23. 8. 2026 (Krok 28): oficiální průvodce The Genesis Invitational potvrzuje polohu bunkru „uprostřed dvoupatrového greenu“ i délku 199 yardů. Rozměry ale neuvádí, takže geometrie zůstává schematická — potvrdil se popis, ne čísla.",
     "green": {
       "x": 0,
       "y": 180,
@@ -186,6 +186,11 @@
     {
       "titul": "Golf Club Atlas — Riviera Country Club",
       "url": "https://golfclubatlas.com/countries/riviera-country-club/"
+    },
+    {
+      "titul": "The Genesis Invitational — oficiální hole-by-hole průvodce Riviery",
+      "url": "https://genesisinvitational.com/news/hole-hole-guide-riviera/",
+      "poznamka": "Turnajový web potvrzuje obojí, na čem karta stojí: par 3, 199 yardů (182 m) a „island bunker positioned perfectly in the center [of] the two-tiered putting surface“. Je to nejbližší věc oficiálnímu pramenu, jakou se u téhle jamky podařilo najít. Rozměry bunkru ani greenu neuvádí."
     }
   ],
   "naCoSeDivat": {

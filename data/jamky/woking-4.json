@@ -29,11 +29,17 @@
   },
   "vznik": null,
   "gps": {
-    "tee": null,
-    "green": null,
+    "tee": [
+      51.30788,
+      -0.594828
+    ],
+    "green": [
+      51.307085,
+      -0.599157
+    ],
     "presnost": {
-      "cs": "poloha KLUBU ověřena v OpenStreetMap (Nominatim): 51.30493, −0.59823. Souřadnice jednotlivé jamky zatím určené nejsou — v okolí je 22 greenů.",
-      "en": "the CLUB location is verified in OpenStreetMap (Nominatim): 51.30493, −0.59823. Per-hole coordinates are not yet determined — there are 22 greens nearby."
+      "cs": "souřadnice jednotlivé jamky odečtené ze satelitní mapy objednatelem 23. 8. 2026 Kontrola: přímá vzdálenost odpaliště–green vychází 314 m proti oficiálním 322 m (-2.5 %); u doglegu je přímá vzdálenost kratší než hraná, takže záporná odchylka je očekávaná. Green v OSM podle nich ještě přiřazený není — kresba ze skutečných obrysů teprve čeká.",
+      "en": "per-hole coordinates read off a satellite map by the client on 23 Aug 2026. Check: the straight-line tee-to-green distance is 314 m against the official 322 m (-2.5%). The OSM green has not been matched to them yet."
     }
   },
   "otazka": {
@@ -41,87 +47,480 @@
     "en": "When the architect puts a bunker exactly in the middle of the fairway, is that unfairness, or a question?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Poloha středových bunkrů je ODHAD: prameny se shodují, že leží ve středu až levém středu fairwaye v dopadové zóně drivu, ale žádný z nich neuvádí vzdálenost od odpaliště. Železnice (out of bounds po pravé straně) se na plánu nekreslí — kreslítko pro ni nemá tvar a vymýšlet jí okraj by znamenalo tvrdit něco, co změřené nemám. Je popsaná v prvcích.",
-    "fairway": {
-      "ohyb": 0,
-      "sirkaTee": 44,
-      "sirkaGreen": 26,
-      "zacatek": 20,
-      "seed": 5101
-    },
-    "green": {
-      "x": 0,
-      "y": 315,
-      "rx": 11,
-      "ry": 9,
-      "rot": 0.15,
-      "seed": 5102,
-      "amp": 0.07
-    },
-    "bunkry": [
-      {
-        "x": -8,
-        "y": 198,
-        "rx": 5,
-        "ry": 4,
-        "rot": 0.25,
-        "seed": 5103,
-        "amp": 0.17,
-        "zkratka": {
-          "cs": "STŘED",
-          "en": "CENTRE"
+    "poznamka": "KRESLENO ZE SKUTEČNÝCH OBRYSŮ (23. 8. 2026, Krok 31) — polygony greenu, tří odpališť, fairwaye a pěti bunkerů pocházejí z OpenStreetMap (ODbL). Soustava je popsaná v obrys.zdroj.\nIDENTIFIKACE: objednatel odečetl souřadnice ze satelitní mapy; green v OSM leží 2 metry od zadaného bodu. Přímá vzdálenost zadní odpaliště–green je 314 m proti oficiálním 322 m (−2,5 %), tedy téměř rovná jamka. Odpaliště tvoří řadu 312 / 255 / 248 m.\nNEJSILNĚJŠÍ POTVRZENÍ přišlo z tvaru fairwaye: polygon golf=fairway má kolem 220. metru VYKOUSNUTOU DÍRU a v ní leží dva malé bunkry (222 a 229 metrů od odpaliště). To je přesně ta dvojice, kterou tam v roce 1901 dali Low a Paton — a v datech je vidět, že fairway je obtéká z obou stran, tedy že jamku nezužují, ale rozdvojují. Dřívější polohy na kartě byly odhad; tyhle jsou zaměřené.\nCO NENÍ NAKRESLENO: železnice, která tvoří out of bounds po pravé straně. V OSM je jako otevřená linie (railway=rail), ne jako plocha, a kreslítko pro linii zatím tvar nemá; podle dat běží zhruba 45 až 60 metrů vpravo od osy jamky. Dále není nakreslen rough a jeho hranice.\nCO JSEM VYPUSTIL: bunkr 60 metrů vlevo v 71. metru — leží mimo koridor téhle jamky a patří nejspíš sousední. Pravidlo: kreslí se prvky od 25. metru dál a do 50 metrů od osy, plus vše uvnitř polygonu fairwaye.",
+    "obrys": {
+      "zdroj": "OpenStreetMap (ODbL), staženo 23. 8. 2026 přes openstreetmap.org/api/0.6/map. Souřadnice v metrech od zadního odpaliště; x kladně vpravo od přímé linie odpaliště–green, y po téhle linii.",
+      "green": {
+        "body": [
+          [
+            2.8,
+            326.4
+          ],
+          [
+            7.1,
+            321.1
+          ],
+          [
+            9.0,
+            310.8
+          ],
+          [
+            9.1,
+            303.2
+          ],
+          [
+            6.4,
+            298.4
+          ],
+          [
+            1.4,
+            297.8
+          ],
+          [
+            -2.3,
+            300.0
+          ],
+          [
+            -4.8,
+            305.2
+          ],
+          [
+            -6.7,
+            308.0
+          ],
+          [
+            -9.7,
+            310.8
+          ],
+          [
+            -11.1,
+            315.5
+          ],
+          [
+            -9.5,
+            320.7
+          ],
+          [
+            -6.7,
+            324.4
+          ],
+          [
+            -2.9,
+            326.7
+          ]
+        ]
+      },
+      "odpaliste": [
+        {
+          "body": [
+            [
+              1.7,
+              4.3
+            ],
+            [
+              1.5,
+              -3.4
+            ],
+            [
+              -3.0,
+              -3.5
+            ],
+            [
+              -3.0,
+              4.2
+            ]
+          ]
         },
-        "label": {
-          "cs": "první ze dvou bunkerů ve středu fairwaye — ty, které v roce 1901 rozdělily jamku na dvě cesty",
-          "en": "the first of the two bunkers in the middle of the fairway — the pair that split the hole in two in 1901"
+        {
+          "body": [
+            [
+              -0.4,
+              55.9
+            ],
+            [
+              -0.5,
+              59.3
+            ],
+            [
+              -10.9,
+              58.7
+            ],
+            [
+              -10.8,
+              55.3
+            ]
+          ]
+        },
+        {
+          "body": [
+            [
+              -0.1,
+              62.6
+            ],
+            [
+              -0.3,
+              65.6
+            ],
+            [
+              -9.3,
+              65.3
+            ],
+            [
+              -9.0,
+              62.3
+            ]
+          ]
         }
-      },
-      {
-        "x": 1,
-        "y": 219,
-        "rx": 4.5,
-        "ry": 3.5,
-        "rot": 0.1,
-        "seed": 5104,
-        "amp": 0.17,
-        "zkratka": null,
-        "label": {
-          "cs": "druhý středový bunkr, položený mírně dál a doprava",
-          "en": "the second central bunker, set slightly further on and to the right"
+      ],
+      "fairway": [
+        {
+          "body": [
+            [
+              -9.9,
+              295.1
+            ],
+            [
+              -23.3,
+              287.0
+            ],
+            [
+              -28.6,
+              260.5
+            ],
+            [
+              -19.2,
+              224.3
+            ],
+            [
+              -17.2,
+              234.4
+            ],
+            [
+              -9.8,
+              233.3
+            ],
+            [
+              -9.3,
+              220.2
+            ],
+            [
+              -16.4,
+              216.8
+            ],
+            [
+              -42.6,
+              224.0
+            ],
+            [
+              -38.3,
+              204.7
+            ],
+            [
+              -28.4,
+              198.8
+            ],
+            [
+              -31.3,
+              188.1
+            ],
+            [
+              -40.2,
+              180.7
+            ],
+            [
+              -33.4,
+              158.8
+            ],
+            [
+              -17.3,
+              154.0
+            ],
+            [
+              2.1,
+              156.1
+            ],
+            [
+              9.0,
+              165.0
+            ],
+            [
+              8.0,
+              213.6
+            ],
+            [
+              11.8,
+              288.7
+            ],
+            [
+              11.2,
+              311.4
+            ],
+            [
+              7.6,
+              324.5
+            ],
+            [
+              -1.8,
+              328.9
+            ],
+            [
+              -12.0,
+              319.1
+            ],
+            [
+              -10.1,
+              308.8
+            ],
+            [
+              -4.8,
+              303.7
+            ],
+            [
+              -7.5,
+              295.5
+            ]
+          ]
         }
-      },
-      {
-        "x": -14,
-        "y": 302,
-        "rx": 4,
-        "ry": 3,
-        "rot": 0.3,
-        "seed": 5105,
-        "amp": 0.16,
-        "zkratka": null,
-        "label": {
-          "cs": "bunkr u předního levého okraje greenu",
-          "en": "bunker at the front-left edge of the green"
+      ],
+      "voda": [],
+      "bunkry": [
+        {
+          "body": [
+            [
+              -34.0,
+              197.0
+            ],
+            [
+              -32.4,
+              194.1
+            ],
+            [
+              -35.1,
+              191.8
+            ],
+            [
+              -38.5,
+              191.1
+            ],
+            [
+              -42.3,
+              191.0
+            ],
+            [
+              -43.8,
+              193.7
+            ],
+            [
+              -42.0,
+              196.2
+            ],
+            [
+              -39.2,
+              196.6
+            ],
+            [
+              -37.0,
+              195.5
+            ],
+            [
+              -35.0,
+              197.1
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr při levém okraji fairwaye kolem 194. metru",
+            "en": "bunker at the left edge of the fairway around 194 metres"
+          }
+        },
+        {
+          "body": [
+            [
+              -12.9,
+              217.8
+            ],
+            [
+              -16.5,
+              218.6
+            ],
+            [
+              -17.6,
+              221.4
+            ],
+            [
+              -18.4,
+              224.3
+            ],
+            [
+              -15.6,
+              224.9
+            ],
+            [
+              -13.5,
+              223.7
+            ],
+            [
+              -11.2,
+              223.2
+            ],
+            [
+              -11.2,
+              219.4
+            ]
+          ],
+          "zkratka": {
+            "cs": "STŘED",
+            "en": "CENTRE"
+          },
+          "label": {
+            "cs": "první ze dvou středových bunkerů, 222 metrů od zadního odpaliště — ty, které v roce 1901 rozdělily jamku na dvě cesty",
+            "en": "the first of the two central bunkers, 222 metres from the back tee — the pair that split the hole in two in 1901"
+          }
+        },
+        {
+          "body": [
+            [
+              -14.5,
+              231.7
+            ],
+            [
+              -12.1,
+              231.5
+            ],
+            [
+              -10.9,
+              230.1
+            ],
+            [
+              -12.0,
+              227.4
+            ],
+            [
+              -14.2,
+              226.2
+            ],
+            [
+              -16.5,
+              226.8
+            ],
+            [
+              -17.5,
+              228.3
+            ],
+            [
+              -17.0,
+              230.0
+            ],
+            [
+              -15.6,
+              231.4
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "druhý středový bunkr, 229 metrů",
+            "en": "the second central bunker, 229 metres"
+          }
+        },
+        {
+          "body": [
+            [
+              -6.3,
+              301.5
+            ],
+            [
+              -5.5,
+              300.7
+            ],
+            [
+              -5.0,
+              299.3
+            ],
+            [
+              -6.5,
+              297.8
+            ],
+            [
+              -9.1,
+              298.9
+            ],
+            [
+              -10.4,
+              301.7
+            ],
+            [
+              -10.3,
+              304.0
+            ],
+            [
+              -8.7,
+              305.1
+            ],
+            [
+              -7.0,
+              304.7
+            ],
+            [
+              -6.6,
+              303.2
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr před greenem vlevo",
+            "en": "bunker short and left of the green"
+          }
+        },
+        {
+          "body": [
+            [
+              9.9,
+              324.5
+            ],
+            [
+              11.2,
+              322.9
+            ],
+            [
+              12.1,
+              322.3
+            ],
+            [
+              13.1,
+              322.3
+            ],
+            [
+              13.5,
+              324.7
+            ],
+            [
+              12.8,
+              326.7
+            ],
+            [
+              11.4,
+              328.0
+            ],
+            [
+              9.5,
+              327.8
+            ],
+            [
+              9.0,
+              326.6
+            ],
+            [
+              9.3,
+              325.3
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr při pravém okraji greenu",
+            "en": "bunker at the right edge of the green"
+          }
         }
-      },
-      {
-        "x": 8,
-        "y": 300,
-        "rx": 3.5,
-        "ry": 2.8,
-        "rot": -0.2,
-        "seed": 5106,
-        "amp": 0.16,
-        "zkratka": null,
-        "label": {
-          "cs": "bunkr při pravém okraji greenu",
-          "en": "bunker at the right edge of the green"
-        }
-      }
-    ],
-    "dopadovaZona": {
-      "od": 185,
-      "do": 235
+      ]
     }
   },
   "prvky": [

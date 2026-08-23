@@ -42,16 +42,16 @@
   "vznik": 1921,
   "gps": {
     "tee": [
-      32.33186,
-      -64.69365
+      32.325943,
+      -64.702157
     ],
     "green": [
-      32.33186,
-      -64.69365
+      32.32685,
+      -64.705269
     ],
     "presnost": {
-      "cs": "úroveň areálu, ověřeno v OpenStreetMap (Nominatim) — souřadnice jednotlivých jamek klub nezveřejňuje",
-      "en": "resort-level, verified against OpenStreetMap (Nominatim) — the club does not publish per-hole coordinates"
+      "cs": "souřadnice jednotlivé jamky odečtené ze satelitní mapy objednatelem 23. 8. 2026 Kontrola: přímá vzdálenost odpaliště–green vychází 309 m proti oficiálním 396 m (-22.0 %); u doglegu je přímá vzdálenost kratší než hraná, takže záporná odchylka je očekávaná. Přímá vzdálenost 309 m proti oficiálním 396 m je −22 %. U jamky typu Cape, kde se odpaluje diagonálně přes jezero, to je možné, ale je to nejvyšší odchylka ze všech; potvrdí to až žebřík odpališť z OSM při kreslení. Green v OSM podle nich ještě přiřazený není — kresba ze skutečných obrysů teprve čeká.",
+      "en": "per-hole coordinates read off a satellite map by the client on 23 Aug 2026. Check: the straight-line tee-to-green distance is 309 m against the official 396 m (-22.0%). The OSM green has not been matched to them yet."
     }
   },
   "otazka": {

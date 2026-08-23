@@ -38,16 +38,16 @@
   "vznik": 1980,
   "gps": {
     "tee": [
-      30.196,
-      -81.39375
+      30.193673,
+      -81.390169
     ],
     "green": [
-      30.196,
-      -81.39375
+      30.194676,
+      -81.390873
     ],
     "presnost": {
-      "cs": "úroveň areálu, ověřeno v OpenStreetMap (Nominatim) — souřadnice jednotlivých jamek klub nezveřejňuje",
-      "en": "resort-level, verified against OpenStreetMap (Nominatim) — the club does not publish per-hole coordinates"
+      "cs": "souřadnice jednotlivé jamky odečtené ze satelitní mapy objednatelem 23. 8. 2026 Kontrola: přímá vzdálenost odpaliště–green vychází 130 m proti oficiálním 129 m (+0.8 %); u doglegu je přímá vzdálenost kratší než hraná, takže záporná odchylka je očekávaná. Green v OSM podle nich ještě přiřazený není — kresba ze skutečných obrysů teprve čeká.",
+      "en": "per-hole coordinates read off a satellite map by the client on 23 Aug 2026. Check: the straight-line tee-to-green distance is 130 m against the official 129 m (+0.8%). The OSM green has not been matched to them yet."
     }
   },
   "otazka": {
@@ -55,56 +55,338 @@
     "en": "How do you hit a small island green with a short club when the only safe line is dead center, and a miss in any direction means a ball in the water?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(); pořadí vykreslení je hazardy → bunkry → green (js/platy.js:442-462), takže voda soustředěná kolem greenu a jen mírně větší než green se automaticky ukáže jako prstenec obklopující ostrůvek ze všech stran. OPRAVA (2026-08-19): původní návrh měl vodní hazard rx:34/ry:30 vystředěný mimo green (0,118) — to je stejná chyba jako u jiné jamky dřív (obří jezero přes celou kartu, šířka bounding boxu by vyšla přes 90 m). Green podle Golf News Net (3 912 sq ft, 78×81 ft ≈ skoro kruhový) měl navíc být méně zploštělý (ry blíž rx) a bunker je podle stejného zdroje vpředu vlevo, ne vzadu. Přepsáno: voda je teď soustředěná na stejné x,y jako green a jen o pár metrů větší na každou stranu (rx 18 / ry 15 vs. green rx 12 / ry 11) — pořád obklopuje ostrůvek ze všech stran, ale nedominuje kartě. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. OVĚŘENO (2026-08-21): druhé kolo rešerše (birdie book/yardage book) nenašlo žádnou veřejně čitelnou skutečnou stránku yardage booku pro tuhle jamku (TPC PDF existuje, ale jeho grafická vrstva se nedala přečíst) — nejlepší dostupný zdroj zůstává textový popis greenu (Golf News Net: 78×81 stop ≈ 24×25 m, tedy prakticky kruhový), který current green rx12/ry11 už odpovídá. Nově zjištěný detail, nezakreslený: dřevěná lávka pro pěší provoz vede podél zadní LEVÉ hrany greenu (Golf Course Industry) — mimo rozsah schématu. OPRAVENO 23. 8. 2026 (Krok 27): plán kreslil jamku o 6.2 % KRATŠÍ, než je její oficiální délka — délka oblouku osy fairwaye vycházela 121 m proti oficiálním 129 m. Všechny podélné souřadnice (green, bunkry, hazardy, dopadová zóna) jsou proto přenásobené činitelem 1.066, aby oblouk odpovídal skutečné délce. Boční polohy se nezměnily. Chyba se našla strojovou kontrolou vnitřní konzistence všech karet, ne novým pramenem — schematický plán nesmí být ve sporu s číslem, které tatáž karta uvádí jako délku jamky.",
-    "green": {
-      "x": 0,
-      "y": 129.0,
-      "rx": 12,
-      "ry": 11.7,
-      "rot": 0.1,
-      "seed": 1701,
-      "amp": 0.07
-    },
-    "bunkry": [
-      {
-        "x": -8,
-        "y": 120.5,
-        "rx": 2.2,
-        "ry": 1.6,
-        "rot": 0.2,
-        "seed": 1702,
-        "amp": 0.16,
-        "label": {
-          "cs": "malý pot bunker vpředu vlevo",
-          "en": "small pot bunker front-left"
-        },
-        "zkratka": {
-          "cs": "POT BUNKR",
-          "en": "POT BUNKER"
+    "poznamka": "KRESLENO ZE SKUTEČNÝCH OBRYSŮ (23. 8. 2026, Krok 32) — polygony greenu, odpaliště, bunkru a jezera pocházejí z OpenStreetMap (ODbL). Soustava je popsaná v obrys.zdroj.\nIDENTIFIKACE: objednatel odečetl souřadnice ze satelitní mapy; green v OSM leží 6 metrů od zadaného bodu a přímá vzdálenost odpaliště–green je 131 m proti oficiálním 129 m (+1,5 %). U par 3 se přímá a hraná vzdálenost rovnají, takže tahle shoda je silný důkaz — žádný dogleg by ji nemohl schovat.\nJEZERO SE MUSELO HLEDAT JINAK: v OSM není zapsané jako obyčejná plocha, ale jako RELACE (multipolygon 17360491) s jediným vnějším způsobem. Dotaz, který čte jen způsoby, ho nenajde a vypadá to, že jezero v datech není. Obrys jezera obtáčí ostrov, takže jeden souvislý polygon obchází i břeh ostrůvku.\nCO V DATECH PŘEKVAPILO: bunkr u greenu je v OSM zakreslený jako útvar široký sotva dva metry. Skutečný bunkr sedmnáctky je větší; buď je zákres hrubý, nebo zachycuje jen jeho část. Kreslím, co je zaměřené, a tuhle výhradu píšu sem.\nCO NENÍ NAKRESLENO: rough ani travnatý ostrůvek kolem greenu — v OSM zakreslené nejsou.",
+    "obrys": {
+      "zdroj": "OpenStreetMap (ODbL), staženo 23. 8. 2026 přes openstreetmap.org/api/0.6/map. Souřadnice v metrech od odpaliště; x kladně vpravo od přímé linie odpaliště–green, y po téhle linii.",
+      "green": {
+        "body": [
+          [
+            1.7,
+            119.1
+          ],
+          [
+            3.6,
+            120.6
+          ],
+          [
+            7.2,
+            120.7
+          ],
+          [
+            10.3,
+            122.3
+          ],
+          [
+            11.7,
+            125.6
+          ],
+          [
+            11.4,
+            131.1
+          ],
+          [
+            8.9,
+            134.4
+          ],
+          [
+            3.1,
+            136.9
+          ],
+          [
+            -2.8,
+            137.2
+          ],
+          [
+            -7.2,
+            135.7
+          ],
+          [
+            -10.5,
+            132.5
+          ],
+          [
+            -12.6,
+            128.0
+          ],
+          [
+            -13.2,
+            122.7
+          ],
+          [
+            -11.9,
+            119.0
+          ],
+          [
+            -8.2,
+            114.6
+          ],
+          [
+            -3.3,
+            112.8
+          ],
+          [
+            0.2,
+            115.2
+          ],
+          [
+            1.2,
+            118.2
+          ]
+        ]
+      },
+      "odpaliste": [
+        {
+          "body": [
+            [
+              -1.4,
+              10.4
+            ],
+            [
+              7.1,
+              11.1
+            ],
+            [
+              9.5,
+              4.8
+            ],
+            [
+              8.9,
+              -4.4
+            ],
+            [
+              -0.1,
+              -7.8
+            ],
+            [
+              -13.0,
+              -0.8
+            ],
+            [
+              -11.7,
+              7.7
+            ],
+            [
+              -3.0,
+              9.4
+            ]
+          ]
         }
-      }
-    ],
-    "hazardy": [
-      {
-        "typ": "voda",
-        "x": 0,
-        "y": 129.0,
-        "rx": 18,
-        "ry": 15,
-        "rot": 0,
-        "seed": 1703,
-        "amp": 0.05,
-        "label": {
-          "cs": "jezero obklopující green ze všech stran",
-          "en": "lake surrounding the green on every side"
-        },
-        "zkratka": {
-          "cs": "JEZERO",
-          "en": "LAKE"
+      ],
+      "fairway": [],
+      "voda": [
+        {
+          "body": [
+            [
+              -25.7,
+              147.1
+            ],
+            [
+              -33.6,
+              138.0
+            ],
+            [
+              -28.5,
+              108.2
+            ],
+            [
+              -31.8,
+              81.2
+            ],
+            [
+              -25.8,
+              54.6
+            ],
+            [
+              -19.8,
+              24.6
+            ],
+            [
+              -10.3,
+              9.2
+            ],
+            [
+              5.8,
+              14.6
+            ],
+            [
+              23.1,
+              16.7
+            ],
+            [
+              40.6,
+              27.8
+            ],
+            [
+              66.2,
+              15.9
+            ],
+            [
+              87.6,
+              14.1
+            ],
+            [
+              93.0,
+              20.8
+            ],
+            [
+              82.6,
+              25.1
+            ],
+            [
+              71.0,
+              34.9
+            ],
+            [
+              70.5,
+              55.1
+            ],
+            [
+              77.0,
+              78.1
+            ],
+            [
+              73.6,
+              119.7
+            ],
+            [
+              68.9,
+              156.6
+            ],
+            [
+              59.7,
+              179.7
+            ],
+            [
+              50.9,
+              184.7
+            ],
+            [
+              45.0,
+              170.2
+            ],
+            [
+              40.6,
+              140.8
+            ],
+            [
+              29.4,
+              138.6
+            ],
+            [
+              8.0,
+              154.6
+            ],
+            [
+              -10.6,
+              156.2
+            ],
+            [
+              -17.4,
+              149.0
+            ],
+            [
+              -8.6,
+              137.2
+            ],
+            [
+              7.6,
+              136.2
+            ],
+            [
+              13.2,
+              126.4
+            ],
+            [
+              8.4,
+              118.2
+            ],
+            [
+              4.4,
+              114.7
+            ],
+            [
+              -1.4,
+              110.9
+            ],
+            [
+              -11.4,
+              115.2
+            ],
+            [
+              -13.8,
+              123.6
+            ],
+            [
+              -14.7,
+              132.5
+            ],
+            [
+              -17.2,
+              140.5
+            ],
+            [
+              -22.0,
+              146.2
+            ]
+          ],
+          "zkratka": {
+            "cs": "VODA",
+            "en": "WATER"
+          },
+          "label": {
+            "cs": "jezero, které obklopuje ostrovní green ze všech stran",
+            "en": "the lake surrounding the island green on every side"
+          }
         }
-      }
-    ],
-    "fairway": null
+      ],
+      "bunkry": [
+        {
+          "body": [
+            [
+              4.1,
+              116.9
+            ],
+            [
+              5.0,
+              116.5
+            ],
+            [
+              5.9,
+              117.0
+            ],
+            [
+              6.2,
+              117.6
+            ],
+            [
+              5.9,
+              118.4
+            ],
+            [
+              5.3,
+              118.9
+            ],
+            [
+              4.6,
+              118.8
+            ],
+            [
+              4.0,
+              118.3
+            ],
+            [
+              3.7,
+              117.7
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "malý bunkr při předním okraji greenu",
+            "en": "a small bunker at the front edge of the green"
+          }
+        }
+      ]
+    }
   },
   "prvky": [
     {

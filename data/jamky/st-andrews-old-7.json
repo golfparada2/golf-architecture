@@ -31,16 +31,16 @@
   "vznik": 1863,
   "gps": {
     "tee": [
-      56.35191,
-      -2.81621
+      56.357395,
+      -2.822624
     ],
     "green": [
-      56.35191,
-      -2.81621
+      56.360041,
+      -2.824622
     ],
     "presnost": {
-      "cs": "úroveň hřiště, OVĚŘENO 23. 8. 2026 v OpenStreetMap (Nominatim) na dotaz „Old Course, St Andrews“ — dřívější poznámka o neověřeném odhadu už neplatí. Souřadnice jednotlivé jamky klub nezveřejňuje.",
-      "en": "course level, VERIFIED on 23 Aug 2026 in OpenStreetMap (Nominatim) for the query „Old Course, St Andrews“ — the earlier note about an unverified estimate no longer applies. The club does not publish per-hole coordinates."
+      "cs": "souřadnice jednotlivé jamky odečtené ze satelitní mapy objednatelem 23. 8. 2026 Kontrola: přímá vzdálenost odpaliště–green vychází 319 m proti oficiálním 339 m (-5.9 %); u doglegu je přímá vzdálenost kratší než hraná, takže záporná odchylka je očekávaná. Green v OSM podle nich ještě přiřazený není — kresba ze skutečných obrysů teprve čeká.",
+      "en": "per-hole coordinates read off a satellite map by the client on 23 Aug 2026. Check: the straight-line tee-to-green distance is 319 m against the official 339 m (-5.9%). The OSM green has not been matched to them yet."
     }
   },
   "otazka": {
@@ -59,80 +59,473 @@
     }
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště jamky 7 (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Green je záměrně široký, aby naznačil dvojgreen se dvěma praporky. Kreslí se přes js/platy.js blob(). Oprava (ověřeno webem, 2026): původní verze měla jen dva neoznačené bunkry těsně u greenu a chyběl slavný fairwayový Shell Bunker. Doplněn Shell Bunker jako fairwayová hrozba ~310 yd (283 m) od odpaliště, tedy zřetelně před greenem (podle The Open course guide a LINKS Magazine popsán jako 'dominantní prvek jamky' se stěnou drnu vysokou přes dva metry). Oba greenové bunkry přejmenovány na skutečné historické názvy — Cockle Bunker (strana jamky 7) a Strath Bunker (strana jamky 11) — a přiblíženy k sobě, aby odpovídaly popisu z Alister MacKenzie Institute: nájezd na green musí buď přeletět Cockle bunker, nebo proletět 'velmi úzkou mezerou' mezi ním a bunkerem Strath. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. OVĚŘENO/ZPŘESNĚNO (2026-08-21): vzdálenost Shell Bunkeru od odpaliště se mezi zdroji liší — LINKS Magazine uvádí ~240 yardů, oficiální průvodce The Open uvádí ~310 yardů (použito v kartě). Nesrovnalost se nedala rozhodnout, ponecháno 310 yardů podle oficiálního zdroje turnaje. Nezávisle potvrzeno (GolfPass): mezi Shell Bunkerem a greenem je přes 30 yardů — tomu current rozestup (bunker y283, green y330 ⇒ 47 m ≈ 51 yd) odpovídá. Fried Egg upřesňuje, že Shell Bunker ohrožuje hlavně ODPAL, ne dojezd na green — schematicky to karta už zachycuje (bunker je zřetelně před greenem, ne u něj).",
-    "green": {
-      "x": 0,
-      "y": 330,
-      "rx": 26,
-      "ry": 14,
-      "rot": 0.05,
-      "seed": 2401,
-      "amp": 0.05
-    },
-    "bunkry": [
-      {
-        "x": 3,
-        "y": 283,
-        "rx": 6,
-        "ry": 4,
-        "rot": 0.1,
-        "seed": 2404,
-        "amp": 0.18,
-        "label": {
-          "cs": "Shell Bunker — obří fairwayový bunker asi 310 yardů od odpaliště, dominantní hrozba jamky (pozor s dřevem z odpaliště)",
-          "en": "Shell Bunker — a huge fairway bunker about 310 yards from the tee, the hole's dominant hazard (a warning against too much club off the tee)"
-        },
-        "zkratka": {
-          "cs": "SHELL",
-          "en": "SHELL"
-        }
+    "poznamka": "KRESLENO ZE SKUTEČNÝCH OBRYSŮ (23. 8. 2026, Krok 32) — polygony greenu, tří odpališť a sedmi bunkerů pocházejí z OpenStreetMap (ODbL). Soustava je popsaná v obrys.zdroj.\nIDENTIFIKACE: green v OSM leží 1 METR od bodu, který objednatel odečetl ze satelitní mapy — nejtěsnější shoda ze všech převedených jamek. Přímá vzdálenost odpaliště–green je 319 m proti oficiálním 339 m (−5,9 %). Žebřík odpališť dává 318 / 289 / 253 m.\nDVĚ VĚCI, KTERÉ DATA POTVRDILA: (1) Obrys greenu má PADESÁT bodů a měří přes sto metrů napříč — je to sdílený dvojgreen sedmé a jedenácté jamky, přesně jak karta popisuje. Žádná jiná jamka ve sbírce nemá green ani zdaleka takový. (2) Shell Bunker vychází 284 metrů od odpaliště; oficiální průvodce The Open ho klade na 310 yardů, tedy 283 metrů. Shoda na jeden metr, a přitom jde o dva nezávislé prameny.\nCO JSEM VYPUSTIL: tři pískové plochy kolem 50. metru od odpaliště a jeden polygon fairwaye tamtéž — na Old Course běží jamky vedle sebe a tyhle prvky patří sousední dráze, ne sedmičce.\nCO NENÍ NAKRESLENO: fairway sedmé jamky (v OSM pro tenhle koridor není) ani rough.",
+    "obrys": {
+      "zdroj": "OpenStreetMap (ODbL), staženo 23. 8. 2026 přes openstreetmap.org/api/0.6/map. Souřadnice v metrech od zadního odpaliště; x kladně vpravo od přímé linie odpaliště–green, y po téhle linii.",
+      "green": {
+        "body": [
+          [
+            30.7,
+            344.2
+          ],
+          [
+            4.4,
+            334.1
+          ],
+          [
+            -5.5,
+            325.9
+          ],
+          [
+            -14.6,
+            326.8
+          ],
+          [
+            -23.7,
+            330.5
+          ],
+          [
+            -28.1,
+            329.0
+          ],
+          [
+            -31.0,
+            325.9
+          ],
+          [
+            -37.6,
+            310.5
+          ],
+          [
+            -50.4,
+            295.8
+          ],
+          [
+            -49.2,
+            292.2
+          ],
+          [
+            -43.1,
+            290.0
+          ],
+          [
+            -25.5,
+            291.3
+          ],
+          [
+            -23.1,
+            294.9
+          ],
+          [
+            -21.1,
+            305.2
+          ],
+          [
+            -13.5,
+            308.3
+          ],
+          [
+            2.6,
+            305.9
+          ],
+          [
+            13.6,
+            317.4
+          ],
+          [
+            20.8,
+            321.4
+          ],
+          [
+            30.1,
+            321.4
+          ],
+          [
+            40.7,
+            318.4
+          ],
+          [
+            46.7,
+            320.4
+          ],
+          [
+            49.6,
+            324.1
+          ],
+          [
+            49.7,
+            331.1
+          ],
+          [
+            45.2,
+            339.0
+          ],
+          [
+            40.3,
+            342.4
+          ]
+        ]
       },
-      {
-        "x": -11,
-        "y": 313,
-        "rx": 5,
-        "ry": 4,
-        "rot": 0.2,
-        "seed": 2402,
-        "amp": 0.16,
-        "label": {
-          "cs": "Cockle Bunker — hlídá nájezd na green ze strany jamky 7",
-          "en": "Cockle Bunker — guards the approach to the green from the 7th-hole side"
+      "odpaliste": [
+        {
+          "body": [
+            [
+              4.2,
+              5.2
+            ],
+            [
+              -7.0,
+              3.5
+            ],
+            [
+              -5.7,
+              -4.6
+            ],
+            [
+              5.4,
+              -2.9
+            ]
+          ]
         },
-        "zkratka": {
-          "cs": "COCKLE",
-          "en": "COCKLE"
-        }
-      },
-      {
-        "x": 11,
-        "y": 313,
-        "rx": 5,
-        "ry": 4,
-        "rot": -0.2,
-        "seed": 2403,
-        "amp": 0.16,
-        "label": {
-          "cs": "Strath Bunker — hlídá green ze strany jamky 11; mezi ním a Cockle bunkerem je jen úzká mezera pro přesný nájezd",
-          "en": "Strath Bunker — guards the green from the 11th-hole side; only a narrow neck separates it from Cockle Bunker for a precise approach"
+        {
+          "body": [
+            [
+              -8.3,
+              41.3
+            ],
+            [
+              -13.1,
+              40.5
+            ],
+            [
+              -7.4,
+              7.6
+            ],
+            [
+              1.8,
+              9.2
+            ],
+            [
+              -2.3,
+              33.5
+            ],
+            [
+              -5.0,
+              33.0
+            ],
+            [
+              -6.4,
+              33.6
+            ],
+            [
+              -7.2,
+              34.9
+            ]
+          ]
         },
-        "zkratka": {
-          "cs": "STRATH",
-          "en": "STRATH"
+        {
+          "body": [
+            [
+              -42.0,
+              73.3
+            ],
+            [
+              -43.1,
+              63.8
+            ],
+            [
+              -37.3,
+              63.1
+            ],
+            [
+              -36.2,
+              72.6
+            ]
+          ]
         }
-      }
-    ],
-    "hazardy": [],
-    "fairway": {
-      "ohyb": 18,
-      "sirkaTee": 46,
-      "sirkaGreen": 40,
-      "zacatek": 20,
-      "seed": 4106
-    },
-    "dopadovaZona": {
-      "od": 230,
-      "do": 275
+      ],
+      "fairway": [],
+      "voda": [],
+      "bunkry": [
+        {
+          "body": [
+            [
+              27.7,
+              255.4
+            ],
+            [
+              26.3,
+              255.1
+            ],
+            [
+              25.7,
+              253.1
+            ],
+            [
+              27.4,
+              252.0
+            ],
+            [
+              28.8,
+              252.7
+            ],
+            [
+              28.5,
+              255.0
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "malý bunkr vpravo, 254 metrů",
+            "en": "a small bunker on the right, 254 metres"
+          }
+        },
+        {
+          "body": [
+            [
+              25.5,
+              268.0
+            ],
+            [
+              23.4,
+              267.1
+            ],
+            [
+              22.4,
+              265.0
+            ],
+            [
+              24.4,
+              263.7
+            ],
+            [
+              26.6,
+              264.7
+            ],
+            [
+              26.8,
+              266.6
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "druhý malý bunkr vpravo, 266 metrů",
+            "en": "a second small bunker on the right, 266 metres"
+          }
+        },
+        {
+          "body": [
+            [
+              11.1,
+              294.2
+            ],
+            [
+              -6.2,
+              287.0
+            ],
+            [
+              -6.3,
+              281.5
+            ],
+            [
+              -1.9,
+              280.0
+            ],
+            [
+              13.4,
+              276.5
+            ],
+            [
+              18.7,
+              277.8
+            ],
+            [
+              22.1,
+              283.8
+            ],
+            [
+              20.8,
+              289.0
+            ]
+          ],
+          "zkratka": {
+            "cs": "SHELL",
+            "en": "SHELL"
+          },
+          "label": {
+            "cs": "Shell Bunker — obří bunker 284 metrů od odpaliště, přesně tam, kam ho klade oficiální průvodce The Open (310 yardů)",
+            "en": "Shell Bunker — the huge bunker 284 metres from the tee, exactly where the official Open guide places it (310 yards)"
+          }
+        },
+        {
+          "body": [
+            [
+              -44.4,
+              286.9
+            ],
+            [
+              -48.4,
+              286.5
+            ],
+            [
+              -48.8,
+              283.8
+            ],
+            [
+              -42.7,
+              281.1
+            ],
+            [
+              -39.3,
+              279.1
+            ],
+            [
+              -37.2,
+              280.0
+            ],
+            [
+              -36.6,
+              282.2
+            ],
+            [
+              -38.2,
+              284.3
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr vlevo od dráhy, 283 metrů",
+            "en": "a bunker left of the line, 283 metres"
+          }
+        },
+        {
+          "body": [
+            [
+              -16.9,
+              302.3
+            ],
+            [
+              -18.1,
+              301.6
+            ],
+            [
+              -18.8,
+              300.3
+            ],
+            [
+              -18.5,
+              298.8
+            ],
+            [
+              -17.7,
+              297.8
+            ],
+            [
+              -15.6,
+              297.7
+            ],
+            [
+              -14.2,
+              298.7
+            ],
+            [
+              -13.6,
+              300.3
+            ],
+            [
+              -14.3,
+              301.7
+            ],
+            [
+              -15.4,
+              302.2
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr u greenu vlevo",
+            "en": "bunker at the green, left"
+          }
+        },
+        {
+          "body": [
+            [
+              25.4,
+              304.6
+            ],
+            [
+              23.6,
+              303.6
+            ],
+            [
+              23.2,
+              301.7
+            ],
+            [
+              24.7,
+              300.4
+            ],
+            [
+              27.8,
+              300.3
+            ],
+            [
+              29.4,
+              301.8
+            ],
+            [
+              29.5,
+              303.7
+            ],
+            [
+              26.8,
+              304.7
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "bunkr u greenu vpravo",
+            "en": "bunker at the green, right"
+          }
+        },
+        {
+          "body": [
+            [
+              -5.4,
+              331.7
+            ],
+            [
+              -5.0,
+              329.8
+            ],
+            [
+              -6.1,
+              328.4
+            ],
+            [
+              -8.0,
+              328.6
+            ],
+            [
+              -8.7,
+              330.1
+            ],
+            [
+              -8.2,
+              331.7
+            ],
+            [
+              -6.8,
+              332.2
+            ]
+          ],
+          "zkratka": null,
+          "label": {
+            "cs": "malý bunkr uprostřed greenového komplexu",
+            "en": "a small bunker inside the green complex"
+          }
+        }
+      ]
     }
   },
   "prvky": [

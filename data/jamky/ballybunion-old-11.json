@@ -31,16 +31,16 @@
   "vznik": 1893,
   "gps": {
     "tee": [
-      52.49611,
-      -9.67752
+      52.503957,
+      -9.679033
     ],
     "green": [
-      52.49611,
-      -9.67752
+      52.500854,
+      -9.678825
     ],
     "presnost": {
-      "cs": "úroveň areálu, ověřeno v OpenStreetMap (Nominatim) — souřadnice jednotlivých jamek klub nezveřejňuje",
-      "en": "resort-level, verified against OpenStreetMap (Nominatim) — the club does not publish per-hole coordinates"
+      "cs": "souřadnice jednotlivé jamky odečtené ze satelitní mapy objednatelem 23. 8. 2026 Kontrola: přímá vzdálenost odpaliště–green vychází 345 m proti oficiálním 432 m (-20.1 %); u doglegu je přímá vzdálenost kratší než hraná, takže záporná odchylka je očekávaná. Přímá vzdálenost 345 m proti oficiálním 432 m je −20 %. U jamky vedoucí podél útesů to dogleg vysvětlit může, ale je to na hraně; potvrdí to až žebřík odpališť z OSM při kreslení. Green v OSM podle nich ještě přiřazený není — kresba ze skutečných obrysů teprve čeká.",
+      "en": "per-hole coordinates read off a satellite map by the client on 23 Aug 2026. Check: the straight-line tee-to-green distance is 345 m against the official 432 m (-20.1%). The OSM green has not been matched to them yet."
     }
   },
   "otazka": {

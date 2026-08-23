@@ -8,6 +8,38 @@
   "par": 5,
   "delky": [
     {
+      "odpaliste": "Gold (zadní, resort)",
+      "m": 495,
+      "yd": 541,
+      "rok": 2026,
+      "aktualni": true,
+      "poznamka": "Z oficiálního scorecardu resortu (pebblebeach.com/content/uploads/PebbleBeach-Scorecard.pdf, vydání 2026). Par 5, stroke index 5. Celková délka hřiště z Gold 6801 yardů."
+    },
+    {
+      "odpaliste": "Blue",
+      "m": 486,
+      "yd": 531,
+      "rok": 2026
+    },
+    {
+      "odpaliste": "White",
+      "m": 486,
+      "yd": 531,
+      "rok": 2026
+    },
+    {
+      "odpaliste": "Green",
+      "m": 415,
+      "yd": 454,
+      "rok": 2026
+    },
+    {
+      "odpaliste": "Red",
+      "m": 415,
+      "yd": 454,
+      "rok": 2026
+    },
+    {
       "odpaliste": "otevření hřiště",
       "m": 315,
       "yd": 345,
@@ -42,16 +74,16 @@
   "vznik": 1919,
   "gps": {
     "tee": [
-      36.56966,
-      -121.94974
+      36.565565,
+      -121.945225
     ],
     "green": [
-      36.56966,
-      -121.94974
+      36.567622,
+      -121.949632
     ],
     "presnost": {
-      "cs": "úroveň areálu, ověřeno v OpenStreetMap (Nominatim) — souřadnice jednotlivých jamek klub nezveřejňuje",
-      "en": "resort-level, verified against OpenStreetMap (Nominatim) — the club does not publish per-hole coordinates"
+      "cs": "souřadnice jednotlivé jamky odečtené ze satelitní mapy objednatelem 23. 8. 2026 Kontrola: přímá vzdálenost odpaliště–green vychází 455 m proti oficiálním 495 m (-8.1 %); u doglegu je přímá vzdálenost kratší než hraná, takže záporná odchylka je očekávaná. Green v OSM podle nich ještě přiřazený není — kresba ze skutečných obrysů teprve čeká.",
+      "en": "per-hole coordinates read off a satellite map by the client on 23 Aug 2026. Check: the straight-line tee-to-green distance is 455 m against the official 495 m (-8.1%). The OSM green has not been matched to them yet."
     }
   },
   "otazka": {
@@ -59,7 +91,7 @@
     "en": "How do you plan three shots along the ocean so none strays left into the water, when the left side is exactly the shortest, most tempting line to the green?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Oprava 2026-08-19: původní oceánský hazard měl rx:40 (šířka pruhu 80 m), což na kartě vypadalo jako by oceán zabíral skoro celou hrací plochu a přesahoval doprostřed fairwaye. Zúženo na rx:22 a posunuto blíž k levému okraji, aby zůstal realisticky úzký pruh podél levé strany (Stillwater Cove), ne dominantní plocha přes celou kartu. Ostatní prvky (délka, par, bunker vpravo/před greenem, strom ve fairwayi) ověřeny jako správné přes GolfPass a PebbleBeach.com — offcourse.co nebyl použit. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. DOPLNĚNO (2026-08-21): rešerše birdie-book/yardage-book zdrojů (viz poznamky.md) odhalila dvě věci k opravě. (1) Green byl kresleny širší než hluboký (rx14/ry11) — openyardage.com (LiDAR/OSM odvozená data) uvádí opak, hloubka ~26 yd > šířka ~23 yd. Otočeno na rx10.5/ry12. (2) Prameny už dřív zmiňovaly „dvě fairwayové bunkry vpravo od dráhy letu”, ale v `bunkry` chyběly — byla nakreslená jen ta u greenu. Doplněny obě, v pozicích odpovídajících dosahovým rozsahům z openyardage.com (175–226 m a 243–273 m), nezávisle potvrzeným kvalitativně u GolfPass a Spokesman-Review. Zdroj pro obojí: openyardage.com/en/course/pebble-beach-golf-course.html. Nekresleno (mimo rozsah schématu): dva stromy uprostřed fairwaye (cypřiš + sousední borovice, cca 30 m od sebe) — zmíněno v textu níže, ne v geometrii, protože kreslicí knihovna nemá glyf pro strom.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Oprava 2026-08-19: původní oceánský hazard měl rx:40 (šířka pruhu 80 m), což na kartě vypadalo jako by oceán zabíral skoro celou hrací plochu a přesahoval doprostřed fairwaye. Zúženo na rx:22 a posunuto blíž k levému okraji, aby zůstal realisticky úzký pruh podél levé strany (Stillwater Cove), ne dominantní plocha přes celou kartu. Ostatní prvky (délka, par, bunker vpravo/před greenem, strom ve fairwayi) ověřeny jako správné přes GolfPass a PebbleBeach.com — offcourse.co nebyl použit. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. DOPLNĚNO (2026-08-21): rešerše birdie-book/yardage-book zdrojů (viz poznamky.md) odhalila dvě věci k opravě. (1) Green byl kresleny širší než hluboký (rx14/ry11) — openyardage.com (LiDAR/OSM odvozená data) uvádí opak, hloubka ~26 yd > šířka ~23 yd. Otočeno na rx10.5/ry12. (2) Prameny už dřív zmiňovaly „dvě fairwayové bunkry vpravo od dráhy letu”, ale v `bunkry` chyběly — byla nakreslená jen ta u greenu. Doplněny obě, v pozicích odpovídajících dosahovým rozsahům z openyardage.com (175–226 m a 243–273 m), nezávisle potvrzeným kvalitativně u GolfPass a Spokesman-Review. Zdroj pro obojí: openyardage.com/en/course/pebble-beach-golf-course.html. Nekresleno (mimo rozsah schématu): dva stromy uprostřed fairwaye (cypřiš + sousední borovice, cca 30 m od sebe) — zmíněno v textu níže, ne v geometrii, protože kreslicí knihovna nemá glyf pro strom. DOPLNĚNO 23. 8. 2026 (Krok 28): délky ze všech pěti odpališť pocházejí z oficiálního scorecardu resortu; stroke index 5 rovněž. Turnajová vzdálenost 543 yardů (497 m) z US Open zůstává jako samostatný záznam — je to jiné rozestavení odpališť než resortní Gold 541 yardů, ne rozpor. GEOMETRIE SE NEZMĚNILA: scorecard dává jen délky, žádné vzdálenosti k bunkrům ani rozměry greenu. Zkoušel jsem i databázi ProVisualizer, která měřené vzdálenosti k hazardům má, ale její yardage charts jsou přístupné až po odsouhlasení podmínek užití — to za objednatele odklikávat nebudu. Web navíc sám upozorňuje, že jeho satelitní podklady bývají i rok staré a je nutné je ověřit, takže by to stejně nebyl pramen, o který lze kartu opřít.",
     "green": {
       "x": 8,
       "y": 490,

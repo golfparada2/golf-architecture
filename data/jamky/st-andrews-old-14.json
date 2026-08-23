@@ -32,11 +32,17 @@
   },
   "vznik": null,
   "gps": {
-    "tee": null,
-    "green": null,
+    "tee": [
+      56.354944,
+      -2.821185
+    ],
+    "green": [
+      56.351675,
+      -2.816236
+    ],
     "presnost": {
-      "cs": "poloha OLD COURSE ověřena v OpenStreetMap (Nominatim): 56.35191, −2.81621. Souřadnice jednotlivé jamky zatím určené nejsou — v St Andrews je sedm hřišť vedle sebe a v okolí 81 greenů.",
-      "en": "the OLD COURSE location is verified in OpenStreetMap (Nominatim): 56.35191, −2.81621. Per-hole coordinates are not yet determined — there are seven courses side by side at St Andrews and 81 greens nearby."
+      "cs": "souřadnice jednotlivé jamky odečtené ze satelitní mapy objednatelem 23. 8. 2026 (druhý pokus — první mířil na odpaliště čtyřky, která s čtrnáctkou sdílí green). Kontrola: přímá vzdálenost 474 m proti oficiálním 561 m (−15 %), což u téhle jamky sedí. Ověřeno v OpenStreetMap: do 125 m od zadaného odpaliště leží PĚT skutečných odpališť se vzdálenostmi 403 až 582 m k zadanému bodu na greenu. POZOR: green čtvrté a čtrnácté jamky je SPOLEČNÝ a je obrovský, takže vzdálenost závisí na tom, ke kterému jeho konci se měří — přesné zadní odpaliště se určí až při kreslení karty podle shody celého žebříku s oficiálními délkami.",
+      "en": "per-hole coordinates read off a satellite map by the client on 23 Aug 2026 (second attempt — the first pointed at the 4th tee, which shares its green with the 14th). Check: straight-line distance 474 m against the official 561 m (−15%). Note: the 4th and 14th share one very large green, so the distance depends on which end is measured to."
     }
   },
   "otazka": {
