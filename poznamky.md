@@ -2,6 +2,80 @@
 
 Průběžný soubor podle části 15 zadání. Kroky 1–7 hotové.
 
+## Krok 27 — Strojová kontrola konzistence našla systematickou chybu (23. 8. 2026)
+
+Pokračování Kroku 26. Lov na další oficiální diagramy vynesl málo, zato
+**kontrola, kterou jsem mohl udělat kdykoli za poslední týden, našla vadu
+v pěti kartách najednou.**
+
+### Lov na diagramy — hubený
+
+- **Augusta 13:** masters.com per-hole diagram nezveřejňuje, jen flyover.
+  Tahle karta se cestou 2 zpřesnit nedá.
+- **Sawgrass 17:** oficiální článek PGA Tour dává jen turnajová čísla
+  (délky kol 146 / 128 / 146 / 130 yardů, průměry skóre, počty míčů do vody),
+  žádné rozměry greenu ani ostrova.
+- **St Andrews 7 a 14:** oficiální průvodce The Open uvádí u sedmičky
+  Shell Bunker „přibližně 310 yardů od tee" — jenže **karta ho tam už měla**,
+  i se stejnou citací. Rešerše kartu jen potvrdila. U čtrnáctky průvodce
+  vzdálenosti k bunkrům neuvádí vůbec.
+
+### Kontrola, která zabrala
+
+Napadlo mě ověřit něco, co nepotřebuje žádný vnější pramen: **souhlasí
+délka jamky nakreslené na plánu s délkou, kterou tatáž karta uvádí?**
+
+Nejde jen o přímou vzdálenost — u doglegu je hraná délka delší, takže se
+musí počítat **délka oblouku osy fairwaye** (kvadratická Bézierova křivka
+z `fairway.ohyb`). Po přepočtu vyšlo:
+
+| karta | oficiálně | nakresleno | rozdíl |
+|---|---|---|---|
+| Ballybunion Old 11 | 432 m | 381 m | **−12 %** |
+| Pinehurst No. 2 jamka 5 | 538 m | 480 m | **−11 %** |
+| Sand Hills 1 | 502 m | 460 m | **−8 %** |
+| Riviera 10 | 288 m | 270 m | **−6 %** |
+| TPC Sawgrass 17 | 129 m | 121 m | **−6 %** |
+
+U Sawgrass je to **par 3**, kde dogleg rozdíl vysvětlit nemůže.
+
+**Proč to vadí:** plán, který jamku zkracuje o desetinu, zkracuje se stejným
+činitelem i všechny vzdálenosti, které z něj student odečte — polohu bunkrů
+i dopadovou zónu. Karta pak sama sobě protiřečí: v hlavičce tvrdí 538 metrů
+a v kresbě jich má 480.
+
+**Oprava:** všechny podélné souřadnice (green, bunkry, hazardy, dopadová
+zóna, `fairway.zacatek`) přenásobené činitelem tak, aby oblouk odpovídal
+oficiální délce; boční polohy beze změny. Činitele 1,066 až 1,135. Každá
+z pěti karet to má napsané v `tvary.poznamka`. **Po opravě nemá odchylku nad
+5 % ani jedna z osmnácti parametrických karet.**
+
+### A při tom se našla chyba v kreslítku
+
+Kontrola popisků odhalila, že u Sawgrass 17 leží značka měřítka „200 m"
+**mimo plátno**. Příčina byla v `js/platy.js`:
+
+```
+pocet: Math.max(2, Math.floor(nejdelsi / 100)), krokM: 100
+```
+
+`Math.max(2, …)` vynutil u krátké jamky druhou stometrovou značku — tedy
+značku ZA greenem. Na jamce dlouhé 129 m to byla značka „200 m". Krok
+měřítka se teď volí podle délky jamky (100 m nad 260 m, jinak 50 m, pod
+120 m 25 m) a počet značek se z něj počítá, takže značka nikdy neleží dál,
+než kam sahá jamka. Opravilo to i Karlštejn 14 (198 m), kde značka „200 m"
+těsně přesahovala.
+
+> **Poučení: nejlevnější kontrola není hledání nových pramenů, ale otázka,
+> jestli si karta neprotiřečí sama se sebou.** Za sedmadvacet kroků jsem ji
+> nikdy neudělal — a našla pět vadných karet a jednu chybu v kreslítku
+> během několika minut. Stejného druhu byl i nález u Zbraslavi (green o 90 m
+> vedle) a rozpor `tvary` × `poznamka` u Karlštejna 15 v Kroku 22.
+
+**Ověřeno po opravě:** sbírka i lekce 7 bez chyb v konzoli, nula popisků
+mimo plátno, a čísla cvičení v lekcích 5 a 6 se nezměnila (4,45 / 4,62 /
+4,84 / 5,09 a 100 / 80 / 33 %).
+
 ## Krok 26 — Jak zpřesnit skupinu C (23. 8. 2026)
 
 Objednatel se zeptal, jestli u patnácti schematických karet dokážu udělat

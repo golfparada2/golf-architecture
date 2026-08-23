@@ -1118,9 +1118,15 @@ export function vykresliJamku(svg, karta, opts = {}) {
 
   /* --- 9. měřítko po straně ------------------------------------------- */
   const nejdelsi = obrys && obrys.green ? Math.max(...obrys.green.body.map((b) => b[1])) : (t.green ? t.green.y : 0);
+  /* Krok měřítka se volí podle délky jamky. Dřív tu bylo natvrdo 100 m
+     a `Math.max(2, …)`, což na krátké jamce vynutilo druhou značku ZA
+     greenem: par 3 dlouhá 129 m dostala značku „200 m", která spadla mimo
+     plátno (past nalezená strojovou kontrolou v Kroku 27). Značka nikdy
+     nesmí ležet dál, než kam sahá jamka. */
+  const krokM = nejdelsi >= 260 ? 100 : (nejdelsi >= 120 ? 50 : 25);
   meritkoPoStrane(svg, {
     x: m.minX - padL + 5, dole: ty0, meritkoY: m.meritkoY,
-    pocet: Math.max(2, Math.floor(nejdelsi / 100)), krokM: 100,
+    pocet: Math.max(1, Math.floor(nejdelsi / krokM)), krokM,
   });
 
   return m;

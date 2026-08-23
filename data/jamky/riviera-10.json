@@ -46,12 +46,12 @@
     "en": "Do you risk driving straight at a small, angled green ringed by bunkers, or lay up short and trust a precise wedge?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Opraveno 2026-08-19: dosavadní fairwayový bunker (rx=14) byl vůči greenu neúměrně velký a navíc uprostřed osy hry, přitom více zdrojů (Golf.com, Yardbarker) shodně popisuje jeden velký fairwayový bunker po LEVÉ straně přistávací zóny, ne uprostřed. Greenside bunkery jsou podle zdrojů (Yardbarker, Golf Digest/Shackelford) soustředěny hlavně vpravo od greenu (přední i zadní), proto přidán třetí, menší bunker vzadu vpravo; bunker vlevo od greenu ponechán jako menší, méně dominantní hazard. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. OVĚŘENO (2026-08-21): The Fried Egg potvrzuje, že green je téměř v pravém úhlu k ose hry a Golf Digest (Scott Fawcett/DECADE) popisuje diagonální sklon greenu předek-vpravo k zadku-vlevo — souhlasí se stávajícím rot:0.6. Přesný počet a rozměry bunkerů se mezi zdroji různí (jeden komerční zdroj uvádí 8 bunkerů celkem, bez rozpisu) — ponecháno schematicky, jak už poznámka výše popisuje.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Opraveno 2026-08-19: dosavadní fairwayový bunker (rx=14) byl vůči greenu neúměrně velký a navíc uprostřed osy hry, přitom více zdrojů (Golf.com, Yardbarker) shodně popisuje jeden velký fairwayový bunker po LEVÉ straně přistávací zóny, ne uprostřed. Greenside bunkery jsou podle zdrojů (Yardbarker, Golf Digest/Shackelford) soustředěny hlavně vpravo od greenu (přední i zadní), proto přidán třetí, menší bunker vzadu vpravo; bunker vlevo od greenu ponechán jako menší, méně dominantní hazard. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. OVĚŘENO (2026-08-21): The Fried Egg potvrzuje, že green je téměř v pravém úhlu k ose hry a Golf Digest (Scott Fawcett/DECADE) popisuje diagonální sklon greenu předek-vpravo k zadku-vlevo — souhlasí se stávajícím rot:0.6. Přesný počet a rozměry bunkerů se mezi zdroji různí (jeden komerční zdroj uvádí 8 bunkerů celkem, bez rozpisu) — ponecháno schematicky, jak už poznámka výše popisuje. OPRAVENO 23. 8. 2026 (Krok 27): plán kreslil jamku o 6.2 % KRATŠÍ, než je její oficiální délka — délka oblouku osy fairwaye vycházela 270 m proti oficiálním 288 m. Všechny podélné souřadnice (green, bunkry, hazardy, dopadová zóna) jsou proto přenásobené činitelem 1.066, aby oblouk odpovídal skutečné délce. Boční polohy se nezměnily. Chyba se našla strojovou kontrolou vnitřní konzistence všech karet, ne novým pramenem — schematický plán nesmí být ve sporu s číslem, které tatáž karta uvádí jako délku jamky.",
     "green": {
       "x": 4,
-      "y": 270,
+      "y": 287.8,
       "rx": 10,
-      "ry": 7,
+      "ry": 7.5,
       "rot": 0.6,
       "seed": 1901,
       "amp": 0.07
@@ -59,7 +59,7 @@
     "bunkry": [
       {
         "x": -8,
-        "y": 265,
+        "y": 282.5,
         "rx": 5,
         "ry": 4,
         "rot": 0.4,
@@ -76,7 +76,7 @@
       },
       {
         "x": 15,
-        "y": 268,
+        "y": 285.7,
         "rx": 5,
         "ry": 4,
         "rot": -0.3,
@@ -93,7 +93,7 @@
       },
       {
         "x": 13,
-        "y": 278,
+        "y": 296.4,
         "rx": 4,
         "ry": 3,
         "rot": -0.15,
@@ -110,7 +110,7 @@
       },
       {
         "x": -9,
-        "y": 182,
+        "y": 194.0,
         "rx": 6,
         "ry": 4,
         "rot": 0.1,
@@ -131,12 +131,12 @@
       "ohyb": 10,
       "sirkaTee": 34,
       "sirkaGreen": 30,
-      "zacatek": 20,
+      "zacatek": 21,
       "seed": 4104
     },
     "dopadovaZona": {
-      "od": 180,
-      "do": 225
+      "od": 192,
+      "do": 240
     }
   },
   "prvky": [

@@ -58,12 +58,12 @@
     "en": "Where can you even aim on a crowned green when more than half its area has a slope no ball will hold?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kresba záměrně ukazuje to, co je na téhle jamce podstatné: plochu KOLEM greenu. Sběrná plocha vlevo je nakreslená jako plošný útvar typu „rough“, protože přesný obrys žádný pramen neuvádí — doložené je jen to, že míč minutý vlevo se nezastaví dřív než u odpaliště čtvrté jamky, tedy zhruba 46 metrů daleko (Golf Digest). Vypouklost greenu (spád na všechny strany od středu) je jádro téhle jamky a půdorys ji zobrazit neumí; popisuje ji text karty a plát v sekci 1 lekce. NEDOHLEDÁNO: výška vypouklosti v centimetrech, přesný počet greenside bunkrů (prameny mluví o jednom velkém vlevo, jeden zdroj o „bunkrech“ v množném čísle) a přesný obrys fairwayového bunkru. Poloha fairwayového bunkru vychází z údaje resortu, že jeho přelet vyžaduje ze zadního odpaliště 290–300 yardů.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kresba záměrně ukazuje to, co je na téhle jamce podstatné: plochu KOLEM greenu. Sběrná plocha vlevo je nakreslená jako plošný útvar typu „rough“, protože přesný obrys žádný pramen neuvádí — doložené je jen to, že míč minutý vlevo se nezastaví dřív než u odpaliště čtvrté jamky, tedy zhruba 46 metrů daleko (Golf Digest). Vypouklost greenu (spád na všechny strany od středu) je jádro téhle jamky a půdorys ji zobrazit neumí; popisuje ji text karty a plát v sekci 1 lekce. NEDOHLEDÁNO: výška vypouklosti v centimetrech, přesný počet greenside bunkrů (prameny mluví o jednom velkém vlevo, jeden zdroj o „bunkrech“ v množném čísle) a přesný obrys fairwayového bunkru. Poloha fairwayového bunkru vychází z údaje resortu, že jeho přelet vyžaduje ze zadního odpaliště 290–300 yardů. OPRAVENO 23. 8. 2026 (Krok 27): plán kreslil jamku o 10.8 % KRATŠÍ, než je její oficiální délka — délka oblouku osy fairwaye vycházela 480 m proti oficiálním 538 m. Všechny podélné souřadnice (green, bunkry, hazardy, dopadová zóna) jsou proto přenásobené činitelem 1.121, aby oblouk odpovídal skutečné délce. Boční polohy se nezměnily. Chyba se našla strojovou kontrolou vnitřní konzistence všech karet, ne novým pramenem — schematický plán nesmí být ve sporu s číslem, které tatáž karta uvádí jako délku jamky.",
     "green": {
       "x": 0,
-      "y": 480,
+      "y": 537.9,
       "rx": 12,
-      "ry": 11,
+      "ry": 12.3,
       "rot": 0.1,
       "seed": 3401,
       "amp": 0.07
@@ -71,7 +71,7 @@
     "bunkry": [
       {
         "x": -17,
-        "y": 470,
+        "y": 526.7,
         "rx": 5,
         "ry": 4,
         "rot": 0.2,
@@ -88,7 +88,7 @@
       },
       {
         "x": 13,
-        "y": 272,
+        "y": 304.8,
         "rx": 5,
         "ry": 7,
         "rot": 0.05,
@@ -105,7 +105,7 @@
       {
         "typ": "sberna",
         "x": -28,
-        "y": 462,
+        "y": 517.7,
         "rx": 12,
         "ry": 10,
         "rot": 0.1,
@@ -123,7 +123,7 @@
       {
         "typ": "sberna",
         "x": 18,
-        "y": 492,
+        "y": 551.3,
         "rx": 8,
         "ry": 6,
         "rot": -0.2,
@@ -140,12 +140,12 @@
       "ohyb": 10,
       "sirkaTee": 34,
       "sirkaGreen": 30,
-      "zacatek": 20,
+      "zacatek": 22,
       "seed": 4112
     },
     "dopadovaZona": {
-      "od": 240,
-      "do": 285
+      "od": 269,
+      "do": 319
     }
   },
   "prvky": [

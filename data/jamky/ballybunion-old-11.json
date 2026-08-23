@@ -48,12 +48,12 @@
     "en": "Where does the cliff edge run, and where do natural hollows in the dunes punish a bad shot on their own — so the architect doesn't need to build a single bunker?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Jamka záměrně nemá žádný bunkr — hazardem je terén samotný, viz pole hazardy. Strana útesu/OB opravena na pravou (viz poznámka v kroku ověřování) podle popisu hry podél pobřeží ve zdrojích golfcoursegurus.com a thegolfarchitects.com. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. OVĚŘENO (2026-08-21): absence bunkerů na téhle jamce nezávisle potvrzují čtyři zdroje (LINKS Magazine výslovně: „ani jeden bunker nebyl potřeba”; Golf Course Gurus, golffeatures.com, National Club Golfer) — jamku brání jen terén. Green podle golffeatures.com měří cca 4 482 čtverečních stop (≈ 416 m²) a nájezd vede úzkou mezerou mezi dvěma dunami — current tvar greenu (rx10/ry8) je spíš menší než tahle hodnota napovídá, ale rozdíl je v rámci schematické tolerance.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). Jamka záměrně nemá žádný bunkr — hazardem je terén samotný, viz pole hazardy. Strana útesu/OB opravena na pravou (viz poznámka v kroku ověřování) podle popisu hry podél pobřeží ve zdrojích golfcoursegurus.com a thegolfarchitects.com. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. OVĚŘENO (2026-08-21): absence bunkerů na téhle jamce nezávisle potvrzují čtyři zdroje (LINKS Magazine výslovně: „ani jeden bunker nebyl potřeba”; Golf Course Gurus, golffeatures.com, National Club Golfer) — jamku brání jen terén. Green podle golffeatures.com měří cca 4 482 čtverečních stop (≈ 416 m²) a nájezd vede úzkou mezerou mezi dvěma dunami — current tvar greenu (rx10/ry8) je spíš menší než tahle hodnota napovídá, ale rozdíl je v rámci schematické tolerance. OPRAVENO 23. 8. 2026 (Krok 27): plán kreslil jamku o 11.9 % KRATŠÍ, než je její oficiální délka — délka oblouku osy fairwaye vycházela 381 m proti oficiálním 432 m. Všechny podélné souřadnice (green, bunkry, hazardy, dopadová zóna) jsou proto přenásobené činitelem 1.135, aby oblouk odpovídal skutečné délce. Boční polohy se nezměnily. Chyba se našla strojovou kontrolou vnitřní konzistence všech karet, ne novým pramenem — schematický plán nesmí být ve sporu s číslem, které tatáž karta uvádí jako délku jamky.",
     "green": {
       "x": 10,
-      "y": 380,
+      "y": 431.3,
       "rx": 10,
-      "ry": 8,
+      "ry": 9.1,
       "rot": -0.3,
       "seed": 2201,
       "amp": 0.09
@@ -63,7 +63,7 @@
       {
         "typ": "duny",
         "x": 22,
-        "y": 200,
+        "y": 227.0,
         "rx": 16,
         "ry": 60,
         "rot": -0.15,
@@ -81,7 +81,7 @@
       {
         "typ": "OB",
         "x": 55,
-        "y": 250,
+        "y": 283.8,
         "rx": 8,
         "ry": 220,
         "rot": 0,
@@ -101,12 +101,12 @@
       "ohyb": -14,
       "sirkaTee": 34,
       "sirkaGreen": 26,
-      "zacatek": 30,
+      "zacatek": 34,
       "seed": 4101
     },
     "dopadovaZona": {
-      "od": 200,
-      "do": 250
+      "od": 227,
+      "do": 284
     }
   },
   "prvky": [

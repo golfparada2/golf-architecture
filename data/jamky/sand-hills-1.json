@@ -46,12 +46,12 @@
     "en": "Which way does the wind cross the dunes, and where does a natural hollow appear that a green can simply sit in, without moving any earth?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). OPRAVENO 2026-08-19: podle All Golf Holes (samostatná stránka jamky 1) má green plochu cca 3966 sq ft ve tvaru spíš úzkého a hlubokého oválu (cca 18×33 yardů, tj. přibližně rx≈8 m, ry≈11 m) — původní tvar byl širší než hluboký, což neodpovídalo realitě. Zásadnější chyba byla u bunkrů: hřiště má na jamce 1 celkem 6 bunkrů a několik zdrojů (Golf Club Atlas, GolfCourseGurus, All Golf Holes) nezávisle popisuje, že green je „perched between artistic and challenging bunkers“ a bunkry se koncentrují až u greenu (All Golf Holes uvádí bunkry na 529 yardech z 549 — tedy těsně před greenem, ohrožují druhý/třetí úder). Původní tvary měly OBA bunkry jen v prostoru dojezdu prvního úderu (y=300–340 m) a u greenu nebyl žádný — doplněny 2 menší bunkry lemující green, velikost bunkrů v dojezdové zóně zároveň zmenšena na doporučený rozsah (rx 3–6), protože rx=9 bylo nepřiměřeně velké. Zdroje: allgolfholes.com/courses/nebraska/sand-hills-golf-club/1st-hole, golfclubatlas.com/countries/sand-hills, golfcoursegurus.com/reviews/sand-hills-golf-club. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. OVĚŘENO (2026-08-21): „amfiteátrové” osazení greenu mezi dunami nezávisle potvrzují Golf Club Atlas i Planet Golf (dva na sobě nezávislé zdroje, shodná formulace „malý plošinový green v přírodním amfiteátru”). Přesná šířka fairwaye a přesná strana (levá/pravá) klíčového fairwayového bunkeru u odpalu se mezi zdroji liší a nedala se sjednotit — ponecháno schematicky (bunkery na obou stranách), jak už je nakresleno.",
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Kreslí se přes js/platy.js blob(). OPRAVENO 2026-08-19: podle All Golf Holes (samostatná stránka jamky 1) má green plochu cca 3966 sq ft ve tvaru spíš úzkého a hlubokého oválu (cca 18×33 yardů, tj. přibližně rx≈8 m, ry≈11 m) — původní tvar byl širší než hluboký, což neodpovídalo realitě. Zásadnější chyba byla u bunkrů: hřiště má na jamce 1 celkem 6 bunkrů a několik zdrojů (Golf Club Atlas, GolfCourseGurus, All Golf Holes) nezávisle popisuje, že green je „perched between artistic and challenging bunkers“ a bunkry se koncentrují až u greenu (All Golf Holes uvádí bunkry na 529 yardech z 549 — tedy těsně před greenem, ohrožují druhý/třetí úder). Původní tvary měly OBA bunkry jen v prostoru dojezdu prvního úderu (y=300–340 m) a u greenu nebyl žádný — doplněny 2 menší bunkry lemující green, velikost bunkrů v dojezdové zóně zároveň zmenšena na doporučený rozsah (rx 3–6), protože rx=9 bylo nepřiměřeně velké. Zdroje: allgolfholes.com/courses/nebraska/sand-hills-golf-club/1st-hole, golfclubatlas.com/countries/sand-hills, golfcoursegurus.com/reviews/sand-hills-golf-club. Fairway, linie hry a dopadová zóna jsou rovněž schematické — tvar stuhy je dán parametrem `fairway.ohyb` (boční posun řídicího bodu v metrech), ne zaměřením. OVĚŘENO (2026-08-21): „amfiteátrové” osazení greenu mezi dunami nezávisle potvrzují Golf Club Atlas i Planet Golf (dva na sobě nezávislé zdroje, shodná formulace „malý plošinový green v přírodním amfiteátru”). Přesná šířka fairwaye a přesná strana (levá/pravá) klíčového fairwayového bunkeru u odpalu se mezi zdroji liší a nedala se sjednotit — ponecháno schematicky (bunkery na obou stranách), jak už je nakresleno. OPRAVENO 23. 8. 2026 (Krok 27): plán kreslil jamku o 8.3 % KRATŠÍ, než je její oficiální délka — délka oblouku osy fairwaye vycházela 460 m proti oficiálním 502 m. Všechny podélné souřadnice (green, bunkry, hazardy, dopadová zóna) jsou proto přenásobené činitelem 1.09, aby oblouk odpovídal skutečné délce. Boční polohy se nezměnily. Chyba se našla strojovou kontrolou vnitřní konzistence všech karet, ne novým pramenem — schematický plán nesmí být ve sporu s číslem, které tatáž karta uvádí jako délku jamky.",
     "green": {
       "x": 2,
-      "y": 460,
+      "y": 501.6,
       "rx": 8,
-      "ry": 11,
+      "ry": 12.0,
       "rot": 0.1,
       "seed": 2101,
       "amp": 0.08
@@ -59,7 +59,7 @@
     "bunkry": [
       {
         "x": -18,
-        "y": 300,
+        "y": 327.1,
         "rx": 6,
         "ry": 4,
         "rot": 0.5,
@@ -76,7 +76,7 @@
       },
       {
         "x": 20,
-        "y": 340,
+        "y": 370.8,
         "rx": 5,
         "ry": 3.5,
         "rot": -0.4,
@@ -93,7 +93,7 @@
       },
       {
         "x": -13,
-        "y": 440,
+        "y": 479.8,
         "rx": 5,
         "ry": 3.5,
         "rot": 0.3,
@@ -110,7 +110,7 @@
       },
       {
         "x": 15,
-        "y": 448,
+        "y": 488.5,
         "rx": 4.5,
         "ry": 3,
         "rot": -0.35,
@@ -131,12 +131,12 @@
       "ohyb": -16,
       "sirkaTee": 40,
       "sirkaGreen": 30,
-      "zacatek": 25,
+      "zacatek": 27,
       "seed": 4105
     },
     "dopadovaZona": {
-      "od": 250,
-      "do": 305
+      "od": 273,
+      "do": 333
     }
   },
   "prvky": [
