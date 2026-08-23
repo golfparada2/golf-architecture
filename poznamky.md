@@ -2,6 +2,144 @@
 
 Průběžný soubor podle části 15 zadání. Kroky 1–7 hotové.
 
+## Krok 23 — Lekce 7: Kam hazard patří (22. 8. 2026)
+
+Sedmá lekce ze sedmnácti, postavená stejným vzorem jako 4–6, plus **tři nové
+karty jamek** (sbírka 17 → 20) a **pět nových pojmů** ve slovníčku (57 → 62).
+
+### Co lekce učí a proč zrovna tohle
+
+**Lekce 1 už interaktivní plát „Kam patří bunkr" má** — student v ní klepnutím
+umístí bunkr, pustí sto hráčů a dostane verdikt trest / strategie / dekorace.
+Lekce 7 to tedy nesmí opakovat. Zjistil jsem to až při psaní, a zachránilo to
+lekci před tím, aby byla jen delší verzí něčeho hotového.
+
+Lekce 1 řeší **jak daleko od odpaliště**. Lekce 7 bere zbylé dva rozměry:
+
+1. **Kam napříč fairwayí** (sekce 1) — a to je věc, kterou lekce 1 vůbec
+   neřeší.
+2. **Ke které ráně v pořadí** (sekce 4) — hazard nepatří jamce, ale konkrétní
+   ráně, a u každého hráče jiné.
+
+### Sekce 1 — plát „Stejný písek, jiná otázka"
+
+Tři varianty jedné jamky se **stejným množstvím písku ve stejných
+vzdálenostech**; mění se jen poloha napříč. Čísla se **nesimulují, počítají
+se analyticky** z rozptylu odpalu (dvourozměrné normální rozdělení,
+`sigLong` × `sigLat`): podíl je součin dvou pravděpodobností, průměrná
+odchylka chycené rány je střední hodnota useknutého normálního rozdělení.
+
+Výsledek, kvůli kterému plát existuje:
+
+| varianta | do písku (HCP 0 … 24) | průměrná odchylka chycené rány |
+|---|---|---|
+| u okrajů | 19,8 / 23,2 / 16,0 / 6,9 % | **18,7 m od osy** |
+| uprostřed | 31,0 / 28,9 / 18,1 / 7,5 % | **7,9 m od osy** |
+| za dopadem | 0,00 % u všech | — |
+
+**Stejný písek, ale u kraje chytá rány skoro dvacet metrů od osy, uprostřed
+rány osm metrů od osy.** To je celá lekce ve dvou číslech: bunkr u kraje
+trestá nepovedené rány, bunkr uprostřed se ptá povedených.
+
+### Sekce 4 — simulace, která vyšla jinak, než jsem čekal
+
+Par 5 s příčným bunkrem 99 m před greenem (jediné doložené číslo z karty
+St Andrews 14 — Hell Bunker leží 108 yardů před greenem). Dvě strategie:
+hráč hazard bere na sebe, nebo před něj pokaždé položí. 1500 kol na
+kombinaci, semínko `rng(7700 + i*10)`.
+
+**Co vyšlo dobře:** komu hazard patří. HCP 0 do něj dopadne v **50 %** kol a
+vždycky **druhou** ranou. HCP 9 ho potká ve **2 %** — jeho druhá rána končí
+před ním a třetí ho přeletí. HCP 18 a 24 ho řeší až **třetí** ranou, hráč 24
+v **29 %** kol. Jeden hazard, čtyři různé role. Přesně to, co má lekce učit.
+
+**Co nevyšlo:** rozdíl mezi „přeletět" a „položit" je 0,02–0,03 rány, tedy
+**pod hranicí šumu**, kterou si karta sama stanovila na 0,05. Příčina je v
+modelu: `LEZENI.bunkr` dává fairwayovému bunkru jen horší rozptyl (1,6×) a
+kratší dosah (0,75×), ne ztracenou ránu. Z bunkru 85 m od greenu se pořád
+dohraje na green.
+
+**Neopravoval jsem to.** `LEZENI` pochází ze zadání (část 8) a je sdílené se
+všemi ostatními lekcemi — přepsat ho kvůli jedné lekci by tiše změnilo čísla
+v lekcích 4, 5 i 6. Místo toho **závěr sekce říká nahlas, že se model a
+skutečnost rozcházejí, a proč**: skutečný Hell Bunker má stěnu, ze které se
+hraje do strany, a to model neumí. Z výsledku se tedy smí číst „komu hazard
+patří", ale ne „layup je zbytečný".
+
+> **Poučení: když simulace vyjde jinak, než měla, je to buď nález, nebo vada
+> modelu — a rozdíl mezi tím se musí napsat do textu, ne zamést pod koberec.**
+> Tady je to obojí: nález (komu hazard patří) i vada (cena za bunkr).
+
+### Tři nové karty
+
+**Woking 4 (Anglie).** Místo, kde středový bunkr vznikl — John Low a Stuart
+Paton, 1901. Klub sám na své stránce o architektuře mluví o „(v té době
+kontroverzním) zavedení středových fairwayových bunkerů na 4. jamce", takže
+klíčový fakt má primární pramen. **Co karta netvrdí:** kdo navrhl původní
+hřiště a v kterém roce klub vznikl — ani jedno se mi ověřit nepodařilo.
+Délka je 352 yardů podle National Club Golfer proti 350 podle Golf Club
+Atlas; karta rozdíl přiznává a POZOR — stránka National Club Golfer v době
+psaní vracela 404, takže její obsah ověřený není, jen titulek z vyhledávání.
+
+**St Andrews Old 14 („Long").** Vybraná kvůli dvěma doloženým vzdálenostem:
+Beardies začínají 240 a končí 285 yardů od odpaliště, Hell Bunker leží 108
+yardů před greenem. To jsou přesně ta čísla, na kterých stojí sekce 4. Je to
+druhá jamka z Old Course ve sbírce (vedle sedmičky) — vědomě, protože žádná
+jiná jamka nemá rozmístění hazardů tak dobře zdokumentované.
+
+**Albatross 15 (Česko).** Keith Preston, 2009. Klub publikuje popis, ve kterém
+doslova stojí: **„2 bunkery uprostřed dělí fervej na levou a pravou část."**
+To je Wokingův princip o 108 let později na českém hřišti — a je to páteř
+sekce 3. Délky 412 / 390 / 364 / 327 / 296 m a S.I. 11 jsou z klubu.
+
+### Co se nepovedlo a je to otevřené
+
+1. **Plánek Albatrossu jsem neodečetl.** Klub grafiku jamky zveřejňuje
+   (`albatross.cz/images/jamky/jamka15.png`), ale prohlížeč, kterým obrázky
+   prohlížím, v době psaní přestal reagovat — snímkování obrazovky i
+   `javascript_tool` opakovaně vypršely. Polohy bunkrů na kartě jsou proto
+   odhad podle textu, ne měření. **Je to první věc, kterou u téhle karty
+   doplnit.**
+2. **GPS všech tří nových karet je NEURČENÁ.** Nominatim je z prostředí
+   zakázaný v `robots.txt`, Wikipedie je „cache-only", a prohlížeč nefungoval.
+   Karty to říkají výslovně místo toho, aby si souřadnice vymyslely.
+3. **Albatross v OpenStreetMap jsem neprověřil** — ze stejného důvodu. Kdyby
+   zmapovaný byl, mohla by být třetí kartou kreslenou ze skutečných obrysů.
+
+### Pasti, které to odhalilo
+
+- **Nová lekce potřebuje z předchozího slovníku zkopírovat celý sdílený
+  boilerplate**, ne jen sekce: `nav.dalsi/predchozi/krok/dalsiLekce/
+  konecKurzu/klavesniNapoveda`, `toc.zacit/pokracovat`, `temata.*`,
+  `zkouska.pasmo.*` a `zkouska.souhrn.*`. Bez nich spadne KAŽDÁ stránka
+  lekce na `Cannot read properties of undefined (reading 'replace')` —
+  chyba se přitom neprojeví na `index.html`, takže se dá snadno přehlédnout.
+- **`zkouska.pasmo` je ale text VLASTNÍ lekci.** Zkopírovaný z lekce 6
+  gratuloval studentovi ke green komplexům a posílal ho na lekci 7. Zjistilo
+  se to až proklikáním celé zkoušky Playwrightem — statická kontrola klíčů
+  by to nenašla, protože klíč existoval a nebyl prázdný.
+- **Zkouškové otázky se musí klikat s čerstvým lokátorem** — po každé volbě
+  se `#zQuiz` překreslí a dřív získané `elementHandle` přestanou být v DOM.
+- **Popisek u prvku, kolem kterého se tlačí tečky simulace, se nekreslí.**
+  U příčného bunkru v sekci 4 se „99 M PŘED GREENEM" překrývalo s dopady;
+  odstranil jsem popisek, ne tečky (pravidlo z Kroku 9 — zkracuj nebo ruš
+  text, prvky neposouvej).
+- **Dva pásy písku 1 m od osy vypadají jako jeden bunkr.** Posunul jsem je na
+  3 m, aby mezi nimi byla vidět tráva; čísla se tím posunula z 5,9 na 7,9 m
+  odchylky, verdikt zůstal stejný.
+
+### Ověřeno před dodáním
+
+Playwright přes lokální server: **všech 8 stránek lekce 7 česky i anglicky —
+nula chyb v konzoli, nula nevyplněných překladových klíčů.** Proklikány
+všechny tři varianty plátu v sekci 1 i všichni čtyři hráči v sekci 4. Celá
+zkouška vyplněná správnými odpověďmi dává 100/100 a hlásí správné pásmo.
+Rozcestník, sbírka (20 karet), slovníček a zkouška lekce 6 bez chyb.
+
+**Regrese ověřena:** lekce 6 sekce 1 dává pořád 100 / 80 / 33 % a praporek 2
+pro HCP 0 pořád 36 %; lekce 5 při nulové odvaze pořád 4,45 / 4,62 / 4,84 /
+5,09. Nic z toho se nezměnilo.
+
 ## Krok 22 — Karlštejn 15 ze zaměřených dat (22. 8. 2026)
 
 **Druhá karta kurzu kreslená ze skutečných obrysů.** `karlstejn-15.json` má

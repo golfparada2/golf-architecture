@@ -1,0 +1,224 @@
+{
+  "verze": 1,
+  "id": "albatross-15",
+  "hriste": "Albatross Golf Resort",
+  "zeme": "CZ",
+  "jamka": 15,
+  "nazev": null,
+  "par": 4,
+  "delky": [
+    {
+      "odpaliste": "černé",
+      "m": 412,
+      "yd": 451,
+      "rok": null,
+      "aktualni": true
+    },
+    {
+      "odpaliste": "modré",
+      "m": 390,
+      "yd": 427,
+      "rok": null
+    },
+    {
+      "odpaliste": "bílé",
+      "m": 364,
+      "yd": 398,
+      "rok": null
+    },
+    {
+      "odpaliste": "žluté",
+      "m": 327,
+      "yd": 358,
+      "rok": null
+    },
+    {
+      "odpaliste": "červené",
+      "m": 296,
+      "yd": 324,
+      "rok": null,
+      "poznamka": "Všech pět délek i stroke index 11 uvádí klub na stránce jamky."
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "Keith Preston",
+      "en": "Keith Preston"
+    },
+    "jistota": "jistá",
+    "poznamka": {
+      "cs": "Klub uvádí doslova: „Mistrovské hřiště z pera uznávaného anglického architekta Keithe Prestona bylo slavnostně otevřeno v roce 2009.“",
+      "en": "The club states: „The championship course, designed by the respected English architect Keith Preston, was opened in 2009.“"
+    }
+  },
+  "vznik": 2009,
+  "gps": {
+    "tee": null,
+    "green": null,
+    "presnost": {
+      "cs": "NEURČENO — vyhledávání v OpenStreetMap nebylo v době psaní karty dostupné.",
+      "en": "NOT DETERMINED — the OpenStreetMap search was not reachable when this card was written."
+    }
+  },
+  "otazka": {
+    "cs": "Vezmeš si širokou pravou stranu a dlouhou ránu na green, nebo úzkou levou a krátkou?",
+    "en": "Do you take the wide right side and a long approach, or the narrow left one and a short approach?"
+  },
+  "tvary": {
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od černého odpaliště (412 m). Rozvržení vychází z oficiálního popisu jamky na webu klubu (dogleg doleva, dva bunkery uprostřed fairwaye, které ji dělí na levou a pravou část, green s bunkery vpravo, vlevo i vzadu, úzký green). Klub zveřejňuje i grafiku jamky (albatross.cz/images/jamky/jamka15.png), ALE VZDÁLENOSTI Z NÍ ODEČTENÉ NEJSOU — prohlížeč, kterým obrázky prohlížím, byl v době psaní karty nedostupný. Polohy bunkrů a míra ohybu jsou proto odhad podle textu, ne měření.",
+    "fairway": {
+      "ohyb": -60,
+      "sirkaTee": 40,
+      "sirkaGreen": 26,
+      "zacatek": 20,
+      "seed": 5301
+    },
+    "green": {
+      "x": -2,
+      "y": 400,
+      "rx": 8,
+      "ry": 11,
+      "rot": -0.25,
+      "seed": 5302,
+      "amp": 0.07
+    },
+    "zkraceni": 0.8,
+    "maxPomer": 1.7,
+    "bunkry": [
+      {
+        "x": -34,
+        "y": 232,
+        "rx": 5,
+        "ry": 4,
+        "rot": 0.2,
+        "seed": 5303,
+        "amp": 0.17,
+        "zkratka": {
+          "cs": "STŘED",
+          "en": "CENTRE"
+        },
+        "label": {
+          "cs": "první ze dvou bunkerů uprostřed fairwaye, které ji dělí na levou a pravou část",
+          "en": "the first of the two bunkers in the middle of the fairway that split it into a left and a right side"
+        }
+      },
+      {
+        "x": -24,
+        "y": 249,
+        "rx": 4.5,
+        "ry": 3.5,
+        "rot": -0.1,
+        "seed": 5304,
+        "amp": 0.17,
+        "zkratka": null,
+        "label": {
+          "cs": "druhý středový bunkr",
+          "en": "the second central bunker"
+        }
+      },
+      {
+        "x": 11,
+        "y": 396,
+        "rx": 4,
+        "ry": 3,
+        "rot": 0.25,
+        "seed": 5305,
+        "amp": 0.16,
+        "zkratka": null,
+        "label": {
+          "cs": "bunkr vpravo od greenu",
+          "en": "bunker right of the green"
+        }
+      },
+      {
+        "x": -16,
+        "y": 398,
+        "rx": 3.6,
+        "ry": 2.8,
+        "rot": -0.2,
+        "seed": 5306,
+        "amp": 0.16,
+        "zkratka": null,
+        "label": {
+          "cs": "bunkr vlevo od greenu",
+          "en": "bunker left of the green"
+        }
+      },
+      {
+        "x": -3,
+        "y": 415,
+        "rx": 4,
+        "ry": 3,
+        "rot": 0.1,
+        "seed": 5307,
+        "amp": 0.16,
+        "zkratka": null,
+        "label": {
+          "cs": "bunkr za greenem",
+          "en": "bunker behind the green"
+        }
+      }
+    ],
+    "dopadovaZona": {
+      "od": 215,
+      "do": 265
+    }
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Dvě fairwaye místo jedné",
+        "en": "Two fairways instead of one"
+      },
+      "popis": {
+        "cs": "Klub to píše sám: „2 bunkery uprostřed dělí fervej na levou a pravou část.“ To není zúžená jamka — jsou to dvě jamky vedle sebe a ty si mezi nimi vybíráš už na odpališti.",
+        "en": "The club says it itself: two bunkers in the middle divide the fairway into a left and a right part. This is not a narrowed hole — it is two holes side by side, and you choose between them on the tee."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Vpravo místo, vlevo zkratka",
+        "en": "Room on the right, a short cut on the left"
+      },
+      "popis": {
+        "cs": "Pravá strana je podle klubu „velkorysá dopadová zóna, avšak následně dlouhá rána na grýn“. Levá nabízí „možnost kratší cesty, avšak za cenu úzké ferveje“. Jamka je dogleg doleva, takže levá strana zkracuje i úhel.",
+        "en": "The right side is, in the club's words, a generous landing zone followed by a long shot to the green. The left offers a shorter route at the price of a narrow fairway. The hole is a dogleg left, so the left side shortens the angle as well."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Úzký green účet dorovná",
+        "en": "The narrow green settles the account"
+      },
+      "popis": {
+        "cs": "Green je úzký a obklopený bunkry vpravo, vlevo i vzadu. Kdo si vzal bezpečnou pravou stranu, přichází dlouhou holí na malý cíl — a přesně tam se rozhodnutí z odpaliště promítne do skóre.",
+        "en": "The green is narrow and ringed by bunkers right, left and behind. The player who took the safe right side arrives with a long club at a small target — and that is where the decision made on the tee shows up in the score."
+      }
+    }
+  ],
+  "prameny": [
+    {
+      "titul": "Albatross Golf Resort — jamka č. 15",
+      "url": "https://albatross.cz/cs/golfove-hriste-albatross/o-hristi/jamka-c-15",
+      "poznamka": "primární pramen: par 4, S.I. 11, délky 412 / 390 / 364 / 327 / 296 m a celý popis jamky včetně věty o dvou bunkerech uprostřed fairwaye."
+    },
+    {
+      "titul": "Albatross Golf Resort — o hřišti (architekt a rok otevření)",
+      "url": "https://albatross.cz/cs/golfove-hriste-albatross/o-hristi",
+      "poznamka": "zdroj údaje o Keithu Prestonovi a roce 2009."
+    },
+    {
+      "titul": "Albatross Golf Resort — grafika jamky 15",
+      "url": "https://albatross.cz/images/jamky/jamka15.png",
+      "poznamka": "oficiální plánek jamky. NEODEČTENO — v době psaní karty se mi ho nepodařilo otevřít, takže vzdálenosti bunkrů z něj vzaté nejsou. Je to první věc, kterou u téhle karty doplnit."
+    }
+  ],
+  "naCoSeDivat": {
+    "cs": "Sleduj oba pruhy trávy kolem středových bunkrů. Levý je užší a kratší, pravý širší a delší — a jamka po tobě chce, aby sis vybral dřív, než švihneš.",
+    "en": "Watch both strips of grass around the central bunkers. The left one is narrower and shorter, the right one wider and longer — and the hole wants you to choose before you swing."
+  },
+  "lekce": {
+    "cs": "Princip z Wokingu roku 1901 funguje i na českém hřišti z roku 2009. Kopírovat se nemusí jamka, stačí otázka, kterou klade.",
+    "en": "The principle from Woking in 1901 works on a Czech course from 2009 too. You do not have to copy the hole, only the question it asks."
+  }
+}

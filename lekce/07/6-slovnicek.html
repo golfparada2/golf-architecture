@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ROUTING — Lekce 7: Slovníček</title>
+<meta name="description" content="Lekce 7, sekce 6 z 7: pojmy o umístění hazardů — centre-line bunker, carry, layup, odložený trest.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23F7F1E0'/%3E%3Ccircle cx='16' cy='14' r='9' fill='%23A9B983' stroke='%231E1B15' stroke-width='1.4'/%3E%3Ccircle cx='16' cy='14' r='1.6' fill='%231E1B15'/%3E%3Cpath d='M16 14 L16 5' stroke='%231E1B15' stroke-width='1.3'/%3E%3Cpath d='M16 5 L23 7.5 L16 10 Z' fill='%23B0452C' stroke='%231E1B15' stroke-width='.8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/styl.css">
+</head>
+<body>
+
+<a class="preskocit" href="#obsah" data-t="nav.preskocit">Přeskočit na obsah</a>
+
+<header class="hlavicka">
+<div class="topbar">
+  <div class="hr"><span data-t="meta.kicker"></span></div>
+  <div class="lang" role="group" aria-label="Language" data-t="nav.jazykLabel" data-t-attr="aria-label">
+    <button data-l="cs" aria-current="true">ČES</button><i>/</i><button data-l="en">ENG</button>
+  </div>
+</div>
+<nav class="drobky" id="drobky"></nav>
+<p class="krokLabel" id="krokLabel"></p>
+<nav class="kroky" id="kroky"></nav>
+</header>
+
+<main id="obsah">
+
+<section class="plat" id="secSlovnicek">
+  <p class="eyebrow" data-t="slovnicek.eyebrow"></p>
+  <h1 class="platNadpis"><em data-t="slovnicek.over"></em><span data-t="slovnicek.title"></span></h1>
+  <p class="lede" data-t="slovnicek.lede"></p>
+  <div class="cileBox" id="cileBox" hidden></div>
+  <dl class="pojmy" id="slovnicekList"></dl>
+</section>
+
+<div class="vyzkousejBox" id="vyzkousejBox" hidden></div>
+
+<div class="zapamatujBox" id="zapamatujBox" hidden></div>
+
+<nav class="sekceNav" id="sekceNav" data-t="nav.sekceNavLabel" data-t-attr="aria-label"></nav>
+</main>
+
+<footer class="foot"><span data-t="foot.lekce"></span><a class="zpet" style="margin-top:0" href="index.html" data-t="nav.prehled"></a></footer>
+
+<script type="module">
+import { vytvorJazyk, nactiSlovnik } from '../../js/jazyk.js';
+import { renderSlovnicek } from '../../js/spolecne.js';
+import { vykresliNavSekci } from '../../js/sekce-nav.js';
+import { nactiUI, vykresliRamec } from '../../js/ucebnice.js';
+
+const $ = (id) => document.getElementById(id);
+
+const slovnik = await nactiSlovnik('../../data/preklady/lekce-07.json');
+await nactiUI('../../');
+const slovnikPojmu = await nactiSlovnik('../../data/preklady/slovnik-pojmu.json');
+const jazyk = vytvorJazyk(slovnik, {
+  titul: (lang) => lang === 'cs' ? 'ROUTING — Lekce 7: Slovníček' : 'ROUTING — Lesson 7: Glossary',
+});
+
+jazyk.on(() => {
+  renderSlovnicek($('slovnicekList'), jazyk, 'slovnicek.pojmy');
+  vykresliNavSekci({ lekce: 7, index: 5, jazyk, krokEl: $('krokLabel'), navEl: $('sekceNav') });
+  vykresliRamec({ lekce: 7, index: 5, jazyk, slovnikPojmu });
+});
+</script>
+</body>
+</html>

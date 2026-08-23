@@ -1,0 +1,189 @@
+{
+  "verze": 1,
+  "id": "woking-4",
+  "hriste": "Woking Golf Club",
+  "zeme": "GB-ENG",
+  "jamka": 4,
+  "nazev": null,
+  "par": 4,
+  "delky": [
+    {
+      "odpaliste": "zadní",
+      "m": 322,
+      "yd": 352,
+      "rok": null,
+      "aktualni": true,
+      "poznamka": "National Club Golfer uvádí 352 yardů (322 m); Golf Club Atlas píše o 350 yardech. Klub délky po jamkách nezveřejňuje, takže se rozdíl dvou yardů nedá rozhodnout."
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "John Low a Stuart Paton (středové bunkry, 1901)",
+      "en": "John Low and Stuart Paton (the central bunkers, 1901)"
+    },
+    "jistota": "jistá",
+    "poznamka": {
+      "cs": "Autorství samotných středových bunkrů je doložené — klub na své stránce o architektuře mluví o „(v té době kontroverzním) zavedení středových fairwayových bunkerů na 4. jamce“. KDO NAVRHL PŮVODNÍ HŘIŠTĚ a v kterém roce klub vznikl, se mi z dostupných pramenů ověřit nepodařilo, a karta to proto netvrdí.",
+      "en": "The authorship of the central bunkers themselves is documented — the club's own architecture page speaks of the „(at the time controversial) introduction of the central fairway bunkers on the 4th hole“. WHO LAID OUT THE ORIGINAL COURSE, and in what year the club was founded, I could not verify from the sources available to me, so this card does not claim it."
+    }
+  },
+  "vznik": null,
+  "gps": {
+    "tee": null,
+    "green": null,
+    "presnost": {
+      "cs": "NEURČENO — vyhledávání v OpenStreetMap ani na Wikipedii nebylo v době psaní karty dostupné. Souřadnice se doplní, až půjde ověřit.",
+      "en": "NOT DETERMINED — neither the OpenStreetMap search nor Wikipedia was reachable when this card was written. Coordinates will be added once they can be verified."
+    }
+  },
+  "otazka": {
+    "cs": "Když ti architekt postaví bunkr přesně doprostřed fairwaye, je to nespravedlnost, nebo otázka?",
+    "en": "When the architect puts a bunker exactly in the middle of the fairway, is that unfairness, or a question?"
+  },
+  "tvary": {
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště (x = boční odchylka, kladně vpravo; y = vzdálenost po ose hry). Poloha středových bunkrů je ODHAD: prameny se shodují, že leží ve středu až levém středu fairwaye v dopadové zóně drivu, ale žádný z nich neuvádí vzdálenost od odpaliště. Železnice (out of bounds po pravé straně) se na plánu nekreslí — kreslítko pro ni nemá tvar a vymýšlet jí okraj by znamenalo tvrdit něco, co změřené nemám. Je popsaná v prvcích.",
+    "fairway": {
+      "ohyb": 0,
+      "sirkaTee": 44,
+      "sirkaGreen": 26,
+      "zacatek": 20,
+      "seed": 5101
+    },
+    "green": {
+      "x": 0,
+      "y": 315,
+      "rx": 11,
+      "ry": 9,
+      "rot": 0.15,
+      "seed": 5102,
+      "amp": 0.07
+    },
+    "bunkry": [
+      {
+        "x": -8,
+        "y": 198,
+        "rx": 5,
+        "ry": 4,
+        "rot": 0.25,
+        "seed": 5103,
+        "amp": 0.17,
+        "zkratka": {
+          "cs": "STŘED",
+          "en": "CENTRE"
+        },
+        "label": {
+          "cs": "první ze dvou bunkerů ve středu fairwaye — ty, které v roce 1901 rozdělily jamku na dvě cesty",
+          "en": "the first of the two bunkers in the middle of the fairway — the pair that split the hole in two in 1901"
+        }
+      },
+      {
+        "x": 1,
+        "y": 219,
+        "rx": 4.5,
+        "ry": 3.5,
+        "rot": 0.1,
+        "seed": 5104,
+        "amp": 0.17,
+        "zkratka": null,
+        "label": {
+          "cs": "druhý středový bunkr, položený mírně dál a doprava",
+          "en": "the second central bunker, set slightly further on and to the right"
+        }
+      },
+      {
+        "x": -14,
+        "y": 302,
+        "rx": 4,
+        "ry": 3,
+        "rot": 0.3,
+        "seed": 5105,
+        "amp": 0.16,
+        "zkratka": null,
+        "label": {
+          "cs": "bunkr u předního levého okraje greenu",
+          "en": "bunker at the front-left edge of the green"
+        }
+      },
+      {
+        "x": 8,
+        "y": 300,
+        "rx": 3.5,
+        "ry": 2.8,
+        "rot": -0.2,
+        "seed": 5106,
+        "amp": 0.16,
+        "zkratka": null,
+        "label": {
+          "cs": "bunkr při pravém okraji greenu",
+          "en": "bunker at the right edge of the green"
+        }
+      }
+    ],
+    "dopadovaZona": {
+      "od": 185,
+      "do": 235
+    }
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Bunkr, který nikomu nestojí v cestě",
+        "en": "A bunker that blocks nobody"
+      },
+      "popis": {
+        "cs": "Bunkry ve středu fairwaye nezužují jamku — nechávají trávu po obou stranách. Nedá se do nich dostat smůlou, jen volbou. Právě to na nich členy klubu v roce 1901 tak rozzuřilo.",
+        "en": "Bunkers in the middle of the fairway do not narrow the hole — there is grass on both sides. You cannot find them by bad luck, only by choice. That is exactly what enraged the members in 1901."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Vlevo bezpečí, vpravo úhel",
+        "en": "Safety left, angle right"
+      },
+      "popis": {
+        "cs": "Vpravo od bunkrů je úzký pruh mezi pískem a železnicí, která je out of bounds — a odtud vede na green nejlepší úhel. Vlevo je místa dost, ale přihrávka jde přes přední bunkr. Cena za bezpečí se neplatí hned, ale až druhou ranou.",
+        "en": "To the right of the bunkers is a narrow strip between the sand and the railway, which is out of bounds — and from there the angle into the green is the best one. To the left there is room, but the approach must come over the front bunker. The price of safety is not paid at once; it is paid on the second shot."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Odložený trest",
+        "en": "The delayed penalty"
+      },
+      "popis": {
+        "cs": "Tohle je princip, který se z Wokingu rozšířil dál: dobrá jamka netrestá špatnou ránu okamžitě. Nechá tě zahrát bezpečně a účet ti pošle o ránu později, když zjistíš, že odtamtud to na green nejde.",
+        "en": "This is the principle that spread from Woking: a good hole does not punish a bad shot on the spot. It lets you play safe and sends you the bill a shot later, when you find that the green will not open from there."
+      }
+    }
+  ],
+  "prameny": [
+    {
+      "titul": "Woking Golf Club — stránka o architektuře hřiště",
+      "url": "https://www.wokinggolfclub.co.uk/golf_architecture",
+      "poznamka": "primární pramen klubu; doslova mluví o „(at the time controversial) introduction of the central fairway bunkers on the 4th hole“. Rok ani autora původního hřiště neuvádí."
+    },
+    {
+      "titul": "Fried Egg Golf — The Bunker That Changed Golf: No. 4 at Woking",
+      "url": "https://www.thefriedegg.com/articles/woking-golf-club-4th",
+      "poznamka": "rok 1901, jména Low a Paton, inspirace bunkrem Principal's Nose na 16. jamce v St Andrews, reakce členů a pojem odloženého trestu. Délku jamky neuvádí."
+    },
+    {
+      "titul": "Golf Club Atlas — Woking",
+      "url": "https://golfclubatlas.com/countries/woking1/",
+      "poznamka": "uvádí par 4 a 350 yardů, bunkry v levém středu fairwaye a volbu mezi agresivní linií mezi bunkry a out of bounds železnicí, a konzervativní cestou. Vzdálenost bunkrů od odpaliště neuvádí."
+    },
+    {
+      "titul": "National Club Golfer — Woking, 4. jamka",
+      "url": "https://www.nationalclubgolfer.com/news/great-holes-south-east-england/woking-4th/",
+      "poznamka": "zdroj údaje 352 yardů, par 4 (z titulku ve výsledcích vyhledávání). POZOR: stránka sama v době psaní karty vracela chybu 404, takže její obsah ověřený není."
+    }
+  ],
+  "naCoSeDivat": {
+    "cs": "Podívej se, kde bunkry NEJSOU: po obou stranách je tráva. Tohle není zúžení jamky, ale rozdvojení. Železnice na plánu není — kreslím jen to, co mám změřené.",
+    "en": "Look at where the bunkers are NOT: there is grass on both sides. This is not a narrowing of the hole, it is a fork in it. The railway is not drawn — I only draw what I have measured."
+  },
+  "lekce": {
+    "cs": "Hazard uprostřed cesty není nespravedlnost. Nespravedlivý je hazard, do kterého se dá spadnout, aniž sis vybral.",
+    "en": "A hazard in the middle of the route is not unfair. What is unfair is a hazard you can fall into without having chosen anything."
+  }
+}

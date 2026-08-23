@@ -58,14 +58,19 @@
         "num": 6,
         "title": "Green komplexy",
         "popis": "Efektivní velikost greenu, sběrné plochy, patra a false front — proč o obtížnosti rozhoduje okolí greenu víc než jeho plocha."
+      },
+      {
+        "num": 7,
+        "title": "Kam hazard patří",
+        "popis": "Poloha hazardu napříč fairwayí a v pořadí ran — proč bunkr uprostřed není nespravedlnost a proč hazard za dopadem nikoho nezajímá."
       }
     ],
     "foot1": "ROUTING · rozcestník",
-    "foot2": "Lekce 1–6 z 18",
+    "foot2": "Lekce 1–7 z 18",
     "pripravujeme": "Lekce 7 až 18 se připravují. Přibývají postupně — každá projde stejnou kontrolou jako prvních šest, než se sem dostane.",
     "daleHead": "Kdykoli po ruce",
-    "slovnicekPopis": "Všech 57 pojmů kurzu na jednom místě, abecedně a dvojjazyčně.",
-    "sbirkaPopis": "Sedmnáct rozebraných jamek z celého světa i z Česka, v jednotném formátu — otázka, plán, tři prvky, lekce.",
+    "slovnicekPopis": "Všech 62 pojmů kurzu na jednom místě, abecedně a dvojjazyčně.",
+    "sbirkaPopis": "Dvacet rozebraných jamek z celého světa i z Česka, v jednotném formátu — otázka, plán, tři prvky, lekce.",
     "importHotovo": "Výsledky načteny.",
     "importChyba": "Soubor se nepodařilo přečíst. Zkontroluj, že je to JSON stažený z tohoto kurzu."
   },
@@ -128,14 +133,19 @@
         "num": 6,
         "title": "Green complexes",
         "popis": "Effective green size, collection areas, tiers and false fronts — why the ground around a green decides more than its area."
+      },
+      {
+        "num": 7,
+        "title": "Where a hazard belongs",
+        "popis": "Where a hazard sits across the fairway and in the sequence of shots — why a bunker in the middle is not unfair, and why one beyond the drive interests nobody."
       }
     ],
     "foot1": "ROUTING · hub",
-    "foot2": "Lessons 1–6 of 18",
+    "foot2": "Lessons 1–7 of 18",
     "pripravujeme": "Lessons 7 to 18 are in preparation. They arrive one at a time — each goes through the same checks as the first six before it appears here.",
     "daleHead": "Always at hand",
-    "slovnicekPopis": "All 57 terms of the course in one place, alphabetical and bilingual.",
-    "sbirkaPopis": "Seventeen holes from around the world and from Czechia, analysed in one format — question, plan, three elements, lesson.",
+    "slovnicekPopis": "All 62 terms of the course in one place, alphabetical and bilingual.",
+    "sbirkaPopis": "Twenty holes from around the world and from Czechia, analysed in one format — question, plan, three elements, lesson.",
     "importHotovo": "Results loaded.",
     "importChyba": "The file could not be read. Check that it is JSON downloaded from this course."
   }

@@ -1,0 +1,213 @@
+{
+  "verze": 1,
+  "id": "st-andrews-old-14",
+  "hriste": "St Andrews Links — Old Course",
+  "zeme": "GB-SCT",
+  "jamka": 14,
+  "nazev": {
+    "cs": "Long",
+    "en": "Long"
+  },
+  "par": 5,
+  "delky": [
+    {
+      "odpaliste": "The Open 2022 (aktuální)",
+      "m": 561,
+      "yd": 614,
+      "rok": 2022,
+      "aktualni": true,
+      "poznamka": "Jamka byla prodloužena v roce 2005 a stala se tím nejdelší par 5 v rotaci The Open."
+    }
+  ],
+  "architekt": {
+    "uvadeny": {
+      "cs": "nikdo — jamka vznikla užíváním",
+      "en": "nobody — the hole was made by being played"
+    },
+    "jistota": "jistá",
+    "poznamka": {
+      "cs": "Old Course nemá autora v dnešním smyslu. Hazardy na čtrnáctce jsou z větší části přírodní útvary, které dostaly jména dřív, než někdo začal mluvit o architektuře. Právě proto je poučná: rozmístění, které dnes vypadá jako záměr, tady vzniklo bez záměru.",
+      "en": "The Old Course has no author in the modern sense. The hazards on the fourteenth are largely natural features that were given names before anyone spoke of architecture. That is what makes it instructive: a placement that looks like intent today arose here without any."
+    }
+  },
+  "vznik": null,
+  "gps": {
+    "tee": null,
+    "green": null,
+    "presnost": {
+      "cs": "NEURČENO — vyhledávání v OpenStreetMap ani na Wikipedii nebylo v době psaní karty dostupné. Pozor i na to, že v St Andrews je sedm hřišť vedle sebe.",
+      "en": "NOT DETERMINED — neither the OpenStreetMap search nor Wikipedia was reachable when this card was written. Note also that there are seven courses side by side at St Andrews."
+    }
+  },
+  "otazka": {
+    "cs": "Kolik hazardů unese jedna jamka, aniž by se stala loterií?",
+    "en": "How many hazards can one hole carry before it turns into a lottery?"
+  },
+  "tvary": {
+    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od odpaliště. DVĚ VZDÁLENOSTI JSOU DOLOŽENÉ a plán je podle nich: Beardies začínají 240 a končí 285 yardů od odpaliště (219 a 261 m), Hell Bunker leží 108 yardů před greenem (99 m, tedy 462 m od odpaliště). Boční polohy, velikosti a tvary doložené nejsou a jsou odhad. Zeď a out of bounds po pravé straně se nekreslí — kreslítko pro ně nemá tvar.",
+    "fairway": {
+      "ohyb": 14,
+      "sirkaTee": 52,
+      "sirkaGreen": 30,
+      "zacatek": 20,
+      "seed": 5201
+    },
+    "green": {
+      "x": 6,
+      "y": 552,
+      "rx": 14,
+      "ry": 11,
+      "rot": 0.1,
+      "seed": 5202,
+      "amp": 0.07
+    },
+    "bunkry": [
+      {
+        "x": -19,
+        "y": 222,
+        "rx": 3.2,
+        "ry": 2.6,
+        "rot": 0.2,
+        "seed": 5203,
+        "amp": 0.2,
+        "zkratka": {
+          "cs": "BEARDIES",
+          "en": "BEARDIES"
+        },
+        "label": {
+          "cs": "první z Beardies — skupina bunkerů vlevo, 240 yardů od odpaliště",
+          "en": "the first of the Beardies — the cluster on the left, 240 yards from the tee"
+        }
+      },
+      {
+        "x": -24,
+        "y": 236,
+        "rx": 2.8,
+        "ry": 2.4,
+        "rot": -0.1,
+        "seed": 5204,
+        "amp": 0.2,
+        "zkratka": null,
+        "label": {
+          "cs": "druhý z Beardies",
+          "en": "the second of the Beardies"
+        }
+      },
+      {
+        "x": -17,
+        "y": 250,
+        "rx": 3.0,
+        "ry": 2.4,
+        "rot": 0.3,
+        "seed": 5205,
+        "amp": 0.2,
+        "zkratka": null,
+        "label": {
+          "cs": "třetí z Beardies",
+          "en": "the third of the Beardies"
+        }
+      },
+      {
+        "x": -23,
+        "y": 261,
+        "rx": 2.6,
+        "ry": 2.2,
+        "rot": 0.1,
+        "seed": 5206,
+        "amp": 0.2,
+        "zkratka": null,
+        "label": {
+          "cs": "poslední z Beardies, 285 yardů od odpaliště",
+          "en": "the last of the Beardies, 285 yards from the tee"
+        }
+      },
+      {
+        "x": -3,
+        "y": 462,
+        "rx": 15,
+        "ry": 9,
+        "rot": 0.05,
+        "seed": 5207,
+        "amp": 0.14,
+        "zkratka": {
+          "cs": "HELL",
+          "en": "HELL"
+        },
+        "label": {
+          "cs": "Hell Bunker — leží 108 yardů před greenem, přesně tam, kam míří druhá rána",
+          "en": "Hell Bunker — 108 yards short of the green, exactly where the second shot wants to go"
+        }
+      },
+      {
+        "x": 17,
+        "y": 540,
+        "rx": 4,
+        "ry": 3,
+        "rot": 0.2,
+        "seed": 5208,
+        "amp": 0.16,
+        "zkratka": null,
+        "label": {
+          "cs": "bunkr u greenu vpravo",
+          "en": "bunker right of the green"
+        }
+      }
+    ],
+    "dopadovaZona": {
+      "od": 200,
+      "do": 265
+    }
+  },
+  "prvky": [
+    {
+      "nazev": {
+        "cs": "Beardies se ptají jen dlouhých",
+        "en": "The Beardies ask only the long hitters"
+      },
+      "popis": {
+        "cs": "Beardies leží 219 až 261 metrů od odpaliště. To je přesně dosah dobrého hráče — a zároveň vzdálenost, na kterou se hendikepář ani nedostane. Jeden a týž písek je pro jednoho hlavní otázka jamky a pro druhého kulisa.",
+        "en": "The Beardies sit 219 to 261 metres from the tee. That is exactly the range of a good player — and at the same time a distance a high handicapper never reaches. The same sand is the hole's central question for one player and scenery for the other."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Hell přichází na řadu až druhou ranou",
+        "en": "Hell only comes up on the second shot"
+      },
+      "popis": {
+        "cs": "Hell Bunker leží 99 metrů před greenem. Z odpaliště je nedosažitelný, takže o něm rozhoduješ až s míčem v ruce po drivu: přeletět, nebo položit před něj. Jeden hazard, dvě různá rozhodnutí podle toho, kam jsi odpálil.",
+        "en": "Hell Bunker lies 99 metres short of the green. It is out of reach from the tee, so you only decide about it once the drive is behind you: carry it, or lay up short. One hazard, two different decisions depending on where your drive finished."
+      }
+    },
+    {
+      "nazev": {
+        "cs": "Zeď, která nikoho netrestá dvakrát",
+        "en": "A wall that punishes nobody twice"
+      },
+      "popis": {
+        "cs": "Vpravo je zeď a za ní out of bounds. Kdo se od Beardies odkloní doprava, dostane rovnou cestu — ale i hranici, za kterou je konec. Hazardy jsou tak rozprostřené, že žádné dvě rány na jamce nemají stejnou otázku.",
+        "en": "To the right there is a wall, and out of bounds behind it. Turn away from the Beardies to the right and you get a straight route — but also a boundary beyond which the hole ends. The hazards are spread so that no two shots on this hole ask the same question."
+      }
+    }
+  ],
+  "prameny": [
+    {
+      "titul": "Today's Golfer — The Open 2022: St Andrews Old Course guide",
+      "url": "https://www.todays-golfer.com/news-and-events/majors/the-open-championship/course-guide-st-andrews-old-course/",
+      "poznamka": "zdroj všech čísel na kartě: par 5, 614 yardů, Beardies „the first at 240 and last at 285 yards“, Hell Bunker „108 yards short of the green“, prodloužení v roce 2005."
+    },
+    {
+      "titul": "Fried Egg Golf — Eclectic 18 UK: The 14th Hole („Long“) at The Old Course",
+      "url": "https://thefriedegg.com/eclectic-18-uk-old-course/",
+      "poznamka": "popis Beardies, Hell Bunkeru, Elysian Fields a zdi panství Strathtyrum. Žádné vzdálenosti neuvádí; formulace, že dva míče na stejném místě řeší různé problémy, pochází odsud."
+    }
+  ],
+  "naCoSeDivat": {
+    "cs": "Nedívej se na jednotlivé bunkry, dívej se na jejich VZDÁLENOSTI: 219, 261 a 462 metrů. Každé číslo patří jiné ráně a jinému hráči.",
+    "en": "Do not look at the individual bunkers, look at their DISTANCES: 219, 261 and 462 metres. Each number belongs to a different shot and a different player."
+  },
+  "lekce": {
+    "cs": "Hazard nemá polohu na mapě, ale na seznamu ran. Ptej se ne „kde leží“, ale „kterou ránu se ptá“.",
+    "en": "A hazard does not have a position on a map so much as a position in the sequence of shots. Ask not where it lies, but which shot it questions."
+  }
+}

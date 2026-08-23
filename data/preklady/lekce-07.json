@@ -1,0 +1,742 @@
+{
+  "cs": {
+    "meta": {
+      "kicker": "Golfová architektura",
+      "chapter": "Lekce 7 z 18",
+      "over": "Písek sám o sobě nic neznamená —",
+      "title": "Kam hazard patří",
+      "lede": "V lekci 1 sis vyzkoušel, jak daleko od odpaliště bunkr položit. Teď jde o zbylé dva rozměry: kam napříč fairwayí, a ke které ráně v pořadí. Ukáže se, že tytéž dvě hromádky písku můžou být otázka, trest, nebo jen ozdoba — podle toho, kam je dáš.",
+      "zpet": "← Zpět na rozcestník"
+    },
+    "principLabel": "Princip",
+    "toc": {
+      "kicker": "Golfová architektura",
+      "sekceHead": "Sedm kroků lekce",
+      "daleHead": "Kam dál",
+      "slovnicekPopis": "Všechny pojmy kurzu na jednom místě.",
+      "sbirkaPopis": "Dvacet rozebraných jamek, každá ve stejném formátu.",
+      "zpetNaPrehled": "← Zpět na rozcestník",
+      "pokracovat": "Pokračovat",
+      "zacit": "Začít lekci"
+    },
+    "foot": {
+      "lekce": "ROUTING · Lekce 7"
+    },
+    "nav": {
+      "preskocit": "Přeskočit na obsah",
+      "jazykLabel": "Jazyk",
+      "sekceNavLabel": "Navigace mezi sekcemi",
+      "prehled": "Přehled lekce",
+      "sekceNazvy": [
+        "Stejný písek",
+        "Tři jamky",
+        "Česká jamka",
+        "Druhá rána",
+        "K zamyšlení",
+        "Slovníček",
+        "Zkouška"
+      ],
+      "dalsi": "Další",
+      "dalsiLekce": "Pokračovat další lekcí",
+      "klavesniNapoveda": "Plán se dá ovládat i klávesnicí: tabulátorem na něj přejdi, šipkami posouvej zaměřovač, Enterem potvrď.",
+      "konecKurzu": "Zatím poslední hotová lekce — pokračuj sbírkou jamek",
+      "krok": "Krok {n} z 7",
+      "predchozi": "Předchozí"
+    },
+    "teeShot": {
+      "eyebrow": "Tee shot",
+      "over": "Plát —",
+      "title": "Stejný písek, jiná otázka",
+      "lede": "Tři varianty jedné jamky. Ve všech je STEJNÉ MNOŽSTVÍ písku ve STEJNÝCH vzdálenostech od odpaliště — mění se jen to, kam napříč fairwayí ho architekt položil. Sleduj poslední sloupec tabulky.",
+      "principle": "Bunkr u kraje chytá rány, které se nepovedly. Bunkr uprostřed chytá rány, které se povedly. To není otázka spravedlnosti, ale otázka toho, co chceš po hráči vědět.",
+      "toggle": {
+        "okraje": "U okrajů",
+        "stred": "Uprostřed",
+        "daleko": "Za dopadem"
+      },
+      "popis": {
+        "okraje": "Dva pásy písku podél okrajů fairwaye, od 180 do 260 metrů. Klasické rozmístění: kdo netrefí fairway, platí.",
+        "stred": "Týž písek, jen posunutý doprostřed. Po obou stranách zůstává tráva, takže se do něj nedá dostat smůlou — jen tím, že míříš rovně na jamku.",
+        "daleko": "Týž písek uprostřed, ale od 300 do 380 metrů. Za dosahem odpalu všech čtyř hráčů."
+      },
+      "planLabel": "Plán par 4 s pásy písku ve třech různých polohách",
+      "tabHead": "Sto procent odpalů, čtyři hráči",
+      "tab": {
+        "hrac": "Hráč",
+        "podil": "Do písku",
+        "odchylka": "Průměrná odchylka chycené rány od osy"
+      },
+      "verdikt": {
+        "dekorace": "Do písku se nedostane skoro nikdo ({max} % u nejvíc zasaženého hráče). Tenhle bunkr nikoho nic nestojí a žádnou otázku neklade — je to <b>dekorace</b>.",
+        "rovne": "Chycené rány míří v průměru jen {odch} metru od osy. Tenhle písek <b>chytá povedené rány</b> — ptá se hráče, jestli si troufne mířit rovně na jamku, nebo cestu obejde.",
+        "krive": "Chycené rány míří v průměru {odch} metrů od osy. Tenhle písek <b>trestá nepovedené rány</b> — hráči, který mířil dobře, nepoloží žádnou otázku."
+      },
+      "vzorec": "Počítáno z rozptylu odpalu každého hráče (podélná i boční odchylka podle <span class=\"pojem\">hendikepu</span>), ne odhadem.",
+      "foot": "list 1 · Tee shot",
+      "cile": [
+        "Rozliším hazard, který se ptá, od hazardu, který jen trestá — a ukážu ten rozdíl na číslech.",
+        "Vysvětlím, proč bunkr uprostřed fairwaye není nespravedlnost."
+      ],
+      "zapamatuj": [
+        "Hazard u kraje chytá rány mimo osu, hazard uprostřed rány na ose. Stejný písek, opačná otázka.",
+        "Hazard, do kterého se nedá dostat volbou, jen smůlou, není architektura — je to daň.",
+        "Hazard za dosahem odpalu neovlivní nikoho. Ozdoba stojí stejné peníze na údržbu jako otázka."
+      ]
+    },
+    "fairway": {
+      "eyebrow": "Fairway",
+      "over": "Tři jamky, tři polohy —",
+      "title": "Uprostřed, na řadě, všude",
+      "lede": "Woking ukazuje bunkr uprostřed cesty, který v roce 1901 rozzuřil celý klub. St Andrews jamku, kde tři skupiny hazardů leží ve třech různých vzdálenostech, takže každá patří jiné ráně. A Sawgrass případ, kdy je hazard všude a volba mizí.",
+      "cile": [
+        "Ukážu tři různé polohy hazardu a řeknu, jakou otázku každá z nich klade."
+      ],
+      "zapamatuj": [
+        "Bunkr uprostřed fairwaye nezužuje jamku — rozdvojuje ji.",
+        "Hazard má polohu nejen na mapě, ale i v pořadí ran. Zeptej se, které rány se týká.",
+        "Když hazard obklopí celý cíl, přestane být volbou a stane se poplatkem za vstup."
+      ],
+      "vyzkousej": {
+        "otazka": "Vyber si jednu ze tří jamek a napiš, co by se s ní stalo, kdyby hazard zůstal stejně velký, ale posunul se o padesát metrů. Které ráně by pak patřil?",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
+    },
+    "ceskaJamka": {
+      "eyebrow": "Fairway · Česko",
+      "over": "Dvě fairwaye místo jedné —",
+      "title": "Albatross, jamka 15",
+      "lede": "Princip z Wokingu roku 1901 najdeš i na českém hřišti z roku 2009. Klub to popisuje sám: dva bunkery uprostřed dělí fairway na levou a pravou část. Vpravo místo, vlevo zkratka.",
+      "cile": [
+        "Poznám Wokingův princip na české jamce a popíšu, čím se za obě volby platí."
+      ],
+      "zapamatuj": [
+        "Kopírovat se nemusí jamka, stačí otázka, kterou klade.",
+        "Když je jedna cesta širší a druhá kratší, je volba skutečná. Když je jedna širší i kratší, volba není žádná.",
+        "Úzký green umí účet z odpaliště dorovnat: bezpečná strana platí delší holí na menší cíl."
+      ],
+      "vyzkousej": {
+        "otazka": "Na hřišti, které znáš, najdi jamku se dvěma cestami. Čím se platí za tu bezpečnou — délkou, úhlem, nebo ležením míče?",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
+    },
+    "approachNadpis": {
+      "eyebrow": "Approach",
+      "over": "Jeden hazard, dvě různé rány —",
+      "title": "Komu vlastně patří",
+      "lede": "Postavíme par 5 s příčným bunkrem sto metrů před greenem — geometrie Hell Bunkeru ze St Andrews. Simulace pak spočítá, komu ten hazard vlastně patří: kolikátou ranou ho který hráč potká a jak často do něj vůbec dopadne.",
+      "cile": [
+        "Ukážu na číslech, že tentýž hazard je pro každého hráče otázkou u jiné rány v pořadí."
+      ],
+      "zapamatuj": [
+        "Hazard nepatří jamce, ale konkrétní ráně — a u každého hráče jiné.",
+        "Rozhodnutí „přeletět, nebo položit“ nemá jednu správnou odpověď. Má čtyři, podle toho, kdo hraje.",
+        "Bunkr před greenem stojí nejvíc toho, kdo do něj dopadá plnou ranou, ne toho, kdo k němu dokutálí."
+      ]
+    },
+    "approach1": {
+      "eyebrow": "Úkol · simulace",
+      "over": "Přeletět, nebo položit —",
+      "title": "Spočítáno na patnácti stech kolech",
+      "lede": "Vyber hráče. Tabulka ukazuje, jak dopadne, když hazard bere na sebe, a jak, když před něj pokaždé položí. Tečky na plánu jsou skutečná místa, kde se míč zastavil po ráně, která se s hazardem potkala.",
+      "planLabel": "Plán par 5 s příčným bunkrem sto metrů před greenem",
+      "hracLabel": "Kterého hráče sleduješ",
+      "tabulka": {
+        "hrac": "Hráč",
+        "smele": "Bere hazard na sebe",
+        "opatrne": "Pokládá před hazard",
+        "rozdil": "Rozdíl",
+        "rana": "Které ráně hazard patří"
+      },
+      "ranaNazvy": [
+        "druhé",
+        "třetí",
+        "čtvrté",
+        "žádné"
+      ],
+      "grafHead": "Kdo do bunkru vůbec dopadá",
+      "grafPopis": "Podíl kol, ve kterých míč skončil v příčném bunkru, když hráč hazard bere na sebe.",
+      "zaver": "<b>Jeden bunkr, čtyři různé role.</b> Hráč HCP 0 do něj dopadne <b>v polovině kol</b>, a vždycky druhou ranou — jeho plná rána z fairwaye končí přesně v jeho pásmu. Hráč HCP 9 ho potká <b>ve dvou procentech kol</b>: jeho druhá rána se zastaví před ním a třetí ho přeletí. Hendikepáři 18 a 24 ho řeší až třetí ranou, a hráč 24 do něj spadne skoro v třetině kol. <br><br><b>A teď to nepříjemné.</b> Rozdíl mezi „přeletět“ a „položit před“ vychází ve všech čtyřech řádcích na dvě až tři setiny rány, tedy <b>pod hranicí šumu modelu</b>. Neznamená to, že je to jedno — znamená to, že tenhle model fairwayový bunkr podceňuje: počítá ho jen jako zhoršenou přesnost a kratší dosah, ne jako ztracenou ránu. Skutečný Hell Bunker má stěnu, ze které se často hraje do strany nebo dozadu. To model neumí, a proto z něj nesmíme číst, že je layup zbytečný. Číst z něj smíme to první: <b>komu hazard patří</b>.",
+      "foot": "list 4 · Approach",
+      "poznamka": "Patnáct set kol na každou kombinaci hráče a strategie, spočítaných jednou při načtení stránky ze semínka — čísla jsou proto při každé návštěvě stejná. Model je hrubý: nezná vítr, ležení míče v písku ani to, že se hráč po špatné ráně rozhodne jinak. Rozdíly pod pět setin rány neber vážně, to je šum modelu.",
+      "legenda": "Strategie „pokládá před hazard“ znamená, že hráč nikdy nezahraje ránu, která by podle plánu skončila v bunkru — místo toho zvolí kratší ránu a zastaví se dvanáct metrů před ním."
+    },
+    "putt": {
+      "eyebrow": "Putt",
+      "over": "Tři otázky, žádné body —",
+      "title": "K zamyšlení",
+      "lede": "Piš vlastními slovy. Nikdo to nebude opravovat — je to tu proto, aby sis na to sám odpověděl.",
+      "otazky": [
+        "Vzpomeň si na bunkr, do kterého padáš pravidelně. Dostáváš se do něj volbou, nebo smůlou? A poznáš na tom, co po tobě architekt chtěl?",
+        "Bunkr uprostřed fairwaye rozzuřil v roce 1901 celý Woking. Co bys řekl členovi, který tvrdí, že je to nespravedlivé?",
+        "Kdyby ses měl na hřišti, které znáš, zbavit tří bunkrů kvůli úspoře za údržbu, které tři vybereš a proč?"
+      ],
+      "poznamkaPlaceholder": "Piš sem…",
+      "ulozeno": "Uloženo v tomto prohlížeči.",
+      "foot": "list 5 · Putt",
+      "cile": [
+        "Rozliším hazard, který v jamce něco dělá, od hazardu, který jen stojí a stojí peníze."
+      ],
+      "zapamatuj": [
+        "Údržba bunkru je nejdražší položka na hektar. Bunkr, který neklade otázku, je čistá ztráta.",
+        "Nespravedlivý není hazard, který vidíš a rozhoduješ se o něm. Nespravedlivý je ten, do kterého spadneš, aniž jsi měl na výběr.",
+        "Zeptej se u každého hazardu: kterou ránu se ptá, koho se ptá, a co se stane, když se hráč rozhodne špatně."
+      ]
+    },
+    "slovnicek": {
+      "eyebrow": "Slovníček",
+      "over": "Pojmy z téhle lekce —",
+      "title": "Sedm slov",
+      "lede": "Odborné názvy zůstávají anglicky i v české větě — je to jazyk, kterým golfová architektura mluví.",
+      "pojmy": [
+        {
+          "pojem": "Centre-line bunker",
+          "popis": "Bunkr uprostřed fairwaye, s trávou po obou stranách. Nezužuje jamku, ale dělí ji na dvě cesty. Poprvé ve Wokingu roku 1901."
+        },
+        {
+          "pojem": "Carry",
+          "popis": "Vzdálenost, kterou musí míč uletět vzduchem, aby překonal hazard. Klíčové číslo u každého příčného hazardu — určuje, komu ten hazard vlastně patří."
+        },
+        {
+          "pojem": "Cross bunker",
+          "popis": "Bunkr napříč fairwayí, kolem kterého se nedá obejít, jen přes něj nebo před něj. Ptá se na volbu hole, ne na směr."
+        },
+        {
+          "pojem": "Layup",
+          "popis": "Záměrně kratší rána položená před hazard. Není to zbabělost — je to volba, za kterou se platí delší další ranou."
+        },
+        {
+          "pojem": "Odložený trest",
+          "popis": "Princip, kdy bezpečná volba nestojí nic hned, ale zdraží až další ránu. Přesně tohle udělaly středové bunkry ve Wokingu."
+        },
+        {
+          "pojem": "Dekorativní hazard",
+          "popis": "Hazard mimo dopadovou zónu všech hráčů. Vypadá dobře, nikoho nezajímá a stojí stejné peníze na údržbu jako ten, který otázku klade."
+        },
+        {
+          "pojem": "Efektivní šířka",
+          "popis": "Šířka trávy, která hráči po umístění hazardu skutečně zbude na jeho zvolené cestě — ne celková šířka fairwaye."
+        }
+      ],
+      "cile": [
+        "Pojmenuji polohy hazardu odborně a nemíchám carry se vzdáleností k hazardu."
+      ],
+      "zapamatuj": [
+        "Carry je vzdálenost přes hazard, ne k němu. Rozdíl mezi nimi je celá délka hazardu.",
+        "Layup je rozhodnutí, ne rezignace.",
+        "Dekorativní hazard je jediný druh hazardu, který se vyplatí zrušit."
+      ],
+      "vyzkousej": {
+        "otazka": "Vysvětli vlastními slovy rozdíl mezi bunkrem u kraje fairwaye a centre-line bunkrem — a to z pohledu hráče, který míří přesně.",
+        "placeholder": "Piš vlastními slovy — nikdo to nehodnotí."
+      }
+    },
+    "spolecneKarty": {
+      "specsHead": "Tři prvky",
+      "parLabel": "Par",
+      "delkaLabel": "Délka",
+      "architektLabel": "Architekt",
+      "vznikLabel": "Rok",
+      "prameny": "Prameny",
+      "otazkaLabel": "Otázka jamky",
+      "fotoLabel": "Foto"
+    },
+    "zkouska": {
+      "eyebrow": "Zkouška",
+      "over": "Šest otázek za —",
+      "title": "100 bodů",
+      "lede": "Odpověz na všech šest, teprve pak uvidíš správná řešení. Do celkového přehledu se počítá první pokus.",
+      "spolecne": {
+        "otazka": "Otázka",
+        "bodu": "bodů",
+        "zbyva": "Zbývá odpovědět na",
+        "hotovoMuzesOdevzdat": "Hotovo. Můžeš odevzdat.",
+        "spravne": "správně",
+        "tvojeVolba": "tvoje volba",
+        "nicNevybrano": "nic nevybráno",
+        "moznost": "Možnost",
+        "zkratkaBodu": "b",
+        "reseniUKazdeOtazky": "Správná řešení jsou u každé otázky."
+      },
+      "submit": "Odevzdat",
+      "again": "Zkusit znovu",
+      "q1": {
+        "text": "Na kterém z těch tří plánů položí písek otázku hráči, který míří rovně na jamku?",
+        "hint": "Ve všech třech je stejné množství písku ve stejných vzdálenostech. Dívej se, kudy vede osa jamky.",
+        "a": "Plán A",
+        "b": "Plán B",
+        "c": "Plán C",
+        "why": "<b>B.</b> Písek uprostřed leží přesně na ose, tedy tam, kam míří povedený odpal. Po obou stranách zůstává tráva, takže hráč má volbu — a právě ta z písku dělá otázku. U plánu A je písek u okrajů a chytá jen rány mimo osu; u plánu C leží za dosahem odpalu a neovlivní nikoho.",
+        "back": "Vrať se na list 1 — poslední sloupec tabulky ukazuje, jak daleko od osy byly chycené rány."
+      },
+      "q2": {
+        "text": "Proč rozzuřily středové bunkry na 4. jamce ve Wokingu v roce 1901 členy klubu?",
+        "a": "Protože zabíraly tolik místa, že se jamka nedala zahrát na par.",
+        "b": "Protože stály uprostřed fairwaye, tedy tam, kam mířil dobrý odpal — a to členové považovali za nespravedlivé vůči dobré ráně.",
+        "c": "Protože je architekt postavil bez povolení stavebního úřadu.",
+        "d": "Protože z nich nebylo možné se dostat jednou ranou.",
+        "why": "<b>B.</b> Bunkry nezúžily fairway — tráva zůstala po obou stranách. Právě proto se do nich nedalo spadnout smůlou, jen volbou, a to bylo nové. Členové to četli jako trest za dobře zamířenou ránu; Low a Paton to mysleli jako otázku, kterou dobře zamířená rána dostane.",
+        "back": "Karta jamky Woking 4 v sekci 2 to popisuje podrobně."
+      },
+      "q3": {
+        "text": "Hell Bunker na 14. jamce St Andrews leží 99 metrů před greenem na jamce dlouhé 561 metrů. Které ráně patří?",
+        "a": "Odpalu — je to hlavní překážka z odpaliště.",
+        "b": "Záleží na hráči: kdo odpálí dost daleko, řeší ho druhou ranou; kdo ne, potká ho až třetí.",
+        "c": "Puttu, protože leží u greenu.",
+        "d": "Nikomu — na par 5 se hraje vždycky kolem.",
+        "why": "<b>B.</b> Z odpaliště je nedosažitelný, takže o něm nikdo nerozhoduje první ranou. U hráče, který odpálí 250 metrů, spadne plná druhá rána přesně do jeho pásma. Hráč se 175 metrů z odpaliště se k němu dostane až třetí ranou, a to už jinou holí a s jiným rozhodnutím. Jeden hazard, dvě různé otázky.",
+        "back": "List 4 tohle spočítá pro všechny čtyři hráče."
+      },
+      "q4": {
+        "text": "Který z těch tří bunkrů je dekorativní?",
+        "hint": "Šedé pásmo na každém plánu je dopadová zóna odpalu. Ptej se, jestli se bunkr a pásmo vůbec potkávají.",
+        "a": "Plán A",
+        "b": "Plán B",
+        "c": "Plán C",
+        "why": "<b>C.</b> Bunkr na plánu C leží za dopadovou zónou — žádný z hráčů se k němu odpalem nedostane a druhou ranou ho přeletí. Nikomu nic nestojí, ale na údržbu stojí stejně jako ty ostatní. Bunkry A a B v pásmu leží, jen se každý ptá jinak: A křivých ran, B rovných.",
+        "back": "List 1, varianta „Za dopadem“ — tam vyjdou samé nuly."
+      },
+      "q5": {
+        "text": "Co platí o centre-line bunkru? Vyber všechno, co je pravda.",
+        "hint": "Tři odpovědi jsou správné.",
+        "a": "Nechává trávu po obou stranách, takže se do něj nedá dostat smůlou.",
+        "b": "Zužuje fairway, a tím jamku ztěžuje všem stejně.",
+        "c": "Trestá spíš přesné hráče než nepřesné.",
+        "d": "Účet za bezpečnou volbu pošle až u další rány.",
+        "why": "Správně <b>A, C, D</b>. Centre-line bunkr jamku nezužuje, ale rozdvojuje — proto <b>B</b> neplatí. Chytá rány blízko osy, tedy ty povedené (A i C), a bezpečná cesta kolem něj se zaplatí až horším úhlem nebo delší přihrávkou na green (D). Tomu se říká odložený trest.",
+        "back": "Slovníček na listu 6 má oba pojmy — centre-line bunker i odložený trest."
+      },
+      "q6": {
+        "text": "Na Albatrossu 15 dělí dva bunkery uprostřed fairway na širokou pravou a úzkou levou část. Čím se platí za tu bezpečnou pravou stranu?",
+        "a": "Ničím — je to prostě lepší cesta.",
+        "b": "Delší ranou na úzký green, který je navíc obklopený bunkry.",
+        "c": "Tím, že se z ní nedá dohlédnout na green.",
+        "d": "Vyšším stroke indexem jamky.",
+        "why": "<b>B.</b> Klub to říká sám: pravá strana nabízí velkorysou dopadovou zónu, ale následně dlouhou ránu na green. Jamka je navíc dogleg doleva, takže levá strana zkracuje i úhel. Kdyby pravá strana byla širší <em>i</em> kratší, žádná volba by neexistovala.",
+        "back": "Karta Albatross 15 na listu 3."
+      },
+      "pasmo": {
+        "vyborne": {
+          "nadpis": "Výborně",
+          "text": "Umístění hazardů máš zvládnuté. Sbírka jamek je teď na dvaceti kartách — mrkni na Woking 4."
+        },
+        "dobre": {
+          "nadpis": "Dobré",
+          "text": "Základ sedí. Projdi si otázky, kde ses spletl/a, a jdi dál."
+        },
+        "projdes": {
+          "nadpis": "Projdeš",
+          "text": "Vrať se na plát „Stejný písek, jiná otázka“ a přepni si všechny tři varianty."
+        },
+        "zopakuj": {
+          "nadpis": "Zopakuj",
+          "text": "Vrať se na začátek lekce a projdi si plát i simulaci znovu."
+        }
+      },
+      "souhrn": {
+        "nadpis": "Výsledek",
+        "procentBodu": "procent · {body} ze {max} bodů",
+        "spravne": "správně",
+        "chybneCastecne": "chybně nebo částečně",
+        "zcelaMimo": "zcela mimo",
+        "rozpis": "Rozpis odpovědí",
+        "tvojeOdpoved": "Tvoje odpověď",
+        "spravneReseni": "Správně",
+        "pata": "Podrobné vysvětlení je u každé otázky výše. Výsledek se ukládá do přehledu v tomto prohlížeči."
+      },
+      "foot": "list 7 · Zkouška",
+      "cile": [
+        "Ověřím si, že rozeznám hazard, který se ptá, od hazardu, který trestá nebo jen zdobí."
+      ],
+      "zapamatuj": [
+        "Poloha hazardu má tři rozměry: jak daleko od odpaliště, kam napříč fairwayí a ke které ráně v pořadí.",
+        "Otázku klade jen hazard, u kterého má hráč na výběr. Všechno ostatní je trest nebo dekorace.",
+        "Za bezpečnou volbu se skoro nikdy neplatí hned. Zeptej se, kde se zaplatí."
+      ]
+    },
+    "temata": {
+      "strategie": "strategie",
+      "trest": "trest",
+      "riziko-odmena": "riziko a odměna",
+      "umisteni-hazardu": "umístění hazardu",
+      "cteni-terenu": "čtení terénu",
+      "voda-odtok": "voda a odtok",
+      "vitr-slunce": "vítr a slunce",
+      "routing": "routing",
+      "bezpecnost": "bezpečnost",
+      "rytmus-hriste": "rytmus hřiště",
+      "uhel-nabehu": "úhel náběhu",
+      "diagonalni-hazard": "diagonální hazard",
+      "green-komplex": "green komplex"
+    }
+  },
+  "en": {
+    "meta": {
+      "kicker": "Golf Course Architecture",
+      "chapter": "Lesson 7 of 18",
+      "over": "Sand on its own means nothing —",
+      "title": "Where a hazard belongs",
+      "lede": "In lesson 1 you tried out how far from the tee to put a bunker. Now for the other two dimensions: where across the fairway, and to which shot in the sequence. The same two piles of sand turn out to be a question, a punishment, or mere decoration — depending on where you put them.",
+      "zpet": "← Back to the course overview"
+    },
+    "principLabel": "Principle",
+    "toc": {
+      "kicker": "Golf Course Architecture",
+      "sekceHead": "The seven steps",
+      "daleHead": "Where next",
+      "slovnicekPopis": "Every term in the course in one place.",
+      "sbirkaPopis": "Twenty holes taken apart, all in the same format.",
+      "zpetNaPrehled": "← Back to the course overview",
+      "pokracovat": "Continue",
+      "zacit": "Start the lesson"
+    },
+    "foot": {
+      "lekce": "ROUTING · Lesson 7"
+    },
+    "nav": {
+      "preskocit": "Skip to content",
+      "jazykLabel": "Language",
+      "sekceNavLabel": "Section navigation",
+      "prehled": "Lesson overview",
+      "sekceNazvy": [
+        "Same sand",
+        "Three holes",
+        "Czech hole",
+        "Second shot",
+        "To think about",
+        "Glossary",
+        "Exam"
+      ],
+      "dalsi": "Next",
+      "dalsiLekce": "Continue to the next lesson",
+      "klavesniNapoveda": "The plan can be used from the keyboard: tab to it, move the crosshair with the arrow keys, confirm with Enter.",
+      "konecKurzu": "The last finished lesson so far — carry on with the hole collection",
+      "krok": "Step {n} of 7",
+      "predchozi": "Previous"
+    },
+    "teeShot": {
+      "eyebrow": "Tee shot",
+      "over": "Plate —",
+      "title": "Same sand, a different question",
+      "lede": "Three versions of one hole. All of them have the SAME AMOUNT of sand at the SAME DISTANCES from the tee — only where the architect placed it across the fairway changes. Watch the last column of the table.",
+      "principle": "A bunker at the edge catches shots that went wrong. A bunker in the middle catches shots that went right. That is not a question of fairness, but of what you want to find out about the player.",
+      "toggle": {
+        "okraje": "At the edges",
+        "stred": "In the middle",
+        "daleko": "Beyond the drive"
+      },
+      "popis": {
+        "okraje": "Two belts of sand along the edges of the fairway, from 180 to 260 metres. The classic arrangement: miss the fairway and you pay.",
+        "stred": "The same sand, moved to the middle. Grass remains on both sides, so you cannot find it by bad luck — only by aiming straight at the hole.",
+        "daleko": "The same sand in the middle, but from 300 to 380 metres. Beyond the driving range of all four players."
+      },
+      "planLabel": "Plan of a par 4 with belts of sand in three different positions",
+      "tabHead": "One hundred per cent of drives, four players",
+      "tab": {
+        "hrac": "Player",
+        "podil": "Into sand",
+        "odchylka": "Average offset of a caught drive from the centre line"
+      },
+      "verdikt": {
+        "dekorace": "Almost nobody reaches the sand ({max}% for the worst-affected player). This bunker costs nobody anything and asks nothing — it is <b>decoration</b>.",
+        "rovne": "The drives it catches are on average only {odch} metres off the centre line. This sand <b>catches the good shots</b> — it asks the player whether to aim straight at the hole or go around.",
+        "krive": "The drives it catches are on average {odch} metres off the centre line. This sand <b>punishes the bad shots</b> — it asks nothing of the player who aimed well."
+      },
+      "vzorec": "Computed from each player's driving dispersion (both long and lateral, by <span class=\"pojem\">handicap</span>), not estimated.",
+      "foot": "sheet 1 · Tee shot",
+      "cile": [
+        "I can tell a hazard that asks from a hazard that merely punishes — and show the difference in numbers.",
+        "I can explain why a bunker in the middle of the fairway is not unfair."
+      ],
+      "zapamatuj": [
+        "A hazard at the edge catches shots off the line, a hazard in the middle catches shots on it. Same sand, opposite question.",
+        "A hazard you cannot reach by choice, only by bad luck, is not architecture — it is a tax.",
+        "A hazard beyond driving range affects nobody. Decoration costs the same to maintain as a question."
+      ]
+    },
+    "fairway": {
+      "eyebrow": "Fairway",
+      "over": "Three holes, three positions —",
+      "title": "In the middle, in turn, everywhere",
+      "lede": "Woking shows a bunker in the middle of the route that enraged the whole club in 1901. St Andrews shows a hole where three groups of hazards sit at three different distances, so each belongs to a different shot. And Sawgrass shows what happens when the hazard is everywhere and the choice disappears.",
+      "cile": [
+        "I can describe three different hazard positions and say what question each one asks."
+      ],
+      "zapamatuj": [
+        "A bunker in the middle of the fairway does not narrow the hole — it forks it.",
+        "A hazard has a position not only on the map but in the sequence of shots. Ask which shot it concerns.",
+        "When a hazard surrounds the whole target, it stops being a choice and becomes an entry fee."
+      ],
+      "vyzkousej": {
+        "otazka": "Pick one of the three holes and write what would happen to it if the hazard stayed the same size but moved fifty metres. Which shot would it then belong to?",
+        "placeholder": "Write in your own words — nobody is marking this."
+      }
+    },
+    "ceskaJamka": {
+      "eyebrow": "Fairway · Czechia",
+      "over": "Two fairways instead of one —",
+      "title": "Albatross, hole 15",
+      "lede": "The principle from Woking in 1901 turns up on a Czech course built in 2009. The club describes it itself: two bunkers in the middle divide the fairway into a left and a right part. Room on the right, a short cut on the left.",
+      "cile": [
+        "I can recognise Woking's principle on a Czech hole and say what each choice costs."
+      ],
+      "zapamatuj": [
+        "You do not have to copy the hole, only the question it asks.",
+        "When one route is wider and the other shorter, the choice is real. When one is both wider and shorter, there is no choice at all.",
+        "A narrow green can settle the account from the tee: the safe side pays with a longer club at a smaller target."
+      ],
+      "vyzkousej": {
+        "otazka": "On a course you know, find a hole with two routes. What does the safe one cost — length, angle, or the lie of the ball?",
+        "placeholder": "Write in your own words — nobody is marking this."
+      }
+    },
+    "approachNadpis": {
+      "eyebrow": "Approach",
+      "over": "One hazard, two different shots —",
+      "title": "Whose is it, really",
+      "lede": "We will build a par 5 with a cross bunker a hundred metres short of the green — the geometry of Hell Bunker at St Andrews. The simulation then works out whom the hazard actually belongs to: at which shot each player meets it, and how often they land in it at all.",
+      "cile": [
+        "I can show in numbers that the same hazard is a question at a different shot for every player."
+      ],
+      "zapamatuj": [
+        "A hazard belongs not to a hole but to a particular shot — and a different one for each player.",
+        "„Carry it or lay up“ has no single right answer. It has four, depending on who is playing.",
+        "A bunker short of the green costs most to the player who lands in it with a full shot, not to the one who trickles into it."
+      ]
+    },
+    "approach1": {
+      "eyebrow": "Task · simulation",
+      "over": "Carry it, or lay up —",
+      "title": "Worked out over fifteen hundred rounds",
+      "lede": "Pick a player. The table shows how they do when they take the hazard on, and how they do when they lay up short of it every time. The dots on the plan are the actual places the ball stopped after a shot that met the hazard.",
+      "planLabel": "Plan of a par 5 with a cross bunker a hundred metres short of the green",
+      "hracLabel": "Which player you are watching",
+      "tabulka": {
+        "hrac": "Player",
+        "smele": "Takes the hazard on",
+        "opatrne": "Lays up short",
+        "rozdil": "Difference",
+        "rana": "Which shot the hazard belongs to"
+      },
+      "ranaNazvy": [
+        "the second",
+        "the third",
+        "the fourth",
+        "no"
+      ],
+      "grafHead": "Who actually lands in the bunker",
+      "grafPopis": "The share of rounds in which the ball finished in the cross bunker when the player takes the hazard on.",
+      "zaver": "<b>One bunker, four different roles.</b> The scratch player lands in it <b>in half of all rounds</b>, and always with the second shot — a full shot from the fairway finishes exactly in its range. The HCP 9 player meets it <b>in two per cent of rounds</b>: their second shot stops short of it and their third flies over. The 18 and 24 handicappers only deal with it on the third shot, and the 24 finds it in nearly a third of rounds. <br><br><b>And now the awkward part.</b> The difference between „carry it“ and „lay up short“ comes out at two or three hundredths of a stroke on all four rows — <b>below the model's noise</b>. That does not mean the choice does not matter; it means this model under-values a fairway bunker: it counts it only as worse accuracy and less reach, not as a lost stroke. The real Hell Bunker has a face, and players often have to play sideways or backwards out of it. The model cannot do that, so we must not read from it that laying up is pointless. What we may read from it is the first part: <b>whom the hazard belongs to</b>.",
+      "foot": "sheet 4 · Approach",
+      "poznamka": "Fifteen hundred rounds for each combination of player and strategy, computed once on page load from a seed — so the numbers are the same on every visit. The model is coarse: it knows nothing of wind, of the lie in the sand, or of a player changing their mind after a bad shot. Do not take differences below five hundredths of a stroke seriously; that is the model's noise.",
+      "legenda": "The „lays up short“ strategy means the player never plays a shot that would, on plan, finish in the bunker — instead they choose a shorter shot and stop twelve metres in front of it."
+    },
+    "putt": {
+      "eyebrow": "Putt",
+      "over": "Three questions, no marks —",
+      "title": "To think about",
+      "lede": "Write in your own words. Nobody will correct it — it is here so that you answer it for yourself.",
+      "otazky": [
+        "Think of a bunker you find regularly. Do you get there by choice or by bad luck? And does that tell you what the architect wanted from you?",
+        "A bunker in the middle of the fairway enraged the whole of Woking in 1901. What would you say to a member who insists it is unfair?",
+        "If you had to remove three bunkers from a course you know to save on maintenance, which three would you pick, and why?"
+      ],
+      "poznamkaPlaceholder": "Write here…",
+      "ulozeno": "Saved in this browser.",
+      "foot": "sheet 5 · Putt",
+      "cile": [
+        "I can tell a hazard that does something in the hole from one that merely stands there and costs money."
+      ],
+      "zapamatuj": [
+        "Bunker maintenance is the most expensive item per hectare. A bunker that asks nothing is a pure loss.",
+        "What is unfair is not a hazard you can see and decide about. It is the one you fall into with no choice at all.",
+        "Ask of every hazard: which shot does it question, whom does it question, and what happens when the player decides wrongly?"
+      ]
+    },
+    "slovnicek": {
+      "eyebrow": "Glossary",
+      "over": "Terms from this lesson —",
+      "title": "Seven words",
+      "lede": "The technical names stay in English — that is the language golf architecture speaks.",
+      "pojmy": [
+        {
+          "pojem": "Centre-line bunker",
+          "popis": "A bunker in the middle of the fairway with grass on both sides. It does not narrow the hole, it forks it. First seen at Woking in 1901."
+        },
+        {
+          "pojem": "Carry",
+          "popis": "The distance the ball must travel through the air to clear a hazard. The key number for any cross hazard — it decides whom the hazard actually belongs to."
+        },
+        {
+          "pojem": "Cross bunker",
+          "popis": "A bunker running across the fairway that cannot be gone around, only over or short of. It asks about club selection, not direction."
+        },
+        {
+          "pojem": "Layup",
+          "popis": "A deliberately shorter shot placed in front of a hazard. Not cowardice — a choice paid for with a longer next shot."
+        },
+        {
+          "pojem": "Delayed penalty",
+          "popis": "The principle where the safe choice costs nothing at once but makes the next shot dearer. Exactly what the central bunkers at Woking did."
+        },
+        {
+          "pojem": "Decorative hazard",
+          "popis": "A hazard outside every player's landing zone. It looks good, interests nobody, and costs the same to maintain as one that asks a question."
+        },
+        {
+          "pojem": "Effective width",
+          "popis": "The width of grass a player actually has left on their chosen route once the hazard is in place — not the total width of the fairway."
+        }
+      ],
+      "cile": [
+        "I can name hazard positions properly and not confuse carry with the distance to the hazard."
+      ],
+      "zapamatuj": [
+        "Carry is the distance over a hazard, not to it. The difference between them is the whole length of the hazard.",
+        "A layup is a decision, not a surrender.",
+        "A decorative hazard is the only kind worth removing."
+      ],
+      "vyzkousej": {
+        "otazka": "Explain in your own words the difference between a bunker at the edge of the fairway and a centre-line bunker — from the point of view of a player who aims accurately.",
+        "placeholder": "Write in your own words — nobody is marking this."
+      }
+    },
+    "spolecneKarty": {
+      "specsHead": "Three elements",
+      "parLabel": "Par",
+      "delkaLabel": "Length",
+      "architektLabel": "Architect",
+      "vznikLabel": "Year",
+      "prameny": "Sources",
+      "otazkaLabel": "The hole's question",
+      "fotoLabel": "Photo"
+    },
+    "zkouska": {
+      "eyebrow": "Exam",
+      "over": "Six questions for —",
+      "title": "100 points",
+      "lede": "Answer all six; only then will you see the solutions. Your first attempt is the one that counts in the overview.",
+      "spolecne": {
+        "otazka": "Question",
+        "bodu": "points",
+        "zbyva": "Still to answer",
+        "hotovoMuzesOdevzdat": "Done. You can submit.",
+        "spravne": "correct",
+        "tvojeVolba": "your choice",
+        "nicNevybrano": "nothing selected",
+        "moznost": "Option",
+        "zkratkaBodu": "pt",
+        "reseniUKazdeOtazky": "The solutions are shown with each question."
+      },
+      "submit": "Submit",
+      "again": "Try again",
+      "q1": {
+        "text": "On which of these three plans does the sand ask a question of the player aiming straight at the hole?",
+        "hint": "All three have the same amount of sand at the same distances. Look at where the centre line of the hole runs.",
+        "a": "Plan A",
+        "b": "Plan B",
+        "c": "Plan C",
+        "why": "<b>B.</b> The sand in the middle sits exactly on the centre line, which is where a good drive is going. Grass remains on both sides, so the player has a choice — and that is what makes the sand a question. On plan A the sand is at the edges and catches only shots off the line; on plan C it lies beyond driving range and affects nobody.",
+        "back": "Go back to sheet 1 — the last column of the table shows how far off the line the caught drives were."
+      },
+      "q2": {
+        "text": "Why did the central bunkers on the 4th at Woking enrage the members in 1901?",
+        "a": "Because they took up so much room that the hole could no longer be played in par.",
+        "b": "Because they stood in the middle of the fairway, where a good drive was headed — and the members read that as unfair to a good shot.",
+        "c": "Because the architect built them without planning permission.",
+        "d": "Because it was impossible to get out of them in one shot.",
+        "why": "<b>B.</b> The bunkers did not narrow the fairway — grass remained on both sides. That is precisely why you could not fall into them by bad luck, only by choice, and that was new. The members read it as a punishment for a well-aimed shot; Low and Paton meant it as a question that a well-aimed shot gets asked.",
+        "back": "The Woking 4 card in section 2 describes it in detail."
+      },
+      "q3": {
+        "text": "Hell Bunker on the 14th at St Andrews lies 99 metres short of the green on a hole of 561 metres. Which shot does it belong to?",
+        "a": "The drive — it is the main obstacle from the tee.",
+        "b": "It depends on the player: whoever drives far enough deals with it on the second shot; whoever does not meets it on the third.",
+        "c": "The putt, because it lies near the green.",
+        "d": "Nobody's — on a par 5 you always play around it.",
+        "why": "<b>B.</b> It is out of reach from the tee, so nobody decides about it with the first shot. For a player who drives 250 metres, a full second shot lands exactly in its range. A player who drives 175 metres only reaches it with the third, with a different club and a different decision. One hazard, two different questions.",
+        "back": "Sheet 4 works this out for all four players."
+      },
+      "q4": {
+        "text": "Which of these three bunkers is decorative?",
+        "hint": "The grey band on each plan is the driving landing zone. Ask whether the bunker and the band meet at all.",
+        "a": "Plan A",
+        "b": "Plan B",
+        "c": "Plan C",
+        "why": "<b>C.</b> The bunker on plan C lies beyond the landing zone — no player reaches it off the tee, and the second shot flies over it. It costs nobody anything, but it costs the same to maintain as the others. Bunkers A and B do sit in the zone; they simply ask different questions: A of crooked shots, B of straight ones.",
+        "back": "Sheet 1, the „Beyond the drive“ variant — everything there comes out zero."
+      },
+      "q5": {
+        "text": "What is true of a centre-line bunker? Select everything that applies.",
+        "hint": "Three answers are correct.",
+        "a": "It leaves grass on both sides, so you cannot find it by bad luck.",
+        "b": "It narrows the fairway, making the hole harder for everyone equally.",
+        "c": "It punishes accurate players rather than inaccurate ones.",
+        "d": "It sends the bill for the safe choice at the following shot.",
+        "why": "Correct: <b>A, C, D</b>. A centre-line bunker does not narrow the hole, it forks it — so <b>B</b> is false. It catches shots close to the line, that is, the good ones (A and C), and the safe route around it is paid for later with a worse angle or a longer approach (D). That is the delayed penalty.",
+        "back": "The glossary on sheet 6 has both terms — centre-line bunker and delayed penalty."
+      },
+      "q6": {
+        "text": "At Albatross 15, two bunkers in the middle split the fairway into a wide right and a narrow left side. What does the safe right side cost?",
+        "a": "Nothing — it is simply the better route.",
+        "b": "A longer shot into a narrow green that is ringed by bunkers as well.",
+        "c": "The fact that you cannot see the green from there.",
+        "d": "A higher stroke index for the hole.",
+        "why": "<b>B.</b> The club says so itself: the right side offers a generous landing zone but then a long shot to the green. The hole is also a dogleg left, so the left side shortens the angle too. If the right side were both wider <em>and</em> shorter, there would be no choice at all.",
+        "back": "The Albatross 15 card on sheet 3."
+      },
+      "pasmo": {
+        "vyborne": {
+          "nadpis": "Excellent",
+          "text": "You have hazard placement under control. The hole collection now runs to twenty cards — take a look at Woking 4."
+        },
+        "dobre": {
+          "nadpis": "Good",
+          "text": "The basics hold. Look over the questions you got wrong and carry on."
+        },
+        "projdes": {
+          "nadpis": "Pass",
+          "text": "Go back to the plate „Same sand, a different question“ and switch through all three variants."
+        },
+        "zopakuj": {
+          "nadpis": "Repeat",
+          "text": "Go back to the start of the lesson and work through the plate and the simulation again."
+        }
+      },
+      "souhrn": {
+        "nadpis": "Result",
+        "procentBodu": "per cent · {body} of {max} points",
+        "spravne": "correct",
+        "chybneCastecne": "wrong or partial",
+        "zcelaMimo": "completely off",
+        "rozpis": "Answer by answer",
+        "tvojeOdpoved": "Your answer",
+        "spravneReseni": "Correct",
+        "pata": "The full explanation sits with each question above. The result is stored in the overview in this browser."
+      },
+      "foot": "sheet 7 · Exam",
+      "cile": [
+        "I can check that I tell a hazard that asks from one that punishes or merely decorates."
+      ],
+      "zapamatuj": [
+        "A hazard's position has three dimensions: how far from the tee, where across the fairway, and to which shot in the sequence.",
+        "Only a hazard the player has a choice about asks a question. Everything else is punishment or decoration.",
+        "The safe choice is almost never paid for at once. Ask where it is paid for."
+      ]
+    },
+    "temata": {
+      "strategie": "strategy",
+      "trest": "penalty",
+      "riziko-odmena": "risk and reward",
+      "umisteni-hazardu": "hazard placement",
+      "cteni-terenu": "reading the land",
+      "voda-odtok": "water and drainage",
+      "vitr-slunce": "wind and sun",
+      "routing": "routing",
+      "bezpecnost": "safety",
+      "rytmus-hriste": "rhythm of the course",
+      "uhel-nabehu": "angle of attack",
+      "diagonalni-hazard": "diagonal hazard",
+      "green-komplex": "green complex"
+    }
+  }
+}

@@ -440,9 +440,15 @@ a v sekci `jamky/`.
 | 4 — Jak šířka vytváří úhel | Riviera 10 · St Andrews Old 7 · Ballybunion Old 11 · Karlštejn 15 |
 | 5 — Riziko a odměna | Augusta National 13 · Mid Ocean 5 · TPC Sawgrass 17 · Ostravice 16 |
 | 6 — Green komplexy | Pinehurst No. 2 jamka 5 · Sand Hills 1 · Riviera 6 · Slapy 14 |
+| 7 — Kam hazard patří | Woking 4 · St Andrews Old 14 · TPC Sawgrass 17 · Albatross 15 |
 
-Sedmnáct souborů. Lekce 4 a 5 některé karty sdílejí s lekcemi 1–3 —
+Dvacet souborů. Lekce 4 až 7 některé karty sdílejí s lekcemi 1–3 —
 karta je popis jamky, ne majetek jedné lekce, a tatáž jamka může
 ilustrovat víc principů. Nové karty přibývají s každou lekcí, která je
 potřebuje (Krok 14: Augusta 13, Mid Ocean 5, Ostravice 16; Krok 15:
-Pinehurst No. 2 jamka 5, Riviera 6, Slapy 14).
+Pinehurst No. 2 jamka 5, Riviera 6, Slapy 14; Krok 23: Woking 4,
+St Andrews Old 14, Albatross 15).
+
+**Karty kreslené ze skutečných zaměřených obrysů (OpenStreetMap, ODbL):**
+Karlštejn 14 (Krok 18) a Karlštejn 15 (Krok 22). Ostatní karty mají
+geometrii schematickou — vysvětlují princip, neměří se z nich.

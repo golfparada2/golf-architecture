@@ -93,7 +93,20 @@
           "carry"
         ],
         "kde": [
-          5
+          5,
+          7
+        ]
+      },
+      {
+        "pojem": "Centre-line bunker",
+        "popis": "Bunkr uprostřed fairwaye, s trávou po obou stranách. Nezužuje jamku, ale dělí ji na dvě cesty — spadnout do něj se nedá smůlou, jen volbou. Poprvé ve Wokingu roku 1901.",
+        "hledat": [
+          "centre-line",
+          "centreline",
+          "středový bunkr"
+        ],
+        "kde": [
+          7
         ]
       },
       {
@@ -114,6 +127,27 @@
         ],
         "kde": [
           3
+        ]
+      },
+      {
+        "pojem": "Cross bunker",
+        "popis": "Bunkr napříč fairwayí, kolem kterého se nedá obejít — jen přes něj, nebo před něj. Ptá se na volbu hole, ne na směr.",
+        "hledat": [
+          "cross bunker",
+          "příčný bunkr"
+        ],
+        "kde": [
+          7
+        ]
+      },
+      {
+        "pojem": "Dekorativní hazard",
+        "popis": "Hazard mimo dopadovou zónu všech hráčů. Vypadá dobře, nikoho nezajímá a na údržbu stojí stejně jako hazard, který klade otázku.",
+        "hledat": [
+          "dekorativn"
+        ],
+        "kde": [
+          7
         ]
       },
       {
@@ -205,6 +239,16 @@
         ],
         "kde": [
           6
+        ]
+      },
+      {
+        "pojem": "Efektivní šířka",
+        "popis": "Šířka trávy, která hráči po umístění hazardu skutečně zbude na jeho zvolené cestě — ne celková šířka fairwaye. Obdoba efektivní velikosti greenu z lekce 6.",
+        "hledat": [
+          "efektivní šířk"
+        ],
+        "kde": [
+          7
         ]
       },
       {
@@ -335,7 +379,8 @@
         ],
         "kde": [
           1,
-          5
+          5,
+          7
         ]
       },
       {
@@ -378,6 +423,16 @@
         ],
         "kde": [
           5
+        ]
+      },
+      {
+        "pojem": "Odložený trest",
+        "popis": "Princip, kdy bezpečná volba nestojí nic hned, ale zdraží až další ránu — horším úhlem, delší holí nebo horším ležením. Přesně tohle udělaly středové bunkry ve Wokingu.",
+        "hledat": [
+          "odložen"
+        ],
+        "kde": [
+          7
         ]
       },
       {
@@ -752,7 +807,19 @@
           "carry"
         ],
         "kde": [
-          5
+          5,
+          7
+        ]
+      },
+      {
+        "pojem": "Centre-line bunker",
+        "popis": "A bunker in the middle of the fairway with grass on both sides. It does not narrow the hole, it forks it — you cannot find it by bad luck, only by choice. First seen at Woking in 1901.",
+        "hledat": [
+          "centre-line",
+          "centreline"
+        ],
+        "kde": [
+          7
         ]
       },
       {
@@ -805,6 +872,36 @@
         ],
         "kde": [
           3
+        ]
+      },
+      {
+        "pojem": "Cross bunker",
+        "popis": "A bunker running across the fairway that cannot be gone around — only over, or short of. It asks about club selection, not direction.",
+        "hledat": [
+          "cross bunker"
+        ],
+        "kde": [
+          7
+        ]
+      },
+      {
+        "pojem": "Decorative hazard",
+        "popis": "A hazard outside every player's landing zone. It looks good, interests nobody, and costs as much to maintain as one that asks a question.",
+        "hledat": [
+          "decorative hazard"
+        ],
+        "kde": [
+          7
+        ]
+      },
+      {
+        "pojem": "Delayed penalty",
+        "popis": "The principle where the safe choice costs nothing at once but makes the next shot dearer — a worse angle, a longer club, or a worse lie. Exactly what the central bunkers at Woking did.",
+        "hledat": [
+          "delayed penalty"
+        ],
+        "kde": [
+          7
         ]
       },
       {
@@ -881,6 +978,16 @@
         ],
         "kde": [
           6
+        ]
+      },
+      {
+        "pojem": "Effective width",
+        "popis": "The width of grass a player actually has left on their chosen route once the hazard is in place — not the total width of the fairway. The counterpart of effective green size from lesson 6.",
+        "hledat": [
+          "effective width"
+        ],
+        "kde": [
+          7
         ]
       },
       {
@@ -1029,7 +1136,8 @@
         ],
         "kde": [
           1,
-          5
+          5,
+          7
         ]
       },
       {
