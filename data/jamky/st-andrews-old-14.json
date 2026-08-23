@@ -35,8 +35,8 @@
     "tee": null,
     "green": null,
     "presnost": {
-      "cs": "NEURČENO — vyhledávání v OpenStreetMap ani na Wikipedii nebylo v době psaní karty dostupné. Pozor i na to, že v St Andrews je sedm hřišť vedle sebe.",
-      "en": "NOT DETERMINED — neither the OpenStreetMap search nor Wikipedia was reachable when this card was written. Note also that there are seven courses side by side at St Andrews."
+      "cs": "poloha OLD COURSE ověřena v OpenStreetMap (Nominatim): 56.35191, −2.81621. Souřadnice jednotlivé jamky zatím určené nejsou — v St Andrews je sedm hřišť vedle sebe a v okolí 81 greenů.",
+      "en": "the OLD COURSE location is verified in OpenStreetMap (Nominatim): 56.35191, −2.81621. Per-hole coordinates are not yet determined — there are seven courses side by side at St Andrews and 81 greens nearby."
     }
   },
   "otazka": {

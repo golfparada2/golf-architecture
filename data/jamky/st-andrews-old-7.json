@@ -31,16 +31,16 @@
   "vznik": 1863,
   "gps": {
     "tee": [
-      56.3515,
-      -2.8161
+      56.35191,
+      -2.81621
     ],
     "green": [
-      56.3515,
-      -2.8161
+      56.35191,
+      -2.81621
     ],
     "presnost": {
-      "cs": "přibližné, úroveň areálu — NEOVĚŘENO: vyhledávání v OpenStreetMap (Nominatim) tenhle klub pod jménem nenajde, takže souřadnice zůstávají odhadem a jako odhad se s nimi má zacházet",
-      "en": "approximate, resort-level — UNVERIFIED: an OpenStreetMap (Nominatim) search does not find this club by name, so the coordinates remain an estimate and should be treated as one"
+      "cs": "úroveň hřiště, OVĚŘENO 23. 8. 2026 v OpenStreetMap (Nominatim) na dotaz „Old Course, St Andrews“ — dřívější poznámka o neověřeném odhadu už neplatí. Souřadnice jednotlivé jamky klub nezveřejňuje.",
+      "en": "course level, VERIFIED on 23 Aug 2026 in OpenStreetMap (Nominatim) for the query „Old Course, St Andrews“ — the earlier note about an unverified estimate no longer applies. The club does not publish per-hole coordinates."
     }
   },
   "otazka": {

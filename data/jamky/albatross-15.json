@@ -56,8 +56,8 @@
     "tee": null,
     "green": null,
     "presnost": {
-      "cs": "NEURČENO — vyhledávání v OpenStreetMap nebylo v době psaní karty dostupné.",
-      "en": "NOT DETERMINED — the OpenStreetMap search was not reachable when this card was written."
+      "cs": "poloha AREÁLU ověřena v OpenStreetMap (Nominatim): 49.99505, 14.19337. Souřadnice jednotlivé jamky zatím určené nejsou — chybí přiřazení greenu v OSM (v okolí je 21 greenů).",
+      "en": "the RESORT location is verified in OpenStreetMap (Nominatim): 49.99505, 14.19337. Per-hole coordinates are not yet determined — the green has not been identified in OSM (there are 21 greens nearby)."
     }
   },
   "otazka": {
@@ -65,32 +65,30 @@
     "en": "Do you take the wide right side and a long approach, or the narrow left one and a short approach?"
   },
   "tvary": {
-    "poznamka": "schematické, ne přesný půdorys — souřadnice v metrech od černého odpaliště (412 m). Rozvržení vychází z oficiálního popisu jamky na webu klubu (dogleg doleva, dva bunkery uprostřed fairwaye, které ji dělí na levou a pravou část, green s bunkery vpravo, vlevo i vzadu, úzký green). Klub zveřejňuje i grafiku jamky (albatross.cz/images/jamky/jamka15.png), ALE VZDÁLENOSTI Z NÍ ODEČTENÉ NEJSOU — prohlížeč, kterým obrázky prohlížím, byl v době psaní karty nedostupný. Polohy bunkrů a míra ohybu jsou proto odhad podle textu, ne měření.",
+    "poznamka": "ODMĚŘENO Z OFICIÁLNÍHO KLUBOVÉHO PLÁNKU (2026-08-23) — souřadnice v metrech od černého odpaliště (412 m); x je boční odchylka od osy greenu, kladně vpravo. Plánek albatross.cz/images/jamky/jamka15.png jsem změřil po pixelech. Měřítko dávají dvě kótované vzdálenosti na plánku samotném (200 m a 262 m ke středovým bunkerům) a KONTROLA VYŠLA: při tomhle měřítku leží střed greenu 411 m od odpaliště proti oficiálním 412 m. Vzdálenosti podél jamky jsou tedy doložené na metr až dva.\nCO ODMĚŘENÉ NENÍ: plánek nezobrazuje odpaliště (je pod dolním okrajem obrázku), takže se z něj nedá odvodit ani boční poloha odpaliště, ani skutečný úhel doglegu. Ohyb fairwaye je proto odhad: je nastavený tak, aby osa stuhy procházela oběma změřenými středovými bunkry. POZOR NA ZNAMÉNKO — u doglegu DOLEVA se stuha vyklání DOPRAVA od přímé linie odpaliště–green, protože hráč hraje ven doprava a teprve pak se stáčí doleva na green (stejná geometrie jako u Karlštejna 15, Krok 22). Boční odchylky hazardů jsou měřené vůči ose greenu, ALE u dvou středových bunkrů jsem se od měření odchýlil: plánek bez odpaliště nedovoluje určit osu fairwaye přesně, a při doslovném přenesení vycházely bunkry na pravý okraj stuhy. Klub přitom výslovně píše, že velkorysá je pravá strana, takže bunkry kreslím kousek vlevo od osy. Je to jediné místo na téhle kartě, kde má text klubu přednost před mým měřením — a je to tady napsané, aby to nikdo nemusel hádat.\nRYBNÍK: na plánku je vlevo mezi 320 a 374 metrem výrazná vodní plocha, o které oficiální textový popis jamky vůbec nemluví. Kreslím ji podle plánku a tuhle nesrovnalost přiznávám — právě ona nejspíš dělá levou („kratší“) cestu tak úzkou.",
     "fairway": {
-      "ohyb": -60,
-      "sirkaTee": 40,
-      "sirkaGreen": 26,
+      "ohyb": 30,
+      "sirkaTee": 46,
+      "sirkaGreen": 28,
       "zacatek": 20,
       "seed": 5301
     },
     "green": {
-      "x": -2,
-      "y": 400,
+      "x": 0,
+      "y": 412,
       "rx": 8,
       "ry": 11,
-      "rot": -0.25,
+      "rot": -0.2,
       "seed": 5302,
       "amp": 0.07
     },
-    "zkraceni": 0.8,
-    "maxPomer": 1.7,
     "bunkry": [
       {
-        "x": -34,
-        "y": 232,
-        "rx": 5,
-        "ry": 4,
-        "rot": 0.2,
+        "x": 5,
+        "y": 209,
+        "rx": 8,
+        "ry": 9,
+        "rot": 0.1,
         "seed": 5303,
         "amp": 0.17,
         "zkratka": {
@@ -98,43 +96,43 @@
           "en": "CENTRE"
         },
         "label": {
-          "cs": "první ze dvou bunkerů uprostřed fairwaye, které ji dělí na levou a pravou část",
-          "en": "the first of the two bunkers in the middle of the fairway that split it into a left and a right side"
+          "cs": "bližší ze dvou bunkerů uprostřed fairwaye — plánek k němu kótuje 200 m z černého odpaliště",
+          "en": "the nearer of the two bunkers in the middle of the fairway — the plan marks it at 200 m from the back tee"
         }
       },
       {
-        "x": -24,
-        "y": 249,
-        "rx": 4.5,
-        "ry": 3.5,
+        "x": 11,
+        "y": 247,
+        "rx": 10,
+        "ry": 11,
         "rot": -0.1,
         "seed": 5304,
         "amp": 0.17,
         "zkratka": null,
         "label": {
-          "cs": "druhý středový bunkr",
-          "en": "the second central bunker"
+          "cs": "vzdálenější středový bunkr, kótovaný 262 m z černého odpaliště",
+          "en": "the farther central bunker, marked at 262 m from the back tee"
         }
       },
       {
-        "x": 11,
-        "y": 396,
-        "rx": 4,
-        "ry": 3,
-        "rot": 0.25,
+        "x": 25,
+        "y": 385,
+        "rx": 12,
+        "ry": 13,
+        "rot": 0.2,
         "seed": 5305,
         "amp": 0.16,
         "zkratka": null,
         "label": {
-          "cs": "bunkr vpravo od greenu",
-          "en": "bunker right of the green"
+          "cs": "velký bunkr vpravo před greenem",
+          "en": "a large bunker right and short of the green"
         }
       },
       {
-        "x": -16,
-        "y": 398,
-        "rx": 3.6,
-        "ry": 2.8,
+        "x": -24,
+        "y": 404,
+        "rx": 7,
+        "ry": 8,
         "rot": -0.2,
         "seed": 5306,
         "amp": 0.16,
@@ -145,24 +143,44 @@
         }
       },
       {
-        "x": -3,
-        "y": 415,
-        "rx": 4,
-        "ry": 3,
-        "rot": 0.1,
+        "x": 9,
+        "y": 447,
+        "rx": 14,
+        "ry": 5,
+        "rot": 0.05,
         "seed": 5307,
         "amp": 0.16,
         "zkratka": null,
         "label": {
-          "cs": "bunkr za greenem",
-          "en": "bunker behind the green"
+          "cs": "dlouhý bunkr za greenem",
+          "en": "a long bunker behind the green"
         }
       }
     ],
     "dopadovaZona": {
-      "od": 215,
-      "do": 265
-    }
+      "od": 200,
+      "do": 258
+    },
+    "hazardy": [
+      {
+        "typ": "voda",
+        "x": -23,
+        "y": 347,
+        "rx": 13,
+        "ry": 27,
+        "rot": 0.05,
+        "seed": 5310,
+        "amp": 0.09,
+        "zkratka": {
+          "cs": "VODA",
+          "en": "WATER"
+        },
+        "label": {
+          "cs": "vodní plocha po levé straně mezi 320. a 374. metrem — na plánku je, v textovém popisu klubu chybí",
+          "en": "water down the left between 320 and 374 metres — on the plan, but absent from the club's written description"
+        }
+      }
+    ]
   },
   "prvky": [
     {
@@ -181,8 +199,8 @@
         "en": "Room on the right, a short cut on the left"
       },
       "popis": {
-        "cs": "Pravá strana je podle klubu „velkorysá dopadová zóna, avšak následně dlouhá rána na grýn“. Levá nabízí „možnost kratší cesty, avšak za cenu úzké ferveje“. Jamka je dogleg doleva, takže levá strana zkracuje i úhel.",
-        "en": "The right side is, in the club's words, a generous landing zone followed by a long shot to the green. The left offers a shorter route at the price of a narrow fairway. The hole is a dogleg left, so the left side shortens the angle as well."
+        "cs": "Pravá strana je podle klubu „velkorysá dopadová zóna, avšak následně dlouhá rána na grýn“. Levá nabízí „možnost kratší cesty, avšak za cenu úzké ferveje“ — a plánek ukazuje proč: od 320. metru lemuje levou stranu voda. Užší je ta cesta doslova.",
+        "en": "The right side is, in the club's words, a generous landing zone followed by a long shot to the green. The left offers a shorter route at the price of a narrow fairway — and the plan shows why: from 320 metres on, water runs down the left. That route is narrow in the most literal sense."
       }
     },
     {
@@ -210,12 +228,12 @@
     {
       "titul": "Albatross Golf Resort — grafika jamky 15",
       "url": "https://albatross.cz/images/jamky/jamka15.png",
-      "poznamka": "oficiální plánek jamky. NEODEČTENO — v době psaní karty se mi ho nepodařilo otevřít, takže vzdálenosti bunkrů z něj vzaté nejsou. Je to první věc, kterou u téhle karty doplnit."
+      "poznamka": "oficiální plánek jamky. ODMĚŘENO 23. 8. 2026 po pixelech: měřítko z kótovaných 200 a 262 m ke středovým bunkerům, kontrola přes polohu greenu (vyšlo 411 m proti oficiálním 412). Odsud pocházejí vzdálenosti všech hazardů i rybník vlevo, který v textovém popisu klubu není."
     }
   ],
   "naCoSeDivat": {
-    "cs": "Sleduj oba pruhy trávy kolem středových bunkrů. Levý je užší a kratší, pravý širší a delší — a jamka po tobě chce, aby sis vybral dřív, než švihneš.",
-    "en": "Watch both strips of grass around the central bunkers. The left one is narrower and shorter, the right one wider and longer — and the hole wants you to choose before you swing."
+    "cs": "Sleduj oba pruhy trávy kolem středových bunkrů — a pak se podívej, co levou cestu čeká dál. Bunkry jsou 200 a 262 metrů z černého odpaliště, obě čísla jsou z klubového plánku.",
+    "en": "Watch both strips of grass around the central bunkers — then look at what waits further down the left route. The bunkers sit 200 and 262 metres from the back tee; both numbers come from the club's plan."
   },
   "lekce": {
     "cs": "Princip z Wokingu roku 1901 funguje i na českém hřišti z roku 2009. Kopírovat se nemusí jamka, stačí otázka, kterou klade.",

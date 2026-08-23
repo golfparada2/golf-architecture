@@ -2,6 +2,99 @@
 
 Průběžný soubor podle části 15 zadání. Kroky 1–7 hotové.
 
+## Krok 24 — Proč přestal fungovat prohlížeč (23. 8. 2026)
+
+### Příznaky
+
+Uprostřed Kroku 23 přestaly fungovat `javascript_tool` i snímkování obrazovky.
+`javascript_tool` hlásil `CDP sendCommand "Runtime.evaluate" timed out after
+45000ms on tab … The renderer may be frozen or unresponsive`, snímkování
+`Failed to deserialize params.clip.scale`. Vypadalo to na rozbité rozšíření.
+
+### Příčina — moje vlastní
+
+**Nebylo rozbité rozšíření, ale karta prohlížeče, kterou jsem zavařil sám.**
+Při průzkumu pokrytí patnácti hřišť jsem pustil `Promise.all` nad sedmi
+souběžnými dotazy na `openstreetmap.org/api/0.6/map` a každou odpověď hnal
+přes `DOMParser` do plného DOM.
+
+Změřeno až potom: **jeden takový výřez má 4 až 8 MB XML** (Albatross 3,9 MB,
+Woking 8,2 MB). Sedm najednou je 30–50 MB textu a k tomu DOM strom několikrát
+větší. Renderer to položilo a od té chvíle už karta neodpověděla na nic —
+včetně snímkování, protože to jde přes tentýž renderer.
+
+### Oprava
+
+Zavřít zaseknuté karty (`tabs_close_mcp`), vytvořit novou
+(`tabs_context_mcp` s `createIfEmpty: true`; pozor, po zavření poslední karty
+zanikne i skupina a `tabs_create_mcp` pak hlásí chybu) a ověřit triviálním
+skriptem. Rozšíření bylo celou dobu v pořádku.
+
+> **Poučení — pravidla pro práci s OSM z prohlížeče:**
+> 1. **Nikdy `Promise.all` nad více staženími mapy.** Jeden dotaz po druhém,
+>    s krátkou pauzou.
+> 2. **Nepoužívej `DOMParser`, když stačí spočítat.** Regulární výraz nad
+>    textem odpovědi spotřebuje zlomek paměti — počty prvků se dají získat
+>    přes `matchAll(/<tag k="golf" v="([a-z_]+)"/g)`.
+> 3. **Když je potřeba geometrie, drž výřez malý** (0,004–0,008°) a zpracuj
+>    jedno hřiště na jednu kartu.
+> 4. **Po těžké práci kartu zavři.** Zaseknutá karta shodí i snímkování.
+
+### Co se díky opravě hned doplnilo
+
+**Souřadnice areálů přes Nominatim** (funguje z prohlížeče, z kontejneru je
+zakázaný v `robots.txt`): Woking 51.30493 / −0.59823 · Albatross 49.99505 /
+14.19337 · Old Course St Andrews 56.35191 / −2.81621. Cypress Point Nominatim
+nenajde ani teď.
+
+**Tím se opravila i stará karta:** `st-andrews-old-7` měla GPS označenou jako
+NEOVĚŘENOU od Kroku 11. Teď ověřená je.
+
+**A potvrdilo se, jak nebezpečné je hádat:** moje odhady, které jsem do
+skriptu zkusil dát, byly u Wokingu **1,2 km** a u Albatrossu **2,3 km** vedle.
+Kdybych je použil jako bbox, vyšlo by „hřiště není zmapované". Je to přesně
+ta chyba z Kroku 17, jen o jednu úroveň dřív.
+
+**Zmapování obou nových hřišť** (dřív neprověřené): Woking 22 greenů, 42
+odpališť, 49 bunkerů · Albatross 21 greenů, 89 odpališť, 55 bunkerů. Obě jsou
+tedy převeditelná, jakmile objednatel určí green.
+
+### Odměření klubového plánku Albatrossu 15
+
+Tohle v Kroku 23 selhalo kvůli témuž zaseknutí. Teď hotovo — a je to nejlepší
+doklad, jaký zatím která česká karta má kromě Karlštejna.
+
+Postup: obrázek `albatross.cz/images/jamky/jamka15.png` (500 × 800) načten do
+`<canvas>` (stejný původ, takže `getImageData` projde), pixely klasifikované
+na písek a vodu, souvislé oblasti nalezené průchodem do šířky.
+
+**Měřítko dal plánek sám:** jsou na něm kótované dvě vzdálenosti ke středovým
+bunkrům, 200 m a 262 m z černého odpaliště. Z nich vyšlo 2,32 px/m.
+**KONTROLA:** při tomhle měřítku leží střed greenu 411 m od odpaliště proti
+oficiálním 412 m. Měřítko tedy sedí a vzdálenosti podél jamky jsou doložené.
+
+Odsud pocházejí nové polohy: bližší středový bunkr 200–218 m, vzdálenější
+236–258 m, bunkr vpravo před greenem 371–398 m, vlevo 396–412 m, dlouhý
+bunkr za greenem kolem 447 m.
+
+**A hlavně nález, který text klubu neuvádí:** na plánku je **vodní plocha po
+levé straně mezi 320. a 374. metrem**. Oficiální popis jamky o ní mlčí.
+Nejspíš právě ona dělá levou („kratší") cestu tak úzkou, jak klub píše.
+Karta ji teď kreslí a ten rozpor přiznává.
+
+**Jedno místo, kde jsem měření nepoužil:** boční polohu obou středových
+bunkrů. Plánek nezobrazuje odpaliště, takže osu fairwaye nedovoluje určit
+přesně, a při doslovném přenesení vycházely bunkry na pravý okraj stuhy —
+zatímco klub výslovně píše, že velkorysá je pravá strana. Kreslím je proto
+kousek vlevo od osy a v `tvary.poznamka` je to napsané.
+
+**Chyba, kterou to odhalilo:** poprvé jsem dal `fairway.ohyb` zápornou
+hodnotu, protože klub píše „dogleg doleva". Bunkry pak vypadly mimo fairway.
+**U doglegu DOLEVA se stuha vyklání DOPRAVA od přímé linie odpaliště–green**,
+protože hráč hraje ven doprava a teprve pak se stáčí doleva na green — přesně
+ta geometrie, kterou jsem rozebral u Karlštejna 15 v Kroku 22. Znaménko
+`ohyb` tedy NENÍ směr doglegu, ale strana, na kterou se vyklání stuha.
+
 ## Krok 23 — Lekce 7: Kam hazard patří (22. 8. 2026)
 
 Sedmá lekce ze sedmnácti, postavená stejným vzorem jako 4–6, plus **tři nové

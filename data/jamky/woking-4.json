@@ -32,8 +32,8 @@
     "tee": null,
     "green": null,
     "presnost": {
-      "cs": "NEURČENO — vyhledávání v OpenStreetMap ani na Wikipedii nebylo v době psaní karty dostupné. Souřadnice se doplní, až půjde ověřit.",
-      "en": "NOT DETERMINED — neither the OpenStreetMap search nor Wikipedia was reachable when this card was written. Coordinates will be added once they can be verified."
+      "cs": "poloha KLUBU ověřena v OpenStreetMap (Nominatim): 51.30493, −0.59823. Souřadnice jednotlivé jamky zatím určené nejsou — v okolí je 22 greenů.",
+      "en": "the CLUB location is verified in OpenStreetMap (Nominatim): 51.30493, −0.59823. Per-hole coordinates are not yet determined — there are 22 greens nearby."
     }
   },
   "otazka": {
