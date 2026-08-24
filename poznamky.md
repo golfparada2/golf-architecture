@@ -2,6 +2,84 @@
 
 Průběžný soubor podle části 15 zadání. Kroky 1–7 hotové.
 
+## Krok 37 — Fairway do zbylých osmi karet (23. 8. 2026)
+
+Zadání: dokreslit fairway do schémat, které ji ještě neměly — u par 3 (Riviera 6,
+Cypress Point 16, Karlštejn 14, TPC Sawgrass 17) se vynechává záměrně, architektonicky
+ji nemají. Zbylo osm jamek typu par 4/5: Karlštejn 15, Ballybunion Old 11, Mid Ocean 5,
+Pinehurst 2-5, Riviera 10, Sand Hills 1, St Andrews Old 7, St Andrews Old 14.
+
+### Nová pomůcka: kalibrace satelitní fotky bez fotky od objednatele
+
+Krok 36 ukázal, jak se z fotky objednatele udělá měřicí přístroj (spárování bodů,
+podobnostní transformace). Tady jsem potřeboval totéž, ale bez fotky — objednatel žádnou
+neposlal, jen řekl použít satelit. Řešení: Google Maps umí na URL s DMS souřadnicí
+(`/maps/search/{lat},{lon}/@{střed},{zoom}z/data=!3m1!1e3`) vykreslit červený špendlík
+přesně na zadaný bod. Ten se najde v pixelech (nejnižší červený pixel = špička), k němu
+se přidá měřítko z posuvníku vpravo dole (`50 m` nebo `100 m` = tolik a tolik pixelů) —
+a je hotová kalibrace pixel↔metr↔GPS, bez nutnosti mít žádnou nahranou fotku. Ověřuje se
+stejně jako v Kroku 36: existující zaměřené prvky karty (green, bunkry) se touhle
+kalibrací převedou zpátky na snímek a musí sednout na to, co je vidět.
+
+Kde OSM `golf=fairway` v koridoru jamky je, použil jsem ho jako kotvu. Kde není (Pinehurst
+2-5 skoro celá, Riviera 10 celá, poslední úsek Mid Ocean 5, Sand Hills 1 od půlky, St
+Andrews 7 a 14 skoro celé — Old Course má fairway jen zlomkovitě zmapovanou), fairway jsem
+domaloval podle viditelného posekaného pruhu na satelitu. Nová sdílená pomůcka
+`dev/fairway_ribbon.py` z ručně určených bodů osy a šířky v každém bodě postaví stuhu
+(Catmull-Rom spline, stejná technika jako `fairwayOsa()` v `platy.js`, ale rovnou do
+pevného polygonu).
+
+### Mid Ocean 5: karta mířila 380 metrů vedle
+
+Tohle nebyla jen chybějící fairway. Karta už od Kroku 34 nesla poznámku, která si sama
+odporovala se stavem pole `gps.tee`: text v `tvary.poznamka` popisoval, jak jsem tehdy
+zjistil, že odpaliště zadané objednatelem leží na špatné straně greenu a linie odtud vůbec
+nekříží Mangrove Lake — a že ze sedmnácti kandidátů jen tři na západní straně dávají smysl.
+**Ale do `gps.tee` se ta oprava nikdy nezapsala.** Pole pořád ukazovalo na starou,
+špatnou souřadnici u pobřeží Trott's Bay — 380 m od skutečného odpaliště.
+
+Přišel jsem na to při hledání fairwaye: satelitní snímek na zadané `gps.tee` ukazoval
+pobřežní domy, žádný trávník. Dohledal jsem v OSM přímo `golf=hole` s `ref=5` (way
+1147116489) — jeho koncový bod u odpaliště leží 380 m severozápadně, přesně na jazyku
+země obklopeném Mangrove Lake, se čtyřmi reálnými bunkry po stranách. S touhle opravou
+vychází přímá vzdálenost 355 m proti oficiálním 396 m (−10,3 %) — mnohem věrohodnější
+než dřívějších −22 %. Existující green, bunkry u greenu a obrys jezera v kartě zůstaly:
+přepočítal jsem je do nového rámce (souřadnicová soustava tee→green) a vyšly přesně na
+reálnou Mangrove Lake a reálný green z OSM — potvrzuje to, že tahle geometrie byla od
+Kroku 34 postavená správně, jen se zapomnělo přepsat pole `gps.tee`. Fairway (reálný OSM
+polygon + domalovaný úsek k greenu přes úžinu jezera) a čtyři odpalištní bunkry jsem
+přidal nově. Vykreslená karta teď konečně ukazuje to, co ji dělá slavnou: odpal musí
+přenést roh jezera, jinak se ke greenu nedostaneš.
+
+**Poučení, který si beru z tohohle kroku:** poznámka v `tvary.poznamka`, která popisuje
+opravu, není totéž jako oprava samotná. Pokud text říká „mělo by to být jinak" a pole
+pořád obsahuje to staré, karta lže dvakrát — jednou v datech, podruhé v komentáři, který
+tvrdí, že o tom ví.
+
+### Ballybunion Old 11 — vedlejší zjištění při stavbě fairwaye
+
+Fairway z pěti roztroušených OSM kousků vyšla podél útesu prakticky rovná, bez zákruty.
+To mění dřívější hypotézu (karta, otevřená otázka): rozdíl 432 m oficiálně vs. 345 m
+vzdušnou čarou nejspíš nevysvětluje dogleg (rovná fairway žádný nemá), spíš to podporuje
+druhou variantu už v kartě — že skutečná hraná délka je blíž 411 m (449 yardů) než
+udávaných 432 m. Bunkry na týhle jamce nejsou žádné — brání ji duny, útes a rough, což
+satelit potvrzuje.
+
+### Zbylých šest jamek — bez podobného nálezu
+
+Karlštejn 15 (dogleg kolem rybníka Voškov), Pinehurst 2-5, Riviera 10, Sand Hills 1,
+St Andrews Old 7 a St Andrews Old 14 měly `gps.tee`/`gps.green` v pořádku — kontrola
+vzdálenosti proti oficiální délce vyšla u všech v rozmezí −5 až −16 %, což je normální
+pro dogleg (přímá vzdálenost kratší než hraná). Přidána byla jen fairway, u St Andrews
+14 navíc záměrně tak, aby Hell Bunker a shluk Beardies (existující OSM bunkry) ležely
+uvnitř pásu fairwaye, ne mimo — jsou to fairwayové bunkry, tak to na Old Course je.
+
+### Co u téhle dávky zaměřené NENÍ
+
+Šířka fairwaye v úsecích domalovaných ze satelitu (ne z OSM) je vždy odhad z toho, co je
+vidět, ne měření — přiznáno v `obrys.zdroj` u každé takové karty zvlášť. Regresní
+kontrola (`dev/sweep.js`) proběhla přes všech 60 stránek bez chyby po celé dávce.
+
 ## Krok 36 — Riviera 6: fotka od objednatele jako měřicí přístroj (23. 8. 2026)
 
 Poslední nepřevedená reálná jamka. Karta stála na jedné větě — *green má
