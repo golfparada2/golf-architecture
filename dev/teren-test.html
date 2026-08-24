@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Test: reliéf terénu (vrstevnice + šrafy sklonu)</title>
+<style>
+  :root {
+    --turf: #cdd9b0; --turf-d: #b9c99a; --ink: #3b3226; --ink2: #6b5f4d;
+    --hatch-density: 1; --sand: #e8dcc0; --water: #9ab6c4;
+  }
+  body { font-family: sans-serif; background: #f3ecd9; padding: 20px; }
+  svg { background: var(--turf); border: 1px solid #999; width: 900px; height: 600px; }
+  .lab.sm { font-size: 6px; fill: var(--ink2); font-family: sans-serif; }
+</style>
+</head>
+<body>
+<h3>Syntetická mřížka: jeden kopec u greenu (jen test kódu, žádná karta ho nepoužívá)</h3>
+<svg id="plat" viewBox="0 0 300 400"></svg>
+<div id="stav"></div>
+<script type="module">
+import { E, vrstevnice, srafySklonu, hladkaCesta } from '../js/platy.js';
+
+const svg = document.getElementById('plat');
+
+// Syntetická mřížka 20x26, krok 10 m -> pokrývá 190x250 m, jeden kopec
+// uprostřed doprava nahoře (simuluje kopec u greenu, jen pro test algoritmu).
+const sirka = 20, vyska = 26, krokM = 10;
+const hodnoty = [];
+for (let r = 0; r < vyska; r++) {
+  const radek = [];
+  for (let c = 0; c < sirka; c++) {
+    const dx = c - 14, dy = r - 6;
+    const kopec = 8 * Math.exp(-(dx * dx + dy * dy) / 40);
+    const sklonZakladu = (vyska - r) * 0.15; // mírné stoupání směrem k odpališti
+    radek.push(+(kopec + sklonZakladu).toFixed(2));
+  }
+  hodnoty.push(radek);
+}
+
+const mrizka = { sirka, vyska, krokM, pocatek: [-95, 0], hodnoty };
+
+// stejné px/py jako platy.js -- jednoduché měřítko 1.4 px/m, y roste nahoru
+const meritko = 1.4;
+const maxY = (vyska - 1) * krokM;
+const px = (x) => (x + 95) * meritko;
+const py = (y) => (maxY - y) * meritko;
+
+let chyby = [];
+try {
+  vrstevnice(svg, mrizka, px, py, { interval: 1 });
+  srafySklonu(svg, mrizka, px, py, {});
+} catch (e) {
+  chyby.push(String(e && e.stack || e));
+}
+
+document.getElementById('stav').textContent = chyby.length
+  ? 'CHYBA: ' + chyby.join(' | ')
+  : 'OK — vykresleno bez chyby. Cest v <path>: ' + svg.querySelectorAll('.terenVrstevnice path').length
+    + ', čárek sklonu: ' + svg.querySelectorAll('.terenSrafySklonu line').length;
+</script>
+</body>
+</html>

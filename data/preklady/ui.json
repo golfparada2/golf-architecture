@@ -23,7 +23,8 @@
     "kurzorPoloha": "Zaměřovač: {x} % šířky, {y} % délky plánu. Šipkami posouvej, Enterem potvrď.",
     "klavesniNapoveda": "Plán se dá ovládat i klávesnicí: tabulátorem na něj přejdi, šipkami posouvej zaměřovač, Enterem potvrď.",
     "vyzkousej": "Vyzkoušej",
-    "vyzkousejUlozeno": "Uloženo v tomto prohlížeči. Nikam se to neodesílá."
+    "vyzkousejUlozeno": "Uloženo v tomto prohlížeči. Nikam se to neodesílá.",
+    "tiskRezim": "Jen inkoust (tisk)"
   },
   "en": {
     "preskocit": "Skip to content",
@@ -49,6 +50,7 @@
     "kurzorPoloha": "Crosshair: {x}% across, {y}% up the plan. Arrow keys move it, Enter confirms.",
     "klavesniNapoveda": "The plan can be used from the keyboard: tab to it, move the crosshair with the arrow keys, confirm with Enter.",
     "vyzkousej": "Try it",
-    "vyzkousejUlozeno": "Saved in this browser. It is not sent anywhere."
+    "vyzkousejUlozeno": "Saved in this browser. It is not sent anywhere.",
+    "tiskRezim": "Ink only (print)"
   }
 }

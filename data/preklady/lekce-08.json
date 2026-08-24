@@ -1,0 +1,772 @@
+{
+  "cs": {
+    "meta": {
+      "kicker": "Golfová architektura",
+      "chapter": "Lekce 8 z 18",
+      "over": "Kopíruje se otázka, ne kopec —",
+      "title": "Vzorové jamky",
+      "lede": "Macdonald, Raynor a jejich generace obcházeli staré skotské a anglické linksy s poznámkovým blokem a hledali jamky, které kladou dobrou otázku. Kopec, po kterém se ta otázka jmenuje, přenést nejde — ale otázku ano. Tahle lekce rozebírá tři nejkopírovanější šablony v dějinách oboru: Redan, Biarritz a Punchbowl. U každé platí totéž: co dělá jamku dobrou, není tvar, je to rozhodnutí, které po hráči chce.",
+      "zpet": "← Zpět na rozcestník"
+    },
+    "principLabel": "Princip",
+    "toc": {
+      "kicker": "Golfová architektura",
+      "sekceHead": "Sedm kroků lekce",
+      "daleHead": "Kam dál",
+      "slovnicekPopis": "Všechny pojmy kurzu na jednom místě.",
+      "sbirkaPopis": "Dvacet rozebraných jamek, každá ve stejném formátu.",
+      "zpetNaPrehled": "← Zpět na rozcestník",
+      "pokracovat": "Pokračovat",
+      "zacit": "Začít lekci"
+    },
+    "foot": {
+      "lekce": "ROUTING · Lekce 8"
+    },
+    "nav": {
+      "preskocit": "Přeskočit na obsah",
+      "jazykLabel": "Jazyk",
+      "sekceNavLabel": "Navigace mezi sekcemi",
+      "prehled": "Rozcestník lekce",
+      "sekceNazvy": [
+        "Rameno, ne praporek",
+        "Tři šablony",
+        "Česká jamka",
+        "Slepá rána",
+        "K zamyšlení",
+        "Slovníček",
+        "Zkouška"
+      ],
+      "dalsi": "Další",
+      "dalsiLekce": "Pokračovat další lekcí",
+      "klavesniNapoveda": "Plán se dá ovládat i klávesnicí: tabulátorem na něj přejdi, šipkami posouvej zaměřovač, Enterem potvrď.",
+      "konecKurzu": "Zatím poslední hotová lekce — pokračuj sbírkou jamek",
+      "krok": "Krok {n} z 7",
+      "predchozi": "Předchozí"
+    },
+    "teeShot": {
+      "eyebrow": "Krok 1 z 7",
+      "over": "Stejný odpal, jiný cíl —",
+      "title": "Rameno, ne praporek",
+      "lede": "Redan je nejkopírovanější jamka v dějinách oboru — plošinový green natočený od hráče asi o 45°, se svahem, který padá zprava doleva a zezadu dopředu, a s hlubokým bunkrem, který hlídá kratší stranu. Recept, který se připisuje C. B. Macdonaldovi, zní: úzká plošina, náklon, hluboký bunkr vepředu, přístup po úhlopříčce. Schéma níž je ilustrativní — není to plán žádné konkrétní jamky — ale svah a rameno v něm fungují přesně podle receptu. Vyzkoušej, co se stane, když hráč míří na praporek přímo, a co, když míří vedle — na rameno, které míč sesune ke praporku samo.",
+      "principle": "Redan neschovává hazard. Ukazuje ho a stejně dovoluje dobrý výsledek dvěma úplně různými cestami — jednou pro přesný úder, druhou pro hráče, který se spolehne na svah. Obě musí vést k praporku, jinak to není Redan, jen šikmý green.",
+      "toggle": {
+        "okraje": "Přímo na praporek",
+        "stred": "Na rameno",
+        "daleko": "Na rameno"
+      },
+      "popis": {
+        "okraje": "Rána míří přesně na jamku. Funguje skvěle, když sedne — ale rozptyl kolem cíle jde snadno doleva do bunkru nebo doprava mimo green.",
+        "stred": "Rána míří vedle praporku, na vyvýšené rameno greenu. Svah odtud vede míč doleva a dopředu, směrem k jamce — i nepřesná rána má šanci skončit blízko.",
+        "daleko": "Rána míří vedle praporku, na vyvýšené rameno greenu. Svah odtud vede míč doleva a dopředu, směrem k jamce — i nepřesná rána má šanci skončit blízko."
+      },
+      "planLabel": "Schéma ilustrativního Redanu s ramenem a bunkrem",
+      "tabHead": "Kolik ran skončí na greenu",
+      "tab": {
+        "hrac": "Hráč",
+        "podil": "Na greenu",
+        "odchylka": "Průměr od jamky"
+      },
+      "verdikt": {
+        "dekorace": "U tohohle hráče strategie skoro nic nemění — na green se z tolika ran trefí málokdy tak jako tak ({max} %).",
+        "rovne": "Míření na rameno tomuhle hráči pomáhá jen málo — rozdíl v tom, kolik ran skončí na greenu, je pod {odch} procentního bodu.",
+        "krive": "Míření na rameno tomuhle hráči zvedá šanci na green o {odch} procentního bodu — přesně to, k čemu je rameno navržené."
+      },
+      "vzorec": "Model: jedna přiblížka ze 180 m, boční a podélná chyba škálovaná podle hendikepu (stejný vzorec jako u ostatních lekcí). Rána, která dopadne do pásu ramene, se posune blíž k jamce — to simuluje, jak svah odvádí míč. 2000 kol na hráče a strategii.",
+      "foot": "Na další stránce tři šablony vedle sebe — a co se u nich mění, když je architekt přenese na jiný pozemek.",
+      "cile": [
+        "Vysvětlit, proč Redan dovoluje dva různé způsoby, jak se trefit na green, a proč to není náhoda."
+      ],
+      "zapamatuj": [
+        "Redan je plošinový green natočený od hráče, s hlubokým bunkrem u kratší (obvykle pravé) strany.",
+        "Rameno u greenu není překážka — je to druhá cesta k jamce, pro hráče, který se netroufne přímo na praporek.",
+        "Šablona funguje jen tehdy, když obě cesty (přímá i přes rameno) vedou k rozumnému výsledku — jinak je to jen šikmý green."
+      ]
+    },
+    "fairway": {
+      "eyebrow": "Krok 2 z 7",
+      "over": "Tři nápady, co obletěly svět —",
+      "title": "Tři šablony",
+      "lede": "Macdonald a jeho žák Seth Raynor stavěli od roku 1909 hřiště po celé Americe a na každém zopakovali pár osvědčených schémat. Nešlo o nedostatek fantazie — šlo o to, že tyhle otázky fungují skoro na jakémkoli pozemku. Tady jsou tři nejvlivnější, s jejich skutečným původem.",
+      "cile": [
+        "Znát původ a klíčový rys tří nejkopírovanějších šablon: Redanu, Biarritzu a Punchbowlu."
+      ],
+      "zapamatuj": [
+        "Redan (North Berwick, 1869): šikmý green, bunkr na kratší straně.",
+        "Biarritz (Biarritz Golf Club, ~1888): obří green rozdělený hlubokým prolomem na dvě patra.",
+        "Punchbowl (přirozený vznik na starých linksech, formalizovaný Macdonaldem na National Golf Links, jamka 16): green v míse, svahy míč vrací zpátky doprostřed."
+      ],
+      "vzory": [
+        {
+          "jmeno": "Redan",
+          "puvod": "15. jamka, North Berwick West Links, Skotsko. Par 3, 189 yardů. Žádný jeden autor se neuvádí jistě — hřiště existovalo od roku 1832, jamka dostala dnešní podobu při rozšíření na 18 jamek v roce 1895.",
+          "znak": "Green skloněný přibližně o 45° od hráče, náklon zprava doleva a zezadu dopředu, hluboký bunkr u kratší (pravé) strany. Vyvýšené rameno na druhé straně svádí nízkou ránu ke praporku.",
+          "priklad": "Nejslavnější kopie: National Golf Links of America, jamka 4 (C. B. Macdonald, 1911) — mnozí architekti a kritici ji řadí dokonce před originál.",
+          "prenositelne": "Otázka, kterou Redan klade, nezávisí na tom, jestli fouká skotský vítr nebo ne: „Zahraješ přesně na praporek, nebo necháš pracovat svah?“ Tahle otázka jde postavit na rovině stejně jako v dunách."
+        },
+        {
+          "jmeno": "Biarritz",
+          "puvod": "3. jamka „The Chasm“, Biarritz Golf Club, Francie. Navrhl Willie Dunn ml. kolem roku 1888, hrálo se přes záliv nad Biskajským zálivem. Původní jamka byla zničená za druhé světové války a dnes neexistuje.",
+          "znak": "Obří green (60 a víc metrů na délku) rozdělený napříč hlubokým prolomem (3–7 stop) na přední a zadní patro. Trefit se na správnou stranu prolomu je důležitější než trefit se na green vůbec.",
+          "priklad": "Nejslavnější dnešní příklad: Yale Golf Course, jamka 9 (C. B. Macdonald a Seth Raynor, 1926) — přes 60 metrů hluboký green nad rybníkem Greist Pond.",
+          "prenositelne": "Biarritz učí, že velký green není automaticky snadný cíl — je to dvě menší jamky v jedné, podle toho, kde je ten den praporek."
+        },
+        {
+          "jmeno": "Punchbowl",
+          "puvod": "Na rozdíl od předchozích dvou nemá Punchbowl jednu jasnou nulovou jamku — vznikal přirozeně v prohlubních starých skotských a anglických linksů, kde architekti hledali místo chráněné před větrem. Macdonald ho zformalizoval jako jamku 16 na National Golf Links of America.",
+          "znak": "Green leží v míse obklopené valy na třech až čtyřech stranách. Svahy svádí i nepřesnou ránu doprostřed — přístup bývá slepý, hráč vidí jen vlaječku na tyči nad valem.",
+          "priklad": "National Golf Links of America, jamka 16; Fishers Island, jamka 4 (obojí Raynor/Macdonald).",
+          "prenositelne": "Punchbowl je paradox: schová green, ale zvětší efektivní cíl. Slepá rána, která odpouští víc, než ukazuje — přesně to, co dělá lekce 6 s efektivní velikostí greenu."
+        }
+      ],
+      "vyzkousej": {
+        "otazka": "Kterou ze tří šablon bys nejradši postavil na hřišti, které znáš — a proč zrovna tam?",
+        "placeholder": "Napiš si poznámku…"
+      }
+    },
+    "ceskaJamka": {
+      "eyebrow": "Krok 3 z 7",
+      "over": "Nemusíš kopírovat Skotsko —",
+      "title": "Česká jamka",
+      "lede": "Golf Park Slapy nikdy nestavěl Biarritz — jeho architekti řešili úplně jiný problém: jak dát klubu šest různých špic praporku na jedné jamce, aniž by musel hýbat bunkrem nebo prodlužovat odpaliště. Řešení je ale přesně ten samý nápad, který pohání Biarritz i Punchbowl: strukturu, která dělá jamku zajímavou, nemusíš stavět kolem greenu — můžeš ji postavit dovnitř greenu.",
+      "cile": [
+        "Vidět, že stejný princip (vnitřní struktura greenu mění hru bez nových hazardů) funguje i bez kopírování konkrétní šablony."
+      ],
+      "zapamatuj": [
+        "Slapy 14 nemá prolom jako Biarritz ani mísu jako Punchbowl — má hloubku a patra.",
+        "Šest různých pozic praporku na jedné jamce znamená šest různých her, aniž se hnulo s jediným bunkrem.",
+        "Princip se dá přenést i bez toho, aby architekt kdy viděl originál."
+      ],
+      "vyzkousej": {
+        "otazka": "Kterou část Slapů 14 by šlo popsat slovy „vnitřní struktura greenu“, kdybys tu jamku neznal a viděl jen text karty?",
+        "placeholder": "Napiš si poznámku…"
+      }
+    },
+    "approachNadpis": {
+      "over": "Slepá rána, co odpouští —",
+      "title": "Slepá rána",
+      "cile": [
+        "Spočítat, o kolik Punchbowl zvedne šanci trefit se na green, i když ho hráč vůbec nevidí."
+      ],
+      "zapamatuj": [
+        "Punchbowl schová green, ale zvětší efektivní cíl — svahy vrací nepřesnou ránu doprostřed.",
+        "Efekt má strop: val má pevnou velikost, takže v procentních bodech pomůže víc přesnějšímu hráči — ránu, co uletí o desítky metrů, nezachrání žádný val.",
+        "Slepota sama o sobě jamku nedělá špatnou — dělá ji jen jinou. Otázka je, co za ni hráč dostane zpátky."
+      ],
+      "eyebrow": "Krok 4 z 7",
+      "lede": "Punchbowl schová green za valem — a přesně tím ho udělá snadnějším trefit, ne těžším. Spočítej, o kolik."
+    },
+    "approach1": {
+      "eyebrow": "Krok 4 z 7",
+      "over": "Stejný cíl, dva svahy —",
+      "title": "Kolik pomůže mísa",
+      "lede": "Punchbowl vypadá jako ústupek — architekt schová green za valem, hráč hraje naslepo. Ve skutečnosti je to obchod: co jamka vezme na viditelnosti, to vrátí na odpuštění. Porovnej dvě verze téhož greenu ze stejné vzdálenosti, se stejným hráčem — jednou plochý, jednou v míse.",
+      "planLabel": "Schéma ilustrativního Punchbowlu s valem kolem greenu",
+      "hracLabel": "Přepni mezi oběma verzemi a všimni si, jak val kolem greenu mizí a objevuje se.",
+      "tabulka": {
+        "hrac": "Hráč",
+        "smele": "Plochý green",
+        "opatrne": "Punchbowl",
+        "rozdil": "Rozdíl",
+        "rana": "Na greenu"
+      },
+      "grafHead": "Kolik ran skončí na greenu",
+      "grafPopis": "Sloupce ukazují podíl ran, které skončí na putovací ploše — u plochého greenu jen ty, co dopadnou přímo do jeho hranic, u Punchbowlu i ty, které svahy sesunou dovnitř.",
+      "zaver": "Mísa pomáhá všem hráčům výrazně — u každého hendikepu vzroste šance na green o desítky procentních bodů. Zajímavé je, komu pomáhá NEJVÍC: absolutní přírůstek je největší u přesnějších hráčů, protože val má pevnou velikost a dokáže zachytit jen rány, které minou o rozumnou míru. Ránu, co uletí o desítky metrů, nezachrání žádný val.",
+      "foot": "Poznámka pod plátem shrnuje, jak se přesně počítá.",
+      "poznamka": "Model: jedna přiblížka ze 150 m, boční a podélná chyba škálovaná podle hendikepu (stejný vzorec jako v předchozích lekcích). Punchbowl je definovaný jako pás kolem greenu, ze kterého se míč posune směrem ke středu. 2000 kol na hráče.",
+      "legenda": "„Na greenu“ počítá jen putovací plochu, ne mísu kolem ní."
+    },
+    "putt": {
+      "eyebrow": "Krok 5 z 7",
+      "over": "Tři otázky k zamyšlení —",
+      "title": "K zamyšlení",
+      "lede": "Žádné bodování, jen prostor napsat si vlastní odpověď. Uloží se ti do prohlížeče a najdeš ji tu i příště.",
+      "otazky": [
+        "Redan i Punchbowl dávají hráči druhou cestu, když netroufne na tu první — jednou svahem greenu, jednou valem kolem něj. Umíš najít třetí způsob, jak by architekt mohl totéž udělat jinak?",
+        "Biarritz dělá z jednoho greenu dvě jamky podle toho, kde je praporek. Kde jinde na hřišti (ne na greenu) by šla stejná myšlenka použít?",
+        "Template hole je nápad, co přežil sto let beze změny. Co myslíš, že bude za sto let architekt kopírovat z dnešních hřišť?"
+      ],
+      "poznamkaPlaceholder": "Napiš si poznámku…",
+      "ulozeno": "Uloženo",
+      "foot": "Poslední dvě sekce: slovníček a zkouška.",
+      "cile": [
+        "Propojit tři šablony s vlastní zkušeností a hřišti, které znáš."
+      ],
+      "zapamatuj": [
+        "Šablona není kopie tvaru — je to kopie otázky.",
+        "Redan, Biarritz i Punchbowl řeší tentýž problém: jak dát nepřesné ráně důstojný osud.",
+        "Nejlepší způsob, jak si šablonu zapamatovat, je najít ji tam, kde ji nikdo nečekal."
+      ]
+    },
+    "slovnicek": {
+      "eyebrow": "Krok 6 z 7",
+      "over": "Sedm pojmů z lekce —",
+      "title": "Slovníček",
+      "lede": "Stejné pojmy najdeš podtržené i v textu lekce — tady jsou pohromadě.",
+      "pojmy": [
+        {
+          "pojem": "Šablonová jamka",
+          "popis": "Osvědčené schéma jamky (Redan, Biarritz, Punchbowl), které architekti opakují na různých pozemcích — kopíruje se otázka, ne konkrétní tvar terénu."
+        },
+        {
+          "pojem": "Redan",
+          "popis": "Šikmý plošinový green natočený od hráče, s hlubokým bunkrem u kratší strany. Původ: North Berwick, jamka 15."
+        },
+        {
+          "pojem": "Rameno",
+          "popis": "Vyvýšená část greenu (nebo terénu před ním), která svádí nízkou ránu ke praporku — druhá, nepřímá cesta k jamce u Redanu."
+        },
+        {
+          "pojem": "Biarritz",
+          "popis": "Obří green rozdělený hlubokým prolomem na dvě patra. Původ: Biarritz Golf Club, Francie, 1888."
+        },
+        {
+          "pojem": "Prolom",
+          "popis": "Hluboká prohlubeň (3–7 stop) napříč greenem, typická pro Biarritz — trefit se na správnou stranu prolomu je důležitější než trefit se na green vůbec."
+        },
+        {
+          "pojem": "Punchbowl",
+          "popis": "Green položený do prohlubně; svahy kolem něj svádějí míč dovnitř, takže nepřesná rána může skončit líp, než si zaslouží."
+        },
+        {
+          "pojem": "Slepá rána",
+          "popis": "Rána, při které hráč nevidí cíl (green nebo praporek) kvůli terénu mezi ním a jamkou — typické pro Punchbowl a Alps."
+        }
+      ],
+      "cile": [
+        "Umět všech sedm pojmů použít bez nahlížení do textu."
+      ],
+      "zapamatuj": [
+        "Sedm pojmů lekce 8 — Redan, Biarritz, Punchbowl a jejich stavební kameny — patří do slovní zásoby každého, kdo chce o hřištích mluvit přesně."
+      ],
+      "vyzkousej": {
+        "otazka": "Zkus všech sedm pojmů použít v jedné vlastní větě o hřišti, které znáš.",
+        "placeholder": "Napiš si poznámku…"
+      }
+    },
+    "spolecneKarty": {
+      "specsHead": "Tři prvky",
+      "parLabel": "Par",
+      "delkaLabel": "Délka",
+      "architektLabel": "Architekt",
+      "vznikLabel": "Rok",
+      "prameny": "Prameny",
+      "otazkaLabel": "Otázka jamky",
+      "fotoLabel": "Foto"
+    },
+    "temata": {
+      "strategie": "Strategie",
+      "trest": "Trest",
+      "riziko-odmena": "Riziko a odměna",
+      "umisteni-hazardu": "Umístění hazardu",
+      "cteni-terenu": "Čtení terénu",
+      "voda-odtok": "Voda a odtok",
+      "vitr-slunce": "Vítr a slunce",
+      "routing": "Routing",
+      "bezpecnost": "Bezpečnost",
+      "rytmus-hriste": "Rytmus hřiště",
+      "uhel-nabehu": "Úhel náběhu",
+      "diagonalni-hazard": "Diagonální hazard",
+      "green-komplex": "Green komplex",
+      "sablonova-jamka": "Šablonová jamka"
+    },
+    "zkouska": {
+      "eyebrow": "Krok 7 z 7",
+      "over": "Šest otázek za —",
+      "title": "100 bodů",
+      "lede": "Zkouška se dá opakovat. Počítá se jen první pokus (rozcestník kurzu).",
+      "spolecne": {
+        "otazka": "Otázka",
+        "bodu": "bodů",
+        "zbyva": "Zbývá odpovědět na",
+        "hotovoMuzesOdevzdat": "Hotovo. Můžeš odevzdat.",
+        "spravne": "správně",
+        "tvojeVolba": "tvoje volba",
+        "nicNevybrano": "nic nevybráno",
+        "moznost": "Možnost",
+        "zkratkaBodu": "b",
+        "reseniUKazdeOtazky": "Správná řešení jsou u každé otázky."
+      },
+      "submit": "Odevzdat",
+      "again": "Zkusit znovu",
+      "q1": {
+        "text": "Který z obrázků ukazuje Redan — green natočený od hráče, s bunkrem u kratší strany?",
+        "hint": "Hledej šikmou linii greenu a bunkr, který leží blíž k odpališti na jedné straně než na druhé.",
+        "a": "",
+        "b": "",
+        "c": "",
+        "why": "Redan pozná podle dvou věcí najednou: green stojí šikmo k linii hry a bunkr sedí u jeho kratší strany, ne uprostřed vepředu.",
+        "back": "Vrať se do kroku 1 a všimni si, jak je zelený tvar natočený vůči přímé lince k praporku."
+      },
+      "q2": {
+        "text": "Proč Redan dovoluje mířit vedle praporku, na rameno greenu?",
+        "a": "Protože přímá rána na praporek je zakázaná pravidly.",
+        "b": "Protože svah ramene odvede i nepřesnou ránu blíž k jamce.",
+        "c": "Protože rameno je ve skutečnosti druhý, menší green.",
+        "d": "Protože bunkr před praporkem je vždycky plný vody.",
+        "why": "Rameno je vyvýšená část greenu, jejíž svah vede míč doleva a dopředu — k praporku. Je to záložní cesta pro hráče, který si netroufne přímo.",
+        "back": "Vrať se do kroku 1 a přepni mezi „Přímo na praporek“ a „Na rameno“ — všimni si rozdílu v tabulce."
+      },
+      "q3": {
+        "text": "Co je u Biarritzu důležitější než trefit se na green vůbec?",
+        "a": "Trefit se na tu stranu prolomu, kde je praporek.",
+        "b": "Trefit se přesně doprostřed greenu.",
+        "c": "Vyhnout se bunkru za greenem.",
+        "d": "Zahrát ránu nízkým úderem.",
+        "why": "Biarritzův green je rozdělený hlubokým prolomem na dvě patra. Trefit se na green a skončit na špatné straně prolomu je skoro stejně zlé jako green minout — proto je důležitá strana, ne jen zásah.",
+        "back": "Vrať se do kroku 2 a přečti si popis Biarritzu ve srovnání tří šablon."
+      },
+      "q4": {
+        "text": "Který z obrázků ukazuje Punchbowl — green schovaný v míse, obklopený valy?",
+        "hint": "Hledej green, který leží níž než okolní terén, obklopený vyvýšeným lemem ze tří nebo čtyř stran.",
+        "a": "",
+        "b": "",
+        "c": "",
+        "why": "Punchbowl leží v prohlubni obklopené valy — na rozdíl od Redanu (šikmá plošina) nebo Biarritzu (rovný, ale rozdělený green) je jeho definiční rys prohlubeň, ne sklon nebo prolom.",
+        "back": "Vrať se do kroku 4 a podívej se na schéma s valem kolem greenu."
+      },
+      "q5": {
+        "text": "Které z následujících tvrzení o šablonových jamkách jsou pravdivá? (víc správných odpovědí)",
+        "hint": "Zkus u každé možnosti najít konkrétní příklad z lekce.",
+        "a": "Šablona kopíruje otázku, kterou jamka klade, ne přesný tvar terénu.",
+        "b": "Redan, Biarritz a Punchbowl mají všechny stejný půdorys.",
+        "c": "Punchbowl zvětšuje efektivní velikost greenu, i když ho hráč nevidí.",
+        "d": "Stejnou myšlenku, jako má Biarritz, může mít i jamka, která nikdy Biarritz kopírovat neplánovala.",
+        "why": "Šablony spojuje princip, ne tvar — proto se dají poznat i tam, kde je nikdo záměrně nekopíroval (jako u Slapů 14), a proto Punchbowl navzdory slepotě zvětšuje efektivní cíl.",
+        "back": "Vrať se do kroku 3 (Česká jamka) a kroku 4 (Slepá rána) a projdi si znovu, co přesně se tam počítalo."
+      },
+      "q6": {
+        "text": "Podle simulace v kroku 4: proč mísa pomůže přesnějšímu hráči (v procentních bodech) víc než hráči s vysokým hendikepem?",
+        "a": "Protože přesný hráč míří lépe, takže mísu vlastně nepotřebuje.",
+        "b": "Protože val kolem greenu má pevnou velikost — zachytí jen rány, které minou o rozumnou míru, ne ty, co uletí daleko.",
+        "c": "Protože simulace počítá s tím, že přesný hráč hraje z kratší vzdálenosti.",
+        "d": "Mísa ve skutečnosti pomáhá oběma hráčům úplně stejně.",
+        "why": "Val kolem Punchbowlu má pevnou šířku. Zachytí a vrátí zpátky rány, které minou green jen o kousek — ale hráč s velkým rozptylem míjí často o mnohem víc, než val sahá, a tam už mísa nepomůže. Proto je procentní přírůstek u přesnějších hráčů vyšší.",
+        "back": "Vrať se do kroku 4 a podívej se na tabulku — sloupec „Rozdíl“ klesá zleva doprava, jak stoupá hendikep."
+      },
+      "pasmo": {
+        "vyborne": {
+          "nadpis": "Výborně",
+          "text": "Tři šablony máš zvládnuté. Sbírka jamek je teď na dvaceti kartách — mrkni znovu na Slapy 14 a zkus v ní najít vlastní paralelu k Biarritzu nebo Punchbowlu."
+        },
+        "dobre": {
+          "nadpis": "Dobré",
+          "text": "Základ sedí. Projdi si otázky, kde ses spletl/a, a jdi dál."
+        },
+        "projdes": {
+          "nadpis": "Projdeš",
+          "text": "Vrať se na plát „Rameno, ne praporek“ a přepni obě strategie — sleduj, jak se mění tabulka."
+        },
+        "zopakuj": {
+          "nadpis": "Zopakuj",
+          "text": "Vrať se na začátek lekce a projdi si plát i simulaci znovu."
+        }
+      },
+      "souhrn": {
+        "nadpis": "Výsledek",
+        "procentBodu": "procent · {body} ze {max} bodů",
+        "spravne": "správně",
+        "chybneCastecne": "chybně nebo částečně",
+        "zcelaMimo": "zcela mimo",
+        "rozpis": "Rozpis odpovědí",
+        "tvojeOdpoved": "Tvoje odpověď",
+        "spravneReseni": "Správně",
+        "pata": "Podrobné vysvětlení je u každé otázky výše. Výsledek se ukládá do přehledu v tomto prohlížeči."
+      },
+      "foot": "Tím lekce 8 končí. Lekce 9 — vyvážení kola — je další v pořadí.",
+      "cile": [
+        "Ověřit si šest klíčových bodů lekce v šesti otázkách."
+      ],
+      "zapamatuj": [
+        "Redan pozná natočený green s bunkrem na kratší straně a rameno pro nepřímou ránu.",
+        "Biarritz pozná obří green rozdělený prolomem na dvě patra.",
+        "Punchbowl pozná green v míse, kde svahy zvětšují efektivní cíl navzdory slepotě."
+      ]
+    }
+  },
+  "en": {
+    "meta": {
+      "kicker": "Golf course architecture",
+      "chapter": "Lesson 8 of 18",
+      "over": "What gets copied is the question, not the hill —",
+      "title": "Template holes",
+      "lede": "Macdonald, Raynor and their generation walked the old Scottish and English links with a notebook, looking for holes that asked a good question. You can't move the hill a question is named after — but you can move the question. This lesson takes apart the three most-copied templates in the history of the craft: the Redan, the Biarritz and the Punchbowl. The same thing is true of all three: what makes a hole good isn't its shape, it's the decision it demands.",
+      "zpet": "← Back to overview"
+    },
+    "principLabel": "Principle",
+    "toc": {
+      "kicker": "Golf course architecture",
+      "sekceHead": "Seven steps in this lesson",
+      "daleHead": "Where next",
+      "slovnicekPopis": "Every term from the course in one place.",
+      "sbirkaPopis": "Twenty holes, each broken down in the same format.",
+      "zpetNaPrehled": "← Back to overview",
+      "pokracovat": "Continue",
+      "zacit": "Start the lesson"
+    },
+    "foot": {
+      "lekce": "ROUTING · Lesson 8"
+    },
+    "nav": {
+      "preskocit": "Skip to content",
+      "jazykLabel": "Language",
+      "sekceNavLabel": "Navigation between sections",
+      "prehled": "Lesson overview",
+      "sekceNazvy": [
+        "Shoulder, not flag",
+        "Three templates",
+        "Czech hole",
+        "The blind shot",
+        "Think it over",
+        "Glossary",
+        "Exam"
+      ],
+      "dalsi": "Next",
+      "dalsiLekce": "Continue to the next lesson",
+      "klavesniNapoveda": "The plan can be controlled with a keyboard too: tab to it, arrow keys move the cursor, Enter confirms.",
+      "konecKurzu": "The most recently finished lesson for now — continue with the hole collection",
+      "krok": "Step {n} of 7",
+      "predchozi": "Previous"
+    },
+    "teeShot": {
+      "eyebrow": "Step 1 of 7",
+      "over": "Same shot, different target —",
+      "title": "Shoulder, not flag",
+      "lede": "The Redan is the most copied hole in the history of the craft — a plateau green turned roughly 45° away from the player, sloping right to left and back to front, guarded by a deep bunker on its short side. The recipe usually credited to C. B. Macdonald: a narrow tableland, a tilt, a deep bunker in front, approached on the diagonal. The diagram below is illustrative — it isn't the plan of any specific hole — but the slope and shoulder in it behave exactly to the recipe. Try what happens when a player aims straight at the flag, and what happens when they aim off to the side — at the shoulder, which feeds the ball toward the flag on its own.",
+      "principle": "A Redan doesn't hide its hazard. It shows it, and still allows a good result by two completely different routes — one for a precise strike, one for a player who trusts the slope. Both have to lead back to the flag, or it isn't a Redan, just a tilted green.",
+      "toggle": {
+        "okraje": "Straight at the flag",
+        "stred": "At the shoulder",
+        "daleko": "At the shoulder"
+      },
+      "popis": {
+        "okraje": "The shot aims directly at the pin. Works beautifully when it lands — but the scatter around that target runs easily left into the bunker, or right off the green.",
+        "stred": "The shot aims off to the side, at the green's raised shoulder. From there the slope carries the ball left and forward, toward the pin — even an imprecise shot gets a chance to finish close.",
+        "daleko": "The shot aims off to the side, at the green's raised shoulder. From there the slope carries the ball left and forward, toward the pin — even an imprecise shot gets a chance to finish close."
+      },
+      "planLabel": "Diagram of an illustrative Redan with shoulder and bunker",
+      "tabHead": "How many approaches finish on the green",
+      "tab": {
+        "hrac": "Player",
+        "podil": "On the green",
+        "odchylka": "Average from the pin"
+      },
+      "verdikt": {
+        "dekorace": "For this player the strategy barely matters — few approaches find the green either way ({max} %).",
+        "rovne": "Aiming at the shoulder helps this player only a little — the gap in green-hit rate is under {odch} percentage points.",
+        "krive": "Aiming at the shoulder lifts this player's green-hit rate by {odch} percentage points — exactly what the shoulder is designed to do."
+      },
+      "vzorec": "Model: one approach from 180 m, lateral and longitudinal error scaled by handicap (same formula as the other lessons). A shot that lands in the shoulder band is nudged toward the pin — that stands in for the slope carrying it there. 2,000 rounds per player and strategy.",
+      "foot": "Next page: three templates side by side — and what changes about them when an architect moves them to a different piece of land.",
+      "cile": [
+        "Explain why a Redan allows two different ways of finding the green, and why that isn't an accident."
+      ],
+      "zapamatuj": [
+        "A Redan is a plateau green turned away from the player, with a deep bunker guarding its short (usually right) side.",
+        "The shoulder by the green isn't an obstacle — it's a second route to the pin, for a player who won't risk the direct line.",
+        "The template only works when both routes (direct and via the shoulder) lead to a reasonable outcome — otherwise it's just a tilted green."
+      ]
+    },
+    "fairway": {
+      "eyebrow": "Step 2 of 7",
+      "over": "Three ideas that flew around the world —",
+      "title": "Three templates",
+      "lede": "From 1909 onward, Macdonald and his protégé Seth Raynor built courses across America, repeating a handful of proven patterns on each one. That wasn't a lack of imagination — it was because these questions work on almost any piece of land. Here are the three most influential, with their real origins.",
+      "cile": [
+        "Know the origin and key feature of the three most-copied templates: the Redan, the Biarritz and the Punchbowl."
+      ],
+      "zapamatuj": [
+        "Redan (North Berwick, 1869): an angled green, a bunker on the short side.",
+        "Biarritz (Biarritz Golf Club, ~1888): a huge green split by a deep swale into two tiers.",
+        "Punchbowl (arose naturally on old links courses; formalised by Macdonald at National Golf Links, hole 16): a green in a bowl, slopes feed the ball back to the middle."
+      ],
+      "vzory": [
+        {
+          "jmeno": "Redan",
+          "puvod": "The 15th hole, North Berwick West Links, Scotland. Par 3, 189 yards. No single designer is credited with certainty — the club dates to 1832, and the hole took its current form when the course was extended to 18 holes in 1895.",
+          "znak": "A green tilted roughly 45° away from the player, sloping right to left and back to front, with a deep bunker guarding its short (right) side. A raised shoulder on the other side feeds a low shot toward the pin.",
+          "priklad": "The most famous copy: National Golf Links of America, hole 4 (C. B. Macdonald, 1911) — many architects and critics rank it even above the original.",
+          "prenositelne": "The question a Redan asks doesn't depend on Scottish wind: \"Do you play straight at the flag, or let the slope do the work?\" That question builds just as well on flat ground as in the dunes."
+        },
+        {
+          "jmeno": "Biarritz",
+          "puvod": "The 3rd hole, \"The Chasm,\" Biarritz Golf Club, France. Designed by Willie Dunn Jr. around 1888, played over an inlet above the Bay of Biscay. The original hole was destroyed during the Second World War and no longer exists.",
+          "znak": "An enormous green (60-plus metres long) split across its width by a deep swale (3–7 feet) into a front and back tier. Landing on the correct side of the swale matters more than landing on the green at all.",
+          "priklad": "The most famous example today: Yale Golf Course, hole 9 (C. B. Macdonald and Seth Raynor, 1926) — a green over 60 metres deep above Greist Pond.",
+          "prenositelne": "The Biarritz teaches that a big green isn't automatically an easy target — it's two smaller holes in one, depending on where the pin sits that day."
+        },
+        {
+          "jmeno": "Punchbowl",
+          "puvod": "Unlike the other two, the Punchbowl has no single original hole — it arose naturally in the hollows of old Scottish and English links, where architects looked for ground sheltered from the wind. Macdonald formalised it as hole 16 at National Golf Links of America.",
+          "znak": "The green sits in a bowl ringed by mounding on three or four sides. The slopes gather even an imprecise shot toward the centre — the approach is often blind, with only a flag on a pole visible above the mound.",
+          "priklad": "National Golf Links of America, hole 16; Fishers Island, hole 4 (both Raynor/Macdonald).",
+          "prenositelne": "The Punchbowl is a paradox: it hides the green but enlarges the effective target. A blind shot that forgives more than it shows — exactly what Lesson 6 covers under effective green size."
+        }
+      ],
+      "vyzkousej": {
+        "otazka": "Which of the three templates would you most want to build on a course you know — and why there specifically?",
+        "placeholder": "Jot a note…"
+      }
+    },
+    "ceskaJamka": {
+      "eyebrow": "Step 3 of 7",
+      "over": "You don't have to copy Scotland —",
+      "title": "Czech hole",
+      "lede": "Golf Park Slapy never built a Biarritz — its architects were solving a completely different problem: how to give the club six different pin positions on one hole without moving a bunker or lengthening a tee. But the solution is exactly the same idea that powers both the Biarritz and the Punchbowl: the structure that makes a hole interesting doesn't have to be built around the green — it can be built inside it.",
+      "cile": [
+        "See that the same principle (internal green structure changes the game without new hazards) works even without copying a specific template."
+      ],
+      "zapamatuj": [
+        "Slapy 14 has no swale like a Biarritz and no bowl like a Punchbowl — it has depth and tiers.",
+        "Six different pin positions on one hole means six different games, without moving a single bunker.",
+        "The principle travels even when the architect never saw the original."
+      ],
+      "vyzkousej": {
+        "otazka": "Which part of Slapy 14 could be described as \"internal green structure\" if you didn't know the hole and only saw the card's text?",
+        "placeholder": "Jot a note…"
+      }
+    },
+    "approachNadpis": {
+      "over": "A blind shot that forgives —",
+      "title": "The blind shot",
+      "cile": [
+        "Calculate how much a Punchbowl raises the odds of finding the green, even when the player can't see it at all."
+      ],
+      "zapamatuj": [
+        "A Punchbowl hides the green but enlarges the effective target — the slopes return an imprecise shot to the middle.",
+        "The effect has a ceiling: the mound has a fixed size, so in percentage points it helps a more precise player more — a shot that sails off by tens of metres is beyond what any mound can rescue.",
+        "Blindness alone doesn't make a hole bad — it just makes it different. The question is what the player gets back for it."
+      ],
+      "eyebrow": "Step 4 of 7",
+      "lede": "A Punchbowl hides the green behind a mound — and that is exactly what makes it easier to hit, not harder. Work out by how much."
+    },
+    "approach1": {
+      "eyebrow": "Step 4 of 7",
+      "over": "Same target, two slopes —",
+      "title": "How much the bowl helps",
+      "lede": "A Punchbowl looks like a concession — the architect hides the green behind a mound, the player plays blind. In truth it's a trade: what the hole takes away in visibility, it gives back in forgiveness. Compare two versions of the same green from the same distance, with the same player — once flat, once set in a bowl.",
+      "planLabel": "Diagram of an illustrative Punchbowl with mounding around the green",
+      "hracLabel": "Toggle between the two versions and watch the mound around the green appear and disappear.",
+      "tabulka": {
+        "hrac": "Player",
+        "smele": "Flat green",
+        "opatrne": "Punchbowl",
+        "rozdil": "Difference",
+        "rana": "On the green"
+      },
+      "grafHead": "How many approaches finish on the green",
+      "grafPopis": "The columns show the share of shots that finish on the putting surface — for the flat green only those landing directly inside its edge, for the Punchbowl also the ones the slopes carry in.",
+      "zaver": "The bowl helps every player a great deal — for every handicap, the odds of finding the green rise by tens of percentage points. What is interesting is who it helps MOST: the absolute gain is largest for the more precise players, because the mound has a fixed size and can only catch shots that miss by a reasonable margin. A shot that sails off by tens of metres is beyond what any mound can rescue.",
+      "foot": "The note under the plate spells out exactly how this is calculated.",
+      "poznamka": "Model: one approach from 150 m, lateral and longitudinal error scaled by handicap (same formula as the earlier lessons). The Punchbowl is defined as a band around the green from which the ball is nudged toward the centre. 2,000 rounds per player.",
+      "legenda": "\"On the green\" counts only the putting surface, not the bowl around it."
+    },
+    "putt": {
+      "eyebrow": "Step 5 of 7",
+      "over": "Three questions to think over —",
+      "title": "Think it over",
+      "lede": "No scoring, just space to write your own answer. It saves to your browser and you'll find it here next time.",
+      "otazky": [
+        "Both the Redan and the Punchbowl give a player a second route when they won't risk the first — one via the green's slope, one via the mounding around it. Can you find a third way an architect could do the same thing differently?",
+        "The Biarritz turns one green into two holes depending on where the pin sits. Where else on a course (not on a green) could the same idea apply?",
+        "A template hole is an idea that survived a hundred years unchanged. What do you think an architect will be copying from today's courses a hundred years from now?"
+      ],
+      "poznamkaPlaceholder": "Jot a note…",
+      "ulozeno": "Saved",
+      "foot": "Two sections left: the glossary and the exam.",
+      "cile": [
+        "Connect the three templates to your own experience and courses you know."
+      ],
+      "zapamatuj": [
+        "A template isn't a copy of a shape — it's a copy of a question.",
+        "The Redan, the Biarritz and the Punchbowl all solve the same problem: giving an imprecise shot a dignified fate.",
+        "The best way to remember a template is to find it somewhere nobody expected."
+      ]
+    },
+    "slovnicek": {
+      "eyebrow": "Step 6 of 7",
+      "over": "Seven terms from the lesson —",
+      "title": "Glossary",
+      "lede": "The same terms appear underlined in the lesson text — here they are together.",
+      "pojmy": [
+        {
+          "pojem": "Template hole",
+          "popis": "A proven hole pattern (Redan, Biarritz, Punchbowl) that architects repeat on different sites — what gets copied is the question, not the specific shape of the land."
+        },
+        {
+          "pojem": "Redan",
+          "popis": "An angled plateau green turned away from the player, with a deep bunker guarding its short side. Origin: North Berwick, hole 15."
+        },
+        {
+          "pojem": "Shoulder",
+          "popis": "A raised part of the green (or the ground in front of it) that feeds a low shot toward the pin — the second, indirect route to the hole on a Redan."
+        },
+        {
+          "pojem": "Biarritz",
+          "popis": "A huge green split by a deep swale into two tiers. Origin: Biarritz Golf Club, France, 1888."
+        },
+        {
+          "pojem": "Swale",
+          "popis": "A deep depression (3–7 feet) running across a green, typical of the Biarritz — landing on the correct side of it matters more than landing on the green at all."
+        },
+        {
+          "pojem": "Punchbowl",
+          "popis": "A green set in a hollow; the surrounding slopes feed balls in, so an imprecise shot can finish better than it deserves."
+        },
+        {
+          "pojem": "Blind shot",
+          "popis": "A shot where the player can't see the target (the green or the flag) because of ground between them and the hole — typical of the Punchbowl and the Alps."
+        }
+      ],
+      "cile": [
+        "Be able to use all seven terms without checking the text."
+      ],
+      "zapamatuj": [
+        "The seven terms in Lesson 8 — the Redan, the Biarritz, the Punchbowl and their building blocks — belong in the vocabulary of anyone who wants to talk about courses precisely."
+      ],
+      "vyzkousej": {
+        "otazka": "Try using all seven terms in one sentence of your own about a course you know.",
+        "placeholder": "Jot a note…"
+      }
+    },
+    "spolecneKarty": {
+      "specsHead": "Three elements",
+      "parLabel": "Par",
+      "delkaLabel": "Length",
+      "architektLabel": "Architect",
+      "vznikLabel": "Year",
+      "prameny": "Sources",
+      "otazkaLabel": "The hole's question",
+      "fotoLabel": "Photo"
+    },
+    "temata": {
+      "strategie": "Strategy",
+      "trest": "Penalty",
+      "riziko-odmena": "Risk and reward",
+      "umisteni-hazardu": "Hazard placement",
+      "cteni-terenu": "Reading the land",
+      "voda-odtok": "Water and drainage",
+      "vitr-slunce": "Wind and sun",
+      "routing": "Routing",
+      "bezpecnost": "Safety",
+      "rytmus-hriste": "Course rhythm",
+      "uhel-nabehu": "Angle of approach",
+      "diagonalni-hazard": "Diagonal hazard",
+      "green-komplex": "Green complex",
+      "sablonova-jamka": "Template hole"
+    },
+    "zkouska": {
+      "eyebrow": "Step 7 of 7",
+      "over": "Six questions for —",
+      "title": "100 points",
+      "lede": "The exam can be retaken. Only the first attempt counts (course overview).",
+      "spolecne": {
+        "otazka": "Question",
+        "bodu": "points",
+        "zbyva": "Still to answer",
+        "hotovoMuzesOdevzdat": "Done. You can submit.",
+        "spravne": "correct",
+        "tvojeVolba": "your choice",
+        "nicNevybrano": "nothing selected",
+        "moznost": "Option",
+        "zkratkaBodu": "pt",
+        "reseniUKazdeOtazky": "The solutions are shown with each question."
+      },
+      "submit": "Submit",
+      "again": "Try again",
+      "q1": {
+        "text": "Which image shows a Redan — a green turned away from the player, with a bunker on its short side?",
+        "hint": "Look for an angled green line and a bunker sitting closer to the tee on one side than the other.",
+        "a": "",
+        "b": "",
+        "c": "",
+        "why": "You can spot a Redan from two things at once: the green sits at an angle to the line of play, and the bunker guards its short side, not the middle-front.",
+        "back": "Go back to step 1 and notice how the green shape is turned relative to the direct line to the flag."
+      },
+      "q2": {
+        "text": "Why does a Redan allow aiming off the flag, at the green's shoulder?",
+        "a": "Because a direct shot at the flag is against the rules.",
+        "b": "Because the shoulder's slope carries even an imprecise shot closer to the pin.",
+        "c": "Because the shoulder is actually a second, smaller green.",
+        "d": "Because the bunker in front of the flag is always full of water.",
+        "why": "The shoulder is a raised part of the green whose slope carries the ball left and forward — toward the flag. It's a backup route for a player who won't risk the direct line.",
+        "back": "Go back to step 1 and toggle between \"Straight at the flag\" and \"At the shoulder\" — notice the difference in the table."
+      },
+      "q3": {
+        "text": "On a Biarritz, what matters more than landing on the green at all?",
+        "a": "Landing on the side of the swale where the pin is.",
+        "b": "Landing exactly in the middle of the green.",
+        "c": "Avoiding the bunker behind the green.",
+        "d": "Playing a low shot.",
+        "why": "A Biarritz green is split by a deep swale into two tiers. Landing on the green but on the wrong side of the swale is nearly as bad as missing it — so the side matters, not just the hit.",
+        "back": "Go back to step 2 and re-read the Biarritz description in the three-template comparison."
+      },
+      "q4": {
+        "text": "Which image shows a Punchbowl — a green hidden in a bowl, surrounded by mounds?",
+        "hint": "Look for a green sitting lower than the surrounding ground, ringed by a raised edge on three or four sides.",
+        "a": "",
+        "b": "",
+        "c": "",
+        "why": "A Punchbowl sits in a hollow ringed by mounds — unlike a Redan (a tilted plateau) or a Biarritz (a flat but divided green), its defining feature is the hollow, not a slope or a swale.",
+        "back": "Go back to step 4 and look at the diagram with mounding around the green."
+      },
+      "q5": {
+        "text": "Which of the following statements about template holes are true? (more than one correct answer)",
+        "hint": "Try to find a specific example from the lesson for each option.",
+        "a": "A template copies the question a hole asks, not the exact shape of the land.",
+        "b": "The Redan, the Biarritz and the Punchbowl all share the same footprint.",
+        "c": "A Punchbowl enlarges the effective size of the green, even though the player can't see it.",
+        "d": "A hole that never set out to copy the Biarritz can still share its underlying idea.",
+        "why": "Templates are connected by a principle, not a shape — that's why they turn up even where nobody copied them on purpose (as at Slapy 14), and why a Punchbowl enlarges the effective target despite being blind.",
+        "back": "Go back to step 3 (Czech hole) and step 4 (The blind shot) and review exactly what was being calculated there."
+      },
+      "q6": {
+        "text": "According to the simulation in step 4: why does the bowl help a more precise player (in percentage points) more than a high-handicap player?",
+        "a": "Because a precise player aims better and doesn't really need the bowl.",
+        "b": "Because the mound around the green has a fixed size — it only catches shots that miss by a reasonable margin, not ones that sail well wide.",
+        "c": "Because the simulation assumes the precise player plays from a shorter distance.",
+        "d": "The bowl actually helps both players exactly the same amount.",
+        "why": "The mounding around a Punchbowl has a fixed width. It catches and returns shots that miss the green by only a little, but a player with wide dispersion often misses by far more than the mound reaches, and there it cannot help. That is why the percentage-point gain is larger for more precise players.",
+        "back": "Go back to step 4 and look at the table — the \"Difference\" column shrinks left to right as handicap rises."
+      },
+      "pasmo": {
+        "vyborne": {
+          "nadpis": "Excellent",
+          "text": "You have the three templates under control. The hole collection now runs to twenty cards — take another look at Slapy 14 and try to find your own parallel to the Biarritz or the Punchbowl in it."
+        },
+        "dobre": {
+          "nadpis": "Good",
+          "text": "The basics hold. Look over the questions you got wrong and carry on."
+        },
+        "projdes": {
+          "nadpis": "Pass",
+          "text": "Go back to the plate \"Shoulder, not flag\" and toggle both strategies — watch how the table changes."
+        },
+        "zopakuj": {
+          "nadpis": "Repeat",
+          "text": "Go back to the start of the lesson and work through the plate and the simulation again."
+        }
+      },
+      "souhrn": {
+        "nadpis": "Result",
+        "procentBodu": "per cent · {body} of {max} points",
+        "spravne": "correct",
+        "chybneCastecne": "wrong or partial",
+        "zcelaMimo": "completely off",
+        "rozpis": "Answer by answer",
+        "tvojeOdpoved": "Your answer",
+        "spravneReseni": "Correct",
+        "pata": "The full explanation sits with each question above. The result is stored in the overview in this browser."
+      },
+      "foot": "That's the end of Lesson 8. Lesson 9 — balancing a round — is next.",
+      "cile": [
+        "Check the six key points of the lesson in six questions."
+      ],
+      "zapamatuj": [
+        "A Redan is recognised by its turned green with a bunker on the short side, and a shoulder for the indirect shot.",
+        "A Biarritz is recognised by its huge green split by a swale into two tiers.",
+        "A Punchbowl is recognised by its green in a bowl, where slopes enlarge the effective target despite the blindness."
+      ]
+    }
+  }
+}

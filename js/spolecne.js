@@ -142,6 +142,25 @@ export function kartaJamky(container, karta, slovnik, lang, opts = {}) {
   obraz.appendChild(svg);
   vykresliJamku(svg, karta, { lang });
 
+  /* Přepínač tisku (Krok 38): stejná kresba, jen bez barev — pro tisk na
+     černobílé tiskárně nebo pro pracovní list. `--turf`/`--sand`/`--water`
+     se čtou z CSS AŽ při kreslení (viz `platy.js`, hlavička souboru), takže
+     samotné přidání třídy na `<svg>` nestačí — je nutné kartu překreslit,
+     aby `V()` uvnitř `vykresliJamku()` sáhla po nové (přepsané) hodnotě. */
+  const tiskToggle = document.createElement('div');
+  tiskToggle.className = 'toggle';
+  const tiskBtn = document.createElement('button');
+  tiskBtn.type = 'button';
+  tiskBtn.setAttribute('aria-pressed', 'false');
+  tiskBtn.textContent = u(lang, 'tiskRezim');
+  tiskBtn.addEventListener('click', () => {
+    const zapnuto = svg.classList.toggle('rezimTisk');
+    tiskBtn.setAttribute('aria-pressed', String(zapnuto));
+    vykresliJamku(svg, karta, { lang });
+  });
+  tiskToggle.appendChild(tiskBtn);
+  obraz.appendChild(tiskToggle);
+
   if (karta.naCoSeDivat && karta.naCoSeDivat[lang]) {
     const divat = document.createElement('p');
     divat.className = 'kartaDivat';

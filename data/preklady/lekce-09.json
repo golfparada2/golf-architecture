@@ -1,0 +1,720 @@
+{
+  "cs": {
+    "meta": {
+      "kicker": "Golfová architektura",
+      "chapter": "Lekce 9 z 18",
+      "over": "Osmnáct otázek, ne osmnáct kopií —",
+      "title": "Vyvážení kola",
+      "lede": "Lekce 3 rozebírala routing — jak jamky propojit na pozemku. Tahle lekce se ptá na jinou otázku: je výsledná sada osmnácti jamek vyvážená? Alister MacKenzie to v roce 1920 shrnul do sady třinácti principů — dvě vratné devítky, dostatek dvouranových jamek, nejméně čtyři jednoranové, žádná jamka stejná jako sousední. Augusta National, kterou MacKenzie spoluautorizoval, má čtyři pártrojky rozmístěné na jamkách 4, 6, 12 a 16 — ne natěsnané vedle sebe. Tahle lekce ukazuje, co se stane, když se to nedodrží.",
+      "zpet": "← Zpět na rozcestník"
+    },
+    "principLabel": "Princip",
+    "toc": {
+      "kicker": "Golfová architektura",
+      "sekceHead": "Sedm kroků lekce",
+      "daleHead": "Kam dál",
+      "slovnicekPopis": "Všechny pojmy kurzu na jednom místě.",
+      "sbirkaPopis": "Dvacet rozebraných jamek, každá ve stejném formátu.",
+      "zpetNaPrehled": "← Zpět na rozcestník",
+      "pokracovat": "Pokračovat",
+      "zacit": "Začít lekci"
+    },
+    "foot": {
+      "lekce": "ROUTING · Lekce 9"
+    },
+    "nav": {
+      "preskocit": "Přeskočit na obsah",
+      "jazykLabel": "Jazyk",
+      "sekceNavLabel": "Navigace mezi sekcemi",
+      "prehled": "Rozcestník lekce",
+      "sekceNazvy": [
+        "Poměr, ne náhoda",
+        "Vítr ze všech stran",
+        "Sousední jamky",
+        "Kde se rozhoduje",
+        "K zamyšlení",
+        "Slovníček",
+        "Zkouška"
+      ],
+      "dalsi": "Další",
+      "dalsiLekce": "Pokračovat další lekcí",
+      "klavesniNapoveda": "Plán se dá ovládat i klávesnicí: tabulátorem na něj přejdi, šipkami posouvej zaměřovač, Enterem potvrď.",
+      "konecKurzu": "Zatím poslední hotová lekce — pokračuj sbírkou jamek",
+      "krok": "Krok {n} z 7",
+      "predchozi": "Předchozí"
+    },
+    "teeShot": {
+      "eyebrow": "Krok 1 z 7",
+      "over": "Kolik jednoranových, kolik dvouranových —",
+      "title": "Poměr, ne náhoda",
+      "lede": "MacKenzie ve svých třinácti principech (1920) napsal, že hřiště má mít velký podíl dobrých dvouranových jamek (par 4) a nejméně čtyři jednoranové (par 3). Neřekl ale jen kolik — řekl i jak rozmístěné. Augusta National, kterou spoluautorizoval, má čtyři pártrojky na jamkách 4, 6, 12 a 16 — rozestup 2, pak 6, pak 4 jamky. Žádné dvě vedle sebe. Porovnej to se sekvencí, kde je součet parů úplně stejný (72), ale všechny čtyři pártrojky jsou natěsnané za sebou.",
+      "principle": "Celkový par 72 se dá poskládat nekonečně mnoha způsoby. Součet nic neříká o tom, jestli se hráč každou chvíli chytá jiné hole — nebo hraje čtyři skoro identické jamky v řadě a pak nic zajímavého dalších čtrnáct.",
+      "toggle": {
+        "a": "Augusta National",
+        "b": "Natěsnané"
+      },
+      "planLabel": "Osmnáct jamek jako pás, barva podle paru",
+      "statLabel": {
+        "nejdelsiSerie": "Nejdelší řada stejného paru",
+        "rozestupP3": "Rozestup pártrojek (jamky)",
+        "par": "Celkový par"
+      },
+      "verdikt": {
+        "a": "V reálné sekvenci je nejdelší řada stejného paru jen {serie} jamky a pártrojky jsou rozestoupené po {rozestup}. Hráč nikdy neví dopředu, co přijde.",
+        "b": "V natěsnané verzi je nejdelší řada stejného paru {serie} jamek v kuse — stejný par 72, ale poslední čtvrtina kola je čtyřikrát stejná otázka."
+      },
+      "foot": "Poměr jamek je jen půlka příběhu. Druhá půlka je směr, kterým hrají — na to je další krok.",
+      "cile": [
+        "Spočítat rozdíl mezi vyváženou a natěsnanou sekvencí parů se stejným celkovým součtem."
+      ],
+      "zapamatuj": [
+        "Celkový par (72, 71...) nic neříká o tom, jak jsou jednotlivé pary rozmístěné.",
+        "MacKenzie: velký podíl dvouranových jamek, nejméně čtyři jednoranové — a žádné dvě stejného typu vedle sebe.",
+        "Augusta National rozmisťuje své čtyři pártrojky na jamky 4, 6, 12 a 16 — ne natěsnané za sebe."
+      ]
+    },
+    "fairway": {
+      "eyebrow": "Krok 2 z 7",
+      "over": "Stejný vítr, jiná jamka —",
+      "title": "Vítr ze všech stran",
+      "lede": "MacKenzie mezi svými principy žádal málo hůlkolezení a co nejmíň chůze mezi greenem a dalším odpalištěm — ale routing řeší i něco, co se na plánu hůř kreslí: kterým směrem jamka hraje. Hřiště, kde skoro všechny jamky míří na stejnou světovou stranu, dá hráči celých osmnáct jamek stejný vítr — buď do zad, nebo do tváře, podle toho, jak zrovna fouká. Hřiště s promíchanými směry dá každou jamku jinak: jednou po větru, jednou proti, jednou z boku. Schéma níž je ilustrativní — dvě fiktivní směrové růžice, ne plán žádného konkrétního hřiště — ale ukazuje přesně ten rozdíl.",
+      "principle": "Vítr, který jamku dělá zajímavou v pondělí, ji může udělat nehratelnou ve čtvrtek — pokud fouká furt stejným směrem vůči hráči. Architekt to neovlivní tím, jak jamku postaví. Ovlivní to tím, kterým směrem ji na pozemek položí.",
+      "planLabel": "Dvě ilustrativní směrové růžice osmnácti jamek",
+      "popis": {
+        "jednosmerne": "Čtrnáct z osmnácti jamek hraje do stejné čtvrtiny kompasu. Vítr, který fouká od západu, ovlivní skoro celé kolo stejně — buď ho zpomalí, nebo mu pomůže, ale pořád dokola.",
+        "smisene": "Jamky jsou rozprostřené do všech směrů. Stejný západní vítr bude na jedněch jamkách za zády, na jiných proti, na dalších z boku — hráč musí každou jamku přečíst zvlášť."
+      },
+      "cile": [
+        "Vysvětlit, proč je směr, kterým jamka hraje, stejně důležitá otázka jako její délka nebo par."
+      ],
+      "zapamatuj": [
+        "Hřiště, kde většina jamek hraje stejným směrem, dá jednomu směru větru nepřiměřenou váhu.",
+        "Promíchané směry znamenají, že žádný jeden vítr nerozhodne celé kolo — každá jamka se čte zvlášť.",
+        "Tohle se nedá opravit po výstavbě. Musí se to vyřešit v routingu, dřív než se zatluče první kolík."
+      ],
+      "vyzkousej": {
+        "otazka": "Znáš hřiště, kde vítr hraje skoro na každé jamce stejnou roli? Co myslíš, že se stalo při routingu?",
+        "placeholder": "Napiš si poznámku…"
+      }
+    },
+    "ceskaJamka": {
+      "eyebrow": "Krok 3 z 7",
+      "over": "Dvě jamky vedle sebe, dva úplně jiné úkoly —",
+      "title": "Sousední jamky",
+      "lede": "Karlštejn 14 a 15 jsou v kartách sbírky vedle sebe — a taky vedle sebe leží na hřišti. Čtrnáctka je krátký par 3, kde rybník hlídá pravý okraj greenu a jediné rozhodnutí je, jak blízko k vodě zahrát. Patnáctka je dogleg par 4, kde stejný rybník leží v koutu fairwaye a otázka je úplně jiná: srovnat si to přes rybník, nebo obeplout po suchu a prohrát vzdálenost. Stejná voda, dvě jamky, nic společného v tom, co po hráči chtějí.",
+      "cile": [
+        "Ukázat na dvou reálných, doložených jamkách, že sousedství neznamená podobnost."
+      ],
+      "zapamatuj": [
+        "Karlštejn 14 (par 3, 198 m) a 15 (par 4, 315 m) sdílejí stejný rybník, ale úplně jiný vztah k němu.",
+        "Čtrnáctka je otázka přesnosti na krátkou vzdálenost. Patnáctka je otázka rizika na dálku.",
+        "Sousední jamky, které řeší stejný hazard jinak, jsou lepší důkaz vyváženého kola než dvě jamky, které spolu vůbec nesouvisí."
+      ],
+      "vyzkousej": {
+        "otazka": "Najdi v sbírce jamek další dvě karty za sebou (podle čísla jamky) a zkus popsat, čím se od sebe liší.",
+        "placeholder": "Napiš si poznámku…"
+      }
+    },
+    "approachNadpis": {
+      "over": "Stejný rozptyl, jiné místo —",
+      "title": "Kde se rozhoduje",
+      "cile": [
+        "Spočítat, jak moc umístění rizikových jamek v kole mění, jak často se výsledek zlomí až na konci."
+      ],
+      "zapamatuj": [
+        "Celkový rozptyl skóre za kolo je stejný, ať jsou rizikové jamky kdekoli — to, co se mění, je KDY se rozhoduje.",
+        "Rizikové jamky na konci znamenají, že vedení se láme pozdě — to je „dramatický závěr“.",
+        "Stejné rizikové jamky rozprostřené po celém kole se z velké části rozhodnou dřív — kolo končí klidněji, i když je stejně těžké."
+      ],
+      "eyebrow": "Krok 4 z 7",
+      "lede": "Amen Corner není náhoda — je to důsledek toho, kam architekt umístil riziko v sekvenci osmnácti jamek. Spočítej, jak moc na tom záleží."
+    },
+    "approach1": {
+      "eyebrow": "Krok 4 z 7",
+      "over": "Amen Corner nebyl náhoda —",
+      "title": "Kde se rozhoduje",
+      "lede": "Slavná „Amen Corner“ na Augusta National (jamky 11–13) a dostupné pártrojky u jamek 13 a 15 nejsou rozptýlené po celém kole — sedí pohromadě v závěrečné třetině. Model níž ukazuje proč. Dva hráči jdou vyrovnaně do posledních devíti jamek. Šest jamek je „klidných“ (malý rozptyl skóre mezi hráči), tři jsou „švihové“ (velký rozptyl — risk-reward jamky, kde se dá hodně vydělat i prodělat). Porovnej, co se stane, když jsou ty tři švihové jamky na konci kola, a co, když jsou rozprostřené po celých devíti.",
+      "planLabel": "Devět jamek jako pás, švihové jamky zvýrazněné",
+      "hracLabel": "Přepni mezi oběma verzemi a sleduj, jak se mění pravděpodobnost pod plátem.",
+      "tabulka": {
+        "hrac": "Verze",
+        "smele": "Švihové na konci",
+        "opatrne": "Švihové rozprostřené",
+        "rozdil": "Rozdíl",
+        "rana": "Vedení se zlomí po 6. jamce"
+      },
+      "grafHead": "Jak často se vedení po 6. jamce nakonec otočí",
+      "grafPopis": "Oba hráči mají po šesti jamkách stejný celkový rozptyl skóre do konce — liší se jen to, kdy se ten rozptyl na hřišti odehraje.",
+      "zaver": "Když jsou švihové jamky na konci, vedení z 6. jamky se do konce otočí zhruba dvakrát častěji než při rovnoměrném rozprostření — {a} % oproti {b} %. Celkový rozptyl skóre je identický. Mění se jen to, KDY se hraje.",
+      "legenda": "Model počítá jen s tím, kdo vede — ne s tím, o kolik ran.",
+      "poznamka": "Model: devět jamek, rozdíl skóre mezi dvěma hráči na jamce je náhodná veličina se směrodatnou odchylkou 0,3 rány (klidná jamka) nebo 1,2 rány (švihová). Obě verze mají stejný součet rozptylů přes všech devět jamek — liší se jen pořadí. 20 000 kol.",
+      "foot": "Poznámka pod grafem shrnuje přesný model."
+    },
+    "putt": {
+      "eyebrow": "Krok 5 z 7",
+      "over": "Tři otázky k zamyšlení —",
+      "title": "K zamyšlení",
+      "lede": "Žádné bodování, jen prostor napsat si vlastní odpověď. Uloží se ti do prohlížeče a najdeš ji tu i příště.",
+      "otazky": [
+        "MacKenzie chtěl nejméně čtyři pártrojky a žádné dvě vedle sebe. Zkus si vybavit hřiště, které znáš — sedí na něm tohle pravidlo?",
+        "Model v kroku 4 ukázal, že umístění rizikových jamek mění, KDY se kolo rozhodne, ne KOLIK se toho rozhodne. Napadá tě jiná část hřiště (ne pořadí jamek), kde platí podobný princip — stejné množství něčeho, jen jinak rozmístěné?",
+        "Kdybys directoval devatenáctou jamku navíc jen proto, aby se kolo lépe vyvážilo, kam by v sekvenci patřila a proč zrovna tam?"
+      ],
+      "poznamkaPlaceholder": "Napiš si poznámku…",
+      "ulozeno": "Uloženo",
+      "foot": "Poslední dvě sekce: slovníček a zkouška.",
+      "cile": [
+        "Propojit vyvážení kola s vlastní zkušeností a hřišti, které znáš."
+      ],
+      "zapamatuj": [
+        "Vyvážení kola není o tom, kolik čeho je — je o tom, kde to je.",
+        "Stejný součet (parů, rizika, čehokoli) se dá rozmístit dobře nebo špatně.",
+        "Nejlepší způsob, jak si princip zapamatovat, je zkusit ho najít na hřišti, které znáš."
+      ]
+    },
+    "slovnicek": {
+      "eyebrow": "Krok 6 z 7",
+      "over": "Sedm pojmů z lekce —",
+      "title": "Slovníček",
+      "lede": "Stejné pojmy najdeš podtržené i v textu lekce — tady jsou pohromadě.",
+      "pojmy": [
+        {
+          "pojem": "Vyvážení kola",
+          "popis": "Otázka, jestli je výsledná sada osmnácti jamek (poměr parů, směry, pořadí obtížnosti) sestavená záměrně — na rozdíl od routingu, který řeší jen propojení jamek na pozemku."
+        },
+        {
+          "pojem": "Jednoranová jamka",
+          "popis": "MacKenzieho výraz pro par 3 — jamka, kterou hráč hraje na jeden úder na green."
+        },
+        {
+          "pojem": "Dvouranová jamka",
+          "popis": "MacKenzieho výraz pro par 4 — jamka na dva údery na green. Podle MacKenzieho by jich mělo být na hřišti nejvíc."
+        },
+        {
+          "pojem": "Vratná devítka",
+          "popis": "Devítka jamek, která se vrací zpátky ke klubovně — MacKenzieho první princip: hřiště by mělo mít dvě takové devítky."
+        },
+        {
+          "pojem": "Série",
+          "popis": "Souvislý úsek jamek se společnou vlastností — stejným směrem, podobnou obtížností, nebo (jako u Amen Corner) rizikem, které rozhoduje kolo."
+        },
+        {
+          "pojem": "Amen Corner",
+          "popis": "Jamky 11–13 na Augusta National — série jamek, kde se tradičně rozhoduje výsledek turnaje. Příklad rizikových jamek umístěných záměrně blízko konce kola."
+        },
+        {
+          "pojem": "Rytmus hřiště",
+          "popis": "Jak se obtížnost a charakter jamek střídají v průběhu kola — opak monotónnosti, kdy hráč hraje osmnáctkrát stejnou otázku."
+        }
+      ],
+      "cile": [
+        "Umět všech sedm pojmů použít bez nahlížení do textu."
+      ],
+      "zapamatuj": [
+        "Sedm pojmů lekce 9 popisuje, jak se osmnáct jamek skládá do jednoho vyváženého celku — patří k routingu z lekce 3 jako jeho druhá polovina."
+      ],
+      "vyzkousej": {
+        "otazka": "Zkus všech sedm pojmů použít v jedné vlastní větě o hřišti, které znáš.",
+        "placeholder": "Napiš si poznámku…"
+      }
+    },
+    "spolecneKarty": {
+      "specsHead": "Tři prvky",
+      "parLabel": "Par",
+      "delkaLabel": "Délka",
+      "architektLabel": "Architekt",
+      "vznikLabel": "Rok",
+      "prameny": "Prameny",
+      "otazkaLabel": "Otázka jamky",
+      "fotoLabel": "Foto"
+    },
+    "temata": {
+      "strategie": "Strategie",
+      "trest": "Trest",
+      "riziko-odmena": "Riziko a odměna",
+      "umisteni-hazardu": "Umístění hazardu",
+      "cteni-terenu": "Čtení terénu",
+      "voda-odtok": "Voda a odtok",
+      "vitr-slunce": "Vítr a slunce",
+      "routing": "Routing",
+      "bezpecnost": "Bezpečnost",
+      "rytmus-hriste": "Rytmus hřiště",
+      "uhel-nabehu": "Úhel náběhu",
+      "diagonalni-hazard": "Diagonální hazard",
+      "green-komplex": "Green komplex",
+      "sablonova-jamka": "Šablonová jamka",
+      "vyvazeni-kola": "Vyvážení kola"
+    },
+    "zkouska": {
+      "eyebrow": "Krok 7 z 7",
+      "over": "Šest otázek za —",
+      "title": "100 bodů",
+      "lede": "Zkouška se dá opakovat. Počítá se jen první pokus (rozcestník kurzu).",
+      "spolecne": {
+        "otazka": "Otázka",
+        "bodu": "bodů",
+        "zbyva": "Zbývá odpovědět na",
+        "hotovoMuzesOdevzdat": "Hotovo. Můžeš odevzdat.",
+        "spravne": "správně",
+        "tvojeVolba": "tvoje volba",
+        "nicNevybrano": "nic nevybráno",
+        "moznost": "Možnost",
+        "zkratkaBodu": "b",
+        "reseniUKazdeOtazky": "Správná řešení jsou u každé otázky."
+      },
+      "submit": "Odevzdat",
+      "again": "Zkusit znovu",
+      "q1": {
+        "text": "Který z pásů ukazuje dobře vyváženou sekvenci osmnácti parů — bez dlouhých řad stejného typu a bez natěsnaných pártrojek?",
+        "hint": "Hledej pás, kde se barvy střídají a žádná barva netvoří dlouhý blok.",
+        "a": "",
+        "b": "",
+        "c": "",
+        "why": "Vyvážená sekvence nemá dlouhé úseky stejného paru ani natěsněné pártrojky vedle sebe — přesně jako reálná sekvence Augusta National z kroku 1.",
+        "back": "Vrať se do kroku 1 a přepni mezi Augustou a natěsnanou verzí — všimni si rozdílu v nejdelší řadě."
+      },
+      "q2": {
+        "text": "Kolik jednoranových jamek (par 3) chtěl mít MacKenzie na hřišti podle svých třinácti principů, jako minimum?",
+        "a": "Dvě.",
+        "b": "Čtyři.",
+        "c": "Šest.",
+        "d": "MacKenzie počet neurčil, jen poměr.",
+        "why": "MacKenzie žádal nejméně čtyři jednoranové jamky (par 3) a velký podíl dvouranových (par 4) — Augusta National, kterou spoluautorizoval, má přesně čtyři.",
+        "back": "Vrať se do kroku 1 a přečti si citaci MacKenzieho principu."
+      },
+      "q3": {
+        "text": "Proč vadí hřiště, kde skoro všechny jamky hrají stejným směrem?",
+        "a": "Protože se tím poruší pravidla golfu.",
+        "b": "Protože jeden směr větru pak ovlivní skoro celé kolo stejně, místo aby se s ním hráč musel vyrovnávat jinak na každé jamce.",
+        "c": "Protože greenkeeper nemůže sekat trávu ve stejný čas na všech jamkách.",
+        "d": "Protože GPS na golfovém vozíku ztrácí signál.",
+        "why": "Když většina jamek hraje stejným směrem, jeden vítr rozhodne skoro celé kolo — po větru, nebo proti němu, pořád dokola. Promíchané směry nutí hráče číst každou jamku zvlášť.",
+        "back": "Vrať se do kroku 2 a přepni mezi jednosměrnou a smíšenou růžicí."
+      },
+      "q4": {
+        "text": "Který ze dvou pásů devíti jamek dá vedení v zápase mezi dvěma hráči vyšší šanci, že se zlomí až na posledních jamkách?",
+        "hint": "Hledej, kde jsou zvýrazněné (švihové) jamky umístěné blíž ke konci pásu.",
+        "a": "",
+        "b": "",
+        "why": "Umístění rizikových jamek blízko konce znamená, že se velká část rozptylu skóre odehraje pozdě — vedení z poloviny kola se pak láme častěji až na závěr, přesně jako u Amen Corner.",
+        "back": "Vrať se do kroku 4 a podívej se na tabulku — rozdíl mezi verzemi je téměř dvojnásobný."
+      },
+      "q5": {
+        "text": "Které z následujících tvrzení o vyvážení kola jsou pravdivá? (víc správných odpovědí)",
+        "hint": "Zkus u každé možnosti najít konkrétní krok lekce, který ji podporuje, nebo vyvrací.",
+        "a": "Stejný celkový par se dá poskládat z jamek rozmístěných dobře i špatně.",
+        "b": "Vyvážení kola je to samé jako routing z lekce 3.",
+        "c": "Umístění rizikových jamek v kole mění, kdy se rozhoduje o výsledku, i když se nemění celkový rozptyl skóre.",
+        "d": "Dvě sousední jamky mohou sdílet stejný hazard a přesto po hráči chtít úplně jiné rozhodnutí.",
+        "why": "Vyvážení kola navazuje na routing, ale řeší jinou otázku (poměr a rozmístění, ne propojení pozemku) — proto (b) neplatí. Zbylá tři tvrzení odpovídají krokům 1, 4 a 3.",
+        "back": "Vrať se do kroků 1, 3 a 4 a projdi si znovu, co přesně dokazují."
+      },
+      "q6": {
+        "text": "Podle simulace v kroku 4: proč se vedení z poloviny kola otočí častěji, když jsou švihové jamky na konci — i když je celkový rozptyl skóre stejný jako při rovnoměrném rozmístění?",
+        "a": "Protože švihové jamky na konci mají ve skutečnosti větší rozptyl než ty samé jamky jinde v kole.",
+        "b": "Protože velká část rozhodujícího rozptylu skóre se prostě odehraje AŽ na konci, kdy už méně zbývá na dohnání.",
+        "c": "Protože hráči na konci kola dělají víc chyb z únavy.",
+        "d": "Vedení se ve skutečnosti otáčí stejně často v obou verzích.",
+        "why": "Celkový rozptyl je stejný, jen jinak rozložený v čase. Když se většina rozhodujících výkyvů odehraje pozdě, vedení z první části kola má menší šanci přežít do konce nezměněné — ne proto, že by švihové jamky byly samy o sobě jiné, ale protože přišly později.",
+        "back": "Vrať se do kroku 4 a přečti si poznámku pod grafem, jak přesně model počítá."
+      },
+      "pasmo": {
+        "vyborne": {
+          "nadpis": "Výborně",
+          "text": "Vyvážení kola máš zvládnuté. Zkus si teď rozebrat routing hřiště, které znáš, podle stejných kritérií."
+        },
+        "dobre": {
+          "nadpis": "Dobré",
+          "text": "Základ sedí. Projdi si otázky, kde ses spletl/a, a jdi dál."
+        },
+        "projdes": {
+          "nadpis": "Projdeš",
+          "text": "Vrať se na plát „Poměr, ne náhoda“ a přepni obě sekvence — sleduj, jak se mění nejdelší řada stejného paru."
+        },
+        "zopakuj": {
+          "nadpis": "Zopakuj",
+          "text": "Vrať se na začátek lekce a projdi si plát i simulaci znovu."
+        }
+      },
+      "souhrn": {
+        "nadpis": "Výsledek",
+        "procentBodu": "procent · {body} ze {max} bodů",
+        "spravne": "správně",
+        "chybneCastecne": "chybně nebo částečně",
+        "zcelaMimo": "zcela mimo",
+        "rozpis": "Rozpis odpovědí",
+        "tvojeOdpoved": "Tvoje odpověď",
+        "spravneReseni": "Správně",
+        "pata": "Podrobné vysvětlení je u každé otázky výše. Výsledek se ukládá do přehledu v tomto prohlížeči."
+      },
+      "foot": "Tím lekce 9 končí — a s ní zatím i celá hotová část kurzu.",
+      "cile": [
+        "Ověřit si šest klíčových bodů lekce v šesti otázkách."
+      ],
+      "zapamatuj": [
+        "Vyvážená sekvence parů nemá dlouhé řady stejného typu ani natěsněné pártrojky.",
+        "Promíchané směry jamek znamenají, že žádný jeden vítr nerozhodne celé kolo.",
+        "Umístění rizikových jamek v kole mění, KDY se rozhoduje, ne kolik se toho rozhoduje."
+      ]
+    }
+  },
+  "en": {
+    "meta": {
+      "kicker": "Golf course architecture",
+      "chapter": "Lesson 9 of 18",
+      "over": "Eighteen questions, not eighteen copies —",
+      "title": "Balancing a round",
+      "lede": "Lesson 3 covered routing — how to connect holes across a site. This lesson asks a different question: is the resulting set of eighteen holes balanced? In 1920 Alister MacKenzie summed it up in thirteen principles — two returning nines, plenty of two-shot holes, at least four one-shot holes, no hole feeling like its neighbour. Augusta National, which MacKenzie co-designed, spaces its four par 3s across holes 4, 6, 12 and 16 — not bunched together. This lesson shows what happens when that rule gets broken.",
+      "zpet": "← Back to overview"
+    },
+    "principLabel": "Principle",
+    "toc": {
+      "kicker": "Golf course architecture",
+      "sekceHead": "Seven steps in this lesson",
+      "daleHead": "Where next",
+      "slovnicekPopis": "Every term from the course in one place.",
+      "sbirkaPopis": "Twenty holes, each broken down in the same format.",
+      "zpetNaPrehled": "← Back to overview",
+      "pokracovat": "Continue",
+      "zacit": "Start the lesson"
+    },
+    "foot": {
+      "lekce": "ROUTING · Lesson 9"
+    },
+    "nav": {
+      "preskocit": "Skip to content",
+      "jazykLabel": "Language",
+      "sekceNavLabel": "Navigation between sections",
+      "prehled": "Lesson overview",
+      "sekceNazvy": [
+        "Ratio, not chance",
+        "Wind from every side",
+        "Neighbouring holes",
+        "Where it's decided",
+        "Think it over",
+        "Glossary",
+        "Exam"
+      ],
+      "dalsi": "Next",
+      "dalsiLekce": "Continue to the next lesson",
+      "klavesniNapoveda": "The plan can be controlled with a keyboard too: tab to it, arrow keys move the cursor, Enter confirms.",
+      "konecKurzu": "The most recently finished lesson for now — continue with the hole collection",
+      "krok": "Step {n} of 7",
+      "predchozi": "Previous"
+    },
+    "teeShot": {
+      "eyebrow": "Step 1 of 7",
+      "over": "How many one-shotters, how many two-shotters —",
+      "title": "Ratio, not chance",
+      "lede": "In his thirteen principles (1920), MacKenzie wrote that a course should have a large proportion of good two-shot holes (par 4s) and at least four one-shot holes (par 3s). But he didn't just say how many — he cared how they were spread out. Augusta National, which he co-designed, places its four par 3s on holes 4, 6, 12 and 16 — a gap of 2, then 6, then 4 holes. No two side by side. Compare that with a sequence whose par total is identical (72), but all four par 3s are bunched together in a row.",
+      "principle": "A total par of 72 can be assembled in endless ways. The total says nothing about whether the player faces a different question every few holes — or plays four nearly identical holes in a row and then nothing interesting for the next fourteen.",
+      "toggle": {
+        "a": "Augusta National",
+        "b": "Bunched together"
+      },
+      "planLabel": "Eighteen holes as a strip, coloured by par",
+      "statLabel": {
+        "nejdelsiSerie": "Longest run of the same par",
+        "rozestupP3": "Spacing of the par 3s (holes)",
+        "par": "Total par"
+      },
+      "verdikt": {
+        "a": "In the real sequence the longest run of the same par is only {serie} holes, and the par 3s are spaced {rozestup} holes apart. The player never knows in advance what's coming.",
+        "b": "In the bunched version the longest run of the same par is {serie} holes in a row — same total par of 72, but the last quarter of the round asks the same question four times."
+      },
+      "foot": "The ratio of hole types is only half the story. The other half is which direction they play — that's the next step.",
+      "cile": [
+        "Calculate the difference between a balanced and a bunched par sequence with the same total."
+      ],
+      "zapamatuj": [
+        "A total par (72, 71...) says nothing about how the individual pars are distributed.",
+        "MacKenzie: a large share of two-shot holes, at least four one-shot holes — and no two of the same type side by side.",
+        "Augusta National spaces its four par 3s across holes 4, 6, 12 and 16 — not bunched together."
+      ]
+    },
+    "fairway": {
+      "eyebrow": "Step 2 of 7",
+      "over": "Same wind, different hole —",
+      "title": "Wind from every side",
+      "lede": "Among his principles, MacKenzie called for little hill climbing and as short a walk as possible between a green and the next tee — but routing also settles something harder to show on a plan: which direction a hole plays. A course where nearly every hole points toward the same compass quarter gives the player the same wind for all eighteen holes — either at their back or in their face, depending on how it happens to blow. A course with mixed directions gives every hole something different: once downwind, once into it, once across. The diagram below is illustrative — two fictional compass roses, not the plan of any real course — but it shows exactly that difference.",
+      "principle": "The wind that makes a hole interesting on Monday can make it unplayable on Thursday — if it keeps blowing the same way relative to the player. An architect can't control that by how a hole is built. Only by which direction it's laid on the ground.",
+      "planLabel": "Two illustrative compass roses of eighteen holes",
+      "popis": {
+        "jednosmerne": "Fourteen of eighteen holes play into the same compass quarter. A wind from the west affects almost the whole round the same way — either slowing it down or helping it, over and over.",
+        "smisene": "The holes are spread across every direction. The same west wind sits behind the player on some holes, into them on others, across on the rest — every hole has to be read on its own."
+      },
+      "cile": [
+        "Explain why the direction a hole plays is as important a question as its length or par."
+      ],
+      "zapamatuj": [
+        "A course where most holes play the same direction gives one wind direction outsized influence.",
+        "Mixed directions mean no single wind decides the whole round — every hole has to be read separately.",
+        "This can't be fixed after construction. It has to be solved in the routing, before the first stake goes in."
+      ],
+      "vyzkousej": {
+        "otazka": "Do you know a course where the wind plays almost the same role on every hole? What do you think happened in the routing?",
+        "placeholder": "Jot a note…"
+      }
+    },
+    "ceskaJamka": {
+      "eyebrow": "Step 3 of 7",
+      "over": "Two holes side by side, two completely different tasks —",
+      "title": "Neighbouring holes",
+      "lede": "Karlštejn 14 and 15 sit next to each other in the collection's cards — and next to each other on the course. The 14th is a short par 3, where a pond guards the green's right edge and the only decision is how close to the water to play. The 15th is a dogleg par 4, where the same pond sits in the corner of the fairway and the question is completely different: cut the corner over the water, or go around on dry land and lose distance. Same water, two holes, nothing in common about what they ask of the player.",
+      "cile": [
+        "Show, using two real, documented holes, that being neighbours doesn't mean being similar."
+      ],
+      "zapamatuj": [
+        "Karlštejn 14 (par 3, 198 m) and 15 (par 4, 315 m) share the same pond, but a completely different relationship to it.",
+        "The 14th is a question of precision over a short distance. The 15th is a question of risk over a long one.",
+        "Neighbouring holes that solve the same hazard differently are better evidence of a balanced round than two holes that have nothing to do with each other."
+      ],
+      "vyzkousej": {
+        "otazka": "Find two more cards in the collection that sit back-to-back by hole number, and try to describe how they differ.",
+        "placeholder": "Jot a note…"
+      }
+    },
+    "approachNadpis": {
+      "over": "Same spread, different place —",
+      "title": "Where it's decided",
+      "cile": [
+        "Calculate how much placing the risky holes in a round changes how often the outcome breaks late."
+      ],
+      "zapamatuj": [
+        "The total variance of a round's score is the same no matter where the risky holes sit — what changes is WHEN it gets decided.",
+        "Risky holes at the end mean the lead breaks late — that's a \"dramatic finish\".",
+        "The same risky holes spread through the whole round mostly get decided earlier — the round ends calmer, even though it's just as hard."
+      ],
+      "eyebrow": "Step 4 of 7",
+      "lede": "Amen Corner isn't an accident — it's a consequence of where the architect placed risk in the sequence of eighteen holes. Work out how much that matters."
+    },
+    "approach1": {
+      "eyebrow": "Step 4 of 7",
+      "over": "Amen Corner wasn't an accident —",
+      "title": "Where it's decided",
+      "lede": "The famous \"Amen Corner\" at Augusta National (holes 11-13) and the reachable par 5s at 13 and 15 aren't scattered across the round — they sit together in the closing third. The model below shows why. Two players are tied heading into the last nine holes. Six holes are \"calm\" (small score spread between players), three are \"swingy\" (large spread — risk-reward holes where a player can gain or lose a great deal). Compare what happens when those three swingy holes sit at the end of the round, versus spread across all nine.",
+      "planLabel": "Nine holes as a strip, swingy holes highlighted",
+      "hracLabel": "Toggle between the two versions and watch the probability below the plate change.",
+      "tabulka": {
+        "hrac": "Version",
+        "smele": "Swingy at the end",
+        "opatrne": "Swingy spread out",
+        "rozdil": "Difference",
+        "rana": "Lead breaks after hole 6"
+      },
+      "grafHead": "How often the lead after hole 6 flips by the end",
+      "grafPopis": "Both versions carry the same total score variance over the closing nine — only when that variance gets played out differs.",
+      "zaver": "When the swingy holes sit at the end, a lead from hole 6 flips by the finish roughly twice as often as when the same variance is spread evenly — {a}% versus {b}%. The total score variance is identical. Only WHEN it plays out changes.",
+      "legenda": "The model only tracks who's ahead — not by how many strokes.",
+      "poznamka": "Model: nine holes, the score difference between two players on a hole is a random variable with a standard deviation of 0.3 strokes (calm hole) or 1.2 strokes (swingy hole). Both versions have the same sum of variances across all nine holes — only the order differs. 20,000 rounds.",
+      "foot": "The note under the chart spells out the exact model."
+    },
+    "putt": {
+      "eyebrow": "Step 5 of 7",
+      "over": "Three questions to think over —",
+      "title": "Think it over",
+      "lede": "No scoring, just space to write your own answer. It saves to your browser and you'll find it here next time.",
+      "otazky": [
+        "MacKenzie wanted at least four par 3s and no two side by side. Think of a course you know — does it follow that rule?",
+        "The model in step 4 showed that where the risky holes sit changes WHEN a round gets decided, not HOW MUCH gets decided. Can you think of another part of a course (not the order of holes) where a similar principle applies — the same amount of something, just placed differently?",
+        "If you could add a nineteenth hole purely to balance the round better, where in the sequence would it belong, and why there?"
+      ],
+      "poznamkaPlaceholder": "Jot a note…",
+      "ulozeno": "Saved",
+      "foot": "Two sections left: the glossary and the exam.",
+      "cile": [
+        "Connect balancing a round to your own experience and courses you know."
+      ],
+      "zapamatuj": [
+        "Balancing a round isn't about how much of something there is — it's about where it sits.",
+        "The same total (of par, of risk, of anything) can be arranged well or badly.",
+        "The best way to remember the principle is to try finding it on a course you know."
+      ]
+    },
+    "slovnicek": {
+      "eyebrow": "Step 6 of 7",
+      "over": "Seven terms from the lesson —",
+      "title": "Glossary",
+      "lede": "The same terms appear underlined in the lesson text — here they are together.",
+      "pojmy": [
+        {
+          "pojem": "Balancing a round",
+          "popis": "The question of whether the resulting set of eighteen holes (par ratio, directions, order of difficulty) is deliberately composed — as opposed to routing, which only settles how the holes connect across the site."
+        },
+        {
+          "pojem": "One-shot hole",
+          "popis": "MacKenzie's term for a par 3 — a hole the player plays to the green in a single stroke."
+        },
+        {
+          "pojem": "Two-shot hole",
+          "popis": "MacKenzie's term for a par 4 — a hole played to the green in two strokes. MacKenzie held there should be more of these than any other type."
+        },
+        {
+          "pojem": "Returning nine",
+          "popis": "A set of nine holes that loops back to the clubhouse — MacKenzie's first principle: a course should have two such nines."
+        },
+        {
+          "pojem": "Stretch",
+          "popis": "A continuous run of holes sharing a property — the same direction, similar difficulty, or (as at Amen Corner) risk that decides the round."
+        },
+        {
+          "pojem": "Amen Corner",
+          "popis": "Holes 11-13 at Augusta National — a stretch of holes where tournament outcomes are traditionally decided. An example of risky holes placed deliberately near the end of a round."
+        },
+        {
+          "pojem": "Course rhythm",
+          "popis": "How difficulty and character alternate over the course of a round — the opposite of monotony, where a player faces the same question eighteen times."
+        }
+      ],
+      "cile": [
+        "Be able to use all seven terms without checking the text."
+      ],
+      "zapamatuj": [
+        "The seven terms in Lesson 9 describe how eighteen holes add up to one balanced whole — they belong alongside routing from Lesson 3 as its second half."
+      ],
+      "vyzkousej": {
+        "otazka": "Try using all seven terms in one sentence of your own about a course you know.",
+        "placeholder": "Jot a note…"
+      }
+    },
+    "spolecneKarty": {
+      "specsHead": "Three elements",
+      "parLabel": "Par",
+      "delkaLabel": "Length",
+      "architektLabel": "Architect",
+      "vznikLabel": "Year",
+      "prameny": "Sources",
+      "otazkaLabel": "The hole's question",
+      "fotoLabel": "Photo"
+    },
+    "temata": {
+      "strategie": "Strategy",
+      "trest": "Penalty",
+      "riziko-odmena": "Risk and reward",
+      "umisteni-hazardu": "Hazard placement",
+      "cteni-terenu": "Reading the land",
+      "voda-odtok": "Water and drainage",
+      "vitr-slunce": "Wind and sun",
+      "routing": "Routing",
+      "bezpecnost": "Safety",
+      "rytmus-hriste": "Course rhythm",
+      "uhel-nabehu": "Angle of approach",
+      "diagonalni-hazard": "Diagonal hazard",
+      "green-komplex": "Green complex",
+      "sablonova-jamka": "Template hole",
+      "vyvazeni-kola": "Balancing a round"
+    },
+    "zkouska": {
+      "eyebrow": "Step 7 of 7",
+      "over": "Six questions for —",
+      "title": "100 points",
+      "lede": "The exam can be retaken. Only the first attempt counts (course overview).",
+      "spolecne": {
+        "otazka": "Question",
+        "bodu": "points",
+        "zbyva": "Still to answer",
+        "hotovoMuzesOdevzdat": "Done. You can submit.",
+        "spravne": "correct",
+        "tvojeVolba": "your choice",
+        "nicNevybrano": "nothing selected",
+        "moznost": "Option",
+        "zkratkaBodu": "pt",
+        "reseniUKazdeOtazky": "The solutions are shown with each question."
+      },
+      "submit": "Submit",
+      "again": "Try again",
+      "q1": {
+        "text": "Which strip shows a well-balanced sequence of eighteen pars — no long runs of the same type, no bunched par 3s?",
+        "hint": "Look for a strip where colours alternate and no colour forms a long block.",
+        "a": "",
+        "b": "",
+        "c": "",
+        "why": "A balanced sequence has no long stretches of the same par and no bunched par 3s — exactly like Augusta National's real sequence from step 1.",
+        "back": "Go back to step 1 and toggle between Augusta and the bunched version — notice the difference in the longest run."
+      },
+      "q2": {
+        "text": "How many one-shot holes (par 3s) did MacKenzie say a course should have, as a minimum, in his thirteen principles?",
+        "a": "Two.",
+        "b": "Four.",
+        "c": "Six.",
+        "d": "MacKenzie didn't set a number, only a ratio.",
+        "why": "MacKenzie called for at least four one-shot holes (par 3s) and a large share of two-shot holes (par 4s) — Augusta National, which he co-designed, has exactly four.",
+        "back": "Go back to step 1 and re-read the quote from MacKenzie's principle."
+      },
+      "q3": {
+        "text": "Why is it a problem when nearly every hole on a course plays the same direction?",
+        "a": "Because it breaks the rules of golf.",
+        "b": "Because one wind direction then affects almost the whole round the same way, instead of the player having to adjust differently on every hole.",
+        "c": "Because the greenkeeper can't mow every hole at the same time.",
+        "d": "Because the GPS on a golf cart loses signal.",
+        "why": "When most holes play the same direction, one wind decides almost the whole round — either helping or hurting, over and over. Mixed directions force the player to read every hole separately.",
+        "back": "Go back to step 2 and toggle between the one-directional and mixed compass roses."
+      },
+      "q4": {
+        "text": "Which of the two nine-hole strips gives a lead in a match between two players a higher chance of breaking only in the closing holes?",
+        "hint": "Look for where the highlighted (swingy) holes sit closer to the end of the strip.",
+        "a": "",
+        "b": "",
+        "why": "Placing risky holes near the end means a large share of the score variance plays out late — a lead from the halfway point then breaks more often right at the finish, exactly like at Amen Corner.",
+        "back": "Go back to step 4 and look at the table — the gap between the versions is nearly double."
+      },
+      "q5": {
+        "text": "Which of the following statements about balancing a round are true? (more than one correct answer)",
+        "hint": "Try to find a specific step in the lesson that supports or contradicts each option.",
+        "a": "The same total par can be assembled from holes arranged well or badly.",
+        "b": "Balancing a round is the same thing as the routing from Lesson 3.",
+        "c": "Where risky holes sit in a round changes when the outcome gets decided, even though the total score variance doesn't change.",
+        "d": "Two neighbouring holes can share the same hazard and still ask the player for a completely different decision.",
+        "why": "Balancing a round builds on routing but answers a different question (ratio and placement, not connecting the land) — so (b) is false. The other three statements match steps 1, 4 and 3.",
+        "back": "Go back to steps 1, 3 and 4 and review exactly what each one demonstrated."
+      },
+      "q6": {
+        "text": "According to the simulation in step 4: why does a lead from the halfway point flip more often when the swingy holes sit at the end — even though the total score variance is the same as when they're spread evenly?",
+        "a": "Because swingy holes at the end actually have a larger variance than the same holes elsewhere in the round.",
+        "b": "Because a large share of the decisive score variance simply plays out LATE, when there's less time left to make it up.",
+        "c": "Because players make more mistakes from fatigue at the end of a round.",
+        "d": "The lead actually flips equally often in both versions.",
+        "why": "The total variance is the same, only spread differently over time. When most of the decisive swings happen late, a lead from the early part of the round has less chance of surviving unchanged to the finish — not because the swingy holes are different in themselves, but because they came later.",
+        "back": "Go back to step 4 and read the note under the chart for exactly how the model works."
+      },
+      "pasmo": {
+        "vyborne": {
+          "nadpis": "Excellent",
+          "text": "You have balancing a round under control. Try breaking down the routing of a course you know using the same criteria."
+        },
+        "dobre": {
+          "nadpis": "Good",
+          "text": "The basics hold. Look over the questions you got wrong and carry on."
+        },
+        "projdes": {
+          "nadpis": "Pass",
+          "text": "Go back to the plate \"Ratio, not chance\" and toggle both sequences — watch how the longest same-par run changes."
+        },
+        "zopakuj": {
+          "nadpis": "Repeat",
+          "text": "Go back to the start of the lesson and work through the plate and the simulation again."
+        }
+      },
+      "souhrn": {
+        "nadpis": "Result",
+        "procentBodu": "per cent · {body} of {max} points",
+        "spravne": "correct",
+        "chybneCastecne": "wrong or partial",
+        "zcelaMimo": "completely off",
+        "rozpis": "Answer by answer",
+        "tvojeOdpoved": "Your answer",
+        "spravneReseni": "Correct",
+        "pata": "The full explanation sits with each question above. The result is stored in the overview in this browser."
+      },
+      "foot": "That's the end of Lesson 9 — and, for now, the end of the finished part of the course.",
+      "cile": [
+        "Check the six key points of the lesson in six questions."
+      ],
+      "zapamatuj": [
+        "A balanced par sequence has no long runs of the same type and no bunched par 3s.",
+        "Mixed hole directions mean no single wind decides the whole round.",
+        "Where risky holes sit in a round changes WHEN it gets decided, not how much gets decided."
+      ]
+    }
+  }
+}

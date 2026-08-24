@@ -63,11 +63,21 @@
         "num": 7,
         "title": "Kam hazard patří",
         "popis": "Poloha hazardu napříč fairwayí a v pořadí ran — proč bunkr uprostřed není nespravedlnost a proč hazard za dopadem nikoho nezajímá."
+      },
+      {
+        "num": 8,
+        "title": "Vzorové jamky",
+        "popis": "Redan, Biarritz a Punchbowl — tři nejkopírovanější šablony v dějinách oboru, a co z nich zůstává, když je architekt přenese na jiný pozemek."
+      },
+      {
+        "num": 9,
+        "title": "Vyvážení kola",
+        "popis": "Poměr parů, směry jamek a to, kam architekt umístí riziko — proč Amen Corner sedí na konci kola, a ne na jeho začátku."
       }
     ],
     "foot1": "ROUTING · rozcestník",
-    "foot2": "Lekce 1–7 z 18",
-    "pripravujeme": "Lekce 7 až 18 se připravují. Přibývají postupně — každá projde stejnou kontrolou jako prvních šest, než se sem dostane.",
+    "foot2": "Lekce 1–9 z 18",
+    "pripravujeme": "Lekce 10 až 18 se připravují. Přibývají postupně — každá projde stejnou kontrolou jako prvních devět, než se sem dostane.",
     "daleHead": "Kdykoli po ruce",
     "slovnicekPopis": "Všech 62 pojmů kurzu na jednom místě, abecedně a dvojjazyčně.",
     "sbirkaPopis": "Dvacet rozebraných jamek z celého světa i z Česka, v jednotném formátu — otázka, plán, tři prvky, lekce.",
@@ -138,11 +148,21 @@
         "num": 7,
         "title": "Where a hazard belongs",
         "popis": "Where a hazard sits across the fairway and in the sequence of shots — why a bunker in the middle is not unfair, and why one beyond the drive interests nobody."
+      },
+      {
+        "num": 8,
+        "title": "Template holes",
+        "popis": "The Redan, the Biarritz and the Punchbowl — the three most-copied templates in the history of the craft, and what survives when an architect moves them to a different piece of land."
+      },
+      {
+        "num": 9,
+        "title": "Balancing a round",
+        "popis": "Par ratios, hole directions, and where an architect places risk — why Amen Corner sits at the end of a round, not the start."
       }
     ],
     "foot1": "ROUTING · hub",
-    "foot2": "Lessons 1–7 of 18",
-    "pripravujeme": "Lessons 7 to 18 are in preparation. They arrive one at a time — each goes through the same checks as the first six before it appears here.",
+    "foot2": "Lessons 1–9 of 18",
+    "pripravujeme": "Lessons 10 to 18 are in preparation. They arrive one at a time — each goes through the same checks as the first nine before it appears here.",
     "daleHead": "Always at hand",
     "slovnicekPopis": "All 62 terms of the course in one place, alphabetical and bilingual.",
     "sbirkaPopis": "Twenty holes from around the world and from Czechia, analysed in one format — question, plan, three elements, lesson.",

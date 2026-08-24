@@ -881,6 +881,194 @@ export function pobrezniCara(svg, body, vodaVpravo, { seed = 91 } = {}) {
   });
 }
 
+/* ============================================================================
+ * RELIÉF TERÉNU — vrstevnice a šrafy sklonu (Krok 38)
+ * ----------------------------------------------------------------------------
+ * Dvě funkce, které dokreslují skutečný terén — ale POUZE tam, kde ho karta
+ * doloží výškovou mřížkou. Nikde tu není odhad ani interpolace „od oka":
+ * bez `tvary.teren.vyskovaMrizka` se nekreslí nic, přesně podle pravidla
+ * „terén se kreslí jen z doložených dat" (viz Pasti v poznamky.md).
+ *
+ * Schéma dat, které karta musí dodat, aby se vrstva zapnula:
+ *   tvary.teren.vyskovaMrizka = {
+ *     sirka: <počet sloupců>, vyska: <počet řádků>,
+ *     krokM: <rozestup bodů mřížky v metrech>,
+ *     pocatek: [x0, y0],           // metry, stejná soustava jako tvary.obrys
+ *     hodnoty: number[vyska][sirka] // nadmořská výška v metrech, libovolný
+ *                                   // společný referenční bod (není nutné
+ *                                   // znát absolutní nadmořskou výšku)
+ *   }
+ * Zdroj dat: ČÚZK (DMR 5G / geoportál), zaznamenej do `tvary.teren.zdroj`.
+ *
+ * Obě funkce čtou `--hatch-density` stejně jako `hatch()`/`stipple()` —
+ * na pracovním plátu (`.plate-work`) budou stejně tišší jako zbytek kresby.
+ * ==========================================================================*/
+
+/**
+ * Marching squares nad mřížkou výšek — vrátí pole úsečkových segmentů
+ * (v souřadnicích mřížky, tedy sloupec/řádek, ne metry) pro jednu hladinu.
+ * Sedlové buňky (4 průsečíky) se rozhodují podle průměru rohů, aby se
+ * dvě čáry v jedné buňce nikdy nekřížily.
+ */
+function usekyMarchingSquares(hodnoty, sirka, vyska, level) {
+  const nad = (v) => v >= level;
+  const naHrane = (v1, v2, p1, p2) => {
+    const t = v2 === v1 ? 0.5 : (level - v1) / (v2 - v1);
+    return [p1[0] + (p2[0] - p1[0]) * t, p1[1] + (p2[1] - p1[1]) * t];
+  };
+  const segy = [];
+  for (let r = 0; r < vyska - 1; r++) {
+    for (let c = 0; c < sirka - 1; c++) {
+      const vTL = hodnoty[r][c], vTR = hodnoty[r][c + 1];
+      const vBL = hodnoty[r + 1][c], vBR = hodnoty[r + 1][c + 1];
+      const pTL = [c, r], pTR = [c + 1, r], pBL = [c, r + 1], pBR = [c + 1, r + 1];
+      const sTL = nad(vTL), sTR = nad(vTR), sBL = nad(vBL), sBR = nad(vBR);
+      const kr = [];
+      if (sTL !== sTR) kr.push({ e: 'top', p: naHrane(vTL, vTR, pTL, pTR) });
+      if (sTR !== sBR) kr.push({ e: 'right', p: naHrane(vTR, vBR, pTR, pBR) });
+      if (sBL !== sBR) kr.push({ e: 'bottom', p: naHrane(vBL, vBR, pBL, pBR) });
+      if (sTL !== sBL) kr.push({ e: 'left', p: naHrane(vTL, vBL, pTL, pBL) });
+      if (kr.length === 2) {
+        segy.push([kr[0].p, kr[1].p]);
+      } else if (kr.length === 4) {
+        const stred = (vTL + vTR + vBL + vBR) / 4;
+        const t = kr.find((x) => x.e === 'top'), pr = kr.find((x) => x.e === 'right');
+        const b = kr.find((x) => x.e === 'bottom'), l = kr.find((x) => x.e === 'left');
+        if (sTL === nad(stred)) { segy.push([t.p, l.p]); segy.push([pr.p, b.p]); }
+        else { segy.push([t.p, pr.p]); segy.push([l.p, b.p]); }
+      }
+    }
+  }
+  return segy;
+}
+
+/** Poskládá nezávislé úsečky z `usekyMarchingSquares` do delších polylinií
+ *  (spojuje konce, které se dotýkají) — jinak by vrstevnice byla trhaná
+ *  na desítky krátkých segmentů místo plynulé čáry. */
+function spojUsekyDoPolylinii(segy, presnost = 1e-3) {
+  const klic = (p) => `${Math.round(p[0] / presnost)},${Math.round(p[1] / presnost)}`;
+  const zbyv = segy.map((s) => ({ a: s[0], b: s[1], pouzito: false }));
+  const mapa = new Map();
+  zbyv.forEach((s, i) => {
+    for (const [konec, bod] of [['a', s.a], ['b', s.b]]) {
+      const k = klic(bod);
+      if (!mapa.has(k)) mapa.set(k, []);
+      mapa.get(k).push({ i, konec });
+    }
+  });
+  const najdiVolnehoSouseda = (bod, mimoI) => {
+    const k = klic(bod);
+    const kandidati = (mapa.get(k) || []).filter(({ i }) => !zbyv[i].pouzito && i !== mimoI);
+    return kandidati[0] || null;
+  };
+  const linie = [];
+  for (let i = 0; i < zbyv.length; i++) {
+    if (zbyv[i].pouzito) continue;
+    zbyv[i].pouzito = true;
+    let body = [zbyv[i].a, zbyv[i].b];
+    let dal = true;
+    while (dal) {
+      const soused = najdiVolnehoSouseda(body[body.length - 1], -1);
+      if (!soused) { dal = false; break; }
+      zbyv[soused.i].pouzito = true;
+      body.push(soused.konec === 'a' ? zbyv[soused.i].b : zbyv[soused.i].a);
+    }
+    dal = true;
+    while (dal) {
+      const soused = najdiVolnehoSouseda(body[0], -1);
+      if (!soused) { dal = false; break; }
+      zbyv[soused.i].pouzito = true;
+      body.unshift(soused.konec === 'a' ? zbyv[soused.i].b : zbyv[soused.i].a);
+    }
+    linie.push(body);
+  }
+  return linie;
+}
+
+/**
+ * Vrstevnice (izolinie nadmořské výšky) přes plochu plátu. Kreslí se JEN,
+ * když karta dodá `tvary.teren.vyskovaMrizka` — jinak funkce nic nedělá
+ * (bezpečné volat vždy, i bez dat).
+ *
+ * @param {Element} svg
+ * @param {{sirka:number,vyska:number,krokM:number,pocatek:[number,number],hodnoty:number[][]}} mrizka
+ * @param {(x:number)=>number} px @param {(y:number)=>number} py — stejné
+ *   transformace metry→viewBox jako zbytek `vykresliJamku()`
+ * @param {{interval?:number, seed?:number}} [opts] — `interval` je rozestup
+ *   hladin ve stejné jednotce jako `hodnoty` (typicky metry, výchozí 1 m)
+ */
+export function vrstevnice(svg, mrizka, px, py, { interval = 1, seed = 8000 } = {}) {
+  const { sirka, vyska, krokM, pocatek, hodnoty } = mrizka || {};
+  if (!hodnoty || !sirka || !vyska) return null;
+  const [x0, y0] = pocatek;
+  let minV = Infinity, maxV = -Infinity;
+  for (const radek of hodnoty) for (const v of radek) { if (v < minV) minV = v; if (v > maxV) maxV = v; }
+  const density = parseFloat(V('--hatch-density', svg)) || 1;
+  const g = E(svg, 'g', {
+    class: 'terenVrstevnice', stroke: V('--ink2', svg),
+    'stroke-width': 0.5, opacity: 0.4 * density, fill: 'none',
+  });
+  const r = rng(seed);
+  const zacatek = Math.ceil(minV / interval) * interval;
+  for (let lvl = zacatek; lvl <= maxV; lvl += interval) {
+    const segy = usekyMarchingSquares(hodnoty, sirka, vyska, lvl);
+    const linie = spojUsekyDoPolylinii(segy);
+    for (const body of linie) {
+      if (body.length < 2) continue;
+      const ptsPx = body.map(([gx, gy]) => ({
+        x: px(x0 + gx * krokM), y: py(y0 + gy * krokM),
+      }));
+      E(g, 'path', { d: hladkaCesta(ptsPx) });
+      // řídké číslo hladiny u jedné z pěti čar — jako v mapových podkladech
+      if (lvl % (interval * 5) === 0 && ptsPx.length) {
+        const stred = ptsPx[Math.floor(ptsPx.length * (0.3 + r() * 0.4))];
+        E(g, 'text', { x: stred.x, y: stred.y - 1.5, class: 'lab sm', opacity: 0.7 }, `${lvl}`);
+      }
+    }
+  }
+  return g;
+}
+
+/**
+ * Šrafy sklonu (hillshading hachures) — krátké čárky po spádnici, delší
+ * a hustší tam, kde je terén strmější. Klasická kartografická technika
+ * pro čtení sklonu v plánu shora, bez barevného odstínování.
+ *
+ * Kreslí se JEN, když karta dodá `tvary.teren.vyskovaMrizka`.
+ *
+ * @param {Element} svg
+ * @param {object} mrizka — stejný tvar jako u `vrstevnice()`
+ * @param {(x:number)=>number} px @param {(y:number)=>number} py
+ * @param {{krokVzorku?:number, prah?:number, seed?:number}} [opts]
+ *   `prah` je nejmenší sklon (m/m), od kterého se čárka vůbec kreslí
+ */
+export function srafySklonu(svg, mrizka, px, py, { krokVzorku = 2, prah = 0.03, seed = 8100 } = {}) {
+  const { sirka, vyska, krokM, pocatek, hodnoty } = mrizka || {};
+  if (!hodnoty || !sirka || !vyska) return null;
+  const [x0, y0] = pocatek;
+  const density = parseFloat(V('--hatch-density', svg)) || 1;
+  const g = E(svg, 'g', {
+    class: 'terenSrafySklonu', stroke: V('--ink2', svg),
+    'stroke-width': 0.55, opacity: 0.42 * density, 'stroke-linecap': 'round',
+  });
+  for (let r = 1; r < vyska - 1; r += krokVzorku) {
+    for (let c = 1; c < sirka - 1; c += krokVzorku) {
+      const dzdx = (hodnoty[r][c + 1] - hodnoty[r][c - 1]) / (2 * krokM);
+      const dzdy = (hodnoty[r + 1][c] - hodnoty[r - 1][c]) / (2 * krokM);
+      const sklon = Math.hypot(dzdx, dzdy);
+      if (sklon < prah) continue;
+      const smerX = -dzdx / sklon, smerY = -dzdy / sklon; // po spádnici dolů
+      const delkaM = Math.min(krokM * 0.85, krokM * (0.18 + sklon * 3.2));
+      const xm = x0 + c * krokM, ym = y0 + r * krokM;
+      E(g, 'line', {
+        x1: px(xm).toFixed(1), y1: py(ym).toFixed(1),
+        x2: px(xm + smerX * delkaM).toFixed(1), y2: py(ym + smerY * delkaM).toFixed(1),
+      });
+    }
+  }
+  return g;
+}
+
 /**
  * Vykreslí libovolnou kartu jamky z `data/jamky/*.json`.
  *
@@ -959,6 +1147,12 @@ export function vykresliJamku(svg, karta, opts = {}) {
      překryje (viz komentář u `trsy()`). */
   E(svg, 'rect', { x: m.minX - padL, y: -padH, width: m.sirka + padL + padR, height: m.vyska + padH + padD, fill: V('--turf-d', svg), opacity: 0.42 });
   trsy(svg, { x: m.minX, y: -padH, w: m.sirka, h: m.vyska + padH + padD }, Math.round((m.sirka * (m.vyska + padH + padD)) / 620), (karta.id || '').length + 4200, { op: 0.26, velikost: 3.8 });
+
+  /* --- 1b. reliéf terénu (jen když karta dodá vyskovaMrizka, Krok 38) --- */
+  if (t.teren && t.teren.vyskovaMrizka) {
+    vrstevnice(svg, t.teren.vyskovaMrizka, px, py, { interval: t.teren.interval || 1, seed: (karta.id || '').length + 8000 });
+    srafySklonu(svg, t.teren.vyskovaMrizka, px, py, { seed: (karta.id || '').length + 8100 });
+  }
 
   const popisky = [];
 

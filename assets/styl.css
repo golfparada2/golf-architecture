@@ -664,6 +664,19 @@ body{ max-width:var(--plate-max); }
 .plat > svg{max-width:var(--obraz-max);margin-left:auto;margin-right:auto}
 .plat > .toggle,.plat > .tools,.plat > .posuvnik-wrap{max-width:var(--obraz-max)}
 
+/* Režim tisku (Krok 38): stejná kresba, jen bez barevných výplní — pořád
+   perokresba, ne jiný obrázek. Nastavuje se přepsáním barevných proměnných
+   na bílou/průhlednou přímo na `<svg>`; `--ink`/`--ink2` zůstávají a nesou
+   celou kresbu. Přepínač je v `kartaJamky()` (spolecne.js), který po kliku
+   znovu zavolá `vykresliJamku()`, aby `V()` v platy.js přečetl nové barvy —
+   živý přepočet CSS proměnné totiž nezmění atributy `fill`/`stroke", které
+   se do SVG zapisují jen jednou při kreslení. */
+svg.rezimTisk{
+  --turf:#fff; --turf-d:#fff; --sand:#fff; --water:#fff;
+  --ink:#000; --ink2:#000; --flag:#000; background:#fff;
+}
+.kartaObraz .toggle{margin-top:10px;margin-bottom:2px}
+
 /* --- přeskočit na obsah --------------------------------------------------- */
 .preskocit{
   position:absolute;left:-9999px;top:0;z-index:20;background:var(--olive);color:var(--paper);

@@ -1126,22 +1126,5 @@
       "titul": "offcourse.co — scorecard Golf Resort Karlstejn",
       "url": "https://offcourse.co/courses/scorecard/golf-resort-karlstejn"
     }
-  ],
-  "foto": {
-    "soubor": "karlstejn-15.jpg",
-    "autor": "Karelj",
-    "licence": "volné dílo (public domain)",
-    "licenceUrl": "https://en.wikipedia.org/wiki/Public_domain",
-    "zdrojUrl": "https://commons.wikimedia.org/wiki/File:Golf_Karl%C5%A1tejn_2.jpg",
-    "alt": {
-      "cs": "Letecký pohled na areál Golf Resort Karlštejn",
-      "en": "Aerial view of the Golf Resort Karlštejn grounds"
-    },
-    "poznamka": {
-      "cs": "letecký pohled na celý areál — volně licencovaný snímek přímo ze 14. jamky se nepodařilo dohledat",
-      "en": "aerial view of the whole resort — no freely licensed photo of the 14th hole itself could be found"
-    },
-    "sirka": 1028,
-    "vyska": 670
-  }
+  ]
 }

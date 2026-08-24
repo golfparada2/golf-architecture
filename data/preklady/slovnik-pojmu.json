@@ -14,6 +14,16 @@
     },
     "pojmy": [
       {
+        "pojem": "Amen Corner",
+        "popis": "Jamky 11–13 na Augusta National — série jamek, kde se tradičně rozhoduje výsledek turnaje.",
+        "hledat": [
+          "amen corner"
+        ],
+        "kde": [
+          9
+        ]
+      },
+      {
         "pojem": "Approach",
         "popis": "Rána mířená na green — druhá na par 4, třetí na par 5. Úhel, ze kterého se hraje, je často důležitější než délka.",
         "hledat": [
@@ -34,6 +44,16 @@
         ],
         "kde": [
           5
+        ]
+      },
+      {
+        "pojem": "Biarritz",
+        "popis": "Obří green rozdělený hlubokým prolomem na dvě patra. Původ: Biarritz Golf Club, Francie, 1888.",
+        "hledat": [
+          "biarritz"
+        ],
+        "kde": [
+          8
         ]
       },
       {
@@ -230,6 +250,18 @@
         ]
       },
       {
+        "pojem": "Dvouranová jamka",
+        "popis": "MacKenzieho výraz pro par 4 — jamka na dva údery na green. Podle MacKenzieho by jich mělo být na hřišti nejvíc.",
+        "hledat": [
+          "dvouranová jamka",
+          "dvouranové jamky",
+          "dvouranových"
+        ],
+        "kde": [
+          9
+        ]
+      },
+      {
         "pojem": "Efektivní velikost greenu",
         "popis": "Část greenu, kde spád nepřesahuje zhruba tři procenta — tedy kde smí stát praporek a kde se míč udrží. Bývá výrazně menší než plocha na mapě.",
         "hledat": [
@@ -356,6 +388,18 @@
         "kde": [
           1,
           5
+        ]
+      },
+      {
+        "pojem": "Jednoranová jamka",
+        "popis": "MacKenzieho výraz pro par 3 — jamka, kterou hráč hraje na jeden úder na green.",
+        "hledat": [
+          "jednoranová jamka",
+          "jednoranové jamky",
+          "jednoranových"
+        ],
+        "kde": [
+          9
         ]
       },
       {
@@ -490,13 +534,26 @@
         ]
       },
       {
+        "pojem": "Prolom",
+        "popis": "Hluboká prohlubeň napříč greenem (typicky 3–7 stop), typická pro Biarritz — rozhoduje, na kterou stranu se rána trefí, ne jen jestli se trefí na green.",
+        "hledat": [
+          "prolom",
+          "prolomu",
+          "prolomem"
+        ],
+        "kde": [
+          8
+        ]
+      },
+      {
         "pojem": "Punchbowl",
         "popis": "Green položený do prohlubně; svahy kolem něj svádějí míč dovnitř, takže nepřesná rána může skončit líp, než si zaslouží.",
         "hledat": [
           "punchbowl"
         ],
         "kde": [
-          6
+          6,
+          8
         ]
       },
       {
@@ -507,6 +564,18 @@
         ],
         "kde": [
           3
+        ]
+      },
+      {
+        "pojem": "Rameno",
+        "popis": "Vyvýšená část greenu nebo terénu před ním, která svádí nízkou ránu ke praporku — druhá, nepřímá cesta k jamce u Redanu.",
+        "hledat": [
+          "rameno",
+          "ramene",
+          "ramena"
+        ],
+        "kde": [
+          8
         ]
       },
       {
@@ -528,7 +597,8 @@
           "redanu"
         ],
         "kde": [
-          6
+          6,
+          8
         ]
       },
       {
@@ -581,6 +651,17 @@
         ]
       },
       {
+        "pojem": "Rytmus hřiště",
+        "popis": "Jak se obtížnost a charakter jamek střídají v průběhu kola — opak monotónnosti, kdy hráč hraje osmnáctkrát stejnou otázku.",
+        "hledat": [
+          "rytmus hřiště",
+          "rytmus"
+        ],
+        "kde": [
+          9
+        ]
+      },
+      {
         "pojem": "Sběrná plocha",
         "popis": "Vyžnutá prohlubeň u greenu, do které míč sjede. Anglicky collection area. Bývá těžší než bunkr: hraje se z těsného lie do kopce na green, který od hráče utíká.",
         "hledat": [
@@ -612,6 +693,18 @@
         ],
         "kde": [
           6
+        ]
+      },
+      {
+        "pojem": "Slepá rána",
+        "popis": "Rána, při které hráč nevidí cíl kvůli terénu mezi ním a jamkou — typické pro Punchbowl a Alps.",
+        "hledat": [
+          "slepá rána",
+          "slepou ránu",
+          "slepé rány"
+        ],
+        "kde": [
+          8
         ]
       },
       {
@@ -649,6 +742,18 @@
         ]
       },
       {
+        "pojem": "Série",
+        "popis": "Souvislý úsek jamek se společnou vlastností — stejným směrem, podobnou obtížností, nebo rizikem, které rozhoduje kolo.",
+        "hledat": [
+          "série",
+          "sérii",
+          "serie"
+        ],
+        "kde": [
+          9
+        ]
+      },
+      {
         "pojem": "Template hole",
         "popis": "Osvědčené schéma jamky (Redan, Eden, Punchbowl), které architekti opakují na různých pozemcích. Téma pozdější lekce kurzu.",
         "hledat": [
@@ -656,7 +761,9 @@
           "šablonová jamka",
           "šablonové jamk"
         ],
-        "kde": []
+        "kde": [
+          8
+        ]
       },
       {
         "pojem": "Trestající jamka",
@@ -680,6 +787,18 @@
         ]
       },
       {
+        "pojem": "Vratná devítka",
+        "popis": "Devítka jamek, která se vrací zpátky ke klubovně — MacKenzieho první princip: hřiště by mělo mít dvě takové devítky.",
+        "hledat": [
+          "vratná devítka",
+          "vratné devítky",
+          "vratných devítek"
+        ],
+        "kde": [
+          9
+        ]
+      },
+      {
         "pojem": "Vrstevnice",
         "popis": "Čára spojující místa se stejnou nadmořskou výškou — základní nástroj čtení terénu na mapě.",
         "hledat": [
@@ -687,6 +806,18 @@
         ],
         "kde": [
           2
+        ]
+      },
+      {
+        "pojem": "Vyvážení kola",
+        "popis": "Otázka, jestli je výsledná sada osmnácti jamek (poměr parů, směry, pořadí obtížnosti) sestavená záměrně — druhá polovina routingu z lekce 3.",
+        "hledat": [
+          "vyvážení kola",
+          "vyvážení",
+          "vyvážené kolo"
+        ],
+        "kde": [
+          9
         ]
       },
       {
@@ -726,6 +857,16 @@
     },
     "pojmy": [
       {
+        "pojem": "Amen Corner",
+        "popis": "Holes 11-13 at Augusta National — a stretch of holes where tournament outcomes are traditionally decided.",
+        "hledat": [
+          "amen corner"
+        ],
+        "kde": [
+          9
+        ]
+      },
+      {
         "pojem": "Angle of approach",
         "popis": "The angle the ball arrives at the green from — it decides how much the hazards guarding the green block the line to the flag.",
         "hledat": [
@@ -755,6 +896,38 @@
         ],
         "kde": [
           5
+        ]
+      },
+      {
+        "pojem": "Balancing a round",
+        "popis": "The question of whether the resulting set of eighteen holes (par ratio, directions, order of difficulty) is deliberately composed — the second half of routing from Lesson 3.",
+        "hledat": [
+          "balancing a round",
+          "balanced round"
+        ],
+        "kde": [
+          9
+        ]
+      },
+      {
+        "pojem": "Biarritz",
+        "popis": "A huge green split by a deep swale into two tiers. Origin: Biarritz Golf Club, France, 1888.",
+        "hledat": [
+          "biarritz"
+        ],
+        "kde": [
+          8
+        ]
+      },
+      {
+        "pojem": "Blind shot",
+        "popis": "A shot where the player cannot see the target because of ground between them and the hole — typical of the Punchbowl and the Alps.",
+        "hledat": [
+          "blind shot",
+          "blind shots"
+        ],
+        "kde": [
+          8
         ]
       },
       {
@@ -872,6 +1045,17 @@
         ],
         "kde": [
           3
+        ]
+      },
+      {
+        "pojem": "Course rhythm",
+        "popis": "How difficulty and character alternate over the course of a round — the opposite of monotony, where a player faces the same question eighteen times.",
+        "hledat": [
+          "course rhythm",
+          "rhythm"
+        ],
+        "kde": [
+          9
         ]
       },
       {
@@ -1182,6 +1366,17 @@
         ]
       },
       {
+        "pojem": "One-shot hole",
+        "popis": "MacKenzie's term for a par 3 — a hole the player plays to the green in a single stroke.",
+        "hledat": [
+          "one-shot hole",
+          "one-shot holes"
+        ],
+        "kde": [
+          9
+        ]
+      },
+      {
         "pojem": "Out of bounds",
         "popis": "The boundary of the course. A ball beyond it costs a penalty stroke and a replay from the original spot — the harshest penalty in golf.",
         "hledat": [
@@ -1207,7 +1402,8 @@
           "punchbowl"
         ],
         "kde": [
-          6
+          6,
+          8
         ]
       },
       {
@@ -1238,7 +1434,19 @@
           "redan"
         ],
         "kde": [
-          6
+          6,
+          8
+        ]
+      },
+      {
+        "pojem": "Returning nine",
+        "popis": "A set of nine holes that loops back to the clubhouse — MacKenzie's first principle: a course should have two such nines.",
+        "hledat": [
+          "returning nine",
+          "returning nines"
+        ],
+        "kde": [
+          9
         ]
       },
       {
@@ -1309,6 +1517,16 @@
         ]
       },
       {
+        "pojem": "Shoulder",
+        "popis": "A raised part of a green or the ground in front of it that feeds a low shot toward the pin — the second, indirect route to the hole on a Redan.",
+        "hledat": [
+          "shoulder"
+        ],
+        "kde": [
+          8
+        ]
+      },
+      {
         "pojem": "Stimpmeter",
         "popis": "A sloped rail used to measure green speed. The stimpmeter number is how far the ball rolls out.",
         "hledat": [
@@ -1329,6 +1547,26 @@
         ]
       },
       {
+        "pojem": "Stretch",
+        "popis": "A continuous run of holes sharing a property — the same direction, similar difficulty, or risk that decides the round.",
+        "hledat": [
+          "stretch"
+        ],
+        "kde": [
+          9
+        ]
+      },
+      {
+        "pojem": "Swale",
+        "popis": "A deep depression running across a green (typically 3–7 feet), typical of the Biarritz — it decides which side of the green a shot finds, not just whether it finds the green at all.",
+        "hledat": [
+          "swale"
+        ],
+        "kde": [
+          8
+        ]
+      },
+      {
         "pojem": "Tee",
         "popis": "The place the first shot of a hole is played from. Moving it changes both length and the angle to a hazard without rebuilding anything.",
         "hledat": [
@@ -1344,7 +1582,9 @@
           "template hole",
           "template holes"
         ],
-        "kde": []
+        "kde": [
+          8
+        ]
       },
       {
         "pojem": "Tier",
@@ -1377,6 +1617,17 @@
         ],
         "kde": [
           6
+        ]
+      },
+      {
+        "pojem": "Two-shot hole",
+        "popis": "MacKenzie's term for a par 4 — a hole played to the green in two strokes. MacKenzie held there should be more of these than any other type.",
+        "hledat": [
+          "two-shot hole",
+          "two-shot holes"
+        ],
+        "kde": [
+          9
         ]
       }
     ]

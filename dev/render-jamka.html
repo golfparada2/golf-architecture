@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="cs"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../assets/styl.css">
+<style>body{margin:0;background:#fff} svg{width:760px;height:1000px;display:block}</style>
+</head><body>
+<svg id="s" aria-hidden="false"></svg>
+<script type="module">
+import { vykresliJamku } from '../js/platy.js';
+const id = new URLSearchParams(location.search).get('id') || 'riviera-6';
+const j = await (await fetch(`../data/jamky/${id}.json`)).json();
+vykresliJamku(document.getElementById('s'), j, { jazyk: 'cs' });
+document.title = 'hotovo';
+</script></body></html>
